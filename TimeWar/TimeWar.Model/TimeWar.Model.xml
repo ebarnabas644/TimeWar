@@ -4,5 +4,242 @@
         <name>TimeWar.Model</name>
     </assembly>
     <members>
+        <member name="T:TimeWar.Model.GameModel">
+            <summary>
+            Main game model class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Model.GameModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Model.GameModel"/> class.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.GameModel.CurrentWorld">
+            <summary>
+            Gets or sets the current world data property.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.GameModel.Hero">
+            <summary>
+            Gets or sets the hero character.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.GameModel.Camera">
+            <summary>
+            Gets or sets the camera.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Model.Objects.Directions">
+            <summary>
+            Movement types.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Directions.Stand">
+            <summary>
+            Base stance.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Directions.Right">
+            <summary>
+            Right direction.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Directions.Left">
+            <summary>
+            Left direction.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Directions.Up">
+            <summary>
+            Up direction.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Directions.Down">
+            <summary>
+            Down direction.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Model.Objects.Character">
+            <summary>
+            Basic character information class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Character.#ctor(System.Drawing.Point,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Model.Objects.Character"/> class.
+            </summary>
+            <param name="pos">Character position.</param>
+            <param name="speed">Movement speed.</param>
+            <param name="health">Base health.</param>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.Direction">
+            <summary>
+            Gets or sets moving direction.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.Position">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.Speed">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.Health">
+            <summary>
+            Gets or sets the character health.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Model.Objects.GameWorld">
+            <summary>
+            Game world details, settings.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.#ctor(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Model.Objects.GameWorld"/> class.
+            </summary>
+            <param name="height">Height in tile.</param>
+            <param name="width">Width in tile.</param>
+            <param name="tileSize">Game tile size.</param>
+            <param name="magnify">Zoom extent of the game world(default value = 3).</param>
+        </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.WorldName">
+            <summary>
+            Gets or sets the name of the game world.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.TileSize">
+            <summary>
+            Gets or sets the game world tile size(pixel value).
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.GetTileWidth">
+            <summary>
+            Gets the game world width in tile value.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.GetTileHeight">
+            <summary>
+            Gets the game world height in tile value.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.GameWidth">
+            <summary>
+            Gets or sets the game world width(pixel value).
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.GameHeight">
+            <summary>
+            Gets or sets the game world height(pixel value).
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.Magnify">
+            <summary>
+            Gets or sets the zoom extent of the game world.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.AddPointOfInterest(System.String,System.Drawing.Point)">
+            <summary>
+            Add new point of interest.
+            </summary>
+            <param name="name">Name of the point.</param>
+            <param name="position">Position.</param>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.SearchPointOfInterest(System.String)">
+            <summary>
+            Find existing point of interest by key.
+            </summary>
+            <param name="name">Key of the point.</param>
+            <returns>Position of the point.</returns>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.AddGround(System.Drawing.Point)">
+            <summary>
+            Add new ground tile.
+            </summary>
+            <param name="position">Position of the ground(tile pos).</param>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.RemoveGround(System.Drawing.Point)">
+            <summary>
+            Remove ground tile.
+            </summary>
+            <param name="position">Position of the ground(tile pos).</param>
+        </member>
+        <member name="T:TimeWar.Model.Objects.Player">
+            <summary>
+            Player detail class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Player.#ctor(System.Drawing.Point,System.Int32,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Model.Objects.Player"/> class.
+            </summary>
+            <param name="pos">Position.</param>
+            <param name="speed">Speed value.</param>
+            <param name="health">Health value.</param>
+        </member>
+        <member name="T:TimeWar.Model.Objects.Viewport">
+            <summary>
+            Camera viewport class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Viewport.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,TimeWar.Model.Objects.Character)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Model.Objects.Viewport"/> class.
+            </summary>
+            <param name="windowWidth">Width of the window.</param>
+            <param name="windowHeight">Height of the window.</param>
+            <param name="gameWidth">Current game world width.</param>
+            <param name="gameHeight">Current game world height.</param>
+            <param name="followed">Followed character.</param>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Viewport.Followed">
+            <summary>
+            Gets or sets the currently followed character by viewport.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Viewport.WindowWidth">
+            <summary>
+            Gets or sets the current window width.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Viewport.WindowHeight">
+            <summary>
+            Gets or sets the current window height.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Viewport.GetViewportX">
+            <summary>
+            Gets the calculated x position of the viewport.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Viewport.GetViewportY">
+            <summary>
+            Gets the calculated y position of the viewport.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Viewport.GetRelativeCharacterPosX">
+            <summary>
+            Gets the followed character X position relative to the viewport.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Viewport.GetRelativeCharacterPosY">
+            <summary>
+            Gets the followed character Y position relative to the viewport.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Model.Objects.Interfaces.IMoveable">
+            <summary>
+            Moveable objects interface.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Interfaces.IMoveable.Position">
+            <summary>
+            Gets or sets character position.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Interfaces.IMoveable.Speed">
+            <summary>
+            Gets or sets character movement speed.
+            </summary>
+        </member>
     </members>
 </doc>
