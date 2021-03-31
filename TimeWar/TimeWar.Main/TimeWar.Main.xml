@@ -6,7 +6,7 @@
     <members>
         <member name="T:TimeWar.Main.App">
             <summary>
-            Interaction logic for App.xaml
+            Interaction logic for App.xaml.
             </summary>
             <summary>
             App
@@ -21,6 +21,22 @@
             <summary>
             Application Entry Point.
             </summary>
+        </member>
+        <member name="T:TimeWar.Main.GameControl">
+            <summary>
+            Game controlling class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.GameControl.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.GameControl"/> class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.GameControl.OnRender(System.Windows.Media.DrawingContext)">
+            <summary>
+            Render drawing groups.
+            </summary>
+            <param name="drawingContext">Canvas.</param>
         </member>
         <member name="T:TimeWar.Main.MainWindow">
             <summary>

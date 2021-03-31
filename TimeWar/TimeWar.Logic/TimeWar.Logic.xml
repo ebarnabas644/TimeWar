@@ -4,5 +4,109 @@
         <name>TimeWar.Logic</name>
     </assembly>
     <members>
+        <member name="T:TimeWar.Logic.Classes.Characters.Actions.MoveCommand">
+            <summary>
+            Move commands.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.Actions.MoveCommand.#ctor(TimeWar.Model.Objects.Interfaces.IMoveable,System.Drawing.Point,TimeWar.Model.GameModel)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.Characters.Actions.MoveCommand"/> class.
+            </summary>
+            <param name="gameEntity">Moveable game entity.</param>
+            <param name="direction">Moving direction.</param>
+            <param name="model">Game model.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.Actions.MoveCommand.Execute">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.Actions.MoveCommand.Undo">
+            <inheritdoc/>
+        </member>
+        <member name="T:TimeWar.Logic.Classes.CommandManager">
+            <summary>
+            Command manager class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.CommandManager.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.CommandManager"/> class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.CommandManager.AddCommand(TimeWar.Logic.Interfaces.ICommand)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.CommandManager.ClearBuffer">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.CommandManager.Rewind">
+            <inheritdoc/>
+        </member>
+        <member name="T:TimeWar.Logic.CharacterLogic">
+            <summary>
+            Basic character logic class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.CharacterLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Character,TimeWar.Logic.Classes.CommandManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.CharacterLogic"/> class.
+            </summary>
+            <param name="model">Game model entity.</param>
+            <param name="character">Moveable entity.</param>
+            <param name="commandManager">Command manager entity.</param>
+        </member>
+        <member name="M:TimeWar.Logic.CharacterLogic.OneTick">
+            <summary>
+            1 frame event.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Logic.InitLogic">
+            <summary>
+            Init class for game model.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.InitLogic.#ctor(TimeWar.Model.GameModel,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.InitLogic"/> class.
+            </summary>
+            <param name="model">Game model instance.</param>
+            <param name="mapName">Name of the game map.</param>
+        </member>
+        <member name="T:TimeWar.Logic.Interfaces.ICommand">
+            <summary>
+            Command interface for actions.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Interfaces.ICommand.Execute">
+            <summary>
+            Execute the command.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Interfaces.ICommand.Undo">
+            <summary>
+            Undo the command.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Logic.Interfaces.ICommandManager">
+            <summary>
+            Command manager interface.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Interfaces.ICommandManager.AddCommand(TimeWar.Logic.Interfaces.ICommand)">
+            <summary>
+            Add new command.
+            </summary>
+            <param name="command">Command.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Interfaces.ICommandManager.ClearBuffer">
+            <summary>
+            Clear command buffer.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Interfaces.ICommandManager.Rewind">
+            <summary>
+            Rewind all command.
+            </summary>
+        </member>
     </members>
 </doc>

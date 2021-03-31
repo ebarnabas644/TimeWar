@@ -4,7 +4,6 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
-	<NeutralLanguage>English (United Kingdom)</NeutralLanguage>
 	<EnableNETAnalyzers>true</EnableNETAnalyzers>
 	<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 	<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
@@ -23,6 +22,12 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TimeWar.Logic\TimeWar.Logic.csproj" />
+    <ProjectReference Include="..\TimeWar.Model\TimeWar.Model.csproj" />
+    <ProjectReference Include="..\TimeWar.Renderer\TimeWar.Renderer.csproj" />
   </ItemGroup>
 
 </Project>

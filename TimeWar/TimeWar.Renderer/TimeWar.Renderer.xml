@@ -4,5 +4,22 @@
         <name>TimeWar.Renderer</name>
     </assembly>
     <members>
+        <member name="T:TimeWar.Renderer.GameRenderer">
+            <summary>
+            Game rendering class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Renderer.GameRenderer.#ctor(TimeWar.Model.GameModel)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Renderer.GameRenderer"/> class.
+            </summary>
+            <param name="model">Game model entity.</param>
+        </member>
+        <member name="M:TimeWar.Renderer.GameRenderer.BuildDrawing">
+            <summary>
+            Build drawed game world.
+            </summary>
+            <returns>Drawing with all entities for render.</returns>
+        </member>
     </members>
 </doc>
