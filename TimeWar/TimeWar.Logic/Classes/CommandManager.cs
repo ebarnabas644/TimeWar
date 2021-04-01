@@ -46,6 +46,7 @@ namespace TimeWar.Logic.Classes
             {
                 command.Undo();
             }
+
             this.ClearBuffer();
         }
     }
