@@ -29,34 +29,44 @@
             Gets or sets the camera.
             </summary>
         </member>
-        <member name="T:TimeWar.Model.Objects.Directions">
+        <member name="T:TimeWar.Model.Objects.Stances">
             <summary>
             Movement types.
             </summary>
         </member>
-        <member name="F:TimeWar.Model.Objects.Directions.Stand">
+        <member name="F:TimeWar.Model.Objects.Stances.StandRight">
             <summary>
-            Base stance.
+            Base right stance.
             </summary>
         </member>
-        <member name="F:TimeWar.Model.Objects.Directions.Right">
+        <member name="F:TimeWar.Model.Objects.Stances.StandLeft">
             <summary>
-            Right direction.
+            Base left stance.
             </summary>
         </member>
-        <member name="F:TimeWar.Model.Objects.Directions.Left">
+        <member name="F:TimeWar.Model.Objects.Stances.Right">
             <summary>
-            Left direction.
+            Right stance.
             </summary>
         </member>
-        <member name="F:TimeWar.Model.Objects.Directions.Up">
+        <member name="F:TimeWar.Model.Objects.Stances.Left">
             <summary>
-            Up direction.
+            Left stance.
             </summary>
         </member>
-        <member name="F:TimeWar.Model.Objects.Directions.Down">
+        <member name="F:TimeWar.Model.Objects.Stances.Up">
             <summary>
-            Down direction.
+            Up stance.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Stances.Down">
+            <summary>
+            Down stance.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Stances.Jump">
+            <summary>
+            Jump stance.
             </summary>
         </member>
         <member name="T:TimeWar.Model.Objects.Character">
@@ -64,13 +74,30 @@
             Basic character information class.
             </summary>
         </member>
-        <member name="M:TimeWar.Model.Objects.Character.#ctor(System.Drawing.Point,System.Int32,System.Int32)">
+        <member name="M:TimeWar.Model.Objects.Character.#ctor(System.Drawing.Point,System.Int32,System.Int32,System.Int32,System.Int32)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Model.Objects.Character"/> class.
             </summary>
             <param name="pos">Character position.</param>
             <param name="speed">Movement speed.</param>
             <param name="health">Base health.</param>
+            <param name="height">Character height.</param>
+            <param name="width">Character width.</param>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.Height">
+            <summary>
+            Gets or sets character height in pixel.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.Width">
+            <summary>
+            Gets or sets character width in pixel.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.CurrentSprite">
+            <summary>
+            Gets or sets current sprite frame.
+            </summary>
         </member>
         <member name="P:TimeWar.Model.Objects.Character.Direction">
             <summary>
@@ -163,18 +190,34 @@
             </summary>
             <param name="position">Position of the ground(tile pos).</param>
         </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.SearchGround(System.Drawing.Point)">
+            <summary>
+            Search for ground tiles.
+            </summary>
+            <param name="position">Position.</param>
+            <returns>Bool based on the ground value.</returns>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.ConvertTileToPixel(System.Int32)">
+            <summary>
+            Convert tile value to pixel value.
+            </summary>
+            <param name="tilePos">Tile position.</param>
+            <returns>Pixel position.</returns>
+        </member>
         <member name="T:TimeWar.Model.Objects.Player">
             <summary>
             Player detail class.
             </summary>
         </member>
-        <member name="M:TimeWar.Model.Objects.Player.#ctor(System.Drawing.Point,System.Int32,System.Int32)">
+        <member name="M:TimeWar.Model.Objects.Player.#ctor(System.Drawing.Point,System.Int32,System.Int32,System.Int32,System.Int32)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Model.Objects.Player"/> class.
             </summary>
             <param name="pos">Position.</param>
             <param name="speed">Speed value.</param>
             <param name="health">Health value.</param>
+            <param name="height">Height.</param>
+            <param name="width">Width.</param>
         </member>
         <member name="T:TimeWar.Model.Objects.Viewport">
             <summary>

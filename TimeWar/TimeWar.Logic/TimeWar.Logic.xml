@@ -107,6 +107,7 @@
             <summary>
             Rewind all command.
             </summary>
+            <returns>Task with rewind logic.</returns>
         </member>
     </members>
 </doc>

@@ -21,5 +21,10 @@
             </summary>
             <returns>Drawing with all entities for render.</returns>
         </member>
+        <member name="T:TimeWar.Renderer.Sprite">
+            <summary>
+            Sprite static class.
+            </summary>
+        </member>
     </members>
 </doc>
