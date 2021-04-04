@@ -88,18 +88,18 @@ namespace TimeWar.Main
 
         private void Win_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            this.model.Hero.Direction = Directions.Stand;
+            this.model.Hero.Direction = Stances.StandRight;
         }
 
         private void Win_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
             switch (e.Key)
             {
-                case Key.W: this.model.Hero.Direction = Directions.Up; break;
-                case Key.A: this.model.Hero.Direction = Directions.Left; break;
-                case Key.S: this.model.Hero.Direction = Directions.Down; break;
-                case Key.D: this.model.Hero.Direction = Directions.Right; break;
-                case Key.E: this.commandManager.Rewind(); break;
+                case Key.W: this.model.Hero.Direction = Stances.Up; break;
+                case Key.A: this.model.Hero.Direction = Stances.Left; break;
+                case Key.S: this.model.Hero.Direction = Stances.Down; break;
+                case Key.D: this.model.Hero.Direction = Stances.Right; break;
+                case Key.E: this.commandManager.Rewind().Start(); break;
             }
 
             this.InvalidateVisual();
