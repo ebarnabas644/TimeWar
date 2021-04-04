@@ -53,19 +53,19 @@ namespace TimeWar.Logic
             Point direction;
             switch (this.character.Direction)
             {
-                case Directions.Stand:
+                case Stances.StandRight:
                     direction = new Point(0, 0);
                     break;
-                case Directions.Right:
+                case Stances.Right:
                     direction = new Point(1, 0);
                     break;
-                case Directions.Left:
+                case Stances.Left:
                     direction = new Point(-1, 0);
                     break;
-                case Directions.Up:
+                case Stances.Up:
                     direction = new Point(0, -1);
                     break;
-                case Directions.Down:
+                case Stances.Down:
                     direction = new Point(0, 1);
                     break;
                 default:
