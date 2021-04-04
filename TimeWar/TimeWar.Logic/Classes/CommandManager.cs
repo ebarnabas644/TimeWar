@@ -40,13 +40,20 @@ namespace TimeWar.Logic.Classes
         }
 
         /// <inheritdoc/>
-        public void Rewind()
+        public Task Rewind()
         {
-            foreach (ICommand command in Enumerable.Reverse(this.commandBuffer))
+            Task task = new Task(
+                () =>
             {
-                command.Undo();
-            }
-            this.ClearBuffer();
+                foreach (ICommand command in Enumerable.Reverse(this.commandBuffer))
+                {
+                    command.Undo();
+                    Thread.Sleep(10);
+                }
+
+                this.ClearBuffer();
+            }, TaskCreationOptions.LongRunning);
+            return task;
         }
     }
 }
