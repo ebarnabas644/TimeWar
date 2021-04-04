@@ -6,14 +6,12 @@ namespace TimeWar.Renderer
 {
     using System;
     using System.Collections.Generic;
-    using System.Drawing;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
+    using System.Diagnostics;
     using System.Windows;
     using System.Windows.Media;
     using System.Windows.Media.Imaging;
     using TimeWar.Model;
+    using TimeWar.Model.Objects;
 
     /// <summary>
     /// Game rendering class.
@@ -21,12 +19,16 @@ namespace TimeWar.Renderer
     public class GameRenderer
     {
         private GameModel model;
+        private Stopwatch spriteTimer;
         private Drawing backgroundCache;
+        private Drawing walls;
         private System.Drawing.Point playerPosition;
         private Drawing playerCache;
         private double windowHeightCache;
         private double windowWidthCache;
-        private Dictionary<string, Brush> brushes;
+        private Dictionary<string, Brush> staticBrushes;
+        private Dictionary<Character, ImageBrush[][]> spriteBrushes;
+        private int spriteFps;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameRenderer"/> class.
@@ -35,13 +37,16 @@ namespace TimeWar.Renderer
         public GameRenderer(GameModel model)
         {
             this.model = model;
+            this.spriteTimer = new Stopwatch();
             if (this.model != null)
             {
                 this.windowHeightCache = this.model.Camera.WindowHeight;
                 this.windowWidthCache = this.model.Camera.WindowWidth;
             }
 
-            this.brushes = new Dictionary<string, Brush>();
+            this.spriteBrushes = new Dictionary<Character, ImageBrush[][]>();
+            this.staticBrushes = new Dictionary<string, Brush>();
+            this.spriteTimer.Start();
         }
 
         /// <summary>
@@ -50,8 +55,11 @@ namespace TimeWar.Renderer
         /// <returns>Drawing with all entities for render.</returns>
         public Drawing BuildDrawing()
         {
+            this.spriteFps = (int)this.spriteTimer.Elapsed.TotalMilliseconds / 100;
             DrawingGroup dg = new DrawingGroup();
             dg.Children.Add(this.GetBackground());
+
+            // dg.Children.Add(this.GetCollision());
             dg.Children.Add(this.GetPlayer());
             return dg;
         }
@@ -59,13 +67,14 @@ namespace TimeWar.Renderer
         private void Reset()
         {
             this.backgroundCache = null;
+            this.walls = null;
             this.playerPosition = new System.Drawing.Point(1, 1);
-            this.brushes.Clear();
+            this.staticBrushes.Clear();
         }
 
         private Brush GetBrush(string fname)
         {
-            if (!this.brushes.ContainsKey(fname))
+            if (!this.staticBrushes.ContainsKey(fname))
             {
                 // ImageBrush ib = new ImageBrush(new BitmapImage(new Uri(uri)));
                 BitmapImage bmp = new BitmapImage();
@@ -73,10 +82,20 @@ namespace TimeWar.Renderer
                 bmp.UriSource = new Uri(string.Format(System.Globalization.CultureInfo.CurrentCulture, "Leveldata/{0}.png", fname), UriKind.Relative);
                 bmp.EndInit();
                 ImageBrush ib = new ImageBrush(bmp);
-                this.brushes.Add(fname, ib);
+                this.staticBrushes.Add(fname, ib);
             }
 
-            return this.brushes[fname];
+            return this.staticBrushes[fname];
+        }
+
+        private Brush GetSpriteBrush(Character character)
+        {
+            if (!this.spriteBrushes.ContainsKey(character))
+            {
+                this.spriteBrushes.Add(character, Sprite.CreateSprite(character.Height, character.Width));
+            }
+
+            return this.spriteBrushes[character][this.model.Hero.CurrentSprite][0];
         }
 
         private Drawing GetBackground()
@@ -86,17 +105,32 @@ namespace TimeWar.Renderer
             return this.backgroundCache;
         }
 
-        private Drawing GetPlayer()
+        private Drawing GetCollision() // For debug
         {
-            if (this.playerCache == null || this.playerPosition != this.model.Hero.Position || this.windowHeightCache != this.model.Camera.WindowHeight || this.windowWidthCache != this.model.Camera.WindowWidth)
+            GeometryGroup g = new GeometryGroup();
+            for (int y = 0; y < this.model.CurrentWorld.GetTileHeight; y++)
             {
-                Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeCharacterPosX, this.model.Camera.GetRelativeCharacterPosY, this.model.CurrentWorld.TileSize * this.model.CurrentWorld.Magnify, this.model.CurrentWorld.TileSize * this.model.CurrentWorld.Magnify));
-                this.playerCache = new GeometryDrawing(Brushes.Red, null, g);
-                this.playerPosition = this.model.Hero.Position;
-                this.windowHeightCache = this.model.Camera.WindowHeight;
-                this.windowWidthCache = this.model.Camera.WindowWidth;
+                for (int x = 0; x < this.model.CurrentWorld.GetTileWidth; x++)
+                {
+                    if (this.model.CurrentWorld.SearchGround(new System.Drawing.Point(x, y)))
+                    {
+                        g.Children.Add(new RectangleGeometry(new Rect(this.model.CurrentWorld.ConvertTileToPixel(x) + this.model.Camera.GetViewportX, this.model.CurrentWorld.ConvertTileToPixel(y) + this.model.Camera.GetViewportY, this.model.CurrentWorld.TileSize * this.model.CurrentWorld.Magnify, this.model.CurrentWorld.TileSize * this.model.CurrentWorld.Magnify)));
+                    }
+                }
             }
 
+            this.walls = new GeometryDrawing(Brushes.White, null, g);
+            return this.walls;
+        }
+
+        private Drawing GetPlayer()
+        {
+            Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeCharacterPosX, this.model.Camera.GetRelativeCharacterPosY, this.model.Hero.Width * this.model.CurrentWorld.Magnify, this.model.Hero.Height * this.model.CurrentWorld.Magnify));
+            this.playerCache = new GeometryDrawing(this.GetSpriteBrush(this.model.Hero), null, g);
+            this.model.Hero.CurrentSprite = this.spriteFps % 4;
+            this.playerPosition = this.model.Hero.Position;
+            this.windowHeightCache = this.model.Camera.WindowHeight;
+            this.windowWidthCache = this.model.Camera.WindowWidth;
             return this.playerCache;
         }
     }
