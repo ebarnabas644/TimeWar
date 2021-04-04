@@ -29,6 +29,7 @@ namespace TimeWar.Logic.Interfaces
         /// <summary>
         /// Rewind all command.
         /// </summary>
-        void Rewind();
+        /// <returns>Task with rewind logic.</returns>
+        Task Rewind();
     }
 }
