@@ -66,13 +66,15 @@ namespace TimeWar.Model.Objects
         /// <param name="health">Base health.</param>
         /// <param name="height">Character height.</param>
         /// <param name="width">Character width.</param>
-        protected Character(Point pos, int speed, int health, int height, int width)
+        /// <param name="spriteFile">Name of the sprite file.</param>
+        protected Character(Point pos, int speed, int health, int height, int width, string spriteFile)
         {
             this.Position = pos;
             this.Speed = speed;
             this.Health = health;
             this.Height = height;
             this.Width = width;
+            this.SpriteFile = spriteFile;
             this.CurrentSprite = 0;
             this.Direction = Stances.StandRight;
         }
@@ -86,6 +88,11 @@ namespace TimeWar.Model.Objects
         /// Gets or sets character width in pixel.
         /// </summary>
         public int Width { get; set; }
+
+        /// <summary>
+        /// Gets or sets the character sprite file name.
+        /// </summary>
+        public string SpriteFile { get; set; }
 
         /// <summary>
         /// Gets or sets current sprite frame.
