@@ -74,7 +74,7 @@
             Basic character information class.
             </summary>
         </member>
-        <member name="M:TimeWar.Model.Objects.Character.#ctor(System.Drawing.Point,System.Int32,System.Int32,System.Int32,System.Int32)">
+        <member name="M:TimeWar.Model.Objects.Character.#ctor(System.Drawing.Point,System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Model.Objects.Character"/> class.
             </summary>
@@ -83,6 +83,7 @@
             <param name="health">Base health.</param>
             <param name="height">Character height.</param>
             <param name="width">Character width.</param>
+            <param name="spriteFile">Name of the sprite file.</param>
         </member>
         <member name="P:TimeWar.Model.Objects.Character.Height">
             <summary>
@@ -92,6 +93,11 @@
         <member name="P:TimeWar.Model.Objects.Character.Width">
             <summary>
             Gets or sets character width in pixel.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.SpriteFile">
+            <summary>
+            Gets or sets the character sprite file name.
             </summary>
         </member>
         <member name="P:TimeWar.Model.Objects.Character.CurrentSprite">
@@ -209,7 +215,7 @@
             Player detail class.
             </summary>
         </member>
-        <member name="M:TimeWar.Model.Objects.Player.#ctor(System.Drawing.Point,System.Int32,System.Int32,System.Int32,System.Int32)">
+        <member name="M:TimeWar.Model.Objects.Player.#ctor(System.Drawing.Point,System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Model.Objects.Player"/> class.
             </summary>
@@ -218,6 +224,7 @@
             <param name="health">Health value.</param>
             <param name="height">Height.</param>
             <param name="width">Width.</param>
+            <param name="spriteFile">Spritesheet file name.</param>
         </member>
         <member name="T:TimeWar.Model.Objects.Viewport">
             <summary>
