@@ -24,8 +24,9 @@ namespace TimeWar.Model.Objects
         /// <param name="health">Health value.</param>
         /// <param name="height">Height.</param>
         /// <param name="width">Width.</param>
-        public Player(Point pos, int speed, int health, int height, int width)
-            : base(pos, speed, health, height, width)
+        /// <param name="spriteFile">Spritesheet file name.</param>
+        public Player(Point pos, int speed, int health, int height, int width, string spriteFile)
+            : base(pos, speed, health, height, width, spriteFile)
         {
         }
     }
