@@ -5,27 +5,29 @@
 namespace TimeWar.Renderer
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.Windows.Media.Imaging;
     using System.Drawing;
     using System.Windows.Media;
+    using System.Windows.Media.Imaging;
 
     /// <summary>
     /// Sprite static class.
     /// </summary>
     public static class Sprite
     {
-        public static ImageBrush[][] CreateSprite(int height, int width)
+        /// <summary>
+        /// Create new image brush collection using spritesheet.
+        /// </summary>
+        /// <param name="height">Character height.</param>
+        /// <param name="width">Character width.</param>
+        /// <param name="fname">Spritesheet file name.</param>
+        /// <returns>Return frames as Image brush 2D array.</returns>
+        public static ImageBrush[][] CreateSprite(int height, int width, string fname)
         {
-            string spriteFilename = "Sprites/testman.png"; //for method 1
-            int ximages = 1; //The number of sprites in each row
-            int yimages = 4; //The number of sprites in each column
+            string spriteFilename = string.Format(System.Globalization.CultureInfo.CurrentCulture, "Sprites/{0}.png", fname);
+            System.Drawing.Bitmap src = System.Drawing.Image.FromFile(spriteFilename) as System.Drawing.Bitmap;
+            int ximages = src.Width / width;
+            int yimages = src.Height / height;
             int numberFrames = ximages * yimages;
-            int currentFrameCount = 0;
-            string fname = "testman";
             BitmapSource[][] sprites = new BitmapSource[yimages][];
             ImageBrush[][] brushes = new ImageBrush[yimages][];
             for (int i = 0; i < sprites.Length; i++)
@@ -35,14 +37,13 @@ namespace TimeWar.Renderer
             }
 
             System.Drawing.Rectangle cropRect = new System.Drawing.Rectangle(0, 0, width, height);
-            System.Drawing.Bitmap src = System.Drawing.Image.FromFile(spriteFilename) as System.Drawing.Bitmap;
             System.Drawing.Bitmap target;
             for (int row = 0; row < yimages; row++)
             {
                 for (int col = 0; col < ximages; col++)
                 {
-                    int currentX = row * width;
-                    int currentY = col * height;
+                    int currentY = row * height;
+                    int currentX = col * width;
                     cropRect.X = currentX;
                     cropRect.Y = currentY;
                     target = new Bitmap(cropRect.Width, cropRect.Height);
@@ -53,6 +54,7 @@ namespace TimeWar.Renderer
 
                     BitmapSource frame = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(target.GetHbitmap(), IntPtr.Zero, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromWidthAndHeight(target.Width, target.Height));
                     sprites[row][col] = frame;
+                    target.Dispose();
                 }
             }
 
