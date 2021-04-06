@@ -6,6 +6,7 @@ namespace TimeWar.Data.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
@@ -16,23 +17,20 @@ namespace TimeWar.Data.Models
     public class Map
     {
         /// <summary>
-        /// Gets or sets record id.
-        /// </summary>
-        public int Id { get; set; }
-
-        /// <summary>
         /// Gets or sets map id.
         /// </summary>
+        [Key]
         public int MapId { get; set; }
 
         /// <summary>
-        /// Gets or sets player profile.
+        /// Gets or sets player profile navigational property.
         /// </summary>
-        public Profile Player { get; set; }
+        [Key]
+        public virtual Profile Player { get; set; }
 
         /// <summary>
         /// Gets or sets run time.
         /// </summary>
-        public int Time { get; set; }
+        public int RunTime { get; set; }
     }
 }
