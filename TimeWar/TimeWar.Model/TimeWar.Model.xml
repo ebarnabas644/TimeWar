@@ -204,6 +204,13 @@
             <param name="tilePos">Tile position.</param>
             <returns>Pixel position.</returns>
         </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.ConvertPixelToTile(System.Int32)">
+            <summary>
+            Convert pixel value to tile value.
+            </summary>
+            <param name="PixelPos">Tile position.</param>
+            <returns>Pixel position.</returns>
+        </member>
         <member name="T:TimeWar.Model.Objects.Player">
             <summary>
             Player detail class.
