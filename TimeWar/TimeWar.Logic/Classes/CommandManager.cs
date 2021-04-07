@@ -42,17 +42,24 @@ namespace TimeWar.Logic.Classes
         /// <inheritdoc/>
         public Task Rewind()
         {
+            int counter = 0;
             Task task = new Task(
                 () =>
             {
                 foreach (ICommand command in Enumerable.Reverse(this.commandBuffer))
                 {
-                    command.Undo();
-                    Thread.Sleep(10);
+                    if (counter < 50)
+                    {
+                        command.Undo();
+                        Thread.Sleep(10);
+                    }
+
+                    counter++;
                 }
 
                 this.ClearBuffer();
             }, TaskCreationOptions.LongRunning);
+
             return task;
         }
     }
