@@ -4,5 +4,149 @@
         <name>TimeWar.Repository</name>
     </assembly>
     <members>
+        <member name="T:TimeWar.Repository.Classes.MainRepository`1">
+            <summary>
+            Main repository class.
+            </summary>
+            <typeparam name="T">Entity class.</typeparam>
+        </member>
+        <member name="M:TimeWar.Repository.Classes.MainRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Repository.Classes.MainRepository`1"/> class.
+            </summary>
+            <param name="ctx">Database context object.</param>
+        </member>
+        <member name="P:TimeWar.Repository.Classes.MainRepository`1.Ctx">
+            <summary>
+            Gets database context.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Repository.Classes.MainRepository`1.Create(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Repository.Classes.MainRepository`1.Delete(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Repository.Classes.MainRepository`1.GetAll">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Repository.Classes.MainRepository`1.GetOne(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TimeWar.Repository.Classes.MapRepository">
+            <summary>
+            Map entity class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Repository.Classes.MapRepository.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Repository.Classes.MapRepository"/> class.
+            </summary>
+            <param name="ctx">Database context object.</param>
+        </member>
+        <member name="M:TimeWar.Repository.Classes.MapRepository.GetOne(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Repository.Classes.MapRepository.Update(TimeWar.Data.Models.Map)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TimeWar.Repository.Classes.ProfileRepository">
+            <summary>
+            Profile entity class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Repository.Classes.ProfileRepository.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Repository.Classes.ProfileRepository"/> class.
+            </summary>
+            <param name="ctx">Database context object.</param>
+        </member>
+        <member name="M:TimeWar.Repository.Classes.ProfileRepository.GetOne(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Repository.Classes.ProfileRepository.Update(TimeWar.Data.Models.Profile)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TimeWar.Repository.Classes.SaveRepository">
+            <summary>
+            Save entity class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Repository.Classes.SaveRepository.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Repository.Classes.SaveRepository"/> class.
+            </summary>
+            <param name="ctx">Database context object.</param>
+        </member>
+        <member name="M:TimeWar.Repository.Classes.SaveRepository.GetOne(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Repository.Classes.SaveRepository.Update(TimeWar.Data.Models.Save)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TimeWar.Repository.Interfaces.IMainRepository`1">
+            <summary>
+            Generic repository interface for common operations.
+            </summary>
+            <typeparam name="T">Entity class.</typeparam>
+        </member>
+        <member name="M:TimeWar.Repository.Interfaces.IMainRepository`1.GetOne(System.Int32)">
+            <summary>
+            Get one entity via id.
+            </summary>
+            <param name="id">Id of the entity.</param>
+            <returns>Return the entity object based on id.</returns>
+        </member>
+        <member name="M:TimeWar.Repository.Interfaces.IMainRepository`1.GetAll">
+            <summary>
+            Get all element from table.
+            </summary>
+            <returns>Entites.</returns>
+        </member>
+        <member name="M:TimeWar.Repository.Interfaces.IMainRepository`1.Create(`0)">
+            <summary>
+            Add entity to the table.
+            </summary>
+            <param name="entity">Entity object.</param>
+        </member>
+        <member name="M:TimeWar.Repository.Interfaces.IMainRepository`1.Delete(`0)">
+            <summary>
+            Delete entity from the table.
+            </summary>
+            <param name="entity">Entity object.</param>
+        </member>
+        <member name="T:TimeWar.Repository.Interfaces.IMapRepository">
+            <summary>
+            Extra operations for Map class entities.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Repository.Interfaces.IMapRepository.Update(TimeWar.Data.Models.Map)">
+            <summary>
+            Update entity content.
+            </summary>
+            <param name="entity">Map entity object.</param>
+        </member>
+        <member name="T:TimeWar.Repository.Interfaces.IProfileRepository">
+            <summary>
+            Extra operations for Profile class entities.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Repository.Interfaces.IProfileRepository.Update(TimeWar.Data.Models.Profile)">
+            <summary>
+            Update entity content.
+            </summary>
+            <param name="entity">Profile entity object.</param>
+        </member>
+        <member name="T:TimeWar.Repository.Interfaces.ISaveRepository">
+            <summary>
+            Extra operations for Save class entities.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Repository.Interfaces.ISaveRepository.Update(TimeWar.Data.Models.Save)">
+            <summary>
+            Update entity content.
+            </summary>
+            <param name="entity">Save entity object.</param>
+        </member>
     </members>
 </doc>
