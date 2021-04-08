@@ -10,10 +10,24 @@ namespace TimeWar.Main.View
     using System.Text;
     using System.Threading.Tasks;
 
+    /// <summary>
+    /// Enum for the pages.
+    /// </summary>
     public enum NavigationPages
     {
+        /// <summary>
+        /// Main menu view.
+        /// </summary>
         MenuPage,
+
+        /// <summary>
+        /// Game view.
+        /// </summary>
         GamePage,
-        ProfilesPage
+
+        /// <summary>
+        /// Profiles view.
+        /// </summary>
+        ProfilesPage,
     }
 }
