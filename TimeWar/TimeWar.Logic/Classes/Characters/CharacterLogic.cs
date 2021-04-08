@@ -120,8 +120,8 @@ namespace TimeWar.Logic
             Rectangle actor = new Rectangle(
                 this.character.Position.X + newPoint.X,
                 this.character.Position.Y + newPoint.Y,
-                this.character.Width / 8,
-                this.character.Height / 8);
+                this.character.Width / this.model.CurrentWorld.TileSize,
+                this.character.Height / this.model.CurrentWorld.TileSize);
 
             Point actorLocation;
 
