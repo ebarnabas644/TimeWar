@@ -56,5 +56,213 @@
             InitializeComponent
             </summary>
         </member>
+        <member name="T:TimeWar.Main.ViewModel.GameViewModel">
+            <summary>
+            Game view model class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.ViewModel.GameViewModel.#ctor(TimeWar.Main.View.INavigationService{TimeWar.Main.View.NavigationPages})">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.ViewModel.GameViewModel"/> class.
+            </summary>
+            <param name="navigationService">Navigation service.</param>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.GameViewModel.MenuPageCommand">
+            <summary>
+            Gets the navigate to game page command.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Main.ViewModel.MainViewModel">
+            <summary>
+            Main view model.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.ViewModel.MainViewModel.#ctor(TimeWar.Main.View.INavigationService{TimeWar.Main.View.NavigationPages})">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.ViewModel.MainViewModel"/> class.
+            </summary>
+            <param name="navigationService">Navigator service.</param>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.MainViewModel.LoadedCommand">
+            <summary>
+            Gets main menu on load.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Main.ViewModel.MenuViewModel">
+            <summary>
+            Menu view model class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.ViewModel.MenuViewModel.#ctor(TimeWar.Main.View.INavigationService{TimeWar.Main.View.NavigationPages})">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.ViewModel.MenuViewModel"/> class.
+            </summary>
+            <param name="navigationService">Navigation service.</param>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.MenuViewModel.GamePageCommand">
+            <summary>
+            Gets the navigate to game page command.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.MenuViewModel.ProfilePageCommand">
+            <summary>
+            Gets the navigate to profile page command.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Main.ViewModel.MyIoc">
+            <summary>
+            SimpleIoc with IServiceLocator interface.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.MyIoc.Instance">
+            <summary>
+            Gets the MyIoc instance.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Main.ViewModel.ViewModelLocator">
+            <summary>
+            View model locator class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.ViewModel.ViewModelLocator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.ViewModel.ViewModelLocator"/> class.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Main.View.GameWindow">
+            <summary>
+            Interaction logic for GameWindow.xaml
+            </summary>
+            <summary>
+            GameWindow
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.View.GameWindow.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:TimeWar.Main.View.INavigationService`1">
+            <summary>
+            Navigation service interface for navigation between pages.
+            </summary>
+            <typeparam name="T">Page type.</typeparam>
+        </member>
+        <member name="M:TimeWar.Main.View.INavigationService`1.NavigateTo(`0)">
+            <summary>
+            Navigate to the selected page.
+            </summary>
+            <param name="navigationPage">Name of the page.</param>
+        </member>
+        <member name="T:TimeWar.Main.View.MenuPage">
+            <summary>
+            Interaction logic for MenuPage.xaml
+            </summary>
+            <summary>
+            MenuPage
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.View.MenuPage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:TimeWar.Main.View.NavigationService`1">
+            <summary>
+            Navigation service class.
+            </summary>
+            <typeparam name="T">Enum type.</typeparam>
+        </member>
+        <member name="F:TimeWar.Main.View.NavigationService`1.frameName">
+            <summary>
+            The xaml x:Name used by the frame the navigationservice will use for pages.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Main.View.NavigationService`1.pagesByKey">
+            <summary>
+            List of pages.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Main.View.NavigationService`1.currentPageKey">
+            <summary>
+            Current page.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.View.NavigationService`1.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.View.NavigationService`1"/> class.
+            </summary>
+            <param name="frameName">Main frame name.</param>
+        </member>
+        <member name="E:TimeWar.Main.View.NavigationService`1.PropertyChanged">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Main.View.NavigationService`1.CurrentPageKey">
+            <summary>
+            Gets current page.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.View.NavigationService`1.GoBack">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Main.View.NavigationService`1.NavigateTo(`0)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Main.View.NavigationService`1.NavigateTo(System.String)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Main.View.NavigationService`1.NavigateTo(System.String,System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Main.View.NavigationService`1.ConfigurePage(System.String,System.Uri)">
+            <summary>
+            Add pages to the dictionary.
+            </summary>
+            <param name="pageKey">Name of the page.</param>
+            <param name="pagePath">Path of the page(optional).</param>
+        </member>
+        <member name="M:TimeWar.Main.View.NavigationService`1.ConfigurePages">
+            <summary>
+            Configure all of the pages for the T enum.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.View.NavigationService`1.GetDescendantFromName(System.Windows.DependencyObject,System.String)">
+            <summary>
+            Search for frame.
+            </summary>
+            <param name="parent"></param>
+            <param name="name">Name of the frame.</param>
+            <returns>Framework element if found else null.</returns>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
     </members>
 </doc>
