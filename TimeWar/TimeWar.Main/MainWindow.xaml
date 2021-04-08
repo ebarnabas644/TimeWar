@@ -3,9 +3,21 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:TimeWar.Main"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         RenderOptions.BitmapScalingMode="NearestNeighbor"
+        DataContext="{Binding MainViewModel, Source={StaticResource Locator}}"
         Title="MainWindow" Height="900" Width="1400">
-    <local:GameControl />
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedCommand, Mode=OneWay}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <Frame
+            x:Name="MainFrame"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            NavigationUIVisibility="Hidden" />
+    </Grid>
 </Window>
