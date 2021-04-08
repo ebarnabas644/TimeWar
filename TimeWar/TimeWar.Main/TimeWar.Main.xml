@@ -167,6 +167,26 @@
             InitializeComponent
             </summary>
         </member>
+        <member name="T:TimeWar.Main.View.NavigationPages">
+            <summary>
+            Enum for the pages.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Main.View.NavigationPages.MenuPage">
+            <summary>
+            Main menu view.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Main.View.NavigationPages.GamePage">
+            <summary>
+            Game view.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Main.View.NavigationPages.ProfilesPage">
+            <summary>
+            Profiles view.
+            </summary>
+        </member>
         <member name="T:TimeWar.Main.View.NavigationService`1">
             <summary>
             Navigation service class.
@@ -230,39 +250,9 @@
             <summary>
             Search for frame.
             </summary>
-            <param name="parent"></param>
+            <param name="parent">Current window.</param>
             <param name="name">Name of the frame.</param>
             <returns>Framework element if found else null.</returns>
-        </member>
-        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
-            <summary>
-            GeneratedInternalTypeHelper
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
-            <summary>
-            CreateInstance
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
-            <summary>
-            GetPropertyValue
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
-            <summary>
-            SetPropertyValue
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
-            <summary>
-            CreateDelegate
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
-            <summary>
-            AddEventHandler
-            </summary>
         </member>
     </members>
 </doc>
