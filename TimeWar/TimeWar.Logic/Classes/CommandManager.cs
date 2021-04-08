@@ -25,7 +25,11 @@ namespace TimeWar.Logic.Classes
         public CommandManager()
         {
             this.commandBuffer = new List<ICommand>();
+            this.IsFinished = true;
         }
+
+        /// <inheritdoc/>
+        public bool IsFinished { get; set; }
 
         /// <inheritdoc/>
         public void AddCommand(ICommand command)
@@ -42,6 +46,7 @@ namespace TimeWar.Logic.Classes
         /// <inheritdoc/>
         public Task Rewind()
         {
+            this.IsFinished = false;
             int counter = 0;
             Task task = new Task(
                 () =>
@@ -57,6 +62,7 @@ namespace TimeWar.Logic.Classes
                     counter++;
                 }
 
+                this.IsFinished = true;
                 this.ClearBuffer();
             }, TaskCreationOptions.LongRunning);
 

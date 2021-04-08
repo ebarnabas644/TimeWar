@@ -16,6 +16,11 @@ namespace TimeWar.Logic.Interfaces
     public interface ICommandManager
     {
         /// <summary>
+        /// Gets or sets a value indicating whether the rewind is finished.
+        /// </summary>
+        bool IsFinished { get; set; }
+
+        /// <summary>
         /// Add new command.
         /// </summary>
         /// <param name="command">Command.</param>
