@@ -33,6 +33,9 @@
             Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.CommandManager"/> class.
             </summary>
         </member>
+        <member name="P:TimeWar.Logic.Classes.CommandManager.IsFinished">
+            <inheritdoc/>
+        </member>
         <member name="M:TimeWar.Logic.Classes.CommandManager.AddCommand(TimeWar.Logic.Interfaces.ICommand)">
             <inheritdoc/>
         </member>
@@ -90,6 +93,11 @@
         <member name="T:TimeWar.Logic.Interfaces.ICommandManager">
             <summary>
             Command manager interface.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Interfaces.ICommandManager.IsFinished">
+            <summary>
+            Gets or sets a value indicating whether the rewind is finished.
             </summary>
         </member>
         <member name="M:TimeWar.Logic.Interfaces.ICommandManager.AddCommand(TimeWar.Logic.Interfaces.ICommand)">

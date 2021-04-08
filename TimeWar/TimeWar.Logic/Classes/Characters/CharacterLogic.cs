@@ -6,6 +6,7 @@ namespace TimeWar.Logic
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Drawing;
     using System.Linq;
     using System.Text;
@@ -25,7 +26,7 @@ namespace TimeWar.Logic
         private GameModel model;
         private Character character;
         private CommandManager commandManager;
-        private bool isJumping; 
+        private bool isJumping;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CharacterLogic"/> class.
@@ -78,8 +79,6 @@ namespace TimeWar.Logic
                     this.commandManager.AddCommand(command);
                 }
             }
-
-
         }
 
         private Point Move()
