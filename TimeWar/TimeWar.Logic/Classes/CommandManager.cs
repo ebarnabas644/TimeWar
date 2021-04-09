@@ -53,7 +53,7 @@ namespace TimeWar.Logic.Classes
             {
                 foreach (ICommand command in Enumerable.Reverse(this.commandBuffer))
                 {
-                    if (counter < 50)
+                    if (counter < this.commandBuffer.Count / 4)
                     {
                         command.Undo();
                         Thread.Sleep(10);
