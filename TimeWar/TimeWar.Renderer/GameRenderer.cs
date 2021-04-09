@@ -28,13 +28,15 @@ namespace TimeWar.Renderer
         private double windowWidthCache;
         private Dictionary<string, Brush> staticBrushes;
         private Dictionary<Character, ImageBrush[][]> spriteBrushes;
+        private bool menuMode;
         private int spriteFps;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameRenderer"/> class.
         /// </summary>
         /// <param name="model">Game model entity.</param>
-        public GameRenderer(GameModel model)
+        /// <param name="menuMode">Game menu mode.</param>
+        public GameRenderer(GameModel model, bool menuMode)
         {
             this.model = model;
             this.spriteTimer = new Stopwatch();
@@ -44,6 +46,7 @@ namespace TimeWar.Renderer
                 this.windowWidthCache = this.model.Camera.WindowWidth;
             }
 
+            this.menuMode = menuMode;
             this.spriteBrushes = new Dictionary<Character, ImageBrush[][]>();
             this.staticBrushes = new Dictionary<string, Brush>();
             this.spriteTimer.Start();
@@ -60,7 +63,11 @@ namespace TimeWar.Renderer
             dg.Children.Add(this.GetBackground());
 
             // dg.Children.Add(this.GetCollision());
-            dg.Children.Add(this.GetPlayer());
+            if (!this.menuMode)
+            {
+                dg.Children.Add(this.GetPlayer());
+            }
+
             return dg;
         }
 
@@ -101,6 +108,18 @@ namespace TimeWar.Renderer
         private Drawing GetBackground()
         {
             Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetViewportX, this.model.Camera.GetViewportY, this.model.CurrentWorld.GameWidth, this.model.CurrentWorld.GameHeight));
+            if (this.menuMode)
+            {
+                int prevX = this.model.Hero.Position.X;
+                int prevY = this.model.Hero.Position.Y;
+                int prevCamX = this.model.Camera.GetViewportX;
+                this.model.Hero.Position = new System.Drawing.Point(prevX + 1, prevY);
+                if (prevCamX == this.model.Camera.GetViewportX)
+                {
+                    this.model.Hero.Position = new System.Drawing.Point(this.model.Camera.WindowWidth / 2, prevY);
+                }
+            }
+
             this.backgroundCache = new GeometryDrawing(this.GetBrush(this.model.CurrentWorld.WorldName), null, g);
             return this.backgroundCache;
         }

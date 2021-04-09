@@ -9,11 +9,12 @@
             Game rendering class.
             </summary>
         </member>
-        <member name="M:TimeWar.Renderer.GameRenderer.#ctor(TimeWar.Model.GameModel)">
+        <member name="M:TimeWar.Renderer.GameRenderer.#ctor(TimeWar.Model.GameModel,System.Boolean)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Renderer.GameRenderer"/> class.
             </summary>
             <param name="model">Game model entity.</param>
+            <param name="menuMode">Game menu mode.</param>
         </member>
         <member name="M:TimeWar.Renderer.GameRenderer.BuildDrawing">
             <summary>
