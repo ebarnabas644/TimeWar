@@ -23,10 +23,12 @@ namespace TimeWar.Logic
     /// </summary>
     public class CharacterLogic
     {
+        private const int DefaultAcceleration = 1;
         private GameModel model;
         private Character character;
         private CommandManager commandManager;
         private bool isJumping;
+        private int acceleration;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CharacterLogic"/> class.
@@ -40,6 +42,7 @@ namespace TimeWar.Logic
             this.character = character;
             this.commandManager = commandManager;
             this.isJumping = false;
+            this.acceleration = DefaultAcceleration;
         }
 
         /// <summary>
@@ -68,15 +71,28 @@ namespace TimeWar.Logic
                     commandAdded = true;
                 }
 
-                if (!this.Collision(new Point(0, 1)))
+                if (!this.Collision(new Point(0, this.acceleration)))
                 {
-                    MoveCommand gravity = new MoveCommand(this.character, new Point(0, 1), this.model);
+                    MoveCommand gravity = new MoveCommand(this.character, new Point(0, this.acceleration), this.model);
                     gravity.Execute();
+                    this.commandManager.AddCommand(gravity);
+                    if (!this.Collision(new Point(0, this.acceleration + 1)) && this.acceleration < 3)
+                    {
+                        this.acceleration++;
+                    }
                 }
 
                 if (!commandAdded)
                 {
                     this.commandManager.AddCommand(command);
+                }
+
+                if (this.Collision(new Point(0, 0)))
+                {
+                    while (this.Collision(new Point(0, 0)))
+                    {
+                        this.character.Position = new Point(this.character.Position.X, this.character.Position.Y - 1);
+                    }
                 }
             }
         }
@@ -122,7 +138,6 @@ namespace TimeWar.Logic
                 this.character.Position.Y + newPoint.Y,
                 this.character.Width / this.model.CurrentWorld.TileSize,
                 this.character.Height / this.model.CurrentWorld.TileSize);
-
             Point actorLocation;
 
             for (int i = 0; i < actor.Width; i++)
@@ -130,6 +145,7 @@ namespace TimeWar.Logic
                 actorLocation = new Point(this.PixelToTile(actor.X) + i, this.PixelToTile(actor.Y - 1) + actor.Height);
                 if (this.model.CurrentWorld.SearchGround(actorLocation))
                 {
+                    this.acceleration = DefaultAcceleration;
                     this.isJumping = false;
                     return true;
                 }
@@ -147,6 +163,24 @@ namespace TimeWar.Logic
             for (int i = 0; i < actor.Width; i++)
             {
                 actorLocation = new Point(this.PixelToTile(actor.X) + i, this.PixelToTile(actor.Y));
+                if (this.model.CurrentWorld.SearchGround(actorLocation))
+                {
+                    return true;
+                }
+            }
+
+            for (int i = 0; i < actor.Height; i++)
+            {
+                actorLocation = new Point(this.PixelToTile(actor.X), this.PixelToTile(actor.Y) + i);
+                if (this.model.CurrentWorld.SearchGround(actorLocation))
+                {
+                    return true;
+                }
+            }
+
+            for (int i = 0; i < actor.Height; i++)
+            {
+                actorLocation = new Point(this.PixelToTile(actor.X), this.PixelToTile(actor.Y) + i);
                 if (this.model.CurrentWorld.SearchGround(actorLocation))
                 {
                     return true;
