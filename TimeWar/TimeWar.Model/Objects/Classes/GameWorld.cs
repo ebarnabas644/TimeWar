@@ -34,6 +34,7 @@ namespace TimeWar.Model.Objects
             {
                 this.ground[i] = new bool[width];
             }
+
             this.pointOfInterests = new Dictionary<string, Point>();
             this.Magnify = magnify;
             this.TileSize = tileSize;
@@ -174,11 +175,11 @@ namespace TimeWar.Model.Objects
         /// <summary>
         /// Convert pixel value to tile value.
         /// </summary>
-        /// <param name="PixelPos">Tile position.</param>
+        /// <param name="pixelPos">Tile position.</param>
         /// <returns>Pixel position.</returns>
-        public int ConvertPixelToTile(int PixelPos)
+        public int ConvertPixelToTile(int pixelPos)
         {
-            return PixelPos / this.Magnify / this.TileSize;
+            return pixelPos / this.Magnify / this.TileSize;
         }
     }
 }

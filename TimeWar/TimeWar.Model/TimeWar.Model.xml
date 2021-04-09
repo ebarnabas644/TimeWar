@@ -208,7 +208,7 @@
             <summary>
             Convert pixel value to tile value.
             </summary>
-            <param name="PixelPos">Tile position.</param>
+            <param name="pixelPos">Tile position.</param>
             <returns>Pixel position.</returns>
         </member>
         <member name="T:TimeWar.Model.Objects.Player">
