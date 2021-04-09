@@ -13,6 +13,10 @@
     <DocumentationFile>TimeWar.Main.xml</DocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Fonts\Gamepixies-8MO6n.ttf" />
+  </ItemGroup>
+
 	<ItemGroup>
 		<AdditionalFiles Include="stylecop.json" />
 	</ItemGroup>
@@ -31,6 +35,12 @@
     <ProjectReference Include="..\TimeWar.Logic\TimeWar.Logic.csproj" />
     <ProjectReference Include="..\TimeWar.Model\TimeWar.Model.csproj" />
     <ProjectReference Include="..\TimeWar.Renderer\TimeWar.Renderer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\Gamepixies-8MO6n.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
