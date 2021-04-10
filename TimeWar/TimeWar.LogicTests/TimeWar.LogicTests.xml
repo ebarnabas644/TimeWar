@@ -4,5 +4,25 @@
         <name>TimeWar.LogicTests</name>
     </assembly>
     <members>
+        <member name="T:TimeWar.LogicTests.Tests">
+            <summary>
+            Test class for logic methods.
+            </summary>
+        </member>
+        <member name="M:TimeWar.LogicTests.Tests.Setup">
+            <summary>
+            Sets up testing.
+            </summary>
+        </member>
+        <member name="M:TimeWar.LogicTests.Tests.PlayerMovementTest">
+            <summary>
+            Tests player movement.
+            </summary>
+        </member>
+        <member name="M:TimeWar.LogicTests.Tests.TestRewind">
+            <summary>
+            Test rewind feature.
+            </summary>
+        </member>
     </members>
 </doc>

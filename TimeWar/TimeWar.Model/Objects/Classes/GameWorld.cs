@@ -142,5 +142,44 @@ namespace TimeWar.Model.Objects
                 Debug.WriteLine("GameWorld.RemoveGround: Bad value: (X: " + position.X + " Y: " + position.Y + ")");
             }
         }
+
+        /// <summary>
+        /// Search for ground tiles.
+        /// </summary>
+        /// <param name="position">Position.</param>
+        /// <returns>Bool based on the ground value.</returns>
+        public bool SearchGround(Point position)
+        {
+            try
+            {
+                return this.ground[position.Y][position.X];
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Debug.WriteLine("GameWorld.SearchGround: Bad value: (X: " + position.X + " Y: " + position.Y + ")");
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        /// Convert tile value to pixel value.
+        /// </summary>
+        /// <param name="tilePos">Tile position.</param>
+        /// <returns>Pixel position.</returns>
+        public int ConvertTileToPixel(int tilePos)
+        {
+            return tilePos * this.Magnify * this.TileSize;
+        }
+
+        /// <summary>
+        /// Convert pixel value to tile value.
+        /// </summary>
+        /// <param name="pixelPos">Tile position.</param>
+        /// <returns>Pixel position.</returns>
+        public int ConvertPixelToTile(int pixelPos)
+        {
+            return pixelPos / this.Magnify / this.TileSize;
+        }
     }
 }
