@@ -15,38 +15,48 @@ namespace TimeWar.Model.Objects
     /// <summary>
     /// Movement types.
     /// </summary>
-    public enum Directions
+    public enum Stances
     {
         /// <summary>
-        /// Base stance.
+        /// Base right stance.
         /// </summary>
-        Stand,
+        StandRight,
 
         /// <summary>
-        /// Right direction.
+        /// Base left stance.
+        /// </summary>
+        StandLeft,
+
+        /// <summary>
+        /// Right stance.
         /// </summary>
         Right,
 
         /// <summary>
-        /// Left direction.
+        /// Left stance.
         /// </summary>
         Left,
 
         /// <summary>
-        /// Up direction.
+        /// Up stance.
         /// </summary>
         Up,
 
         /// <summary>
-        /// Down direction.
+        /// Down stance.
         /// </summary>
         Down,
+
+        /// <summary>
+        /// Jump stance.
+        /// </summary>
+        Jump,
     }
 
     /// <summary>
     /// Basic character information class.
     /// </summary>
-    public abstract class Character : IMoveable
+    public abstract class Character : IMoveable, IGameObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Character"/> class.
@@ -54,18 +64,45 @@ namespace TimeWar.Model.Objects
         /// <param name="pos">Character position.</param>
         /// <param name="speed">Movement speed.</param>
         /// <param name="health">Base health.</param>
-        protected Character(Point pos, int speed, int health)
+        /// <param name="height">Character height.</param>
+        /// <param name="width">Character width.</param>
+        /// <param name="spriteFile">Name of the sprite file.</param>
+        protected Character(Point pos, int speed, int health, int height, int width, string spriteFile)
         {
             this.Position = pos;
             this.Speed = speed;
             this.Health = health;
-            this.Direction = Directions.Stand;
+            this.Height = height;
+            this.Width = width;
+            this.SpriteFile = spriteFile;
+            this.CurrentSprite = 0;
+            this.Direction = Stances.StandRight;
         }
+
+        /// <summary>
+        /// Gets or sets character height in pixel.
+        /// </summary>
+        public int Height { get; set; }
+
+        /// <summary>
+        /// Gets or sets character width in pixel.
+        /// </summary>
+        public int Width { get; set; }
+
+        /// <summary>
+        /// Gets or sets the character sprite file name.
+        /// </summary>
+        public string SpriteFile { get; set; }
+
+        /// <summary>
+        /// Gets or sets current sprite frame.
+        /// </summary>
+        public int CurrentSprite { get; set; }
 
         /// <summary>
         /// Gets or sets moving direction.
         /// </summary>
-        public Directions Direction { get; set; }
+        public Stances Direction { get; set; }
 
         /// <inheritdoc/>
         public Point Position { get; set; }

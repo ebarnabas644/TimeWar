@@ -11,6 +11,7 @@ namespace TimeWar.Logic
     using System.Text;
     using System.Threading.Tasks;
     using System.Xml.Linq;
+    using TimeWar.Logic.Classes;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
 
@@ -55,7 +56,7 @@ namespace TimeWar.Logic
             {
                 for (int x = 0; x < gameWorld.GetTileWidth; x++)
                 {
-                    if (grounddata[y][x] == "1")
+                    if (grounddata[y][x] != "0")
                     {
                         gameWorld.AddGround(new Point(x, y));
                     }
@@ -83,7 +84,7 @@ namespace TimeWar.Logic
         {
             int startX = this.model.CurrentWorld.SearchPointOfInterest("start").X * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize;
             int startY = this.model.CurrentWorld.SearchPointOfInterest("start").Y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize;
-            return new Player(new Point(startX, startY), this.model.CurrentWorld.TileSize, 100);
+            return new Player(new Point(startX, startY - (InitConfig.PlayerHeight * this.model.CurrentWorld.TileSize)), this.model.CurrentWorld.TileSize, InitConfig.PlayerHealth, InitConfig.PlayerHeight, InitConfig.PlayerWidth, InitConfig.PlayerSpritesheet);
         }
 
         private void BuildModel(string mapName)
