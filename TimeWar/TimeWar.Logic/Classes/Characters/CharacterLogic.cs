@@ -31,6 +31,7 @@ namespace TimeWar.Logic
         private int acceleration;
         private Stopwatch accelerationStopwatch = new Stopwatch();
         private Stopwatch jumpingTimeOut = new Stopwatch();
+        private Point moveVector;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CharacterLogic"/> class.
@@ -46,8 +47,66 @@ namespace TimeWar.Logic
             this.isJumping = false;
             this.acceleration = DefaultAcceleration;
             this.jumpingTimeOut.Start();
+            this.moveVector = new Point(0, 0);
         }
 
+
+        /// <summary>
+        /// 1 frame event.
+        /// </summary>
+        public void OneTick()
+        {
+            Point newPoint = this.Move();
+            if (Math.Abs(this.moveVector.X) < 15)
+            {
+                this.moveVector.X += newPoint.X;
+            }
+            this.moveVector.Y += newPoint.Y;
+
+
+            if (this.MovementCollision(new Point(0, newPoint.Y)))
+            {
+                while (this.MovementCollision(new Point(0, newPoint.Y)))
+                {
+                    this.character.Position = new Point(this.character.Position.X, this.character.Position.Y - 1);
+                }
+            }
+
+            if (!this.MovementCollision(new Point(0, this.acceleration)))
+            {
+
+                this.moveVector.Y += this.acceleration;
+
+                if ((!this.MovementCollision(new Point(0, this.acceleration + 1)) && this.acceleration < 10) && !this.accelerationStopwatch.IsRunning)
+                {
+                    this.accelerationStopwatch.Start();
+                }
+
+                if (this.accelerationStopwatch.ElapsedMilliseconds > 100)
+                {
+                    this.acceleration++;
+                    this.accelerationStopwatch.Restart();
+                }
+            }
+
+
+            if (!this.MovementCollision(newPoint))
+            {
+                this.character.Position = new Point(this.character.Position.X + this.moveVector.X, this.character.Position.Y + this.moveVector.Y);
+            }
+
+            if (this.moveVector.X > 0)
+            {
+                this.moveVector.X--;
+            }
+
+            if (this.moveVector.X < 0)
+            {
+                this.moveVector.X++;
+            }
+        }
+
+        /*
         /// <summary>
         /// 1 frame event.
         /// </summary>
@@ -104,42 +163,6 @@ namespace TimeWar.Logic
                     }
                 }
             }
-        }
-
-        private Point Move()
-        {
-            Point direction;
-            switch (this.character.Direction)
-            {
-                case Stances.StandRight:
-                    direction = new Point(0, 0);
-                    break;
-                case Stances.Right:
-                    direction = new Point(1, 0);
-                    break;
-                case Stances.Left:
-                    direction = new Point(-1, 0);
-                    break;
-                case Stances.Up:
-                    direction = new Point(0, 0);
-                    if (!this.isJumping && this.jumpingTimeOut.ElapsedMilliseconds > 250)
-                    {
-                        this.jumpingTimeOut.Restart();
-                        this.isJumping = true;
-                        this.accelerationStopwatch.Start();
-                        direction = new Point(0, -1);
-                    }
-
-                    break;
-                case Stances.Down:
-                    direction = new Point(0, 1);
-                    break;
-                default:
-                    direction = new Point(0, 0);
-                    break;
-            }
-
-            return direction;
         }
 
         private bool MovementCollision(Point newPoint)
@@ -205,6 +228,108 @@ namespace TimeWar.Logic
         private int TileToPixel(int num)
         {
             return this.model.CurrentWorld.ConvertTileToPixel(num);
+        }
+    }
+        */
+
+        private Point Move()
+        {
+            Point direction;
+            switch (this.character.Direction)
+            {
+                case Stances.StandRight:
+                    direction = new Point(0, 0);
+                    break;
+                case Stances.Right:
+                    direction = new Point(2, 0);
+                    break;
+                case Stances.Left:
+                    direction = new Point(-2, 0);
+                    break;
+                case Stances.Up:
+                    direction = new Point(0, 0);
+                    if (!this.isJumping && this.jumpingTimeOut.ElapsedMilliseconds > 250)
+                    {
+                        this.jumpingTimeOut.Restart();
+                        this.isJumping = true;
+                        this.accelerationStopwatch.Start();
+                        direction = new Point(0, -15);
+                    }
+
+                    break;
+                case Stances.Down:
+                    direction = new Point(0, 1);
+                    break;
+                default:
+                    direction = new Point(0, 0);
+                    break;
+            }
+
+            return direction;
+        }
+
+        private bool MovementCollision(Point newPoint)
+        {
+            Rectangle actor = new Rectangle(
+                this.character.Position.X + newPoint.X,
+                this.character.Position.Y + newPoint.Y,
+                this.character.Width / this.model.CurrentWorld.TileSize,
+                this.character.Height / this.model.CurrentWorld.TileSize);
+            Point actorLocation;
+
+            // Ground collision
+            for (int i = 0; i < actor.Width + 1; i++)
+            {
+                actorLocation = new Point(this.PixelToTile(actor.X + 1) + i, this.PixelToTile(actor.Y + this.moveVector.Y) + actor.Height); // itt
+                if (this.model.CurrentWorld.SearchGround(actorLocation))
+                {
+                    this.moveVector.Y = 0;
+                    this.acceleration = DefaultAcceleration;
+                    this.accelerationStopwatch.Reset();
+                    this.isJumping = false;
+                    return true;
+                }
+            }
+
+            // Top collision
+            for (int i = 0; i < actor.Width; i++)
+            {
+                actorLocation = new Point(this.PixelToTile(actor.X) + i, this.PixelToTile(actor.Y + this.moveVector.Y));
+                if (this.model.CurrentWorld.SearchGround(actorLocation))
+                {
+                    this.moveVector.Y = 0;
+                    return true;
+                }
+            }
+
+            // Right wall collision
+            for (int i = 0; i < actor.Height; i++)
+            {
+                actorLocation = new Point(this.PixelToTile(actor.X + this.moveVector.X) + actor.Width, this.PixelToTile(actor.Y) + i);
+                if (this.model.CurrentWorld.SearchGround(actorLocation))
+                {
+                    this.moveVector.X = 0;
+                    return true;
+                }
+            }
+
+            // Left wall collision
+            for (int i = 0; i < actor.Height; i++)
+            {
+                actorLocation = new Point(this.PixelToTile(actor.X + this.moveVector.X), this.PixelToTile(actor.Y) + i);
+                if (this.model.CurrentWorld.SearchGround(actorLocation))
+                {
+                    this.moveVector.X = 0;
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private int PixelToTile(int num)
+        {
+            return this.model.CurrentWorld.ConvertPixelToTile(num);
         }
     }
 }
