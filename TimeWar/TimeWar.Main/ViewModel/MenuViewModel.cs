@@ -20,8 +20,8 @@ namespace TimeWar.Main.ViewModel
     {
         private INavigationService<NavigationPages> navigationService;
         private RelayCommand gamePageCommand;
-
-        private RelayCommand profilePageCommand;
+        private RelayCommand profilesPageCommand;
+        private RelayCommand exitCommand;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MenuViewModel"/> class.
@@ -42,8 +42,15 @@ namespace TimeWar.Main.ViewModel
         /// <summary>
         /// Gets the navigate to profile page command.
         /// </summary>
-        public RelayCommand ProfilePageCommand => this.profilePageCommand
-                       ?? (this.profilePageCommand = new RelayCommand(
+        public RelayCommand ProfilesPageCommand => this.profilesPageCommand
+                       ?? (this.profilesPageCommand = new RelayCommand(
                            () => this.navigationService.NavigateTo("ProfilesPage")));
+
+        /// <summary>
+        /// Gets the navigate to profile page command.
+        /// </summary>
+        public RelayCommand ExitCommand => this.exitCommand
+                       ?? (this.exitCommand = new RelayCommand(
+                           () => System.Windows.Application.Current.Shutdown()));
     }
 }

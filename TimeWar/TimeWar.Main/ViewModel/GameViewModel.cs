@@ -34,6 +34,6 @@ namespace TimeWar.Main.ViewModel
         /// </summary>
         public RelayCommand MenuPageCommand => this.menuPageCommand
                     ?? (this.menuPageCommand = new RelayCommand(
-                    () => this.navigationService.NavigateTo("Menu")));
+                    () => this.navigationService.NavigateTo("MenuPage")));
     }
 }
