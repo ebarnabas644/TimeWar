@@ -29,6 +29,8 @@ namespace TimeWar.Logic
         private CommandManager commandManager;
         private bool isJumping;
         private int acceleration;
+        private Stopwatch accelerationStopwatch = new Stopwatch();
+        private Stopwatch jumpingTimeOut = new Stopwatch();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CharacterLogic"/> class.
@@ -43,6 +45,7 @@ namespace TimeWar.Logic
             this.commandManager = commandManager;
             this.isJumping = false;
             this.acceleration = DefaultAcceleration;
+            this.jumpingTimeOut.Start();
         }
 
         /// <summary>
@@ -53,14 +56,14 @@ namespace TimeWar.Logic
             bool commandAdded = false;
             Point newPoint = this.Move();
 
-            if (!this.Collision(newPoint))
+            if (!this.MovementCollision(newPoint))
             {
                 MoveCommand command = new MoveCommand(this.character, newPoint, this.model);
                 command.Execute();
                 if (newPoint.Y == -1)
                 {
                     int counter = 0;
-                    while (counter < 14 && !this.Collision(newPoint))
+                    while (counter < 14 && !this.MovementCollision(newPoint))
                     {
                         command = new MoveCommand(this.character, newPoint, this.model);
                         command.Execute();
@@ -71,14 +74,20 @@ namespace TimeWar.Logic
                     commandAdded = true;
                 }
 
-                if (!this.Collision(new Point(0, this.acceleration)))
+                if (!this.MovementCollision(new Point(0, this.acceleration)))
                 {
                     MoveCommand gravity = new MoveCommand(this.character, new Point(0, this.acceleration), this.model);
                     gravity.Execute();
                     this.commandManager.AddCommand(gravity);
-                    if (!this.Collision(new Point(0, this.acceleration + 1)) && this.acceleration < 3)
+                    if ((!this.MovementCollision(new Point(0, this.acceleration + 1)) && this.acceleration < 3) && !this.accelerationStopwatch.IsRunning)
+                    {
+                        this.accelerationStopwatch.Start();
+                    }
+
+                    if (this.accelerationStopwatch.ElapsedMilliseconds > 100)
                     {
                         this.acceleration++;
+                        this.accelerationStopwatch.Restart();
                     }
                 }
 
@@ -87,9 +96,9 @@ namespace TimeWar.Logic
                     this.commandManager.AddCommand(command);
                 }
 
-                if (this.Collision(new Point(0, 0)))
+                if (this.MovementCollision(new Point(0, 0)))
                 {
-                    while (this.Collision(new Point(0, 0)))
+                    while (this.MovementCollision(new Point(0, 0)))
                     {
                         this.character.Position = new Point(this.character.Position.X, this.character.Position.Y - 1);
                     }
@@ -113,9 +122,11 @@ namespace TimeWar.Logic
                     break;
                 case Stances.Up:
                     direction = new Point(0, 0);
-                    if (!this.isJumping)
+                    if (!this.isJumping && this.jumpingTimeOut.ElapsedMilliseconds > 250)
                     {
+                        this.jumpingTimeOut.Restart();
                         this.isJumping = true;
+                        this.accelerationStopwatch.Start();
                         direction = new Point(0, -1);
                     }
 
@@ -131,7 +142,7 @@ namespace TimeWar.Logic
             return direction;
         }
 
-        private bool Collision(Point newPoint)
+        private bool MovementCollision(Point newPoint)
         {
             Rectangle actor = new Rectangle(
                 this.character.Position.X + newPoint.X,
@@ -140,26 +151,20 @@ namespace TimeWar.Logic
                 this.character.Height / this.model.CurrentWorld.TileSize);
             Point actorLocation;
 
+            // Ground collision
             for (int i = 0; i < actor.Width; i++)
             {
-                actorLocation = new Point(this.PixelToTile(actor.X) + i, this.PixelToTile(actor.Y - 1) + actor.Height);
+                actorLocation = new Point(this.PixelToTile(actor.X + 1) + i, this.PixelToTile(actor.Y) + actor.Height); // itt
                 if (this.model.CurrentWorld.SearchGround(actorLocation))
                 {
                     this.acceleration = DefaultAcceleration;
+                    this.accelerationStopwatch.Reset();
                     this.isJumping = false;
                     return true;
                 }
             }
 
-            for (int i = 0; i < actor.Height; i++)
-            {
-                actorLocation = new Point(this.PixelToTile(actor.X - 1) + actor.Width, this.PixelToTile(actor.Y) + i);
-                if (this.model.CurrentWorld.SearchGround(actorLocation))
-                {
-                    return true;
-                }
-            }
-
+            // Top collision
             for (int i = 0; i < actor.Width; i++)
             {
                 actorLocation = new Point(this.PixelToTile(actor.X) + i, this.PixelToTile(actor.Y));
@@ -169,24 +174,17 @@ namespace TimeWar.Logic
                 }
             }
 
+            // Right wall collision
             for (int i = 0; i < actor.Height; i++)
             {
-                actorLocation = new Point(this.PixelToTile(actor.X), this.PixelToTile(actor.Y) + i);
+                actorLocation = new Point(this.PixelToTile(actor.X - 1) + actor.Width, this.PixelToTile(actor.Y) + i);
                 if (this.model.CurrentWorld.SearchGround(actorLocation))
                 {
                     return true;
                 }
             }
 
-            for (int i = 0; i < actor.Height; i++)
-            {
-                actorLocation = new Point(this.PixelToTile(actor.X), this.PixelToTile(actor.Y) + i);
-                if (this.model.CurrentWorld.SearchGround(actorLocation))
-                {
-                    return true;
-                }
-            }
-
+            // Left wall collision
             for (int i = 0; i < actor.Height; i++)
             {
                 actorLocation = new Point(this.PixelToTile(actor.X), this.PixelToTile(actor.Y) + i);
@@ -202,6 +200,11 @@ namespace TimeWar.Logic
         private int PixelToTile(int num)
         {
             return this.model.CurrentWorld.ConvertPixelToTile(num);
+        }
+
+        private int TileToPixel(int num)
+        {
+            return this.model.CurrentWorld.ConvertTileToPixel(num);
         }
     }
 }
