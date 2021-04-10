@@ -58,7 +58,7 @@ namespace TimeWar.Main
             this.model = new GameModel();
             this.initLogic = new InitLogic(this.model, "test");
             this.model.Camera = new Viewport((int)this.ActualWidth, (int)this.ActualHeight, (int)this.model.CurrentWorld.GameWidth, (int)this.model.CurrentWorld.GameHeight, this.model.Hero);
-            this.renderer = new GameRenderer(this.model);
+            this.renderer = new GameRenderer(this.model, false);
             this.commandManager = new Logic.Classes.CommandManager();
             this.characterLogic = new CharacterLogic(this.model, this.model.Hero, this.commandManager);
             this.time.Start();
