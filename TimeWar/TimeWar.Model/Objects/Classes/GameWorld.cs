@@ -171,5 +171,15 @@ namespace TimeWar.Model.Objects
         {
             return tilePos * this.Magnify * this.TileSize;
         }
+
+        /// <summary>
+        /// Convert pixel value to tile value.
+        /// </summary>
+        /// <param name="pixelPos">Tile position.</param>
+        /// <returns>Pixel position.</returns>
+        public int ConvertPixelToTile(int pixelPos)
+        {
+            return pixelPos / this.Magnify / this.TileSize;
+        }
     }
 }

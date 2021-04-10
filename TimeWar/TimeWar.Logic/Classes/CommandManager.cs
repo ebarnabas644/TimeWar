@@ -25,7 +25,11 @@ namespace TimeWar.Logic.Classes
         public CommandManager()
         {
             this.commandBuffer = new List<ICommand>();
+            this.IsFinished = true;
         }
+
+        /// <inheritdoc/>
+        public bool IsFinished { get; set; }
 
         /// <inheritdoc/>
         public void AddCommand(ICommand command)
@@ -42,17 +46,26 @@ namespace TimeWar.Logic.Classes
         /// <inheritdoc/>
         public Task Rewind()
         {
+            this.IsFinished = false;
+            int counter = 0;
             Task task = new Task(
                 () =>
             {
                 foreach (ICommand command in Enumerable.Reverse(this.commandBuffer))
                 {
-                    command.Undo();
-                    Thread.Sleep(10);
+                    if (counter < this.commandBuffer.Count / 4)
+                    {
+                        command.Undo();
+                        Thread.Sleep(10);
+                    }
+
+                    counter++;
                 }
 
+                this.IsFinished = true;
                 this.ClearBuffer();
             }, TaskCreationOptions.LongRunning);
+
             return task;
         }
     }

@@ -56,22 +56,7 @@
             InitializeComponent
             </summary>
         </member>
-        <member name="T:TimeWar.Main.MenuControl">
-            <summary>
-            Main menu control class.
-            </summary>
-        </member>
-        <member name="M:TimeWar.Main.MenuControl.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:TimeWar.Main.MenuControl"/> class.
-            </summary>
-        </member>
-        <member name="M:TimeWar.Main.MenuControl.OnRender(System.Windows.Media.DrawingContext)">
-            <summary>
-            Render drawing groups.
-            </summary>
-            <param name="drawingContext">Canvas.</param>
-        </member>
+<<<<<<< HEAD
         <member name="T:TimeWar.Main.ViewModel.GameViewModel">
             <summary>
             Game view model class.
@@ -120,12 +105,7 @@
             Gets the navigate to game page command.
             </summary>
         </member>
-        <member name="P:TimeWar.Main.ViewModel.MenuViewModel.ProfilesPageCommand">
-            <summary>
-            Gets the navigate to profile page command.
-            </summary>
-        </member>
-        <member name="P:TimeWar.Main.ViewModel.MenuViewModel.ExitCommand">
+        <member name="P:TimeWar.Main.ViewModel.MenuViewModel.ProfilePageCommand">
             <summary>
             Gets the navigate to profile page command.
             </summary>
@@ -140,22 +120,6 @@
             Gets the MyIoc instance.
             </summary>
         </member>
-        <member name="T:TimeWar.Main.ViewModel.ProfilesViewModel">
-            <summary>
-            Profile view model class.
-            </summary>
-        </member>
-        <member name="M:TimeWar.Main.ViewModel.ProfilesViewModel.#ctor(TimeWar.Main.View.INavigationService{TimeWar.Main.View.NavigationPages})">
-            <summary>
-            Initializes a new instance of the <see cref="T:TimeWar.Main.ViewModel.ProfilesViewModel"/> class.
-            </summary>
-            <param name="navigationService">Navigation service.</param>
-        </member>
-        <member name="P:TimeWar.Main.ViewModel.ProfilesViewModel.MenuPageCommand">
-            <summary>
-            Gets the navigate to game page command.
-            </summary>
-        </member>
         <member name="T:TimeWar.Main.ViewModel.ViewModelLocator">
             <summary>
             View model locator class.
@@ -164,26 +128,6 @@
         <member name="M:TimeWar.Main.ViewModel.ViewModelLocator.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Main.ViewModel.ViewModelLocator"/> class.
-            </summary>
-        </member>
-        <member name="P:TimeWar.Main.ViewModel.ViewModelLocator.MenuViewModel">
-            <summary>
-            Gets or sets menu view model.
-            </summary>
-        </member>
-        <member name="P:TimeWar.Main.ViewModel.ViewModelLocator.MainViewModel">
-            <summary>
-            Gets or sets main frame view model.
-            </summary>
-        </member>
-        <member name="P:TimeWar.Main.ViewModel.ViewModelLocator.GameViewModel">
-            <summary>
-            Gets or sets game view model.
-            </summary>
-        </member>
-        <member name="P:TimeWar.Main.ViewModel.ViewModelLocator.ProfilesViewModel">
-            <summary>
-            Gets or sets profiles view model.
             </summary>
         </member>
         <member name="T:TimeWar.Main.View.GameWindow">
@@ -213,15 +157,10 @@
         </member>
         <member name="T:TimeWar.Main.View.MenuPage">
             <summary>
-            Interaction logic for MenuPage.xaml.
+            Interaction logic for MenuPage.xaml
             </summary>
             <summary>
             MenuPage
-            </summary>
-        </member>
-        <member name="M:TimeWar.Main.View.MenuPage.#ctor">
-            <summary>
-            Initializes a new instance of the <see cref="T:TimeWar.Main.View.MenuPage"/> class.
             </summary>
         </member>
         <member name="M:TimeWar.Main.View.MenuPage.InitializeComponent">
@@ -316,18 +255,37 @@
             <param name="name">Name of the frame.</param>
             <returns>Framework element if found else null.</returns>
         </member>
-        <member name="T:TimeWar.Main.View.ProfilesPage">
+=======
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
             <summary>
-            Interaction logic for ProfilesPage.xaml
-            </summary>
-            <summary>
-            ProfilesPage
+            GeneratedInternalTypeHelper
             </summary>
         </member>
-        <member name="M:TimeWar.Main.View.ProfilesPage.InitializeComponent">
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
             <summary>
-            InitializeComponent
+            CreateInstance
             </summary>
         </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+>>>>>>> characterController
     </members>
 </doc>

@@ -95,11 +95,41 @@ namespace TimeWar.Main
         {
             switch (e.Key)
             {
-                case Key.W: this.model.Hero.Direction = Stances.Up; break;
-                case Key.A: this.model.Hero.Direction = Stances.Left; break;
-                case Key.S: this.model.Hero.Direction = Stances.Down; break;
-                case Key.D: this.model.Hero.Direction = Stances.Right; break;
-                case Key.E: this.commandManager.Rewind().Start(); break;
+                case Key.W:
+                    if (this.commandManager.IsFinished)
+                    {
+                        this.model.Hero.Direction = Stances.Up;
+                        Debug.WriteLine("Up pressed!");
+                    }
+
+                    break;
+                case Key.A:
+                    if (this.commandManager.IsFinished)
+                    {
+                        this.model.Hero.Direction = Stances.Left;
+                        Debug.WriteLine("Left pressed!");
+                    }
+
+                    break;
+                case Key.S:
+                    if (this.commandManager.IsFinished)
+                    {
+                        this.model.Hero.Direction = Stances.Down;
+                        Debug.WriteLine("Down pressed!");
+                    }
+
+                    break;
+                case Key.D:
+                    if (this.commandManager.IsFinished)
+                    {
+                        this.model.Hero.Direction = Stances.Right;
+                        Debug.WriteLine("Right pressed!");
+                    }
+
+                    break;
+                case Key.E:
+                    this.commandManager.Rewind().Start();
+                    break;
             }
 
             this.InvalidateVisual();
