@@ -15,10 +15,33 @@
 
   <ItemGroup>
     <None Remove="Fonts\Gamepixies-8MO6n.ttf" />
+    <None Remove="Leveldata\test.png" />
+    <None Remove="Leveldata\test.tmx" />
+    <None Remove="Sprites\testman.png" />
+    <None Remove="Sprites\testsprite.png" />
+    <None Remove="Sprites\title.png" />
   </ItemGroup>
 
 	<ItemGroup>
 		<AdditionalFiles Include="stylecop.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Leveldata\test.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Leveldata\test.tmx">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\testman.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\testsprite.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\title.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
 	</ItemGroup>
 
   <ItemGroup>
