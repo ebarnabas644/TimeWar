@@ -42,6 +42,31 @@
         <member name="M:TimeWar.Logic.Classes.CommandManager.Rewind">
             <inheritdoc/>
         </member>
+        <member name="T:TimeWar.Logic.Classes.InitConfig">
+            <summary>
+            Init model logic static variables.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Logic.Classes.InitConfig.PlayerSpritesheet">
+            <summary>
+            Name of the player spritesheet.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Logic.Classes.InitConfig.PlayerHeight">
+            <summary>
+            Player character height const.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Logic.Classes.InitConfig.PlayerWidth">
+            <summary>
+            Player character width const.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Logic.Classes.InitConfig.PlayerHealth">
+            <summary>
+            Play character health const.
+            </summary>
+        </member>
         <member name="T:TimeWar.Logic.CharacterLogic">
             <summary>
             Basic character logic class.

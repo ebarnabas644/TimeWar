@@ -26,5 +26,14 @@
             Sprite static class.
             </summary>
         </member>
+        <member name="M:TimeWar.Renderer.Sprite.CreateSprite(System.Int32,System.Int32,System.String)">
+            <summary>
+            Create new image brush collection using spritesheet.
+            </summary>
+            <param name="height">Character height.</param>
+            <param name="width">Character width.</param>
+            <param name="fname">Spritesheet file name.</param>
+            <returns>Return frames as Image brush 2D array.</returns>
+        </member>
     </members>
 </doc>

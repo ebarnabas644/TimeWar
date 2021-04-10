@@ -88,14 +88,14 @@ namespace TimeWar.Renderer
             return this.staticBrushes[fname];
         }
 
-        private Brush GetSpriteBrush(Character character)
+        private Brush GetSpriteBrush(Character character, string fname)
         {
             if (!this.spriteBrushes.ContainsKey(character))
             {
-                this.spriteBrushes.Add(character, Sprite.CreateSprite(character.Height, character.Width));
+                this.spriteBrushes.Add(character, Sprite.CreateSprite(character.Height, character.Width, fname));
             }
 
-            return this.spriteBrushes[character][this.model.Hero.CurrentSprite][0];
+            return this.spriteBrushes[character][0][this.model.Hero.CurrentSprite];
         }
 
         private Drawing GetBackground()
@@ -126,7 +126,7 @@ namespace TimeWar.Renderer
         private Drawing GetPlayer()
         {
             Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeCharacterPosX, this.model.Camera.GetRelativeCharacterPosY, this.model.Hero.Width * this.model.CurrentWorld.Magnify, this.model.Hero.Height * this.model.CurrentWorld.Magnify));
-            this.playerCache = new GeometryDrawing(this.GetSpriteBrush(this.model.Hero), null, g);
+            this.playerCache = new GeometryDrawing(this.GetSpriteBrush(this.model.Hero, this.model.Hero.SpriteFile), null, g);
             this.model.Hero.CurrentSprite = this.spriteFps % 4;
             this.playerPosition = this.model.Hero.Position;
             this.windowHeightCache = this.model.Camera.WindowHeight;
