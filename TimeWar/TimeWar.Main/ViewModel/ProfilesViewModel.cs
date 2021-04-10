@@ -1,4 +1,4 @@
-﻿// <copyright file="GameViewModel.cs" company="Time War">
+﻿// <copyright file="ProfilesViewModel.cs" company="Time War">
 // Copyright (c) Time War. All rights reserved.
 // </copyright>
 
@@ -13,18 +13,18 @@ namespace TimeWar.Main.ViewModel
     using TimeWar.Main.View;
 
     /// <summary>
-    /// Game view model class.
+    /// Profile view model class.
     /// </summary>
-    public class GameViewModel
+    public class ProfilesViewModel
     {
         private INavigationService<NavigationPages> navigationService;
         private RelayCommand menuPageCommand;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GameViewModel"/> class.
+        /// Initializes a new instance of the <see cref="ProfilesViewModel"/> class.
         /// </summary>
         /// <param name="navigationService">Navigation service.</param>
-        public GameViewModel(INavigationService<NavigationPages> navigationService)
+        public ProfilesViewModel(INavigationService<NavigationPages> navigationService)
         {
             this.navigationService = navigationService;
         }

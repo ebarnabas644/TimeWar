@@ -1,4 +1,4 @@
-﻿// <copyright file="GameControl.cs" company="Time War">
+﻿// <copyright file="MenuControl.cs" company="Time War">
 // Copyright (c) Time War. All rights reserved.
 // </copyright>
 
@@ -11,18 +11,16 @@ namespace TimeWar.Main
     using System.Text;
     using System.Threading.Tasks;
     using System.Windows;
-    using System.Windows.Input;
     using System.Windows.Media;
     using TimeWar.Logic;
-    using TimeWar.Logic.Classes;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
     using TimeWar.Renderer;
 
     /// <summary>
-    /// Game controlling class.
+    /// Main menu control class.
     /// </summary>
-    public class GameControl : FrameworkElement
+    public class MenuControl : FrameworkElement
     {
         private GameModel model;
         private InitLogic initLogic;
@@ -30,13 +28,11 @@ namespace TimeWar.Main
         private Logic.Classes.CommandManager commandManager;
         private CharacterLogic characterLogic;
         private Window win;
-        private Stopwatch time = new Stopwatch();
-        private int fps;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="GameControl"/> class.
+        /// Initializes a new instance of the <see cref="MenuControl"/> class.
         /// </summary>
-        public GameControl()
+        public MenuControl()
         {
             this.Loaded += this.GameControl_Loaded;
         }
@@ -58,16 +54,12 @@ namespace TimeWar.Main
             this.model = new GameModel();
             this.initLogic = new InitLogic(this.model, "test");
             this.model.Camera = new Viewport((int)this.ActualWidth, (int)this.ActualHeight, (int)this.model.CurrentWorld.GameWidth, (int)this.model.CurrentWorld.GameHeight, this.model.Hero);
-            this.renderer = new GameRenderer(this.model, false);
+            this.renderer = new GameRenderer(this.model, true);
             this.commandManager = new Logic.Classes.CommandManager();
             this.characterLogic = new CharacterLogic(this.model, this.model.Hero, this.commandManager);
-            this.time.Start();
-            this.fps = 0;
             this.win = Window.GetWindow(this);
             if (this.win != null)
             {
-                this.win.KeyDown += this.Win_KeyDown;
-                this.win.KeyUp += this.Win_KeyUp;
                 this.win.SizeChanged += this.Win_SizeChanged;
                 this.win.MouseMove += this.Win_MouseMove;
                 CompositionTarget.Rendering += this.CompositionTarget_Rendering;
@@ -86,39 +78,10 @@ namespace TimeWar.Main
             this.model.Camera.WindowWidth = (int)this.ActualWidth;
         }
 
-        private void Win_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
-        {
-            this.model.Hero.Direction = Stances.StandRight;
-        }
-
-        private void Win_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
-        {
-            switch (e.Key)
-            {
-                case Key.W: this.model.Hero.Direction = Stances.Up; break;
-                case Key.A: this.model.Hero.Direction = Stances.Left; break;
-                case Key.S: this.model.Hero.Direction = Stances.Down; break;
-                case Key.D: this.model.Hero.Direction = Stances.Right; break;
-                case Key.E: this.commandManager.Rewind().Start(); break;
-            }
-
-            this.InvalidateVisual();
-        }
-
         private void CompositionTarget_Rendering(object sender, EventArgs e)
         {
             this.characterLogic.OneTick();
             this.InvalidateVisual();
-            if (this.time.Elapsed.TotalSeconds >= 1)
-            {
-                this.time.Stop();
-                this.time.Reset();
-                this.win.Title = this.fps.ToString(System.Globalization.CultureInfo.CurrentCulture) + " FPS";
-                this.fps = 0;
-                this.time.Start();
-            }
-
-            this.fps++;
         }
     }
 }

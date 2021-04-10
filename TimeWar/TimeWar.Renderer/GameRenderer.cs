@@ -12,6 +12,8 @@ namespace TimeWar.Renderer
     using System.Windows.Media.Imaging;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
+    using TimeWar.Model.Objects.Classes;
+    using TimeWar.Model.Objects.Interfaces;
 
     /// <summary>
     /// Game rendering class.
@@ -22,19 +24,22 @@ namespace TimeWar.Renderer
         private Stopwatch spriteTimer;
         private Drawing backgroundCache;
         private Drawing walls;
+        private Drawing titleCache;
         private System.Drawing.Point playerPosition;
         private Drawing playerCache;
         private double windowHeightCache;
         private double windowWidthCache;
         private Dictionary<string, Brush> staticBrushes;
-        private Dictionary<Character, ImageBrush[][]> spriteBrushes;
+        private Dictionary<IGameObject, ImageBrush[][]> spriteBrushes;
+        private bool menuMode;
         private int spriteFps;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameRenderer"/> class.
         /// </summary>
         /// <param name="model">Game model entity.</param>
-        public GameRenderer(GameModel model)
+        /// <param name="menuMode">Game menu mode.</param>
+        public GameRenderer(GameModel model, bool menuMode)
         {
             this.model = model;
             this.spriteTimer = new Stopwatch();
@@ -44,7 +49,8 @@ namespace TimeWar.Renderer
                 this.windowWidthCache = this.model.Camera.WindowWidth;
             }
 
-            this.spriteBrushes = new Dictionary<Character, ImageBrush[][]>();
+            this.menuMode = menuMode;
+            this.spriteBrushes = new Dictionary<IGameObject, ImageBrush[][]>();
             this.staticBrushes = new Dictionary<string, Brush>();
             this.spriteTimer.Start();
         }
@@ -60,7 +66,11 @@ namespace TimeWar.Renderer
             dg.Children.Add(this.GetBackground());
 
             // dg.Children.Add(this.GetCollision());
-            dg.Children.Add(this.GetPlayer());
+            if (!this.menuMode)
+            {
+                dg.Children.Add(this.GetPlayer());
+            }
+
             return dg;
         }
 
@@ -88,21 +98,45 @@ namespace TimeWar.Renderer
             return this.staticBrushes[fname];
         }
 
-        private Brush GetSpriteBrush(Character character, string fname)
+        private Brush GetSpriteBrush(IGameObject obj)
         {
-            if (!this.spriteBrushes.ContainsKey(character))
+            if (!this.spriteBrushes.ContainsKey(obj))
             {
-                this.spriteBrushes.Add(character, Sprite.CreateSprite(character.Height, character.Width, fname));
+                this.spriteBrushes.Add(obj, Sprite.CreateSprite(obj.Height, obj.Width, obj.SpriteFile));
             }
 
-            return this.spriteBrushes[character][0][this.model.Hero.CurrentSprite];
+            return this.spriteBrushes[obj][0][obj.CurrentSprite];
         }
 
         private Drawing GetBackground()
         {
             Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetViewportX, this.model.Camera.GetViewportY, this.model.CurrentWorld.GameWidth, this.model.CurrentWorld.GameHeight));
+            if (this.menuMode)
+            {
+                int prevX = this.model.Hero.Position.X;
+                int prevY = this.model.Hero.Position.Y;
+                int prevCamX = this.model.Camera.GetViewportX;
+                this.model.Hero.Position = new System.Drawing.Point(prevX + 1, prevY);
+                if (prevCamX == this.model.Camera.GetViewportX)
+                {
+                    this.model.Hero.Position = new System.Drawing.Point(this.model.Camera.WindowWidth / 2, prevY);
+                }
+            }
+
             this.backgroundCache = new GeometryDrawing(this.GetBrush(this.model.CurrentWorld.WorldName), null, g);
             return this.backgroundCache;
+        }
+
+        private Drawing GetTitle()
+        {
+            if (this.titleCache == null)
+            {
+                StaticObject title = new StaticObject(83, 230, "title", new System.Drawing.Point(this.model.Camera.WindowWidth / 2, this.model.Camera.WindowWidth - 200));
+                Geometry g = new RectangleGeometry(new Rect(title.Position.X, title.Position.Y, title.Width * this.model.CurrentWorld.Magnify, title.Height * this.model.CurrentWorld.Magnify));
+                this.titleCache = new GeometryDrawing(this.GetSpriteBrush(title), null, g);
+            }
+
+            return null;
         }
 
         private Drawing GetCollision() // For debug
@@ -126,7 +160,7 @@ namespace TimeWar.Renderer
         private Drawing GetPlayer()
         {
             Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeCharacterPosX, this.model.Camera.GetRelativeCharacterPosY, this.model.Hero.Width * this.model.CurrentWorld.Magnify, this.model.Hero.Height * this.model.CurrentWorld.Magnify));
-            this.playerCache = new GeometryDrawing(this.GetSpriteBrush(this.model.Hero, this.model.Hero.SpriteFile), null, g);
+            this.playerCache = new GeometryDrawing(this.GetSpriteBrush(this.model.Hero), null, g);
             this.model.Hero.CurrentSprite = this.spriteFps % 4;
             this.playerPosition = this.model.Hero.Position;
             this.windowHeightCache = this.model.Camera.WindowHeight;

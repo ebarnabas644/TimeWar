@@ -56,7 +56,7 @@ namespace TimeWar.Model.Objects
     /// <summary>
     /// Basic character information class.
     /// </summary>
-    public abstract class Character : IMoveable
+    public abstract class Character : IMoveable, IGameObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Character"/> class.
