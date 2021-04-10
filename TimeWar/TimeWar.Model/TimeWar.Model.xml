@@ -233,6 +233,35 @@
             <param name="width">Width.</param>
             <param name="spriteFile">Spritesheet file name.</param>
         </member>
+        <member name="T:TimeWar.Model.Objects.Classes.StaticObject">
+            <summary>
+            Static object class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Classes.StaticObject.#ctor(System.Int32,System.Int32,System.String,System.Drawing.Point)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Model.Objects.Classes.StaticObject"/> class.
+            </summary>
+            <param name="height">Object height.</param>
+            <param name="width">Object width.</param>
+            <param name="spritefile">Object sprite file.</param>
+            <param name="position">Object position.</param>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.Height">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.Width">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.SpriteFile">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.Position">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.CurrentSprite">
+            <inheritdoc/>
+        </member>
         <member name="T:TimeWar.Model.Objects.Viewport">
             <summary>
             Camera viewport class.
@@ -281,6 +310,36 @@
         <member name="P:TimeWar.Model.Objects.Viewport.GetRelativeCharacterPosY">
             <summary>
             Gets the followed character Y position relative to the viewport.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Model.Objects.Interfaces.IGameObject">
+            <summary>
+            Game object interface.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Interfaces.IGameObject.Height">
+            <summary>
+            Gets or sets character height in pixel.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Interfaces.IGameObject.Width">
+            <summary>
+            Gets or sets character width in pixel.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Interfaces.IGameObject.SpriteFile">
+            <summary>
+            Gets or sets the character sprite file name.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Interfaces.IGameObject.Position">
+            <summary>
+            Gets or sets character position.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Interfaces.IGameObject.CurrentSprite">
+            <summary>
+            Gets or sets current sprite frame.
             </summary>
         </member>
         <member name="T:TimeWar.Model.Objects.Interfaces.IMoveable">
