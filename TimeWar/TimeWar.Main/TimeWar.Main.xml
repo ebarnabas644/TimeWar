@@ -166,6 +166,26 @@
             Initializes a new instance of the <see cref="T:TimeWar.Main.ViewModel.ViewModelLocator"/> class.
             </summary>
         </member>
+        <member name="P:TimeWar.Main.ViewModel.ViewModelLocator.MenuViewModel">
+            <summary>
+            Gets or sets menu view model.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.ViewModelLocator.MainViewModel">
+            <summary>
+            Gets or sets main frame view model.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.ViewModelLocator.GameViewModel">
+            <summary>
+            Gets or sets game view model.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.ViewModelLocator.ProfilesViewModel">
+            <summary>
+            Gets or sets profiles view model.
+            </summary>
+        </member>
         <member name="T:TimeWar.Main.View.GameWindow">
             <summary>
             Interaction logic for GameWindow.xaml
@@ -193,10 +213,15 @@
         </member>
         <member name="T:TimeWar.Main.View.MenuPage">
             <summary>
-            Interaction logic for MenuPage.xaml
+            Interaction logic for MenuPage.xaml.
             </summary>
             <summary>
             MenuPage
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.View.MenuPage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.View.MenuPage"/> class.
             </summary>
         </member>
         <member name="M:TimeWar.Main.View.MenuPage.InitializeComponent">
