@@ -24,6 +24,9 @@ namespace TimeWar.Logic
     public class CharacterLogic
     {
         private const int DefaultAcceleration = 1;
+        private const int MaxMovementSpeed = 15;
+        private const int MaxJumpHeight = 20;
+
         private GameModel model;
         private Character character;
         private CommandManager commandManager;
@@ -50,19 +53,18 @@ namespace TimeWar.Logic
             this.moveVector = new Point(0, 0);
         }
 
-
         /// <summary>
         /// 1 frame event.
         /// </summary>
         public void OneTick()
         {
             Point newPoint = this.Move();
-            if (Math.Abs(this.moveVector.X) < 15)
+            if (Math.Abs(this.moveVector.X) < MaxMovementSpeed)
             {
                 this.moveVector.X += newPoint.X;
             }
-            this.moveVector.Y += newPoint.Y;
 
+            this.moveVector.Y += newPoint.Y;
 
             if (this.MovementCollision(new Point(0, newPoint.Y)))
             {
@@ -74,7 +76,6 @@ namespace TimeWar.Logic
 
             if (!this.MovementCollision(new Point(0, this.acceleration)))
             {
-
                 this.moveVector.Y += this.acceleration;
 
                 if ((!this.MovementCollision(new Point(0, this.acceleration + 1)) && this.acceleration < 10) && !this.accelerationStopwatch.IsRunning)
@@ -88,7 +89,6 @@ namespace TimeWar.Logic
                     this.accelerationStopwatch.Restart();
                 }
             }
-
 
             if (!this.MovementCollision(newPoint))
             {
@@ -253,7 +253,7 @@ namespace TimeWar.Logic
                         this.jumpingTimeOut.Restart();
                         this.isJumping = true;
                         this.accelerationStopwatch.Start();
-                        direction = new Point(0, -15);
+                        direction = new Point(0, -MaxJumpHeight);
                     }
 
                     break;
@@ -292,7 +292,7 @@ namespace TimeWar.Logic
             }
 
             // Top collision
-            for (int i = 0; i < actor.Width; i++)
+            for (int i = 0; i < actor.Width + 1; i++)
             {
                 actorLocation = new Point(this.PixelToTile(actor.X) + i, this.PixelToTile(actor.Y + this.moveVector.Y));
                 if (this.model.CurrentWorld.SearchGround(actorLocation))
