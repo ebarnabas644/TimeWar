@@ -50,7 +50,6 @@ namespace TimeWar.Logic
             this.moveVector = new Point(0, 0);
         }
 
-
         /// <summary>
         /// 1 frame event.
         /// </summary>
@@ -61,8 +60,8 @@ namespace TimeWar.Logic
             {
                 this.moveVector.X += newPoint.X;
             }
-            this.moveVector.Y += newPoint.Y;
 
+            this.moveVector.Y += newPoint.Y;
 
             if (this.MovementCollision(new Point(0, newPoint.Y)))
             {
@@ -74,7 +73,6 @@ namespace TimeWar.Logic
 
             if (!this.MovementCollision(new Point(0, this.acceleration)))
             {
-
                 this.moveVector.Y += this.acceleration;
 
                 if ((!this.MovementCollision(new Point(0, this.acceleration + 1)) && this.acceleration < 10) && !this.accelerationStopwatch.IsRunning)
@@ -88,7 +86,6 @@ namespace TimeWar.Logic
                     this.accelerationStopwatch.Restart();
                 }
             }
-
 
             if (!this.MovementCollision(newPoint))
             {
@@ -292,7 +289,7 @@ namespace TimeWar.Logic
             }
 
             // Top collision
-            for (int i = 0; i < actor.Width; i++)
+            for (int i = 0; i < actor.Width + 1; i++)
             {
                 actorLocation = new Point(this.PixelToTile(actor.X) + i, this.PixelToTile(actor.Y + this.moveVector.Y));
                 if (this.model.CurrentWorld.SearchGround(actorLocation))
