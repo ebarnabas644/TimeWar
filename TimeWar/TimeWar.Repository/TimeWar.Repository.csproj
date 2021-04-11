@@ -22,4 +22,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TimeWar.Data\TimeWar.Data.csproj" />
+  </ItemGroup>
+
 </Project>
