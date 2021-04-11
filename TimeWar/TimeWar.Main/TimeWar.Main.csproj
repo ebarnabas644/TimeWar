@@ -33,9 +33,15 @@
 	  <Content Include="Leveldata\test.tmx">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
-	  <Content Include="Sprites\testman.png" />
-	  <Content Include="Sprites\testsprite.png" />
-	  <Content Include="Sprites\title.png" />
+	  <Content Include="Sprites\testman.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\testsprite.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\title.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
 	</ItemGroup>
 
   <ItemGroup>
