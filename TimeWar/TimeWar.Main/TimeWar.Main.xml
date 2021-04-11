@@ -56,7 +56,6 @@
             InitializeComponent
             </summary>
         </member>
-<<<<<<< HEAD
         <member name="T:TimeWar.Main.MenuControl">
             <summary>
             Main menu control class.
@@ -328,7 +327,8 @@
         <member name="M:TimeWar.Main.View.ProfilesPage.InitializeComponent">
             <summary>
             InitializeComponent
-=======
+            </summary>
+        </member>
         <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
             <summary>
             GeneratedInternalTypeHelper
@@ -357,7 +357,6 @@
         <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
             <summary>
             AddEventHandler
->>>>>>> database
             </summary>
         </member>
     </members>

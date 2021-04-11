@@ -56,7 +56,7 @@ namespace TimeWar.Main
         private void GameControl_Loaded(object sender, RoutedEventArgs e)
         {
             this.model = new GameModel();
-            this.initLogic = new InitLogic(this.model, "test");
+            this.initLogic = new InitLogic(this.model, "test2");
             this.model.Camera = new Viewport((int)this.ActualWidth, (int)this.ActualHeight, (int)this.model.CurrentWorld.GameWidth, (int)this.model.CurrentWorld.GameHeight, this.model.Hero);
             this.renderer = new GameRenderer(this.model, false);
             this.commandManager = new Logic.Classes.CommandManager();
