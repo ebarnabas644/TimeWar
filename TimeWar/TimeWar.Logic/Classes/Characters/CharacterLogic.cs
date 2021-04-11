@@ -24,6 +24,9 @@ namespace TimeWar.Logic
     public class CharacterLogic
     {
         private const int DefaultAcceleration = 1;
+        private const int MaxMovementSpeed = 15;
+        private const int MaxJumpHeight = 20;
+
         private GameModel model;
         private Character character;
         private CommandManager commandManager;
@@ -56,7 +59,7 @@ namespace TimeWar.Logic
         public void OneTick()
         {
             Point newPoint = this.Move();
-            if (Math.Abs(this.moveVector.X) < 15)
+            if (Math.Abs(this.moveVector.X) < MaxMovementSpeed)
             {
                 this.moveVector.X += newPoint.X;
             }
@@ -250,7 +253,7 @@ namespace TimeWar.Logic
                         this.jumpingTimeOut.Restart();
                         this.isJumping = true;
                         this.accelerationStopwatch.Start();
-                        direction = new Point(0, -15);
+                        direction = new Point(0, -MaxJumpHeight);
                     }
 
                     break;
