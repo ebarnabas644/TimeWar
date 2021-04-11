@@ -6,6 +6,7 @@ namespace TimeWar.Model.Objects
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Drawing;
     using System.Linq;
     using System.Text;
@@ -58,6 +59,8 @@ namespace TimeWar.Model.Objects
     /// </summary>
     public abstract class Character : IMoveable, IGameObject
     {
+        private List<string> keys;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Character"/> class.
         /// </summary>
@@ -77,6 +80,7 @@ namespace TimeWar.Model.Objects
             this.SpriteFile = spriteFile;
             this.CurrentSprite = 0;
             this.Direction = Stances.StandRight;
+            this.keys = new List<string>();
         }
 
         /// <summary>
@@ -114,5 +118,25 @@ namespace TimeWar.Model.Objects
         /// Gets or sets the character health.
         /// </summary>
         public int Health { get; set; }
+
+        public void AddKey(string key)
+        {
+            if (!this.keys.Contains(key))
+            {
+                this.keys.Add(key);
+                Debug.WriteLine(key + " pressed!");
+            }
+        }
+
+        public void RemoveKey(string key)
+        {
+            this.keys.Remove(key);
+            Debug.WriteLine(key + " released!");
+        }
+
+        public bool ContainKey(string key)
+        {
+            return this.keys.Contains(key);
+        }
     }
 }

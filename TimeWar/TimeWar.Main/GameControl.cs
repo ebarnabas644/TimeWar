@@ -88,17 +88,56 @@ namespace TimeWar.Main
 
         private void Win_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            this.model.Hero.Direction = Stances.StandRight;
+            switch (e.Key)
+            {
+                case Key.Space:
+                    if (this.commandManager.IsFinished)
+                    {
+                        this.model.Hero.RemoveKey("space");
+                        Debug.WriteLine("Up released!");
+                    }
+
+                    break;
+                case Key.A:
+                    if (this.commandManager.IsFinished)
+                    {
+                        this.model.Hero.RemoveKey("a");
+                        Debug.WriteLine("Left released!");
+                    }
+
+                    break;
+                case Key.S:
+                    if (this.commandManager.IsFinished)
+                    {
+                        this.model.Hero.RemoveKey("s");
+                        Debug.WriteLine("Down released");
+                    }
+
+                    break;
+                case Key.D:
+                    if (this.commandManager.IsFinished)
+                    {
+                        this.model.Hero.RemoveKey("d");
+                        Debug.WriteLine("Right released!");
+                    }
+
+                    break;
+                case Key.E:
+                    this.commandManager.Rewind().Start();
+                    break;
+            }
+
+            e.Handled = true;
         }
 
         private void Win_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
             switch (e.Key)
             {
-                case Key.W:
+                case Key.Space:
                     if (this.commandManager.IsFinished)
                     {
-                        this.model.Hero.Direction = Stances.Up;
+                        this.model.Hero.AddKey("space");
                         Debug.WriteLine("Up pressed!");
                     }
 
@@ -106,7 +145,7 @@ namespace TimeWar.Main
                 case Key.A:
                     if (this.commandManager.IsFinished)
                     {
-                        this.model.Hero.Direction = Stances.Left;
+                        this.model.Hero.AddKey("a");
                         Debug.WriteLine("Left pressed!");
                     }
 
@@ -114,7 +153,7 @@ namespace TimeWar.Main
                 case Key.S:
                     if (this.commandManager.IsFinished)
                     {
-                        this.model.Hero.Direction = Stances.Down;
+                        this.model.Hero.AddKey("s");
                         Debug.WriteLine("Down pressed!");
                     }
 
@@ -122,7 +161,7 @@ namespace TimeWar.Main
                 case Key.D:
                     if (this.commandManager.IsFinished)
                     {
-                        this.model.Hero.Direction = Stances.Right;
+                        this.model.Hero.AddKey("d");
                         Debug.WriteLine("Right pressed!");
                     }
 
@@ -132,6 +171,7 @@ namespace TimeWar.Main
                     break;
             }
 
+            e.Handled = true;
             this.InvalidateVisual();
         }
 

@@ -234,38 +234,69 @@ namespace TimeWar.Logic
 
         private Point Move()
         {
-            Point direction;
-            switch (this.character.Direction)
+            int x = 0;
+            int y = 0;
+            if (character.ContainKey("a"))
             {
-                case Stances.StandRight:
-                    direction = new Point(0, 0);
-                    break;
-                case Stances.Right:
-                    direction = new Point(2, 0);
-                    break;
-                case Stances.Left:
-                    direction = new Point(-2, 0);
-                    break;
-                case Stances.Up:
-                    direction = new Point(0, 0);
-                    if (!this.isJumping && this.jumpingTimeOut.ElapsedMilliseconds > 250)
-                    {
-                        this.jumpingTimeOut.Restart();
-                        this.isJumping = true;
-                        this.accelerationStopwatch.Start();
-                        direction = new Point(0, -MaxJumpHeight);
-                    }
-
-                    break;
-                case Stances.Down:
-                    direction = new Point(0, 1);
-                    break;
-                default:
-                    direction = new Point(0, 0);
-                    break;
+                x -= 2;
+                Debug.Write("a");
             }
 
-            return direction;
+            if (character.ContainKey("d"))
+            {
+                x += 2;
+            }
+
+            if (character.ContainKey("s"))
+            {
+                y += 1;
+            }
+
+            if (character.ContainKey("space"))
+            {
+                if (!this.isJumping && this.jumpingTimeOut.ElapsedMilliseconds > 250)
+                {
+                    this.jumpingTimeOut.Restart();
+                    this.isJumping = true;
+                    this.accelerationStopwatch.Start();
+                    y = -MaxJumpHeight;
+                }
+            }
+
+            //switch (this.character.Direction)
+            //{
+            //    case Stances.StandRight:
+            //        direction = new Point(0, 0);
+            //        lastX = direction.X;
+            //        break;
+            //    case Stances.Right:
+            //        direction = new Point(2, 0);
+            //        lastX = direction.X;
+            //        break;
+            //    case Stances.Left:
+            //        direction = new Point(-2, 0);
+            //        lastX = direction.X;
+            //        break;
+            //    case Stances.Up:
+            //        direction = new Point(0, 0);
+            //        if (!this.isJumping && this.jumpingTimeOut.ElapsedMilliseconds > 250)
+            //        {
+            //            this.jumpingTimeOut.Restart();
+            //            this.isJumping = true;
+            //            this.accelerationStopwatch.Start();
+            //            direction = new Point(lastX, -MaxJumpHeight);
+            //        }
+
+            //        break;
+            //    case Stances.Down:
+            //        direction = new Point(0, 1);
+            //        break;
+            //    default:
+            //        direction = new Point(0, 0);
+            //        break;
+            //}
+
+            return new Point(x, y);
         }
 
         private bool MovementCollision(Point newPoint)
