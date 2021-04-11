@@ -119,6 +119,10 @@ namespace TimeWar.Model.Objects
         /// </summary>
         public int Health { get; set; }
 
+        /// <summary>
+        /// Add new key to the pressed list.
+        /// </summary>
+        /// <param name="key">Pressed key.</param>
         public void AddKey(string key)
         {
             if (!this.keys.Contains(key))
@@ -128,12 +132,21 @@ namespace TimeWar.Model.Objects
             }
         }
 
+        /// <summary>
+        /// Remove key from the preesed list.
+        /// </summary>
+        /// <param name="key">Released key.</param>
         public void RemoveKey(string key)
         {
             this.keys.Remove(key);
             Debug.WriteLine(key + " released!");
         }
 
+        /// <summary>
+        /// Check key in the list.
+        /// </summary>
+        /// <param name="key">Key.</param>
+        /// <returns>True if contains.</returns>
         public bool ContainKey(string key)
         {
             return this.keys.Contains(key);

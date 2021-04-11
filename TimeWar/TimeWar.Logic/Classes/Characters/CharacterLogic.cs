@@ -236,23 +236,23 @@ namespace TimeWar.Logic
         {
             int x = 0;
             int y = 0;
-            if (character.ContainKey("a"))
+            if (this.character.ContainKey("a"))
             {
                 x -= 2;
                 Debug.Write("a");
             }
 
-            if (character.ContainKey("d"))
+            if (this.character.ContainKey("d"))
             {
                 x += 2;
             }
 
-            if (character.ContainKey("s"))
+            if (this.character.ContainKey("s"))
             {
                 y += 1;
             }
 
-            if (character.ContainKey("space"))
+            if (this.character.ContainKey("space"))
             {
                 if (!this.isJumping && this.jumpingTimeOut.ElapsedMilliseconds > 250)
                 {
@@ -263,8 +263,8 @@ namespace TimeWar.Logic
                 }
             }
 
-            //switch (this.character.Direction)
-            //{
+            // switch (this.character.Direction)
+            // {
             //    case Stances.StandRight:
             //        direction = new Point(0, 0);
             //        lastX = direction.X;
@@ -287,15 +287,14 @@ namespace TimeWar.Logic
             //            direction = new Point(lastX, -MaxJumpHeight);
             //        }
 
-            //        break;
+            // break;
             //    case Stances.Down:
             //        direction = new Point(0, 1);
             //        break;
             //    default:
             //        direction = new Point(0, 0);
             //        break;
-            //}
-
+            // }
             return new Point(x, y);
         }
 
