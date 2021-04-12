@@ -121,6 +121,25 @@
             Gets or sets the character health.
             </summary>
         </member>
+        <member name="M:TimeWar.Model.Objects.Character.AddKey(System.String)">
+            <summary>
+            Add new key to the pressed list.
+            </summary>
+            <param name="key">Pressed key.</param>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Character.RemoveKey(System.String)">
+            <summary>
+            Remove key from the preesed list.
+            </summary>
+            <param name="key">Released key.</param>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Character.ContainKey(System.String)">
+            <summary>
+            Check key in the list.
+            </summary>
+            <param name="key">Key.</param>
+            <returns>True if contains.</returns>
+        </member>
         <member name="T:TimeWar.Model.Objects.GameWorld">
             <summary>
             Game world details, settings.

@@ -6,6 +6,7 @@ namespace TimeWar.Logic.Classes
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Linq;
     using System.Text;
     using System.Threading;
@@ -46,25 +47,29 @@ namespace TimeWar.Logic.Classes
         /// <inheritdoc/>
         public Task Rewind()
         {
-            this.IsFinished = false;
-            int counter = 0;
-            Task task = new Task(
-                () =>
+            Task task = new Task(() => Debug.WriteLine("Rewind not finished yet"));
+            if (this.IsFinished)
             {
-                foreach (ICommand command in Enumerable.Reverse(this.commandBuffer))
+                this.IsFinished = false;
+                int counter = 0;
+                task = new Task(
+                    () =>
                 {
-                    if (counter < this.commandBuffer.Count / 4)
+                    foreach (ICommand command in Enumerable.Reverse(this.commandBuffer))
                     {
-                        command.Undo();
-                        Thread.Sleep(10);
+                        if (counter < this.commandBuffer.Count / 4)
+                        {
+                            command.Undo();
+                            Thread.Sleep(10);
+                        }
+
+                        counter++;
                     }
 
-                    counter++;
-                }
-
-                this.IsFinished = true;
-                this.ClearBuffer();
-            }, TaskCreationOptions.LongRunning);
+                    this.IsFinished = true;
+                    this.ClearBuffer();
+                }, TaskCreationOptions.LongRunning);
+            }
 
             return task;
         }
