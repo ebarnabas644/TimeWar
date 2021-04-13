@@ -19,6 +19,7 @@ namespace TimeWar.Logic.Classes
     public class CommandManager : ICommandManager
     {
         private List<ICommand> commandBuffer;
+        private Stopwatch rewindStopwatch;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CommandManager"/> class.
@@ -27,6 +28,7 @@ namespace TimeWar.Logic.Classes
         {
             this.commandBuffer = new List<ICommand>();
             this.IsFinished = true;
+            this.rewindStopwatch = new Stopwatch();
         }
 
         /// <inheritdoc/>
@@ -55,9 +57,10 @@ namespace TimeWar.Logic.Classes
                 task = new Task(
                     () =>
                 {
+                    this.rewindStopwatch.Start();
                     foreach (ICommand command in Enumerable.Reverse(this.commandBuffer))
                     {
-                        if (counter < this.commandBuffer.Count / 4)
+                        if (this.rewindStopwatch.ElapsedMilliseconds < 5000)
                         {
                             command.Undo();
                             Thread.Sleep(10);
@@ -66,6 +69,7 @@ namespace TimeWar.Logic.Classes
                         counter++;
                     }
 
+                    this.rewindStopwatch.Reset();
                     this.IsFinished = true;
                     this.ClearBuffer();
                 }, TaskCreationOptions.LongRunning);
