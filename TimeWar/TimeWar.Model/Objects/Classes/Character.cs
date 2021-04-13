@@ -128,7 +128,6 @@ namespace TimeWar.Model.Objects
             if (!this.keys.Contains(key))
             {
                 this.keys.Add(key);
-                Debug.WriteLine(key + " pressed!");
             }
         }
 
@@ -139,7 +138,6 @@ namespace TimeWar.Model.Objects
         public void RemoveKey(string key)
         {
             this.keys.Remove(key);
-            Debug.WriteLine(key + " released!");
         }
 
         /// <summary>
