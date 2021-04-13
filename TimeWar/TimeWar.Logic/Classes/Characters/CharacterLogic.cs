@@ -106,7 +106,6 @@ namespace TimeWar.Logic
                 if (!this.TopCollision(newPoint))
                 {
                     this.character.Position = new Point(this.character.Position.X, this.character.Position.Y + this.moveVector.Y);
-
                 }
             }
 
