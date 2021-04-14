@@ -16,11 +16,6 @@ namespace TimeWar.Logic.Interfaces
     public interface ICommand
     {
         /// <summary>
-        /// Execute the command.
-        /// </summary>
-        void Execute();
-
-        /// <summary>
         /// Undo the command.
         /// </summary>
         void Undo();

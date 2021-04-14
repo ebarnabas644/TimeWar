@@ -6,6 +6,7 @@ namespace TimeWar.Logic.Classes
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Linq;
     using System.Text;
     using System.Threading;
@@ -18,6 +19,7 @@ namespace TimeWar.Logic.Classes
     public class CommandManager : ICommandManager
     {
         private List<ICommand> commandBuffer;
+        private Stopwatch rewindStopwatch;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CommandManager"/> class.
@@ -26,6 +28,7 @@ namespace TimeWar.Logic.Classes
         {
             this.commandBuffer = new List<ICommand>();
             this.IsFinished = true;
+            this.rewindStopwatch = new Stopwatch();
         }
 
         /// <inheritdoc/>
@@ -46,25 +49,31 @@ namespace TimeWar.Logic.Classes
         /// <inheritdoc/>
         public Task Rewind()
         {
-            this.IsFinished = false;
-            int counter = 0;
-            Task task = new Task(
-                () =>
+            Task task = new Task(() => Debug.WriteLine("Rewind not finished yet"));
+            if (this.IsFinished)
             {
-                foreach (ICommand command in Enumerable.Reverse(this.commandBuffer))
+                this.IsFinished = false;
+                int counter = 0;
+                task = new Task(
+                    () =>
                 {
-                    if (counter < this.commandBuffer.Count / 4)
+                    this.rewindStopwatch.Start();
+                    foreach (ICommand command in Enumerable.Reverse(this.commandBuffer))
                     {
-                        command.Undo();
-                        Thread.Sleep(10);
+                        if (this.rewindStopwatch.ElapsedMilliseconds < 5000)
+                        {
+                            command.Undo();
+                            Thread.Sleep(10);
+                        }
+
+                        counter++;
                     }
 
-                    counter++;
-                }
-
-                this.IsFinished = true;
-                this.ClearBuffer();
-            }, TaskCreationOptions.LongRunning);
+                    this.rewindStopwatch.Reset();
+                    this.IsFinished = true;
+                    this.ClearBuffer();
+                }, TaskCreationOptions.LongRunning);
+            }
 
             return task;
         }

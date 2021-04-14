@@ -66,34 +66,51 @@ namespace TimeWar.Logic
 
             this.moveVector.Y += newPoint.Y;
 
-            if (this.MovementCollision(new Point(0, newPoint.Y)))
+            if (this.GroundCollision(new Point(0, newPoint.Y)))
             {
-                while (this.MovementCollision(new Point(0, newPoint.Y)))
+                if (this.commandManager.IsFinished)
                 {
-                    this.character.Position = new Point(this.character.Position.X, this.character.Position.Y - 1);
+                    while (this.GroundCollision(new Point(0, newPoint.Y)))
+                    {
+                        this.character.Position = new Point(this.character.Position.X, this.character.Position.Y - 1);
+                    }
                 }
             }
 
-            if (!this.MovementCollision(new Point(0, this.acceleration)))
+            if (!this.GroundCollision(new Point(0, this.acceleration)))
             {
-                this.moveVector.Y += this.acceleration;
-
-                if ((!this.MovementCollision(new Point(0, this.acceleration + 1)) && this.acceleration < 10) && !this.accelerationStopwatch.IsRunning)
+                if (this.commandManager.IsFinished)
                 {
-                    this.accelerationStopwatch.Start();
-                }
+                    this.moveVector.Y += this.acceleration;
 
-                if (this.accelerationStopwatch.ElapsedMilliseconds > 100)
-                {
-                    this.acceleration++;
-                    this.accelerationStopwatch.Restart();
+                    if ((!this.GroundCollision(new Point(0, this.acceleration + 1)) && this.acceleration < 10) && !this.accelerationStopwatch.IsRunning)
+                    {
+                        this.accelerationStopwatch.Start();
+                    }
+
+                    if (this.accelerationStopwatch.ElapsedMilliseconds > 100)
+                    {
+                        this.acceleration++;
+                        this.accelerationStopwatch.Restart();
+                    }
                 }
             }
 
-            if (!this.MovementCollision(newPoint))
+            if (!this.WallCollision(newPoint) && !this.WallCollision(newPoint, false))
             {
-                this.character.Position = new Point(this.character.Position.X + this.moveVector.X, this.character.Position.Y + this.moveVector.Y);
+                this.character.Position = new Point(this.character.Position.X + this.moveVector.X, this.character.Position.Y);
             }
+
+            if (!this.GroundCollision(newPoint) && (!this.WallCollision(newPoint) && !this.WallCollision(newPoint, false)))
+            {
+                if (!this.TopCollision(newPoint))
+                {
+                    this.character.Position = new Point(this.character.Position.X, this.character.Position.Y + this.moveVector.Y);
+                }
+            }
+
+            MoveCommand moveCommand = new MoveCommand(this.character, this.character.Position, this.model);
+            this.commandManager.AddCommand(moveCommand);
 
             if (this.moveVector.X > 0)
             {
@@ -106,132 +123,6 @@ namespace TimeWar.Logic
             }
         }
 
-        /*
-        /// <summary>
-        /// 1 frame event.
-        /// </summary>
-        public void OneTick()
-        {
-            bool commandAdded = false;
-            Point newPoint = this.Move();
-
-            if (!this.MovementCollision(newPoint))
-            {
-                MoveCommand command = new MoveCommand(this.character, newPoint, this.model);
-                command.Execute();
-                if (newPoint.Y == -1)
-                {
-                    int counter = 0;
-                    while (counter < 14 && !this.MovementCollision(newPoint))
-                    {
-                        command = new MoveCommand(this.character, newPoint, this.model);
-                        command.Execute();
-                        counter++;
-                        this.commandManager.AddCommand(command);
-                    }
-
-                    commandAdded = true;
-                }
-
-                if (!this.MovementCollision(new Point(0, this.acceleration)))
-                {
-                    MoveCommand gravity = new MoveCommand(this.character, new Point(0, this.acceleration), this.model);
-                    gravity.Execute();
-                    this.commandManager.AddCommand(gravity);
-                    if ((!this.MovementCollision(new Point(0, this.acceleration + 1)) && this.acceleration < 3) && !this.accelerationStopwatch.IsRunning)
-                    {
-                        this.accelerationStopwatch.Start();
-                    }
-
-                    if (this.accelerationStopwatch.ElapsedMilliseconds > 100)
-                    {
-                        this.acceleration++;
-                        this.accelerationStopwatch.Restart();
-                    }
-                }
-
-                if (!commandAdded)
-                {
-                    this.commandManager.AddCommand(command);
-                }
-
-                if (this.MovementCollision(new Point(0, 0)))
-                {
-                    while (this.MovementCollision(new Point(0, 0)))
-                    {
-                        this.character.Position = new Point(this.character.Position.X, this.character.Position.Y - 1);
-                    }
-                }
-            }
-        }
-
-        private bool MovementCollision(Point newPoint)
-        {
-            Rectangle actor = new Rectangle(
-                this.character.Position.X + newPoint.X,
-                this.character.Position.Y + newPoint.Y,
-                this.character.Width / this.model.CurrentWorld.TileSize,
-                this.character.Height / this.model.CurrentWorld.TileSize);
-            Point actorLocation;
-
-            // Ground collision
-            for (int i = 0; i < actor.Width; i++)
-            {
-                actorLocation = new Point(this.PixelToTile(actor.X + 1) + i, this.PixelToTile(actor.Y) + actor.Height); // itt
-                if (this.model.CurrentWorld.SearchGround(actorLocation))
-                {
-                    this.acceleration = DefaultAcceleration;
-                    this.accelerationStopwatch.Reset();
-                    this.isJumping = false;
-                    return true;
-                }
-            }
-
-            // Top collision
-            for (int i = 0; i < actor.Width; i++)
-            {
-                actorLocation = new Point(this.PixelToTile(actor.X) + i, this.PixelToTile(actor.Y));
-                if (this.model.CurrentWorld.SearchGround(actorLocation))
-                {
-                    return true;
-                }
-            }
-
-            // Right wall collision
-            for (int i = 0; i < actor.Height; i++)
-            {
-                actorLocation = new Point(this.PixelToTile(actor.X - 1) + actor.Width, this.PixelToTile(actor.Y) + i);
-                if (this.model.CurrentWorld.SearchGround(actorLocation))
-                {
-                    return true;
-                }
-            }
-
-            // Left wall collision
-            for (int i = 0; i < actor.Height; i++)
-            {
-                actorLocation = new Point(this.PixelToTile(actor.X), this.PixelToTile(actor.Y) + i);
-                if (this.model.CurrentWorld.SearchGround(actorLocation))
-                {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        private int PixelToTile(int num)
-        {
-            return this.model.CurrentWorld.ConvertPixelToTile(num);
-        }
-
-        private int TileToPixel(int num)
-        {
-            return this.model.CurrentWorld.ConvertTileToPixel(num);
-        }
-    }
-        */
-
         private Point Move()
         {
             int x = 0;
@@ -239,7 +130,6 @@ namespace TimeWar.Logic
             if (this.character.ContainKey("a"))
             {
                 x -= 2;
-                Debug.Write("a");
             }
 
             if (this.character.ContainKey("d"))
@@ -263,54 +153,36 @@ namespace TimeWar.Logic
                 }
             }
 
-            // switch (this.character.Direction)
-            // {
-            //    case Stances.StandRight:
-            //        direction = new Point(0, 0);
-            //        lastX = direction.X;
-            //        break;
-            //    case Stances.Right:
-            //        direction = new Point(2, 0);
-            //        lastX = direction.X;
-            //        break;
-            //    case Stances.Left:
-            //        direction = new Point(-2, 0);
-            //        lastX = direction.X;
-            //        break;
-            //    case Stances.Up:
-            //        direction = new Point(0, 0);
-            //        if (!this.isJumping && this.jumpingTimeOut.ElapsedMilliseconds > 250)
-            //        {
-            //            this.jumpingTimeOut.Restart();
-            //            this.isJumping = true;
-            //            this.accelerationStopwatch.Start();
-            //            direction = new Point(lastX, -MaxJumpHeight);
-            //        }
-
-            // break;
-            //    case Stances.Down:
-            //        direction = new Point(0, 1);
-            //        break;
-            //    default:
-            //        direction = new Point(0, 0);
-            //        break;
-            // }
             return new Point(x, y);
         }
 
-        private bool MovementCollision(Point newPoint)
+        private int PixelToTile(int num)
         {
+            return this.model.CurrentWorld.ConvertPixelToTile(num);
+        }
+
+        private int TileToPixel(int num)
+        {
+            return this.model.CurrentWorld.ConvertTileToPixel(num);
+        }
+
+        private bool GroundCollision(Point newPoint)
+        {
+            if (!this.commandManager.IsFinished)
+            {
+                return false;
+            }
+
             Rectangle actor = new Rectangle(
-                this.character.Position.X + newPoint.X,
-                this.character.Position.Y + newPoint.Y,
-                this.character.Width / this.model.CurrentWorld.TileSize,
-                this.character.Height / this.model.CurrentWorld.TileSize);
+        this.character.Position.X + newPoint.X,
+        this.character.Position.Y + newPoint.Y,
+        this.character.Width / this.model.CurrentWorld.TileSize,
+        this.character.Height / this.model.CurrentWorld.TileSize);
             Point actorLocation;
 
-            // Ground collision
             for (int i = 0; i < actor.Width + 1; i++)
             {
-                actorLocation = new Point(this.PixelToTile(actor.X + 1) + i, this.PixelToTile(actor.Y + this.moveVector.Y) + actor.Height); // itt
+                actorLocation = new Point(this.PixelToTile(actor.X + 1 + this.TileToPixel(i)), this.PixelToTile(actor.Y + this.moveVector.Y) + actor.Height);
                 if (this.model.CurrentWorld.SearchGround(actorLocation))
                 {
                     this.moveVector.Y = 0;
@@ -321,10 +193,26 @@ namespace TimeWar.Logic
                 }
             }
 
-            // Top collision
+            return false;
+        }
+
+        private bool TopCollision(Point newPoint)
+        {
+            if (!this.commandManager.IsFinished)
+            {
+                return false;
+            }
+
+            Rectangle actor = new Rectangle(
+        this.character.Position.X + newPoint.X,
+        this.character.Position.Y,
+        this.character.Width / this.model.CurrentWorld.TileSize,
+        this.character.Height / this.model.CurrentWorld.TileSize);
+            Point actorLocation;
+
             for (int i = 0; i < actor.Width + 1; i++)
             {
-                actorLocation = new Point(this.PixelToTile(actor.X) + i, this.PixelToTile(actor.Y + this.moveVector.Y));
+                actorLocation = new Point(this.PixelToTile(actor.X + 1 + this.TileToPixel(i)), this.PixelToTile(actor.Y + this.moveVector.Y));
                 if (this.model.CurrentWorld.SearchGround(actorLocation))
                 {
                     this.moveVector.Y = 0;
@@ -332,34 +220,213 @@ namespace TimeWar.Logic
                 }
             }
 
-            // Right wall collision
-            for (int i = 0; i < actor.Height; i++)
+            return false;
+        }
+
+        private bool WallCollision(Point newPoint, bool rightWall = true)
+        {
+            if (!this.commandManager.IsFinished)
             {
-                actorLocation = new Point(this.PixelToTile(actor.X + this.moveVector.X) + actor.Width, this.PixelToTile(actor.Y) + i);
-                if (this.model.CurrentWorld.SearchGround(actorLocation))
-                {
-                    this.moveVector.X = 0;
-                    return true;
-                }
+                return false;
             }
 
-            // Left wall collision
-            for (int i = 0; i < actor.Height; i++)
+            Rectangle actor = new Rectangle(
+                this.character.Position.X + newPoint.X,
+                this.character.Position.Y + newPoint.Y,
+                this.character.Width / this.model.CurrentWorld.TileSize,
+                this.character.Height / this.model.CurrentWorld.TileSize);
+            Point actorLocation;
+
+            if (rightWall)
             {
-                actorLocation = new Point(this.PixelToTile(actor.X + this.moveVector.X), this.PixelToTile(actor.Y) + i);
-                if (this.model.CurrentWorld.SearchGround(actorLocation))
+                // Right wall collision
+                for (int i = 0; i < actor.Height; i++)
                 {
-                    this.moveVector.X = 0;
-                    return true;
+                    actorLocation = new Point(this.PixelToTile(actor.X + 1 + this.moveVector.X) + actor.Width, this.PixelToTile(actor.Y) + i);
+                    if (this.model.CurrentWorld.SearchGround(actorLocation))
+                    {
+                        this.moveVector.X = 0;
+                        return true;
+                    }
+                }
+            }
+            else
+            {
+                // Left wall collision
+                for (int i = 0; i < actor.Height; i++)
+                {
+                    actorLocation = new Point(this.PixelToTile(actor.X + this.moveVector.X), this.PixelToTile(actor.Y) + i);
+                    if (this.model.CurrentWorld.SearchGround(actorLocation))
+                    {
+                        this.moveVector.X = 0;
+                        return true;
+                    }
                 }
             }
 
             return false;
         }
+    }
+}
 
-        private int PixelToTile(int num)
+/*
+ * This Block was inside move funcion
+              switch (this.character.Direction)
+             {
+                case Stances.StandRight:
+                    direction = new Point(0, 0);
+                    lastX = direction.X;
+                    break;
+                case Stances.Right:
+                    direction = new Point(2, 0);
+                    lastX = direction.X;
+                    break;
+                case Stances.Left:
+                    direction = new Point(-2, 0);
+                    lastX = direction.X;
+                    break;
+                case Stances.Up:
+                    direction = new Point(0, 0);
+                    if (!this.isJumping && this.jumpingTimeOut.ElapsedMilliseconds > 250)
+                    {
+                        this.jumpingTimeOut.Restart();
+                        this.isJumping = true;
+                        this.accelerationStopwatch.Start();
+                        direction = new Point(lastX, -MaxJumpHeight);
+                    }
+
+             break;
+                case Stances.Down:
+                    direction = new Point(0, 1);
+                    break;
+                default:
+                    direction = new Point(0, 0);
+                    break;
+             }
+ */
+
+/*
+/// <summary>
+/// 1 frame event.
+/// </summary>
+public void OneTick()
+{
+    bool commandAdded = false;
+    Point newPoint = this.Move();
+
+    if (!this.MovementCollision(newPoint))
+    {
+        MoveCommand command = new MoveCommand(this.character, newPoint, this.model);
+        command.Execute();
+        if (newPoint.Y == -1)
         {
-            return this.model.CurrentWorld.ConvertPixelToTile(num);
+            int counter = 0;
+            while (counter < 14 && !this.MovementCollision(newPoint))
+            {
+                command = new MoveCommand(this.character, newPoint, this.model);
+                command.Execute();
+                counter++;
+                this.commandManager.AddCommand(command);
+            }
+
+            commandAdded = true;
+        }
+
+        if (!this.MovementCollision(new Point(0, this.acceleration)))
+        {
+            MoveCommand gravity = new MoveCommand(this.character, new Point(0, this.acceleration), this.model);
+            gravity.Execute();
+            this.commandManager.AddCommand(gravity);
+            if ((!this.MovementCollision(new Point(0, this.acceleration + 1)) && this.acceleration < 3) && !this.accelerationStopwatch.IsRunning)
+            {
+                this.accelerationStopwatch.Start();
+            }
+
+            if (this.accelerationStopwatch.ElapsedMilliseconds > 100)
+            {
+                this.acceleration++;
+                this.accelerationStopwatch.Restart();
+            }
+        }
+
+        if (!commandAdded)
+        {
+            this.commandManager.AddCommand(command);
+        }
+
+        if (this.MovementCollision(new Point(0, 0)))
+        {
+            while (this.MovementCollision(new Point(0, 0)))
+            {
+                this.character.Position = new Point(this.character.Position.X, this.character.Position.Y - 1);
+            }
         }
     }
 }
+
+private bool MovementCollision(Point newPoint)
+{
+    Rectangle actor = new Rectangle(
+        this.character.Position.X + newPoint.X,
+        this.character.Position.Y + newPoint.Y,
+        this.character.Width / this.model.CurrentWorld.TileSize,
+        this.character.Height / this.model.CurrentWorld.TileSize);
+    Point actorLocation;
+
+    // Ground collision
+    for (int i = 0; i < actor.Width; i++)
+    {
+        actorLocation = new Point(this.PixelToTile(actor.X + 1) + i, this.PixelToTile(actor.Y) + actor.Height); // itt
+        if (this.model.CurrentWorld.SearchGround(actorLocation))
+        {
+            this.acceleration = DefaultAcceleration;
+            this.accelerationStopwatch.Reset();
+            this.isJumping = false;
+            return true;
+        }
+    }
+
+    // Top collision
+    for (int i = 0; i < actor.Width; i++)
+    {
+        actorLocation = new Point(this.PixelToTile(actor.X) + i, this.PixelToTile(actor.Y));
+        if (this.model.CurrentWorld.SearchGround(actorLocation))
+        {
+            return true;
+        }
+    }
+
+    // Right wall collision
+    for (int i = 0; i < actor.Height; i++)
+    {
+        actorLocation = new Point(this.PixelToTile(actor.X - 1) + actor.Width, this.PixelToTile(actor.Y) + i);
+        if (this.model.CurrentWorld.SearchGround(actorLocation))
+        {
+            return true;
+        }
+    }
+
+    // Left wall collision
+    for (int i = 0; i < actor.Height; i++)
+    {
+        actorLocation = new Point(this.PixelToTile(actor.X), this.PixelToTile(actor.Y) + i);
+        if (this.model.CurrentWorld.SearchGround(actorLocation))
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+private int PixelToTile(int num)
+{
+    return this.model.CurrentWorld.ConvertPixelToTile(num);
+}
+
+private int TileToPixel(int num)
+{
+    return this.model.CurrentWorld.ConvertTileToPixel(num);
+}
+}
+*/

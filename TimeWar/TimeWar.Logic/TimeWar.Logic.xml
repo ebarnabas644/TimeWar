@@ -14,11 +14,8 @@
             Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.Characters.Actions.MoveCommand"/> class.
             </summary>
             <param name="gameEntity">Moveable game entity.</param>
-            <param name="direction">Moving direction.</param>
+            <param name="position">Position of the game entity.</param>
             <param name="model">Game model.</param>
-        </member>
-        <member name="M:TimeWar.Logic.Classes.Characters.Actions.MoveCommand.Execute">
-            <inheritdoc/>
         </member>
         <member name="M:TimeWar.Logic.Classes.Characters.Actions.MoveCommand.Undo">
             <inheritdoc/>
@@ -103,11 +100,6 @@
         <member name="T:TimeWar.Logic.Interfaces.ICommand">
             <summary>
             Command interface for actions.
-            </summary>
-        </member>
-        <member name="M:TimeWar.Logic.Interfaces.ICommand.Execute">
-            <summary>
-            Execute the command.
             </summary>
         </member>
         <member name="M:TimeWar.Logic.Interfaces.ICommand.Undo">

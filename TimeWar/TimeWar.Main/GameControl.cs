@@ -94,7 +94,6 @@ namespace TimeWar.Main
                     if (this.commandManager.IsFinished)
                     {
                         this.model.Hero.RemoveKey("space");
-                        Debug.WriteLine("Up released!");
                     }
 
                     break;
@@ -102,7 +101,6 @@ namespace TimeWar.Main
                     if (this.commandManager.IsFinished)
                     {
                         this.model.Hero.RemoveKey("a");
-                        Debug.WriteLine("Left released!");
                     }
 
                     break;
@@ -110,7 +108,6 @@ namespace TimeWar.Main
                     if (this.commandManager.IsFinished)
                     {
                         this.model.Hero.RemoveKey("s");
-                        Debug.WriteLine("Down released");
                     }
 
                     break;
@@ -118,7 +115,6 @@ namespace TimeWar.Main
                     if (this.commandManager.IsFinished)
                     {
                         this.model.Hero.RemoveKey("d");
-                        Debug.WriteLine("Right released!");
                     }
 
                     break;
@@ -138,7 +134,6 @@ namespace TimeWar.Main
                     if (this.commandManager.IsFinished)
                     {
                         this.model.Hero.AddKey("space");
-                        Debug.WriteLine("Up pressed!");
                     }
 
                     break;
@@ -146,7 +141,6 @@ namespace TimeWar.Main
                     if (this.commandManager.IsFinished)
                     {
                         this.model.Hero.AddKey("a");
-                        Debug.WriteLine("Left pressed!");
                     }
 
                     break;
@@ -154,7 +148,6 @@ namespace TimeWar.Main
                     if (this.commandManager.IsFinished)
                     {
                         this.model.Hero.AddKey("s");
-                        Debug.WriteLine("Down pressed!");
                     }
 
                     break;
@@ -162,7 +155,6 @@ namespace TimeWar.Main
                     if (this.commandManager.IsFinished)
                     {
                         this.model.Hero.AddKey("d");
-                        Debug.WriteLine("Right pressed!");
                     }
 
                     break;
