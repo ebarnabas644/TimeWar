@@ -149,7 +149,14 @@ namespace TimeWar.Logic
                     this.jumpingTimeOut.Restart();
                     this.isJumping = true;
                     this.accelerationStopwatch.Start();
-                    y = -MaxJumpHeight;
+                    if (Math.Abs(this.moveVector.X) >= 15)
+                    {
+                        y -= MaxJumpHeight + 2;
+                    }
+                    else
+                    {
+                        y -= MaxJumpHeight;
+                    }
                 }
             }
 
