@@ -153,36 +153,49 @@
             </summary>
             <returns>Jumping value.</returns>
         </member>
-        <member name="T:TimeWar.Logic.Classes.Characters.BasicEnemy">
+        <member name="T:TimeWar.Logic.Classes.Characters.BasicEnemyLogic">
             <summary>
             Enemy logic.
             </summary>
         </member>
-        <member name="M:TimeWar.Logic.Classes.Characters.BasicEnemy.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Character,TimeWar.Logic.Classes.CommandManager)">
+        <member name="M:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Character,TimeWar.Logic.Classes.CommandManager)">
             <summary>
-            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.Characters.BasicEnemy"/> class.
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.Characters.BasicEnemyLogic"/> class.
             </summary>
             <param name="model">Game model.</param>
             <param name="character">Charater.</param>
             <param name="commandManager">Command manger.</param>
         </member>
-        <member name="M:TimeWar.Logic.Classes.Characters.BasicEnemy.OneTick">
+        <member name="M:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.OneTick">
             <inheritdoc/>
         </member>
-        <member name="M:TimeWar.Logic.Classes.Characters.BasicEnemy.Move">
+        <member name="M:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.Move">
             <inheritdoc/>
         </member>
-        <member name="M:TimeWar.Logic.Classes.Characters.BasicEnemy.Movement">
+        <member name="M:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.Movement">
             <inheritdoc/>
         </member>
-        <member name="T:TimeWar.Logic.Classes.Characters.FastEnemy">
+        <member name="T:TimeWar.Logic.Classes.Characters.FastEnemyLogic">
             <summary>
             Fast enemy class.
             </summary>
         </member>
-        <member name="M:TimeWar.Logic.Classes.Characters.FastEnemy.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Character,TimeWar.Logic.Classes.CommandManager)">
+        <member name="M:TimeWar.Logic.Classes.Characters.FastEnemyLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Character,TimeWar.Logic.Classes.CommandManager)">
             <summary>
-            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.Characters.FastEnemy"/> class.
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.Characters.FastEnemyLogic"/> class.
+            </summary>
+            <param name="model">Game model.</param>
+            <param name="character">Character.</param>
+            <param name="commandManager">Command manager.</param>
+        </member>
+        <member name="T:TimeWar.Logic.Classes.Characters.HeavyEnemyLogic">
+            <summary>
+            Heavy enemy.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.HeavyEnemyLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Character,TimeWar.Logic.Classes.CommandManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.Characters.HeavyEnemyLogic"/> class.
             </summary>
             <param name="model">Game model.</param>
             <param name="character">Character.</param>
