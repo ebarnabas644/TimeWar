@@ -210,7 +210,7 @@ namespace TimeWar.Model.Objects
         {
             try
             {
-                this.ground[position.Y][position.X] = 0;
+                this.decorations[position.Y][position.X] = 0;
             }
             catch (IndexOutOfRangeException)
             {
@@ -231,7 +231,7 @@ namespace TimeWar.Model.Objects
             }
             catch (IndexOutOfRangeException)
             {
-                Debug.WriteLine("GameWorld.SearchGround: Bad value: (X: " + position.X + " Y: " + position.Y + ")");
+                Debug.WriteLine("GameWorld.SearchDecoration: Bad value: (X: " + position.X + " Y: " + position.Y + ")");
             }
 
             return 0;
