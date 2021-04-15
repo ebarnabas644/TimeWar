@@ -160,16 +160,7 @@
             <param name="character">Charater.</param>
             <param name="commandManager">Command manger.</param>
         </member>
-        <member name="M:TimeWar.Logic.Classes.Characters.EnemyLogic.Equals(System.Object)">
-            <inheritdoc/>
-        </member>
-        <member name="M:TimeWar.Logic.Classes.Characters.EnemyLogic.GetHashCode">
-            <inheritdoc/>
-        </member>
         <member name="M:TimeWar.Logic.Classes.Characters.EnemyLogic.OneTick">
-            <inheritdoc/>
-        </member>
-        <member name="M:TimeWar.Logic.Classes.Characters.EnemyLogic.ToString">
             <inheritdoc/>
         </member>
         <member name="M:TimeWar.Logic.Classes.Characters.EnemyLogic.Move">
@@ -237,9 +228,6 @@
             <param name="model">Game model entity.</param>
             <param name="character">Moveable entity.</param>
             <param name="commandManager">Command manager entity.</param>
-        </member>
-        <member name="M:TimeWar.Logic.CharacterLogic.Movement">
-            <inheritdoc/>
         </member>
         <member name="M:TimeWar.Logic.CharacterLogic.Move">
             <inheritdoc/>
