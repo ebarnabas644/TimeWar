@@ -147,6 +147,12 @@
             </summary>
             <returns>New movement point.</returns>
         </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.ActorLogic.Jump">
+            <summary>
+            Jumping.
+            </summary>
+            <returns>Jumping value.</returns>
+        </member>
         <member name="T:TimeWar.Logic.Classes.Characters.EnemyLogic">
             <summary>
             Enemy logic.
@@ -228,6 +234,9 @@
             <param name="model">Game model entity.</param>
             <param name="character">Moveable entity.</param>
             <param name="commandManager">Command manager entity.</param>
+        </member>
+        <member name="M:TimeWar.Logic.CharacterLogic.OneTick">
+            <inheritdoc/>
         </member>
         <member name="M:TimeWar.Logic.CharacterLogic.Move">
             <inheritdoc/>
