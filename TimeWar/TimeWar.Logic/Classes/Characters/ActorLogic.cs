@@ -385,5 +385,22 @@ namespace TimeWar.Logic.Classes.Characters
         {
             return new Point(0, 0);
         }
+
+        /// <summary>
+        /// Jumping.
+        /// </summary>
+        /// <returns>Jumping value.</returns>
+        protected virtual int Jump()
+        {
+            if (!this.IsJumping && this.JumpingTimeOut.ElapsedMilliseconds > 250)
+            {
+                this.JumpingTimeOut.Restart();
+                this.IsJumping = true;
+                this.AccelerationStopwatch.Start();
+                return this.MaxJumpHeight * -1;
+            }
+
+            return 0;
+        }
     }
 }
