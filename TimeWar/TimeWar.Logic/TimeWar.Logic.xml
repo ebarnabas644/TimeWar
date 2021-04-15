@@ -20,6 +20,164 @@
         <member name="M:TimeWar.Logic.Classes.Characters.Actions.MoveCommand.Undo">
             <inheritdoc/>
         </member>
+        <member name="T:TimeWar.Logic.Classes.Characters.ActorLogic">
+            <summary>
+            Base class for characters and enemies.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.ActorLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Character,TimeWar.Logic.Classes.CommandManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.Characters.ActorLogic"/> class.
+            </summary>
+            <param name="model">Game model.</param>
+            <param name="character">Character.</param>
+            <param name="commandManager">Command manger.</param>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.MoveVector">
+            <summary>
+            Gets or sets movement vector of an actor.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.JumpingTimeOut">
+            <summary>
+            Gets or sets if a character can jump again.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.AccelerationStopwatch">
+            <summary>
+            Gets or sets the time of falling for a character.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.Acceleration">
+            <summary>
+            Gets or sets gravity acceleration.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.IsJumping">
+            <summary>
+            Gets or sets a value indicating whether the actor is jumping.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.Character">
+            <summary>
+            Gets or sets the character.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.MaxJumpHeight">
+            <summary>
+            Gets or sets the force that is applied when an actor is jumping.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.MaxMovementSpeed">
+            <summary>
+            Gets or sets the force that is applied every tick when an actor is moving.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.DefaultAcceleration">
+            <summary>
+            Gets or sets the force that is applied every tick when a player is moving.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.Model">
+            <summary>
+            Gets or sets the game model.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.CommandManager">
+            <summary>
+            Gets or sets the command manager.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.ActorLogic.OneTick">
+            <summary>
+            One Tick.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.ActorLogic.PixelToTile(System.Int32)">
+            <summary>
+            Converts pixel to tile values.
+            </summary>
+            <param name="num">Pixel value.</param>
+            <returns>Tile value.</returns>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.ActorLogic.TileToPixel(System.Int32)">
+            <summary>
+            Converts tile to pixel values.
+            </summary>
+            <param name="num">Tile value.</param>
+            <returns>Pixel value.</returns>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.ActorLogic.GroundCollision(System.Drawing.Point)">
+            <summary>
+            Ground collsiion.
+            </summary>
+            <param name="newPoint">New movement point.</param>
+            <returns>True if the movemnt would collide.</returns>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.ActorLogic.TopCollision(System.Drawing.Point)">
+            <summary>
+            Top collsiion.
+            </summary>
+            <param name="newPoint">New movement point.</param>
+            <returns>True if the movemnt would collide.</returns>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.ActorLogic.AddToVector(System.Int32,System.Int32)">
+            <summary>
+            Increases or decreases the movement vector.
+            </summary>
+            <param name="x">X direction.</param>
+            <param name="y">Y direction.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.ActorLogic.WallCollision(System.Drawing.Point,System.Boolean)">
+            <summary>
+            Wall collsiion.
+            </summary>
+            <param name="newPoint">New movement point.</param>
+            <param name="rightWall">True if you want to check right wall collision, false if you would like to check left wall.</param>
+            <returns>True if the movemnt would collide.</returns>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.ActorLogic.Movement">
+            <summary>
+            Default Movement funtion.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.ActorLogic.Move">
+            <summary>
+            Default move funtion.
+            </summary>
+            <returns>New movement point.</returns>
+        </member>
+        <member name="T:TimeWar.Logic.Classes.Characters.EnemyLogic">
+            <summary>
+            Enemy logic.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.EnemyLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Character,TimeWar.Logic.Classes.CommandManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.Characters.EnemyLogic"/> class.
+            </summary>
+            <param name="model">Game model.</param>
+            <param name="character">Charater.</param>
+            <param name="commandManager">Command manger.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.EnemyLogic.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.EnemyLogic.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.EnemyLogic.OneTick">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.EnemyLogic.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.EnemyLogic.Move">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.EnemyLogic.Movement">
+            <inheritdoc/>
+        </member>
         <member name="T:TimeWar.Logic.Classes.CommandManager">
             <summary>
             Command manager class.
@@ -80,10 +238,11 @@
             <param name="character">Moveable entity.</param>
             <param name="commandManager">Command manager entity.</param>
         </member>
-        <member name="M:TimeWar.Logic.CharacterLogic.OneTick">
-            <summary>
-            1 frame event.
-            </summary>
+        <member name="M:TimeWar.Logic.CharacterLogic.Movement">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.CharacterLogic.Move">
+            <inheritdoc/>
         </member>
         <member name="T:TimeWar.Logic.InitLogic">
             <summary>
