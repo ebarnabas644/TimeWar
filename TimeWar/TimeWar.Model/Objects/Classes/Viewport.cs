@@ -133,5 +133,25 @@ namespace TimeWar.Model.Objects
                 }
             }
         }
+
+        /// <summary>
+        /// Get relative x position from the viewport.
+        /// </summary>
+        /// <param name="xPos">Object x pos.</param>
+        /// <returns>Relative x pos.</returns>
+        public int GetRelativeObjectPosX(int xPos)
+        {
+            return -(xPos - this.GetViewportX);
+        }
+
+        /// <summary>
+        /// Get relative y position from the viewport.
+        /// </summary>
+        /// <param name="yPos">Object y pos.</param>
+        /// <returns>Relative y pos.</returns>
+        public int GetRelativeObjectPosY(int yPos)
+        {
+            return yPos - this.GetViewportY;
+        }
     }
 }

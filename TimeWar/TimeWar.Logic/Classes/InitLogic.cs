@@ -45,6 +45,12 @@ namespace TimeWar.Logic
             return poidata;
         }
 
+        private static string[][] GetDecorations(XDocument mapData)
+        {
+            string[][] decodata = mapData.Element("map").Elements("layer").Where(x => x.Attribute("name").Value == "decorations").Select(x => x.Element("data").Value).FirstOrDefault().Trim().Split("\n").Select(x => x.Split(",")).Select(x => x.Where(x => x.Length != 0).ToArray()).ToArray();
+            return decodata;
+        }
+
         private static int GetTileSize(XDocument mapData)
         {
             return Convert.ToInt32(mapData.Element("map").Attribute("tilewidth").Value, System.Globalization.CultureInfo.CurrentCulture);
@@ -80,6 +86,20 @@ namespace TimeWar.Logic
             }
         }
 
+        private static void FillDeco(GameWorld gameWorld, string[][] decodata)
+        {
+            for (int y = 0; y < gameWorld.GetTileHeight; y++)
+            {
+                for (int x = 0; x < gameWorld.GetTileWidth; x++)
+                {
+                    if (decodata[y][x] != "0")
+                    {
+                        gameWorld.AddDecoration(new Point(x, y), Convert.ToInt32(decodata[y][x], System.Globalization.CultureInfo.CurrentCulture));
+                    }
+                }
+            }
+        }
+
         private Player GetPlayer()
         {
             int startX = this.model.CurrentWorld.SearchPointOfInterest("start").X * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize;
@@ -92,6 +112,7 @@ namespace TimeWar.Logic
             XDocument mapData = XDocument.Load("Leveldata\\" + mapName + ".tmx");
             string[][] grounddata = GetGround(mapData);
             string[][] poidata = GetPoi(mapData);
+            string[][] decodata = GetDecorations(mapData);
             int gameWorldHeight = grounddata.Length;
             int gameWorldWidth = grounddata[0].Length;
             int tileSize = GetTileSize(mapData);
@@ -99,6 +120,7 @@ namespace TimeWar.Logic
             this.model.CurrentWorld.WorldName = mapName;
             FillGround(this.model.CurrentWorld, grounddata);
             FillPoi(this.model.CurrentWorld, poidata);
+            FillDeco(this.model.CurrentWorld, decodata);
             this.model.Hero = this.GetPlayer();
         }
     }
