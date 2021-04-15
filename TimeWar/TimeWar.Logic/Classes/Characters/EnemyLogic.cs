@@ -28,7 +28,7 @@ namespace TimeWar.Logic.Classes.Characters
         private int moveDir;
         private Point lastKnownPlayerLocation;
         private bool isPlayerDetected;
-        private Stopwatch playerDetectionTime;
+        private Stopwatch playerDetectionStopwatch;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="EnemyLogic"/> class.
@@ -47,12 +47,13 @@ namespace TimeWar.Logic.Classes.Characters
             this.moveDir = 0;
             this.lastKnownPlayerLocation = new Point(0, 0);
             this.isPlayerDetected = false;
-            this.playerDetectionTime = new Stopwatch();
+            this.playerDetectionStopwatch = new Stopwatch();
         }
 
         /// <inheritdoc/>
         public override void OneTick()
         {
+            this.DetectPlayer();
             base.OneTick();
         }
 
@@ -77,14 +78,11 @@ namespace TimeWar.Logic.Classes.Characters
                         break;
 
                     case 1:
-                        if (!this.IsJumping && this.JumpingTimeOut.ElapsedMilliseconds > 250)
+                        y += this.Jump();
+                        if (y != 0)
                         {
-                            this.JumpingTimeOut.Restart();
-                            this.IsJumping = true;
-                            this.AccelerationStopwatch.Start();
                             this.moveDir = RandomNumberGenerator.GetInt32(4);
                             this.movementDirStopwatch.Restart();
-                            y -= this.MaxJumpHeight;
                         }
 
                         break;
@@ -104,19 +102,37 @@ namespace TimeWar.Logic.Classes.Characters
             }
             else
             {
-                x = 0;
-                y = 0;
-                if (this.Character.Position.X > this.lastKnownPlayerLocation.X)
+                if (this.playerDetectionStopwatch.ElapsedMilliseconds < DetectionTime * 1000)
                 {
-                    x -= 2;
+                    x = 0;
+                    y = 0;
+                    if (this.Character.Position.X > this.lastKnownPlayerLocation.X)
+                    {
+                        x -= 2;
+                    }
+
+                    if (this.Character.Position.X < this.lastKnownPlayerLocation.X)
+                    {
+                        x += 2;
+                    }
+
+                    if (this.Character.Position.Y < this.lastKnownPlayerLocation.Y)
+                    {
+                        y += this.Jump();
+                    }
+
+                    if (RandomNumberGenerator.GetInt32(100) > 80)
+                    {
+                        y += this.Jump();
+                    }
+                }
+                else
+                {
+                    this.moveDir = RandomNumberGenerator.GetInt32(4);
+                    this.movementDirStopwatch.Restart();
                 }
 
-                if (this.Character.Position.X < this.lastKnownPlayerLocation.X)
-                {
-                    x += 2;
-                }
-
-                //lastKnownPlayerLocation.Y;
+                // lastKnownPlayerLocation.Y;
             }
 
             return new Point(x, y);
@@ -138,7 +154,72 @@ namespace TimeWar.Logic.Classes.Characters
 
         private void DetectPlayer()
         {
-            throw new NotImplementedException();
+            if (this.Character.Direction == Stances.StandLeft || this.Character.Direction == Stances.Left)
+            {
+                if (this.DetectionCone(false))
+                {
+                    this.playerDetectionStopwatch.Start();
+                }
+            }
+            else if (this.Character.Direction == Stances.Right || this.Character.Direction == Stances.Right)
+            {
+                if (this.DetectionCone())
+                {
+                    this.playerDetectionStopwatch.Start();
+                }
+            }
+        }
+
+        private bool DetectionCone(bool right = true, int range = 15)
+        {
+            int dir = -1;
+            int height = 1;
+            Point startPoint = new Point(this.PixelToTile(this.Character.Position.X), this.PixelToTile(this.Character.Position.Y));
+            if (right)
+            {
+                dir = 1;
+                startPoint.X++;
+            }
+
+            for (int i = 0; i < range; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    height++;
+                }
+
+                if (this.DetectionSpike(startPoint, height))
+                {
+                    return true;
+                }
+
+                startPoint.X += dir;
+            }
+
+            return false;
+        }
+
+        private bool DetectionSpike(Point starterPoint, int range)
+        {
+            Point playerLocation = new Point(this.PixelToTile(this.Model.Hero.Position.X), this.PixelToTile(this.Model.Hero.Position.Y));
+
+            for (int i = 0; i < range + 1; i++)
+            {
+                Point upDetection = new Point(starterPoint.X + i, starterPoint.Y);
+                Point downDetection = new Point(starterPoint.X - i, starterPoint.Y);
+                if (playerLocation == upDetection)
+                {
+                    this.lastKnownPlayerLocation = upDetection;
+                    return true;
+                }
+                else if (playerLocation == downDetection)
+                {
+                    this.lastKnownPlayerLocation = downDetection;
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }
