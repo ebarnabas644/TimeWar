@@ -1,4 +1,8 @@
-﻿namespace TimeWar.LogicTests
+﻿// <copyright file="Tests.cs" company="Time War">
+// Copyright (c) Time War. All rights reserved.
+// </copyright>
+
+namespace TimeWar.LogicTests
 {
     using System;
     using System.Collections.Generic;
