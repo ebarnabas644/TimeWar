@@ -173,7 +173,7 @@ namespace TimeWar.Renderer
         {
             Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeCharacterPosX, this.model.Camera.GetRelativeCharacterPosY, this.model.Hero.Width * this.model.CurrentWorld.Magnify, this.model.Hero.Height * this.model.CurrentWorld.Magnify));
             this.playerCache = new GeometryDrawing(this.GetSpriteBrush(this.model.Hero), null, g);
-            this.model.Hero.CurrentSprite = this.spriteFps % this.spriteBrushes[this.model.Hero].Length;
+            this.model.Hero.CurrentSprite = this.spriteFps % this.spriteBrushes[this.model.Hero][0].Length;
             return this.playerCache;
         }
     }
