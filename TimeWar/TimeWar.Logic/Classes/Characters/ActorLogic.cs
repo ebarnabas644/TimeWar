@@ -312,6 +312,69 @@ namespace TimeWar.Logic.Classes.Characters
         /// </summary>
         protected virtual void Movement()
         {
+            Point newPoint = this.Move();
+            if (Math.Abs(this.MoveVector.X) < this.MaxMovementSpeed)
+            {
+                this.AddToVector(newPoint.X, 0);
+            }
+
+            this.AddToVector(0, newPoint.Y);
+
+            if (this.GroundCollision(new Point(0, newPoint.Y)))
+            {
+                if (this.CommandManager.IsFinished)
+                {
+                    while (this.GroundCollision(new Point(0, newPoint.Y)))
+                    {
+                        this.Character.Position = new Point(this.Character.Position.X, this.Character.Position.Y - 1);
+                    }
+                }
+            }
+
+            if (!this.GroundCollision(new Point(0, this.Acceleration)))
+            {
+                if (this.CommandManager.IsFinished)
+                {
+                    this.AddToVector(0, this.Acceleration);
+
+                    if ((!this.GroundCollision(new Point(0, this.Acceleration + 1)) && this.Acceleration < 10) && !this.AccelerationStopwatch.IsRunning)
+                    {
+                        this.AccelerationStopwatch.Start();
+                    }
+
+                    if (this.AccelerationStopwatch.ElapsedMilliseconds > 100)
+                    {
+                        this.Acceleration++;
+                        this.AccelerationStopwatch.Restart();
+                    }
+                }
+            }
+
+            if (!this.WallCollision(newPoint) && !this.WallCollision(newPoint, false))
+            {
+                this.Character.Position = new Point(this.Character.Position.X + this.MoveVector.X, this.Character.Position.Y);
+            }
+
+            if (!this.GroundCollision(newPoint) && (!this.WallCollision(newPoint) && !this.WallCollision(newPoint, false)))
+            {
+                if (!this.TopCollision(newPoint))
+                {
+                    this.Character.Position = new Point(this.Character.Position.X, this.Character.Position.Y + this.MoveVector.Y);
+                }
+            }
+
+            MoveCommand moveCommand = new MoveCommand(this.Character, this.Character.Position, this.Model);
+            this.CommandManager.AddCommand(moveCommand);
+
+            if (this.MoveVector.X > 0)
+            {
+                this.AddToVector(-1, 0);
+            }
+
+            if (this.MoveVector.X < 0)
+            {
+                this.AddToVector(1, 0);
+            }
         }
 
         /// <summary>
