@@ -10,6 +10,7 @@ namespace TimeWar.Model
     using System.Text;
     using System.Threading.Tasks;
     using TimeWar.Model.Objects;
+    using TimeWar.Model.Objects.Interfaces;
 
     /// <summary>
     /// Main game model class.
