@@ -18,6 +18,7 @@ namespace TimeWar.Model.Objects
     public class GameWorld
     {
         private bool[][] ground;
+        private int[][] decorations;
         private Dictionary<string, Point> pointOfInterests;
 
         /// <summary>
@@ -30,9 +31,11 @@ namespace TimeWar.Model.Objects
         public GameWorld(int height, int width, int tileSize, int magnify = 5)
         {
             this.ground = new bool[height][];
+            this.decorations = new int[height][];
             for (int i = 0; i < this.ground.Length; i++)
             {
                 this.ground[i] = new bool[width];
+                this.decorations[i] = new int[width];
             }
 
             this.pointOfInterests = new Dictionary<string, Point>();
@@ -180,6 +183,58 @@ namespace TimeWar.Model.Objects
         public int ConvertPixelToTile(int pixelPos)
         {
             return pixelPos / this.Magnify / this.TileSize;
+        }
+
+        /// <summary>
+        /// Add decoration object to the map.
+        /// </summary>
+        /// <param name="position">Position of the object(tile pos).</param>
+        /// <param name="id">Object id.</param>
+        public void AddDecoration(Point position, int id)
+        {
+            try
+            {
+                this.decorations[position.Y][position.X] = id;
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Debug.WriteLine("GameWorld.AddDecoration: Bad value: (X: " + position.X + " Y: " + position.Y + ")");
+            }
+        }
+
+        /// <summary>
+        /// Remove decoration from the map.
+        /// </summary>
+        /// <param name="position">Position of the object(tile pos).</param>
+        public void RemoveDecoration(Point position)
+        {
+            try
+            {
+                this.ground[position.Y][position.X] = 0;
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Debug.WriteLine("GameWorld.RemoveDecoration: Bad value: (X: " + position.X + " Y: " + position.Y + ")");
+            }
+        }
+
+        /// <summary>
+        /// Search for decoration object.
+        /// </summary>
+        /// <param name="position">Position of the object(tile pos).</param>
+        /// <returns>Object id.</returns>
+        public int SearchDecoration(Point position)
+        {
+            try
+            {
+                return this.decorations[position.Y][position.X];
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Debug.WriteLine("GameWorld.SearchGround: Bad value: (X: " + position.X + " Y: " + position.Y + ")");
+            }
+
+            return 0;
         }
     }
 }
