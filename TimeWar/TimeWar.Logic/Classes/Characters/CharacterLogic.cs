@@ -13,6 +13,7 @@ namespace TimeWar.Logic
     using System.Threading;
     using System.Threading.Tasks;
     using TimeWar.Logic.Classes;
+    using TimeWar.Logic.Classes.Characters;
     using TimeWar.Logic.Classes.Characters.Actions;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
@@ -21,21 +22,8 @@ namespace TimeWar.Logic
     /// <summary>
     /// Basic character logic class.
     /// </summary>
-    public class CharacterLogic
+    public class CharacterLogic : ActorLogic
     {
-        private const int DefaultAcceleration = 1;
-        private const int MaxMovementSpeed = 15;
-        private const int MaxJumpHeight = 20;
-
-        private GameModel model;
-        private Character character;
-        private CommandManager commandManager;
-        private bool isJumping;
-        private int acceleration;
-        private Stopwatch accelerationStopwatch = new Stopwatch();
-        private Stopwatch jumpingTimeOut = new Stopwatch();
-        private Point moveVector;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="CharacterLogic"/> class.
         /// </summary>
@@ -43,247 +31,129 @@ namespace TimeWar.Logic
         /// <param name="character">Moveable entity.</param>
         /// <param name="commandManager">Command manager entity.</param>
         public CharacterLogic(GameModel model, Character character, CommandManager commandManager)
+            : base(model, character, commandManager)
         {
-            this.model = model;
-            this.character = character;
-            this.commandManager = commandManager;
-            this.isJumping = false;
-            this.acceleration = DefaultAcceleration;
-            this.jumpingTimeOut.Start();
-            this.moveVector = new Point(0, 0);
         }
 
-        /// <summary>
-        /// 1 frame event.
-        /// </summary>
-        public void OneTick()
-        {
-            this.Movement();
-        }
-
-        private void Movement()
+        /// <inheritdoc/>
+        protected override void Movement()
         {
             Point newPoint = this.Move();
-            if (Math.Abs(this.moveVector.X) < MaxMovementSpeed)
+            if (Math.Abs(this.MoveVector.X) < this.MaxMovementSpeed)
             {
-                this.moveVector.X += newPoint.X;
+                // this.MoveVector.X += newPoint.X;
+                this.AddToVector(newPoint.X, 0);
             }
 
-            this.moveVector.Y += newPoint.Y;
+            this.AddToVector(0, newPoint.Y);
 
+            // this.MoveVector.Y += newPoint.Y;
             if (this.GroundCollision(new Point(0, newPoint.Y)))
             {
-                if (this.commandManager.IsFinished)
+                if (this.CommandManager.IsFinished)
                 {
                     while (this.GroundCollision(new Point(0, newPoint.Y)))
                     {
-                        this.character.Position = new Point(this.character.Position.X, this.character.Position.Y - 1);
+                        this.Character.Position = new Point(this.Character.Position.X, this.Character.Position.Y - 1);
                     }
                 }
             }
 
-            if (!this.GroundCollision(new Point(0, this.acceleration)))
+            if (!this.GroundCollision(new Point(0, this.Acceleration)))
             {
-                if (this.commandManager.IsFinished)
+                if (this.CommandManager.IsFinished)
                 {
-                    this.moveVector.Y += this.acceleration;
+                    // this.MoveVector.Y += this.Acceleration;
+                    this.AddToVector(0, this.Acceleration);
 
-                    if ((!this.GroundCollision(new Point(0, this.acceleration + 1)) && this.acceleration < 10) && !this.accelerationStopwatch.IsRunning)
+                    if ((!this.GroundCollision(new Point(0, this.Acceleration + 1)) && this.Acceleration < 10) && !this.AccelerationStopwatch.IsRunning)
                     {
-                        this.accelerationStopwatch.Start();
+                        this.AccelerationStopwatch.Start();
                     }
 
-                    if (this.accelerationStopwatch.ElapsedMilliseconds > 100)
+                    if (this.AccelerationStopwatch.ElapsedMilliseconds > 100)
                     {
-                        this.acceleration++;
-                        this.accelerationStopwatch.Restart();
+                        this.Acceleration++;
+                        this.AccelerationStopwatch.Restart();
                     }
                 }
             }
 
             if (!this.WallCollision(newPoint) && !this.WallCollision(newPoint, false))
             {
-                this.character.Position = new Point(this.character.Position.X + this.moveVector.X, this.character.Position.Y);
+                this.Character.Position = new Point(this.Character.Position.X + this.MoveVector.X, this.Character.Position.Y);
             }
 
             if (!this.GroundCollision(newPoint) && (!this.WallCollision(newPoint) && !this.WallCollision(newPoint, false)))
             {
                 if (!this.TopCollision(newPoint))
                 {
-                    this.character.Position = new Point(this.character.Position.X, this.character.Position.Y + this.moveVector.Y);
+                    this.Character.Position = new Point(this.Character.Position.X, this.Character.Position.Y + this.MoveVector.Y);
                 }
             }
 
-            MoveCommand moveCommand = new MoveCommand(this.character, this.character.Position, this.model);
-            this.commandManager.AddCommand(moveCommand);
+            MoveCommand moveCommand = new MoveCommand(this.Character, this.Character.Position, this.Model);
+            this.CommandManager.AddCommand(moveCommand);
 
-            if (this.moveVector.X > 0)
+            if (this.MoveVector.X > 0)
             {
-                this.moveVector.X--;
+                // this.MoveVector.X--;
+                this.AddToVector(-1, 0);
             }
 
-            if (this.moveVector.X < 0)
+            if (this.MoveVector.X < 0)
             {
-                this.moveVector.X++;
+                // this.MoveVector.X++;
+                this.AddToVector(1, 0);
             }
         }
 
-        private Point Move()
+        /// <inheritdoc/>
+        protected override Point Move()
         {
             int x = 0;
             int y = 0;
-            if (this.character.ContainKey("a"))
+            if (this.Character.ContainKey("a"))
             {
                 x -= 2;
             }
 
-            if (this.character.ContainKey("d"))
+            if (this.Character.ContainKey("d"))
             {
                 x += 2;
             }
 
-            if (this.character.ContainKey("s"))
+            if (this.Character.ContainKey("s"))
             {
                 y += 1;
             }
 
-            if (this.character.ContainKey("space"))
+            if (this.Character.ContainKey("space"))
             {
-                if (!this.isJumping && this.jumpingTimeOut.ElapsedMilliseconds > 250)
+                if (!this.IsJumping && this.JumpingTimeOut.ElapsedMilliseconds > 250)
                 {
-                    this.jumpingTimeOut.Restart();
-                    this.isJumping = true;
-                    this.accelerationStopwatch.Start();
-                    if (Math.Abs(this.moveVector.X) >= 15)
+                    this.JumpingTimeOut.Restart();
+                    this.IsJumping = true;
+                    this.AccelerationStopwatch.Start();
+                    if (Math.Abs(this.MoveVector.X) >= 15)
                     {
-                        y -= MaxJumpHeight + 2;
+                        y -= this.MaxJumpHeight + 2;
                     }
                     else
                     {
-                        y -= MaxJumpHeight;
+                        y -= this.MaxJumpHeight;
                     }
                 }
             }
 
             return new Point(x, y);
         }
-
-        private int PixelToTile(int num)
-        {
-            return this.model.CurrentWorld.ConvertPixelToTile(num);
-        }
-
-        private int TileToPixel(int num)
-        {
-            return this.model.CurrentWorld.ConvertTileToPixel(num);
-        }
-
-        private bool GroundCollision(Point newPoint)
-        {
-            if (!this.commandManager.IsFinished)
-            {
-                return false;
-            }
-
-            Rectangle actor = new Rectangle(
-        this.character.Position.X + newPoint.X,
-        this.character.Position.Y + newPoint.Y,
-        this.character.Width / this.model.CurrentWorld.TileSize,
-        this.character.Height / this.model.CurrentWorld.TileSize);
-            Point actorLocation;
-
-            for (int i = 0; i < actor.Width + 1; i++)
-            {
-                actorLocation = new Point(this.PixelToTile(actor.X + 1 + this.TileToPixel(i)), this.PixelToTile(actor.Y + this.moveVector.Y) + actor.Height);
-                if (this.model.CurrentWorld.SearchGround(actorLocation))
-                {
-                    this.moveVector.Y = 0;
-                    this.acceleration = DefaultAcceleration;
-                    this.accelerationStopwatch.Reset();
-                    this.isJumping = false;
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        private bool TopCollision(Point newPoint)
-        {
-            if (!this.commandManager.IsFinished)
-            {
-                return false;
-            }
-
-            Rectangle actor = new Rectangle(
-        this.character.Position.X + newPoint.X,
-        this.character.Position.Y,
-        this.character.Width / this.model.CurrentWorld.TileSize,
-        this.character.Height / this.model.CurrentWorld.TileSize);
-            Point actorLocation;
-
-            for (int i = 0; i < actor.Width + 1; i++)
-            {
-                actorLocation = new Point(this.PixelToTile(actor.X + 1 + this.TileToPixel(i)), this.PixelToTile(actor.Y + this.moveVector.Y));
-                if (this.model.CurrentWorld.SearchGround(actorLocation))
-                {
-                    this.moveVector.Y = 0;
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        private bool WallCollision(Point newPoint, bool rightWall = true)
-        {
-            if (!this.commandManager.IsFinished)
-            {
-                return false;
-            }
-
-            Rectangle actor = new Rectangle(
-                this.character.Position.X + newPoint.X,
-                this.character.Position.Y + newPoint.Y,
-                this.character.Width / this.model.CurrentWorld.TileSize,
-                this.character.Height / this.model.CurrentWorld.TileSize);
-            Point actorLocation;
-
-            if (rightWall)
-            {
-                // Right wall collision
-                for (int i = 0; i < actor.Height; i++)
-                {
-                    actorLocation = new Point(this.PixelToTile(actor.X + 1 + this.moveVector.X) + actor.Width, this.PixelToTile(actor.Y) + i);
-                    if (this.model.CurrentWorld.SearchGround(actorLocation))
-                    {
-                        this.moveVector.X = 0;
-                        return true;
-                    }
-                }
-            }
-            else
-            {
-                // Left wall collision
-                for (int i = 0; i < actor.Height; i++)
-                {
-                    actorLocation = new Point(this.PixelToTile(actor.X + this.moveVector.X), this.PixelToTile(actor.Y) + i);
-                    if (this.model.CurrentWorld.SearchGround(actorLocation))
-                    {
-                        this.moveVector.X = 0;
-                        return true;
-                    }
-                }
-            }
-
-            return false;
-        }
     }
 }
 
 /*
  * This Block was inside move funcion
-              switch (this.character.Direction)
+              switch (this.Character.Direction)
              {
                 case Stances.StandRight:
                     direction = new Point(0, 0);
@@ -299,11 +169,11 @@ namespace TimeWar.Logic
                     break;
                 case Stances.Up:
                     direction = new Point(0, 0);
-                    if (!this.isJumping && this.jumpingTimeOut.ElapsedMilliseconds > 250)
+                    if (!this.IsJumping && this.JumpingTimeOut.ElapsedMilliseconds > 250)
                     {
-                        this.jumpingTimeOut.Restart();
-                        this.isJumping = true;
-                        this.accelerationStopwatch.Start();
+                        this.JumpingTimeOut.Restart();
+                        this.IsJumping = true;
+                        this.AccelerationStopwatch.Start();
                         direction = new Point(lastX, -MaxJumpHeight);
                     }
 
@@ -328,49 +198,49 @@ public void OneTick()
 
     if (!this.MovementCollision(newPoint))
     {
-        MoveCommand command = new MoveCommand(this.character, newPoint, this.model);
+        MoveCommand command = new MoveCommand(this.Character, newPoint, this.Model);
         command.Execute();
         if (newPoint.Y == -1)
         {
             int counter = 0;
             while (counter < 14 && !this.MovementCollision(newPoint))
             {
-                command = new MoveCommand(this.character, newPoint, this.model);
+                command = new MoveCommand(this.Character, newPoint, this.Model);
                 command.Execute();
                 counter++;
-                this.commandManager.AddCommand(command);
+                this.CommandManager.AddCommand(command);
             }
 
             commandAdded = true;
         }
 
-        if (!this.MovementCollision(new Point(0, this.acceleration)))
+        if (!this.MovementCollision(new Point(0, this.Acceleration)))
         {
-            MoveCommand gravity = new MoveCommand(this.character, new Point(0, this.acceleration), this.model);
+            MoveCommand gravity = new MoveCommand(this.Character, new Point(0, this.Acceleration), this.Model);
             gravity.Execute();
-            this.commandManager.AddCommand(gravity);
-            if ((!this.MovementCollision(new Point(0, this.acceleration + 1)) && this.acceleration < 3) && !this.accelerationStopwatch.IsRunning)
+            this.CommandManager.AddCommand(gravity);
+            if ((!this.MovementCollision(new Point(0, this.Acceleration + 1)) && this.Acceleration < 3) && !this.AccelerationStopwatch.IsRunning)
             {
-                this.accelerationStopwatch.Start();
+                this.AccelerationStopwatch.Start();
             }
 
-            if (this.accelerationStopwatch.ElapsedMilliseconds > 100)
+            if (this.AccelerationStopwatch.ElapsedMilliseconds > 100)
             {
-                this.acceleration++;
-                this.accelerationStopwatch.Restart();
+                this.Acceleration++;
+                this.AccelerationStopwatch.Restart();
             }
         }
 
         if (!commandAdded)
         {
-            this.commandManager.AddCommand(command);
+            this.CommandManager.AddCommand(command);
         }
 
         if (this.MovementCollision(new Point(0, 0)))
         {
             while (this.MovementCollision(new Point(0, 0)))
             {
-                this.character.Position = new Point(this.character.Position.X, this.character.Position.Y - 1);
+                this.Character.Position = new Point(this.Character.Position.X, this.Character.Position.Y - 1);
             }
         }
     }
@@ -379,21 +249,21 @@ public void OneTick()
 private bool MovementCollision(Point newPoint)
 {
     Rectangle actor = new Rectangle(
-        this.character.Position.X + newPoint.X,
-        this.character.Position.Y + newPoint.Y,
-        this.character.Width / this.model.CurrentWorld.TileSize,
-        this.character.Height / this.model.CurrentWorld.TileSize);
+        this.Character.Position.X + newPoint.X,
+        this.Character.Position.Y + newPoint.Y,
+        this.Character.Width / this.Model.CurrentWorld.TileSize,
+        this.Character.Height / this.Model.CurrentWorld.TileSize);
     Point actorLocation;
 
     // Ground collision
     for (int i = 0; i < actor.Width; i++)
     {
         actorLocation = new Point(this.PixelToTile(actor.X + 1) + i, this.PixelToTile(actor.Y) + actor.Height); // itt
-        if (this.model.CurrentWorld.SearchGround(actorLocation))
+        if (this.Model.CurrentWorld.SearchGround(actorLocation))
         {
-            this.acceleration = DefaultAcceleration;
-            this.accelerationStopwatch.Reset();
-            this.isJumping = false;
+            this.Acceleration = DefaultAcceleration;
+            this.AccelerationStopwatch.Reset();
+            this.IsJumping = false;
             return true;
         }
     }
@@ -402,7 +272,7 @@ private bool MovementCollision(Point newPoint)
     for (int i = 0; i < actor.Width; i++)
     {
         actorLocation = new Point(this.PixelToTile(actor.X) + i, this.PixelToTile(actor.Y));
-        if (this.model.CurrentWorld.SearchGround(actorLocation))
+        if (this.Model.CurrentWorld.SearchGround(actorLocation))
         {
             return true;
         }
@@ -412,7 +282,7 @@ private bool MovementCollision(Point newPoint)
     for (int i = 0; i < actor.Height; i++)
     {
         actorLocation = new Point(this.PixelToTile(actor.X - 1) + actor.Width, this.PixelToTile(actor.Y) + i);
-        if (this.model.CurrentWorld.SearchGround(actorLocation))
+        if (this.Model.CurrentWorld.SearchGround(actorLocation))
         {
             return true;
         }
@@ -422,7 +292,7 @@ private bool MovementCollision(Point newPoint)
     for (int i = 0; i < actor.Height; i++)
     {
         actorLocation = new Point(this.PixelToTile(actor.X), this.PixelToTile(actor.Y) + i);
-        if (this.model.CurrentWorld.SearchGround(actorLocation))
+        if (this.Model.CurrentWorld.SearchGround(actorLocation))
         {
             return true;
         }
@@ -433,12 +303,12 @@ private bool MovementCollision(Point newPoint)
 
 private int PixelToTile(int num)
 {
-    return this.model.CurrentWorld.ConvertPixelToTile(num);
+    return this.Model.CurrentWorld.ConvertPixelToTile(num);
 }
 
 private int TileToPixel(int num)
 {
-    return this.model.CurrentWorld.ConvertTileToPixel(num);
+    return this.Model.CurrentWorld.ConvertTileToPixel(num);
 }
 }
 */
