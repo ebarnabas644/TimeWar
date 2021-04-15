@@ -16,6 +16,11 @@
             <param name="model">Game model entity.</param>
             <param name="menuMode">Game menu mode.</param>
         </member>
+        <member name="P:TimeWar.Renderer.GameRenderer.WindowChanged">
+            <summary>
+            Gets or sets a value indicating whether the window changed.
+            </summary>
+        </member>
         <member name="M:TimeWar.Renderer.GameRenderer.BuildDrawing">
             <summary>
             Build drawed game world.

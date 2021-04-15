@@ -236,6 +236,26 @@
             <param name="pixelPos">Tile position.</param>
             <returns>Pixel position.</returns>
         </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.AddDecoration(System.Drawing.Point,System.Int32)">
+            <summary>
+            Add decoration object to the map.
+            </summary>
+            <param name="position">Position of the object(tile pos).</param>
+            <param name="id">Object id.</param>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.RemoveDecoration(System.Drawing.Point)">
+            <summary>
+            Remove decoration from the map.
+            </summary>
+            <param name="position">Position of the object(tile pos).</param>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.SearchDecoration(System.Drawing.Point)">
+            <summary>
+            Search for decoration object.
+            </summary>
+            <param name="position">Position of the object(tile pos).</param>
+            <returns>Object id.</returns>
+        </member>
         <member name="T:TimeWar.Model.Objects.Player">
             <summary>
             Player detail class.
@@ -330,6 +350,20 @@
             <summary>
             Gets the followed character Y position relative to the viewport.
             </summary>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Viewport.GetRelativeObjectPosX(System.Int32)">
+            <summary>
+            Get relative x position from the viewport.
+            </summary>
+            <param name="xPos">Object x pos.</param>
+            <returns>Relative x pos.</returns>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Viewport.GetRelativeObjectPosY(System.Int32)">
+            <summary>
+            Get relative y position from the viewport.
+            </summary>
+            <param name="yPos">Object y pos.</param>
+            <returns>Relative y pos.</returns>
         </member>
         <member name="T:TimeWar.Model.Objects.Interfaces.IGameObject">
             <summary>

@@ -25,12 +25,10 @@ namespace TimeWar.Renderer
         private Drawing backgroundCache;
         private Drawing walls;
         private Drawing titleCache;
-        private System.Drawing.Point playerPosition;
         private Drawing playerCache;
-        private double windowHeightCache;
-        private double windowWidthCache;
         private Dictionary<string, Brush> staticBrushes;
         private Dictionary<IGameObject, ImageBrush[][]> spriteBrushes;
+        private Dictionary<string, IGameObject> gameObjects;
         private bool menuMode;
         private int spriteFps;
 
@@ -43,17 +41,19 @@ namespace TimeWar.Renderer
         {
             this.model = model;
             this.spriteTimer = new Stopwatch();
-            if (this.model != null)
-            {
-                this.windowHeightCache = this.model.Camera.WindowHeight;
-                this.windowWidthCache = this.model.Camera.WindowWidth;
-            }
 
             this.menuMode = menuMode;
             this.spriteBrushes = new Dictionary<IGameObject, ImageBrush[][]>();
+            this.gameObjects = new Dictionary<string, IGameObject>();
             this.staticBrushes = new Dictionary<string, Brush>();
             this.spriteTimer.Start();
+            this.WindowChanged = false;
         }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the window changed.
+        /// </summary>
+        public bool WindowChanged { get; set; }
 
         /// <summary>
         /// Build drawed game world.
@@ -70,7 +70,12 @@ namespace TimeWar.Renderer
             {
                 dg.Children.Add(this.GetPlayer());
             }
+            else
+            {
+                dg.Children.Add(this.GetTitle());
+            }
 
+            this.WindowChanged = false;
             return dg;
         }
 
@@ -78,7 +83,6 @@ namespace TimeWar.Renderer
         {
             this.backgroundCache = null;
             this.walls = null;
-            this.playerPosition = new System.Drawing.Point(1, 1);
             this.staticBrushes.Clear();
         }
 
@@ -129,14 +133,22 @@ namespace TimeWar.Renderer
 
         private Drawing GetTitle()
         {
-            if (this.titleCache == null)
+            if (!this.gameObjects.TryGetValue("title", out IGameObject title))
             {
-                StaticObject title = new StaticObject(83, 230, "title", new System.Drawing.Point(this.model.Camera.WindowWidth / 2, this.model.Camera.WindowWidth - 200));
-                Geometry g = new RectangleGeometry(new Rect(title.Position.X, title.Position.Y, title.Width * this.model.CurrentWorld.Magnify, title.Height * this.model.CurrentWorld.Magnify));
-                this.titleCache = new GeometryDrawing(this.GetSpriteBrush(title), null, g);
+                StaticObject newtitle = new StaticObject(83, 230, "title", new System.Drawing.Point((this.model.Camera.WindowWidth / 2) - (230 / 2 * this.model.CurrentWorld.Magnify / 2), this.model.Camera.WindowHeight / 10));
+                this.gameObjects.Add("title", newtitle);
+                title = newtitle;
             }
 
-            return null;
+            if (this.WindowChanged)
+            {
+                this.gameObjects["title"].Position = new System.Drawing.Point((this.model.Camera.WindowWidth / 2) - (title.Width / 2 * this.model.CurrentWorld.Magnify / 2), this.model.Camera.WindowHeight / 10);
+            }
+
+            Geometry g = new RectangleGeometry(new Rect(title.Position.X, title.Position.Y, title.Width * this.model.CurrentWorld.Magnify / 2, title.Height * this.model.CurrentWorld.Magnify / 2));
+            this.titleCache = new GeometryDrawing(this.GetSpriteBrush(title), null, g);
+            title.CurrentSprite = this.spriteFps % this.spriteBrushes[title][0].Length;
+            return this.titleCache;
         }
 
         private Drawing GetCollision() // For debug
@@ -161,10 +173,7 @@ namespace TimeWar.Renderer
         {
             Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeCharacterPosX, this.model.Camera.GetRelativeCharacterPosY, this.model.Hero.Width * this.model.CurrentWorld.Magnify, this.model.Hero.Height * this.model.CurrentWorld.Magnify));
             this.playerCache = new GeometryDrawing(this.GetSpriteBrush(this.model.Hero), null, g);
-            this.model.Hero.CurrentSprite = this.spriteFps % 4;
-            this.playerPosition = this.model.Hero.Position;
-            this.windowHeightCache = this.model.Camera.WindowHeight;
-            this.windowWidthCache = this.model.Camera.WindowWidth;
+            this.model.Hero.CurrentSprite = this.spriteFps % this.spriteBrushes[this.model.Hero].Length;
             return this.playerCache;
         }
     }
