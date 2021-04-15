@@ -56,27 +56,18 @@ namespace TimeWar.Logic
                 x += 2;
             }
 
+            if (this.Character.ContainKey("space"))
+            {
+                y += this.Jump();
+                if (y != 0 && Math.Abs(this.MoveVector.X) >= 14)
+                {
+                    y -= 2;
+                }
+            }
+
             if (this.Character.ContainKey("s"))
             {
                 y += 1;
-            }
-
-            if (this.Character.ContainKey("space"))
-            {
-                if (!this.IsJumping && this.JumpingTimeOut.ElapsedMilliseconds > 250)
-                {
-                    this.JumpingTimeOut.Restart();
-                    this.IsJumping = true;
-                    this.AccelerationStopwatch.Start();
-                    if (Math.Abs(this.MoveVector.X) >= 15)
-                    {
-                        y -= this.MaxJumpHeight + 2;
-                    }
-                    else
-                    {
-                        y -= this.MaxJumpHeight;
-                    }
-                }
             }
 
             return new Point(x, y);
