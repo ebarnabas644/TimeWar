@@ -58,6 +58,11 @@ namespace TimeWar.Logic
         /// </summary>
         public void OneTick()
         {
+            this.Movement();
+        }
+
+        private void Movement()
+        {
             Point newPoint = this.Move();
             if (Math.Abs(this.moveVector.X) < MaxMovementSpeed)
             {
