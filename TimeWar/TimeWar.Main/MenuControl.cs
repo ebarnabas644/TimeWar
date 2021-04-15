@@ -76,6 +76,7 @@ namespace TimeWar.Main
         {
             this.model.Camera.WindowHeight = (int)this.ActualHeight;
             this.model.Camera.WindowWidth = (int)this.ActualWidth;
+            this.renderer.WindowChanged = true;
         }
 
         private void CompositionTarget_Rendering(object sender, EventArgs e)
