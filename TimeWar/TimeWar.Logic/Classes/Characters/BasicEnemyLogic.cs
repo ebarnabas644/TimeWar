@@ -1,4 +1,4 @@
-﻿// <copyright file="EnemyLogic.cs" company="Time War">
+﻿// <copyright file="BasicEnemyLogic.cs" company="Time War">
 // Copyright (c) Time War. All rights reserved.
 // </copyright>
 
@@ -18,7 +18,7 @@ namespace TimeWar.Logic.Classes.Characters
     /// <summary>
     /// Enemy logic.
     /// </summary>
-    public class EnemyLogic : ActorLogic
+    public class BasicEnemyLogic : ActorLogic
     {
         private const int DetectionTime = 60;
         private Stopwatch movementDirStopwatch;
@@ -31,12 +31,12 @@ namespace TimeWar.Logic.Classes.Characters
         private Stopwatch playerDetectionStopwatch;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EnemyLogic"/> class.
+        /// Initializes a new instance of the <see cref="BasicEnemyLogic"/> class.
         /// </summary>
         /// <param name="model">Game model.</param>
         /// <param name="character">Charater.</param>
         /// <param name="commandManager">Command manger.</param>
-        public EnemyLogic(GameModel model, Character character, CommandManager commandManager)
+        public BasicEnemyLogic(GameModel model, Character character, CommandManager commandManager)
             : base(model, character, commandManager)
         {
             this.movementDirStopwatch = new Stopwatch();
@@ -48,6 +48,7 @@ namespace TimeWar.Logic.Classes.Characters
             this.lastKnownPlayerLocation = new Point(0, 0);
             this.isPlayerDetected = false;
             this.playerDetectionStopwatch = new Stopwatch();
+            this.Character.Health = 75;
         }
 
         /// <inheritdoc/>
@@ -128,6 +129,7 @@ namespace TimeWar.Logic.Classes.Characters
                 }
                 else
                 {
+                    this.isPlayerDetected = false;
                     this.moveDir = RandomNumberGenerator.GetInt32(4);
                     this.movementDirStopwatch.Restart();
                 }
