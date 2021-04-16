@@ -402,5 +402,13 @@ namespace TimeWar.Logic.Classes.Characters
 
             return 0;
         }
+
+        /// <summary>
+        /// Default attack method.
+        /// </summary>
+        /// <param name="attackLocation">The attack is directed to this location.</param>
+        protected virtual void Attack(Point attackLocation)
+        {
+        }
     }
 }
