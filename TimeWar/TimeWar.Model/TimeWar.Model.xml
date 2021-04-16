@@ -277,7 +277,7 @@
             Static object class.
             </summary>
         </member>
-        <member name="M:TimeWar.Model.Objects.Classes.StaticObject.#ctor(System.Int32,System.Int32,System.String,System.Drawing.Point)">
+        <member name="M:TimeWar.Model.Objects.Classes.StaticObject.#ctor(System.Int32,System.Int32,System.String,System.Drawing.Point,System.Boolean)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Model.Objects.Classes.StaticObject"/> class.
             </summary>
@@ -285,6 +285,7 @@
             <param name="width">Object width.</param>
             <param name="spritefile">Object sprite file.</param>
             <param name="position">Object position.</param>
+            <param name="hud">Hud object.</param>
         </member>
         <member name="P:TimeWar.Model.Objects.Classes.StaticObject.Height">
             <inheritdoc/>
@@ -298,8 +299,10 @@
         <member name="P:TimeWar.Model.Objects.Classes.StaticObject.Position">
             <inheritdoc/>
         </member>
-        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.CurrentSprite">
-            <inheritdoc/>
+        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.Hud">
+            <summary>
+            Gets or sets a value indicating whether hud or not.
+            </summary>
         </member>
         <member name="T:TimeWar.Model.Objects.Viewport">
             <summary>
@@ -388,11 +391,6 @@
         <member name="P:TimeWar.Model.Objects.Interfaces.IGameObject.Position">
             <summary>
             Gets or sets character position.
-            </summary>
-        </member>
-        <member name="P:TimeWar.Model.Objects.Interfaces.IGameObject.CurrentSprite">
-            <summary>
-            Gets or sets current sprite frame.
             </summary>
         </member>
         <member name="T:TimeWar.Model.Objects.Interfaces.IMoveable">

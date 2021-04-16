@@ -141,7 +141,7 @@ namespace TimeWar.Model.Objects
         /// <returns>Relative x pos.</returns>
         public int GetRelativeObjectPosX(int xPos)
         {
-            return -(xPos - this.GetViewportX);
+            return xPos + this.GetViewportX;
         }
 
         /// <summary>
@@ -151,7 +151,7 @@ namespace TimeWar.Model.Objects
         /// <returns>Relative y pos.</returns>
         public int GetRelativeObjectPosY(int yPos)
         {
-            return yPos - this.GetViewportY;
+            return yPos + this.GetViewportY;
         }
     }
 }
