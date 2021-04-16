@@ -23,14 +23,14 @@ namespace TimeWar.Logic.Classes.Characters
         private int defaultAcceleration;
         private int maxMovementSpeed;
         private int maxJumpHeight;
-        private GameModel model;
+        private int acceleration;
+        private bool isJumping;
+        private Point moveVector;
         private Character character;
         private CommandManager commandManager;
-        private bool isJumping;
-        private int acceleration;
+        private GameModel model;
         private Stopwatch accelerationStopwatch = new Stopwatch();
         private Stopwatch jumpingTimeOut = new Stopwatch();
-        private Point moveVector;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ActorLogic"/> class.
