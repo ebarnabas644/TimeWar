@@ -65,15 +65,13 @@ namespace TimeWar.Model.Objects
         /// Initializes a new instance of the <see cref="Character"/> class.
         /// </summary>
         /// <param name="pos">Character position.</param>
-        /// <param name="speed">Movement speed.</param>
         /// <param name="health">Base health.</param>
         /// <param name="height">Character height.</param>
         /// <param name="width">Character width.</param>
         /// <param name="spriteFile">Name of the sprite file.</param>
-        protected Character(Point pos, int speed, int health, int height, int width, string spriteFile)
+        protected Character(Point pos, int health, int height, int width, string spriteFile)
         {
             this.Position = pos;
-            this.Speed = speed;
             this.Health = health;
             this.Height = height;
             this.Width = width;
@@ -110,9 +108,6 @@ namespace TimeWar.Model.Objects
 
         /// <inheritdoc/>
         public Point Position { get; set; }
-
-        /// <inheritdoc/>
-        public int Speed { get; set; }
 
         /// <summary>
         /// Gets or sets the character health.

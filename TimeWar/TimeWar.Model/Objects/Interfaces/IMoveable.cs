@@ -24,6 +24,6 @@ namespace TimeWar.Model.Objects.Interfaces
         /// <summary>
         /// Gets or sets character movement speed.
         /// </summary>
-        public int Speed { get; set; }
+        // public int Speed { get; set; }
     }
 }
