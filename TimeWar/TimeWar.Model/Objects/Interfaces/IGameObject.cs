@@ -35,10 +35,5 @@ namespace TimeWar.Model.Objects.Interfaces
         /// Gets or sets character position.
         /// </summary>
         public Point Position { get; set; }
-
-        /// <summary>
-        /// Gets or sets current sprite frame.
-        /// </summary>
-        public int CurrentSprite { get; set; }
     }
 }
