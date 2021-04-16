@@ -19,6 +19,8 @@
     <None Remove="Leveldata\test.tmx" />
     <None Remove="Leveldata\test2.png" />
     <None Remove="Leveldata\test2.tmx" />
+    <None Remove="Sprites\1.png" />
+    <None Remove="Sprites\41.png" />
     <None Remove="Sprites\testman.png" />
     <None Remove="Sprites\testsprite.png" />
     <None Remove="Sprites\title.png" />
@@ -39,6 +41,9 @@
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Leveldata\test2.tmx">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\41.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Sprites\testman.png">
@@ -72,6 +77,9 @@
     <Resource Include="Fonts\Gamepixies-8MO6n.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Content Include="Sprites\1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
