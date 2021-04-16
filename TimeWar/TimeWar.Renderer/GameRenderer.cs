@@ -7,6 +7,8 @@ namespace TimeWar.Renderer
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
+    using System.Threading;
+    using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Media;
     using System.Windows.Media.Imaging;
@@ -22,6 +24,7 @@ namespace TimeWar.Renderer
     {
         private GameModel model;
         private Stopwatch spriteTimer;
+        private Stopwatch test;
         private Drawing backgroundCache;
         private Drawing walls;
         private Drawing titleCache;
@@ -29,8 +32,12 @@ namespace TimeWar.Renderer
         private Dictionary<string, Brush> staticBrushes;
         private Dictionary<IGameObject, ImageBrush[][]> spriteBrushes;
         private Dictionary<string, IGameObject> gameObjects;
+        private HashSet<IGameObject> uniqueObjectCache;
+        private HashSet<string> loadCache;
+        private int currentSprite;
+        private bool firstRun;
+        private DrawingGroup spritesCache;
         private bool menuMode;
-        private int spriteFps;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameRenderer"/> class.
@@ -41,13 +48,19 @@ namespace TimeWar.Renderer
         {
             this.model = model;
             this.spriteTimer = new Stopwatch();
-
+            this.test = new Stopwatch();
             this.menuMode = menuMode;
             this.spriteBrushes = new Dictionary<IGameObject, ImageBrush[][]>();
             this.gameObjects = new Dictionary<string, IGameObject>();
             this.staticBrushes = new Dictionary<string, Brush>();
+            this.uniqueObjectCache = new HashSet<IGameObject>();
+            this.loadCache = new HashSet<string>();
             this.spriteTimer.Start();
             this.WindowChanged = false;
+            this.currentSprite = 0;
+            this.firstRun = true;
+            this.InitDecorations();
+            this.spritesCache = new DrawingGroup();
         }
 
         /// <summary>
@@ -61,9 +74,10 @@ namespace TimeWar.Renderer
         /// <returns>Drawing with all entities for render.</returns>
         public Drawing BuildDrawing()
         {
-            this.spriteFps = (int)this.spriteTimer.Elapsed.TotalMilliseconds / 100;
+            this.currentSprite = (int)this.spriteTimer.Elapsed.TotalMilliseconds / 100;
             DrawingGroup dg = new DrawingGroup();
             dg.Children.Add(this.GetBackground());
+            dg.Children.Add(this.GetDecorations());
 
             // dg.Children.Add(this.GetCollision());
             if (!this.menuMode)
@@ -102,14 +116,29 @@ namespace TimeWar.Renderer
             return this.staticBrushes[fname];
         }
 
-        private Brush GetSpriteBrush(IGameObject obj)
+        private Brush GetSpriteBrush(IGameObject obj, bool tiled = false, double boundx = 0, double boundy = 0)
         {
             if (!this.spriteBrushes.ContainsKey(obj))
             {
-                this.spriteBrushes.Add(obj, Sprite.CreateSprite(obj.Height, obj.Width, obj.SpriteFile));
+                ImageBrush[][] imageBrushes = Sprite.CreateSprite(obj.Height, obj.Width, obj.SpriteFile);
+                if (tiled)
+                {
+                    for (int i = 0; i < imageBrushes.Length; i++)
+                    {
+                        for (int y = 0; y < imageBrushes[i].Length; y++)
+                        {
+                            imageBrushes[i][y].TileMode = TileMode.Tile;
+                            imageBrushes[i][y].Viewport = new Rect(0, 0, (obj.Width * this.model.CurrentWorld.Magnify) / boundx, (obj.Height * this.model.CurrentWorld.Magnify) / boundy);
+                            imageBrushes[i][y].ViewportUnits = BrushMappingMode.RelativeToBoundingBox;
+                            imageBrushes[i][y].Stretch = Stretch.Fill;
+                        }
+                    }
+                }
+
+                this.spriteBrushes.Add(obj, imageBrushes);
             }
 
-            return this.spriteBrushes[obj][0][obj.CurrentSprite];
+            return this.spriteBrushes[obj][0][this.currentSprite % this.spriteBrushes[obj][0].Length];
         }
 
         private Drawing GetBackground()
@@ -135,7 +164,7 @@ namespace TimeWar.Renderer
         {
             if (!this.gameObjects.TryGetValue("title", out IGameObject title))
             {
-                StaticObject newtitle = new StaticObject(83, 230, "title", new System.Drawing.Point((this.model.Camera.WindowWidth / 2) - (230 / 2 * this.model.CurrentWorld.Magnify / 2), this.model.Camera.WindowHeight / 10));
+                StaticObject newtitle = new StaticObject(83, 230, "title", new System.Drawing.Point((this.model.Camera.WindowWidth / 2) - (230 / 2 * this.model.CurrentWorld.Magnify / 2), this.model.Camera.WindowHeight / 10), true);
                 this.gameObjects.Add("title", newtitle);
                 title = newtitle;
             }
@@ -147,7 +176,6 @@ namespace TimeWar.Renderer
 
             Geometry g = new RectangleGeometry(new Rect(title.Position.X, title.Position.Y, title.Width * this.model.CurrentWorld.Magnify / 2, title.Height * this.model.CurrentWorld.Magnify / 2));
             this.titleCache = new GeometryDrawing(this.GetSpriteBrush(title), null, g);
-            title.CurrentSprite = this.spriteFps % this.spriteBrushes[title][0].Length;
             return this.titleCache;
         }
 
@@ -173,8 +201,80 @@ namespace TimeWar.Renderer
         {
             Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeCharacterPosX, this.model.Camera.GetRelativeCharacterPosY, this.model.Hero.Width * this.model.CurrentWorld.Magnify, this.model.Hero.Height * this.model.CurrentWorld.Magnify));
             this.playerCache = new GeometryDrawing(this.GetSpriteBrush(this.model.Hero), null, g);
-            this.model.Hero.CurrentSprite = this.spriteFps % this.spriteBrushes[this.model.Hero][0].Length;
             return this.playerCache;
+        }
+
+        private void InitDecorations()
+        {
+            int id = 0;
+            for (int y = 0; y < this.model.CurrentWorld.GetTileHeight; y++)
+            {
+                for (int x = 0; x < this.model.CurrentWorld.GetTileWidth; x++)
+                {
+                    if (!this.gameObjects.ContainsKey("deco" + id) && this.model.CurrentWorld.SearchDecoration(new System.Drawing.Point(x, y)) != 0)
+                    {
+                        StaticObject obj = new StaticObject(this.model.CurrentWorld.TileSize, this.model.CurrentWorld.TileSize, this.model.CurrentWorld.SearchDecoration(new System.Drawing.Point(x, y)).ToString(System.Globalization.CultureInfo.CurrentCulture), new System.Drawing.Point(this.model.CurrentWorld.ConvertTileToPixel(x), this.model.CurrentWorld.ConvertTileToPixel(y)));
+                        this.gameObjects.Add("deco" + id, obj);
+                        this.uniqueObjectCache.Add(obj);
+                        id++;
+                    }
+                }
+            }
+        }
+
+        private Drawing GetDecorations()
+        {
+            DrawingGroup dg = new DrawingGroup();
+            Dictionary<string, GeometryGroup> deco = new Dictionary<string, GeometryGroup>();
+            foreach (var item in this.gameObjects)
+            {
+                if (item.Value is StaticObject)
+                {
+                    StaticObject st = (StaticObject)item.Value;
+                    if (!st.Hud)
+                    {
+                        Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(st.Position.X), this.model.Camera.GetRelativeObjectPosY(st.Position.Y), st.Width * this.model.CurrentWorld.Magnify, st.Height * this.model.CurrentWorld.Magnify));
+                        if (!deco.ContainsKey(st.SpriteFile))
+                        {
+                            deco.Add(st.SpriteFile, new GeometryGroup());
+                        }
+
+                        deco[st.SpriteFile].Children.Add(g);
+                    }
+                }
+            }
+
+            if (this.firstRun)
+            {
+                foreach (var item in this.gameObjects)
+                {
+                    if (item.Value is StaticObject)
+                    {
+                        StaticObject st = (StaticObject)item.Value;
+                        if (!st.Hud && !this.loadCache.Contains(st.SpriteFile))
+                        {
+                            dg.Children.Add(new GeometryDrawing(this.GetSpriteBrush(item.Value, true, deco[item.Value.SpriteFile].Bounds.Size.Width, deco[item.Value.SpriteFile].Bounds.Size.Height), null, deco[item.Value.SpriteFile]));
+                            this.loadCache.Add(st.SpriteFile);
+                        }
+                    }
+                }
+
+                this.firstRun = false;
+            }
+
+            foreach (var item in this.uniqueObjectCache)
+            {
+                if (item is StaticObject)
+                {
+                    StaticObject st = (StaticObject)item;
+                    if (!st.Hud)
+                    {
+                        dg.Children.Add(new GeometryDrawing(this.GetSpriteBrush(item, true), null, deco[item.SpriteFile]));
+                    }
+                }
+            }
+
+            return dg;
         }
     }
 }
