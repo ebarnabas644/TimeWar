@@ -36,76 +36,9 @@ namespace TimeWar.Logic
         }
 
         /// <inheritdoc/>
-        protected override void Movement()
+        public override void OneTick()
         {
-            Point newPoint = this.Move();
-            if (Math.Abs(this.MoveVector.X) < this.MaxMovementSpeed)
-            {
-                // this.MoveVector.X += newPoint.X;
-                this.AddToVector(newPoint.X, 0);
-            }
-
-            this.AddToVector(0, newPoint.Y);
-
-            // this.MoveVector.Y += newPoint.Y;
-            if (this.GroundCollision(new Point(0, newPoint.Y)))
-            {
-                if (this.CommandManager.IsFinished)
-                {
-                    while (this.GroundCollision(new Point(0, newPoint.Y)))
-                    {
-                        this.Character.Position = new Point(this.Character.Position.X, this.Character.Position.Y - 1);
-                    }
-                }
-            }
-
-            if (!this.GroundCollision(new Point(0, this.Acceleration)))
-            {
-                if (this.CommandManager.IsFinished)
-                {
-                    // this.MoveVector.Y += this.Acceleration;
-                    this.AddToVector(0, this.Acceleration);
-
-                    if ((!this.GroundCollision(new Point(0, this.Acceleration + 1)) && this.Acceleration < 10) && !this.AccelerationStopwatch.IsRunning)
-                    {
-                        this.AccelerationStopwatch.Start();
-                    }
-
-                    if (this.AccelerationStopwatch.ElapsedMilliseconds > 100)
-                    {
-                        this.Acceleration++;
-                        this.AccelerationStopwatch.Restart();
-                    }
-                }
-            }
-
-            if (!this.WallCollision(newPoint) && !this.WallCollision(newPoint, false))
-            {
-                this.Character.Position = new Point(this.Character.Position.X + this.MoveVector.X, this.Character.Position.Y);
-            }
-
-            if (!this.GroundCollision(newPoint) && (!this.WallCollision(newPoint) && !this.WallCollision(newPoint, false)))
-            {
-                if (!this.TopCollision(newPoint))
-                {
-                    this.Character.Position = new Point(this.Character.Position.X, this.Character.Position.Y + this.MoveVector.Y);
-                }
-            }
-
-            MoveCommand moveCommand = new MoveCommand(this.Character, this.Character.Position, this.Model);
-            this.CommandManager.AddCommand(moveCommand);
-
-            if (this.MoveVector.X > 0)
-            {
-                // this.MoveVector.X--;
-                this.AddToVector(-1, 0);
-            }
-
-            if (this.MoveVector.X < 0)
-            {
-                // this.MoveVector.X++;
-                this.AddToVector(1, 0);
-            }
+            base.OneTick();
         }
 
         /// <inheritdoc/>
@@ -123,27 +56,18 @@ namespace TimeWar.Logic
                 x += 2;
             }
 
+            if (this.Character.ContainKey("space"))
+            {
+                y += this.Jump();
+                if (y != 0 && Math.Abs(this.MoveVector.X) >= 14)
+                {
+                    y -= 2;
+                }
+            }
+
             if (this.Character.ContainKey("s"))
             {
                 y += 1;
-            }
-
-            if (this.Character.ContainKey("space"))
-            {
-                if (!this.IsJumping && this.JumpingTimeOut.ElapsedMilliseconds > 250)
-                {
-                    this.JumpingTimeOut.Restart();
-                    this.IsJumping = true;
-                    this.AccelerationStopwatch.Start();
-                    if (Math.Abs(this.MoveVector.X) >= 15)
-                    {
-                        y -= this.MaxJumpHeight + 2;
-                    }
-                    else
-                    {
-                        y -= this.MaxJumpHeight;
-                    }
-                }
             }
 
             return new Point(x, y);

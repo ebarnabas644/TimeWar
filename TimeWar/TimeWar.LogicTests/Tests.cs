@@ -26,9 +26,9 @@ namespace TimeWar.LogicTests
     /// </summary>
     public class Tests
     {
-        private MoveCommand moveCommand;
-        private CommandManager commandManager;
-        private CharacterLogic characterLogic;
+        // private MoveCommand moveCommand;
+        // private CommandManager commandManager;
+        // private CharacterLogic characterLogic;
         private Player player;
         private GameWorld gameWorld;
         private GameModel gameModel;
@@ -39,7 +39,7 @@ namespace TimeWar.LogicTests
         [SetUp]
         public void Setup()
         {
-            this.commandManager = new CommandManager();
+            // this.commandManager = new CommandManager();
             this.player = new Player(new Point(50, 50), 1, 10, 8, 2, "cucc");
             this.gameWorld = new GameWorld(100, 100, 8);
             this.gameModel = new GameModel();

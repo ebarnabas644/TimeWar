@@ -147,36 +147,59 @@
             </summary>
             <returns>New movement point.</returns>
         </member>
-        <member name="T:TimeWar.Logic.Classes.Characters.EnemyLogic">
+        <member name="M:TimeWar.Logic.Classes.Characters.ActorLogic.Jump">
+            <summary>
+            Jumping.
+            </summary>
+            <returns>Jumping value.</returns>
+        </member>
+        <member name="T:TimeWar.Logic.Classes.Characters.BasicEnemyLogic">
             <summary>
             Enemy logic.
             </summary>
         </member>
-        <member name="M:TimeWar.Logic.Classes.Characters.EnemyLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Character,TimeWar.Logic.Classes.CommandManager)">
+        <member name="M:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Character,TimeWar.Logic.Classes.CommandManager)">
             <summary>
-            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.Characters.EnemyLogic"/> class.
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.Characters.BasicEnemyLogic"/> class.
             </summary>
             <param name="model">Game model.</param>
             <param name="character">Charater.</param>
             <param name="commandManager">Command manger.</param>
         </member>
-        <member name="M:TimeWar.Logic.Classes.Characters.EnemyLogic.Equals(System.Object)">
+        <member name="M:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.OneTick">
             <inheritdoc/>
         </member>
-        <member name="M:TimeWar.Logic.Classes.Characters.EnemyLogic.GetHashCode">
+        <member name="M:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.Move">
             <inheritdoc/>
         </member>
-        <member name="M:TimeWar.Logic.Classes.Characters.EnemyLogic.OneTick">
+        <member name="M:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.Movement">
             <inheritdoc/>
         </member>
-        <member name="M:TimeWar.Logic.Classes.Characters.EnemyLogic.ToString">
-            <inheritdoc/>
+        <member name="T:TimeWar.Logic.Classes.Characters.FastEnemyLogic">
+            <summary>
+            Fast enemy class.
+            </summary>
         </member>
-        <member name="M:TimeWar.Logic.Classes.Characters.EnemyLogic.Move">
-            <inheritdoc/>
+        <member name="M:TimeWar.Logic.Classes.Characters.FastEnemyLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Character,TimeWar.Logic.Classes.CommandManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.Characters.FastEnemyLogic"/> class.
+            </summary>
+            <param name="model">Game model.</param>
+            <param name="character">Character.</param>
+            <param name="commandManager">Command manager.</param>
         </member>
-        <member name="M:TimeWar.Logic.Classes.Characters.EnemyLogic.Movement">
-            <inheritdoc/>
+        <member name="T:TimeWar.Logic.Classes.Characters.HeavyEnemyLogic">
+            <summary>
+            Heavy enemy.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.HeavyEnemyLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Character,TimeWar.Logic.Classes.CommandManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.Characters.HeavyEnemyLogic"/> class.
+            </summary>
+            <param name="model">Game model.</param>
+            <param name="character">Character.</param>
+            <param name="commandManager">Command manager.</param>
         </member>
         <member name="T:TimeWar.Logic.Classes.CommandManager">
             <summary>
@@ -238,7 +261,7 @@
             <param name="character">Moveable entity.</param>
             <param name="commandManager">Command manager entity.</param>
         </member>
-        <member name="M:TimeWar.Logic.CharacterLogic.Movement">
+        <member name="M:TimeWar.Logic.CharacterLogic.OneTick">
             <inheritdoc/>
         </member>
         <member name="M:TimeWar.Logic.CharacterLogic.Move">
