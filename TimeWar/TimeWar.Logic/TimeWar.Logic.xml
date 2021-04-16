@@ -4,6 +4,11 @@
         <name>TimeWar.Logic</name>
     </assembly>
     <members>
+        <member name="T:TimeWar.Logic.Classes.Characters.Actions.BasicBulletLogic">
+            <summary>
+            Default bullet logic.
+            </summary>
+        </member>
         <member name="T:TimeWar.Logic.Classes.Characters.Actions.MoveCommand">
             <summary>
             Move commands.
@@ -152,6 +157,12 @@
             Jumping.
             </summary>
             <returns>Jumping value.</returns>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.ActorLogic.Attack(System.Drawing.Point)">
+            <summary>
+            Default attack method.
+            </summary>
+            <param name="attackLocation">The attack is directed to this location.</param>
         </member>
         <member name="T:TimeWar.Logic.Classes.Characters.BasicEnemyLogic">
             <summary>
