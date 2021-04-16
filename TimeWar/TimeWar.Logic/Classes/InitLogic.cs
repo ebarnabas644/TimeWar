@@ -47,7 +47,7 @@ namespace TimeWar.Logic
 
         private static string[][] GetDecorations(XDocument mapData)
         {
-            string[][] decodata = mapData.Element("map").Elements("layer").Where(x => x.Attribute("name").Value == "decorations").Select(x => x.Element("data").Value).FirstOrDefault().Trim().Split("\n").Select(x => x.Split(",")).Select(x => x.Where(x => x.Length != 0).ToArray()).ToArray();
+            string[][] decodata = mapData.Element("map").Elements("layer").Where(x => x.Attribute("name").Value == "spritedeco").Select(x => x.Element("data").Value).FirstOrDefault().Trim().Split("\n").Select(x => x.Split(",")).Select(x => x.Where(x => x.Length != 0).ToArray()).ToArray();
             return decodata;
         }
 
@@ -94,7 +94,7 @@ namespace TimeWar.Logic
                 {
                     if (decodata[y][x] != "0")
                     {
-                        gameWorld.AddDecoration(new Point(x, y), Convert.ToInt32(decodata[y][x], System.Globalization.CultureInfo.CurrentCulture));
+                        gameWorld.AddDecoration(new Point(x, y), Convert.ToInt32(decodata[y][x], System.Globalization.CultureInfo.CurrentCulture) - 1);
                     }
                 }
             }
