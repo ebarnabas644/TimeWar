@@ -5,10 +5,7 @@
 namespace TimeWar.Repository.Classes
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using Microsoft.EntityFrameworkCore;
     using TimeWar.Data.Models;
     using TimeWar.Repository.Interfaces;
@@ -16,7 +13,7 @@ namespace TimeWar.Repository.Classes
     /// <summary>
     /// Profile entity class.
     /// </summary>
-    public class ProfileRepository : MainRepository<Profile>, IProfileRepository
+    public class ProfileRepository : MainRepository<PlayerProfile>, IProfileRepository
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ProfileRepository"/> class.
@@ -28,23 +25,24 @@ namespace TimeWar.Repository.Classes
         }
 
         /// <inheritdoc/>
-        public override Profile GetOne(int id)
+        public override PlayerProfile GetOne(int id)
         {
             return this.GetAll().SingleOrDefault(x => x.PlayerId == id);
         }
 
         /// <inheritdoc/>
-        public void Update(Profile entity)
+        public void Update(PlayerProfile entity)
         {
             if (entity != null)
             {
                 var profile = this.GetOne(entity.PlayerId);
                 if (profile == null)
                 {
-                    throw new InvalidOperationException("Entity not found");
+                    return;
                 }
 
                 profile.TotalDeaths = entity.TotalDeaths;
+                profile.Selected = entity.Selected;
                 profile.TotalKills = entity.TotalKills;
                 profile.CompletedRuns = entity.CompletedRuns;
                 this.Ctx.SaveChanges();
