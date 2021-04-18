@@ -4,22 +4,67 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TimeWar.Main.View"
+      xmlns:vm="clr-namespace:TimeWar.Main.ViewModel"
+      xmlns:main="clr-namespace:TimeWar.Main"
       mc:Ignorable="d"
       DataContext="{Binding ProfilesViewModel, Source={StaticResource Locator}}"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ProfilesPage">
-
-    <Grid>
+    <Grid x:Name="MainGrid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <Button Command="{Binding MenuPageCommand}" Content="Back" Grid.Row="1"/>
-
-
+        <Button Command="{Binding MenuPageCommand}" Margin="5" Content="Back" Grid.Row="3" Panel.ZIndex="2" Style="{StaticResource MenuButton}"/>
+        <ListBox Background="#4B808080" ItemsSource="{Binding Path=PlayerProfileUIs}" SelectedItem="{Binding Path=SelectedPlayer}" Grid.Row="1" Grid.Column="1" Panel.ZIndex="2" Grid.ColumnSpan="3">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding PlayerName}" Height="30" Style="{StaticResource TextBlockStyle}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Border Grid.Column="6" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="4" Panel.ZIndex="2">
+            <DockPanel LastChildFill="False">
+                <Label Content="{Binding SelectedPlayer.PlayerName}" DockPanel.Dock="Top" HorizontalAlignment="Center" Style="{StaticResource LabelStyle}" FontSize="40"/>
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                    <Label Content="Number of completed runs: " HorizontalAlignment="Left" Style="{StaticResource LabelStyle}"/>
+                    <Label Content="{Binding SelectedPlayer.CompletedRuns}" Style="{StaticResource LabelStyle}"/>
+                </StackPanel>
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                    <Label Content="Number of kills: " HorizontalAlignment="Left" Style="{StaticResource LabelStyle}"/>
+                    <Label Content="{Binding SelectedPlayer.TotalKills}" Style="{StaticResource LabelStyle}"/>
+                </StackPanel>
+                <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+                    <Label Content="Number of deaths: " Style="{StaticResource LabelStyle}"/>
+                    <Label Content="{Binding SelectedPlayer.TotalDeaths}" Style="{StaticResource LabelStyle}"/>
+                </StackPanel>
+            </DockPanel>
+        </Border>
+        <Button Click="Add_Click" Content="New" Grid.Row="2" Margin="5" Grid.Column="1" Panel.ZIndex="2" Style="{StaticResource MenuButton}"/>
+        <Button Click="Modify_Click" Content="Edit" Grid.Row="2" Margin="5" Grid.Column="2" Panel.ZIndex="2" Style="{StaticResource MenuButton}"/>
+        <Button Command="{Binding DeleteProfileCommand}" Content="Del" Grid.Row="2" Margin="5" Grid.Column="3" Panel.ZIndex="2" Style="{StaticResource MenuButton}"/>
+        <main:MenuControl x:Name="cont" Panel.ZIndex="1" Grid.RowSpan="4" Grid.ColumnSpan="11"/>
+        <local:ProfileAddControl x:Name="AddDialog" Panel.ZIndex="2" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="11" Grid.RowSpan="4" Visibility="Collapsed"/>
+        <local:ProfileEditControl x:Name="EditDialog" Panel.ZIndex="2" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="11" Grid.RowSpan="4" Visibility="Collapsed"/>
     </Grid>
 </Page>
