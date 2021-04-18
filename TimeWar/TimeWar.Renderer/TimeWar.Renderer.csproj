@@ -6,9 +6,14 @@
 	<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 	<UseWPF>true</UseWPF>
 	<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+	<Platforms>AnyCPU;x86</Platforms>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>TimeWar.Renderer.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <DocumentationFile>TimeWar.Renderer.xml</DocumentationFile>
   </PropertyGroup>
 

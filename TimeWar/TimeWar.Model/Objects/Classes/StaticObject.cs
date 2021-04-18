@@ -4,14 +4,7 @@
 
 namespace TimeWar.Model.Objects.Classes
 {
-    using System;
-    using System.Collections;
-    using System.Collections.Generic;
-    using System.Diagnostics.CodeAnalysis;
     using System.Drawing;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using TimeWar.Model.Objects.Interfaces;
 
     /// <summary>
@@ -53,15 +46,22 @@ namespace TimeWar.Model.Objects.Classes
         /// </summary>
         public bool Hud { get; set; }
 
+        /// <inheritdoc/>
         public override bool Equals(object obj)
         {
             StaticObject a = (StaticObject)obj;
-            return this.SpriteFile == a.SpriteFile;
+            if (a != null)
+            {
+                return this.SpriteFile == a.SpriteFile;
+            }
+
+            return false;
         }
 
+        /// <inheritdoc/>
         public override int GetHashCode()
         {
-            return this.SpriteFile.GetHashCode();
+            return this.SpriteFile.GetHashCode(System.StringComparison.OrdinalIgnoreCase);
         }
     }
 }

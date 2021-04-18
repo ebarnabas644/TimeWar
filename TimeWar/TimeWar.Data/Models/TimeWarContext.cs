@@ -4,11 +4,6 @@
 
 namespace TimeWar.Data.Models
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using Microsoft.EntityFrameworkCore;
 
     /// <summary>
@@ -27,12 +22,12 @@ namespace TimeWar.Data.Models
         /// <summary>
         /// Gets or sets profiles table.
         /// </summary>
-        public virtual DbSet<Profile> Profiles { get; set; }
+        public virtual DbSet<PlayerProfile> Profiles { get; set; }
 
         /// <summary>
         /// Gets or sets maps table.
         /// </summary>
-        public virtual DbSet<Map> Maps { get; set; }
+        public virtual DbSet<MapRecord> MapRecords { get; set; }
 
         /// <summary>
         /// Gets or sets saves table.
@@ -48,6 +43,44 @@ namespace TimeWar.Data.Models
                 {
                     optionsBuilder.UseLazyLoadingProxies().UseSqlServer("data source=(LocalDB)\\MSSQLLocalDB;attachdbfilename=|DataDirectory|\\TimeWarDatabase.mdf;integrated security=True;MultipleActiveResultSets=True");
                 }
+            }
+        }
+
+        /// <inheritdoc/>
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            if (modelBuilder != null)
+            {
+                modelBuilder.Entity<MapRecord>(entity =>
+                {
+                    entity.HasKey(x => x.MapRecordId);
+                    entity.HasOne(x => x.Player)
+                    .WithMany(x => x.Records)
+                    .HasForeignKey(x => x.PlayerId)
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .IsRequired(true)
+                    .HasConstraintName("player_fk");
+                });
+
+                modelBuilder.Entity<Save>(entity =>
+                {
+                    entity.HasOne(x => x.Player)
+                    .WithOne(x => x.AutoSave)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("save_fk");
+                });
+
+                modelBuilder.Entity<PlayerProfile>(entity =>
+                {
+                    entity.HasKey(x => x.PlayerId);
+                    entity.HasMany(x => x.Records)
+                    .WithOne(x => x.Player)
+                    .HasForeignKey(x => x.PlayerId)
+                    .OnDelete(DeleteBehavior.Cascade);
+
+                    entity.HasOne(x => x.AutoSave)
+                    .WithOne(x => x.Player).OnDelete(DeleteBehavior.Cascade);
+                });
             }
         }
     }

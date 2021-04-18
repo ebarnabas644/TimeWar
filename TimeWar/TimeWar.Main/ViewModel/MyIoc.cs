@@ -2,13 +2,8 @@
 // Copyright (c) Time War. All rights reserved.
 // </copyright>
 
-namespace TimeWar.Main.ViewModel
+namespace TimeWar.Main
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using CommonServiceLocator;
     using GalaSoft.MvvmLight.Ioc;
 

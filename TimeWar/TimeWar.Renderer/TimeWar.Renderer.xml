@@ -9,12 +9,14 @@
             Game rendering class.
             </summary>
         </member>
-        <member name="M:TimeWar.Renderer.GameRenderer.#ctor(TimeWar.Model.GameModel,System.Boolean)">
+        <member name="M:TimeWar.Renderer.GameRenderer.#ctor(TimeWar.Model.GameModel,System.Boolean,System.Boolean,System.Boolean)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Renderer.GameRenderer"/> class.
             </summary>
             <param name="model">Game model entity.</param>
             <param name="menuMode">Game menu mode.</param>
+            <param name="scrollmode">Auto scrolling.</param>
+            <param name="title">Title enabled.</param>
         </member>
         <member name="P:TimeWar.Renderer.GameRenderer.WindowChanged">
             <summary>

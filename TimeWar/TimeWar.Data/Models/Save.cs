@@ -4,13 +4,8 @@
 
 namespace TimeWar.Data.Models
 {
-    using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     /// <summary>
     /// Game save entity class.
@@ -20,7 +15,6 @@ namespace TimeWar.Data.Models
         /// <summary>
         /// Gets or sets save id.
         /// </summary>
-        [Key]
         public int Id { get; set; }
 
         /// <summary>
@@ -34,9 +28,14 @@ namespace TimeWar.Data.Models
         public int Checkpoint { get; set; }
 
         /// <summary>
+        /// Gets or sets the player id.
+        /// </summary>
+        [ForeignKey("Player")]
+        public int PlayerId { get; set; }
+
+        /// <summary>
         /// Gets or sets player navigational property.
         /// </summary>
-        [ForeignKey("AutoSave")]
-        public virtual Profile Player { get; set; }
+        public virtual PlayerProfile Player { get; set; }
     }
 }

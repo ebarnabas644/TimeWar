@@ -4,12 +4,7 @@
 
 namespace TimeWar.Logic.Classes.Characters.Actions
 {
-    using System;
-    using System.Collections.Generic;
     using System.Drawing;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using TimeWar.Logic.Interfaces;
     using TimeWar.Model;
     using TimeWar.Model.Objects.Interfaces;

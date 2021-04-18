@@ -7,13 +7,10 @@ namespace TimeWar.Renderer
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
-    using System.Threading;
-    using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Media;
     using System.Windows.Media.Imaging;
     using TimeWar.Model;
-    using TimeWar.Model.Objects;
     using TimeWar.Model.Objects.Classes;
     using TimeWar.Model.Objects.Interfaces;
 
@@ -38,18 +35,24 @@ namespace TimeWar.Renderer
         private bool firstRun;
         private DrawingGroup spritesCache;
         private bool menuMode;
+        private bool scrollMode;
+        private bool title;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameRenderer"/> class.
         /// </summary>
         /// <param name="model">Game model entity.</param>
         /// <param name="menuMode">Game menu mode.</param>
-        public GameRenderer(GameModel model, bool menuMode)
+        /// <param name="scrollmode">Auto scrolling.</param>
+        /// <param name="title">Title enabled.</param>
+        public GameRenderer(GameModel model, bool menuMode, bool scrollmode = false, bool title = false)
         {
             this.model = model;
             this.spriteTimer = new Stopwatch();
             this.test = new Stopwatch();
             this.menuMode = menuMode;
+            this.scrollMode = scrollmode;
+            this.title = title;
             this.spriteBrushes = new Dictionary<IGameObject, ImageBrush[][]>();
             this.gameObjects = new Dictionary<string, IGameObject>();
             this.staticBrushes = new Dictionary<string, Brush>();
@@ -84,7 +87,7 @@ namespace TimeWar.Renderer
             {
                 dg.Children.Add(this.GetPlayer());
             }
-            else
+            else if (this.menuMode && this.title)
             {
                 dg.Children.Add(this.GetTitle());
             }
@@ -144,7 +147,7 @@ namespace TimeWar.Renderer
         private Drawing GetBackground()
         {
             Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetViewportX, this.model.Camera.GetViewportY, this.model.CurrentWorld.GameWidth, this.model.CurrentWorld.GameHeight));
-            if (this.menuMode)
+            if (this.menuMode && this.scrollMode)
             {
                 int prevX = this.model.Hero.Position.X;
                 int prevY = this.model.Hero.Position.Y;

@@ -1,34 +1,29 @@
-﻿// <copyright file="Profile.cs" company="Time War">
+﻿// <copyright file="PlayerProfile.cs" company="Time War">
 // Copyright (c) Time War. All rights reserved.
 // </copyright>
 
 namespace TimeWar.Data.Models
 {
-    using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     /// <summary>
     /// Player profile class.
     /// </summary>
-    public class Profile
+    public class PlayerProfile
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="Profile"/> class.
+        /// Initializes a new instance of the <see cref="PlayerProfile"/> class.
         /// </summary>
-        public Profile()
+        public PlayerProfile()
         {
-            this.Records = new HashSet<Map>();
+            this.Records = new HashSet<MapRecord>();
         }
 
         /// <summary>
         /// Gets or sets the player id.
         /// </summary>
-        [Key]
         public int PlayerId { get; set; }
 
         /// <summary>
@@ -52,6 +47,16 @@ namespace TimeWar.Data.Models
         public int CompletedRuns { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether this is the selected profile.
+        /// </summary>
+        public bool Selected { get; set; }
+
+        /// <summary>
+        /// Gets or sets the autosave id.
+        /// </summary>
+        public int SaveId { get; set; }
+
+        /// <summary>
         /// Gets or sets the player auto save navigational property.
         /// </summary>
         public virtual Save AutoSave { get; set; }
@@ -59,7 +64,6 @@ namespace TimeWar.Data.Models
         /// <summary>
         /// Gets the records navigational property.
         /// </summary>
-        [ForeignKey("MapId")]
-        public virtual ICollection<Map> Records { get; }
+        public virtual ICollection<MapRecord> Records { get; }
     }
 }
