@@ -4,22 +4,17 @@
 
 namespace TimeWar.Repository.Interfaces
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using TimeWar.Data.Models;
 
     /// <summary>
     /// Extra operations for Profile class entities.
     /// </summary>
-    public interface IProfileRepository : IMainRepository<Profile>
+    public interface IProfileRepository : IMainRepository<PlayerProfile>
     {
         /// <summary>
         /// Update entity content.
         /// </summary>
         /// <param name="entity">Profile entity object.</param>
-        void Update(Profile entity);
+        void Update(PlayerProfile entity);
     }
 }

@@ -5,19 +5,11 @@
 namespace TimeWar.Logic
 {
     using System;
-    using System.Collections.Generic;
-    using System.Diagnostics;
     using System.Drawing;
-    using System.Linq;
-    using System.Text;
-    using System.Threading;
-    using System.Threading.Tasks;
     using TimeWar.Logic.Classes;
     using TimeWar.Logic.Classes.Characters;
-    using TimeWar.Logic.Classes.Characters.Actions;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
-    using TimeWar.Model.Objects.Interfaces;
 
     /// <summary>
     /// Basic character logic class.

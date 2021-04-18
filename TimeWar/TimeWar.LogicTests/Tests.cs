@@ -4,22 +4,10 @@
 
 namespace TimeWar.LogicTests
 {
-    using System;
-    using System.Collections.Generic;
     using System.Drawing;
-    using System.Linq;
-    using System.Text;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using Moq;
     using NUnit.Framework;
-    using TimeWar.Logic;
-    using TimeWar.Logic.Classes;
-    using TimeWar.Logic.Classes.Characters.Actions;
-    using TimeWar.Logic.Interfaces;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
-    using TimeWar.Model.Objects.Interfaces;
 
     /// <summary>
     /// Test class for logic methods.
