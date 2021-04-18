@@ -5,16 +5,11 @@
 namespace TimeWar.Main
 {
     using System;
-    using System.Collections.Generic;
     using System.Diagnostics;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Input;
     using System.Windows.Media;
     using TimeWar.Logic;
-    using TimeWar.Logic.Classes;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
     using TimeWar.Renderer;
@@ -42,6 +37,11 @@ namespace TimeWar.Main
         }
 
         /// <summary>
+        /// Gets or sets current map.
+        /// </summary>
+        public string MapName { get; set; }
+
+        /// <summary>
         /// Render drawing groups.
         /// </summary>
         /// <param name="drawingContext">Canvas.</param>
@@ -56,7 +56,7 @@ namespace TimeWar.Main
         private void GameControl_Loaded(object sender, RoutedEventArgs e)
         {
             this.model = new GameModel();
-            this.initLogic = new InitLogic(this.model, "test2");
+            this.initLogic = new InitLogic(this.model, this.MapName);
             this.model.Camera = new Viewport((int)this.ActualWidth, (int)this.ActualHeight, (int)this.model.CurrentWorld.GameWidth, (int)this.model.CurrentWorld.GameHeight, this.model.Hero);
             this.renderer = new GameRenderer(this.model, false);
             this.commandManager = new Logic.Classes.CommandManager();
