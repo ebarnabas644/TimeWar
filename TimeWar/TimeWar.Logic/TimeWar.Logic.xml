@@ -4,9 +4,23 @@
         <name>TimeWar.Logic</name>
     </assembly>
     <members>
-        <member name="T:TimeWar.Logic.Classes.Characters.Actions.BasicBulletLogic">
+        <member name="T:TimeWar.Logic.Classes.Characters.Actions.BulletLogic">
             <summary>
             Default bullet logic.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.Actions.BulletLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Classes.Bullet,TimeWar.Logic.Classes.CommandManager,System.Drawing.Point)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.Characters.Actions.BulletLogic"/> class.
+            </summary>
+            <param name="model">Game Model.</param>
+            <param name="bullet">Bullet.</param>
+            <param name="commandManager">Command manager.</param>
+            <param name="destination">Destination.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.Actions.BulletLogic.OneTick">
+            <summary>
+            One tick method.
             </summary>
         </member>
         <member name="T:TimeWar.Logic.Classes.Characters.Actions.MoveCommand">
@@ -43,6 +57,11 @@
             Gets or sets movement vector of an actor.
             </summary>
         </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.BulletType">
+            <summary>
+            Gets or sets bullet type.
+            </summary>
+        </member>
         <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.JumpingTimeOut">
             <summary>
             Gets or sets if a character can jump again.
@@ -51,6 +70,11 @@
         <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.AccelerationStopwatch">
             <summary>
             Gets or sets the time of falling for a character.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.AttackStopwatch">
+            <summary>
+            Gets or sets cooldown time between attacks.
             </summary>
         </member>
         <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.Acceleration">

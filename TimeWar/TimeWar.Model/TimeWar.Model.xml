@@ -49,9 +49,9 @@
             Bullet bounces upon inpact.
             </summary>
         </member>
-        <member name="F:TimeWar.Model.Objects.Classes.BulletType.Curved">
+        <member name="F:TimeWar.Model.Objects.Classes.BulletType.CurvedBouncing">
             <summary>
-            Bullet is flying in a curved line.
+            Bullet is bouncing on the ground.
             </summary>
         </member>
         <member name="T:TimeWar.Model.Objects.Classes.Bullet">
