@@ -11,6 +11,7 @@ namespace TimeWar.Logic.Classes.Characters
     using System.Threading.Tasks;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
+    using TimeWar.Model.Objects.Classes;
 
     /// <summary>
     /// Heavy enemy.
@@ -29,6 +30,7 @@ namespace TimeWar.Logic.Classes.Characters
             this.Character.Health = 200;
             this.MaxMovementSpeed = 7;
             this.MaxJumpHeight = 15;
+            this.BulletType = BulletType.Accelerating;
         }
     }
 }

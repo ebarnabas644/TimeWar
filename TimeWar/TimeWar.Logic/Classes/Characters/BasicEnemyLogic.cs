@@ -14,6 +14,7 @@ namespace TimeWar.Logic.Classes.Characters
     using System.Threading.Tasks;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
+    using TimeWar.Model.Objects.Classes;
 
     /// <summary>
     /// Enemy logic.
