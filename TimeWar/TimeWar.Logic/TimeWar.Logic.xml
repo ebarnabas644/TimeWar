@@ -248,6 +248,77 @@
             Play character health const.
             </summary>
         </member>
+        <member name="T:TimeWar.Logic.Classes.ManagerLogic">
+            <summary>
+            Database manager class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.ManagerLogic.#ctor(TimeWar.Repository.Interfaces.IProfileRepository,TimeWar.Repository.Interfaces.ISaveRepository,TimeWar.Repository.Interfaces.IMapRecordRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.ManagerLogic"/> class.
+            </summary>
+            <param name="profileRepo">Profile repository.</param>
+            <param name="saveRepo">Save repository.</param>
+            <param name="mapRepo">Map repository.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.ManagerLogic.CreateMap(TimeWar.Data.Models.MapRecord)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.ManagerLogic.CreateProfile(TimeWar.Data.Models.PlayerProfile)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.ManagerLogic.CreateSave(TimeWar.Data.Models.Save)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.ManagerLogic.DeleteMap(TimeWar.Data.Models.MapRecord)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.ManagerLogic.DeleteProfile(TimeWar.Data.Models.PlayerProfile)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.ManagerLogic.DeleteSave(TimeWar.Data.Models.Save)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.ManagerLogic.ModifyMap(TimeWar.Data.Models.MapRecord)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.ManagerLogic.ModifyProfile(TimeWar.Data.Models.PlayerProfile)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.ManagerLogic.ModifySave(TimeWar.Data.Models.Save)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TimeWar.Logic.Classes.ViewerLogic">
+            <summary>
+            Database viewer class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.ViewerLogic.#ctor(TimeWar.Repository.Interfaces.IProfileRepository,TimeWar.Repository.Interfaces.ISaveRepository,TimeWar.Repository.Interfaces.IMapRecordRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.ViewerLogic"/> class.
+            </summary>
+            <param name="profileRepo">Profile repository.</param>
+            <param name="saveRepo">Save repository.</param>
+            <param name="mapRepo">Map repository.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.ViewerLogic.GetMap(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.ViewerLogic.GetMaps">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.ViewerLogic.GetProfile(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.ViewerLogic.GetProfiles">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.ViewerLogic.GetSave(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.ViewerLogic.GetSaves">
+            <inheritdoc/>
+        </member>
         <member name="T:TimeWar.Logic.CharacterLogic">
             <summary>
             Basic character logic class.
@@ -315,6 +386,109 @@
             Rewind all command.
             </summary>
             <returns>Task with rewind logic.</returns>
+        </member>
+        <member name="T:TimeWar.Logic.Interfaces.IManagerLogic">
+            <summary>
+            Database manager logic interface.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Interfaces.IManagerLogic.CreateProfile(TimeWar.Data.Models.PlayerProfile)">
+            <summary>
+            Add profile entity to database.
+            </summary>
+            <param name="newProfile">Profile entity.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Interfaces.IManagerLogic.CreateMap(TimeWar.Data.Models.MapRecord)">
+            <summary>
+            Add map entity to database.
+            </summary>
+            <param name="newMap">Map entity.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Interfaces.IManagerLogic.CreateSave(TimeWar.Data.Models.Save)">
+            <summary>
+            Add save entity to database.
+            </summary>
+            <param name="newSave">Save entity.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Interfaces.IManagerLogic.ModifyProfile(TimeWar.Data.Models.PlayerProfile)">
+            <summary>
+            Modify already existing profile entity.
+            </summary>
+            <param name="newProfile">Profile entity.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Interfaces.IManagerLogic.ModifyMap(TimeWar.Data.Models.MapRecord)">
+            <summary>
+            Modify already existing map entity.
+            </summary>
+            <param name="newMap">Map entity.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Interfaces.IManagerLogic.ModifySave(TimeWar.Data.Models.Save)">
+            <summary>
+            Modify already existing save entity.
+            </summary>
+            <param name="newSave">Save entity.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Interfaces.IManagerLogic.DeleteProfile(TimeWar.Data.Models.PlayerProfile)">
+            <summary>
+            Delete already existing profile entity.
+            </summary>
+            <param name="profile">Profile entity.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Interfaces.IManagerLogic.DeleteMap(TimeWar.Data.Models.MapRecord)">
+            <summary>
+            Delete already existing map entity.
+            </summary>
+            <param name="map">Map entity.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Interfaces.IManagerLogic.DeleteSave(TimeWar.Data.Models.Save)">
+            <summary>
+            Delete already existing save entity.
+            </summary>
+            <param name="save">Save entity.</param>
+        </member>
+        <member name="T:TimeWar.Logic.Interfaces.IViewerLogic">
+            <summary>
+            Database viewer logic interface.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Interfaces.IViewerLogic.GetProfile(System.Int32)">
+            <summary>
+            Get profile entity based on id.
+            </summary>
+            <param name="id">Entity id.</param>
+            <returns>Profile entity.</returns>
+        </member>
+        <member name="M:TimeWar.Logic.Interfaces.IViewerLogic.GetMap(System.Int32)">
+            <summary>
+            Get map entity based on id.
+            </summary>
+            <param name="id">Entity id.</param>
+            <returns>Map entity.</returns>
+        </member>
+        <member name="M:TimeWar.Logic.Interfaces.IViewerLogic.GetSave(System.Int32)">
+            <summary>
+            Get save entity based on id.
+            </summary>
+            <param name="id">Entity id.</param>
+            <returns>Save entity.</returns>
+        </member>
+        <member name="M:TimeWar.Logic.Interfaces.IViewerLogic.GetProfiles">
+            <summary>
+            Get all profile entity.
+            </summary>
+            <returns>Profile entities.</returns>
+        </member>
+        <member name="M:TimeWar.Logic.Interfaces.IViewerLogic.GetMaps">
+            <summary>
+            Get all map entity.
+            </summary>
+            <returns>Map entites.</returns>
+        </member>
+        <member name="M:TimeWar.Logic.Interfaces.IViewerLogic.GetSaves">
+            <summary>
+            Get all save entity.
+            </summary>
+            <returns>Save entites.</returns>
         </member>
     </members>
 </doc>

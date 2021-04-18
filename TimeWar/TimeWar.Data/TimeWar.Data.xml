@@ -4,67 +4,87 @@
         <name>TimeWar.Data</name>
     </assembly>
     <members>
-        <member name="T:TimeWar.Data.Models.Map">
+        <member name="T:TimeWar.Data.Models.MapRecord">
             <summary>
-            Map entity class.
+            Map record entity class.
             </summary>
         </member>
-        <member name="P:TimeWar.Data.Models.Map.MapId">
+        <member name="P:TimeWar.Data.Models.MapRecord.MapRecordId">
             <summary>
             Gets or sets map id.
             </summary>
         </member>
-        <member name="P:TimeWar.Data.Models.Map.Player">
+        <member name="P:TimeWar.Data.Models.MapRecord.MapName">
+            <summary>
+            Gets or sets map name.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Data.Models.MapRecord.PlayerId">
+            <summary>
+            Gets or sets player id.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Data.Models.MapRecord.Player">
             <summary>
             Gets or sets player profile navigational property.
             </summary>
         </member>
-        <member name="P:TimeWar.Data.Models.Map.RunTime">
+        <member name="P:TimeWar.Data.Models.MapRecord.RunTime">
             <summary>
             Gets or sets run time.
             </summary>
         </member>
-        <member name="T:TimeWar.Data.Models.Profile">
+        <member name="T:TimeWar.Data.Models.PlayerProfile">
             <summary>
             Player profile class.
             </summary>
         </member>
-        <member name="M:TimeWar.Data.Models.Profile.#ctor">
+        <member name="M:TimeWar.Data.Models.PlayerProfile.#ctor">
             <summary>
-            Initializes a new instance of the <see cref="T:TimeWar.Data.Models.Profile"/> class.
+            Initializes a new instance of the <see cref="T:TimeWar.Data.Models.PlayerProfile"/> class.
             </summary>
         </member>
-        <member name="P:TimeWar.Data.Models.Profile.PlayerId">
+        <member name="P:TimeWar.Data.Models.PlayerProfile.PlayerId">
             <summary>
             Gets or sets the player id.
             </summary>
         </member>
-        <member name="P:TimeWar.Data.Models.Profile.PlayerName">
+        <member name="P:TimeWar.Data.Models.PlayerProfile.PlayerName">
             <summary>
             Gets or sets the name of the player.
             </summary>
         </member>
-        <member name="P:TimeWar.Data.Models.Profile.TotalKills">
+        <member name="P:TimeWar.Data.Models.PlayerProfile.TotalKills">
             <summary>
             Gets or sets the total number of kills.
             </summary>
         </member>
-        <member name="P:TimeWar.Data.Models.Profile.TotalDeaths">
+        <member name="P:TimeWar.Data.Models.PlayerProfile.TotalDeaths">
             <summary>
             Gets or sets the total number of deaths.
             </summary>
         </member>
-        <member name="P:TimeWar.Data.Models.Profile.CompletedRuns">
+        <member name="P:TimeWar.Data.Models.PlayerProfile.CompletedRuns">
             <summary>
             Gets or sets the number of completed runs.
             </summary>
         </member>
-        <member name="P:TimeWar.Data.Models.Profile.AutoSave">
+        <member name="P:TimeWar.Data.Models.PlayerProfile.Selected">
+            <summary>
+            Gets or sets a value indicating whether this is the selected profile.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Data.Models.PlayerProfile.SaveId">
+            <summary>
+            Gets or sets the autosave id.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Data.Models.PlayerProfile.AutoSave">
             <summary>
             Gets or sets the player auto save navigational property.
             </summary>
         </member>
-        <member name="P:TimeWar.Data.Models.Profile.Records">
+        <member name="P:TimeWar.Data.Models.PlayerProfile.Records">
             <summary>
             Gets the records navigational property.
             </summary>
@@ -89,6 +109,11 @@
             Gets or sets checkpoint.
             </summary>
         </member>
+        <member name="P:TimeWar.Data.Models.Save.PlayerId">
+            <summary>
+            Gets or sets the player id.
+            </summary>
+        </member>
         <member name="P:TimeWar.Data.Models.Save.Player">
             <summary>
             Gets or sets player navigational property.
@@ -109,7 +134,7 @@
             Gets or sets profiles table.
             </summary>
         </member>
-        <member name="P:TimeWar.Data.Models.TimeWarContext.Maps">
+        <member name="P:TimeWar.Data.Models.TimeWarContext.MapRecords">
             <summary>
             Gets or sets maps table.
             </summary>
@@ -120,6 +145,9 @@
             </summary>
         </member>
         <member name="M:TimeWar.Data.Models.TimeWarContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Data.Models.TimeWarContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc/>
         </member>
     </members>

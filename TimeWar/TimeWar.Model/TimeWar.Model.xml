@@ -304,6 +304,12 @@
             Gets or sets a value indicating whether hud or not.
             </summary>
         </member>
+        <member name="M:TimeWar.Model.Objects.Classes.StaticObject.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Classes.StaticObject.GetHashCode">
+            <inheritdoc/>
+        </member>
         <member name="T:TimeWar.Model.Objects.Viewport">
             <summary>
             Camera viewport class.
