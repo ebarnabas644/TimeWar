@@ -33,9 +33,9 @@ namespace TimeWar.Model.Objects.Classes
         Bouncing,
 
         /// <summary>
-        /// Bullet is flying in a curved line.
+        /// Bullet is bouncing on the ground.
         /// </summary>
-        Curved,
+        CurvedBouncing,
     }
 
     /// <summary>
