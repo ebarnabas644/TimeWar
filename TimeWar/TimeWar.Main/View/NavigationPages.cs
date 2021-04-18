@@ -4,12 +4,6 @@
 
 namespace TimeWar.Main.View
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-
     /// <summary>
     /// Enum for the pages.
     /// </summary>
@@ -29,5 +23,15 @@ namespace TimeWar.Main.View
         /// Profiles view.
         /// </summary>
         ProfilesPage,
+
+        /// <summary>
+        /// Profile editor view.
+        /// </summary>
+        ProfileEditorPage,
+
+        /// <summary>
+        /// New game view.
+        /// </summary>
+        NewGamePage,
     }
 }
