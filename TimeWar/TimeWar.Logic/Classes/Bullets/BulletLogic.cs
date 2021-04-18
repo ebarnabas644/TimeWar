@@ -47,8 +47,6 @@ namespace TimeWar.Logic.Classes.Characters.Actions
         public void OneTick()
         {
             this.Movement();
-            this.DetectEntity();
-            this.DetectGround();
         }
 
         private static PointF Normalize(PointF vector)
@@ -80,7 +78,7 @@ namespace TimeWar.Logic.Classes.Characters.Actions
 
         private void BasicMovement()
         {
-            throw new NotImplementedException();
+
         }
 
         private void AcceleratigMovement()
@@ -111,6 +109,13 @@ namespace TimeWar.Logic.Classes.Characters.Actions
         private void Despawn()
         {
             throw new NotImplementedException();
+        }
+
+        private Point GetVectorDirection()
+        {
+            Point retPoint = new Point(this.destination.X - this.bullet.Position.X, this.destination.Y - this.bullet.Position.Y);
+
+            return retPoint;
         }
     }
 }
