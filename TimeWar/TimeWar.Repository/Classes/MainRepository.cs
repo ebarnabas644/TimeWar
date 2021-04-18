@@ -32,6 +32,13 @@ namespace TimeWar.Repository.Classes
         /// <inheritdoc/>
         public void Create(T entity)
         {
+            var local = this.Ctx.Set<T>().FirstOrDefault(entry => entry.Equals(entity));
+            if (local != null)
+            {
+                this.Ctx.Entry(local).State = EntityState.Detached;
+            }
+
+            this.Ctx.Entry(entity).State = EntityState.Added;
             this.Ctx.Add(entity);
             this.Ctx.SaveChanges();
         }
@@ -39,7 +46,13 @@ namespace TimeWar.Repository.Classes
         /// <inheritdoc/>
         public void Delete(T entity)
         {
-            this.Ctx.Remove(entity);
+            var local = this.Ctx.Set<T>().FirstOrDefault(entry => entry.Equals(entity));
+            if (local != null)
+            {
+                this.Ctx.Entry(local).State = EntityState.Detached;
+            }
+
+            this.Ctx.Entry(entity).State = EntityState.Deleted;
             this.Ctx.SaveChanges();
         }
 
