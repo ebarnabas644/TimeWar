@@ -51,6 +51,12 @@ namespace TimeWar.Logic.Classes.Characters.Actions
             this.DetectGround();
         }
 
+        private static PointF Normalize(PointF vector)
+        {
+            float distance = (float)Math.Sqrt((vector.X * vector.X) + (vector.Y * vector.Y));
+            return new PointF(vector.X / distance, vector.Y / distance);
+        }
+
         private void Movement()
         {
             switch (this.bullet.Type)
