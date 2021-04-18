@@ -4,11 +4,6 @@
 
 namespace TimeWar.Main.View
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using GalaSoft.MvvmLight.Views;
 
     /// <summary>
@@ -17,6 +12,11 @@ namespace TimeWar.Main.View
     /// <typeparam name="T">Page type.</typeparam>
     public interface INavigationService<T> : INavigationService
     {
+        /// <summary>
+        /// Gets optional parameter.
+        /// </summary>
+        object Parameter { get; }
+
         /// <summary>
         /// Navigate to the selected page.
         /// </summary>
