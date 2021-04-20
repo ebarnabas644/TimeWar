@@ -16,6 +16,7 @@ namespace TimeWar.Logic.Classes
     /// </summary>
     public class CommandManager : ICommandManager
     {
+        private const int RewindTime = 1500;
         private List<ICommand> commandBuffer;
         private Stopwatch rewindStopwatch;
 
@@ -58,7 +59,7 @@ namespace TimeWar.Logic.Classes
                     this.rewindStopwatch.Start();
                     foreach (ICommand command in Enumerable.Reverse(this.commandBuffer))
                     {
-                        if (this.rewindStopwatch.ElapsedMilliseconds < 5000)
+                        if (this.rewindStopwatch.ElapsedMilliseconds < RewindTime)
                         {
                             command.Undo();
                             Thread.Sleep(10);
