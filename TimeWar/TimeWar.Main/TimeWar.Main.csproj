@@ -26,6 +26,7 @@
     <None Remove="Leveldata\test2.tmx" />
     <None Remove="Sprites\1.png" />
     <None Remove="Sprites\41.png" />
+    <None Remove="Sprites\testenemy.png" />
     <None Remove="Sprites\testman.png" />
     <None Remove="Sprites\testsprite.png" />
     <None Remove="Sprites\title.png" />
@@ -49,6 +50,9 @@
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Sprites\41.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\testenemy.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Sprites\testman.png">
