@@ -82,6 +82,16 @@ namespace TimeWar.Model.Objects
         }
 
         /// <summary>
+        /// Gets or sets mouse click location.
+        /// </summary>
+        public Point ClickLocation { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the player can attack or not.
+        /// </summary>
+        public bool CanAttack { get; set; }
+
+        /// <summary>
         /// Gets or sets character height in pixel.
         /// </summary>
         public int Height { get; set; }
