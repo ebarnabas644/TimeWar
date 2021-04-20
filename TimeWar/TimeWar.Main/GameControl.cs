@@ -7,6 +7,7 @@ namespace TimeWar.Main
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
+    using System.Drawing;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
@@ -70,6 +71,7 @@ namespace TimeWar.Main
                 this.win.KeyUp += this.Win_KeyUp;
                 this.win.SizeChanged += this.Win_SizeChanged;
                 this.win.MouseMove += this.Win_MouseMove;
+                this.win.MouseDown += this.Win_MouseDown;
                 CompositionTarget.Rendering += this.CompositionTarget_Rendering;
             }
 
@@ -78,6 +80,21 @@ namespace TimeWar.Main
 
         private void Win_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
         {
+        }
+
+        private void Win_MouseDown(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            System.Windows.Point clickPosition = e.GetPosition(this);
+
+            System.Drawing.Point clickRelativePos = new System.Drawing.Point(this.model.Camera.GetRelativeCharacterPosX, this.model.Camera.GetRelativeCharacterPosY);
+            clickRelativePos.X -= (int)clickPosition.X;
+            clickRelativePos.X *= -1;
+            clickRelativePos.Y -= (int)clickPosition.Y;
+            clickRelativePos.X += this.model.Hero.Position.X;
+            clickRelativePos.Y -= this.model.Hero.Position.Y;
+            clickRelativePos.Y *= -1;
+            this.model.Hero.CanAttack = true;
+            this.model.Hero.ClickLocation = clickRelativePos;
         }
 
         private void Win_SizeChanged(object sender, SizeChangedEventArgs e)
