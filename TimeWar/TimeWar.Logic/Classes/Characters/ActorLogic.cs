@@ -10,6 +10,7 @@ namespace TimeWar.Logic.Classes.Characters
     using TimeWar.Logic.Classes.Characters.Actions;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
+    using TimeWar.Model.Objects.Classes;
 
     /// <summary>
     /// Base class for characters and enemies.
@@ -19,14 +20,16 @@ namespace TimeWar.Logic.Classes.Characters
         private int defaultAcceleration;
         private int maxMovementSpeed;
         private int maxJumpHeight;
-        private GameModel model;
+        private int acceleration;
+        private bool isJumping;
+        private Point moveVector;
+        private BulletType bulletType;
         private Character character;
         private CommandManager commandManager;
-        private bool isJumping;
-        private int acceleration;
+        private GameModel model;
         private Stopwatch accelerationStopwatch = new Stopwatch();
         private Stopwatch jumpingTimeOut = new Stopwatch();
-        private Point moveVector;
+        private Stopwatch attackStopwatch = new Stopwatch();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ActorLogic"/> class.
@@ -46,6 +49,7 @@ namespace TimeWar.Logic.Classes.Characters
             this.defaultAcceleration = 1;
             this.maxMovementSpeed = 15;
             this.maxJumpHeight = 20;
+            this.bulletType = BulletType.Basic;
         }
 
         /// <summary>
@@ -55,6 +59,15 @@ namespace TimeWar.Logic.Classes.Characters
         {
             get { return this.moveVector; }
             set { this.moveVector = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets bullet type.
+        /// </summary>
+        protected BulletType BulletType
+        {
+            get { return this.bulletType; }
+            set { this.bulletType = value; }
         }
 
         /// <summary>
@@ -73,6 +86,15 @@ namespace TimeWar.Logic.Classes.Characters
         {
             get { return this.accelerationStopwatch; }
             set { this.accelerationStopwatch = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets the attack stopwatch.
+        /// </summary>
+        protected Stopwatch AttackStopwatch
+        {
+            get { return this.attackStopwatch; }
+            set { this.attackStopwatch = value; }
         }
 
         /// <summary>
@@ -377,10 +399,7 @@ namespace TimeWar.Logic.Classes.Characters
         /// Default move funtion.
         /// </summary>
         /// <returns>New movement point.</returns>
-        protected virtual Point Move()
-        {
-            return new Point(0, 0);
-        }
+        protected abstract Point Move();
 
         /// <summary>
         /// Jumping.
@@ -402,9 +421,6 @@ namespace TimeWar.Logic.Classes.Characters
         /// <summary>
         /// Default attack method.
         /// </summary>
-        /// <param name="attackLocation">The attack is directed to this location.</param>
-        protected virtual void Attack(Point attackLocation)
-        {
-        }
+        protected abstract void Attack();
     }
 }

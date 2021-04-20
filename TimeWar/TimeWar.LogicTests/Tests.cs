@@ -28,7 +28,7 @@ namespace TimeWar.LogicTests
         public void Setup()
         {
             // this.commandManager = new CommandManager();
-            this.player = new Player(new Point(50, 50), 1, 10, 8, 2, "cucc");
+            this.player = new Player(new Point(50, 50), 1, 8, 2, "cucc");
             this.gameWorld = new GameWorld(100, 100, 8);
             this.gameModel = new GameModel();
             this.gameModel.CurrentWorld = this.gameWorld;

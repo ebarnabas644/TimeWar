@@ -4,6 +4,26 @@
         <name>TimeWar.Logic</name>
     </assembly>
     <members>
+        <member name="T:TimeWar.Logic.Classes.Characters.Actions.BulletLogic">
+            <summary>
+            Default bullet logic.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.Actions.BulletLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Classes.Bullet,TimeWar.Logic.Classes.CommandManager,System.Drawing.Point,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.Characters.Actions.BulletLogic"/> class.
+            </summary>
+            <param name="model">Game Model.</param>
+            <param name="bullet">Bullet.</param>
+            <param name="commandManager">Command manager.</param>
+            <param name="destination">Destination.</param>
+            <param name="despawnTime">How many seconds until the bullet despawns.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.Actions.BulletLogic.OneTick">
+            <summary>
+            One tick method.
+            </summary>
+        </member>
         <member name="T:TimeWar.Logic.Classes.Characters.Actions.MoveCommand">
             <summary>
             Move commands.
@@ -38,6 +58,11 @@
             Gets or sets movement vector of an actor.
             </summary>
         </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.BulletType">
+            <summary>
+            Gets or sets bullet type.
+            </summary>
+        </member>
         <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.JumpingTimeOut">
             <summary>
             Gets or sets if a character can jump again.
@@ -46,6 +71,11 @@
         <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.AccelerationStopwatch">
             <summary>
             Gets or sets the time of falling for a character.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.AttackStopwatch">
+            <summary>
+            Gets or sets the attack stopwatch.
             </summary>
         </member>
         <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.Acceleration">
@@ -153,6 +183,11 @@
             </summary>
             <returns>Jumping value.</returns>
         </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.ActorLogic.Attack">
+            <summary>
+            Default attack method.
+            </summary>
+        </member>
         <member name="T:TimeWar.Logic.Classes.Characters.BasicEnemyLogic">
             <summary>
             Enemy logic.
@@ -170,6 +205,9 @@
             <inheritdoc/>
         </member>
         <member name="M:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.Move">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.Attack">
             <inheritdoc/>
         </member>
         <member name="M:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.Movement">
@@ -333,6 +371,9 @@
             <param name="commandManager">Command manager entity.</param>
         </member>
         <member name="M:TimeWar.Logic.CharacterLogic.OneTick">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.CharacterLogic.Attack">
             <inheritdoc/>
         </member>
         <member name="M:TimeWar.Logic.CharacterLogic.Move">

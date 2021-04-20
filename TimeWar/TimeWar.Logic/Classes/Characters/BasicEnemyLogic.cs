@@ -7,8 +7,12 @@ namespace TimeWar.Logic.Classes.Characters
     using System.Diagnostics;
     using System.Drawing;
     using System.Security.Cryptography;
+    using System.Text;
+    using System.Threading.Tasks;
+    using TimeWar.Logic.Classes.Characters.Actions;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
+    using TimeWar.Model.Objects.Classes;
 
     /// <summary>
     /// Enemy logic.
@@ -16,6 +20,7 @@ namespace TimeWar.Logic.Classes.Characters
     public class BasicEnemyLogic : ActorLogic
     {
         private const int DetectionTime = 60;
+        private int attackTime = 2500;
         private Stopwatch movementDirStopwatch;
         private Stopwatch movementStopwatch;
         private int movementDirTime;
@@ -44,12 +49,14 @@ namespace TimeWar.Logic.Classes.Characters
             this.isPlayerDetected = false;
             this.playerDetectionStopwatch = new Stopwatch();
             this.Character.Health = 75;
+            this.AttackStopwatch.Start();
         }
 
         /// <inheritdoc/>
         public override void OneTick()
         {
             this.DetectPlayer();
+            this.Attack();
             base.OneTick();
         }
 
@@ -128,11 +135,20 @@ namespace TimeWar.Logic.Classes.Characters
                     this.moveDir = RandomNumberGenerator.GetInt32(4);
                     this.movementDirStopwatch.Restart();
                 }
-
-                // lastKnownPlayerLocation.Y;
             }
 
             return new Point(x, y);
+        }
+
+        /// <inheritdoc/>
+        protected override void Attack()
+        {
+            if (this.isPlayerDetected && this.AttackStopwatch.ElapsedMilliseconds > this.attackTime)
+            {
+                Bullet bullet = new Bullet(this.Character.Position, 1, 1, "placeholder");
+                BulletLogic bulletLogic = new BulletLogic(this.Model, bullet, this.CommandManager, this.lastKnownPlayerLocation);
+                this.AttackStopwatch.Restart();
+            }
         }
 
         /// <inheritdoc/>
@@ -164,6 +180,11 @@ namespace TimeWar.Logic.Classes.Characters
                 {
                     this.playerDetectionStopwatch.Start();
                 }
+            }
+
+            if (this.playerDetectionStopwatch.ElapsedMilliseconds > DetectionTime * 1000)
+            {
+                this.isPlayerDetected = false;
             }
         }
 
@@ -207,11 +228,13 @@ namespace TimeWar.Logic.Classes.Characters
                 if (playerLocation == upDetection)
                 {
                     this.lastKnownPlayerLocation = upDetection;
+                    this.isPlayerDetected = true;
                     return true;
                 }
                 else if (playerLocation == downDetection)
                 {
                     this.lastKnownPlayerLocation = downDetection;
+                    this.isPlayerDetected = true;
                     return true;
                 }
             }

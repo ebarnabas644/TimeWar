@@ -6,6 +6,7 @@ namespace TimeWar.Logic.Classes.Characters
 {
     using TimeWar.Model;
     using TimeWar.Model.Objects;
+    using TimeWar.Model.Objects.Classes;
 
     /// <summary>
     /// Fast enemy class.
@@ -24,6 +25,7 @@ namespace TimeWar.Logic.Classes.Characters
             this.MaxJumpHeight = 30;
             this.MaxMovementSpeed = 40;
             this.Character.Health = 25;
+            this.BulletType = BulletType.Accelerating;
         }
     }
 }

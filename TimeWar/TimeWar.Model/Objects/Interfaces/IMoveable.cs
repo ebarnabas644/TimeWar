@@ -16,9 +16,9 @@ namespace TimeWar.Model.Objects.Interfaces
         /// </summary>
         public Point Position { get; set; }
 
-        /// <summary>
-        /// Gets or sets character movement speed.
-        /// </summary>
-        public int Speed { get; set; }
+        // <summary>
+        // Gets or sets character movement speed.
+        // </summary>
+        // public int Speed { get; set; }
     }
 }
