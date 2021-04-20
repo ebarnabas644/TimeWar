@@ -179,6 +179,16 @@
             <param name="width">Character width.</param>
             <param name="spriteFile">Name of the sprite file.</param>
         </member>
+        <member name="P:TimeWar.Model.Objects.Character.ClickLocation">
+            <summary>
+            Gets or sets mouse click location.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.CanAttack">
+            <summary>
+            Gets or sets a value indicating whether the player can attack or not.
+            </summary>
+        </member>
         <member name="P:TimeWar.Model.Objects.Character.Height">
             <summary>
             Gets or sets character height in pixel.
