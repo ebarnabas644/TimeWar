@@ -5,19 +5,14 @@
 namespace TimeWar.Logic
 {
     using System;
-    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Drawing;
-    using System.Linq;
-    using System.Text;
-    using System.Threading;
-    using System.Threading.Tasks;
     using TimeWar.Logic.Classes;
     using TimeWar.Logic.Classes.Characters;
     using TimeWar.Logic.Classes.Characters.Actions;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
-    using TimeWar.Model.Objects.Interfaces;
+    using TimeWar.Model.Objects.Classes;
 
     /// <summary>
     /// Basic character logic class.
@@ -33,12 +28,27 @@ namespace TimeWar.Logic
         public CharacterLogic(GameModel model, Character character, CommandManager commandManager)
             : base(model, character, commandManager)
         {
+            this.AttackStopwatch.Start();
         }
 
         /// <inheritdoc/>
         public override void OneTick()
         {
             base.OneTick();
+            this.Attack();
+        }
+
+        /// <inheritdoc/>
+        protected override void Attack()
+        {
+            if (this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > 500)
+            {
+                Bullet bullet = new Bullet(this.Character.Position, 1, 1, "placeholder");
+                BulletLogic bulletLogic = new BulletLogic(this.Model, bullet, this.CommandManager, this.Character.ClickLocation);
+                this.AttackStopwatch.Restart();
+                this.Character.CanAttack = false;
+                Debug.WriteLine("Attacked at position:" + this.Character.ClickLocation);
+            }
         }
 
         /// <inheritdoc/>
