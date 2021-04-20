@@ -93,7 +93,7 @@ namespace TimeWar.Logic.Classes.Characters
         }
 
         /// <summary>
-        /// Gets or sets cooldown time between attacks.
+        /// Gets or sets the attack stopwatch.
         /// </summary>
         protected Stopwatch AttackStopwatch
         {
@@ -403,10 +403,7 @@ namespace TimeWar.Logic.Classes.Characters
         /// Default move funtion.
         /// </summary>
         /// <returns>New movement point.</returns>
-        protected virtual Point Move()
-        {
-            return new Point(0, 0);
-        }
+        protected abstract Point Move();
 
         /// <summary>
         /// Jumping.
@@ -428,9 +425,6 @@ namespace TimeWar.Logic.Classes.Characters
         /// <summary>
         /// Default attack method.
         /// </summary>
-        /// <param name="attackLocation">The attack is directed to this location.</param>
-        protected virtual void Attack(Point attackLocation)
-        {
-        }
+        protected abstract void Attack();
     }
 }
