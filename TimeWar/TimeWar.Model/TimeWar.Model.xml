@@ -92,6 +92,21 @@
             Gets or sets the type of the bullet.
             </summary>
         </member>
+        <member name="T:TimeWar.Model.Objects.Classes.Enemy">
+            <summary>
+            Enemy character class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Classes.Enemy.#ctor(System.Drawing.Point,System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Model.Objects.Classes.Enemy"/> class.
+            </summary>
+            <param name="pos">Position.</param>
+            <param name="health">Health value.</param>
+            <param name="height">Height.</param>
+            <param name="width">Width.</param>
+            <param name="spriteFile">Spritesheet file name.</param>
+        </member>
         <member name="T:TimeWar.Model.Objects.Classes.StaticObject">
             <summary>
             Static object class.
@@ -296,6 +311,34 @@
             Gets or sets the zoom extent of the game world.
             </summary>
         </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.BulletCount">
+            <summary>
+            Gets number of bullets.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.EnemyCount">
+            <summary>
+            Gets the number of the enemies.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.GetBullets">
+            <summary>
+            Gets bullets.
+            </summary>
+            <returns>Return currently spawned bullets collection.</returns>
+        </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.GetEnemies">
+            <summary>
+            Gets enemies.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.GetBullet(System.Int32)">
+            <summary>
+            Get bullet from bullet collection.
+            </summary>
+            <param name="idx">Index.</param>
+            <returns>Bullet entity.</returns>
+        </member>
         <member name="M:TimeWar.Model.Objects.GameWorld.AddPointOfInterest(System.String,System.Drawing.Point)">
             <summary>
             Add new point of interest.
@@ -362,6 +405,37 @@
             </summary>
             <param name="position">Position of the object(tile pos).</param>
             <returns>Object id.</returns>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.AddBullet(TimeWar.Model.Objects.Classes.Bullet)">
+            <summary>
+            Add new bullet.
+            </summary>
+            <param name="bullet">Bullet entity.</param>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.RemoveBullet(TimeWar.Model.Objects.Classes.Bullet)">
+            <summary>
+            Remove bullet.
+            </summary>
+            <param name="bullet">Bullet entity.</param>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.AddEnemy(TimeWar.Model.Objects.Classes.Enemy)">
+            <summary>
+            Add new enemy.
+            </summary>
+            <param name="enemy">Character entity.</param>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.RemoveEnemy(TimeWar.Model.Objects.Classes.Enemy)">
+            <summary>
+            Remove enemy from the collection.
+            </summary>
+            <param name="enemy">Character entity.</param>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.GetEnemy(System.Int32)">
+            <summary>
+            Get enemy entity.
+            </summary>
+            <param name="idx">Index.</param>
+            <returns>Character entity.</returns>
         </member>
         <member name="T:TimeWar.Model.Objects.Player">
             <summary>

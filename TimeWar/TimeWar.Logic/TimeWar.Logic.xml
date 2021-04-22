@@ -286,6 +286,26 @@
             Play character health const.
             </summary>
         </member>
+        <member name="F:TimeWar.Logic.Classes.InitConfig.BasicEnemySpritesheet">
+            <summary>
+            Name of the basic enemy spritesheet.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Logic.Classes.InitConfig.BasicEnemyHeight">
+            <summary>
+            Basic enemy height const.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Logic.Classes.InitConfig.BasicEnemyWidth">
+            <summary>
+            Basic enemy width const.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Logic.Classes.InitConfig.BasicEnemyHealth">
+            <summary>
+            Basic enemy health const.
+            </summary>
+        </member>
         <member name="T:TimeWar.Logic.Classes.ManagerLogic">
             <summary>
             Database manager class.
