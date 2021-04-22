@@ -17,6 +17,7 @@ namespace TimeWar.Model.Objects
     {
         private bool[][] ground;
         private int[][] decorations;
+        private List<Enemy> enemies;
         private Dictionary<string, Point> pointOfInterests;
         private List<Bullet> bullets;
 
@@ -31,6 +32,7 @@ namespace TimeWar.Model.Objects
         {
             this.ground = new bool[height][];
             this.decorations = new int[height][];
+            this.enemies = new List<Enemy>();
             for (int i = 0; i < this.ground.Length; i++)
             {
                 this.ground[i] = new bool[width];
@@ -95,6 +97,14 @@ namespace TimeWar.Model.Objects
         }
 
         /// <summary>
+        /// Gets the number of the enemies.
+        /// </summary>
+        public int EnemyCount
+        {
+            get { return this.enemies.Count; }
+        }
+
+        /// <summary>
         /// Gets bullets.
         /// </summary>
         /// <returns>Return currently spawned bullets collection.</returns>
@@ -103,6 +113,18 @@ namespace TimeWar.Model.Objects
             get
             {
                 IReadOnlyList<Bullet> output = this.bullets;
+                return output;
+            }
+        }
+
+        /// <summary>
+        /// Gets enemies.
+        /// </summary>
+        public IReadOnlyList<Enemy> GetEnemies
+        {
+            get
+            {
+                IReadOnlyList<Enemy> output = this.enemies;
                 return output;
             }
         }
@@ -288,10 +310,40 @@ namespace TimeWar.Model.Objects
         /// <param name="bullet">Bullet entity.</param>
         public void RemoveBullet(Bullet bullet)
         {
-            if (this.bullets.Contains(bullet))
+            this.bullets.Remove(bullet);
+        }
+
+        /// <summary>
+        /// Add new enemy.
+        /// </summary>
+        /// <param name="enemy">Character entity.</param>
+        public void AddEnemy(Enemy enemy)
+        {
+            this.enemies.Add(enemy);
+        }
+
+        /// <summary>
+        /// Remove enemy from the collection.
+        /// </summary>
+        /// <param name="enemy">Character entity.</param>
+        public void RemoveEnemy(Enemy enemy)
+        {
+            this.enemies.Remove(enemy);
+        }
+
+        /// <summary>
+        /// Get enemy entity.
+        /// </summary>
+        /// <param name="idx">Index.</param>
+        /// <returns>Character entity.</returns>
+        public Enemy GetEnemy(int idx)
+        {
+            if (idx < this.enemies.Count)
             {
-                this.bullets.Remove(bullet);
+                return this.enemies[idx];
             }
+
+            return null;
         }
     }
 }
