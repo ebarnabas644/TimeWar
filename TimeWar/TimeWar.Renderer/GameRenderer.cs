@@ -81,6 +81,7 @@ namespace TimeWar.Renderer
             DrawingGroup dg = new DrawingGroup();
             dg.Children.Add(this.GetBackground());
             dg.Children.Add(this.GetDecorations());
+            dg.Children.Add(this.GetBullets());
 
             // dg.Children.Add(this.GetCollision());
             if (!this.menuMode)
@@ -275,6 +276,18 @@ namespace TimeWar.Renderer
                         dg.Children.Add(new GeometryDrawing(this.GetSpriteBrush(item, true), null, deco[item.SpriteFile]));
                     }
                 }
+            }
+
+            return dg;
+        }
+
+        private Drawing GetBullets()
+        {
+            DrawingGroup dg = new DrawingGroup();
+            foreach (Bullet item in this.model.CurrentWorld.GetBullets)
+            {
+                Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(item.Position.X), this.model.Camera.GetRelativeObjectPosY(item.Position.Y), item.Height, item.Width));
+                dg.Children.Add(new GeometryDrawing(Brushes.Red, null, g));
             }
 
             return dg;

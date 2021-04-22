@@ -8,6 +8,7 @@ namespace TimeWar.Model.Objects
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Drawing;
+    using TimeWar.Model.Objects.Classes;
 
     /// <summary>
     /// Game world details, settings.
@@ -17,6 +18,7 @@ namespace TimeWar.Model.Objects
         private bool[][] ground;
         private int[][] decorations;
         private Dictionary<string, Point> pointOfInterests;
+        private List<Bullet> bullets;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameWorld"/> class.
@@ -36,6 +38,7 @@ namespace TimeWar.Model.Objects
             }
 
             this.pointOfInterests = new Dictionary<string, Point>();
+            this.bullets = new List<Bullet>();
             this.Magnify = magnify;
             this.TileSize = tileSize;
             this.GameWidth = this.TileSize * width * this.Magnify;
@@ -82,6 +85,42 @@ namespace TimeWar.Model.Objects
         /// Gets or sets the zoom extent of the game world.
         /// </summary>
         public int Magnify { get; set; }
+
+        /// <summary>
+        /// Gets number of bullets.
+        /// </summary>
+        public int BulletCount
+        {
+            get { return this.bullets.Count; }
+        }
+
+        /// <summary>
+        /// Gets bullets.
+        /// </summary>
+        /// <returns>Return currently spawned bullets collection.</returns>
+        public IReadOnlyList<Bullet> GetBullets
+        {
+            get
+            {
+                IReadOnlyList<Bullet> output = this.bullets;
+                return output;
+            }
+        }
+
+        /// <summary>
+        /// Get bullet from bullet collection.
+        /// </summary>
+        /// <param name="idx">Index.</param>
+        /// <returns>Bullet entity.</returns>
+        public Bullet GetBullet(int idx)
+        {
+            if (idx < this.bullets.Count)
+            {
+                return this.bullets[idx];
+            }
+
+            return null;
+        }
 
         /// <summary>
         /// Add new point of interest.
@@ -232,6 +271,27 @@ namespace TimeWar.Model.Objects
             }
 
             return 0;
+        }
+
+        /// <summary>
+        /// Add new bullet.
+        /// </summary>
+        /// <param name="bullet">Bullet entity.</param>
+        public void AddBullet(Bullet bullet)
+        {
+            this.bullets.Add(bullet);
+        }
+
+        /// <summary>
+        /// Remove bullet.
+        /// </summary>
+        /// <param name="bullet">Bullet entity.</param>
+        public void RemoveBullet(Bullet bullet)
+        {
+            if (this.bullets.Contains(bullet))
+            {
+                this.bullets.Remove(bullet);
+            }
         }
     }
 }
