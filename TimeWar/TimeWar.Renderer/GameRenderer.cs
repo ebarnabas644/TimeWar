@@ -82,6 +82,7 @@ namespace TimeWar.Renderer
             dg.Children.Add(this.GetBackground());
             dg.Children.Add(this.GetDecorations());
             dg.Children.Add(this.GetBullets());
+            dg.Children.Add(this.GetEnemies());
 
             // dg.Children.Add(this.GetCollision());
             if (!this.menuMode)
@@ -286,8 +287,20 @@ namespace TimeWar.Renderer
             DrawingGroup dg = new DrawingGroup();
             foreach (Bullet item in this.model.CurrentWorld.GetBullets)
             {
-                Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(item.Position.X), this.model.Camera.GetRelativeObjectPosY(item.Position.Y), item.Height, item.Width));
+                Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(item.Position.X), this.model.Camera.GetRelativeObjectPosY(item.Position.Y), item.Width * this.model.CurrentWorld.Magnify, item.Height * this.model.CurrentWorld.Magnify));
                 dg.Children.Add(new GeometryDrawing(Brushes.Red, null, g));
+            }
+
+            return dg;
+        }
+
+        private Drawing GetEnemies()
+        {
+            DrawingGroup dg = new DrawingGroup();
+            foreach (Enemy item in this.model.CurrentWorld.GetEnemies)
+            {
+                Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(item.Position.X), this.model.Camera.GetRelativeObjectPosY(item.Position.Y), item.Width * this.model.CurrentWorld.Magnify, item.Height * this.model.CurrentWorld.Magnify));
+                dg.Children.Add(new GeometryDrawing(this.GetSpriteBrush(item), null, g));
             }
 
             return dg;
