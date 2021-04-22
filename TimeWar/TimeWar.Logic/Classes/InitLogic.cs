@@ -11,6 +11,7 @@ namespace TimeWar.Logic
     using TimeWar.Logic.Classes;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
+    using TimeWar.Model.Objects.Classes;
 
     /// <summary>
     /// Init class for game model.
@@ -45,6 +46,12 @@ namespace TimeWar.Logic
         private static string[][] GetDecorations(XDocument mapData)
         {
             string[][] decodata = mapData.Element("map").Elements("layer").Where(x => x.Attribute("name").Value == "spritedeco").Select(x => x.Element("data").Value).FirstOrDefault().Trim().Split("\n").Select(x => x.Split(",")).Select(x => x.Where(x => x.Length != 0).ToArray()).ToArray();
+            return decodata;
+        }
+
+        private static string[][] GetEnemies(XDocument mapData)
+        {
+            string[][] decodata = mapData.Element("map").Elements("layer").Where(x => x.Attribute("name").Value == "enemy").Select(x => x.Element("data").Value).FirstOrDefault().Trim().Split("\n").Select(x => x.Split(",")).Select(x => x.Where(x => x.Length != 0).ToArray()).ToArray();
             return decodata;
         }
 
@@ -97,6 +104,20 @@ namespace TimeWar.Logic
             }
         }
 
+        private void FillEnemy(GameWorld gameWorld, string[][] enemydata)
+        {
+            for (int y = 0; y < gameWorld.GetTileHeight; y++)
+            {
+                for (int x = 0; x < gameWorld.GetTileWidth; x++)
+                {
+                    switch (Convert.ToInt32(enemydata[y][x], System.Globalization.CultureInfo.CurrentCulture))
+                    {
+                        case 479: gameWorld.AddEnemy(new Enemy(new Point(x * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize, (y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize) - (InitConfig.BasicEnemyHeight * this.model.CurrentWorld.TileSize)), InitConfig.BasicEnemyHealth, InitConfig.BasicEnemyHeight, InitConfig.BasicEnemyWidth, InitConfig.BasicEnemySpritesheet)); break;
+                    }
+                }
+            }
+        }
+
         private Player GetPlayer()
         {
             int startX = this.model.CurrentWorld.SearchPointOfInterest("start").X * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize;
@@ -110,6 +131,7 @@ namespace TimeWar.Logic
             string[][] grounddata = GetGround(mapData);
             string[][] poidata = GetPoi(mapData);
             string[][] decodata = GetDecorations(mapData);
+            string[][] enemydata = GetEnemies(mapData);
             int gameWorldHeight = grounddata.Length;
             int gameWorldWidth = grounddata[0].Length;
             int tileSize = GetTileSize(mapData);
@@ -118,6 +140,7 @@ namespace TimeWar.Logic
             FillGround(this.model.CurrentWorld, grounddata);
             FillPoi(this.model.CurrentWorld, poidata);
             FillDeco(this.model.CurrentWorld, decodata);
+            this.FillEnemy(this.model.CurrentWorld, enemydata);
             this.model.Hero = this.GetPlayer();
         }
     }
