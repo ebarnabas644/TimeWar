@@ -14,6 +14,7 @@ namespace TimeWar.Main
     using System.Windows.Input;
     using System.Windows.Media;
     using TimeWar.Logic;
+    using TimeWar.Logic.Classes.Characters;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
     using TimeWar.Renderer;
@@ -190,9 +191,23 @@ namespace TimeWar.Main
             this.InvalidateVisual();
         }
 
+        private void EnemyTicker()
+        {
+            foreach (var item in this.model.CurrentWorld.GetEnemies)
+            {
+
+            }
+        }
+
+        private void BulletTicker()
+        {
+        }
+
         private void CompositionTarget_Rendering(object sender, EventArgs e)
         {
             this.characterLogic.OneTick();
+            this.BulletTicker();
+            this.EnemyTicker();
             this.InvalidateVisual();
             if (this.time.Elapsed.TotalSeconds >= 1)
             {
