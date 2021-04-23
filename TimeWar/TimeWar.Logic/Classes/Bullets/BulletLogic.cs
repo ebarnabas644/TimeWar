@@ -20,14 +20,8 @@ namespace TimeWar.Logic.Classes.Characters.Actions
     public class BulletLogic
     {
         private GameModel model;
-        private Bullet bullet;
+        private List<Bullet> bullets;
         private CommandManager commandManager;
-        private Stopwatch bulletStopwatch = new Stopwatch();
-        private Stopwatch despawnStopwatch = new Stopwatch();
-        private int despawnTime;
-        private int acceleration;
-        private Point destination;
-        private PointF moveVector;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BulletLogic"/> class.
@@ -35,17 +29,24 @@ namespace TimeWar.Logic.Classes.Characters.Actions
         /// <param name="model">Game Model.</param>
         /// <param name="bullet">Bullet.</param>
         /// <param name="commandManager">Command manager.</param>
-        /// <param name="destination">Destination.</param>
-        /// <param name="despawnTime">How many seconds until the bullet despawns.</param>
-        public BulletLogic(GameModel model, Bullet bullet, CommandManager commandManager, Point destination, int despawnTime = 30)
+        public BulletLogic(GameModel model, ICollection<Bullet> bullet, CommandManager commandManager)
         {
             this.model = model;
-            this.bullet = bullet;
+            if (bullet != null)
+            {
+                this.bullets = (List<Bullet>)bullet;
+            }
+
             this.commandManager = commandManager;
-            this.destination = destination;
-            this.acceleration = 3;
-            this.despawnTime = despawnTime * 1000;
-            this.despawnStopwatch.Start();
+        }
+
+        /// <summary>
+        /// Replaces the bullets list.
+        /// </summary>
+        /// <param name="bullets">Bullet list.</param>
+        public void Addbullets(ICollection<Bullet> bullets)
+        {
+            this.bullets = (List<Bullet>)bullets;
         }
 
         /// <summary>
@@ -53,7 +54,18 @@ namespace TimeWar.Logic.Classes.Characters.Actions
         /// </summary>
         public void OneTick()
         {
-            this.Movement();
+            for (int i = 0; i < this.bullets.Count; i++)
+            {
+                this.Movement(this.bullets[i]);
+                this.Despawn(this.bullets[i]);
+            }
+
+            // this.DetectEntity(item);
+        }
+
+        private static PointF GetVectorDirection(Bullet bullet)
+        {
+            return new PointF(bullet.Destination.X - bullet.Position.X, bullet.Destination.Y - bullet.Position.Y);
         }
 
         private static PointF Normalize(PointF vector)
@@ -62,106 +74,106 @@ namespace TimeWar.Logic.Classes.Characters.Actions
             return new PointF(vector.X / distance, vector.Y / distance);
         }
 
-        private void Movement()
+        private static void BasicMovement(Bullet bullet)
         {
-            switch (this.bullet.Type)
+            //Mindig normalizeolja ezért kering a kattintott pont körül
+            PointF movementVector = Normalize(GetVectorDirection(bullet));
+            bullet.MoveVector = new PointF(bullet.MoveVector.X + (movementVector.X * bullet.Acceleration), bullet.MoveVector.Y + (movementVector.Y * bullet.Acceleration));
+        }
+
+        private static void AcceleratigMovement(Bullet bullet)
+        {
+            if (!bullet.BulletStopwatch.IsRunning)
+            {
+                bullet.BulletStopwatch.Start();
+            }
+
+            if (bullet.BulletStopwatch.ElapsedMilliseconds > 1000)
+            {
+                bullet.Acceleration++;
+                bullet.BulletStopwatch.Restart();
+            }
+
+            BasicMovement(bullet);
+        }
+
+        private void Movement(Bullet bullet)
+        {
+            switch (bullet.Type)
             {
                 case BulletType.Basic:
-                    this.BasicMovement();
+                    BasicMovement(bullet);
                     break;
                 case BulletType.Accelerating:
-                    this.AcceleratigMovement();
+                    AcceleratigMovement(bullet);
                     break;
                 case BulletType.Bouncing:
-                    this.BouncingMovement();
+                    this.BouncingMovement(bullet);
                     break;
                 case BulletType.CurvedBouncing:
-                    this.CurvedMovement();
+                    this.CurvedMovement(bullet);
                     break;
                 default:
                     break;
             }
 
-            this.bullet.Position = new Point(this.bullet.Position.X + (int)this.moveVector.X, this.bullet.Position.Y + (int)this.moveVector.Y);
-            MoveCommand cmd = new MoveCommand(this.bullet, this.bullet.Position, this.model);
+            bullet.Position = new Point(bullet.Position.X + (int)bullet.MoveVector.X, bullet.Position.Y + (int)bullet.MoveVector.Y);
+            MoveCommand cmd = new MoveCommand(bullet, bullet.Position, this.model);
         }
 
-        private void BasicMovement()
+        private void BouncingMovement(Bullet bullet)
         {
-            PointF movementVector = Normalize(this.GetVectorDirection());
-            this.moveVector.X += movementVector.X * this.acceleration;
-            this.moveVector.Y += movementVector.Y * this.acceleration;
-        }
-
-        private void AcceleratigMovement()
-        {
-            if (!this.bulletStopwatch.IsRunning)
-            {
-                this.bulletStopwatch.Start();
-            }
-
-            if (this.bulletStopwatch.ElapsedMilliseconds > 1000)
-            {
-                this.acceleration++;
-                this.bulletStopwatch.Restart();
-            }
-
-            this.BasicMovement();
-        }
-
-        private void BouncingMovement()
-        {
-            Point nextMove = new Point(this.model.CurrentWorld.ConvertPixelToTile(this.bullet.Position.X + (int)this.moveVector.X), this.model.CurrentWorld.ConvertPixelToTile(this.bullet.Position.Y));
+            Point nextMove = new Point(this.model.CurrentWorld.ConvertPixelToTile(bullet.Position.X + (int)bullet.MoveVector.X), this.model.CurrentWorld.ConvertPixelToTile(bullet.Position.Y));
             if (this.model.CurrentWorld.SearchGround(nextMove))
             {
-                this.moveVector.X *= -1;
+                bullet.MoveVector = new PointF(bullet.MoveVector.X * -1, bullet.MoveVector.Y);
             }
 
-            nextMove = new Point(this.model.CurrentWorld.ConvertPixelToTile(this.bullet.Position.X), this.model.CurrentWorld.ConvertPixelToTile(this.bullet.Position.Y + (int)this.moveVector.Y));
+            nextMove = new Point(this.model.CurrentWorld.ConvertPixelToTile(bullet.Position.X), this.model.CurrentWorld.ConvertPixelToTile(bullet.Position.Y + (int)bullet.MoveVector.Y));
             if (this.model.CurrentWorld.SearchGround(nextMove))
             {
-                this.moveVector.Y *= -1;
+                bullet.MoveVector = new PointF(bullet.MoveVector.X, bullet.MoveVector.Y * -1);
             }
 
-            this.BasicMovement();
+            BasicMovement(bullet);
         }
 
-        private void CurvedMovement()
+        private void CurvedMovement(Bullet bullet)
         {
-            this.BasicMovement();
-            if (this.moveVector.Y > 0)
+            BasicMovement(bullet);
+            if (bullet.MoveVector.Y > 0)
             {
-                this.moveVector.Y--;
+                bullet.MoveVector = new PointF(bullet.MoveVector.X, bullet.MoveVector.Y - 1);
             }
 
-            if (this.DetectGround())
+            if (this.DetectGround(bullet))
             {
-                this.moveVector.Y *= -1;
+                bullet.MoveVector = new PointF(bullet.MoveVector.X, bullet.MoveVector.Y * -1);
             }
         }
 
-        private bool DetectGround()
+        private bool DetectGround(Bullet bullet)
         {
-            Point nextMove = new Point(this.model.CurrentWorld.ConvertPixelToTile(this.bullet.Position.X + (int)this.moveVector.X), this.model.CurrentWorld.ConvertPixelToTile(this.bullet.Position.Y + (int)this.moveVector.Y));
+            Point nextMove = new Point(this.model.CurrentWorld.ConvertPixelToTile(bullet.Position.X + (int)bullet.MoveVector.X), this.model.CurrentWorld.ConvertPixelToTile(bullet.Position.Y + (int)bullet.MoveVector.Y));
             return this.model.CurrentWorld.SearchGround(nextMove);
         }
 
-        private bool DetectEntity()
+        private bool DetectEntity(Bullet bullet)
         {
             throw new NotImplementedException();
         }
 
-        private void Despawn()
+        private void Despawn(Bullet bullet)
         {
-            if (this.despawnStopwatch.ElapsedMilliseconds > this.despawnTime)
+            if (this.DetectGround(bullet) && !(bullet.Type == BulletType.Bouncing || bullet.Type == BulletType.CurvedBouncing))
             {
-                throw new NotImplementedException();
+                this.model.CurrentWorld.RemoveBullet(bullet);
             }
-        }
-
-        private PointF GetVectorDirection()
-        {
-            return new PointF(this.destination.X - this.bullet.Position.X, this.destination.Y - this.bullet.Position.Y);
+            else if (bullet.DespawnStopwatch.ElapsedMilliseconds > 20000)
+            {
+                bullet.DespawnStopwatch.Stop();
+                this.model.CurrentWorld.RemoveBullet(bullet);
+            }
         }
     }
 }
