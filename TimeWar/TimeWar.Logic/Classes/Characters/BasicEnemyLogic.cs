@@ -23,7 +23,6 @@ namespace TimeWar.Logic.Classes.Characters
         private const int MaxMoveTime = 3000;
         private const int DetectionTime = 20000;
         private const int DetectionRange = 20;
-        private const bool DrawDetection = false; // Toggles Detection display.
         private int attackTime = 2500;
         private Stopwatch movementDirStopwatch = new Stopwatch();
         private Stopwatch movementStopwatch = new Stopwatch();
@@ -192,13 +191,11 @@ namespace TimeWar.Logic.Classes.Characters
                 this.playerDetectionStopwatch.Reset();
             }
 
-            if (DrawDetection)
-            {
-                for (int i = 0; i < this.Model.CurrentWorld.GetBullets.Count; i++)
-                {
-                    this.Model.CurrentWorld.RemoveBullet(this.Model.CurrentWorld.GetBullet(i));
-                }
-            }
+            // Uncomment for debug (Draw Detection cones)
+            // for (int i = 0; i < this.Model.CurrentWorld.GetBullets.Count; i++)
+            // {
+            //    this.Model.CurrentWorld.RemoveBullet(this.Model.CurrentWorld.GetBullet(i));
+            // }
         }
 
         private bool DetectionCone(bool right = true, int range = DetectionRange)
@@ -256,14 +253,11 @@ namespace TimeWar.Logic.Classes.Characters
                     downRange++;
                 }
 
-                if (DrawDetection)
-                {
-                    Bullet b = new Bullet(new Point(this.TileToPixel(downDetection.X), this.TileToPixel(downDetection.Y)), 2, 2, "testenemy.png");
-                    Bullet c = new Bullet(new Point(this.TileToPixel(upDetection.X), this.TileToPixel(upDetection.Y)), 2, 2, "testenemy.png");
-                    this.Model.CurrentWorld.AddBullet(b);
-                    this.Model.CurrentWorld.AddBullet(c);
-                }
-
+                // Uncomment for debug (Draw Detection cones)
+                // Bullet b = new Bullet(new Point(this.TileToPixel(downDetection.X), this.TileToPixel(downDetection.Y)), 2, 2, "testenemy.png");
+                // Bullet c = new Bullet(new Point(this.TileToPixel(upDetection.X), this.TileToPixel(upDetection.Y)), 2, 2, "testenemy.png");
+                // this.Model.CurrentWorld.AddBullet(b);
+                // this.Model.CurrentWorld.AddBullet(c);
                 if (playerLocation == upDetection)
                 {
                     this.lastKnownPlayerLocation = upDetection;
