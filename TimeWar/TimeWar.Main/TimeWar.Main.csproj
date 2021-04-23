@@ -20,11 +20,18 @@
 
   <ItemGroup>
     <None Remove="Fonts\Gamepixies-8MO6n.ttf" />
+    <None Remove="Leveldata\map1.png" />
+    <None Remove="Leveldata\map1.tmx" />
     <None Remove="Leveldata\test.png" />
     <None Remove="Leveldata\test.tmx" />
     <None Remove="Leveldata\test2.png" />
     <None Remove="Leveldata\test2.tmx" />
     <None Remove="Sprites\1.png" />
+    <None Remove="Sprites\171.png" />
+    <None Remove="Sprites\2.png" />
+    <None Remove="Sprites\262.png" />
+    <None Remove="Sprites\286.png" />
+    <None Remove="Sprites\307.png" />
     <None Remove="Sprites\41.png" />
     <None Remove="Sprites\testenemy.png" />
     <None Remove="Sprites\testman.png" />
@@ -37,6 +44,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Content Include="Leveldata\map1.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Leveldata\map1.tmx">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
 	  <Content Include="Leveldata\test.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
@@ -47,6 +60,18 @@
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Leveldata\test2.tmx">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\171.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\2.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\262.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\307.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Sprites\41.png">
@@ -80,6 +105,9 @@
     <Resource Include="Fonts\Gamepixies-8MO6n.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Content Include="Sprites\286.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Sprites\1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

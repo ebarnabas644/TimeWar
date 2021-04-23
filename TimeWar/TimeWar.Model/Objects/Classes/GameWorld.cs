@@ -28,7 +28,7 @@ namespace TimeWar.Model.Objects
         /// <param name="width">Width in tile.</param>
         /// <param name="tileSize">Game tile size.</param>
         /// <param name="magnify">Zoom extent of the game world(default value = 3).</param>
-        public GameWorld(int height, int width, int tileSize, int magnify = 5)
+        public GameWorld(int height, int width, int tileSize, int magnify = 4)
         {
             this.ground = new bool[height][];
             this.decorations = new int[height][];
