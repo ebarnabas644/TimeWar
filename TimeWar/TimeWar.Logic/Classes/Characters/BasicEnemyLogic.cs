@@ -23,7 +23,8 @@ namespace TimeWar.Logic.Classes.Characters
         private const int MaxMoveTime = 3000;
         private const int DetectionTime = 20000;
         private const int DetectionRange = 20;
-        private int attackTime = 2500;
+
+        // private int attackTime = 2500;
         private Stopwatch movementDirStopwatch = new Stopwatch();
         private Stopwatch movementStopwatch = new Stopwatch();
         private int movementDirTime;
