@@ -195,12 +195,14 @@ namespace TimeWar.Main
         {
             foreach (var item in this.model.CurrentWorld.GetEnemies)
             {
-
             }
         }
 
         private void BulletTicker()
         {
+            foreach (var item in this.model.CurrentWorld.GetBullets)
+            {
+            }
         }
 
         private void CompositionTarget_Rendering(object sender, EventArgs e)
