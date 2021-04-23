@@ -45,8 +45,8 @@ namespace TimeWar.Logic
         {
             if (this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > 500)
             {
-                Bullet bullet = new Bullet(this.Character.Position, 1, 1, "placeholder");
-                BulletLogic bulletLogic = new BulletLogic(this.Model, bullet, this.CommandManager, this.Character.ClickLocation);
+                Bullet b = new Bullet(this.Character.Position, 4, 4, "testenemy.png", this.Character.ClickLocation, 10, BulletType.Basic);
+                this.Model.CurrentWorld.AddBullet(b);
                 this.AttackStopwatch.Restart();
                 this.Character.CanAttack = false;
                 Debug.WriteLine("Attacked at position:" + this.Character.ClickLocation);
