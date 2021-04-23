@@ -9,15 +9,19 @@
             Default bullet logic.
             </summary>
         </member>
-        <member name="M:TimeWar.Logic.Classes.Characters.Actions.BulletLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Classes.Bullet,TimeWar.Logic.Classes.CommandManager,System.Drawing.Point,System.Int32)">
+        <member name="M:TimeWar.Logic.Classes.Characters.Actions.BulletLogic.#ctor(TimeWar.Model.GameModel,System.Collections.Generic.ICollection{TimeWar.Model.Objects.Classes.Bullet},TimeWar.Logic.Classes.CommandManager)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.Characters.Actions.BulletLogic"/> class.
             </summary>
             <param name="model">Game Model.</param>
             <param name="bullet">Bullet.</param>
             <param name="commandManager">Command manager.</param>
-            <param name="destination">Destination.</param>
-            <param name="despawnTime">How many seconds until the bullet despawns.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.Actions.BulletLogic.Addbullets(System.Collections.Generic.ICollection{TimeWar.Model.Objects.Classes.Bullet})">
+            <summary>
+            Replaces the bullets list.
+            </summary>
+            <param name="bullets">Bullet list.</param>
         </member>
         <member name="M:TimeWar.Logic.Classes.Characters.Actions.BulletLogic.OneTick">
             <summary>
