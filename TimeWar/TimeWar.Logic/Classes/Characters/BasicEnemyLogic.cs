@@ -4,6 +4,7 @@
 
 namespace TimeWar.Logic.Classes.Characters
 {
+    using System;
     using System.Diagnostics;
     using System.Drawing;
     using System.Security.Cryptography;
@@ -19,16 +20,19 @@ namespace TimeWar.Logic.Classes.Characters
     /// </summary>
     public class BasicEnemyLogic : ActorLogic
     {
-        private const int DetectionTime = 60;
+        private const int MaxMoveTime = 3000;
+        private const int DetectionTime = 20000;
+        private const int DetectionRange = 20;
+        private const bool DrawDetection = false; // Toggles Detection display.
         private int attackTime = 2500;
-        private Stopwatch movementDirStopwatch;
-        private Stopwatch movementStopwatch;
+        private Stopwatch movementDirStopwatch = new Stopwatch();
+        private Stopwatch movementStopwatch = new Stopwatch();
         private int movementDirTime;
         private int movementTime;
         private int moveDir;
         private Point lastKnownPlayerLocation;
         private bool isPlayerDetected;
-        private Stopwatch playerDetectionStopwatch;
+        private Stopwatch playerDetectionStopwatch = new Stopwatch();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BasicEnemyLogic"/> class.
@@ -39,15 +43,13 @@ namespace TimeWar.Logic.Classes.Characters
         public BasicEnemyLogic(GameModel model, Character character, CommandManager commandManager)
             : base(model, character, commandManager)
         {
-            this.movementDirStopwatch = new Stopwatch();
             this.movementDirStopwatch.Start();
-            this.movementStopwatch = new Stopwatch();
-            this.movementDirTime = RandomNumberGenerator.GetInt32(7000);
-            this.movementTime = RandomNumberGenerator.GetInt32(7000);
+            this.movementStopwatch.Start();
+            this.movementDirTime = RandomNumberGenerator.GetInt32(MaxMoveTime);
+            this.movementTime = RandomNumberGenerator.GetInt32(MaxMoveTime);
             this.moveDir = 0;
             this.lastKnownPlayerLocation = new Point(0, 0);
             this.isPlayerDetected = false;
-            this.playerDetectionStopwatch = new Stopwatch();
             this.Character.Health = 75;
             this.AttackStopwatch.Start();
         }
@@ -69,8 +71,8 @@ namespace TimeWar.Logic.Classes.Characters
             {
                 if (this.movementDirStopwatch.ElapsedMilliseconds > this.movementDirTime)
                 {
-                    this.moveDir = RandomNumberGenerator.GetInt32(4);
-                    this.movementDirTime = RandomNumberGenerator.GetInt32(7000);
+                    this.moveDir = RandomNumberGenerator.GetInt32(3);
+                    this.movementDirTime = RandomNumberGenerator.GetInt32(MaxMoveTime);
                     this.movementDirStopwatch.Restart();
                 }
 
@@ -81,20 +83,10 @@ namespace TimeWar.Logic.Classes.Characters
                         break;
 
                     case 1:
-                        y += this.Jump();
-                        if (y != 0)
-                        {
-                            this.moveDir = RandomNumberGenerator.GetInt32(4);
-                            this.movementDirStopwatch.Restart();
-                        }
-
-                        break;
-
-                    case 2:
                         x += 2;
                         break;
 
-                    case 3:
+                    case 2:
                         x += 0;
                         break;
 
@@ -105,26 +97,20 @@ namespace TimeWar.Logic.Classes.Characters
             }
             else
             {
-                if (this.playerDetectionStopwatch.ElapsedMilliseconds < DetectionTime * 1000)
+                if (this.playerDetectionStopwatch.ElapsedMilliseconds < DetectionTime)
                 {
-                    x = 0;
-                    y = 0;
-                    if (this.Character.Position.X > this.lastKnownPlayerLocation.X)
+                    int distance = this.PlayerDistance();
+                    if (this.PixelToTile(this.Character.Position.X) > this.lastKnownPlayerLocation.X && distance >= 9)
                     {
                         x -= 2;
                     }
 
-                    if (this.Character.Position.X < this.lastKnownPlayerLocation.X)
+                    if (this.PixelToTile(this.Character.Position.X) < this.lastKnownPlayerLocation.X && distance >= 9)
                     {
                         x += 2;
                     }
 
-                    if (this.Character.Position.Y < this.lastKnownPlayerLocation.Y)
-                    {
-                        y += this.Jump();
-                    }
-
-                    if (RandomNumberGenerator.GetInt32(100) > 80)
+                    if (this.PixelToTile(this.Character.Position.Y) < this.lastKnownPlayerLocation.Y)
                     {
                         y += this.Jump();
                     }
@@ -137,18 +123,18 @@ namespace TimeWar.Logic.Classes.Characters
                 }
             }
 
+            int rnd = RandomNumberGenerator.GetInt32(10000);
+            if (rnd < 100)
+            {
+                y += this.Jump();
+            }
+
             return new Point(x, y);
         }
 
         /// <inheritdoc/>
         protected override void Attack()
         {
-            if (this.isPlayerDetected && this.AttackStopwatch.ElapsedMilliseconds > this.attackTime)
-            {
-                Bullet bullet = new Bullet(this.Character.Position, 1, 1, "placeholder");
-                BulletLogic bulletLogic = new BulletLogic(this.Model, bullet, this.CommandManager, this.lastKnownPlayerLocation);
-                this.AttackStopwatch.Restart();
-            }
         }
 
         /// <inheritdoc/>
@@ -160,35 +146,62 @@ namespace TimeWar.Logic.Classes.Characters
             }
             else
             {
-                this.movementStopwatch.Reset();
-                this.movementTime = RandomNumberGenerator.GetInt32(7000);
+                this.movementStopwatch.Restart();
+                this.movementTime = RandomNumberGenerator.GetInt32(MaxMoveTime);
             }
+        }
+
+        private int PlayerDistance()
+        {
+            return Math.Abs(this.PixelToTile(this.Character.Position.X) - this.lastKnownPlayerLocation.X);
         }
 
         private void DetectPlayer()
         {
-            if (this.Character.Direction == Stances.StandLeft || this.Character.Direction == Stances.Left)
+            if (this.MoveVector.X < 0)
             {
                 if (this.DetectionCone(false))
                 {
                     this.playerDetectionStopwatch.Start();
                 }
             }
-            else if (this.Character.Direction == Stances.Right || this.Character.Direction == Stances.Right)
+            else if (this.MoveVector.X > 0)
             {
                 if (this.DetectionCone())
                 {
                     this.playerDetectionStopwatch.Start();
                 }
             }
-
-            if (this.playerDetectionStopwatch.ElapsedMilliseconds > DetectionTime * 1000)
+            else
             {
+                if (this.DetectionCone(false))
+                {
+                    this.playerDetectionStopwatch.Start();
+                }
+
+                if (this.DetectionCone())
+                {
+                    this.playerDetectionStopwatch.Start();
+                }
+            }
+
+            if (this.playerDetectionStopwatch.ElapsedMilliseconds > DetectionTime)
+            {
+                Debug.WriteLine("Player lost!");
                 this.isPlayerDetected = false;
+                this.playerDetectionStopwatch.Reset();
+            }
+
+            if (DrawDetection)
+            {
+                for (int i = 0; i < this.Model.CurrentWorld.GetBullets.Count; i++)
+                {
+                    this.Model.CurrentWorld.RemoveBullet(this.Model.CurrentWorld.GetBullet(i));
+                }
             }
         }
 
-        private bool DetectionCone(bool right = true, int range = 15)
+        private bool DetectionCone(bool right = true, int range = DetectionRange)
         {
             int dir = -1;
             int height = 1;
@@ -201,9 +214,14 @@ namespace TimeWar.Logic.Classes.Characters
 
             for (int i = 0; i < range; i++)
             {
-                if (i % 2 == 0)
+                if (i % 1 == 0)
                 {
                     height++;
+                }
+
+                if (this.Model.CurrentWorld.SearchGround(startPoint))
+                {
+                    return false;
                 }
 
                 if (this.DetectionSpike(startPoint, height))
@@ -220,21 +238,44 @@ namespace TimeWar.Logic.Classes.Characters
         private bool DetectionSpike(Point starterPoint, int range)
         {
             Point playerLocation = new Point(this.PixelToTile(this.Model.Hero.Position.X), this.PixelToTile(this.Model.Hero.Position.Y));
+            int upRange = 0;
+            int downRange = 1;
 
             for (int i = 0; i < range + 1; i++)
             {
-                Point upDetection = new Point(starterPoint.X + i, starterPoint.Y);
-                Point downDetection = new Point(starterPoint.X - i, starterPoint.Y);
+                Point upDetection = new Point(starterPoint.X, starterPoint.Y + upRange);
+                Point downDetection = new Point(starterPoint.X, starterPoint.Y - downRange);
+
+                if (!this.Model.CurrentWorld.SearchGround(upDetection))
+                {
+                    upRange++;
+                }
+
+                if (!this.Model.CurrentWorld.SearchGround(downDetection))
+                {
+                    downRange++;
+                }
+
+                if (DrawDetection)
+                {
+                    Bullet b = new Bullet(new Point(this.TileToPixel(downDetection.X), this.TileToPixel(downDetection.Y)), 2, 2, "testenemy.png");
+                    Bullet c = new Bullet(new Point(this.TileToPixel(upDetection.X), this.TileToPixel(upDetection.Y)), 2, 2, "testenemy.png");
+                    this.Model.CurrentWorld.AddBullet(b);
+                    this.Model.CurrentWorld.AddBullet(c);
+                }
+
                 if (playerLocation == upDetection)
                 {
                     this.lastKnownPlayerLocation = upDetection;
                     this.isPlayerDetected = true;
+                    Debug.WriteLine("Player detected! " + this.lastKnownPlayerLocation);
                     return true;
                 }
                 else if (playerLocation == downDetection)
                 {
                     this.lastKnownPlayerLocation = downDetection;
                     this.isPlayerDetected = true;
+                    Debug.WriteLine("Player detected! " + this.lastKnownPlayerLocation);
                     return true;
                 }
             }
