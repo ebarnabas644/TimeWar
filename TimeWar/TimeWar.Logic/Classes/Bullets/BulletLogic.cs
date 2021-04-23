@@ -54,7 +54,6 @@ namespace TimeWar.Logic.Classes.Characters.Actions
         public void OneTick()
         {
             this.Movement();
-            this.Despawn();
         }
 
         private static PointF Normalize(PointF vector)
