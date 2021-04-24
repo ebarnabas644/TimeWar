@@ -118,6 +118,11 @@
             Gets or sets bullet acceleration stopwatch.
             </summary>
         </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.MovementVector">
+            <summary>
+            Gets or sets Movement Vector.
+            </summary>
+        </member>
         <member name="T:TimeWar.Model.Objects.Classes.EnemyType">
             <summary>
             Types of enemies.
