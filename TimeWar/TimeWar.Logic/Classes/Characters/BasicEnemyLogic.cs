@@ -23,8 +23,8 @@ namespace TimeWar.Logic.Classes.Characters
         private const int MaxMoveTime = 3000;
         private const int DetectionTime = 20000;
         private const int DetectionRange = 20;
+        private const int AttackTime = 2500;
 
-        // private int attackTime = 2500;
         private Stopwatch movementDirStopwatch = new Stopwatch();
         private Stopwatch movementStopwatch = new Stopwatch();
         private int movementDirTime;
@@ -32,6 +32,7 @@ namespace TimeWar.Logic.Classes.Characters
         private int moveDir;
         private Point lastKnownPlayerLocation;
         private bool isPlayerDetected;
+        private bool isPlayerVisible;
         private Stopwatch playerDetectionStopwatch = new Stopwatch();
 
         /// <summary>
@@ -50,6 +51,7 @@ namespace TimeWar.Logic.Classes.Characters
             this.moveDir = 0;
             this.lastKnownPlayerLocation = new Point(0, 0);
             this.isPlayerDetected = false;
+            this.isPlayerVisible = false;
             this.Character.Health = 75;
             this.AttackStopwatch.Start();
         }
@@ -100,6 +102,11 @@ namespace TimeWar.Logic.Classes.Characters
                 if (this.playerDetectionStopwatch.ElapsedMilliseconds < DetectionTime)
                 {
                     int distance = this.PlayerDistance();
+                    if (!this.isPlayerVisible)
+                    {
+                        distance = 0;
+                    }
+
                     if (this.PixelToTile(this.Character.Position.X) > this.lastKnownPlayerLocation.X && distance >= 9)
                     {
                         x -= 2;
@@ -135,6 +142,13 @@ namespace TimeWar.Logic.Classes.Characters
         /// <inheritdoc/>
         protected override void Attack()
         {
+            if (this.CommandManager.IsFinished && this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > AttackTime)
+            {
+                Bullet b = new Bullet(this.Character.Position, 4, 4, "testenemy.png", this.lastKnownPlayerLocation, 10, BulletType.Basic);
+                this.Model.CurrentWorld.AddBullet(b);
+                this.AttackStopwatch.Restart();
+                this.Character.CanAttack = false;
+            }
         }
 
         /// <inheritdoc/>
@@ -230,6 +244,7 @@ namespace TimeWar.Logic.Classes.Characters
                 startPoint.X += dir;
             }
 
+            this.isPlayerVisible = false;
             return false;
         }
 
@@ -263,6 +278,7 @@ namespace TimeWar.Logic.Classes.Characters
                 {
                     this.lastKnownPlayerLocation = upDetection;
                     this.isPlayerDetected = true;
+                    this.isPlayerVisible = true;
                     Debug.WriteLine("Player detected! " + this.lastKnownPlayerLocation);
                     return true;
                 }
@@ -270,6 +286,7 @@ namespace TimeWar.Logic.Classes.Characters
                 {
                     this.lastKnownPlayerLocation = downDetection;
                     this.isPlayerDetected = true;
+                    this.isPlayerVisible = true;
                     Debug.WriteLine("Player detected! " + this.lastKnownPlayerLocation);
                     return true;
                 }
