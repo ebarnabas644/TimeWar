@@ -17,6 +17,7 @@ namespace TimeWar.Logic.Classes.Characters
     /// </summary>
     public abstract class ActorLogic
     {
+        private const int GravityAcceleration = 5;
         private int defaultAcceleration;
         private int maxMovementSpeed;
         private int maxJumpHeight;
@@ -355,7 +356,7 @@ namespace TimeWar.Logic.Classes.Characters
                 {
                     this.AddToVector(0, this.Acceleration);
 
-                    if ((!this.GroundCollision(new Point(0, this.Acceleration + 1)) && this.Acceleration < 10) && !this.AccelerationStopwatch.IsRunning)
+                    if ((!this.GroundCollision(new Point(0, this.Acceleration + 1)) && this.Acceleration < GravityAcceleration) && !this.AccelerationStopwatch.IsRunning)
                     {
                         this.AccelerationStopwatch.Start();
                     }
