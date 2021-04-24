@@ -9,47 +9,6 @@ namespace TimeWar.Model.Objects
     using TimeWar.Model.Objects.Interfaces;
 
     /// <summary>
-    /// Movement types.
-    /// </summary>
-    public enum Stances
-    {
-        /// <summary>
-        /// Base right stance.
-        /// </summary>
-        StandRight,
-
-        /// <summary>
-        /// Base left stance.
-        /// </summary>
-        StandLeft,
-
-        /// <summary>
-        /// Right stance.
-        /// </summary>
-        Right,
-
-        /// <summary>
-        /// Left stance.
-        /// </summary>
-        Left,
-
-        /// <summary>
-        /// Up stance.
-        /// </summary>
-        Up,
-
-        /// <summary>
-        /// Down stance.
-        /// </summary>
-        Down,
-
-        /// <summary>
-        /// Jump stance.
-        /// </summary>
-        Jump,
-    }
-
-    /// <summary>
     /// Basic character information class.
     /// </summary>
     public abstract class Character : IMoveable, IGameObject
@@ -72,7 +31,7 @@ namespace TimeWar.Model.Objects
             this.Width = width;
             this.SpriteFile = spriteFile;
             this.CurrentSprite = 0;
-            this.Direction = Stances.StandRight;
+            this.Stance = Stances.StandRight;
             this.keys = new List<string>();
         }
 
@@ -109,7 +68,7 @@ namespace TimeWar.Model.Objects
         /// <summary>
         /// Gets or sets moving direction.
         /// </summary>
-        public Stances Direction { get; set; }
+        public Stances Stance { get; set; }
 
         /// <inheritdoc/>
         public Point Position { get; set; }

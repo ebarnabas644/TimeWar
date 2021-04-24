@@ -143,7 +143,7 @@ namespace TimeWar.Renderer
                 this.spriteBrushes.Add(obj, imageBrushes);
             }
 
-            return this.spriteBrushes[obj][0][this.currentSprite % this.spriteBrushes[obj][0].Length];
+            return this.spriteBrushes[obj][(int)obj.Stance][this.currentSprite % this.spriteBrushes[obj][(int)obj.Stance].Length];
         }
 
         private Drawing GetBackground()

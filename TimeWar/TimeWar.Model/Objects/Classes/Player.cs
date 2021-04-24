@@ -22,6 +22,7 @@ namespace TimeWar.Model.Objects
         public Player(Point pos, int health, int height, int width, string spriteFile)
             : base(pos, health, height, width, spriteFile)
         {
+            this.Stance = Interfaces.Stances.StandRight;
         }
     }
 }

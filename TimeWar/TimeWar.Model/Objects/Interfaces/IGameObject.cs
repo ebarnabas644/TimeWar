@@ -7,6 +7,47 @@ namespace TimeWar.Model.Objects.Interfaces
     using System.Drawing;
 
     /// <summary>
+    /// Movement types.
+    /// </summary>
+    public enum Stances
+    {
+        /// <summary>
+        /// Base right stance.
+        /// </summary>
+        StandRight,
+
+        /// <summary>
+        /// Base left stance.
+        /// </summary>
+        StandLeft,
+
+        /// <summary>
+        /// Right stance.
+        /// </summary>
+        Right,
+
+        /// <summary>
+        /// Left stance.
+        /// </summary>
+        Left,
+
+        /// <summary>
+        /// Up stance.
+        /// </summary>
+        Up,
+
+        /// <summary>
+        /// Down stance.
+        /// </summary>
+        Down,
+
+        /// <summary>
+        /// Jump stance.
+        /// </summary>
+        Jump,
+    }
+
+    /// <summary>
     /// Game object interface.
     /// </summary>
     public interface IGameObject
@@ -25,6 +66,11 @@ namespace TimeWar.Model.Objects.Interfaces
         /// Gets or sets the character sprite file name.
         /// </summary>
         public string SpriteFile { get; set; }
+
+        /// <summary>
+        /// Gets or sets object stance.
+        /// </summary>
+        public Stances Stance { get; set; }
 
         /// <summary>
         /// Gets or sets character position.

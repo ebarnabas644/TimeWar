@@ -92,6 +92,9 @@
             Gets or sets the type of the bullet.
             </summary>
         </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.Stance">
+            <inheritdoc/>
+        </member>
         <member name="T:TimeWar.Model.Objects.Classes.Enemy">
             <summary>
             Enemy character class.
@@ -139,51 +142,14 @@
             Gets or sets a value indicating whether hud or not.
             </summary>
         </member>
+        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.Stance">
+            <inheritdoc/>
+        </member>
         <member name="M:TimeWar.Model.Objects.Classes.StaticObject.Equals(System.Object)">
             <inheritdoc/>
         </member>
         <member name="M:TimeWar.Model.Objects.Classes.StaticObject.GetHashCode">
             <inheritdoc/>
-        </member>
-        <member name="T:TimeWar.Model.Objects.Stances">
-            <summary>
-            Movement types.
-            </summary>
-        </member>
-        <member name="F:TimeWar.Model.Objects.Stances.StandRight">
-            <summary>
-            Base right stance.
-            </summary>
-        </member>
-        <member name="F:TimeWar.Model.Objects.Stances.StandLeft">
-            <summary>
-            Base left stance.
-            </summary>
-        </member>
-        <member name="F:TimeWar.Model.Objects.Stances.Right">
-            <summary>
-            Right stance.
-            </summary>
-        </member>
-        <member name="F:TimeWar.Model.Objects.Stances.Left">
-            <summary>
-            Left stance.
-            </summary>
-        </member>
-        <member name="F:TimeWar.Model.Objects.Stances.Up">
-            <summary>
-            Up stance.
-            </summary>
-        </member>
-        <member name="F:TimeWar.Model.Objects.Stances.Down">
-            <summary>
-            Down stance.
-            </summary>
-        </member>
-        <member name="F:TimeWar.Model.Objects.Stances.Jump">
-            <summary>
-            Jump stance.
-            </summary>
         </member>
         <member name="T:TimeWar.Model.Objects.Character">
             <summary>
@@ -230,7 +196,7 @@
             Gets or sets current sprite frame.
             </summary>
         </member>
-        <member name="P:TimeWar.Model.Objects.Character.Direction">
+        <member name="P:TimeWar.Model.Objects.Character.Stance">
             <summary>
             Gets or sets moving direction.
             </summary>
@@ -516,6 +482,46 @@
             <param name="yPos">Object y pos.</param>
             <returns>Relative y pos.</returns>
         </member>
+        <member name="T:TimeWar.Model.Objects.Interfaces.Stances">
+            <summary>
+            Movement types.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Interfaces.Stances.StandRight">
+            <summary>
+            Base right stance.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Interfaces.Stances.StandLeft">
+            <summary>
+            Base left stance.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Interfaces.Stances.Right">
+            <summary>
+            Right stance.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Interfaces.Stances.Left">
+            <summary>
+            Left stance.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Interfaces.Stances.Up">
+            <summary>
+            Up stance.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Interfaces.Stances.Down">
+            <summary>
+            Down stance.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Interfaces.Stances.Jump">
+            <summary>
+            Jump stance.
+            </summary>
+        </member>
         <member name="T:TimeWar.Model.Objects.Interfaces.IGameObject">
             <summary>
             Game object interface.
@@ -534,6 +540,11 @@
         <member name="P:TimeWar.Model.Objects.Interfaces.IGameObject.SpriteFile">
             <summary>
             Gets or sets the character sprite file name.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Interfaces.IGameObject.Stance">
+            <summary>
+            Gets or sets object stance.
             </summary>
         </member>
         <member name="P:TimeWar.Model.Objects.Interfaces.IGameObject.Position">

@@ -59,6 +59,7 @@ namespace TimeWar.Model.Objects.Classes
             this.Height = height;
             this.Width = width;
             this.SpriteFile = spriteFile;
+            this.Stance = Stances.StandRight;
             this.Type = type;
         }
 
@@ -83,5 +84,8 @@ namespace TimeWar.Model.Objects.Classes
         /// Gets or sets the type of the bullet.
         /// </summary>
         public BulletType Type { get; set; }
+
+        /// <inheritdoc/>
+        public Stances Stance { get; set; }
     }
 }

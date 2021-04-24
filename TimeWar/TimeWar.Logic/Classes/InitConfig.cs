@@ -12,7 +12,7 @@ namespace TimeWar.Logic.Classes
         /// <summary>
         /// Name of the player spritesheet.
         /// </summary>
-        public const string PlayerSpritesheet = "testman";
+        public const string PlayerSpritesheet = "player";
 
         /// <summary>
         /// Player character height const.

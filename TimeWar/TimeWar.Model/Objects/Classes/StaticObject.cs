@@ -26,6 +26,7 @@ namespace TimeWar.Model.Objects.Classes
             this.Width = width;
             this.SpriteFile = spritefile;
             this.Position = position;
+            this.Stance = Stances.StandRight;
             this.Hud = hud;
         }
 
@@ -45,6 +46,9 @@ namespace TimeWar.Model.Objects.Classes
         /// Gets or sets a value indicating whether hud or not.
         /// </summary>
         public bool Hud { get; set; }
+
+        /// <inheritdoc/>
+        public Stances Stance { get; set; }
 
         /// <inheritdoc/>
         public override bool Equals(object obj)

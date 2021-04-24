@@ -33,6 +33,7 @@
     <None Remove="Sprites\286.png" />
     <None Remove="Sprites\307.png" />
     <None Remove="Sprites\41.png" />
+    <None Remove="Sprites\player.png" />
     <None Remove="Sprites\testenemy.png" />
     <None Remove="Sprites\testman.png" />
     <None Remove="Sprites\testsprite.png" />
@@ -75,6 +76,9 @@
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Sprites\41.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\player.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Sprites\testenemy.png">
