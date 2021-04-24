@@ -25,7 +25,7 @@ namespace TimeWar.Logic.Classes.Characters
             this.Character.Health = 200;
             this.MaxMovementSpeed = 7;
             this.MaxJumpHeight = 15;
-            this.BulletType = BulletType.Accelerating;
+            this.BulletType = BulletType.CurvedBouncing;
         }
     }
 }
