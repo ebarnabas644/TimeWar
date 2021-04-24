@@ -7,33 +7,18 @@
 	<EnableNETAnalyzers>true</EnableNETAnalyzers>
 	<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 	<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-	<Platforms>AnyCPU;x86</Platforms>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>TimeWar.Main.xml</DocumentationFile>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
-    <DocumentationFile>TimeWar.Main.xml</DocumentationFile>
-  </PropertyGroup>
-
   <ItemGroup>
     <None Remove="Fonts\Gamepixies-8MO6n.ttf" />
-    <None Remove="Leveldata\map1.png" />
-    <None Remove="Leveldata\map1.tmx" />
     <None Remove="Leveldata\test.png" />
     <None Remove="Leveldata\test.tmx" />
     <None Remove="Leveldata\test2.png" />
     <None Remove="Leveldata\test2.tmx" />
-    <None Remove="Sprites\1.png" />
-    <None Remove="Sprites\171.png" />
-    <None Remove="Sprites\2.png" />
-    <None Remove="Sprites\262.png" />
-    <None Remove="Sprites\286.png" />
-    <None Remove="Sprites\307.png" />
-    <None Remove="Sprites\41.png" />
-    <None Remove="Sprites\testenemy.png" />
     <None Remove="Sprites\testman.png" />
     <None Remove="Sprites\testsprite.png" />
     <None Remove="Sprites\title.png" />
@@ -44,12 +29,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Content Include="Leveldata\map1.png">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
-	  <Content Include="Leveldata\map1.tmx">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
 	  <Content Include="Leveldata\test.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
@@ -60,24 +39,6 @@
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Leveldata\test2.tmx">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
-	  <Content Include="Sprites\171.png">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
-	  <Content Include="Sprites\2.png">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
-	  <Content Include="Sprites\262.png">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
-	  <Content Include="Sprites\307.png">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
-	  <Content Include="Sprites\41.png">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
-	  <Content Include="Sprites\testenemy.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Sprites\testman.png">
@@ -102,22 +63,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Fonts\Gamepixies-8MO6n.ttf">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Resource>
-    <Content Include="Sprites\286.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Sprites\1.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\TimeWar.Data\TimeWar.Data.csproj" />
     <ProjectReference Include="..\TimeWar.Logic\TimeWar.Logic.csproj" />
     <ProjectReference Include="..\TimeWar.Model\TimeWar.Model.csproj" />
     <ProjectReference Include="..\TimeWar.Renderer\TimeWar.Renderer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\Gamepixies-8MO6n.ttf">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>

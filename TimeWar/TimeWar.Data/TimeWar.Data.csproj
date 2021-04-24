@@ -5,14 +5,9 @@
 	<EnableNETAnalyzers>true</EnableNETAnalyzers>
 	<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 	<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-	<Platforms>AnyCPU;x86</Platforms>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>TimeWar.Data.xml</DocumentationFile>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <DocumentationFile>TimeWar.Data.xml</DocumentationFile>
   </PropertyGroup>
 
@@ -27,10 +22,10 @@
 
 	<ItemGroup>
 	  <Content Include="TimeWarDatabase.mdf">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="TimeWarDatabase_log.ldf">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	</ItemGroup>
 	
