@@ -68,6 +68,7 @@ namespace TimeWar.Model.Objects.Classes
             this.DespawnStopwatch = new Stopwatch();
             this.DespawnStopwatch.Start();
             this.MoveVector = new PointF(0, 0);
+            this.MovementVector = Normalize(this.GetVectorDirection());
         }
 
         /// <inheritdoc/>
@@ -116,5 +117,21 @@ namespace TimeWar.Model.Objects.Classes
         /// Gets or sets bullet acceleration stopwatch.
         /// </summary>
         public Stopwatch DespawnStopwatch { get; set; }
+
+        /// <summary>
+        /// Gets or sets Movement Vector.
+        /// </summary>
+        public PointF MovementVector { get; set; }
+
+        private static PointF Normalize(PointF vector)
+        {
+            float distance = (float)Math.Sqrt((vector.X * vector.X) + (vector.Y * vector.Y));
+            return new PointF(vector.X / distance, vector.Y / distance);
+        }
+
+        private PointF GetVectorDirection()
+        {
+            return new PointF(this.Destination.X - this.Position.X, this.Destination.Y - this.Position.Y);
+        }
     }
 }

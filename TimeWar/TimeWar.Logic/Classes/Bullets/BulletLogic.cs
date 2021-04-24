@@ -19,6 +19,7 @@ namespace TimeWar.Logic.Classes.Characters.Actions
     /// </summary>
     public class BulletLogic
     {
+        private const int MaxBulletSpeed = 15;
         private GameModel model;
         private List<Bullet> bullets;
         private CommandManager commandManager;
@@ -54,34 +55,33 @@ namespace TimeWar.Logic.Classes.Characters.Actions
         /// </summary>
         public void OneTick()
         {
-            for (int i = 0; i < this.bullets.Count; i++)
+            if (this.commandManager.IsFinished)
             {
-                this.Movement(this.bullets[i]);
-                this.Despawn(this.bullets[i]);
+                for (int i = 0; i < this.bullets.Count; i++)
+                {
+                    this.Movement(this.bullets[i]);
+                    this.Despawn(this.bullets[i]);
+                }
             }
 
             // this.DetectEntity(item);
         }
 
-        private static PointF GetVectorDirection(Bullet bullet)
-        {
-            return new PointF(bullet.Destination.X - bullet.Position.X, bullet.Destination.Y - bullet.Position.Y);
-        }
-
-        private static PointF Normalize(PointF vector)
-        {
-            float distance = (float)Math.Sqrt((vector.X * vector.X) + (vector.Y * vector.Y));
-            return new PointF(vector.X / distance, vector.Y / distance);
-        }
-
+        // private static void BasicMovement(Bullet bullet)
+        // {
+        //    //Mindig normalizeolja ezért kering a kattintott pont körül
+        //    PointF movementVector = Normalize(GetVectorDirection(bullet));
+        //    bullet.MoveVector = new PointF(bullet.MoveVector.X + (movementVector.X * bullet.Acceleration), bullet.MoveVector.Y + (movementVector.Y * bullet.Acceleration));
+        // }
         private static void BasicMovement(Bullet bullet)
         {
-            //Mindig normalizeolja ezért kering a kattintott pont körül
-            PointF movementVector = Normalize(GetVectorDirection(bullet));
-            bullet.MoveVector = new PointF(bullet.MoveVector.X + (movementVector.X * bullet.Acceleration), bullet.MoveVector.Y + (movementVector.Y * bullet.Acceleration));
+            if (Math.Abs(bullet.MoveVector.X) <= MaxBulletSpeed && Math.Abs(bullet.MoveVector.Y) <= MaxBulletSpeed)
+            {
+                bullet.MoveVector = new PointF(bullet.MoveVector.X + (bullet.MovementVector.X * bullet.Acceleration), bullet.MoveVector.Y + (bullet.MovementVector.Y * bullet.Acceleration));
+            }
         }
 
-        private static void AcceleratigMovement(Bullet bullet)
+        private static void AcceleratingMovement(Bullet bullet)
         {
             if (!bullet.BulletStopwatch.IsRunning)
             {
@@ -104,21 +104,23 @@ namespace TimeWar.Logic.Classes.Characters.Actions
                 case BulletType.Basic:
                     BasicMovement(bullet);
                     break;
-                case BulletType.Accelerating:
-                    AcceleratigMovement(bullet);
-                    break;
                 case BulletType.Bouncing:
                     this.BouncingMovement(bullet);
+                    break;
+                case BulletType.Accelerating:
+                    AcceleratingMovement(bullet);
                     break;
                 case BulletType.CurvedBouncing:
                     this.CurvedMovement(bullet);
                     break;
                 default:
+                    BasicMovement(bullet);
                     break;
             }
 
             bullet.Position = new Point(bullet.Position.X + (int)bullet.MoveVector.X, bullet.Position.Y + (int)bullet.MoveVector.Y);
             MoveCommand cmd = new MoveCommand(bullet, bullet.Position, this.model);
+            this.commandManager.AddCommand(cmd);
         }
 
         private void BouncingMovement(Bullet bullet)
@@ -127,28 +129,31 @@ namespace TimeWar.Logic.Classes.Characters.Actions
             if (this.model.CurrentWorld.SearchGround(nextMove))
             {
                 bullet.MoveVector = new PointF(bullet.MoveVector.X * -1, bullet.MoveVector.Y);
+                bullet.MovementVector = new PointF(bullet.MovementVector.X * -1, bullet.MovementVector.Y);
             }
 
             nextMove = new Point(this.model.CurrentWorld.ConvertPixelToTile(bullet.Position.X), this.model.CurrentWorld.ConvertPixelToTile(bullet.Position.Y + (int)bullet.MoveVector.Y));
             if (this.model.CurrentWorld.SearchGround(nextMove))
             {
                 bullet.MoveVector = new PointF(bullet.MoveVector.X, bullet.MoveVector.Y * -1);
+                bullet.MovementVector = new PointF(bullet.MovementVector.X, bullet.MovementVector.Y * -1);
             }
 
-            BasicMovement(bullet);
+            if (Math.Abs(bullet.MoveVector.X) <= MaxBulletSpeed && Math.Abs(bullet.MoveVector.Y) <= MaxBulletSpeed)
+            {
+                bullet.MoveVector = new PointF(bullet.MoveVector.X + (bullet.MovementVector.X * bullet.Acceleration), bullet.MoveVector.Y + (bullet.MovementVector.Y * bullet.Acceleration));
+            }
         }
 
         private void CurvedMovement(Bullet bullet)
         {
             BasicMovement(bullet);
-            if (bullet.MoveVector.Y > 0)
-            {
-                bullet.MoveVector = new PointF(bullet.MoveVector.X, bullet.MoveVector.Y - 1);
-            }
-
+            this.BouncingMovement(bullet);
+            bullet.MoveVector = new PointF(bullet.MoveVector.X, bullet.MoveVector.Y + 5);
             if (this.DetectGround(bullet))
             {
-                bullet.MoveVector = new PointF(bullet.MoveVector.X, bullet.MoveVector.Y * -1);
+                BasicMovement(bullet);
+                this.BouncingMovement(bullet);
             }
         }
 
@@ -165,13 +170,28 @@ namespace TimeWar.Logic.Classes.Characters.Actions
 
         private void Despawn(Bullet bullet)
         {
-            if (this.DetectGround(bullet) && !(bullet.Type == BulletType.Bouncing || bullet.Type == BulletType.CurvedBouncing))
+            if (bullet.Position.X < 0 || bullet.Position.X > this.model.CurrentWorld.GameWidth)
             {
+                Debug.WriteLine("Bullet despawned!");
                 this.model.CurrentWorld.RemoveBullet(bullet);
             }
-            else if (bullet.DespawnStopwatch.ElapsedMilliseconds > 20000)
+
+            if (bullet.Position.Y < 0 || bullet.Position.Y > this.model.CurrentWorld.GameHeight)
             {
+                Debug.WriteLine("Bullet despawned!");
+                this.model.CurrentWorld.RemoveBullet(bullet);
+            }
+
+            if (bullet.DespawnStopwatch.ElapsedMilliseconds > 5000)
+            {
+                Debug.WriteLine("Bullet despawned!");
                 bullet.DespawnStopwatch.Stop();
+                this.model.CurrentWorld.RemoveBullet(bullet);
+            }
+
+            if (this.DetectGround(bullet) && !(bullet.Type == BulletType.Bouncing || bullet.Type == BulletType.CurvedBouncing))
+            {
+                Debug.WriteLine("Bullet despawned!");
                 this.model.CurrentWorld.RemoveBullet(bullet);
             }
         }
