@@ -62,9 +62,12 @@ namespace TimeWar.Logic.Classes.Characters
         /// <inheritdoc/>
         public override void OneTick()
         {
-            this.DetectPlayer();
-            this.Attack();
-            base.OneTick();
+            if (this.CommandManager.IsFinished)
+            {
+                this.DetectPlayer();
+                this.Attack();
+                base.OneTick();
+            }
         }
 
         /// <inheritdoc/>
@@ -284,7 +287,6 @@ namespace TimeWar.Logic.Classes.Characters
                     this.lastKnownPlayerLocation = upDetection;
                     this.isPlayerDetected = true;
                     this.isPlayerVisible = true;
-                    Debug.WriteLine("Player detected! " + this.lastKnownPlayerLocation);
                     return true;
                 }
                 else if (playerLocation == downDetection)
@@ -292,7 +294,6 @@ namespace TimeWar.Logic.Classes.Characters
                     this.lastKnownPlayerLocation = downDetection;
                     this.isPlayerDetected = true;
                     this.isPlayerVisible = true;
-                    Debug.WriteLine("Player detected! " + this.lastKnownPlayerLocation);
                     return true;
                 }
             }
