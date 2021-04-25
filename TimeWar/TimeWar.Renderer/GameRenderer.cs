@@ -350,9 +350,13 @@ namespace TimeWar.Renderer
             foreach (Enemy item in this.model.CurrentWorld.GetEnemies)
             {
                 Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(item.Position.X), this.model.Camera.GetRelativeObjectPosY(item.Position.Y), item.Width * this.model.CurrentWorld.Magnify, item.Height * this.model.CurrentWorld.Magnify));
-                Geometry hpbar = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(item.Position.X), this.model.Camera.GetRelativeObjectPosY(item.Position.Y) - 10, (item.Width * this.model.CurrentWorld.Magnify) * (item.CurrentHealth / item.Health), 5));
+                if (item.Health != item.CurrentHealth)
+                {
+                    Geometry hpbar = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(item.Position.X), this.model.Camera.GetRelativeObjectPosY(item.Position.Y) - 10, (item.Width * this.model.CurrentWorld.Magnify) * (item.CurrentHealth / item.Health), 5));
+                    dg.Children.Add(new GeometryDrawing(Brushes.Red, null, hpbar));
+                }
+
                 dg.Children.Add(new GeometryDrawing(this.GetSpriteBrush(item), null, g));
-                dg.Children.Add(new GeometryDrawing(Brushes.Red, null, hpbar));
             }
 
             return dg;
