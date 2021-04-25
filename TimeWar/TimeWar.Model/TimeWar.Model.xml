@@ -143,6 +143,16 @@
             Heavy enemy type.
             </summary>
         </member>
+        <member name="F:TimeWar.Model.Objects.Classes.EnemyType.RapidFire">
+            <summary>
+            Rapid Fire enemy.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.EnemyType.Burst">
+            <summary>
+            Burst shot enemy.
+            </summary>
+        </member>
         <member name="T:TimeWar.Model.Objects.Classes.Enemy">
             <summary>
             Enemy character class.

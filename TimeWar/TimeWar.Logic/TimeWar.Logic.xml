@@ -205,6 +205,19 @@
         <member name="M:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.Movement">
             <inheritdoc/>
         </member>
+        <member name="T:TimeWar.Logic.Classes.Characters.BurstEnemyLogic">
+            <summary>
+            Burst enemy logic.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.BurstEnemyLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Character,TimeWar.Logic.Classes.CommandManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.Characters.BurstEnemyLogic"/> class.
+            </summary>
+            <param name="model">Game model.</param>
+            <param name="character">Character.</param>
+            <param name="commandManager">Command manager.</param>
+        </member>
         <member name="T:TimeWar.Logic.Classes.Characters.FastEnemyLogic">
             <summary>
             Fast enemy class.
@@ -226,6 +239,19 @@
         <member name="M:TimeWar.Logic.Classes.Characters.HeavyEnemyLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Character,TimeWar.Logic.Classes.CommandManager)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.Characters.HeavyEnemyLogic"/> class.
+            </summary>
+            <param name="model">Game model.</param>
+            <param name="character">Character.</param>
+            <param name="commandManager">Command manager.</param>
+        </member>
+        <member name="T:TimeWar.Logic.Classes.Characters.RapidFireEnemyLogic">
+            <summary>
+            Rapid fire enemy.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.RapidFireEnemyLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Character,TimeWar.Logic.Classes.CommandManager)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.Characters.RapidFireEnemyLogic"/> class.
             </summary>
             <param name="model">Game model.</param>
             <param name="character">Character.</param>
