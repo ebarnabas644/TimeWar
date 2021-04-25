@@ -44,6 +44,11 @@ namespace TimeWar.Logic.Classes.Characters
         }
 
         /// <summary>
+        /// Gets the character.
+        /// </summary>
+        public Character Character { get; private set; }
+
+        /// <summary>
         /// Gets or sets movement vector of an actor.
         /// </summary>
         protected Point MoveVector { get; set; }
@@ -89,11 +94,6 @@ namespace TimeWar.Logic.Classes.Characters
         /// Gets or sets a value indicating whether the actor is jumping.
         /// </summary>
         protected bool IsJumping { get; set; }
-
-        /// <summary>
-        /// Gets or sets the character.
-        /// </summary>
-        protected Character Character { get; set; }
 
         /// <summary>
         /// Gets or sets the force that is applied when an actor is jumping.
