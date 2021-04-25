@@ -32,7 +32,9 @@ namespace TimeWar.Model.Objects
             this.SpriteFile = spriteFile;
             this.CurrentSprite = 0;
             this.Stance = Stances.StandRight;
+            this.StanceLess = false;
             this.keys = new List<string>();
+            this.CurrentSprite = 0;
         }
 
         /// <summary>
@@ -77,6 +79,12 @@ namespace TimeWar.Model.Objects
         /// Gets or sets the character health.
         /// </summary>
         public int Health { get; set; }
+
+        /// <inheritdoc/>
+        public bool StanceLess { get; set; }
+
+        /// <inheritdoc/>
+        public Point MovementVector { get; set; }
 
         /// <summary>
         /// Add new key to the pressed list.

@@ -60,7 +60,9 @@ namespace TimeWar.Model.Objects.Classes
             this.Width = width;
             this.SpriteFile = spriteFile;
             this.Stance = Stances.StandRight;
+            this.StanceLess = true;
             this.Type = type;
+            this.CurrentSprite = 0;
         }
 
         /// <inheritdoc/>
@@ -87,5 +89,14 @@ namespace TimeWar.Model.Objects.Classes
 
         /// <inheritdoc/>
         public Stances Stance { get; set; }
+
+        /// <inheritdoc/>
+        public bool StanceLess { get; set; }
+
+        /// <inheritdoc/>
+        public int CurrentSprite { get; set; }
+
+        /// <inheritdoc/>
+        public Point MovementVector { get; set; }
     }
 }

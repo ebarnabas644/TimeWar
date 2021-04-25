@@ -73,6 +73,21 @@ namespace TimeWar.Model.Objects.Interfaces
         public Stances Stance { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether stateless.
+        /// </summary>
+        public bool StanceLess { get; set; }
+
+        /// <summary>
+        /// Gets or sets movement vector.
+        /// </summary>
+        public Point MovementVector { get; set; }
+
+        /// <summary>
+        /// Gets or sets current sprite frame value.
+        /// </summary>
+        public int CurrentSprite { get; set; }
+
+        /// <summary>
         /// Gets or sets character position.
         /// </summary>
         public Point Position { get; set; }
