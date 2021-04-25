@@ -27,6 +27,7 @@ namespace TimeWar.Model.Objects
         {
             this.Position = pos;
             this.Health = health;
+            this.CurrentHealth = this.Health;
             this.Height = height;
             this.Width = width;
             this.SpriteFile = spriteFile;
@@ -41,6 +42,11 @@ namespace TimeWar.Model.Objects
         /// Gets or sets mouse click location.
         /// </summary>
         public Point ClickLocation { get; set; }
+
+        /// <summary>
+        /// Gets or sets current character health.
+        /// </summary>
+        public int CurrentHealth { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the player can attack or not.
