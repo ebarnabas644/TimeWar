@@ -11,6 +11,7 @@ namespace TimeWar.Logic.Classes.Characters
     using System.Threading.Tasks;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
+    using TimeWar.Model.Objects.Classes;
 
     /// <summary>
     /// Rapid fire enemy.
@@ -26,6 +27,15 @@ namespace TimeWar.Logic.Classes.Characters
         public RapidFireEnemyLogic(GameModel model, Character character, CommandManager commandManager)
             : base(model, character, commandManager)
         {
+            this.Character.Health = 150;
+            this.MaxMovementSpeed = 5;
+            this.MaxJumpHeight = 10;
+            this.AttackTime = 100;
+            this.TypeOfBullet = BulletType.Basic;
+            this.MaxMoveTime = 2500;
+            this.DefaultFollowDistance = 20;
+            this.DetectionRange = 25;
+            this.DetectionTime = 10000;
         }
     }
 }

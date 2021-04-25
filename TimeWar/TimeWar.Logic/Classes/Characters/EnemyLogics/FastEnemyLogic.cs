@@ -24,7 +24,13 @@ namespace TimeWar.Logic.Classes.Characters
         {
             this.MaxJumpHeight = 30;
             this.MaxMovementSpeed = 40;
+            this.MaxMoveTime = 1000;
             this.Character.Health = 25;
+            this.DefaultFollowDistance = 3;
+            this.DetectionRange = 10;
+            this.AttackTime = 1000;
+            this.DetectionTime = 5000;
+            this.TypeOfBullet = BulletType.Accelerating;
         }
     }
 }

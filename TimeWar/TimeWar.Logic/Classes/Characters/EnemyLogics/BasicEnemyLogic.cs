@@ -20,13 +20,7 @@ namespace TimeWar.Logic.Classes.Characters
     /// </summary>
     public class BasicEnemyLogic : ActorLogic
     {
-        private const int MaxMoveTime = 3000;
-        private const int DetectionTime = 20000;
-        private const int DetectionRange = 20;
-        private const int AttackTime = 2500;
-        private const int DefaultFollowDistance = 9;
         private int followDistance = 9;
-
         private Stopwatch movementDirStopwatch = new Stopwatch();
         private Stopwatch movementStopwatch = new Stopwatch();
         private int movementDirTime;
@@ -48,9 +42,14 @@ namespace TimeWar.Logic.Classes.Characters
         {
             this.movementDirStopwatch.Start();
             this.movementStopwatch.Start();
-            this.movementDirTime = RandomNumberGenerator.GetInt32(MaxMoveTime);
-            this.movementTime = RandomNumberGenerator.GetInt32(MaxMoveTime);
             this.moveDir = 0;
+            this.AttackTime = 2500;
+            this.MaxMoveTime = 3000;
+            this.DetectionTime = 20000;
+            this.DetectionRange = 20;
+            this.movementDirTime = RandomNumberGenerator.GetInt32(this.MaxMoveTime);
+            this.movementTime = RandomNumberGenerator.GetInt32(this.MaxMoveTime);
+            this.DefaultFollowDistance = 9;
             this.lastKnownPlayerLocation = new Point(0, 0);
             this.isPlayerDetected = false;
             this.isPlayerVisible = false;
@@ -58,6 +57,31 @@ namespace TimeWar.Logic.Classes.Characters
             this.Character.CanAttack = true;
             this.AttackStopwatch.Start();
         }
+
+        /// <summary>
+        /// Gets or sets attack time.
+        /// </summary>
+        protected int AttackTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets max move time.
+        /// </summary>
+        protected int MaxMoveTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets max move time.
+        /// </summary>
+        protected int DetectionTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets detection range.
+        /// </summary>
+        protected int DetectionRange { get; set; }
+
+        /// <summary>
+        /// Gets or sets default follow distance.
+        /// </summary>
+        protected int DefaultFollowDistance { get; set; }
 
         /// <inheritdoc/>
         public override void OneTick()
@@ -80,7 +104,7 @@ namespace TimeWar.Logic.Classes.Characters
                 if (this.movementDirStopwatch.ElapsedMilliseconds > this.movementDirTime)
                 {
                     this.moveDir = RandomNumberGenerator.GetInt32(3);
-                    this.movementDirTime = RandomNumberGenerator.GetInt32(MaxMoveTime);
+                    this.movementDirTime = RandomNumberGenerator.GetInt32(this.MaxMoveTime);
                     this.movementDirStopwatch.Restart();
                 }
 
@@ -105,7 +129,7 @@ namespace TimeWar.Logic.Classes.Characters
             }
             else
             {
-                if (this.playerDetectionStopwatch.ElapsedMilliseconds < DetectionTime)
+                if (this.playerDetectionStopwatch.ElapsedMilliseconds < this.DetectionTime)
                 {
                     int distance = this.PlayerDistance();
                     if (!this.isPlayerVisible)
@@ -114,7 +138,7 @@ namespace TimeWar.Logic.Classes.Characters
                     }
                     else
                     {
-                        this.followDistance = DefaultFollowDistance;
+                        this.followDistance = this.DefaultFollowDistance;
                     }
 
                     if (this.PixelToTile(this.Character.Position.X) > this.lastKnownPlayerLocation.X && distance >= this.followDistance)
@@ -151,9 +175,11 @@ namespace TimeWar.Logic.Classes.Characters
         /// <inheritdoc/>
         protected override void Attack()
         {
-            if (this.isPlayerDetected && this.CommandManager.IsFinished && this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > AttackTime)
+            if (this.isPlayerDetected && this.CommandManager.IsFinished && this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > this.AttackTime)
             {
-                Bullet b = new Bullet(this.Character.Position, 4, 4, "testenemy.png", new Point(this.TileToPixel(this.lastKnownPlayerLocation.X), this.TileToPixel(this.lastKnownPlayerLocation.Y + 2)), 10, this.BulletType);
+                Point attackPoint = new Point(this.Character.Position.X + this.Model.CurrentWorld.ConvertTileToPixel(1), this.Character.Position.Y + this.Model.CurrentWorld.ConvertTileToPixel(1));
+
+                Bullet b = new Bullet(attackPoint, 4, 4, "testenemy.png", new Point(this.TileToPixel(this.lastKnownPlayerLocation.X), this.TileToPixel(this.lastKnownPlayerLocation.Y + 2)), 10, this.TypeOfBullet);
                 this.Model.CurrentWorld.AddBullet(b);
                 this.AttackStopwatch.Restart();
             }
@@ -169,7 +195,7 @@ namespace TimeWar.Logic.Classes.Characters
             else
             {
                 this.movementStopwatch.Restart();
-                this.movementTime = RandomNumberGenerator.GetInt32(MaxMoveTime);
+                this.movementTime = RandomNumberGenerator.GetInt32(this.MaxMoveTime);
             }
         }
 
@@ -200,16 +226,18 @@ namespace TimeWar.Logic.Classes.Characters
                 {
                     this.playerDetectionStopwatch.Start();
                 }
-
-                if (this.DetectionCone())
+                else if (this.DetectionCone())
                 {
                     this.playerDetectionStopwatch.Start();
                 }
+                else
+                {
+                    this.isPlayerVisible = false;
+                }
             }
 
-            if (this.playerDetectionStopwatch.ElapsedMilliseconds > DetectionTime)
+            if (this.playerDetectionStopwatch.ElapsedMilliseconds > this.DetectionTime)
             {
-                Debug.WriteLine("Player lost!");
                 this.isPlayerDetected = false;
                 this.playerDetectionStopwatch.Reset();
             }
@@ -221,7 +249,7 @@ namespace TimeWar.Logic.Classes.Characters
             // }
         }
 
-        private bool DetectionCone(bool right = true, int range = DetectionRange)
+        private bool DetectionCone(bool right = true)
         {
             int dir = -1;
             int height = 1;
@@ -232,7 +260,7 @@ namespace TimeWar.Logic.Classes.Characters
                 startPoint.X++;
             }
 
-            for (int i = 0; i < range; i++)
+            for (int i = 0; i < this.DetectionRange; i++)
             {
                 if (i % 1 == 0)
                 {
@@ -252,7 +280,6 @@ namespace TimeWar.Logic.Classes.Characters
                 startPoint.X += dir;
             }
 
-            this.isPlayerVisible = false;
             return false;
         }
 
