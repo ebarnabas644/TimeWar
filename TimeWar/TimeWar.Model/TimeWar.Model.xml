@@ -59,12 +59,13 @@
             Basic bullet.
             </summary>
         </member>
-        <member name="M:TimeWar.Model.Objects.Classes.Bullet.#ctor(System.Drawing.Point,System.Int32,System.Int32,System.String,System.Int32,TimeWar.Model.Objects.Classes.BulletType)">
+        <member name="M:TimeWar.Model.Objects.Classes.Bullet.#ctor(System.Drawing.Point,System.Int32,System.Int32,System.String,System.Drawing.Point,System.Int32,TimeWar.Model.Objects.Classes.BulletType)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Model.Objects.Classes.Bullet"/> class.
             </summary>
             <param name="pos">Character position.</param>
             <param name="damage">Base damage.</param>
+            <param name="destination">Destination of the bullet.</param>
             <param name="type">Type of the bullet.</param>
             <param name="height">Character height.</param>
             <param name="width">Character width.</param>
@@ -92,6 +93,39 @@
             Gets or sets the type of the bullet.
             </summary>
         </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.Acceleration">
+            <summary>
+            Gets or sets bullet acceleration.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.Destination">
+            <summary>
+            Gets or sets bullet destination.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.MoveVector">
+            <summary>
+            Gets or sets bullet move vector.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.BulletStopwatch">
+            <summary>
+            Gets or sets bullet acceleration stopwatch.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.DespawnStopwatch">
+            <summary>
+            Gets or sets bullet acceleration stopwatch.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.MovementVectorF">
+            <summary>
+            Gets or sets Movement Vector.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.MovementVector">
+            <inheritdoc/>
+        </member>
         <member name="P:TimeWar.Model.Objects.Classes.Bullet.Stance">
             <inheritdoc/>
         </member>
@@ -101,15 +135,42 @@
         <member name="P:TimeWar.Model.Objects.Classes.Bullet.CurrentSprite">
             <inheritdoc/>
         </member>
-        <member name="P:TimeWar.Model.Objects.Classes.Bullet.MovementVector">
-            <inheritdoc/>
+        <member name="T:TimeWar.Model.Objects.Classes.EnemyType">
+            <summary>
+            Types of enemies.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.EnemyType.Basic">
+            <summary>
+            Basic enemy type.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.EnemyType.Fast">
+            <summary>
+            Fast enemy type.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.EnemyType.Heavy">
+            <summary>
+            Heavy enemy type.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.EnemyType.RapidFire">
+            <summary>
+            Rapid Fire enemy.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.EnemyType.Burst">
+            <summary>
+            Burst shot enemy.
+            </summary>
         </member>
         <member name="T:TimeWar.Model.Objects.Classes.Enemy">
             <summary>
             Enemy character class.
             </summary>
         </member>
-        <member name="M:TimeWar.Model.Objects.Classes.Enemy.#ctor(System.Drawing.Point,System.Int32,System.Int32,System.Int32,System.String)">
+        <member name="M:TimeWar.Model.Objects.Classes.Enemy.#ctor(System.Drawing.Point,System.Int32,System.Int32,System.Int32,TimeWar.Model.Objects.Classes.EnemyType,System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Model.Objects.Classes.Enemy"/> class.
             </summary>
@@ -117,7 +178,13 @@
             <param name="health">Health value.</param>
             <param name="height">Height.</param>
             <param name="width">Width.</param>
+            <param name="enemyType">Type of enemy.</param>
             <param name="spriteFile">Spritesheet file name.</param>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Enemy.Type">
+            <summary>
+            Gets or sets the type of enemy.
+            </summary>
         </member>
         <member name="T:TimeWar.Model.Objects.Classes.StaticObject">
             <summary>
