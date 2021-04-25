@@ -32,7 +32,8 @@ namespace TimeWar.Renderer
         private Dictionary<string, IGameObject> gameObjects;
         private HashSet<IGameObject> uniqueObjectCache;
         private HashSet<string> loadCache;
-        private List<Character> characters;
+
+        // private List<Character> characters;
         private int currentSprite;
         private bool firstRun;
         private DrawingGroup spritesCache;
@@ -72,6 +73,33 @@ namespace TimeWar.Renderer
         /// Gets or sets a value indicating whether the window changed.
         /// </summary>
         public bool WindowChanged { get; set; }
+
+        /// <summary>
+        /// Build drawed game world.
+        /// </summary>
+        /// <returns>Drawing with all entities for render.</returns>
+        public Drawing BuildDrawing()
+        {
+            this.currentSprite = (int)this.spriteTimer.Elapsed.TotalMilliseconds / 100;
+            DrawingGroup dg = new DrawingGroup();
+            dg.Children.Add(this.GetBackground());
+            dg.Children.Add(this.GetDecorations());
+            dg.Children.Add(this.GetBullets());
+            dg.Children.Add(this.GetEnemies());
+
+            // dg.Children.Add(this.GetCollision());
+            if (!this.menuMode)
+            {
+                dg.Children.Add(this.GetPlayer());
+            }
+            else if (this.menuMode && this.title)
+            {
+                dg.Children.Add(this.GetTitle());
+            }
+
+            this.WindowChanged = false;
+            return dg;
+        }
 
         private static void StateMachine(IGameObject obj)
         {
@@ -113,33 +141,6 @@ namespace TimeWar.Renderer
                     obj.Stance = Stances.StandLeft;
                 }
             }
-        }
-
-        /// <summary>
-        /// Build drawed game world.
-        /// </summary>
-        /// <returns>Drawing with all entities for render.</returns>
-        public Drawing BuildDrawing()
-        {
-            this.currentSprite = (int)this.spriteTimer.Elapsed.TotalMilliseconds / 100;
-            DrawingGroup dg = new DrawingGroup();
-            dg.Children.Add(this.GetBackground());
-            dg.Children.Add(this.GetDecorations());
-            dg.Children.Add(this.GetBullets());
-            dg.Children.Add(this.GetEnemies());
-
-            // dg.Children.Add(this.GetCollision());
-            if (!this.menuMode)
-            {
-                dg.Children.Add(this.GetPlayer());
-            }
-            else if (this.menuMode && this.title)
-            {
-                dg.Children.Add(this.GetTitle());
-            }
-
-            this.WindowChanged = false;
-            return dg;
         }
 
         private void Reset()
