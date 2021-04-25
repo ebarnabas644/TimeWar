@@ -2,7 +2,7 @@
 // Copyright (c) Time War. All rights reserved.
 // </copyright>
 
-namespace TimeWar.Logic.Classes.Characters.Actions
+namespace TimeWar.Logic.Classes.LogicCollections
 {
     using System;
     using System.Collections.Generic;
@@ -11,6 +11,7 @@ namespace TimeWar.Logic.Classes.Characters.Actions
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using TimeWar.Logic.Classes.Characters.Actions;
     using TimeWar.Model;
     using TimeWar.Model.Objects.Classes;
 
@@ -170,28 +171,10 @@ namespace TimeWar.Logic.Classes.Characters.Actions
 
         private void Despawn(Bullet bullet)
         {
-            if (bullet.Position.X < 0 || bullet.Position.X > this.model.CurrentWorld.GameWidth)
-            {
-                Debug.WriteLine("Bullet despawned!");
-                this.model.CurrentWorld.RemoveBullet(bullet);
-            }
-
-            if (bullet.Position.Y < 0 || bullet.Position.Y > this.model.CurrentWorld.GameHeight)
-            {
-                Debug.WriteLine("Bullet despawned!");
-                this.model.CurrentWorld.RemoveBullet(bullet);
-            }
-
-            if (bullet.DespawnStopwatch.ElapsedMilliseconds > 5000)
+            if ((bullet.Position.X < 0 || bullet.Position.X > this.model.CurrentWorld.GameWidth) || (bullet.Position.Y < 0 || bullet.Position.Y > this.model.CurrentWorld.GameHeight) || (bullet.DespawnStopwatch.ElapsedMilliseconds > 5000) || (this.DetectGround(bullet) && !(bullet.Type == BulletType.Bouncing || bullet.Type == BulletType.CurvedBouncing)))
             {
                 Debug.WriteLine("Bullet despawned!");
                 bullet.DespawnStopwatch.Stop();
-                this.model.CurrentWorld.RemoveBullet(bullet);
-            }
-
-            if (this.DetectGround(bullet) && !(bullet.Type == BulletType.Bouncing || bullet.Type == BulletType.CurvedBouncing))
-            {
-                Debug.WriteLine("Bullet despawned!");
                 this.model.CurrentWorld.RemoveBullet(bullet);
             }
         }
