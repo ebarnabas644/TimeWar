@@ -108,12 +108,10 @@ namespace TimeWar.Logic.Classes.Characters
                     if (!this.isPlayerVisible)
                     {
                         this.followDistance = 0;
-                        Debug.WriteLine("Follow distance 0");
                     }
                     else
                     {
                         this.followDistance = DefaultFollowDistance;
-                        Debug.WriteLine("Follow distance default");
                     }
 
                     if (this.PixelToTile(this.Character.Position.X) > this.lastKnownPlayerLocation.X && distance >= this.followDistance)
@@ -133,7 +131,6 @@ namespace TimeWar.Logic.Classes.Characters
                 }
                 else
                 {
-                    this.isPlayerDetected = false;
                     this.moveDir = RandomNumberGenerator.GetInt32(4);
                     this.movementDirStopwatch.Restart();
                 }
@@ -151,7 +148,7 @@ namespace TimeWar.Logic.Classes.Characters
         /// <inheritdoc/>
         protected override void Attack()
         {
-            if (this.CommandManager.IsFinished && this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > AttackTime)
+            if (this.isPlayerDetected && this.CommandManager.IsFinished && this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > AttackTime)
             {
                 Bullet b = new Bullet(this.Character.Position, 4, 4, "testenemy.png", new Point(this.TileToPixel(this.lastKnownPlayerLocation.X), this.TileToPixel(this.lastKnownPlayerLocation.Y + 2)), 10, this.BulletType);
                 this.Model.CurrentWorld.AddBullet(b);
