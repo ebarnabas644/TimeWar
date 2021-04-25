@@ -30,6 +30,16 @@ namespace TimeWar.Model.Objects.Classes
         /// Heavy enemy type.
         /// </summary>
         Heavy,
+
+        /// <summary>
+        /// Rapid Fire enemy.
+        /// </summary>
+        RapidFire,
+
+        /// <summary>
+        /// Burst shot enemy.
+        /// </summary>
+        Burst,
     }
 
     /// <summary>
