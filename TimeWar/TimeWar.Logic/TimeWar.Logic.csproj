@@ -23,7 +23,9 @@
   </ItemGroup>
 
 	<ItemGroup>
+	  <ProjectReference Include="..\TimeWar.Data\TimeWar.Data.csproj" />
 	  <ProjectReference Include="..\TimeWar.Model\TimeWar.Model.csproj" />
+	  <ProjectReference Include="..\TimeWar.Repository\TimeWar.Repository.csproj" />
 	</ItemGroup>
 
 </Project>
