@@ -58,7 +58,7 @@
             Gets the character.
             </summary>
         </member>
-        <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.BulletType">
+        <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.TypeOfBullet">
             <summary>
             Gets or sets bullet type.
             </summary>
@@ -208,6 +208,31 @@
             <param name="character">Charater.</param>
             <param name="commandManager">Command manger.</param>
         </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.AttackTime">
+            <summary>
+            Gets or sets attack time.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.MaxMoveTime">
+            <summary>
+            Gets or sets max move time.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.DetectionTime">
+            <summary>
+            Gets or sets max move time.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.DetectionRange">
+            <summary>
+            Gets or sets detection range.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.DefaultFollowDistance">
+            <summary>
+            Gets or sets default follow distance.
+            </summary>
+        </member>
         <member name="M:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.OneTick">
             <inheritdoc/>
         </member>
@@ -324,6 +349,21 @@
             Name of the basic enemy spritesheet.
             </summary>
         </member>
+        <member name="F:TimeWar.Logic.Classes.InitConfig.FastEnemySpritesheet">
+            <summary>
+            Name of the fast enemy spritesheet.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Logic.Classes.InitConfig.HeavyEnemySpritesheet">
+            <summary>
+            Name of the heavy enemy spritesheet.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Logic.Classes.InitConfig.RapidFireEnemySpritesheet">
+            <summary>
+            Name of the rapid fire enemy spritesheet.
+            </summary>
+        </member>
         <member name="F:TimeWar.Logic.Classes.InitConfig.BasicEnemyHeight">
             <summary>
             Basic enemy height const.
@@ -339,26 +379,42 @@
             Basic enemy health const.
             </summary>
         </member>
-        <member name="T:TimeWar.Logic.Classes.LogicCollections.BulletLogicCollection">
+        <member name="F:TimeWar.Logic.Classes.InitConfig.HeavyEnemyHealth">
+             <summary>
+             Basic enemy health const.
+             </summary>
+            
+        </member>
+        <member name="F:TimeWar.Logic.Classes.InitConfig.FastEnemyHealth">
+            <summary>
+            Basic enemy health const.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Logic.Classes.InitConfig.RapidFireEnemyHealth">
+            <summary>
+            Basic enemy health const.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Logic.Classes.LogicCollections.BulletLogics">
             <summary>
             Default bullet logic.
             </summary>
         </member>
-        <member name="M:TimeWar.Logic.Classes.LogicCollections.BulletLogicCollection.#ctor(TimeWar.Model.GameModel,System.Collections.Generic.ICollection{TimeWar.Model.Objects.Classes.Bullet},TimeWar.Logic.Classes.CommandManager)">
+        <member name="M:TimeWar.Logic.Classes.LogicCollections.BulletLogics.#ctor(TimeWar.Model.GameModel,System.Collections.Generic.ICollection{TimeWar.Model.Objects.Classes.Bullet},TimeWar.Logic.Classes.CommandManager)">
             <summary>
-            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.LogicCollections.BulletLogicCollection"/> class.
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.LogicCollections.BulletLogics"/> class.
             </summary>
             <param name="model">Game Model.</param>
             <param name="bullet">Bullet.</param>
             <param name="commandManager">Command manager.</param>
         </member>
-        <member name="M:TimeWar.Logic.Classes.LogicCollections.BulletLogicCollection.Addbullets(System.Collections.Generic.ICollection{TimeWar.Model.Objects.Classes.Bullet})">
+        <member name="M:TimeWar.Logic.Classes.LogicCollections.BulletLogics.Addbullets(System.Collections.Generic.ICollection{TimeWar.Model.Objects.Classes.Bullet})">
             <summary>
             Replaces the bullets list.
             </summary>
             <param name="bullets">Bullet list.</param>
         </member>
-        <member name="M:TimeWar.Logic.Classes.LogicCollections.BulletLogicCollection.OneTick">
+        <member name="M:TimeWar.Logic.Classes.LogicCollections.BulletLogics.OneTick">
             <summary>
             One tick method.
             </summary>
