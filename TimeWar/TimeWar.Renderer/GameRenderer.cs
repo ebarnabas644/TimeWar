@@ -11,6 +11,7 @@ namespace TimeWar.Renderer
     using System.Windows.Media;
     using System.Windows.Media.Imaging;
     using TimeWar.Model;
+    using TimeWar.Model.Objects;
     using TimeWar.Model.Objects.Classes;
     using TimeWar.Model.Objects.Interfaces;
 
@@ -31,6 +32,7 @@ namespace TimeWar.Renderer
         private Dictionary<string, IGameObject> gameObjects;
         private HashSet<IGameObject> uniqueObjectCache;
         private HashSet<string> loadCache;
+        private List<Character> characters;
         private int currentSprite;
         private bool firstRun;
         private DrawingGroup spritesCache;
@@ -70,6 +72,48 @@ namespace TimeWar.Renderer
         /// Gets or sets a value indicating whether the window changed.
         /// </summary>
         public bool WindowChanged { get; set; }
+
+        private static void StateMachine(IGameObject obj)
+        {
+            if (obj.MovementVector.X > 0 && obj.MovementVector.Y > 0)
+            {
+                obj.Stance = Stances.JumpRight;
+            }
+            else if (obj.MovementVector.X < 0 && obj.MovementVector.Y < 0)
+            {
+                obj.Stance = Stances.JumpLeft;
+            }
+            else if (obj.MovementVector.X > 0)
+            {
+                obj.Stance = Stances.Right;
+            }
+            else if (obj.MovementVector.X < 0)
+            {
+                obj.Stance = Stances.Left;
+            }
+            else if (obj.MovementVector.Y > 0 && obj.MovementVector.Y < 0)
+            {
+                if (obj.Stance == Stances.StandRight)
+                {
+                    obj.Stance = Stances.JumpRight;
+                }
+                else
+                {
+                    obj.Stance = Stances.JumpLeft;
+                }
+            }
+            else if (obj.MovementVector.X == 0 && obj.MovementVector.Y == 0)
+            {
+                if (obj.Stance == Stances.Right || obj.Stance == Stances.JumpRight)
+                {
+                    obj.Stance = Stances.StandRight;
+                }
+                else if (obj.Stance == Stances.Left || obj.Stance == Stances.JumpLeft)
+                {
+                    obj.Stance = Stances.StandLeft;
+                }
+            }
+        }
 
         /// <summary>
         /// Build drawed game world.
@@ -143,7 +187,13 @@ namespace TimeWar.Renderer
                 this.spriteBrushes.Add(obj, imageBrushes);
             }
 
-            return this.spriteBrushes[obj][(int)obj.Stance][this.currentSprite % this.spriteBrushes[obj][(int)obj.Stance].Length];
+            if (!obj.StanceLess)
+            {
+                // StateMachine(obj);
+                return this.spriteBrushes[obj][(int)obj.Stance][this.currentSprite % this.spriteBrushes[obj][(int)obj.Stance].Length];
+            }
+
+            return this.spriteBrushes[obj][0][this.currentSprite % this.spriteBrushes[obj][0].Length];
         }
 
         private Drawing GetBackground()
@@ -204,7 +254,7 @@ namespace TimeWar.Renderer
 
         private Drawing GetPlayer()
         {
-            Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeCharacterPosX, this.model.Camera.GetRelativeCharacterPosY, this.model.Hero.Width * this.model.CurrentWorld.Magnify, this.model.Hero.Height * this.model.CurrentWorld.Magnify));
+            Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(this.model.Hero.Position.X), this.model.Camera.GetRelativeObjectPosY(this.model.Hero.Position.Y), this.model.Hero.Width * this.model.CurrentWorld.Magnify, this.model.Hero.Height * this.model.CurrentWorld.Magnify));
             this.playerCache = new GeometryDrawing(this.GetSpriteBrush(this.model.Hero), null, g);
             return this.playerCache;
         }
@@ -300,7 +350,9 @@ namespace TimeWar.Renderer
             foreach (Enemy item in this.model.CurrentWorld.GetEnemies)
             {
                 Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(item.Position.X), this.model.Camera.GetRelativeObjectPosY(item.Position.Y), item.Width * this.model.CurrentWorld.Magnify, item.Height * this.model.CurrentWorld.Magnify));
+                Geometry hpbar = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(item.Position.X), this.model.Camera.GetRelativeObjectPosY(item.Position.Y) - 10, (item.Width * this.model.CurrentWorld.Magnify) * (item.CurrentHealth / item.Health), 5));
                 dg.Children.Add(new GeometryDrawing(this.GetSpriteBrush(item), null, g));
+                dg.Children.Add(new GeometryDrawing(Brushes.Red, null, hpbar));
             }
 
             return dg;
