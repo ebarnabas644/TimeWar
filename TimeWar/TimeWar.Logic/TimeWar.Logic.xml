@@ -162,6 +162,18 @@
             <param name="x">X direction.</param>
             <param name="y">Y direction.</param>
         </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.ActorLogic.SetVectorX(System.Int32)">
+            <summary>
+            Sets x value of the vector.
+            </summary>
+            <param name="x">X value.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.ActorLogic.SetVectorY(System.Int32)">
+            <summary>
+            Sets y value of the vector.
+            </summary>
+            <param name="y">Y value.</param>
+        </member>
         <member name="M:TimeWar.Logic.Classes.Characters.ActorLogic.WallCollision(System.Drawing.Point,System.Boolean)">
             <summary>
             Wall collsiion.
