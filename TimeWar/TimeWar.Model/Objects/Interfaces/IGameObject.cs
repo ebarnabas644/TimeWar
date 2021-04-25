@@ -32,19 +32,14 @@ namespace TimeWar.Model.Objects.Interfaces
         Left,
 
         /// <summary>
-        /// Up stance.
+        /// Jump right stance.
         /// </summary>
-        Up,
+        JumpRight,
 
         /// <summary>
-        /// Down stance.
+        /// Jump left stance.
         /// </summary>
-        Down,
-
-        /// <summary>
-        /// Jump stance.
-        /// </summary>
-        Jump,
+        JumpLeft,
     }
 
     /// <summary>
