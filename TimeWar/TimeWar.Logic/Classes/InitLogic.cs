@@ -9,6 +9,7 @@ namespace TimeWar.Logic
     using System.Linq;
     using System.Xml.Linq;
     using TimeWar.Logic.Classes;
+    using TimeWar.Logic.Classes.Characters;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
     using TimeWar.Model.Objects.Classes;
@@ -112,7 +113,11 @@ namespace TimeWar.Logic
                 {
                     switch (Convert.ToInt32(enemydata[y][x], System.Globalization.CultureInfo.CurrentCulture))
                     {
-                        case 479: gameWorld.AddEnemy(new Enemy(new Point(x * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize, (y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize) - (InitConfig.BasicEnemyHeight * this.model.CurrentWorld.TileSize)), InitConfig.BasicEnemyHealth, InitConfig.BasicEnemyHeight, InitConfig.BasicEnemyWidth, InitConfig.BasicEnemySpritesheet)); break;
+                        case 475: gameWorld.AddEnemy(new Enemy(new Point(x * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize, (y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize) - (InitConfig.BasicEnemyHeight * this.model.CurrentWorld.TileSize)), InitConfig.BasicEnemyHealth, InitConfig.BasicEnemyHeight, InitConfig.BasicEnemyWidth, EnemyType.RapidFire, InitConfig.BasicEnemySpritesheet)); break;
+                        case 476: gameWorld.AddEnemy(new Enemy(new Point(x * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize, (y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize) - (InitConfig.BasicEnemyHeight * this.model.CurrentWorld.TileSize)), InitConfig.BasicEnemyHealth, InitConfig.BasicEnemyHeight, InitConfig.BasicEnemyWidth, EnemyType.Heavy, InitConfig.BasicEnemySpritesheet)); break;
+                        case 477: gameWorld.AddEnemy(new Enemy(new Point(x * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize, (y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize) - (InitConfig.BasicEnemyHeight * this.model.CurrentWorld.TileSize)), InitConfig.BasicEnemyHealth, InitConfig.BasicEnemyHeight, InitConfig.BasicEnemyWidth, EnemyType.Burst, InitConfig.BasicEnemySpritesheet)); break;
+                        case 478: gameWorld.AddEnemy(new Enemy(new Point(x * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize, (y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize) - (InitConfig.BasicEnemyHeight * this.model.CurrentWorld.TileSize)), InitConfig.BasicEnemyHealth, InitConfig.BasicEnemyHeight, InitConfig.BasicEnemyWidth, EnemyType.Fast, InitConfig.BasicEnemySpritesheet)); break;
+                        case 479: gameWorld.AddEnemy(new Enemy(new Point(x * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize, (y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize) - (InitConfig.BasicEnemyHeight * this.model.CurrentWorld.TileSize)), InitConfig.BasicEnemyHealth, InitConfig.BasicEnemyHeight, InitConfig.BasicEnemyWidth, EnemyType.Basic, InitConfig.BasicEnemySpritesheet)); break;
                     }
                 }
             }
@@ -122,7 +127,7 @@ namespace TimeWar.Logic
         {
             int startX = this.model.CurrentWorld.SearchPointOfInterest("start").X * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize;
             int startY = this.model.CurrentWorld.SearchPointOfInterest("start").Y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize;
-            return new Player(new Point(startX, startY - (InitConfig.PlayerHeight * this.model.CurrentWorld.TileSize)),  InitConfig.PlayerHealth, InitConfig.PlayerHeight, InitConfig.PlayerWidth, InitConfig.PlayerSpritesheet);
+            return new Player(new Point(startX, startY - (InitConfig.PlayerHeight * this.model.CurrentWorld.TileSize)), InitConfig.PlayerHealth, InitConfig.PlayerHeight, InitConfig.PlayerWidth, InitConfig.PlayerSpritesheet);
         }
 
         private void BuildModel(string mapName)
