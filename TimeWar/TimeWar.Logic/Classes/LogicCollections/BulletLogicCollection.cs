@@ -173,7 +173,6 @@ namespace TimeWar.Logic.Classes.LogicCollections
         {
             if ((bullet.Position.X < 0 || bullet.Position.X > this.model.CurrentWorld.GameWidth) || (bullet.Position.Y < 0 || bullet.Position.Y > this.model.CurrentWorld.GameHeight) || (bullet.DespawnStopwatch.ElapsedMilliseconds > 5000) || (this.DetectGround(bullet) && !(bullet.Type == BulletType.Bouncing || bullet.Type == BulletType.CurvedBouncing)))
             {
-                Debug.WriteLine("Bullet despawned!");
                 bullet.DespawnStopwatch.Stop();
                 this.model.CurrentWorld.RemoveBullet(bullet);
             }

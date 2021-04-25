@@ -49,7 +49,6 @@ namespace TimeWar.Logic
                 this.Model.CurrentWorld.AddBullet(b);
                 this.AttackStopwatch.Restart();
                 this.Character.CanAttack = false;
-                Debug.WriteLine("Attacked at position:" + this.Character.ClickLocation);
             }
         }
 
