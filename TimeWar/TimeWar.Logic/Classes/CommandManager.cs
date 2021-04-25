@@ -62,7 +62,7 @@ namespace TimeWar.Logic.Classes
                         if (this.rewindStopwatch.ElapsedMilliseconds < RewindTime)
                         {
                             command.Undo();
-                            Thread.Sleep(10);
+                            Thread.Sleep(5);
                         }
 
                         counter++;

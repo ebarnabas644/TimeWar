@@ -77,10 +77,13 @@ namespace TimeWar.Logic.Classes.LogicCollections
         /// </summary>
         public void TickEnemies()
         {
-            foreach (BasicEnemyLogic enemyLogic in this.enemies)
+            if (this.commandManager.IsFinished)
             {
-                enemyLogic.OneTick();
-                this.Despawn(enemyLogic);
+                foreach (BasicEnemyLogic enemyLogic in this.enemies)
+                {
+                    enemyLogic.OneTick();
+                    this.Despawn(enemyLogic);
+                }
             }
         }
 

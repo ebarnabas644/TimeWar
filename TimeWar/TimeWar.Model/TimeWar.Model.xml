@@ -81,7 +81,7 @@
         </member>
         <member name="P:TimeWar.Model.Objects.Classes.Bullet.Damage">
             <summary>
-            Gets or sets damage of the bullet.
+            Gets or sets damage of bullet.
             </summary>
         </member>
         <member name="P:TimeWar.Model.Objects.Classes.Bullet.SpriteFile">

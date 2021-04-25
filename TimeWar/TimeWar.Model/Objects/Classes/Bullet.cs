@@ -84,7 +84,7 @@ namespace TimeWar.Model.Objects.Classes
         public int Width { get; set; }
 
         /// <summary>
-        /// Gets or sets damage of the bullet.
+        /// Gets or sets damage of bullet.
         /// </summary>
         public int Damage { get; set; }
 
