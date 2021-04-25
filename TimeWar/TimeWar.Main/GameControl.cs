@@ -5,7 +5,6 @@
 namespace TimeWar.Main
 {
     using System;
-    using System.Collections.Generic;
     using System.Diagnostics;
     using System.Drawing;
     using System.Linq;
@@ -16,11 +15,8 @@ namespace TimeWar.Main
     using System.Windows.Media;
     using TimeWar.Logic;
     using TimeWar.Logic.Classes.Characters;
-    using TimeWar.Logic.Classes.Characters.Actions;
-    using TimeWar.Logic.Classes.LogicCollections;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
-    using TimeWar.Model.Objects.Classes;
     using TimeWar.Renderer;
 
     /// <summary>
@@ -33,8 +29,6 @@ namespace TimeWar.Main
         private GameRenderer renderer;
         private Logic.Classes.CommandManager commandManager;
         private CharacterLogic characterLogic;
-        private BulletLogic bulletLogic;
-        private EnemyLogic enemyLogic;
         private Window win;
         private Stopwatch time = new Stopwatch();
         private int fps;
@@ -72,8 +66,6 @@ namespace TimeWar.Main
             this.renderer = new GameRenderer(this.model, false);
             this.commandManager = new Logic.Classes.CommandManager();
             this.characterLogic = new CharacterLogic(this.model, this.model.Hero, this.commandManager);
-            this.bulletLogic = new BulletLogic(this.model, (ICollection<Bullet>)this.model.CurrentWorld.GetBullets, this.commandManager);
-            this.enemyLogic = new EnemyLogic(this.model, this.commandManager);
             this.time.Start();
             this.fps = 0;
             this.win = Window.GetWindow(this);
@@ -199,12 +191,25 @@ namespace TimeWar.Main
             this.InvalidateVisual();
         }
 
+        private void EnemyTicker()
+        {
+            foreach (var item in this.model.CurrentWorld.GetEnemies)
+            {
+            }
+        }
+
+        private void BulletTicker()
+        {
+            foreach (var item in this.model.CurrentWorld.GetBullets)
+            {
+            }
+        }
+
         private void CompositionTarget_Rendering(object sender, EventArgs e)
         {
             this.characterLogic.OneTick();
-            this.enemyLogic.TickEnemies();
-            this.bulletLogic.Addbullets((ICollection<Bullet>)this.model.CurrentWorld.GetBullets);
-            this.bulletLogic.OneTick();
+            this.BulletTicker();
+            this.EnemyTicker();
             this.InvalidateVisual();
             if (this.time.Elapsed.TotalSeconds >= 1)
             {

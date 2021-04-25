@@ -4,6 +4,26 @@
         <name>TimeWar.Logic</name>
     </assembly>
     <members>
+        <member name="T:TimeWar.Logic.Classes.Characters.Actions.BulletLogic">
+            <summary>
+            Default bullet logic.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.Actions.BulletLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Classes.Bullet,TimeWar.Logic.Classes.CommandManager,System.Drawing.Point,System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.Characters.Actions.BulletLogic"/> class.
+            </summary>
+            <param name="model">Game Model.</param>
+            <param name="bullet">Bullet.</param>
+            <param name="commandManager">Command manager.</param>
+            <param name="destination">Destination.</param>
+            <param name="despawnTime">How many seconds until the bullet despawns.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.Actions.BulletLogic.OneTick">
+            <summary>
+            One tick method.
+            </summary>
+        </member>
         <member name="T:TimeWar.Logic.Classes.Characters.Actions.MoveCommand">
             <summary>
             Move commands.
@@ -33,16 +53,6 @@
             <param name="character">Character.</param>
             <param name="commandManager">Command manger.</param>
         </member>
-        <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.Character">
-            <summary>
-            Gets the character.
-            </summary>
-        </member>
-        <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.MoveVector">
-            <summary>
-            Gets or sets movement vector of an actor.
-            </summary>
-        </member>
         <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.BulletType">
             <summary>
             Gets or sets bullet type.
@@ -71,6 +81,11 @@
         <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.IsJumping">
             <summary>
             Gets or sets a value indicating whether the actor is jumping.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.Character">
+            <summary>
+            Gets or sets the character.
             </summary>
         </member>
         <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.MaxJumpHeight">
@@ -138,18 +153,6 @@
             <param name="x">X direction.</param>
             <param name="y">Y direction.</param>
         </member>
-        <member name="M:TimeWar.Logic.Classes.Characters.ActorLogic.SetVectorX(System.Int32)">
-            <summary>
-            Sets x value of the vector.
-            </summary>
-            <param name="x">X value.</param>
-        </member>
-        <member name="M:TimeWar.Logic.Classes.Characters.ActorLogic.SetVectorY(System.Int32)">
-            <summary>
-            Sets y value of the vector.
-            </summary>
-            <param name="y">Y value.</param>
-        </member>
         <member name="M:TimeWar.Logic.Classes.Characters.ActorLogic.WallCollision(System.Drawing.Point,System.Boolean)">
             <summary>
             Wall collsiion.
@@ -205,19 +208,6 @@
         <member name="M:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.Movement">
             <inheritdoc/>
         </member>
-        <member name="T:TimeWar.Logic.Classes.Characters.BurstEnemyLogic">
-            <summary>
-            Burst enemy logic.
-            </summary>
-        </member>
-        <member name="M:TimeWar.Logic.Classes.Characters.BurstEnemyLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Character,TimeWar.Logic.Classes.CommandManager)">
-            <summary>
-            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.Characters.BurstEnemyLogic"/> class.
-            </summary>
-            <param name="model">Game model.</param>
-            <param name="character">Character.</param>
-            <param name="commandManager">Command manager.</param>
-        </member>
         <member name="T:TimeWar.Logic.Classes.Characters.FastEnemyLogic">
             <summary>
             Fast enemy class.
@@ -239,19 +229,6 @@
         <member name="M:TimeWar.Logic.Classes.Characters.HeavyEnemyLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Character,TimeWar.Logic.Classes.CommandManager)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.Characters.HeavyEnemyLogic"/> class.
-            </summary>
-            <param name="model">Game model.</param>
-            <param name="character">Character.</param>
-            <param name="commandManager">Command manager.</param>
-        </member>
-        <member name="T:TimeWar.Logic.Classes.Characters.RapidFireEnemyLogic">
-            <summary>
-            Rapid fire enemy.
-            </summary>
-        </member>
-        <member name="M:TimeWar.Logic.Classes.Characters.RapidFireEnemyLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Character,TimeWar.Logic.Classes.CommandManager)">
-            <summary>
-            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.Characters.RapidFireEnemyLogic"/> class.
             </summary>
             <param name="model">Game model.</param>
             <param name="character">Character.</param>
@@ -322,52 +299,6 @@
         <member name="F:TimeWar.Logic.Classes.InitConfig.BasicEnemyHealth">
             <summary>
             Basic enemy health const.
-            </summary>
-        </member>
-        <member name="T:TimeWar.Logic.Classes.LogicCollections.BulletLogic">
-            <summary>
-            Default bullet logic.
-            </summary>
-        </member>
-        <member name="M:TimeWar.Logic.Classes.LogicCollections.BulletLogic.#ctor(TimeWar.Model.GameModel,System.Collections.Generic.ICollection{TimeWar.Model.Objects.Classes.Bullet},TimeWar.Logic.Classes.CommandManager)">
-            <summary>
-            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.LogicCollections.BulletLogic"/> class.
-            </summary>
-            <param name="model">Game Model.</param>
-            <param name="bullet">Bullet.</param>
-            <param name="commandManager">Command manager.</param>
-        </member>
-        <member name="M:TimeWar.Logic.Classes.LogicCollections.BulletLogic.Addbullets(System.Collections.Generic.ICollection{TimeWar.Model.Objects.Classes.Bullet})">
-            <summary>
-            Replaces the bullets list.
-            </summary>
-            <param name="bullets">Bullet list.</param>
-        </member>
-        <member name="M:TimeWar.Logic.Classes.LogicCollections.BulletLogic.OneTick">
-            <summary>
-            One tick method.
-            </summary>
-        </member>
-        <member name="T:TimeWar.Logic.Classes.LogicCollections.EnemyLogic">
-            <summary>
-            Enemy logic collection.
-            </summary>
-        </member>
-        <member name="M:TimeWar.Logic.Classes.LogicCollections.EnemyLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Logic.Classes.CommandManager)">
-            <summary>
-            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.LogicCollections.EnemyLogic"/> class.
-            </summary>
-            <param name="model">Game model.</param>
-            <param name="commandManager">Command manager.</param>
-        </member>
-        <member name="M:TimeWar.Logic.Classes.LogicCollections.EnemyLogic.GetEnemies">
-            <summary>
-            Gets enemies.
-            </summary>
-        </member>
-        <member name="M:TimeWar.Logic.Classes.LogicCollections.EnemyLogic.TickEnemies">
-            <summary>
-            Tick enemies in list.
             </summary>
         </member>
         <member name="T:TimeWar.Logic.Classes.ManagerLogic">

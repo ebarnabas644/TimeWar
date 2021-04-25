@@ -43,10 +43,10 @@ namespace TimeWar.Logic
         /// <inheritdoc/>
         protected override void Attack()
         {
-            if (this.CommandManager.IsFinished && this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > 500)
+            if (this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > 500)
             {
-                Bullet b = new Bullet(this.Character.Position, 4, 4, "testenemy.png", this.Character.ClickLocation, 10, BulletType.Bouncing);
-                this.Model.CurrentWorld.AddBullet(b);
+                Bullet bullet = new Bullet(this.Character.Position, 1, 1, "placeholder");
+                BulletLogic bulletLogic = new BulletLogic(this.Model, bullet, this.CommandManager, this.Character.ClickLocation);
                 this.AttackStopwatch.Restart();
                 this.Character.CanAttack = false;
                 Debug.WriteLine("Attacked at position:" + this.Character.ClickLocation);
@@ -70,11 +70,7 @@ namespace TimeWar.Logic
 
             if (this.Character.ContainKey("space"))
             {
-                if (this.GroundCollision(new Point(0, this.Model.CurrentWorld.TileSize)))
-                {
-                    y += this.Jump();
-                }
-
+                y += this.Jump();
                 if (y != 0 && Math.Abs(this.Character.MovementVector.X) >= 14)
                 {
                     y -= 2;

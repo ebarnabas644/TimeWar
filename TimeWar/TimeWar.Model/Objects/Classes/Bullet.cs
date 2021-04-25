@@ -6,7 +6,6 @@ namespace TimeWar.Model.Objects.Classes
 {
     using System;
     using System.Collections.Generic;
-    using System.Diagnostics;
     using System.Drawing;
     using System.Linq;
     using System.Text;
@@ -49,12 +48,11 @@ namespace TimeWar.Model.Objects.Classes
         /// </summary>
         /// <param name="pos">Character position.</param>
         /// <param name="damage">Base damage.</param>
-        /// <param name="destination">Destination of the bullet.</param>
         /// <param name="type">Type of the bullet.</param>
         /// <param name="height">Character height.</param>
         /// <param name="width">Character width.</param>
         /// <param name="spriteFile">Name of the sprite file.</param>
-        public Bullet(Point pos, int height, int width, string spriteFile, Point destination, int damage = 10, BulletType type = BulletType.Basic)
+        public Bullet(Point pos, int height, int width, string spriteFile, int damage = 10, BulletType type = BulletType.Basic)
         {
             this.Position = pos;
             this.Damage = damage;
@@ -64,13 +62,6 @@ namespace TimeWar.Model.Objects.Classes
             this.Stance = Stances.StandRight;
             this.StanceLess = true;
             this.Type = type;
-            this.Destination = destination;
-            this.Acceleration = 3;
-            this.BulletStopwatch = new Stopwatch();
-            this.DespawnStopwatch = new Stopwatch();
-            this.DespawnStopwatch.Start();
-            this.MoveVector = new PointF(0, 0);
-            this.MovementVector = Normalize(this.GetVectorDirection());
             this.CurrentSprite = 0;
         }
 
@@ -95,47 +86,6 @@ namespace TimeWar.Model.Objects.Classes
         /// Gets or sets the type of the bullet.
         /// </summary>
         public BulletType Type { get; set; }
-
-        /// <summary>
-        /// Gets or sets bullet acceleration.
-        /// </summary>
-        public int Acceleration { get; set; }
-
-        /// <summary>
-        /// Gets or sets bullet destination.
-        /// </summary>
-        public Point Destination { get; set; }
-
-        /// <summary>
-        /// Gets or sets bullet move vector.
-        /// </summary>
-        public PointF MoveVector { get; set; }
-
-        /// <summary>
-        /// Gets or sets bullet acceleration stopwatch.
-        /// </summary>
-        public Stopwatch BulletStopwatch { get; set; }
-
-        /// <summary>
-        /// Gets or sets bullet acceleration stopwatch.
-        /// </summary>
-        public Stopwatch DespawnStopwatch { get; set; }
-
-        /// <summary>
-        /// Gets or sets Movement Vector.
-        /// </summary>
-        public PointF MovementVector { get; set; }
-
-        private static PointF Normalize(PointF vector)
-        {
-            float distance = (float)Math.Sqrt((vector.X * vector.X) + (vector.Y * vector.Y));
-            return new PointF(vector.X / distance, vector.Y / distance);
-        }
-
-        private PointF GetVectorDirection()
-        {
-            return new PointF(this.Destination.X - this.Position.X, this.Destination.Y - this.Position.Y);
-        }
 
         /// <inheritdoc/>
         public Stances Stance { get; set; }
