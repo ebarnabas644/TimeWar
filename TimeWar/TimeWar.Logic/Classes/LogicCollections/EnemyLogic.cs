@@ -6,6 +6,7 @@ namespace TimeWar.Logic.Classes.LogicCollections
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace TimeWar.Logic.Classes.LogicCollections
     /// </summary>
     public class EnemyLogic
     {
+        private const int TickDistance = 100;
         private GameModel model;
         private List<BasicEnemyLogic> enemies;
         private CommandManager commandManager;
@@ -81,10 +83,18 @@ namespace TimeWar.Logic.Classes.LogicCollections
             {
                 foreach (BasicEnemyLogic enemyLogic in this.enemies)
                 {
-                    enemyLogic.OneTick();
-                    this.Despawn(enemyLogic);
+                    if (this.DistanceFromPlayer((Enemy)enemyLogic.Character) < TickDistance)
+                    {
+                        enemyLogic.OneTick();
+                        this.Despawn(enemyLogic);
+                    }
                 }
             }
+        }
+
+        private int DistanceFromPlayer(Enemy enemy)
+        {
+            return this.model.CurrentWorld.ConvertPixelToTile((int)Math.Sqrt(Math.Pow(enemy.Position.X - this.model.Hero.Position.X, 2) + Math.Pow(enemy.Position.Y - this.model.Hero.Position.Y, 2)));
         }
 
         private void Despawn(BasicEnemyLogic enemyLogic)
