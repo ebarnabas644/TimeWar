@@ -35,6 +35,21 @@ namespace TimeWar.Logic.Classes
         public const string BasicEnemySpritesheet = "testenemy";
 
         /// <summary>
+        /// Name of the fast enemy spritesheet.
+        /// </summary>
+        public const string FastEnemySpritesheet = "fasttestenemy";
+
+        /// <summary>
+        /// Name of the heavy enemy spritesheet.
+        /// </summary>
+        public const string HeavyEnemySpritesheet = "heavytestenemy";
+
+        /// <summary>
+        /// Name of the rapid fire enemy spritesheet.
+        /// </summary>
+        public const string RapidFireEnemySpritesheet = "rapidtestenemy";
+
+        /// <summary>
         /// Basic enemy height const.
         /// </summary>
         public const int BasicEnemyHeight = 32;
@@ -47,6 +62,22 @@ namespace TimeWar.Logic.Classes
         /// <summary>
         /// Basic enemy health const.
         /// </summary>
-        public const int BasicEnemyHealth = 50;
+        public const int BasicEnemyHealth = 75;
+
+        /// <summary>
+        /// Basic enemy health const.
+        /// </summary>
+        ///
+        public const int HeavyEnemyHealth = 200;
+
+        /// <summary>
+        /// Basic enemy health const.
+        /// </summary>
+        public const int FastEnemyHealth = 25;
+
+        /// <summary>
+        /// Basic enemy health const.
+        /// </summary>
+        public const int RapidFireEnemyHealth = 150;
     }
 }
