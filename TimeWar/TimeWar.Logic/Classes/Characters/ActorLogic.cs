@@ -39,7 +39,7 @@ namespace TimeWar.Logic.Classes.Characters
             this.DefaultAcceleration = 1;
             this.MaxMovementSpeed = 15;
             this.MaxJumpHeight = 20;
-            this.BulletType = BulletType.Basic;
+            this.TypeOfBullet = BulletType.Basic;
             this.Character.MovementVector = new Point(0, 0);
         }
 
@@ -51,7 +51,7 @@ namespace TimeWar.Logic.Classes.Characters
         /// <summary>
         /// Gets or sets bullet type.
         /// </summary>
-        protected BulletType BulletType { get; set; }
+        protected BulletType TypeOfBullet { get; set; }
 
         /// <summary>
         /// Gets or sets if a character can jump again.
