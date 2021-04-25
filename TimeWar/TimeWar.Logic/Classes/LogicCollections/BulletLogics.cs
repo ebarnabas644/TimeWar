@@ -1,4 +1,4 @@
-﻿// <copyright file="BulletLogic.cs" company="Time War">
+﻿// <copyright file="BulletLogics.cs" company="Time War">
 // Copyright (c) Time War. All rights reserved.
 // </copyright>
 
@@ -18,7 +18,7 @@ namespace TimeWar.Logic.Classes.LogicCollections
     /// <summary>
     /// Default bullet logic.
     /// </summary>
-    public class BulletLogicCollection
+    public class BulletLogics
     {
         private const int MaxBulletSpeed = 15;
         private GameModel model;
@@ -26,12 +26,12 @@ namespace TimeWar.Logic.Classes.LogicCollections
         private CommandManager commandManager;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="BulletLogicCollection"/> class.
+        /// Initializes a new instance of the <see cref="BulletLogics"/> class.
         /// </summary>
         /// <param name="model">Game Model.</param>
         /// <param name="bullet">Bullet.</param>
         /// <param name="commandManager">Command manager.</param>
-        public BulletLogicCollection(GameModel model, ICollection<Bullet> bullet, CommandManager commandManager)
+        public BulletLogics(GameModel model, ICollection<Bullet> bullet, CommandManager commandManager)
         {
             this.model = model;
             if (bullet != null)

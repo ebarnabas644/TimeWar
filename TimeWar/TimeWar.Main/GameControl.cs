@@ -33,7 +33,7 @@ namespace TimeWar.Main
         private GameRenderer renderer;
         private Logic.Classes.CommandManager commandManager;
         private CharacterLogic characterLogic;
-        private BulletLogicCollection bulletLogic;
+        private BulletLogics bulletLogic;
         private EnemyLogic enemyLogic;
         private Window win;
         private Stopwatch time = new Stopwatch();
@@ -72,7 +72,7 @@ namespace TimeWar.Main
             this.renderer = new GameRenderer(this.model, false);
             this.commandManager = new Logic.Classes.CommandManager();
             this.characterLogic = new CharacterLogic(this.model, this.model.Hero, this.commandManager);
-            this.bulletLogic = new BulletLogicCollection(this.model, (ICollection<Bullet>)this.model.CurrentWorld.GetBullets, this.commandManager);
+            this.bulletLogic = new BulletLogics(this.model, (ICollection<Bullet>)this.model.CurrentWorld.GetBullets, this.commandManager);
             this.enemyLogic = new EnemyLogic(this.model, this.commandManager);
             this.time.Start();
             this.fps = 0;
