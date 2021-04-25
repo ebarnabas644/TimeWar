@@ -157,14 +157,14 @@ namespace TimeWar.Logic.Classes.Characters
 
         private void DetectPlayer()
         {
-            if (this.MoveVector.X < 0)
+            if (this.Character.MovementVector.X < 0)
             {
                 if (this.DetectionCone(false))
                 {
                     this.playerDetectionStopwatch.Start();
                 }
             }
-            else if (this.MoveVector.X > 0)
+            else if (this.Character.MovementVector.X > 0)
             {
                 if (this.DetectionCone())
                 {

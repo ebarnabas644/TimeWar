@@ -95,6 +95,15 @@
         <member name="P:TimeWar.Model.Objects.Classes.Bullet.Stance">
             <inheritdoc/>
         </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.StanceLess">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.CurrentSprite">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.MovementVector">
+            <inheritdoc/>
+        </member>
         <member name="T:TimeWar.Model.Objects.Classes.Enemy">
             <summary>
             Enemy character class.
@@ -143,6 +152,15 @@
             </summary>
         </member>
         <member name="P:TimeWar.Model.Objects.Classes.StaticObject.Stance">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.StanceLess">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.MovementVector">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.CurrentSprite">
             <inheritdoc/>
         </member>
         <member name="M:TimeWar.Model.Objects.Classes.StaticObject.Equals(System.Object)">
@@ -208,6 +226,12 @@
             <summary>
             Gets or sets the character health.
             </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.StanceLess">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.MovementVector">
+            <inheritdoc/>
         </member>
         <member name="M:TimeWar.Model.Objects.Character.AddKey(System.String)">
             <summary>
@@ -545,6 +569,21 @@
         <member name="P:TimeWar.Model.Objects.Interfaces.IGameObject.Stance">
             <summary>
             Gets or sets object stance.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Interfaces.IGameObject.StanceLess">
+            <summary>
+            Gets or sets a value indicating whether stateless.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Interfaces.IGameObject.MovementVector">
+            <summary>
+            Gets or sets movement vector.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Interfaces.IGameObject.CurrentSprite">
+            <summary>
+            Gets or sets current sprite frame value.
             </summary>
         </member>
         <member name="P:TimeWar.Model.Objects.Interfaces.IGameObject.Position">

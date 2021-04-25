@@ -22,7 +22,6 @@ namespace TimeWar.Logic.Classes.Characters
         private int maxJumpHeight;
         private int acceleration;
         private bool isJumping;
-        private Point moveVector;
         private BulletType bulletType;
         private Character character;
         private CommandManager commandManager;
@@ -45,20 +44,11 @@ namespace TimeWar.Logic.Classes.Characters
             this.isJumping = false;
             this.acceleration = this.defaultAcceleration;
             this.jumpingTimeOut.Start();
-            this.moveVector = new Point(0, 0);
+            this.Character.MovementVector = new Point(0, 0);
             this.defaultAcceleration = 1;
             this.maxMovementSpeed = 15;
             this.maxJumpHeight = 20;
             this.bulletType = BulletType.Basic;
-        }
-
-        /// <summary>
-        /// Gets or sets movement vector of an actor.
-        /// </summary>
-        protected Point MoveVector
-        {
-            get { return this.moveVector; }
-            set { this.moveVector = value; }
         }
 
         /// <summary>
@@ -218,10 +208,10 @@ namespace TimeWar.Logic.Classes.Characters
 
             for (int i = 0; i < actor.Width + 1; i++)
             {
-                actorLocation = new Point(this.PixelToTile(actor.X + 1 + this.TileToPixel(i)), this.PixelToTile(actor.Y + this.moveVector.Y) + actor.Height);
+                actorLocation = new Point(this.PixelToTile(actor.X + 1 + this.TileToPixel(i)), this.PixelToTile(actor.Y + this.Character.MovementVector.Y) + actor.Height);
                 if (this.model.CurrentWorld.SearchGround(actorLocation))
                 {
-                    this.moveVector.Y = 0;
+                    this.Character.MovementVector = new Point(this.character.MovementVector.X, 0);
                     this.acceleration = this.defaultAcceleration;
                     this.accelerationStopwatch.Reset();
                     this.isJumping = false;
@@ -253,10 +243,10 @@ namespace TimeWar.Logic.Classes.Characters
 
             for (int i = 0; i < actor.Width + 1; i++)
             {
-                actorLocation = new Point(this.PixelToTile(actor.X + 1 + this.TileToPixel(i)), this.PixelToTile(actor.Y + this.moveVector.Y));
+                actorLocation = new Point(this.PixelToTile(actor.X + 1 + this.TileToPixel(i)), this.PixelToTile(actor.Y + this.Character.MovementVector.Y));
                 if (this.model.CurrentWorld.SearchGround(actorLocation))
                 {
-                    this.moveVector.Y = 0;
+                    this.Character.MovementVector = new Point(this.character.MovementVector.X, 0);
                     return true;
                 }
             }
@@ -271,8 +261,7 @@ namespace TimeWar.Logic.Classes.Characters
         /// <param name="y">Y direction.</param>
         protected void AddToVector(int x, int y)
         {
-            this.moveVector.X += x;
-            this.moveVector.Y += y;
+            this.Character.MovementVector = new Point(this.character.MovementVector.X + x, this.character.MovementVector.Y + y);
         }
 
         /// <summary>
@@ -300,10 +289,10 @@ namespace TimeWar.Logic.Classes.Characters
                 // Right wall collision
                 for (int i = 0; i < actor.Height; i++)
                 {
-                    actorLocation = new Point(this.PixelToTile(actor.X + 1 + this.moveVector.X) + actor.Width, this.PixelToTile(actor.Y) + i);
+                    actorLocation = new Point(this.PixelToTile(actor.X + 1 + this.Character.MovementVector.X) + actor.Width, this.PixelToTile(actor.Y) + i);
                     if (this.model.CurrentWorld.SearchGround(actorLocation))
                     {
-                        this.moveVector.X = 0;
+                        this.Character.MovementVector = new Point(0, this.character.MovementVector.Y);
                         return true;
                     }
                 }
@@ -313,10 +302,10 @@ namespace TimeWar.Logic.Classes.Characters
                 // Left wall collision
                 for (int i = 0; i < actor.Height; i++)
                 {
-                    actorLocation = new Point(this.PixelToTile(actor.X + this.moveVector.X), this.PixelToTile(actor.Y) + i);
+                    actorLocation = new Point(this.PixelToTile(actor.X + this.Character.MovementVector.X), this.PixelToTile(actor.Y) + i);
                     if (this.model.CurrentWorld.SearchGround(actorLocation))
                     {
-                        this.moveVector.X = 0;
+                        this.Character.MovementVector = new Point(0, this.character.MovementVector.Y);
                         return true;
                     }
                 }
@@ -331,7 +320,7 @@ namespace TimeWar.Logic.Classes.Characters
         protected virtual void Movement()
         {
             Point newPoint = this.Move();
-            if (Math.Abs(this.MoveVector.X) < this.MaxMovementSpeed)
+            if (Math.Abs(this.Character.MovementVector.X) < this.MaxMovementSpeed)
             {
                 this.AddToVector(newPoint.X, 0);
             }
@@ -370,26 +359,26 @@ namespace TimeWar.Logic.Classes.Characters
 
             if (!this.WallCollision(newPoint) && !this.WallCollision(newPoint, false))
             {
-                this.Character.Position = new Point(this.Character.Position.X + this.MoveVector.X, this.Character.Position.Y);
+                this.Character.Position = new Point(this.Character.Position.X + this.character.MovementVector.X, this.Character.Position.Y);
             }
 
             if (!this.GroundCollision(newPoint) && (!this.WallCollision(newPoint) && !this.WallCollision(newPoint, false)))
             {
                 if (!this.TopCollision(newPoint))
                 {
-                    this.Character.Position = new Point(this.Character.Position.X, this.Character.Position.Y + this.MoveVector.Y);
+                    this.Character.Position = new Point(this.Character.Position.X, this.Character.Position.Y + this.character.MovementVector.Y);
                 }
             }
 
             MoveCommand moveCommand = new MoveCommand(this.Character, this.Character.Position, this.Model);
             this.CommandManager.AddCommand(moveCommand);
 
-            if (this.MoveVector.X > 0)
+            if (this.character.MovementVector.X > 0)
             {
                 this.AddToVector(-1, 0);
             }
 
-            if (this.MoveVector.X < 0)
+            if (this.character.MovementVector.X < 0)
             {
                 this.AddToVector(1, 0);
             }

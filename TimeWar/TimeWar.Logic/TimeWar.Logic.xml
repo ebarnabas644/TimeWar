@@ -53,11 +53,6 @@
             <param name="character">Character.</param>
             <param name="commandManager">Command manger.</param>
         </member>
-        <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.MoveVector">
-            <summary>
-            Gets or sets movement vector of an actor.
-            </summary>
-        </member>
         <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.BulletType">
             <summary>
             Gets or sets bullet type.

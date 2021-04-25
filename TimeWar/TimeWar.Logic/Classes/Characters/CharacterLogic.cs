@@ -71,7 +71,7 @@ namespace TimeWar.Logic
             if (this.Character.ContainKey("space"))
             {
                 y += this.Jump();
-                if (y != 0 && Math.Abs(this.MoveVector.X) >= 14)
+                if (y != 0 && Math.Abs(this.Character.MovementVector.X) >= 14)
                 {
                     y -= 2;
                 }
