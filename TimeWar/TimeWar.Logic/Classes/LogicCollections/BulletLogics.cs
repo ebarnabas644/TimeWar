@@ -61,7 +61,21 @@ namespace TimeWar.Logic.Classes.LogicCollections
                 for (int i = 0; i < this.bullets.Count; i++)
                 {
                     this.Movement(this.bullets[i]);
-                    this.Despawn(this.bullets[i]);
+                    if (this.DetectEntity(this.bullets[i]))
+                    {
+                        if (this.bullets[i].Type != BulletType.Basic)
+                        {
+                            this.Despawn(this.bullets[i], true);
+                        }
+                        else
+                        {
+                            this.Despawn(this.bullets[i]);
+                        }
+                    }
+                    else
+                    {
+                        this.Despawn(this.bullets[i]);
+                    }
                 }
             }
 
@@ -166,12 +180,38 @@ namespace TimeWar.Logic.Classes.LogicCollections
 
         private bool DetectEntity(Bullet bullet)
         {
-            throw new NotImplementedException();
+            Point bulletPos = new Point(bullet.Position.X, bullet.Position.Y);
+
+            if (bullet.PlayerBullet)
+            {
+                foreach (Enemy enemy in this.model.CurrentWorld.GetEnemies)
+                {
+                    Rectangle enemyRect = new Rectangle(enemy.Position.X, enemy.Position.Y, this.model.CurrentWorld.ConvertTileToPixel(enemy.Width / this.model.CurrentWorld.TileSize), this.model.CurrentWorld.ConvertTileToPixel(enemy.Height / this.model.CurrentWorld.TileSize));
+
+                    if (enemyRect.Contains(bulletPos))
+                    {
+                        enemy.CurrentHealth -= bullet.Damage;
+                        return true;
+                    }
+                }
+            }
+            else
+            {
+                Rectangle playerRect = new Rectangle(this.model.Hero.Position.X, this.model.Hero.Position.Y, this.model.CurrentWorld.ConvertTileToPixel(this.model.Hero.Width / this.model.CurrentWorld.TileSize), this.model.CurrentWorld.ConvertTileToPixel(this.model.Hero.Height / this.model.CurrentWorld.TileSize));
+
+                if (playerRect.Contains(bulletPos))
+                {
+                    this.model.Hero.CurrentHealth -= bullet.Damage;
+                    return true;
+                }
+            }
+
+            return false;
         }
 
-        private void Despawn(Bullet bullet)
+        private void Despawn(Bullet bullet, bool despawn = false)
         {
-            if ((bullet.Position.X < 0 || bullet.Position.X > this.model.CurrentWorld.GameWidth) || (bullet.Position.Y < 0 || bullet.Position.Y > this.model.CurrentWorld.GameHeight) || (bullet.DespawnStopwatch.ElapsedMilliseconds > 5000) || (this.DetectGround(bullet) && !(bullet.Type == BulletType.Bouncing || bullet.Type == BulletType.CurvedBouncing)))
+            if (despawn || (bullet.Position.X < 0 || bullet.Position.X > this.model.CurrentWorld.GameWidth) || (bullet.Position.Y < 0 || bullet.Position.Y > this.model.CurrentWorld.GameHeight) || (bullet.DespawnStopwatch.ElapsedMilliseconds > 5000) || (this.DetectGround(bullet) && !(bullet.Type == BulletType.Bouncing || bullet.Type == BulletType.CurvedBouncing)))
             {
                 bullet.DespawnStopwatch.Stop();
                 this.model.CurrentWorld.RemoveBullet(bullet);

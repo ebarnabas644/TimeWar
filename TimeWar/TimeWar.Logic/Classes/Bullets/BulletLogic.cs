@@ -146,19 +146,6 @@ namespace TimeWar.Logic.Classes.Characters.Actions
             return this.model.CurrentWorld.SearchGround(nextMove);
         }
 
-        private bool DetectEntity()
-        {
-            throw new NotImplementedException();
-        }
-
-        private void Despawn()
-        {
-            if (this.despawnStopwatch.ElapsedMilliseconds > this.despawnTime)
-            {
-                throw new NotImplementedException();
-            }
-        }
-
         private PointF GetVectorDirection()
         {
             return new PointF(this.destination.X - this.bullet.Position.X, this.destination.Y - this.bullet.Position.Y);
