@@ -49,7 +49,7 @@ namespace TimeWar.Logic.Classes.Characters
             this.DetectionRange = 20;
             this.movementDirTime = RandomNumberGenerator.GetInt32(this.MaxMoveTime);
             this.movementTime = RandomNumberGenerator.GetInt32(this.MaxMoveTime);
-            this.DefaultFollowDistance = 9;
+            this.DefaultFollowDistance = RandomNumberGenerator.GetInt32(5, 11);
             this.lastKnownPlayerLocation = new Point(0, 0);
             this.isPlayerDetected = false;
             this.isPlayerVisible = false;
@@ -88,7 +88,11 @@ namespace TimeWar.Logic.Classes.Characters
         {
             if (this.CommandManager.IsFinished)
             {
-                this.DetectPlayer();
+                if (this.PlayerIsDetectable())
+                {
+                    this.DetectPlayer();
+                }
+
                 this.Attack();
                 base.OneTick();
             }
@@ -253,7 +257,7 @@ namespace TimeWar.Logic.Classes.Characters
         {
             int dir = -1;
             int height = 1;
-            Point startPoint = new Point(this.PixelToTile(this.Character.Position.X), this.PixelToTile(this.Character.Position.Y));
+            Point startPoint = new Point(this.PixelToTile(this.Character.Position.X) + 1, this.PixelToTile(this.Character.Position.Y));
             if (right)
             {
                 dir = 1;
@@ -262,10 +266,7 @@ namespace TimeWar.Logic.Classes.Characters
 
             for (int i = 0; i < this.DetectionRange; i++)
             {
-                if (i % 1 == 0)
-                {
-                    height++;
-                }
+                height++;
 
                 if (this.Model.CurrentWorld.SearchGround(startPoint))
                 {
@@ -285,7 +286,7 @@ namespace TimeWar.Logic.Classes.Characters
 
         private bool DetectionSpike(Point starterPoint, int range)
         {
-            Point playerLocation = new Point(this.PixelToTile(this.Model.Hero.Position.X), this.PixelToTile(this.Model.Hero.Position.Y));
+            Point playerLocation = new Point(this.PixelToTile(this.Model.Hero.Position.X) + 1, this.PixelToTile(this.Model.Hero.Position.Y));
             int upRange = 0;
             int downRange = 1;
 
@@ -323,6 +324,18 @@ namespace TimeWar.Logic.Classes.Characters
                     this.isPlayerVisible = true;
                     return true;
                 }
+            }
+
+            return false;
+        }
+
+        private bool PlayerIsDetectable()
+        {
+            int distance = this.Model.CurrentWorld.ConvertPixelToTile((int)Math.Sqrt(Math.Pow(this.Character.Position.X - this.Model.Hero.Position.X, 2) + Math.Pow(this.Character.Position.Y - this.Model.Hero.Position.Y, 2)));
+
+            if (distance < this.DetectionRange + 5)
+            {
+                return true;
             }
 
             return false;
