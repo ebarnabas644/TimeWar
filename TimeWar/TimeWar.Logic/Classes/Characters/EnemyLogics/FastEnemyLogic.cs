@@ -4,7 +4,6 @@
 
 namespace TimeWar.Logic.Classes.Characters
 {
-    using System.Security.Cryptography;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
     using TimeWar.Model.Objects.Classes;
@@ -27,7 +26,7 @@ namespace TimeWar.Logic.Classes.Characters
             this.MaxMovementSpeed = 40;
             this.MaxMoveTime = 1000;
             this.Character.Health = 25;
-            this.DefaultFollowDistance = RandomNumberGenerator.GetInt32(1, 4);
+            this.DefaultFollowDistance = 3;
             this.DetectionRange = 10;
             this.AttackTime = 1000;
             this.DetectionTime = 5000;

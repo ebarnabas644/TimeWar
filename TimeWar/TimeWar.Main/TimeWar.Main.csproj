@@ -20,8 +20,6 @@
 
   <ItemGroup>
     <None Remove="Fonts\Gamepixies-8MO6n.ttf" />
-    <None Remove="Leveldata\Benchmark.png" />
-    <None Remove="Leveldata\Benchmark.tmx" />
     <None Remove="Leveldata\enemytest.png" />
     <None Remove="Leveldata\enemytest.tmx" />
     <None Remove="Leveldata\map1.png" />
@@ -52,12 +50,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Content Include="Leveldata\Benchmark.png">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
-	  <Content Include="Leveldata\Benchmark.tmx">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
 	  <Content Include="Leveldata\enemytest.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
