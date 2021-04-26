@@ -86,6 +86,21 @@ namespace TimeWar.Model.Objects
         /// </summary>
         public int Health { get; set; }
 
+        /// <summary>
+        /// Gets or sets the character shield.
+        /// </summary>
+        public int Shield { get; set; }
+
+        /// <summary>
+        /// Gets or sets the character current shield.
+        /// </summary>
+        public int CurrentShield { get; set; }
+
+        /// <summary>
+        /// Gets or sets shield regen amount.
+        /// </summary>
+        public int ShieldRegen { get; set; }
+
         /// <inheritdoc/>
         public bool StanceLess { get; set; }
 

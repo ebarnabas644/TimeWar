@@ -60,6 +60,7 @@ namespace TimeWar.Model.Objects.Classes
             : base(pos, health, height, width, spriteFile)
         {
             this.Type = enemyType;
+            this.StanceLess = true;
         }
 
         /// <summary>

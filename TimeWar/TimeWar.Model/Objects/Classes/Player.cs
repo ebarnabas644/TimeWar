@@ -23,6 +23,8 @@ namespace TimeWar.Model.Objects
             : base(pos, health, height, width, spriteFile)
         {
             this.Stance = Interfaces.Stances.StandRight;
+            this.Shield = 100;
+            this.CurrentShield = 100;
         }
     }
 }

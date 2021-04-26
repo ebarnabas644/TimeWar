@@ -91,6 +91,7 @@ namespace TimeWar.Renderer
             if (!this.menuMode)
             {
                 dg.Children.Add(this.GetPlayer());
+                dg.Children.Add(this.GetHud());
             }
             else if (this.menuMode && this.title)
             {
@@ -190,7 +191,7 @@ namespace TimeWar.Renderer
 
             if (!obj.StanceLess)
             {
-                // StateMachine(obj);
+                StateMachine(obj);
                 return this.spriteBrushes[obj][(int)obj.Stance][this.currentSprite % this.spriteBrushes[obj][(int)obj.Stance].Length];
             }
 
@@ -233,6 +234,21 @@ namespace TimeWar.Renderer
             Geometry g = new RectangleGeometry(new Rect(title.Position.X, title.Position.Y, title.Width * this.model.CurrentWorld.Magnify / 2, title.Height * this.model.CurrentWorld.Magnify / 2));
             this.titleCache = new GeometryDrawing(this.GetSpriteBrush(title), null, g);
             return this.titleCache;
+        }
+
+        private Drawing GetHud()
+        {
+            DrawingGroup g = new DrawingGroup();
+            StaticObject hud = new StaticObject(27, 123, "hud", new System.Drawing.Point(50, 50), true);
+            StaticObject shieldbar = new StaticObject(12, 119, "shieldbar", new System.Drawing.Point(52, 54), true);
+            StaticObject hpbar = new StaticObject(9, 112, "hpbar", new System.Drawing.Point(52, 82), true);
+            Geometry hb = new RectangleGeometry(new Rect(hud.Position.X, hud.Position.Y, hud.Width * this.model.CurrentWorld.Magnify / 2, hud.Height * this.model.CurrentWorld.Magnify / 2));
+            Geometry shb = new RectangleGeometry(new Rect(shieldbar.Position.X, shieldbar.Position.Y, shieldbar.Width * ((double)(this.model.Hero.CurrentShield >= 0 ? this.model.Hero.CurrentShield : 0) / this.model.Hero.Shield) * this.model.CurrentWorld.Magnify / 2, shieldbar.Height * this.model.CurrentWorld.Magnify / 2));
+            Geometry hpb = new RectangleGeometry(new Rect(hpbar.Position.X, hpbar.Position.Y, hpbar.Width * ((double)(this.model.Hero.CurrentHealth >= 0 ? this.model.Hero.CurrentHealth : 0) / this.model.Hero.Health) * this.model.CurrentWorld.Magnify / 2, hpbar.Height * this.model.CurrentWorld.Magnify / 2));
+            g.Children.Add(new GeometryDrawing(this.GetSpriteBrush(shieldbar), null, shb));
+            g.Children.Add(new GeometryDrawing(this.GetSpriteBrush(hpbar), null, hpb));
+            g.Children.Add(new GeometryDrawing(this.GetSpriteBrush(hud), null, hb));
+            return g;
         }
 
         private Drawing GetCollision() // For debug
@@ -351,9 +367,9 @@ namespace TimeWar.Renderer
             foreach (Enemy item in this.model.CurrentWorld.GetEnemies)
             {
                 Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(item.Position.X), this.model.Camera.GetRelativeObjectPosY(item.Position.Y), item.Width * this.model.CurrentWorld.Magnify, item.Height * this.model.CurrentWorld.Magnify));
-                if (item.Health != item.CurrentHealth)
+                if (item.Health > item.CurrentHealth && item.CurrentHealth >= 0)
                 {
-                    Geometry hpbar = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(item.Position.X), this.model.Camera.GetRelativeObjectPosY(item.Position.Y) - 10, (item.Width * this.model.CurrentWorld.Magnify) * (item.CurrentHealth / item.Health), 5));
+                    Geometry hpbar = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(item.Position.X), this.model.Camera.GetRelativeObjectPosY(item.Position.Y) - 10, (item.Width * this.model.CurrentWorld.Magnify) * ((double)item.CurrentHealth / item.Health), 5));
                     dg.Children.Add(new GeometryDrawing(Brushes.Red, null, hpbar));
                 }
 

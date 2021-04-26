@@ -39,8 +39,11 @@
     <None Remove="Sprites\41.png" />
     <None Remove="Sprites\fasttestenemy.png" />
     <None Remove="Sprites\heavytestenemy.png" />
+    <None Remove="Sprites\hpbar.png" />
+    <None Remove="Sprites\hud.png" />
     <None Remove="Sprites\player.png" />
     <None Remove="Sprites\rapidtestenemy.png" />
+    <None Remove="Sprites\shieldbar.png" />
     <None Remove="Sprites\testenemy.png" />
     <None Remove="Sprites\testman.png" />
     <None Remove="Sprites\testsprite.png" />
@@ -103,10 +106,19 @@
 	  <Content Include="Sprites\heavytestenemy.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
+	  <Content Include="Sprites\hpbar.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\hud.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
 	  <Content Include="Sprites\player.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Sprites\rapidtestenemy.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\shieldbar.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Sprites\testenemy.png">

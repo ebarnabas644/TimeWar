@@ -305,6 +305,21 @@
             Gets or sets the character health.
             </summary>
         </member>
+        <member name="P:TimeWar.Model.Objects.Character.Shield">
+            <summary>
+            Gets or sets the character shield.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.CurrentShield">
+            <summary>
+            Gets or sets the character current shield.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.ShieldRegen">
+            <summary>
+            Gets or sets shield regen amount.
+            </summary>
+        </member>
         <member name="P:TimeWar.Model.Objects.Character.StanceLess">
             <inheritdoc/>
         </member>
