@@ -4,6 +4,7 @@
 
 namespace TimeWar.Logic.Classes.Characters
 {
+    using System.Security.Cryptography;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
     using TimeWar.Model.Objects.Classes;
@@ -26,7 +27,7 @@ namespace TimeWar.Logic.Classes.Characters
             this.MaxMovementSpeed = 7;
             this.MaxJumpHeight = 15;
             this.TypeOfBullet = BulletType.CurvedBouncing;
-            this.DefaultFollowDistance = 15;
+            this.DefaultFollowDistance = RandomNumberGenerator.GetInt32(10, 15);
             this.DetectionRange = 20;
             this.AttackTime = 4000;
         }
