@@ -7,6 +7,7 @@ namespace TimeWar.Logic.Classes.Characters
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Security.Cryptography;
     using System.Text;
     using System.Threading.Tasks;
     using TimeWar.Model;
@@ -33,7 +34,7 @@ namespace TimeWar.Logic.Classes.Characters
             this.AttackTime = 100;
             this.TypeOfBullet = BulletType.Basic;
             this.MaxMoveTime = 2500;
-            this.DefaultFollowDistance = 20;
+            this.DefaultFollowDistance = RandomNumberGenerator.GetInt32(20, 24);
             this.DetectionRange = 25;
             this.DetectionTime = 10000;
         }
