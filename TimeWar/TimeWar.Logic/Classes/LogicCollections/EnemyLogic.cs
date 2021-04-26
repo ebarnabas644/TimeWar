@@ -81,12 +81,12 @@ namespace TimeWar.Logic.Classes.LogicCollections
         {
             if (this.commandManager.IsFinished)
             {
-                foreach (BasicEnemyLogic enemyLogic in this.enemies)
+                for (int i = 0; i < this.enemies.Count; i++)
                 {
-                    if (this.DistanceFromPlayer((Enemy)enemyLogic.Character) < TickDistance)
+                    if (this.DistanceFromPlayer((Enemy)this.enemies[i].Character) < TickDistance)
                     {
-                        enemyLogic.OneTick();
-                        this.Despawn(enemyLogic);
+                        this.enemies[i].OneTick();
+                        this.Despawn(this.enemies[i]);
                     }
                 }
             }
@@ -99,7 +99,7 @@ namespace TimeWar.Logic.Classes.LogicCollections
 
         private void Despawn(BasicEnemyLogic enemyLogic)
         {
-            if (enemyLogic.Character.Health <= 0 || (enemyLogic.Character.Position.X > this.model.CurrentWorld.GameWidth || enemyLogic.Character.Position.X < 0) || (enemyLogic.Character.Position.Y > this.model.CurrentWorld.GameHeight || enemyLogic.Character.Position.X < 0))
+            if (enemyLogic.Character.CurrentHealth <= 0 || (enemyLogic.Character.Position.X > this.model.CurrentWorld.GameWidth || enemyLogic.Character.Position.X < 0) || (enemyLogic.Character.Position.Y > this.model.CurrentWorld.GameHeight || enemyLogic.Character.Position.X < 0))
             {
                 this.model.CurrentWorld.RemoveEnemy((Enemy)enemyLogic.Character);
                 this.enemies.Remove(enemyLogic);
