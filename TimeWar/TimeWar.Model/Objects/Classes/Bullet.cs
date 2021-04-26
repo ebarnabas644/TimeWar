@@ -19,7 +19,7 @@ namespace TimeWar.Model.Objects.Classes
     public enum BulletType
     {
         /// <summary>
-        /// Basic bullet type.
+        /// Basic bullet type. Can pass through enemies.
         /// </summary>
         Basic,
 
@@ -51,10 +51,11 @@ namespace TimeWar.Model.Objects.Classes
         /// <param name="damage">Base damage.</param>
         /// <param name="destination">Destination of the bullet.</param>
         /// <param name="type">Type of the bullet.</param>
+        /// <param name="playerBullet">Is shot by a player.</param>
         /// <param name="height">Character height.</param>
         /// <param name="width">Character width.</param>
         /// <param name="spriteFile">Name of the sprite file.</param>
-        public Bullet(Point pos, int height, int width, string spriteFile, Point destination, int damage = 10, BulletType type = BulletType.Basic)
+        public Bullet(Point pos, int height, int width, string spriteFile, Point destination, int damage = 10, BulletType type = BulletType.Basic, bool playerBullet = false)
         {
             this.Position = pos;
             this.Damage = damage;
@@ -72,6 +73,7 @@ namespace TimeWar.Model.Objects.Classes
             this.MoveVector = new PointF(0, 0);
             this.MovementVectorF = Normalize(this.GetVectorDirection());
             this.CurrentSprite = 0;
+            this.PlayerBullet = playerBullet;
         }
 
         /// <inheritdoc/>
@@ -134,6 +136,11 @@ namespace TimeWar.Model.Objects.Classes
 
         /// <inheritdoc/>
         public bool StanceLess { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether is shot by a player.
+        /// </summary>
+        public bool PlayerBullet { get; set; }
 
         /// <inheritdoc/>
         public int CurrentSprite { get; set; }
