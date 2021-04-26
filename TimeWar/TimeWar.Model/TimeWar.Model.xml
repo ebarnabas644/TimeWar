@@ -36,7 +36,7 @@
         </member>
         <member name="F:TimeWar.Model.Objects.Classes.BulletType.Basic">
             <summary>
-            Basic bullet type.
+            Basic bullet type. Can pass through enemies.
             </summary>
         </member>
         <member name="F:TimeWar.Model.Objects.Classes.BulletType.Accelerating">
@@ -59,7 +59,7 @@
             Basic bullet.
             </summary>
         </member>
-        <member name="M:TimeWar.Model.Objects.Classes.Bullet.#ctor(System.Drawing.Point,System.Int32,System.Int32,System.String,System.Drawing.Point,System.Int32,TimeWar.Model.Objects.Classes.BulletType)">
+        <member name="M:TimeWar.Model.Objects.Classes.Bullet.#ctor(System.Drawing.Point,System.Int32,System.Int32,System.String,System.Drawing.Point,System.Int32,TimeWar.Model.Objects.Classes.BulletType,System.Boolean)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Model.Objects.Classes.Bullet"/> class.
             </summary>
@@ -67,6 +67,7 @@
             <param name="damage">Base damage.</param>
             <param name="destination">Destination of the bullet.</param>
             <param name="type">Type of the bullet.</param>
+            <param name="playerBullet">Is shot by a player.</param>
             <param name="height">Character height.</param>
             <param name="width">Character width.</param>
             <param name="spriteFile">Name of the sprite file.</param>
@@ -131,6 +132,11 @@
         </member>
         <member name="P:TimeWar.Model.Objects.Classes.Bullet.StanceLess">
             <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.PlayerBullet">
+            <summary>
+            Gets or sets a value indicating whether is shot by a player.
+            </summary>
         </member>
         <member name="P:TimeWar.Model.Objects.Classes.Bullet.CurrentSprite">
             <inheritdoc/>

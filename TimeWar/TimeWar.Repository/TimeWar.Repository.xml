@@ -50,6 +50,23 @@
         <member name="M:TimeWar.Repository.Classes.MapRecordRepository.Update(TimeWar.Data.Models.MapRecord)">
             <inheritdoc/>
         </member>
+        <member name="T:TimeWar.Repository.Classes.MapRepository">
+            <summary>
+            Map entity class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Repository.Classes.MapRepository.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Repository.Classes.MapRepository"/> class.
+            </summary>
+            <param name="ctx">Database context object.</param>
+        </member>
+        <member name="M:TimeWar.Repository.Classes.MapRepository.GetOne(System.Int32)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Repository.Classes.MapRepository.Update(TimeWar.Data.Models.Map)">
+            <inheritdoc/>
+        </member>
         <member name="T:TimeWar.Repository.Classes.ProfileRepository">
             <summary>
             Profile entity class.
@@ -125,6 +142,17 @@
             Update entity content.
             </summary>
             <param name="entity">Map record entity object.</param>
+        </member>
+        <member name="T:TimeWar.Repository.Interfaces.IMapRepository">
+            <summary>
+            Extra operations for Map class entities.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Repository.Interfaces.IMapRepository.Update(TimeWar.Data.Models.Map)">
+            <summary>
+            Update entity content.
+            </summary>
+            <param name="entity">Map entity object.</param>
         </member>
         <member name="T:TimeWar.Repository.Interfaces.IProfileRepository">
             <summary>
