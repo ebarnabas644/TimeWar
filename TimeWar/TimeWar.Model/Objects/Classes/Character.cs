@@ -27,7 +27,7 @@ namespace TimeWar.Model.Objects
         {
             this.Position = pos;
             this.Health = health;
-            this.CurrentHealth = this.Health;
+            this.CurrentHealth = health;
             this.Height = height;
             this.Width = width;
             this.SpriteFile = spriteFile;
