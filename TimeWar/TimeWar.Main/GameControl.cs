@@ -161,31 +161,19 @@ namespace TimeWar.Main
             switch (e.Key)
             {
                 case Key.Space:
-                    if (this.commandManager.IsFinished)
-                    {
-                        this.model.Hero.RemoveKey("space");
-                    }
-
+                    this.model.Hero.RemoveKey("space");
                     break;
+
                 case Key.A:
-                    if (this.commandManager.IsFinished)
-                    {
-                        this.model.Hero.RemoveKey("a");
-                    }
-
+                    this.model.Hero.RemoveKey("a");
                     break;
+
                 case Key.S:
-                    if (this.commandManager.IsFinished)
-                    {
-                        this.model.Hero.RemoveKey("s");
-                    }
+                    this.model.Hero.RemoveKey("s");
 
                     break;
                 case Key.D:
-                    if (this.commandManager.IsFinished)
-                    {
-                        this.model.Hero.RemoveKey("d");
-                    }
+                    this.model.Hero.RemoveKey("d");
 
                     break;
                 case Key.E:
@@ -198,43 +186,31 @@ namespace TimeWar.Main
 
         private void Win_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            switch (e.Key)
+            if (this.commandManager.IsFinished)
             {
-                case Key.Space:
-                    if (this.commandManager.IsFinished)
-                    {
+                switch (e.Key)
+                {
+                    case Key.Space:
                         this.model.Hero.AddKey("space");
-                    }
-
-                    break;
-                case Key.A:
-                    if (this.commandManager.IsFinished)
-                    {
+                        break;
+                    case Key.A:
                         this.model.Hero.AddKey("a");
-                    }
-
-                    break;
-                case Key.S:
-                    if (this.commandManager.IsFinished)
-                    {
+                        break;
+                    case Key.S:
                         this.model.Hero.AddKey("s");
-                    }
-
-                    break;
-                case Key.D:
-                    if (this.commandManager.IsFinished)
-                    {
+                        break;
+                    case Key.D:
                         this.model.Hero.AddKey("d");
-                    }
 
-                    break;
-                case Key.E:
-                    this.commandManager.Rewind().Start();
-                    break;
+                        break;
+                    case Key.E:
+                        this.commandManager.Rewind().Start();
+                        break;
+                }
+
+                e.Handled = true;
+                this.InvalidateVisual();
             }
-
-            e.Handled = true;
-            this.InvalidateVisual();
         }
 
         private void CompositionTarget_Rendering(object sender, EventArgs e)
