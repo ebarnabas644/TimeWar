@@ -5,6 +5,7 @@
 namespace TimeWar.Model.Objects
 {
     using System.Drawing;
+    using TimeWar.Model.Objects.Classes;
 
     /// <summary>
     /// Player detail class.

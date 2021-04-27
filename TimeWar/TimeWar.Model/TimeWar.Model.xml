@@ -315,7 +315,7 @@
             Gets or sets the character current shield.
             </summary>
         </member>
-        <member name="P:TimeWar.Model.Objects.Character.ShieldRegen">
+        <member name="P:TimeWar.Model.Objects.Character.ShieldRegenValue">
             <summary>
             Gets or sets shield regen amount.
             </summary>
@@ -325,6 +325,21 @@
         </member>
         <member name="P:TimeWar.Model.Objects.Character.MovementVector">
             <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.TypeOfBullet">
+            <summary>
+            Gets or sets type of bullet.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.ShieldRegenTime">
+            <summary>
+            Gets or sets shield regen time.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.ShieldRegenTimer">
+            <summary>
+            Gets or sets shield regen timer stopwatch.
+            </summary>
         </member>
         <member name="M:TimeWar.Model.Objects.Character.AddKey(System.String)">
             <summary>
