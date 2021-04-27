@@ -38,6 +38,7 @@ namespace TimeWar.Logic
         {
             base.OneTick();
             this.Attack();
+            this.DetectHealt();
         }
 
         /// <inheritdoc/>
@@ -46,7 +47,7 @@ namespace TimeWar.Logic
             if (this.CommandManager.IsFinished && this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > 500)
             {
                 Point attackPoint = new Point(this.Character.Position.X + this.Model.CurrentWorld.ConvertTileToPixel(1), this.Character.Position.Y + this.Model.CurrentWorld.ConvertTileToPixel(1));
-                Bullet b = new Bullet(attackPoint, 4, 4, "testenemy.png", this.Character.ClickLocation, 10, BulletType.Basic, true);
+                Bullet b = new Bullet(attackPoint, 4, 4, "testenemy.png", this.Character.ClickLocation, 10, this.Character.TypeOfBullet, true);
                 this.Model.CurrentWorld.AddBullet(b);
                 this.AttackStopwatch.Restart();
                 this.Character.CanAttack = false;
@@ -87,6 +88,23 @@ namespace TimeWar.Logic
             }
 
             return new Point(x, y);
+        }
+
+        private void DetectHealt()
+        {
+            if (this.Character.CurrentShield < this.Character.Shield && !this.Character.ShieldRegenTimer.IsRunning)
+            {
+                this.Character.ShieldRegenTimer.Start();
+            }
+
+            if (this.Character.ShieldRegenTimer.ElapsedMilliseconds > this.Character.ShieldRegenTime)
+            {
+                this.Character.CurrentShield += this.Character.ShieldRegenValue;
+                if (this.Character.CurrentShield >= this.Character.Shield)
+                {
+                    this.Character.ShieldRegenTimer.Reset();
+                }
+            }
         }
     }
 }
