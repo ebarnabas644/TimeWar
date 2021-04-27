@@ -18,6 +18,7 @@ namespace TimeWar.Main
     using TimeWar.Logic.Classes.Characters;
     using TimeWar.Logic.Classes.Characters.Actions;
     using TimeWar.Logic.Classes.LogicCollections;
+    using TimeWar.Main.ViewModel;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
     using TimeWar.Model.Objects.Classes;
@@ -226,7 +227,7 @@ namespace TimeWar.Main
 
         private void CompositionTarget_Rendering(object sender, EventArgs e)
         {
-            if (!this.exit)
+            if (!this.Exit)
             {
                 this.characterLogic.OneTick();
                 this.enemyLogic.TickEnemies();

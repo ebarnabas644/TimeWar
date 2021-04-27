@@ -14,6 +14,7 @@ namespace TimeWar.Main.View
     {
         private GameViewModel vm;
         private GameControl gc;
+        private Control menu;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameWindow"/> class.
@@ -23,6 +24,7 @@ namespace TimeWar.Main.View
             this.InitializeComponent();
             this.vm = this.DataContext as GameViewModel;
             this.gc = this.FindName("cont") as GameControl;
+            this.menu = this.FindName("pauseMenu") as Control;
             this.gc.MapName = (string)this.vm.NavigationContext.Parameter;
         }
 
