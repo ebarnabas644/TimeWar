@@ -38,6 +38,7 @@ namespace TimeWar.Main
         private Window win;
         private Stopwatch time = new Stopwatch();
         private int fps;
+        private ushort mouseScrollPos;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameControl"/> class.
@@ -74,6 +75,7 @@ namespace TimeWar.Main
             this.characterLogic = new CharacterLogic(this.model, this.model.Hero, this.commandManager);
             this.bulletLogic = new BulletLogics(this.model, (ICollection<Bullet>)this.model.CurrentWorld.GetBullets, this.commandManager);
             this.enemyLogic = new EnemyLogic(this.model, this.commandManager);
+            this.mouseScrollPos = 0;
             this.time.Start();
             this.fps = 0;
             this.win = Window.GetWindow(this);
@@ -84,10 +86,46 @@ namespace TimeWar.Main
                 this.win.SizeChanged += this.Win_SizeChanged;
                 this.win.MouseMove += this.Win_MouseMove;
                 this.win.MouseDown += this.Win_MouseDown;
+                this.win.MouseWheel += this.Win_MouseScroll;
                 CompositionTarget.Rendering += this.CompositionTarget_Rendering;
             }
 
             this.InvalidateVisual();
+        }
+
+        private void Win_MouseScroll(object sender, MouseWheelEventArgs e)
+        {
+            if (e.Delta > 0)
+            {
+                this.mouseScrollPos++;
+            }
+            else if (e.Delta < 0)
+            {
+                this.mouseScrollPos++;
+            }
+
+            switch (this.mouseScrollPos % 4)
+            {
+                case 0:
+                    this.model.Hero.TypeOfBullet = BulletType.Basic;
+                    break;
+
+                case 1:
+                    this.model.Hero.TypeOfBullet = BulletType.Accelerating;
+                    break;
+
+                case 2:
+                    this.model.Hero.TypeOfBullet = BulletType.Bouncing;
+                    break;
+
+                case 3:
+                    this.model.Hero.TypeOfBullet = BulletType.CurvedBouncing;
+                    break;
+
+                default:
+                    this.model.Hero.TypeOfBullet = BulletType.Basic;
+                    break;
+            }
         }
 
         private void Win_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
