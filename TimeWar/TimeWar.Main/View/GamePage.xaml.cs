@@ -13,6 +13,7 @@ namespace TimeWar.Main.View
     public partial class GameWindow : Page
     {
         private GameViewModel vm;
+        private GameControl gc;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameWindow"/> class.
@@ -21,8 +22,13 @@ namespace TimeWar.Main.View
         {
             this.InitializeComponent();
             this.vm = this.DataContext as GameViewModel;
-            GameControl gc = this.FindName("cont") as GameControl;
-            gc.MapName = (string)this.vm.NavigationContext.Parameter;
+            this.gc = this.FindName("cont") as GameControl;
+            this.gc.MapName = (string)this.vm.NavigationContext.Parameter;
+        }
+
+        private void Unsubscribe_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            this.gc.Exit = true;
         }
     }
 }

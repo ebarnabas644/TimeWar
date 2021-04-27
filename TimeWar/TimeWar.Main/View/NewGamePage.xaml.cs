@@ -26,6 +26,7 @@ namespace TimeWar.Main.View
     public partial class NewGamePage : Page
     {
         private NewGameViewModel vm;
+        private MenuControl menuControl;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="NewGamePage"/> class.
@@ -35,15 +36,20 @@ namespace TimeWar.Main.View
             this.InitializeComponent();
             this.vm = this.DataContext as NewGameViewModel;
             this.vm.InitMaps();
-            MenuControl menuControl = this.FindName("cont") as MenuControl;
-            menuControl.MapName = "test2";
-            menuControl.ScrollMode = false;
-            menuControl.TitleEnabled = false;
+            this.menuControl = this.FindName("cont") as MenuControl;
+            this.menuControl.MapName = "test2";
+            this.menuControl.ScrollMode = false;
+            this.menuControl.TitleEnabled = false;
         }
 
         private void Refresh_Click(object sender, RoutedEventArgs e)
         {
             this.vm.InitMaps();
+        }
+
+        private void Unsubscribe_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            this.menuControl.Exit = true;
         }
     }
 }

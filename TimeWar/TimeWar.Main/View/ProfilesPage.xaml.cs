@@ -13,6 +13,7 @@ namespace TimeWar.Main.View
     public partial class ProfilesPage : Page
     {
         private ProfilesViewModel vm;
+        private MenuControl menuControl;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ProfilesPage"/> class.
@@ -21,11 +22,11 @@ namespace TimeWar.Main.View
         {
             this.InitializeComponent();
             this.vm = this.DataContext as ProfilesViewModel;
-            MenuControl menuControl = this.FindName("cont") as MenuControl;
+            this.menuControl = this.FindName("cont") as MenuControl;
             Grid a = this.FindName("MainGrid") as Grid;
-            menuControl.MapName = "test2";
-            menuControl.ScrollMode = false;
-            menuControl.TitleEnabled = false;
+            this.menuControl.MapName = "test2";
+            this.menuControl.ScrollMode = false;
+            this.menuControl.TitleEnabled = false;
         }
 
         private void Add_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -41,6 +42,11 @@ namespace TimeWar.Main.View
                 this.vm.Editing = this.vm.SelectedPlayer;
                 this.EditDialog.Visibility = System.Windows.Visibility.Visible;
             }
+        }
+
+        private void Unsubscribe_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            this.menuControl.Exit = true;
         }
     }
 }

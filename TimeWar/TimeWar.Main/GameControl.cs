@@ -39,12 +39,14 @@ namespace TimeWar.Main
         private Stopwatch time = new Stopwatch();
         private int fps;
         private ushort mouseScrollPos;
+        private bool exit;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameControl"/> class.
         /// </summary>
         public GameControl()
         {
+            this.exit = false;
             this.Loaded += this.GameControl_Loaded;
         }
 
@@ -52,6 +54,15 @@ namespace TimeWar.Main
         /// Gets or sets current map.
         /// </summary>
         public string MapName { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether page about to close.
+        /// </summary>
+        public bool Exit
+        {
+            get { return this.exit; }
+            set { this.exit = value; }
+        }
 
         /// <summary>
         /// Render drawing groups.
@@ -215,21 +226,34 @@ namespace TimeWar.Main
 
         private void CompositionTarget_Rendering(object sender, EventArgs e)
         {
-            this.characterLogic.OneTick();
-            this.enemyLogic.TickEnemies();
-            this.bulletLogic.Addbullets((ICollection<Bullet>)this.model.CurrentWorld.GetBullets);
-            this.bulletLogic.OneTick();
-            this.InvalidateVisual();
-            if (this.time.Elapsed.TotalSeconds >= 1)
+            if (!this.exit)
             {
-                this.time.Stop();
-                this.time.Reset();
-                this.win.Title = this.fps.ToString(System.Globalization.CultureInfo.CurrentCulture) + " FPS";
-                this.fps = 0;
-                this.time.Start();
-            }
+                this.characterLogic.OneTick();
+                this.enemyLogic.TickEnemies();
+                this.bulletLogic.Addbullets((ICollection<Bullet>)this.model.CurrentWorld.GetBullets);
+                this.bulletLogic.OneTick();
+                this.InvalidateVisual();
+                if (this.time.Elapsed.TotalSeconds >= 1)
+                {
+                    this.time.Stop();
+                    this.time.Reset();
+                    this.win.Title = this.fps.ToString(System.Globalization.CultureInfo.CurrentCulture) + " FPS";
+                    this.fps = 0;
+                    this.time.Start();
+                }
 
-            this.fps++;
+                this.fps++;
+            }
+            else
+            {
+                this.win.KeyDown -= this.Win_KeyDown;
+                this.win.KeyUp -= this.Win_KeyUp;
+                this.win.SizeChanged -= this.Win_SizeChanged;
+                this.win.MouseMove -= this.Win_MouseMove;
+                this.win.MouseDown -= this.Win_MouseDown;
+                this.win.MouseWheel -= this.Win_MouseScroll;
+                CompositionTarget.Rendering -= this.CompositionTarget_Rendering;
+            }
         }
     }
 }

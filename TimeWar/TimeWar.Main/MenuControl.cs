@@ -23,12 +23,14 @@ namespace TimeWar.Main
         private Logic.Classes.CommandManager commandManager;
         private CharacterLogic characterLogic;
         private Window win;
+        private bool exit;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MenuControl"/> class.
         /// </summary>
         public MenuControl()
         {
+            this.exit = false;
             this.Loaded += this.GameControl_Loaded;
             this.DataContext = this;
         }
@@ -37,6 +39,15 @@ namespace TimeWar.Main
         /// Gets or sets current map.
         /// </summary>
         public string MapName { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether page about to close.
+        /// </summary>
+        public bool Exit
+        {
+            get { return this.exit; }
+            set { this.exit = value; }
+        }
 
         /// <summary>
         /// Gets or sets a value indicating whether scrolling enabled.
@@ -92,8 +103,17 @@ namespace TimeWar.Main
 
         private void CompositionTarget_Rendering(object sender, EventArgs e)
         {
-            this.characterLogic.OneTick();
-            this.InvalidateVisual();
+            if (!this.exit)
+            {
+                this.characterLogic.OneTick();
+                this.InvalidateVisual();
+            }
+            else
+            {
+                this.win.SizeChanged -= this.Win_SizeChanged;
+                this.win.MouseMove -= this.Win_MouseMove;
+                CompositionTarget.Rendering -= this.CompositionTarget_Rendering;
+            }
         }
     }
 }

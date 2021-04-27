@@ -416,6 +416,11 @@
             Gets or sets current map.
             </summary>
         </member>
+        <member name="P:TimeWar.Main.GameControl.Exit">
+            <summary>
+            Gets or sets a value indicating whether page about to close.
+            </summary>
+        </member>
         <member name="M:TimeWar.Main.GameControl.OnRender(System.Windows.Media.DrawingContext)">
             <summary>
             Render drawing groups.
@@ -453,6 +458,11 @@
         <member name="P:TimeWar.Main.MenuControl.MapName">
             <summary>
             Gets or sets current map.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.MenuControl.Exit">
+            <summary>
+            Gets or sets a value indicating whether page about to close.
             </summary>
         </member>
         <member name="P:TimeWar.Main.MenuControl.ScrollMode">

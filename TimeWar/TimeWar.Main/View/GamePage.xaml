@@ -10,5 +10,9 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="GameWindow">
 
-    <main:GameControl x:Name="cont"/>
+    <Grid>
+        <main:GameControl x:Name="cont"/>
+        <Button Visibility="Collapsed" Click="Unsubscribe_Click" Command="{Binding MenuPageCommand}" Margin="5" Content="Back" Grid.Row="3" Panel.ZIndex="2" Style="{StaticResource MenuButton}"/>
+    </Grid>
+
 </Page>

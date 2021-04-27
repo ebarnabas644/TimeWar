@@ -13,6 +13,7 @@ namespace TimeWar.Main.View
     public partial class MenuPage : Page
     {
         private MenuViewModel vm;
+        private MenuControl menuControl;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MenuPage"/> class.
@@ -23,10 +24,15 @@ namespace TimeWar.Main.View
             this.vm = this.DataContext as MenuViewModel;
             this.vm.Init();
             this.ProfileLab.Content = this.vm.MenuText;
-            MenuControl menuControl = this.FindName("cont") as MenuControl;
-            menuControl.MapName = "test";
-            menuControl.ScrollMode = true;
-            menuControl.TitleEnabled = true;
+            this.menuControl = this.FindName("cont") as MenuControl;
+            this.menuControl.MapName = "test";
+            this.menuControl.ScrollMode = true;
+            this.menuControl.TitleEnabled = true;
+        }
+
+        private void Unsubscribe_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            this.menuControl.Exit = true;
         }
     }
 }
