@@ -5,7 +5,9 @@
 namespace TimeWar.Model.Objects
 {
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Drawing;
+    using TimeWar.Model.Objects.Classes;
     using TimeWar.Model.Objects.Interfaces;
 
     /// <summary>
@@ -36,6 +38,9 @@ namespace TimeWar.Model.Objects
             this.StanceLess = false;
             this.keys = new List<string>();
             this.CurrentSprite = 0;
+            this.ShieldRegenTime = 7000;
+            this.ShieldRegenTimer = new Stopwatch();
+            this.ShieldRegenValue = 1;
         }
 
         /// <summary>
@@ -99,13 +104,28 @@ namespace TimeWar.Model.Objects
         /// <summary>
         /// Gets or sets shield regen amount.
         /// </summary>
-        public int ShieldRegen { get; set; }
+        public int ShieldRegenValue { get; set; }
 
         /// <inheritdoc/>
         public bool StanceLess { get; set; }
 
         /// <inheritdoc/>
         public Point MovementVector { get; set; }
+
+        /// <summary>
+        /// Gets or sets type of bullet.
+        /// </summary>
+        public BulletType TypeOfBullet { get; set; }
+
+        /// <summary>
+        /// Gets or sets shield regen time.
+        /// </summary>
+        public int ShieldRegenTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets shield regen timer stopwatch.
+        /// </summary>
+        public Stopwatch ShieldRegenTimer { get; set; }
 
         /// <summary>
         /// Add new key to the pressed list.
