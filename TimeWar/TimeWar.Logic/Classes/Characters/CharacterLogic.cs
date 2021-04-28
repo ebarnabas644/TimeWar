@@ -8,6 +8,7 @@ namespace TimeWar.Logic
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Drawing;
+    using System.Security.Cryptography;
     using TimeWar.Logic.Classes;
     using TimeWar.Logic.Classes.Characters;
     using TimeWar.Logic.Classes.Characters.Actions;
@@ -46,8 +47,14 @@ namespace TimeWar.Logic
         {
             if (this.CommandManager.IsFinished && this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > 500)
             {
+                int inaccuracy = 0;
+                if (this.Character.TypeOfBullet != BulletType.Accelerating)
+                {
+                    inaccuracy = RandomNumberGenerator.GetInt32(0, 76);
+                }
+
                 Point attackPoint = new Point(this.Character.Position.X + this.Model.CurrentWorld.ConvertTileToPixel(1), this.Character.Position.Y + this.Model.CurrentWorld.ConvertTileToPixel(1));
-                Bullet b = new Bullet(attackPoint, 4, 4, "testenemy.png", this.Character.ClickLocation, 10, this.Character.TypeOfBullet, true);
+                Bullet b = new Bullet(attackPoint, 4, 4, "testenemy.png", new Point(this.Character.ClickLocation.X, this.Character.ClickLocation.Y - inaccuracy), 10, this.Character.TypeOfBullet, true);
                 this.Model.CurrentWorld.AddBullet(b);
                 this.AttackStopwatch.Restart();
                 this.Character.CanAttack = false;
