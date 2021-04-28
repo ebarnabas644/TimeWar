@@ -39,6 +39,11 @@
             Basic bullet type. Can pass through enemies.
             </summary>
         </member>
+        <member name="F:TimeWar.Model.Objects.Classes.BulletType.BasicEnemyBullet">
+            <summary>
+            Basic bullet type. Can pass through enemies.
+            </summary>
+        </member>
         <member name="F:TimeWar.Model.Objects.Classes.BulletType.Accelerating">
             <summary>
             Bullet's speed is increasing.
@@ -191,6 +196,70 @@
             <summary>
             Gets or sets the type of enemy.
             </summary>
+        </member>
+        <member name="T:TimeWar.Model.Objects.Classes.POIType">
+            <summary>
+            Types of POI.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.POIType.Checkpoint">
+            <summary>
+            Checkpoint.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.POIType.Finish">
+            <summary>
+            Finish point.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.POIType.HealthKit">
+            <summary>
+            Adds health point to character.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.POIType.HighJump">
+            <summary>
+            Character can jump higher than normal.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Model.Objects.Classes.PointOfInterest">
+            <summary>
+            Class for checkpoints, finish point, powerups.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Classes.PointOfInterest.#ctor(System.Int32,System.Int32,System.String,System.Drawing.Point,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Model.Objects.Classes.PointOfInterest"/> class.
+            </summary>
+            <param name="height">Height.</param>
+            <param name="width">Width.</param>
+            <param name="spritefile">Sprite file.</param>
+            <param name="position">Position.</param>
+            <param name="stanceless">Stanceless.</param>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.Height">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.Width">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.SpriteFile">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.Stance">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.StanceLess">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.MovementVector">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.CurrentSprite">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.Position">
+            <inheritdoc/>
         </member>
         <member name="T:TimeWar.Model.Objects.Classes.StaticObject">
             <summary>
