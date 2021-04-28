@@ -90,7 +90,7 @@ namespace TimeWar.Logic.Classes.LogicCollections
         // }
         private static void BasicMovement(Bullet bullet)
         {
-            if (Math.Abs(bullet.MoveVector.X) <= MaxBulletSpeed && Math.Abs(bullet.MoveVector.Y) <= MaxBulletSpeed)
+            if (bullet.Type == BulletType.Accelerating || (Math.Abs(bullet.MoveVector.X) <= MaxBulletSpeed && Math.Abs(bullet.MoveVector.Y) <= MaxBulletSpeed))
             {
                 bullet.MoveVector = new PointF(bullet.MoveVector.X + (bullet.MovementVectorF.X * bullet.Acceleration), bullet.MoveVector.Y + (bullet.MovementVectorF.Y * bullet.Acceleration));
             }
