@@ -16,6 +16,7 @@ namespace TimeWar.Main.ViewModel
         private INavigationService<NavigationPages> navigationService;
         private RelayCommand menuPageCommand;
         private string mapName;
+        private bool menuVisibility;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameViewModel"/> class.
@@ -23,6 +24,7 @@ namespace TimeWar.Main.ViewModel
         /// <param name="navigationService">Navigation service.</param>
         public GameViewModel(INavigationService<NavigationPages> navigationService)
         {
+            this.MenuVisibility = false;
             this.navigationService = navigationService;
         }
 
@@ -33,6 +35,15 @@ namespace TimeWar.Main.ViewModel
         {
             get { return this.mapName; }
             set { this.mapName = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether visible.
+        /// </summary>
+        public bool MenuVisibility
+        {
+            get { return this.menuVisibility; }
+            set { this.Set(ref this.menuVisibility, value); }
         }
 
         /// <summary>

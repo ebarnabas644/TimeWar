@@ -191,6 +191,10 @@ namespace TimeWar.Main
                 case Key.E:
                     this.commandManager.Rewind().Start();
                     break;
+                case Key.Escape:
+                    GameViewModel asd = this.DataContext as GameViewModel;
+                    asd.MenuVisibility = !asd.MenuVisibility;
+                    break;
             }
 
             e.Handled = true;
