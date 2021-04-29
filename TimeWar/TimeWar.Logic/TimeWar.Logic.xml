@@ -419,27 +419,39 @@
             One tick method.
             </summary>
         </member>
-        <member name="T:TimeWar.Logic.Classes.LogicCollections.EnemyLogic">
+        <member name="T:TimeWar.Logic.Classes.LogicCollections.EnemyLogics">
             <summary>
             Enemy logic collection.
             </summary>
         </member>
-        <member name="M:TimeWar.Logic.Classes.LogicCollections.EnemyLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Logic.Classes.CommandManager)">
+        <member name="M:TimeWar.Logic.Classes.LogicCollections.EnemyLogics.#ctor(TimeWar.Model.GameModel,TimeWar.Logic.Classes.CommandManager)">
             <summary>
-            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.LogicCollections.EnemyLogic"/> class.
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.LogicCollections.EnemyLogics"/> class.
             </summary>
             <param name="model">Game model.</param>
             <param name="commandManager">Command manager.</param>
         </member>
-        <member name="M:TimeWar.Logic.Classes.LogicCollections.EnemyLogic.GetEnemies">
+        <member name="M:TimeWar.Logic.Classes.LogicCollections.EnemyLogics.GetEnemies">
             <summary>
             Gets enemies.
             </summary>
         </member>
-        <member name="M:TimeWar.Logic.Classes.LogicCollections.EnemyLogic.TickEnemies">
+        <member name="M:TimeWar.Logic.Classes.LogicCollections.EnemyLogics.TickEnemies">
             <summary>
             Tick enemies in list.
             </summary>
+        </member>
+        <member name="T:TimeWar.Logic.Classes.LogicCollections.PointOfInterestLogics">
+            <summary>
+            Collection of POIs.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.LogicCollections.PointOfInterestLogics.#ctor(TimeWar.Model.GameModel,TimeWar.Logic.CharacterLogic)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.LogicCollections.PointOfInterestLogics"/> class.
+            </summary>
+            <param name="model">Game model.</param>
+            <param name="character">Character.</param>
         </member>
         <member name="T:TimeWar.Logic.Classes.ManagerLogic">
             <summary>
@@ -479,6 +491,149 @@
             <inheritdoc/>
         </member>
         <member name="M:TimeWar.Logic.Classes.ManagerLogic.ModifySave(TimeWar.Data.Models.Save)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TimeWar.Logic.Classes.POIs.CheckpointLogic">
+            <summary>
+            Checkpoint logic.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Logic.Classes.POIs.FinishLogic">
+            <summary>
+            Finish logic.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Logic.Classes.POIs.HealthKitLogic">
+            <summary>
+            Health kit logic.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.POIs.HealthKitLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Classes.PointOfInterest,System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.POIs.HealthKitLogic"/> class.
+            </summary>
+            <param name="model">Model.</param>
+            <param name="poi">Poi.</param>
+            <param name="restoredHealth">Number of restored health.</param>
+            <param name="timed">Timed.</param>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.POIs.HealthKitLogic.NumOfRestoredHealth">
+            <summary>
+            Gets or sets the number of unlocked weapons.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.POIs.HealthKitLogic.POIEvent">
+            <inheritdoc/>
+        </member>
+        <member name="T:TimeWar.Logic.Classes.POIs.HighJumpLogic">
+            <summary>
+            High jump logic.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Logic.Classes.POIs.InvincibilityLogic">
+            <summary>
+            Invincibility logic.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Logic.Classes.POIs.PointOfInterestLogic">
+            <summary>
+            Base class for POIs.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.POIs.PointOfInterestLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Classes.PointOfInterest,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.POIs.PointOfInterestLogic"/> class.
+            </summary>
+            <param name="model">Game model.</param>
+            <param name="poi">Poi.</param>
+            <param name="timed">If a poi is timed or not.</param>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.POIs.PointOfInterestLogic.Model">
+            <summary>
+            Gets or sets game Model.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.POIs.PointOfInterestLogic.TimedPoi">
+            <summary>
+            Gets or sets a value indicating whether a poi is timed or not.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.POIs.PointOfInterestLogic.Timer">
+            <summary>
+            Gets or sets the max time of a poi.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.POIs.PointOfInterestLogic.Poi">
+            <summary>
+            Gets or sets point of interest.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.POIs.PointOfInterestLogic.IsPlayerContacted">
+            <summary>
+            Gets or sets a value indicating whether player is contacted or not.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.POIs.PointOfInterestLogic.OneTick">
+            <summary>
+            One tick.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.POIs.PointOfInterestLogic.POIEvent">
+            <summary>
+            Action that happens when a player contacts a POI.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Logic.Classes.POIs.RapidFireLogic">
+            <summary>
+            Rapid fire logic.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.POIs.RapidFireLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Classes.PointOfInterest,TimeWar.Logic.CharacterLogic,System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.POIs.RapidFireLogic"/> class.
+            </summary>
+            <param name="model">Model.</param>
+            <param name="poi">Poi.</param>
+            <param name="character">Character.</param>
+            <param name="timeOfEffect">Time of rapid fire..</param>
+            <param name="timed">Timed.</param>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.POIs.RapidFireLogic.CharacterLogic">
+            <summary>
+            Gets or sets character for the effect.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.POIs.RapidFireLogic.DefaultAttackTime">
+            <summary>
+            Gets or sets the original attack time of the player.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.POIs.RapidFireLogic.POIEvent">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.POIs.RapidFireLogic.ResetStats">
+            <inheritdoc/>
+        </member>
+        <member name="T:TimeWar.Logic.Classes.POIs.UnlockWeaponLogic">
+            <summary>
+            Unlocks a weapon.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.POIs.UnlockWeaponLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Classes.PointOfInterest,System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.POIs.UnlockWeaponLogic"/> class.
+            </summary>
+            <param name="model">Model.</param>
+            <param name="poi">Poi.</param>
+            <param name="numOfUnlocks">Number of unlocked weapons.</param>
+            <param name="timed">Timed.</param>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.POIs.UnlockWeaponLogic.NumOfUnlocks">
+            <summary>
+            Gets or sets the number of unlocked weapons.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.POIs.UnlockWeaponLogic.POIEvent">
             <inheritdoc/>
         </member>
         <member name="T:TimeWar.Logic.Classes.ViewerLogic">
@@ -524,6 +679,21 @@
             <param name="model">Game model entity.</param>
             <param name="character">Moveable entity.</param>
             <param name="commandManager">Command manager entity.</param>
+        </member>
+        <member name="P:TimeWar.Logic.CharacterLogic.AttackTime">
+            <summary>
+            Gets or sets time between attacks.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.CharacterLogic.EffectStopwatch">
+            <summary>
+            Gets or sets effect stopwatch.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.CharacterLogic.EffectCounter">
+            <summary>
+            Gets or sets the number of effects.
+            </summary>
         </member>
         <member name="M:TimeWar.Logic.CharacterLogic.OneTick">
             <inheritdoc/>
@@ -641,6 +811,16 @@
             Delete already existing save entity.
             </summary>
             <param name="save">Save entity.</param>
+        </member>
+        <member name="T:TimeWar.Logic.Interfaces.ITimedEvent">
+            <summary>
+            Timed event interface.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Interfaces.ITimedEvent.ResetStats">
+            <summary>
+            Resets the player's stats.
+            </summary>
         </member>
         <member name="T:TimeWar.Logic.Interfaces.IViewerLogic">
             <summary>
