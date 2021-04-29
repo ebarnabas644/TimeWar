@@ -36,6 +36,21 @@ namespace TimeWar.Model.Objects.Classes
         /// Character can jump higher than normal.
         /// </summary>
         HighJump,
+
+        /// <summary>
+        /// Unlocks accelerating bullet.
+        /// </summary>
+        UnlockWeapon,
+
+        /// <summary>
+        /// The character's health doesn't deplete.
+        /// </summary>
+        Invincibility,
+
+        /// <summary>
+        /// Player can spam bullets.
+        /// </summary>
+        RapidFire,
     }
 
     /// <summary>
@@ -46,19 +61,26 @@ namespace TimeWar.Model.Objects.Classes
         /// <summary>
         /// Initializes a new instance of the <see cref="PointOfInterest"/> class.
         /// </summary>
+        /// <param name="type">Type of a poi.</param>
         /// <param name="height">Height.</param>
         /// <param name="width">Width.</param>
         /// <param name="spritefile">Sprite file.</param>
         /// <param name="position">Position.</param>
         /// <param name="stanceless">Stanceless.</param>
-        public PointOfInterest(int height, int width, string spritefile, Point position, bool stanceless = true)
+        public PointOfInterest(POIType type, int height, int width, string spritefile, Point position, bool stanceless = true)
         {
+            this.Type = type;
             this.Height = height;
             this.Width = width;
             this.SpriteFile = spritefile;
             this.Position = position;
             this.StanceLess = stanceless;
         }
+
+        /// <summary>
+        /// Gets or sets the type of a POI.
+        /// </summary>
+        public POIType Type { get; set; }
 
         /// <inheritdoc/>
         public int Height { get; set; }
