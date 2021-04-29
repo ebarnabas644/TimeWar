@@ -32,7 +32,25 @@ namespace TimeWar.Logic
             : base(model, character, commandManager)
         {
             this.AttackStopwatch.Start();
+            this.EffectStopwatch = new Stopwatch();
+            this.AttackTime = 400;
+            this.EffectCounter = 0;
         }
+
+        /// <summary>
+        /// Gets or sets time between attacks.
+        /// </summary>
+        public int AttackTime { get; set; }
+
+        /// <summary>
+        /// Gets or sets effect stopwatch.
+        /// </summary>
+        public Stopwatch EffectStopwatch { get; set; }
+
+        /// <summary>
+        /// Gets or sets the number of effects.
+        /// </summary>
+        public int EffectCounter { get; set; }
 
         /// <inheritdoc/>
         public override void OneTick()
@@ -40,12 +58,13 @@ namespace TimeWar.Logic
             base.OneTick();
             this.Attack();
             this.DetectHealt();
+            this.ManageEffects();
         }
 
         /// <inheritdoc/>
         protected override void Attack()
         {
-            if (this.CommandManager.IsFinished && this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > 500)
+            if (this.CommandManager.IsFinished && this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > this.AttackTime)
             {
                 int inaccuracy = 0;
                 if (this.Character.TypeOfBullet != BulletType.Accelerating)
@@ -111,6 +130,18 @@ namespace TimeWar.Logic
                 {
                     this.Character.ShieldRegenTimer.Reset();
                 }
+            }
+        }
+
+        private void ManageEffects()
+        {
+            if (this.EffectCounter != 0)
+            {
+                this.EffectStopwatch.Start();
+            }
+            else if (this.EffectStopwatch.IsRunning)
+            {
+                this.EffectStopwatch.Reset();
             }
         }
     }
