@@ -37,6 +37,7 @@
     <None Remove="Sprites\286.png" />
     <None Remove="Sprites\307.png" />
     <None Remove="Sprites\41.png" />
+    <None Remove="Sprites\basicbullet.png" />
     <None Remove="Sprites\fasttestenemy.png" />
     <None Remove="Sprites\heavytestenemy.png" />
     <None Remove="Sprites\hpbar.png" />
@@ -149,6 +150,9 @@
     <Resource Include="Fonts\Gamepixies-8MO6n.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Content Include="Sprites\basicbullet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Sprites\286.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

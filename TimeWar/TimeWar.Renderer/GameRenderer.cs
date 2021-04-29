@@ -7,6 +7,7 @@ namespace TimeWar.Renderer
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
+    using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Media;
     using System.Windows.Media.Imaging;
@@ -355,7 +356,13 @@ namespace TimeWar.Renderer
             foreach (Bullet item in this.model.CurrentWorld.GetBullets)
             {
                 Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(item.Position.X), this.model.Camera.GetRelativeObjectPosY(item.Position.Y), item.Width * this.model.CurrentWorld.Magnify, item.Height * this.model.CurrentWorld.Magnify));
-                dg.Children.Add(new GeometryDrawing(Brushes.Red, null, g));
+                RotateTransform rotate = new RotateTransform();
+                rotate.CenterX = 0.5;
+                rotate.CenterY = 0.5;
+                rotate.Angle = Math.Atan2(item.MovementVectorF.Y, item.MovementVectorF.X) * 180 / Math.PI;
+                Brush brush = this.GetSpriteBrush(item);
+                brush.RelativeTransform = rotate;
+                dg.Children.Add(new GeometryDrawing(brush, null, g));
             }
 
             return dg;
