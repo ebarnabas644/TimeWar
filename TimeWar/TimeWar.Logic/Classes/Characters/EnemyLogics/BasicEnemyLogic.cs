@@ -44,7 +44,7 @@ namespace TimeWar.Logic.Classes.Characters
             this.movementStopwatch.Start();
             this.moveDir = 0;
             this.AttackTime = 2500;
-            this.MaxMoveTime = 3000;
+            this.MaxMoveTime = 1000;
             this.DetectionTime = 20000;
             this.DetectionRange = 20;
             this.movementDirTime = RandomNumberGenerator.GetInt32(this.MaxMoveTime);
