@@ -18,6 +18,7 @@ namespace TimeWar.Main
     using TimeWar.Logic.Classes.Characters;
     using TimeWar.Logic.Classes.Characters.Actions;
     using TimeWar.Logic.Classes.LogicCollections;
+    using TimeWar.Main.BL;
     using TimeWar.Main.ViewModel;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
@@ -36,6 +37,9 @@ namespace TimeWar.Main
         private CharacterLogic characterLogic;
         private BulletLogics bulletLogic;
         private EnemyLogics enemyLogic;
+        private PointOfInterestLogics pointOfInterestLogics;
+
+        // private Factory factory;
         private Window win;
         private Stopwatch time = new Stopwatch();
         private int fps;
@@ -80,6 +84,7 @@ namespace TimeWar.Main
 
         private void GameControl_Loaded(object sender, RoutedEventArgs e)
         {
+            // this.factory = new Factory();
             this.model = new GameModel();
             this.initLogic = new InitLogic(this.model, this.MapName);
             this.model.Camera = new Viewport((int)this.ActualWidth, (int)this.ActualHeight, (int)this.model.CurrentWorld.GameWidth, (int)this.model.CurrentWorld.GameHeight, this.model.Hero);
@@ -88,6 +93,7 @@ namespace TimeWar.Main
             this.characterLogic = new CharacterLogic(this.model, this.model.Hero, this.commandManager);
             this.bulletLogic = new BulletLogics(this.model, (ICollection<Bullet>)this.model.CurrentWorld.GetBullets, this.commandManager);
             this.enemyLogic = new EnemyLogics(this.model, this.commandManager);
+            this.pointOfInterestLogics = new PointOfInterestLogics(this.model, this.characterLogic, this.commandManager);
             this.mouseScrollPos = 0;
             this.time.Start();
             this.fps = 0;
@@ -117,7 +123,7 @@ namespace TimeWar.Main
                 this.mouseScrollPos++;
             }
 
-            switch (this.mouseScrollPos % ((this.model.Hero.NumOfWeaponUnlocked % Enum.GetNames(typeof(BulletType)).Length) - 1))
+            switch (this.mouseScrollPos % this.model.Hero.NumOfWeaponUnlocked)
             {
                 case 0:
                     this.model.Hero.TypeOfBullet = BulletType.Basic;
@@ -232,6 +238,7 @@ namespace TimeWar.Main
             {
                 this.characterLogic.OneTick();
                 this.enemyLogic.TickEnemies();
+                this.pointOfInterestLogics.TickPois();
                 this.bulletLogic.Addbullets((ICollection<Bullet>)this.model.CurrentWorld.GetBullets);
                 this.bulletLogic.OneTick();
                 this.InvalidateVisual();
