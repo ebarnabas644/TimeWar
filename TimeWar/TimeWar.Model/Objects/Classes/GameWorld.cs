@@ -18,7 +18,7 @@ namespace TimeWar.Model.Objects
         private bool[][] ground;
         private int[][] decorations;
         private List<Enemy> enemies;
-        private Dictionary<string, Point> pointOfInterests;
+        private List<PointOfInterest> pointOfInterests;
         private List<Bullet> bullets;
 
         /// <summary>
@@ -39,13 +39,18 @@ namespace TimeWar.Model.Objects
                 this.decorations[i] = new int[width];
             }
 
-            this.pointOfInterests = new Dictionary<string, Point>();
+            this.pointOfInterests = new List<PointOfInterest>();
             this.bullets = new List<Bullet>();
             this.Magnify = magnify;
             this.TileSize = tileSize;
             this.GameWidth = this.TileSize * width * this.Magnify;
             this.GameHeight = this.TileSize * height * this.Magnify;
         }
+
+        /// <summary>
+        /// Gets or sets startpoint.
+        /// </summary>
+        public Point StartPoint { get; set; }
 
         /// <summary>
         /// Gets or sets the name of the game world.
@@ -130,6 +135,18 @@ namespace TimeWar.Model.Objects
         }
 
         /// <summary>
+        /// Gets a list of pois.
+        /// </summary>
+        public IEnumerable<PointOfInterest> GetPois
+        {
+            get
+            {
+                IReadOnlyList<PointOfInterest> output = this.pointOfInterests;
+                return output;
+            }
+        }
+
+        /// <summary>
         /// Get bullet from bullet collection.
         /// </summary>
         /// <param name="idx">Index.</param>
@@ -145,31 +162,36 @@ namespace TimeWar.Model.Objects
         }
 
         /// <summary>
-        /// Add new point of interest.
+        /// Add new poi.
         /// </summary>
-        /// <param name="name">Name of the point.</param>
-        /// <param name="position">Position.</param>
-        public void AddPointOfInterest(string name, Point position)
+        /// <param name="poi">POI entity.</param>
+        public void AddPOI(PointOfInterest poi)
         {
-            if (!this.pointOfInterests.ContainsKey(name))
-            {
-                this.pointOfInterests.Add(name, position);
-            }
+            this.pointOfInterests.Add(poi);
         }
 
         /// <summary>
-        /// Find existing point of interest by key.
+        /// Remove poi from the collection.
         /// </summary>
-        /// <param name="name">Key of the point.</param>
-        /// <returns>Position of the point.</returns>
-        public Point SearchPointOfInterest(string name)
+        /// <param name="poi">Point of interest.</param>
+        public void RemovePOI(PointOfInterest poi)
         {
-            if (this.pointOfInterests.ContainsKey(name))
+            this.pointOfInterests.Remove(poi);
+        }
+
+        /// <summary>
+        /// Get poi entity.
+        /// </summary>
+        /// <param name="idx">Index.</param>
+        /// <returns>Poi entity.</returns>
+        public PointOfInterest GetPoi(int idx)
+        {
+            if (idx < this.pointOfInterests.Count)
             {
-                return this.pointOfInterests[name];
+                return this.pointOfInterests[idx];
             }
 
-            return new Point(-1, -1);
+            return null;
         }
 
         /// <summary>

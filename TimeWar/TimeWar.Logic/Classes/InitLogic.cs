@@ -83,9 +83,14 @@ namespace TimeWar.Logic
                 {
                     switch (Convert.ToInt32(poidata[y][x], System.Globalization.CultureInfo.CurrentCulture))
                     {
-                        case 472: gameWorld.AddPointOfInterest("start", new Point(x, y)); break;
-                        case 473: gameWorld.AddPointOfInterest("chechpoint", new Point(x, y)); break;
-                        case 474: gameWorld.AddPointOfInterest("finish", new Point(x, y)); break;
+                        case 472: gameWorld.StartPoint = new Point(x, y); break;
+                        case 473: gameWorld.AddPOI(new PointOfInterest(POIType.Checkpoint, 1, 1, "testenemy", new Point(x, y))); break;
+                        case 474: gameWorld.AddPOI(new PointOfInterest(POIType.Finish, 1, 1, "testenemy", new Point(x, y))); break;
+                        case 496: gameWorld.AddPOI(new PointOfInterest(POIType.HealthKit, 1, 1, "testenemy", new Point(x, y))); break;
+                        case 497: gameWorld.AddPOI(new PointOfInterest(POIType.HighJump, 1, 1, "testenemy", new Point(x, y))); break;
+                        case 498: gameWorld.AddPOI(new PointOfInterest(POIType.Invincibility, 1, 1, "testenemy", new Point(x, y))); break;
+                        case 499: gameWorld.AddPOI(new PointOfInterest(POIType.RapidFire, 1, 1, "testenemy", new Point(x, y))); break;
+                        case 500: gameWorld.AddPOI(new PointOfInterest(POIType.UnlockWeapon, 1, 1, "testenemy", new Point(x, y))); break;
                     }
                 }
             }
@@ -129,8 +134,8 @@ namespace TimeWar.Logic
 
         private Player GetPlayer()
         {
-            int startX = this.model.CurrentWorld.SearchPointOfInterest("start").X * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize;
-            int startY = this.model.CurrentWorld.SearchPointOfInterest("start").Y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize;
+            int startX = this.model.CurrentWorld.StartPoint.X * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize;
+            int startY = this.model.CurrentWorld.StartPoint.Y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize;
             return new Player(new Point(startX, startY - (InitConfig.PlayerHeight * this.model.CurrentWorld.TileSize)), InitConfig.PlayerHealth, InitConfig.PlayerHeight, InitConfig.PlayerWidth, InitConfig.PlayerSpritesheet);
         }
 
