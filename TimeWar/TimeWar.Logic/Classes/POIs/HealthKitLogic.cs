@@ -38,7 +38,14 @@ namespace TimeWar.Logic.Classes.POIs
         /// <inheritdoc/>
         public override void POIEvent()
         {
-            this.Model.Hero.Health += this.NumOfRestoredHealth;
+            if (this.Model.Hero.CurrentHealth + this.NumOfRestoredHealth <= this.Model.Hero.Health)
+            {
+                this.Model.Hero.CurrentHealth += this.NumOfRestoredHealth;
+            }
+            else
+            {
+                this.Model.Hero.CurrentHealth = this.Model.Hero.Health;
+            }
         }
     }
 }

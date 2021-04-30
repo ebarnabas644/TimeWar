@@ -48,6 +48,7 @@ namespace TimeWar.Logic.Classes.POIs
         /// <inheritdoc/>
         public override void POIEvent()
         {
+            this.TimedPoi = true;
             this.CharacterLogic.AttackTime = 1;
         }
 

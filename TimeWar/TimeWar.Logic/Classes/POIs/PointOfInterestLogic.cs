@@ -64,10 +64,13 @@ namespace TimeWar.Logic.Classes.POIs
         /// </summary>
         public void OneTick()
         {
-            this.PlayerContacted();
-            if (this.IsPlayerContacted)
+            if (!this.TimedPoi)
             {
-                this.POIEvent();
+                this.PlayerContacted();
+                if (this.IsPlayerContacted)
+                {
+                    this.POIEvent();
+                }
             }
         }
 
@@ -78,7 +81,7 @@ namespace TimeWar.Logic.Classes.POIs
 
         private void PlayerContacted()
         {
-            Rectangle player = new Rectangle(this.Model.Hero.Position, new Size(this.Model.Hero.Width, this.Model.Hero.Height));
+            Rectangle player = new Rectangle(this.Model.CurrentWorld.ConvertPixelToTile(this.Model.Hero.Position.X), this.Model.CurrentWorld.ConvertPixelToTile(this.Model.Hero.Position.Y), this.Model.Hero.Width / this.Model.CurrentWorld.TileSize, this.Model.Hero.Height / this.Model.CurrentWorld.TileSize);
             Rectangle poi = new Rectangle(this.Poi.Position, new Size(this.Poi.Width, this.Poi.Height));
 
             if (player.IntersectsWith(poi))
