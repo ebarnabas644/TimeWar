@@ -38,7 +38,14 @@ namespace TimeWar.Logic.Classes.POIs
         /// <inheritdoc/>
         public override void POIEvent()
         {
-            this.Model.Hero.NumOfWeaponUnlocked += this.NumOfUnlocks;
+            if (this.Model.Hero.NumOfWeaponUnlocked + this.NumOfUnlocks < Enum.GetNames(typeof(BulletType)).Length - 1)
+            {
+                this.Model.Hero.NumOfWeaponUnlocked += this.NumOfUnlocks;
+            }
+            else
+            {
+                this.Model.Hero.NumOfWeaponUnlocked = Enum.GetNames(typeof(BulletType)).Length - 1;
+            }
         }
     }
 }
