@@ -464,6 +464,11 @@
             <param name="tileSize">Game tile size.</param>
             <param name="magnify">Zoom extent of the game world(default value = 3).</param>
         </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.StartPoint">
+            <summary>
+            Gets or sets startpoint.
+            </summary>
+        </member>
         <member name="P:TimeWar.Model.Objects.GameWorld.WorldName">
             <summary>
             Gets or sets the name of the game world.
@@ -520,6 +525,11 @@
             Gets enemies.
             </summary>
         </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.GetPois">
+            <summary>
+            Gets a list of pois.
+            </summary>
+        </member>
         <member name="M:TimeWar.Model.Objects.GameWorld.GetBullet(System.Int32)">
             <summary>
             Get bullet from bullet collection.
@@ -527,19 +537,24 @@
             <param name="idx">Index.</param>
             <returns>Bullet entity.</returns>
         </member>
-        <member name="M:TimeWar.Model.Objects.GameWorld.AddPointOfInterest(System.String,System.Drawing.Point)">
+        <member name="M:TimeWar.Model.Objects.GameWorld.AddPOI(TimeWar.Model.Objects.Classes.PointOfInterest)">
             <summary>
-            Add new point of interest.
+            Add new poi.
             </summary>
-            <param name="name">Name of the point.</param>
-            <param name="position">Position.</param>
+            <param name="poi">POI entity.</param>
         </member>
-        <member name="M:TimeWar.Model.Objects.GameWorld.SearchPointOfInterest(System.String)">
+        <member name="M:TimeWar.Model.Objects.GameWorld.RemovePOI(TimeWar.Model.Objects.Classes.PointOfInterest)">
             <summary>
-            Find existing point of interest by key.
+            Remove poi from the collection.
             </summary>
-            <param name="name">Key of the point.</param>
-            <returns>Position of the point.</returns>
+            <param name="poi">Point of interest.</param>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.GetPoi(System.Int32)">
+            <summary>
+            Get poi entity.
+            </summary>
+            <param name="idx">Index.</param>
+            <returns>Poi entity.</returns>
         </member>
         <member name="M:TimeWar.Model.Objects.GameWorld.AddGround(System.Drawing.Point)">
             <summary>

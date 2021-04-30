@@ -446,12 +446,23 @@
             Collection of POIs.
             </summary>
         </member>
-        <member name="M:TimeWar.Logic.Classes.LogicCollections.PointOfInterestLogics.#ctor(TimeWar.Model.GameModel,TimeWar.Logic.CharacterLogic)">
+        <member name="M:TimeWar.Logic.Classes.LogicCollections.PointOfInterestLogics.#ctor(TimeWar.Model.GameModel,TimeWar.Logic.CharacterLogic,TimeWar.Logic.Classes.CommandManager)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.LogicCollections.PointOfInterestLogics"/> class.
             </summary>
             <param name="model">Game model.</param>
             <param name="character">Character.</param>
+            <param name="commandManager">Command manager.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.LogicCollections.PointOfInterestLogics.TickPois">
+            <summary>
+            Tick Pois.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.LogicCollections.PointOfInterestLogics.GetPOIs">
+            <summary>
+            Gets pois.
+            </summary>
         </member>
         <member name="T:TimeWar.Logic.Classes.ManagerLogic">
             <summary>
@@ -498,10 +509,32 @@
             Checkpoint logic.
             </summary>
         </member>
+        <member name="M:TimeWar.Logic.Classes.POIs.CheckpointLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Classes.PointOfInterest,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.POIs.CheckpointLogic"/> class.
+            </summary>
+            <param name="model">Model.</param>
+            <param name="poi">Poi.</param>
+            <param name="timed">Timed.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.POIs.CheckpointLogic.POIEvent">
+            <inheritdoc/>
+        </member>
         <member name="T:TimeWar.Logic.Classes.POIs.FinishLogic">
             <summary>
             Finish logic.
             </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.POIs.FinishLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Classes.PointOfInterest,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.POIs.FinishLogic"/> class.
+            </summary>
+            <param name="model">Model.</param>
+            <param name="poi">Poi.</param>
+            <param name="timed">Timed.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.POIs.FinishLogic.POIEvent">
+            <inheritdoc/>
         </member>
         <member name="T:TimeWar.Logic.Classes.POIs.HealthKitLogic">
             <summary>
@@ -530,10 +563,34 @@
             High jump logic.
             </summary>
         </member>
+        <member name="M:TimeWar.Logic.Classes.POIs.HighJumpLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Classes.PointOfInterest,System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.POIs.HighJumpLogic"/> class.
+            </summary>
+            <param name="model">Model.</param>
+            <param name="poi">Poi.</param>
+            <param name="newJumpHeight">New jump height.</param>
+            <param name="timed">Timed.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.POIs.HighJumpLogic.POIEvent">
+            <inheritdoc/>
+        </member>
         <member name="T:TimeWar.Logic.Classes.POIs.InvincibilityLogic">
             <summary>
             Invincibility logic.
             </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.POIs.InvincibilityLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Classes.PointOfInterest,System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.POIs.InvincibilityLogic"/> class.
+            </summary>
+            <param name="model">Model.</param>
+            <param name="poi">Poi.</param>
+            <param name="invisibilityTime">Time of invisibility.</param>
+            <param name="timed">Timed.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.POIs.InvincibilityLogic.POIEvent">
+            <inheritdoc/>
         </member>
         <member name="T:TimeWar.Logic.Classes.POIs.PointOfInterestLogic">
             <summary>
