@@ -11,6 +11,7 @@ namespace TimeWar.Logic.Classes.LogicCollections
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using TimeWar.Data.Models;
     using TimeWar.Logic.Classes.Characters.Actions;
     using TimeWar.Model;
     using TimeWar.Model.Objects.Classes;
@@ -78,16 +79,8 @@ namespace TimeWar.Logic.Classes.LogicCollections
                     }
                 }
             }
-
-            // this.DetectEntity(item);
         }
 
-        // private static void BasicMovement(Bullet bullet)
-        // {
-        //    //Mindig normalizeolja ezért kering a kattintott pont körül
-        //    PointF movementVector = Normalize(GetVectorDirection(bullet));
-        //    bullet.MoveVector = new PointF(bullet.MoveVector.X + (movementVector.X * bullet.Acceleration), bullet.MoveVector.Y + (movementVector.Y * bullet.Acceleration));
-        // }
         private static void BasicMovement(Bullet bullet)
         {
             if (bullet.Type == BulletType.Accelerating || (Math.Abs(bullet.MoveVector.X) <= MaxBulletSpeed && Math.Abs(bullet.MoveVector.Y) <= MaxBulletSpeed))
