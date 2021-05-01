@@ -135,11 +135,12 @@ namespace TimeWar.Logic
 
         private void ManageEffects()
         {
-            if (this.EffectCounter != 0)
+            if (this.EffectCounter != 0 && !this.EffectStopwatch.IsRunning)
             {
                 this.EffectStopwatch.Start();
             }
-            else if (this.EffectStopwatch.IsRunning)
+
+            if (this.EffectStopwatch.IsRunning && this.EffectCounter == 0)
             {
                 this.EffectStopwatch.Reset();
             }
