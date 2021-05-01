@@ -208,6 +208,16 @@
             <param name="character">Charater.</param>
             <param name="commandManager">Command manger.</param>
         </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.LastKnownPlayerLocation">
+            <summary>
+            Gets or sets last known player location.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.IsPlayerDetected">
+            <summary>
+            Gets or sets a value indicating whether player detected.
+            </summary>
+        </member>
         <member name="P:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.AttackTime">
             <summary>
             Gets or sets attack time.
@@ -257,6 +267,11 @@
             <param name="model">Game model.</param>
             <param name="character">Character.</param>
             <param name="commandManager">Command manager.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.BurstEnemyLogic.Attack">
+            <summary>
+            Attack method.
+            </summary>
         </member>
         <member name="T:TimeWar.Logic.Classes.Characters.FastEnemyLogic">
             <summary>
@@ -354,6 +369,11 @@
             Name of the fast enemy spritesheet.
             </summary>
         </member>
+        <member name="F:TimeWar.Logic.Classes.InitConfig.BurstEnemySpritesheet">
+            <summary>
+            Name of the Burst enemy spritesheet.
+            </summary>
+        </member>
         <member name="F:TimeWar.Logic.Classes.InitConfig.HeavyEnemySpritesheet">
             <summary>
             Name of the heavy enemy spritesheet.
@@ -382,6 +402,12 @@
         <member name="F:TimeWar.Logic.Classes.InitConfig.HeavyEnemyHealth">
              <summary>
              Basic enemy health const.
+             </summary>
+            
+        </member>
+        <member name="F:TimeWar.Logic.Classes.InitConfig.BurstEnemyHealth">
+             <summary>
+             Burst enemy health const.
              </summary>
             
         </member>
