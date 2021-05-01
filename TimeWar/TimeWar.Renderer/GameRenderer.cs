@@ -75,8 +75,8 @@ namespace TimeWar.Renderer
             this.firstRun = true;
             this.InitDecorations();
             this.spritesCache = new DrawingGroup();
-            this.layer1 = new StaticObject(300, 430, "backgroundlayer1", new System.Drawing.Point(0, 0));
-            this.layer2 = new StaticObject(300, 430, "backgroundlayer2", new System.Drawing.Point(0, 0));
+            this.layer1 = new StaticObject(300, 430, "backgroundlayer1", new System.Drawing.Point(0, this.model.Camera.GetViewportY + 300));
+            this.layer2 = new StaticObject(300, 430, "backgroundlayer2", new System.Drawing.Point(0, this.model.Camera.GetViewportY + 300));
             this.layer4 = new StaticObject(400, 862, "backgroundlayer4", new System.Drawing.Point(0, 0));
         }
 
