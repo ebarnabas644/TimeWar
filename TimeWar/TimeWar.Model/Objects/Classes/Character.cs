@@ -44,6 +44,11 @@ namespace TimeWar.Model.Objects
         }
 
         /// <summary>
+        /// Gets or sets a value indicating whether the character is invincible or not.
+        /// </summary>
+        public bool IsInvincible { get; set; }
+
+        /// <summary>
         /// Gets or sets mouse click location.
         /// </summary>
         public Point ClickLocation { get; set; }
