@@ -69,7 +69,7 @@ namespace TimeWar.Logic
                 int inaccuracy = 0;
                 if (this.Character.TypeOfBullet != BulletType.Accelerating)
                 {
-                    inaccuracy = RandomNumberGenerator.GetInt32(0, 76);
+                    inaccuracy = RandomNumberGenerator.GetInt32(-76, 76);
                 }
 
                 Point attackPoint = new Point(this.Character.Position.X + this.Model.CurrentWorld.ConvertTileToPixel(1), this.Character.Position.Y + this.Model.CurrentWorld.ConvertTileToPixel(1));
