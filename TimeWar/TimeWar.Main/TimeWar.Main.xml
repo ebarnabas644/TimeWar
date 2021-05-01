@@ -497,6 +497,11 @@
             Gets or sets map name.
             </summary>
         </member>
+        <member name="P:TimeWar.Main.ViewModel.GameViewModel.MenuVisibility">
+            <summary>
+            Gets or sets a value indicating whether visible.
+            </summary>
+        </member>
         <member name="P:TimeWar.Main.ViewModel.GameViewModel.NavigationContext">
             <summary>
             Gets navigation service context.
@@ -704,6 +709,17 @@
             <summary>
             Gets the MyIoc instance.
             </summary>
+        </member>
+        <member name="T:TimeWar.Main.View.BoolToVisibilityConverter">
+            <summary>
+            Bool to visibility converter.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.View.BoolToVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Main.View.BoolToVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <inheritdoc/>
         </member>
         <member name="T:TimeWar.Main.View.GameWindow">
             <summary>
