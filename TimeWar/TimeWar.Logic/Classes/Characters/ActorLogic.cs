@@ -18,6 +18,7 @@ namespace TimeWar.Logic.Classes.Characters
     public abstract class ActorLogic
     {
         private const int GravityAcceleration = 5;
+        private const int JumpTimer = 250;
         private Stopwatch accelerationStopwatch = new Stopwatch();
         private Stopwatch jumpingTimeOut = new Stopwatch();
         private Stopwatch attackStopwatch = new Stopwatch();
@@ -47,6 +48,11 @@ namespace TimeWar.Logic.Classes.Characters
         /// Gets the character.
         /// </summary>
         public Character Character { get; private set; }
+
+        /// <summary>
+        /// Gets or sets the force that is applied when an actor is jumping.
+        /// </summary>
+        public int MaxJumpHeight { get; set; }
 
         /// <summary>
         /// Gets or sets bullet type.
@@ -89,11 +95,6 @@ namespace TimeWar.Logic.Classes.Characters
         /// Gets or sets a value indicating whether the actor is jumping.
         /// </summary>
         protected bool IsJumping { get; set; }
-
-        /// <summary>
-        /// Gets or sets the force that is applied when an actor is jumping.
-        /// </summary>
-        protected int MaxJumpHeight { get; set; }
 
         /// <summary>
         /// Gets or sets the force that is applied every tick when an actor is moving.
@@ -370,7 +371,7 @@ namespace TimeWar.Logic.Classes.Characters
         /// <returns>Jumping value.</returns>
         protected virtual int Jump()
         {
-            if (!this.IsJumping && this.JumpingTimeOut.ElapsedMilliseconds > 250)
+            if (!this.IsJumping && this.JumpingTimeOut.ElapsedMilliseconds > JumpTimer)
             {
                 this.JumpingTimeOut.Restart();
                 this.IsJumping = true;
