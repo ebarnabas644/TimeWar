@@ -32,7 +32,7 @@ namespace TimeWar.Logic.Classes.Characters
             this.MaxMovementSpeed = 5;
             this.MaxJumpHeight = 10;
             this.AttackTime = 100;
-            this.TypeOfBullet = BulletType.Basic;
+            this.TypeOfBullet = BulletType.BasicEnemyBullet;
             this.MaxMoveTime = 2500;
             this.DefaultFollowDistance = RandomNumberGenerator.GetInt32(20, 24);
             this.DetectionRange = 25;

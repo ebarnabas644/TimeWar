@@ -69,6 +69,9 @@ namespace TimeWar.Logic.Classes.Characters.Actions
                 case BulletType.Basic:
                     this.BasicMovement();
                     break;
+                case BulletType.BasicEnemyBullet:
+                    this.BasicMovement();
+                    break;
                 case BulletType.Accelerating:
                     this.AcceleratigMovement();
                     break;

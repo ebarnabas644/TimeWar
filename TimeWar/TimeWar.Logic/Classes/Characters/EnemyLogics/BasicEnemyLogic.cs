@@ -44,7 +44,7 @@ namespace TimeWar.Logic.Classes.Characters
             this.movementStopwatch.Start();
             this.moveDir = 0;
             this.AttackTime = 2500;
-            this.MaxMoveTime = 3000;
+            this.MaxMoveTime = 1000;
             this.DetectionTime = 20000;
             this.DetectionRange = 20;
             this.movementDirTime = RandomNumberGenerator.GetInt32(this.MaxMoveTime);
@@ -56,6 +56,7 @@ namespace TimeWar.Logic.Classes.Characters
             this.Character.Health = 75;
             this.Character.CanAttack = true;
             this.AttackStopwatch.Start();
+            this.TypeOfBullet = BulletType.BasicEnemyBullet;
         }
 
         /// <summary>
@@ -179,11 +180,12 @@ namespace TimeWar.Logic.Classes.Characters
         /// <inheritdoc/>
         protected override void Attack()
         {
+            int inaccuracy = RandomNumberGenerator.GetInt32(-75, 76);
             if (this.isPlayerDetected && this.CommandManager.IsFinished && this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > this.AttackTime)
             {
                 Point attackPoint = new Point(this.Character.Position.X + this.Model.CurrentWorld.ConvertTileToPixel(1), this.Character.Position.Y + this.Model.CurrentWorld.ConvertTileToPixel(1));
 
-                Bullet b = new Bullet(attackPoint, 4, 4, "testenemy.png", new Point(this.TileToPixel(this.lastKnownPlayerLocation.X), this.TileToPixel(this.lastKnownPlayerLocation.Y + 2)), 10, this.TypeOfBullet);
+                Bullet b = new Bullet(attackPoint, 4, 4, "testenemy.png", new Point(this.TileToPixel(this.lastKnownPlayerLocation.X), this.TileToPixel(this.lastKnownPlayerLocation.Y + 2) - inaccuracy), 10, this.TypeOfBullet);
                 this.Model.CurrentWorld.AddBullet(b);
                 this.AttackStopwatch.Restart();
             }

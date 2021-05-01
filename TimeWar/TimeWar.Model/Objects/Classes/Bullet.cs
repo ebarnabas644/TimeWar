@@ -24,6 +24,11 @@ namespace TimeWar.Model.Objects.Classes
         Basic,
 
         /// <summary>
+        /// Basic bullet type. Can pass through enemies.
+        /// </summary>
+        BasicEnemyBullet,
+
+        /// <summary>
         /// Bullet's speed is increasing.
         /// </summary>
         Accelerating,

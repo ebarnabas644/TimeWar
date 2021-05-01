@@ -11,6 +11,7 @@ namespace TimeWar.Logic.Classes.LogicCollections
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+    using TimeWar.Data.Models;
     using TimeWar.Logic.Classes.Characters.Actions;
     using TimeWar.Model;
     using TimeWar.Model.Objects.Classes;
@@ -78,19 +79,11 @@ namespace TimeWar.Logic.Classes.LogicCollections
                     }
                 }
             }
-
-            // this.DetectEntity(item);
         }
 
-        // private static void BasicMovement(Bullet bullet)
-        // {
-        //    //Mindig normalizeolja ezért kering a kattintott pont körül
-        //    PointF movementVector = Normalize(GetVectorDirection(bullet));
-        //    bullet.MoveVector = new PointF(bullet.MoveVector.X + (movementVector.X * bullet.Acceleration), bullet.MoveVector.Y + (movementVector.Y * bullet.Acceleration));
-        // }
         private static void BasicMovement(Bullet bullet)
         {
-            if (Math.Abs(bullet.MoveVector.X) <= MaxBulletSpeed && Math.Abs(bullet.MoveVector.Y) <= MaxBulletSpeed)
+            if (bullet.Type == BulletType.Accelerating || (Math.Abs(bullet.MoveVector.X) <= MaxBulletSpeed && Math.Abs(bullet.MoveVector.Y) <= MaxBulletSpeed))
             {
                 bullet.MoveVector = new PointF(bullet.MoveVector.X + (bullet.MovementVectorF.X * bullet.Acceleration), bullet.MoveVector.Y + (bullet.MovementVectorF.Y * bullet.Acceleration));
             }
@@ -207,7 +200,17 @@ namespace TimeWar.Logic.Classes.LogicCollections
                     }
                     else
                     {
-                        this.model.Hero.CurrentHealth -= bullet.Damage;
+                        if (!this.model.Hero.IsInvincible)
+                        {
+                            this.model.Hero.CurrentHealth -= bullet.Damage;
+                            if (this.model.Hero.CurrentHealth <= 0)
+                            {
+                                this.model.Hero.Position = this.model.Hero.Checkpoint;
+                                this.model.Hero.CurrentHealth = this.model.Hero.Health;
+                                this.model.Hero.CurrentShield = this.model.Hero.Shield;
+                                this.model.Hero.MovementVector = new Point(0, 0);
+                            }
+                        }
                     }
 
                     this.model.Hero.ShieldRegenTimer.Reset();
