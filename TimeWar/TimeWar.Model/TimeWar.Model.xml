@@ -39,6 +39,11 @@
             Basic bullet type. Can pass through enemies.
             </summary>
         </member>
+        <member name="F:TimeWar.Model.Objects.Classes.BulletType.BasicEnemyBullet">
+            <summary>
+            Basic bullet type. Can pass through enemies.
+            </summary>
+        </member>
         <member name="F:TimeWar.Model.Objects.Classes.BulletType.Accelerating">
             <summary>
             Bullet's speed is increasing.
@@ -192,6 +197,91 @@
             Gets or sets the type of enemy.
             </summary>
         </member>
+        <member name="T:TimeWar.Model.Objects.Classes.POIType">
+            <summary>
+            Types of POI.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.POIType.Checkpoint">
+            <summary>
+            Checkpoint.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.POIType.Finish">
+            <summary>
+            Finish point.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.POIType.HealthKit">
+            <summary>
+            Adds health point to character.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.POIType.HighJump">
+            <summary>
+            Character can jump higher than normal.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.POIType.UnlockWeapon">
+            <summary>
+            Unlocks accelerating bullet.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.POIType.Invincibility">
+            <summary>
+            The character's health doesn't deplete.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.POIType.RapidFire">
+            <summary>
+            Player can spam bullets.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Model.Objects.Classes.PointOfInterest">
+            <summary>
+            Class for checkpoints, finish point, powerups.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Classes.PointOfInterest.#ctor(TimeWar.Model.Objects.Classes.POIType,System.Int32,System.Int32,System.String,System.Drawing.Point,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Model.Objects.Classes.PointOfInterest"/> class.
+            </summary>
+            <param name="type">Type of a poi.</param>
+            <param name="height">Height.</param>
+            <param name="width">Width.</param>
+            <param name="spritefile">Sprite file.</param>
+            <param name="position">Position.</param>
+            <param name="stanceless">Stanceless.</param>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.Type">
+            <summary>
+            Gets or sets the type of a POI.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.Height">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.Width">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.SpriteFile">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.Stance">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.StanceLess">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.MovementVector">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.CurrentSprite">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.Position">
+            <inheritdoc/>
+        </member>
         <member name="T:TimeWar.Model.Objects.Classes.StaticObject">
             <summary>
             Static object class.
@@ -256,6 +346,11 @@
             <param name="height">Character height.</param>
             <param name="width">Character width.</param>
             <param name="spriteFile">Name of the sprite file.</param>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.IsInvincible">
+            <summary>
+            Gets or sets a value indicating whether the character is invincible or not.
+            </summary>
         </member>
         <member name="P:TimeWar.Model.Objects.Character.ClickLocation">
             <summary>
@@ -374,6 +469,11 @@
             <param name="tileSize">Game tile size.</param>
             <param name="magnify">Zoom extent of the game world(default value = 3).</param>
         </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.StartPoint">
+            <summary>
+            Gets or sets startpoint.
+            </summary>
+        </member>
         <member name="P:TimeWar.Model.Objects.GameWorld.WorldName">
             <summary>
             Gets or sets the name of the game world.
@@ -430,6 +530,11 @@
             Gets enemies.
             </summary>
         </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.GetPois">
+            <summary>
+            Gets a list of pois.
+            </summary>
+        </member>
         <member name="M:TimeWar.Model.Objects.GameWorld.GetBullet(System.Int32)">
             <summary>
             Get bullet from bullet collection.
@@ -437,19 +542,24 @@
             <param name="idx">Index.</param>
             <returns>Bullet entity.</returns>
         </member>
-        <member name="M:TimeWar.Model.Objects.GameWorld.AddPointOfInterest(System.String,System.Drawing.Point)">
+        <member name="M:TimeWar.Model.Objects.GameWorld.AddPOI(TimeWar.Model.Objects.Classes.PointOfInterest)">
             <summary>
-            Add new point of interest.
+            Add new poi.
             </summary>
-            <param name="name">Name of the point.</param>
-            <param name="position">Position.</param>
+            <param name="poi">POI entity.</param>
         </member>
-        <member name="M:TimeWar.Model.Objects.GameWorld.SearchPointOfInterest(System.String)">
+        <member name="M:TimeWar.Model.Objects.GameWorld.RemovePOI(TimeWar.Model.Objects.Classes.PointOfInterest)">
             <summary>
-            Find existing point of interest by key.
+            Remove poi from the collection.
             </summary>
-            <param name="name">Key of the point.</param>
-            <returns>Position of the point.</returns>
+            <param name="poi">Point of interest.</param>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.GetPoi(System.Int32)">
+            <summary>
+            Get poi entity.
+            </summary>
+            <param name="idx">Index.</param>
+            <returns>Poi entity.</returns>
         </member>
         <member name="M:TimeWar.Model.Objects.GameWorld.AddGround(System.Drawing.Point)">
             <summary>
@@ -549,6 +659,11 @@
             <param name="height">Height.</param>
             <param name="width">Width.</param>
             <param name="spriteFile">Spritesheet file name.</param>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Player.NumOfWeaponUnlocked">
+            <summary>
+            Gets or sets number of unlocked weapons.
+            </summary>
         </member>
         <member name="T:TimeWar.Model.Objects.Viewport">
             <summary>

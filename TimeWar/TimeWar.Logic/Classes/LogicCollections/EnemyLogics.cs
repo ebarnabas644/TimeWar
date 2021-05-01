@@ -1,4 +1,4 @@
-﻿// <copyright file="EnemyLogic.cs" company="Time War">
+﻿// <copyright file="EnemyLogics.cs" company="Time War">
 // Copyright (c) Time War. All rights reserved.
 // </copyright>
 
@@ -17,7 +17,7 @@ namespace TimeWar.Logic.Classes.LogicCollections
     /// <summary>
     /// Enemy logic collection.
     /// </summary>
-    public class EnemyLogic
+    public class EnemyLogics
     {
         private const int TickDistance = 100;
         private GameModel model;
@@ -25,11 +25,11 @@ namespace TimeWar.Logic.Classes.LogicCollections
         private CommandManager commandManager;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="EnemyLogic"/> class.
+        /// Initializes a new instance of the <see cref="EnemyLogics"/> class.
         /// </summary>
         /// <param name="model">Game model.</param>
         /// <param name="commandManager">Command manager.</param>
-        public EnemyLogic(GameModel model, CommandManager commandManager)
+        public EnemyLogics(GameModel model, CommandManager commandManager)
         {
             this.model = model;
             this.commandManager = commandManager;

@@ -4,6 +4,7 @@
 
 namespace TimeWar.Model.Objects
 {
+    using System.Collections.Generic;
     using System.Drawing;
     using TimeWar.Model.Objects.Classes;
 
@@ -26,6 +27,12 @@ namespace TimeWar.Model.Objects
             this.Stance = Interfaces.Stances.StandRight;
             this.Shield = 100;
             this.CurrentShield = 100;
+            this.NumOfWeaponUnlocked = 1;
         }
+
+        /// <summary>
+        /// Gets or sets number of unlocked weapons.
+        /// </summary>
+        public int NumOfWeaponUnlocked { get; set; }
     }
 }
