@@ -111,7 +111,7 @@ namespace TimeWar.Logic.Classes.LogicCollections
             }
             else
             {
-                if (poi.IsPlayerContacted)
+                if (poi.IsPlayerContacted && !poi.TimedPoi)
                 {
                     this.model.CurrentWorld.RemovePOI(poi.Poi);
                 }

@@ -6,6 +6,7 @@ namespace TimeWar.Logic.Classes.POIs
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
@@ -18,6 +19,8 @@ namespace TimeWar.Logic.Classes.POIs
     /// </summary>
     public class TimedPOILogic : PointOfInterestLogic, ITimedEvent
     {
+        private int timeOfEffect;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="TimedPOILogic"/> class.
         /// </summary>
@@ -30,7 +33,7 @@ namespace TimeWar.Logic.Classes.POIs
             : base(model, poi, timed)
         {
             this.Character = character;
-            this.Timer = (int)this.Character.EffectStopwatch.ElapsedMilliseconds + timeOfEffect;
+            this.timeOfEffect = timeOfEffect;
         }
 
         /// <summary>
@@ -41,7 +44,7 @@ namespace TimeWar.Logic.Classes.POIs
         /// <inheritdoc/>
         public bool CheckTimer()
         {
-            if (this.Character.EffectStopwatch.ElapsedMilliseconds > this.Timer)
+            if (this.Character.EffectStopwatch.ElapsedMilliseconds > this.Timer && this.Timer >= this.timeOfEffect)
             {
                 this.ResetStats();
                 return true;
@@ -54,6 +57,7 @@ namespace TimeWar.Logic.Classes.POIs
         public override void POIEvent()
         {
             this.TimedPoi = true;
+            this.Timer = (int)this.Character.EffectStopwatch.ElapsedMilliseconds + this.timeOfEffect;
             this.Character.EffectCounter++;
         }
 
