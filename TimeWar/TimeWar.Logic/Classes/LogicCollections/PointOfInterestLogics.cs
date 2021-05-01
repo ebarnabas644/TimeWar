@@ -120,7 +120,6 @@ namespace TimeWar.Logic.Classes.LogicCollections
                 {
                     if ((poi as TimedPOILogic).CheckTimer())
                     {
-                        (poi as TimedPOILogic).ResetStats();
                         this.pois.Remove(poi);
                     }
                 }
