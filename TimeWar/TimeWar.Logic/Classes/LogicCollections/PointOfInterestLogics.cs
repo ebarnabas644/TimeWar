@@ -69,7 +69,7 @@ namespace TimeWar.Logic.Classes.LogicCollections
                 switch (poi.Type)
                 {
                     case POIType.Checkpoint:
-                        CheckpointLogic checkpoint = new CheckpointLogic(this.model, poi);
+                        CheckpointLogic checkpoint = new CheckpointLogic(this.model, poi, this.character);
                         this.pois.Add(checkpoint);
                         break;
                     case POIType.Finish:

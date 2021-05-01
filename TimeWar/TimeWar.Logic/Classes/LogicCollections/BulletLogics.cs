@@ -203,6 +203,13 @@ namespace TimeWar.Logic.Classes.LogicCollections
                         if (!this.model.Hero.IsInvincible)
                         {
                             this.model.Hero.CurrentHealth -= bullet.Damage;
+                            if (this.model.Hero.CurrentHealth <= 0)
+                            {
+                                this.model.Hero.Position = this.model.Hero.Checkpoint;
+                                this.model.Hero.CurrentHealth = this.model.Hero.Health;
+                                this.model.Hero.CurrentShield = this.model.Hero.Shield;
+                                this.model.Hero.MovementVector = new Point(0, 0);
+                            }
                         }
                     }
 

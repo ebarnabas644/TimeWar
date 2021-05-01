@@ -28,7 +28,13 @@ namespace TimeWar.Model.Objects
             this.Shield = 100;
             this.CurrentShield = 100;
             this.NumOfWeaponUnlocked = 1;
+            this.Checkpoint = this.Position;
         }
+
+        /// <summary>
+        /// Gets or sets checkpoint.
+        /// </summary>
+        public Point Checkpoint { get; set; }
 
         /// <summary>
         /// Gets or sets number of unlocked weapons.

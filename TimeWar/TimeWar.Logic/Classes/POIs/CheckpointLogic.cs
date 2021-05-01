@@ -17,21 +17,25 @@ namespace TimeWar.Logic.Classes.POIs
     /// </summary>
     public class CheckpointLogic : PointOfInterestLogic
     {
+        private CharacterLogic character;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="CheckpointLogic"/> class.
         /// </summary>
         /// <param name="model">Model.</param>
         /// <param name="poi">Poi.</param>
+        /// <param name="character">Charcter logic.</param>
         /// <param name="timed">Timed.</param>
-        public CheckpointLogic(GameModel model, PointOfInterest poi, bool timed = false)
+        public CheckpointLogic(GameModel model, PointOfInterest poi, CharacterLogic character, bool timed = false)
             : base(model, poi, timed)
         {
+            this.character = character;
         }
 
         /// <inheritdoc/>
         public override void POIEvent()
         {
-            throw new NotImplementedException();
+            this.Model.Hero.Checkpoint = this.Poi.Position;
         }
     }
 }
