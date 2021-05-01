@@ -33,6 +33,13 @@ namespace TimeWar.Renderer
         private Dictionary<string, IGameObject> gameObjects;
         private HashSet<IGameObject> uniqueObjectCache;
         private HashSet<string> loadCache;
+        private IGameObject layer1;
+        private IGameObject layer2;
+        private IGameObject layer4;
+        private double backgroundBoundx1;
+        private double backgroundBoundy1;
+        private double backgroundBoundx2;
+        private double backgroundBoundy2;
 
         // private List<Character> characters;
         private int currentSprite;
@@ -68,6 +75,9 @@ namespace TimeWar.Renderer
             this.firstRun = true;
             this.InitDecorations();
             this.spritesCache = new DrawingGroup();
+            this.layer1 = new StaticObject(300, 430, "backgroundlayer1", new System.Drawing.Point(0, 0));
+            this.layer2 = new StaticObject(300, 430, "backgroundlayer2", new System.Drawing.Point(0, 0));
+            this.layer4 = new StaticObject(400, 862, "backgroundlayer4", new System.Drawing.Point(0, 0));
         }
 
         /// <summary>
@@ -83,6 +93,9 @@ namespace TimeWar.Renderer
         {
             this.currentSprite = (int)this.spriteTimer.Elapsed.TotalMilliseconds / 100;
             DrawingGroup dg = new DrawingGroup();
+            dg.Children.Add(this.GetBackgroundLayer4());
+            dg.Children.Add(this.GetBackgroundLayer1());
+            dg.Children.Add(this.GetBackgroundLayer2());
             dg.Children.Add(this.GetBackground());
             dg.Children.Add(this.GetDecorations());
             dg.Children.Add(this.GetBullets());
@@ -218,6 +231,42 @@ namespace TimeWar.Renderer
             return this.backgroundCache;
         }
 
+        private Drawing GetBackgroundLayer1()
+        {
+            Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(this.layer1.Position.X) - (this.model.Camera.GetViewportX * 0.6), this.model.Camera.GetRelativeObjectPosY(this.layer1.Position.Y) - (this.model.Camera.GetViewportY * 0.02), this.layer1.Width * this.model.CurrentWorld.Magnify * 4, this.layer1.Height * this.model.CurrentWorld.Magnify));
+
+            if (this.backgroundBoundx1 == 0 || this.backgroundBoundy1 == 0)
+            {
+                this.backgroundBoundx1 = g.Bounds.Size.Width;
+                this.backgroundBoundy1 = g.Bounds.Size.Height;
+            }
+
+            GeometryDrawing layer1draw = new GeometryDrawing(this.GetSpriteBrush(this.layer1, true, this.backgroundBoundx1, this.backgroundBoundy1), null, g);
+            return layer1draw;
+        }
+
+        private Drawing GetBackgroundLayer2()
+        {
+            Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(this.layer2.Position.X) - (this.model.Camera.GetViewportX * 0.25), this.model.Camera.GetRelativeObjectPosY(this.layer2.Position.Y) - (this.model.Camera.GetViewportY * 0.02), this.layer2.Width * this.model.CurrentWorld.Magnify * 4, this.layer2.Height * this.model.CurrentWorld.Magnify));
+
+            if (this.backgroundBoundx2 == 0 || this.backgroundBoundy2 == 0)
+            {
+                this.backgroundBoundx2 = g.Bounds.Size.Width;
+                this.backgroundBoundy2 = g.Bounds.Size.Height;
+            }
+
+            GeometryDrawing layer2draw = new GeometryDrawing(this.GetSpriteBrush(this.layer2, true, this.backgroundBoundx2, this.backgroundBoundy2), null, g);
+            return layer2draw;
+        }
+
+        private Drawing GetBackgroundLayer4()
+        {
+            Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(this.layer4.Position.X) / 5, this.model.Camera.GetRelativeObjectPosY(this.layer4.Position.Y) / 5, this.layer4.Width * this.model.CurrentWorld.Magnify, this.layer4.Height * this.model.CurrentWorld.Magnify));
+
+            GeometryDrawing layer4draw = new GeometryDrawing(this.GetSpriteBrush(this.layer4), null, g);
+            return layer4draw;
+        }
+
         private Drawing GetTitle()
         {
             if (!this.gameObjects.TryGetValue("title", out IGameObject title))
@@ -240,9 +289,9 @@ namespace TimeWar.Renderer
         private Drawing GetHud()
         {
             DrawingGroup g = new DrawingGroup();
-            StaticObject hud = new StaticObject(27, 123, "hud", new System.Drawing.Point(50, 50), true);
-            StaticObject shieldbar = new StaticObject(12, 119, "shieldbar", new System.Drawing.Point(52, 54), true);
-            StaticObject hpbar = new StaticObject(9, 112, "hpbar", new System.Drawing.Point(52, 82), true);
+            StaticObject hud = new StaticObject(31, 153, "hud", new System.Drawing.Point(50, 50), true);
+            StaticObject shieldbar = new StaticObject(12, 119, "shieldbar", new System.Drawing.Point(112, 58), true);
+            StaticObject hpbar = new StaticObject(9, 112, "hpbar", new System.Drawing.Point(112, 86), true);
             Geometry hb = new RectangleGeometry(new Rect(hud.Position.X, hud.Position.Y, hud.Width * this.model.CurrentWorld.Magnify / 2, hud.Height * this.model.CurrentWorld.Magnify / 2));
             Geometry shb = new RectangleGeometry(new Rect(shieldbar.Position.X, shieldbar.Position.Y, shieldbar.Width * ((double)(this.model.Hero.CurrentShield >= 0 ? this.model.Hero.CurrentShield : 0) / this.model.Hero.Shield) * this.model.CurrentWorld.Magnify / 2, shieldbar.Height * this.model.CurrentWorld.Magnify / 2));
             Geometry hpb = new RectangleGeometry(new Rect(hpbar.Position.X, hpbar.Position.Y, hpbar.Width * ((double)(this.model.Hero.CurrentHealth >= 0 ? this.model.Hero.CurrentHealth : 0) / this.model.Hero.Health) * this.model.CurrentWorld.Magnify / 2, hpbar.Height * this.model.CurrentWorld.Magnify / 2));
