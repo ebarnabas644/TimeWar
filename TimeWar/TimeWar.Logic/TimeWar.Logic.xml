@@ -509,12 +509,13 @@
             Checkpoint logic.
             </summary>
         </member>
-        <member name="M:TimeWar.Logic.Classes.POIs.CheckpointLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Classes.PointOfInterest,System.Boolean)">
+        <member name="M:TimeWar.Logic.Classes.POIs.CheckpointLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Classes.PointOfInterest,TimeWar.Logic.CharacterLogic,System.Boolean)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.POIs.CheckpointLogic"/> class.
             </summary>
             <param name="model">Model.</param>
             <param name="poi">Poi.</param>
+            <param name="character">Charcter logic.</param>
             <param name="timed">Timed.</param>
         </member>
         <member name="M:TimeWar.Logic.Classes.POIs.CheckpointLogic.POIEvent">

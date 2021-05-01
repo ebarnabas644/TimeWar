@@ -660,6 +660,11 @@
             <param name="width">Width.</param>
             <param name="spriteFile">Spritesheet file name.</param>
         </member>
+        <member name="P:TimeWar.Model.Objects.Player.Checkpoint">
+            <summary>
+            Gets or sets checkpoint.
+            </summary>
+        </member>
         <member name="P:TimeWar.Model.Objects.Player.NumOfWeaponUnlocked">
             <summary>
             Gets or sets number of unlocked weapons.
