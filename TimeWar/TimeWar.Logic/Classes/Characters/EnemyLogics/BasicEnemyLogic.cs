@@ -26,8 +26,6 @@ namespace TimeWar.Logic.Classes.Characters
         private int movementDirTime;
         private int movementTime;
         private int moveDir;
-        private Point lastKnownPlayerLocation;
-        private bool isPlayerDetected;
         private bool isPlayerVisible;
         private Stopwatch playerDetectionStopwatch = new Stopwatch();
 
@@ -50,14 +48,24 @@ namespace TimeWar.Logic.Classes.Characters
             this.movementDirTime = RandomNumberGenerator.GetInt32(this.MaxMoveTime);
             this.movementTime = RandomNumberGenerator.GetInt32(this.MaxMoveTime);
             this.DefaultFollowDistance = RandomNumberGenerator.GetInt32(5, 11);
-            this.lastKnownPlayerLocation = new Point(0, 0);
-            this.isPlayerDetected = false;
+            this.LastKnownPlayerLocation = new Point(0, 0);
+            this.IsPlayerDetected = false;
             this.isPlayerVisible = false;
             this.Character.Health = 75;
             this.Character.CanAttack = true;
             this.AttackStopwatch.Start();
             this.TypeOfBullet = BulletType.BasicEnemyBullet;
         }
+
+        /// <summary>
+        /// Gets or sets last known player location.
+        /// </summary>
+        public Point LastKnownPlayerLocation { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether player detected.
+        /// </summary>
+        public bool IsPlayerDetected { get; set; }
 
         /// <summary>
         /// Gets or sets attack time.
@@ -104,7 +112,7 @@ namespace TimeWar.Logic.Classes.Characters
         {
             int x = 0;
             int y = 0;
-            if (!this.isPlayerDetected)
+            if (!this.IsPlayerDetected)
             {
                 if (this.movementDirStopwatch.ElapsedMilliseconds > this.movementDirTime)
                 {
@@ -146,17 +154,17 @@ namespace TimeWar.Logic.Classes.Characters
                         this.followDistance = this.DefaultFollowDistance;
                     }
 
-                    if (this.PixelToTile(this.Character.Position.X) > this.lastKnownPlayerLocation.X && distance >= this.followDistance)
+                    if (this.PixelToTile(this.Character.Position.X) > this.LastKnownPlayerLocation.X && distance >= this.followDistance)
                     {
                         x -= 2;
                     }
 
-                    if (this.PixelToTile(this.Character.Position.X) < this.lastKnownPlayerLocation.X && distance >= this.followDistance)
+                    if (this.PixelToTile(this.Character.Position.X) < this.LastKnownPlayerLocation.X && distance >= this.followDistance)
                     {
                         x += 2;
                     }
 
-                    if (this.PixelToTile(this.Character.Position.Y) < this.lastKnownPlayerLocation.Y)
+                    if (this.PixelToTile(this.Character.Position.Y) < this.LastKnownPlayerLocation.Y)
                     {
                         y += this.Jump();
                     }
@@ -181,11 +189,11 @@ namespace TimeWar.Logic.Classes.Characters
         protected override void Attack()
         {
             int inaccuracy = RandomNumberGenerator.GetInt32(-75, 76);
-            if (this.isPlayerDetected && this.CommandManager.IsFinished && this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > this.AttackTime)
+            if (this.IsPlayerDetected && this.CommandManager.IsFinished && this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > this.AttackTime)
             {
                 Point attackPoint = new Point(this.Character.Position.X + this.Model.CurrentWorld.ConvertTileToPixel(1), this.Character.Position.Y + this.Model.CurrentWorld.ConvertTileToPixel(1));
 
-                Bullet b = new Bullet(attackPoint, 4, 4, "testenemy.png", new Point(this.TileToPixel(this.lastKnownPlayerLocation.X), this.TileToPixel(this.lastKnownPlayerLocation.Y + 2) - inaccuracy), 10, this.TypeOfBullet);
+                Bullet b = new Bullet(attackPoint, 4, 4, "testenemy.png", new Point(this.TileToPixel(this.LastKnownPlayerLocation.X), this.TileToPixel(this.LastKnownPlayerLocation.Y + 2) - inaccuracy), 10, this.TypeOfBullet);
                 this.Model.CurrentWorld.AddBullet(b);
                 this.AttackStopwatch.Restart();
             }
@@ -207,7 +215,7 @@ namespace TimeWar.Logic.Classes.Characters
 
         private int PlayerDistance()
         {
-            return Math.Abs(this.PixelToTile(this.Character.Position.X) - this.lastKnownPlayerLocation.X);
+            return Math.Abs(this.PixelToTile(this.Character.Position.X) - this.LastKnownPlayerLocation.X);
         }
 
         private void DetectPlayer()
@@ -244,7 +252,7 @@ namespace TimeWar.Logic.Classes.Characters
 
             if (this.playerDetectionStopwatch.ElapsedMilliseconds > this.DetectionTime)
             {
-                this.isPlayerDetected = false;
+                this.IsPlayerDetected = false;
                 this.playerDetectionStopwatch.Reset();
             }
 
@@ -314,15 +322,15 @@ namespace TimeWar.Logic.Classes.Characters
                 // this.Model.CurrentWorld.AddBullet(c);
                 if (playerLocation == upDetection)
                 {
-                    this.lastKnownPlayerLocation = upDetection;
-                    this.isPlayerDetected = true;
+                    this.LastKnownPlayerLocation = upDetection;
+                    this.IsPlayerDetected = true;
                     this.isPlayerVisible = true;
                     return true;
                 }
                 else if (playerLocation == downDetection)
                 {
-                    this.lastKnownPlayerLocation = downDetection;
-                    this.isPlayerDetected = true;
+                    this.LastKnownPlayerLocation = downDetection;
+                    this.IsPlayerDetected = true;
                     this.isPlayerVisible = true;
                     return true;
                 }

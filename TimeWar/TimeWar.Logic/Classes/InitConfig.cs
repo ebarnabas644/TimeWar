@@ -40,6 +40,11 @@ namespace TimeWar.Logic.Classes
         public const string FastEnemySpritesheet = "fasttestenemy";
 
         /// <summary>
+        /// Name of the Burst enemy spritesheet.
+        /// </summary>
+        public const string BurstEnemySpritesheet = "bursttestenemy";
+
+        /// <summary>
         /// Name of the heavy enemy spritesheet.
         /// </summary>
         public const string HeavyEnemySpritesheet = "heavytestenemy";
@@ -69,6 +74,12 @@ namespace TimeWar.Logic.Classes
         /// </summary>
         ///
         public const int HeavyEnemyHealth = 200;
+
+        /// <summary>
+        /// Burst enemy health const.
+        /// </summary>
+        ///
+        public const int BurstEnemyHealth = 150;
 
         /// <summary>
         /// Basic enemy health const.

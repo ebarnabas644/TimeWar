@@ -122,7 +122,7 @@ namespace TimeWar.Logic
 
                         case 476: gameWorld.AddEnemy(new Enemy(new Point(x * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize, (y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize) - (InitConfig.BasicEnemyHeight * this.model.CurrentWorld.TileSize)), InitConfig.HeavyEnemyHealth, InitConfig.BasicEnemyHeight, InitConfig.BasicEnemyWidth, EnemyType.Heavy, InitConfig.HeavyEnemySpritesheet)); break;
 
-                        case 477: gameWorld.AddEnemy(new Enemy(new Point(x * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize, (y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize) - (InitConfig.BasicEnemyHeight * this.model.CurrentWorld.TileSize)), InitConfig.BasicEnemyHealth, InitConfig.BasicEnemyHeight, InitConfig.BasicEnemyWidth, EnemyType.Burst, InitConfig.BasicEnemySpritesheet)); break;
+                        case 477: gameWorld.AddEnemy(new Enemy(new Point(x * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize, (y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize) - (InitConfig.BasicEnemyHeight * this.model.CurrentWorld.TileSize)), InitConfig.BurstEnemyHealth, InitConfig.BasicEnemyHeight, InitConfig.BasicEnemyWidth, EnemyType.Burst, InitConfig.BurstEnemySpritesheet)); break;
 
                         case 478: gameWorld.AddEnemy(new Enemy(new Point(x * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize, (y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize) - (InitConfig.BasicEnemyHeight * this.model.CurrentWorld.TileSize)), InitConfig.FastEnemyHealth, InitConfig.BasicEnemyHeight, InitConfig.BasicEnemyWidth, EnemyType.Fast, InitConfig.FastEnemySpritesheet)); break;
 
