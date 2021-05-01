@@ -15,28 +15,33 @@ namespace TimeWar.Logic.Classes.POIs
     /// <summary>
     /// Invincibility logic.
     /// </summary>
-    public class InvincibilityLogic : PointOfInterestLogic
+    public class InvincibilityLogic : TimedPOILogic
     {
-        private int invisibilityTime;
-
         /// <summary>
         /// Initializes a new instance of the <see cref="InvincibilityLogic"/> class.
         /// </summary>
         /// <param name="model">Model.</param>
         /// <param name="poi">Poi.</param>
-        /// <param name="invisibilityTime">Time of invisibility.</param>
+        /// <param name="character">Character.</param>
+        /// <param name="timeOfEffect">Time of effect.</param>
         /// <param name="timed">Timed.</param>
-        public InvincibilityLogic(GameModel model, PointOfInterest poi, int invisibilityTime = 10000, bool timed = false)
-            : base(model, poi, timed)
+        public InvincibilityLogic(GameModel model, PointOfInterest poi, CharacterLogic character, int timeOfEffect = 10000, bool timed = false)
+            : base(model, poi, character, timeOfEffect, timed)
         {
-            this.invisibilityTime = invisibilityTime;
         }
 
         /// <inheritdoc/>
         public override void POIEvent()
         {
-            this.TimedPoi = true;
-            throw new NotImplementedException();
+            this.Character.Character.IsInvincible = true;
+            base.POIEvent();
+        }
+
+        /// <inheritdoc/>
+        public override void ResetStats()
+        {
+            this.Character.Character.IsInvincible = false;
+            base.ResetStats();
         }
     }
 }

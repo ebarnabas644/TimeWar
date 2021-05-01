@@ -10,6 +10,7 @@ namespace TimeWar.Logic.Classes.LogicCollections
     using System.Text;
     using System.Threading.Tasks;
     using TimeWar.Logic.Classes.POIs;
+    using TimeWar.Logic.Interfaces;
     using TimeWar.Model;
     using TimeWar.Model.Objects.Classes;
 
@@ -80,7 +81,7 @@ namespace TimeWar.Logic.Classes.LogicCollections
                         this.pois.Add(hp);
                         break;
                     case POIType.HighJump:
-                        HighJumpLogic jump = new HighJumpLogic(this.model, poi);
+                        HighJumpLogic jump = new HighJumpLogic(this.model, poi, this.character);
                         this.pois.Add(jump);
                         break;
                     case POIType.UnlockWeapon:
@@ -88,7 +89,7 @@ namespace TimeWar.Logic.Classes.LogicCollections
                         this.pois.Add(weapon);
                         break;
                     case POIType.Invincibility:
-                        InvincibilityLogic inv = new InvincibilityLogic(this.model, poi);
+                        InvincibilityLogic inv = new InvincibilityLogic(this.model, poi, this.character);
                         this.pois.Add(inv);
                         break;
                     case POIType.RapidFire:
@@ -103,17 +104,25 @@ namespace TimeWar.Logic.Classes.LogicCollections
 
         private void Despawn(PointOfInterestLogic poi)
         {
-            if (poi.IsPlayerContacted && !poi.TimedPoi)
+            if (poi.IsPlayerContacted && poi is not ITimedEvent)
             {
                 this.model.CurrentWorld.RemovePOI(poi.Poi);
                 this.pois.Remove(poi);
             }
             else
             {
-                if (this.character.EffectStopwatch.ElapsedMilliseconds > poi.Timer)
+                if (poi.IsPlayerContacted)
                 {
                     this.model.CurrentWorld.RemovePOI(poi.Poi);
-                    this.pois.Remove(poi);
+                }
+
+                if (poi is TimedPOILogic && this.character.EffectStopwatch.IsRunning)
+                {
+                    if ((poi as TimedPOILogic).CheckTimer())
+                    {
+                        (poi as TimedPOILogic).ResetStats();
+                        this.pois.Remove(poi);
+                    }
                 }
             }
         }

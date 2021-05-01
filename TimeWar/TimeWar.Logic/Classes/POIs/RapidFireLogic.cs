@@ -17,7 +17,7 @@ namespace TimeWar.Logic.Classes.POIs
     /// <summary>
     /// Rapid fire logic.
     /// </summary>
-    public class RapidFireLogic : PointOfInterestLogic, ITimedEvent
+    public class RapidFireLogic : TimedPOILogic
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="RapidFireLogic"/> class.
@@ -25,20 +25,13 @@ namespace TimeWar.Logic.Classes.POIs
         /// <param name="model">Model.</param>
         /// <param name="poi">Poi.</param>
         /// <param name="character">Character.</param>
-        /// <param name="timeOfEffect">Time of rapid fire..</param>
+        /// <param name="timeOfEffect">Time of effect.</param>
         /// <param name="timed">Timed.</param>
         public RapidFireLogic(GameModel model, PointOfInterest poi, CharacterLogic character, int timeOfEffect = 10000, bool timed = false)
-            : base(model, poi, timed)
+            : base(model, poi, character, timeOfEffect, timed)
         {
-            this.Timer = timeOfEffect;
-            this.CharacterLogic = character;
-            this.DefaultAttackTime = this.CharacterLogic.AttackTime;
+            this.DefaultAttackTime = this.Character.AttackTime;
         }
-
-        /// <summary>
-        /// Gets or sets character for the effect.
-        /// </summary>
-        public CharacterLogic CharacterLogic { get; set; }
 
         /// <summary>
         /// Gets or sets the original attack time of the player.
@@ -48,15 +41,15 @@ namespace TimeWar.Logic.Classes.POIs
         /// <inheritdoc/>
         public override void POIEvent()
         {
-            this.TimedPoi = true;
-            this.CharacterLogic.AttackTime = 1;
+            base.POIEvent();
+            this.Character.AttackTime = 1;
         }
 
         /// <inheritdoc/>
-        public void ResetStats()
+        public override void ResetStats()
         {
-            this.CharacterLogic.AttackTime = this.DefaultAttackTime;
-            this.CharacterLogic.EffectCounter--;
+            base.ResetStats();
+            this.Character.AttackTime = this.DefaultAttackTime;
         }
     }
 }

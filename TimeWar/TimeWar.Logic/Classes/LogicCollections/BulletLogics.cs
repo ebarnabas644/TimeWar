@@ -200,7 +200,10 @@ namespace TimeWar.Logic.Classes.LogicCollections
                     }
                     else
                     {
-                        this.model.Hero.CurrentHealth -= bullet.Damage;
+                        if (!this.model.Hero.IsInvincible)
+                        {
+                            this.model.Hero.CurrentHealth -= bullet.Damage;
+                        }
                     }
 
                     this.model.Hero.ShieldRegenTimer.Reset();
