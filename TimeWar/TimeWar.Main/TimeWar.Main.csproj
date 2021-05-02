@@ -41,12 +41,16 @@
     <None Remove="Sprites\286.png" />
     <None Remove="Sprites\307.png" />
     <None Remove="Sprites\41.png" />
+    <None Remove="Sprites\AcceleratingBullet.png" />
     <None Remove="Sprites\backgroundlayer1.png" />
     <None Remove="Sprites\backgroundlayer2.png" />
     <None Remove="Sprites\backgroundlayer3.png" />
     <None Remove="Sprites\backgroundlayer4.png" />
     <None Remove="Sprites\basicbullet.png" />
+    <None Remove="Sprites\basicenemybullet.png" />
+    <None Remove="Sprites\bouncingbullet.png" />
     <None Remove="Sprites\bursttestenemy.png" />
+    <None Remove="Sprites\curvedbouncingbullet.png" />
     <None Remove="Sprites\fasttestenemy.png" />
     <None Remove="Sprites\heavytestenemy.png" />
     <None Remove="Sprites\hpbar.png" />
@@ -62,6 +66,15 @@
 
 	<ItemGroup>
 		<AdditionalFiles Include="stylecop.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Sprites\AcceleratingBullet.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\basicenemybullet.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -128,7 +141,13 @@
 	  <Content Include="Sprites\backgroundlayer4.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
+	  <Content Include="Sprites\bouncingbullet.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
 	  <Content Include="Sprites\bursttestenemy.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\curvedbouncingbullet.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Sprites\fasttestenemy.png">

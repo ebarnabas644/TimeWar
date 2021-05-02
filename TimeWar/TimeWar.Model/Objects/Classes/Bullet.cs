@@ -49,6 +49,10 @@ namespace TimeWar.Model.Objects.Classes
     /// </summary>
     public class Bullet : IMoveable, IGameObject
     {
+        private string spriteFile;
+        private int width;
+        private int height;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Bullet"/> class.
         /// </summary>
@@ -64,10 +68,10 @@ namespace TimeWar.Model.Objects.Classes
         {
             this.Position = pos;
             this.Damage = damage;
-            this.Height = height;
-            this.Width = width;
-            this.SpriteFile = spriteFile;
+            this.height = height;
+            this.width = width;
             this.Stance = Stances.StandRight;
+            this.spriteFile = spriteFile;
             this.StanceLess = true;
             this.Type = type;
             this.Destination = destination;
@@ -85,10 +89,52 @@ namespace TimeWar.Model.Objects.Classes
         public Point Position { get; set; }
 
         /// <inheritdoc/>
-        public int Height { get; set; }
+        public int Height
+        {
+            get
+            {
+                int height = 0;
+                switch (this.Type)
+                {
+                    case BulletType.Basic: height = 16; break;
+                    case BulletType.BasicEnemyBullet: height = 8; break;
+                    case BulletType.Accelerating: height = 7; break;
+                    case BulletType.Bouncing: height = 9; break;
+                    case BulletType.CurvedBouncing: height = 9; break;
+                }
+
+                return height;
+            }
+
+            set
+            {
+                this.height = value;
+            }
+        }
 
         /// <inheritdoc/>
-        public int Width { get; set; }
+        public int Width
+        {
+            get
+            {
+                int width = 0;
+                switch (this.Type)
+                {
+                    case BulletType.Basic: width = 16; break;
+                    case BulletType.BasicEnemyBullet: width = 8; break;
+                    case BulletType.Accelerating: width = 15; break;
+                    case BulletType.Bouncing: width = 9; break;
+                    case BulletType.CurvedBouncing: width = 9; break;
+                }
+
+                return width;
+            }
+
+            set
+            {
+                this.width = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets damage of bullet.
@@ -96,7 +142,28 @@ namespace TimeWar.Model.Objects.Classes
         public int Damage { get; set; }
 
         /// <inheritdoc/>
-        public string SpriteFile { get; set; }
+        public string SpriteFile
+        {
+            get
+            {
+                string file = string.Empty;
+                switch (this.Type)
+                {
+                    case BulletType.Basic: file = "basicbullet"; break;
+                    case BulletType.BasicEnemyBullet: file = "basicenemybullet"; break;
+                    case BulletType.Accelerating: file = "acceleratingbullet"; break;
+                    case BulletType.Bouncing: file = "bouncingbullet"; break;
+                    case BulletType.CurvedBouncing: file = "curvedbouncingbullet"; break;
+                }
+
+                return file;
+            }
+
+            set
+            {
+                this.spriteFile = value;
+            }
+        }
 
         /// <summary>
         /// Gets or sets the type of the bullet.

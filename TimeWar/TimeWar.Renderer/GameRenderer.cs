@@ -76,7 +76,6 @@ namespace TimeWar.Renderer
             {
                 this.layers.Add(new StaticObject(RendererConfig.LayersHeight, RendererConfig.LayersWidth, RendererConfig.LayersSpriteFile[i], new System.Drawing.Point(0, this.model.Camera.GetViewportY + RendererConfig.LayersVerticalOffset)));
             }
-
         }
 
         /// <summary>
@@ -270,14 +269,18 @@ namespace TimeWar.Renderer
         {
             DrawingGroup g = new DrawingGroup();
             StaticObject hud = new StaticObject(31, 153, "hud", new System.Drawing.Point(50, 50), true);
+            Bullet playerbullet = new Bullet(new System.Drawing.Point(65, 65), 0, 0, "null", new System.Drawing.Point(0, 0), 0, this.model.Hero.TypeOfBullet);
+            StaticObject bullethud = new StaticObject(playerbullet.Height, playerbullet.Width, playerbullet.SpriteFile, playerbullet.Position, true);
             StaticObject shieldbar = new StaticObject(12, 119, "shieldbar", new System.Drawing.Point(112, 58), true);
             StaticObject hpbar = new StaticObject(9, 112, "hpbar", new System.Drawing.Point(112, 86), true);
             Geometry hb = new RectangleGeometry(new Rect(hud.Position.X, hud.Position.Y, hud.Width * this.model.CurrentWorld.Magnify / 2, hud.Height * this.model.CurrentWorld.Magnify / 2));
+            Geometry bb = new RectangleGeometry(new Rect(bullethud.Position.X, bullethud.Position.Y, 16 * this.model.CurrentWorld.Magnify / 2, 16 * this.model.CurrentWorld.Magnify / 2));
             Geometry shb = new RectangleGeometry(new Rect(shieldbar.Position.X, shieldbar.Position.Y, shieldbar.Width * ((double)(this.model.Hero.CurrentShield >= 0 ? this.model.Hero.CurrentShield : 0) / this.model.Hero.Shield) * this.model.CurrentWorld.Magnify / 2, shieldbar.Height * this.model.CurrentWorld.Magnify / 2));
             Geometry hpb = new RectangleGeometry(new Rect(hpbar.Position.X, hpbar.Position.Y, hpbar.Width * ((double)(this.model.Hero.CurrentHealth >= 0 ? this.model.Hero.CurrentHealth : 0) / this.model.Hero.Health) * this.model.CurrentWorld.Magnify / 2, hpbar.Height * this.model.CurrentWorld.Magnify / 2));
+            g.Children.Add(new GeometryDrawing(this.GetSpriteBrush(hud), null, hb));
+            g.Children.Add(new GeometryDrawing(this.GetSpriteBrush(bullethud), null, bb));
             g.Children.Add(new GeometryDrawing(this.GetSpriteBrush(shieldbar), null, shb));
             g.Children.Add(new GeometryDrawing(this.GetSpriteBrush(hpbar), null, hpb));
-            g.Children.Add(new GeometryDrawing(this.GetSpriteBrush(hud), null, hb));
             return g;
         }
 
@@ -389,9 +392,9 @@ namespace TimeWar.Renderer
                 rotate.CenterX = 0.5;
                 rotate.CenterY = 0.5;
                 rotate.Angle = Math.Atan2(item.MovementVectorF.Y, item.MovementVectorF.X) * 180 / Math.PI;
-                //Brush brush = this.GetSpriteBrush(item);
-                Brush brush = Brushes.Red;
-                //brush.RelativeTransform = rotate;
+                Brush brush = this.GetSpriteBrush(item);
+                //Brush brush = Brushes.Red;
+                brush.RelativeTransform = rotate;
                 dg.Children.Add(new GeometryDrawing(brush, null, g));
             }
 
