@@ -334,6 +334,73 @@
         <member name="M:TimeWar.Logic.Classes.CommandManager.Rewind">
             <inheritdoc/>
         </member>
+        <member name="T:TimeWar.Logic.Classes.EnemyInitLogic">
+            <summary>
+            Init model for enemies.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Logic.Classes.EnemyInitLogic.BasicEnemySpritesheet">
+            <summary>
+            Name of the basic enemy spritesheet.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Logic.Classes.EnemyInitLogic.FastEnemySpritesheet">
+            <summary>
+            Name of the fast enemy spritesheet.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Logic.Classes.EnemyInitLogic.BurstEnemySpritesheet">
+            <summary>
+            Name of the Burst enemy spritesheet.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Logic.Classes.EnemyInitLogic.HeavyEnemySpritesheet">
+            <summary>
+            Name of the heavy enemy spritesheet.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Logic.Classes.EnemyInitLogic.RapidFireEnemySpritesheet">
+            <summary>
+            Name of the rapid fire enemy spritesheet.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Logic.Classes.EnemyInitLogic.BasicEnemyHeight">
+            <summary>
+            Basic enemy height const.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Logic.Classes.EnemyInitLogic.BasicEnemyWidth">
+            <summary>
+            Basic enemy width const.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Logic.Classes.EnemyInitLogic.BasicEnemyHealth">
+            <summary>
+            Basic enemy health const.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Logic.Classes.EnemyInitLogic.HeavyEnemyHealth">
+             <summary>
+             Basic enemy health const.
+             </summary>
+            
+        </member>
+        <member name="F:TimeWar.Logic.Classes.EnemyInitLogic.BurstEnemyHealth">
+             <summary>
+             Burst enemy health const.
+             </summary>
+            
+        </member>
+        <member name="F:TimeWar.Logic.Classes.EnemyInitLogic.FastEnemyHealth">
+            <summary>
+            Basic enemy health const.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Logic.Classes.EnemyInitLogic.RapidFireEnemyHealth">
+            <summary>
+            Basic enemy health const.
+            </summary>
+        </member>
         <member name="T:TimeWar.Logic.Classes.InitConfig">
             <summary>
             Init model logic static variables.
@@ -357,68 +424,6 @@
         <member name="F:TimeWar.Logic.Classes.InitConfig.PlayerHealth">
             <summary>
             Play character health const.
-            </summary>
-        </member>
-        <member name="F:TimeWar.Logic.Classes.InitConfig.BasicEnemySpritesheet">
-            <summary>
-            Name of the basic enemy spritesheet.
-            </summary>
-        </member>
-        <member name="F:TimeWar.Logic.Classes.InitConfig.FastEnemySpritesheet">
-            <summary>
-            Name of the fast enemy spritesheet.
-            </summary>
-        </member>
-        <member name="F:TimeWar.Logic.Classes.InitConfig.BurstEnemySpritesheet">
-            <summary>
-            Name of the Burst enemy spritesheet.
-            </summary>
-        </member>
-        <member name="F:TimeWar.Logic.Classes.InitConfig.HeavyEnemySpritesheet">
-            <summary>
-            Name of the heavy enemy spritesheet.
-            </summary>
-        </member>
-        <member name="F:TimeWar.Logic.Classes.InitConfig.RapidFireEnemySpritesheet">
-            <summary>
-            Name of the rapid fire enemy spritesheet.
-            </summary>
-        </member>
-        <member name="F:TimeWar.Logic.Classes.InitConfig.BasicEnemyHeight">
-            <summary>
-            Basic enemy height const.
-            </summary>
-        </member>
-        <member name="F:TimeWar.Logic.Classes.InitConfig.BasicEnemyWidth">
-            <summary>
-            Basic enemy width const.
-            </summary>
-        </member>
-        <member name="F:TimeWar.Logic.Classes.InitConfig.BasicEnemyHealth">
-            <summary>
-            Basic enemy health const.
-            </summary>
-        </member>
-        <member name="F:TimeWar.Logic.Classes.InitConfig.HeavyEnemyHealth">
-             <summary>
-             Basic enemy health const.
-             </summary>
-            
-        </member>
-        <member name="F:TimeWar.Logic.Classes.InitConfig.BurstEnemyHealth">
-             <summary>
-             Burst enemy health const.
-             </summary>
-            
-        </member>
-        <member name="F:TimeWar.Logic.Classes.InitConfig.FastEnemyHealth">
-            <summary>
-            Basic enemy health const.
-            </summary>
-        </member>
-        <member name="F:TimeWar.Logic.Classes.InitConfig.RapidFireEnemyHealth">
-            <summary>
-            Basic enemy health const.
             </summary>
         </member>
         <member name="T:TimeWar.Logic.Classes.LogicCollections.BulletLogics">
