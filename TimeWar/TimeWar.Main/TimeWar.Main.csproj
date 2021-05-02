@@ -43,6 +43,7 @@
     <None Remove="Sprites\41.png" />
     <None Remove="Sprites\backgroundlayer1.png" />
     <None Remove="Sprites\backgroundlayer2.png" />
+    <None Remove="Sprites\backgroundlayer3.png" />
     <None Remove="Sprites\backgroundlayer4.png" />
     <None Remove="Sprites\basicbullet.png" />
     <None Remove="Sprites\bursttestenemy.png" />
@@ -119,6 +120,9 @@
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Sprites\backgroundlayer2.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\backgroundlayer3.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Sprites\backgroundlayer4.png">

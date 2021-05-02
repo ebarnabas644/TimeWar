@@ -29,6 +29,61 @@
             </summary>
             <returns>Drawing with all entities for render.</returns>
         </member>
+        <member name="T:TimeWar.Renderer.RendererConfig">
+            <summary>
+            Renderer config class.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Renderer.RendererConfig.LayersHeight">
+            <summary>
+            Gets layers height.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Renderer.RendererConfig.LayersWidth">
+            <summary>
+            Gets layers width.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Renderer.RendererConfig.BackgroundHorizontalTileNumber">
+            <summary>
+            Gets number of tile horizontal repeat.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Renderer.RendererConfig.BackgroundVerticalTileNumber">
+            <summary>
+            Gets number of tile vertical repeat.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Renderer.RendererConfig.NumberOfLayers">
+            <summary>
+            Gets number of background layers.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Renderer.RendererConfig.LayersVerticalSpeed">
+            <summary>
+            Gets Layers vertical speed.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Renderer.RendererConfig.LayersHorizontalSpeed">
+            <summary>
+            Gets Layers horizontal speed.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Renderer.RendererConfig.LayersSpriteFile">
+            <summary>
+            Gets Layers sprite file names.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Renderer.RendererConfig.LayersHorizontalOffset">
+            <summary>
+            Gets Layers horizontal offset.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Renderer.RendererConfig.LayersVerticalOffset">
+            <summary>
+            Gets Layers vertical offset.
+            </summary>
+        </member>
         <member name="T:TimeWar.Renderer.Sprite">
             <summary>
             Sprite static class.
