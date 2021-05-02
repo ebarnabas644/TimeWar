@@ -47,7 +47,7 @@ namespace TimeWar.Logic.Classes.Characters
         {
             if (this.IsPlayerDetected && this.CommandManager.IsFinished && this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > this.AttackTime)
             {
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < RandomNumberGenerator.GetInt32(0, 7); i++)
                 {
                     int inaccuracy = RandomNumberGenerator.GetInt32(-75, 76);
                     Point attackPoint = new Point(this.Character.Position.X + this.Model.CurrentWorld.ConvertTileToPixel(1), this.Character.Position.Y + this.Model.CurrentWorld.ConvertTileToPixel(1));
