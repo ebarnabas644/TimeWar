@@ -33,13 +33,9 @@ namespace TimeWar.Renderer
         private Dictionary<string, IGameObject> gameObjects;
         private HashSet<IGameObject> uniqueObjectCache;
         private HashSet<string> loadCache;
-        private IGameObject layer1;
-        private IGameObject layer2;
-        private IGameObject layer4;
-        private double backgroundBoundx1;
-        private double backgroundBoundy1;
-        private double backgroundBoundx2;
-        private double backgroundBoundy2;
+        private List<IGameObject> layers;
+        private double backgroundLayerBoundx;
+        private double backgroundLayerBoundy;
 
         // private List<Character> characters;
         private int currentSprite;
@@ -75,9 +71,12 @@ namespace TimeWar.Renderer
             this.firstRun = true;
             this.InitDecorations();
             this.spritesCache = new DrawingGroup();
-            this.layer1 = new StaticObject(300, 430, "backgroundlayer1", new System.Drawing.Point(0, this.model.Camera.GetViewportY + 300));
-            this.layer2 = new StaticObject(300, 430, "backgroundlayer2", new System.Drawing.Point(0, this.model.Camera.GetViewportY + 300));
-            this.layer4 = new StaticObject(400, 862, "backgroundlayer4", new System.Drawing.Point(0, 0));
+            this.layers = new List<IGameObject>();
+            for (int i = 0; i < RendererConfig.NumberOfLayers; i++)
+            {
+                this.layers.Add(new StaticObject(RendererConfig.LayersHeight, RendererConfig.LayersWidth, RendererConfig.LayersSpriteFile[i], new System.Drawing.Point(0, this.model.Camera.GetViewportY + RendererConfig.LayersVerticalOffset)));
+            }
+
         }
 
         /// <summary>
@@ -93,9 +92,7 @@ namespace TimeWar.Renderer
         {
             this.currentSprite = (int)this.spriteTimer.Elapsed.TotalMilliseconds / 100;
             DrawingGroup dg = new DrawingGroup();
-            dg.Children.Add(this.GetBackgroundLayer4());
-            dg.Children.Add(this.GetBackgroundLayer1());
-            dg.Children.Add(this.GetBackgroundLayer2());
+            dg.Children.Add(this.GetBackgroundLayers());
             dg.Children.Add(this.GetBackground());
             dg.Children.Add(this.GetDecorations());
             dg.Children.Add(this.GetBullets());
@@ -231,40 +228,23 @@ namespace TimeWar.Renderer
             return this.backgroundCache;
         }
 
-        private Drawing GetBackgroundLayer1()
+        private Drawing GetBackgroundLayers()
         {
-            Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(this.layer1.Position.X) - (this.model.Camera.GetViewportX * 0.6), this.model.Camera.GetRelativeObjectPosY(this.layer1.Position.Y) - (this.model.Camera.GetViewportY * 0.02), this.layer1.Width * this.model.CurrentWorld.Magnify * 4, this.layer1.Height * this.model.CurrentWorld.Magnify));
-
-            if (this.backgroundBoundx1 == 0 || this.backgroundBoundy1 == 0)
+            DrawingGroup dg = new DrawingGroup();
+            for (int i = 0; i < RendererConfig.NumberOfLayers; i++)
             {
-                this.backgroundBoundx1 = g.Bounds.Size.Width;
-                this.backgroundBoundy1 = g.Bounds.Size.Height;
+                Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(this.layers[i].Position.X) - (this.model.Camera.GetViewportX * RendererConfig.LayersHorizontalSpeed[i]), this.model.Camera.GetRelativeObjectPosY(this.layers[i].Position.Y) - (this.model.Camera.GetViewportY * RendererConfig.LayersVerticalSpeed[i]), this.layers[i].Width * this.model.CurrentWorld.Magnify * 4, this.layers[i].Height * this.model.CurrentWorld.Magnify));
+                if (this.backgroundLayerBoundx == 0 || this.backgroundLayerBoundy == 0)
+                {
+                    this.backgroundLayerBoundx = g.Bounds.Size.Width;
+                    this.backgroundLayerBoundy = g.Bounds.Size.Height;
+                }
+
+                GeometryDrawing layerdraw = new GeometryDrawing(this.GetSpriteBrush(this.layers[i], true, this.backgroundLayerBoundx, this.backgroundLayerBoundy), null, g);
+                dg.Children.Add(layerdraw);
             }
 
-            GeometryDrawing layer1draw = new GeometryDrawing(this.GetSpriteBrush(this.layer1, true, this.backgroundBoundx1, this.backgroundBoundy1), null, g);
-            return layer1draw;
-        }
-
-        private Drawing GetBackgroundLayer2()
-        {
-            Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(this.layer2.Position.X) - (this.model.Camera.GetViewportX * 0.25), this.model.Camera.GetRelativeObjectPosY(this.layer2.Position.Y) - (this.model.Camera.GetViewportY * 0.02), this.layer2.Width * this.model.CurrentWorld.Magnify * 4, this.layer2.Height * this.model.CurrentWorld.Magnify));
-
-            if (this.backgroundBoundx2 == 0 || this.backgroundBoundy2 == 0)
-            {
-                this.backgroundBoundx2 = g.Bounds.Size.Width;
-                this.backgroundBoundy2 = g.Bounds.Size.Height;
-            }
-
-            GeometryDrawing layer2draw = new GeometryDrawing(this.GetSpriteBrush(this.layer2, true, this.backgroundBoundx2, this.backgroundBoundy2), null, g);
-            return layer2draw;
-        }
-
-        private Drawing GetBackgroundLayer4()
-        {
-            Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(this.layer4.Position.X) / 5, this.model.Camera.GetRelativeObjectPosY(this.layer4.Position.Y) / 5, this.layer4.Width * this.model.CurrentWorld.Magnify, this.layer4.Height * this.model.CurrentWorld.Magnify));
-
-            GeometryDrawing layer4draw = new GeometryDrawing(this.GetSpriteBrush(this.layer4), null, g);
-            return layer4draw;
+            return dg;
         }
 
         private Drawing GetTitle()
