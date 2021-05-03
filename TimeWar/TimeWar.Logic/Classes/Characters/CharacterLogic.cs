@@ -33,7 +33,7 @@ namespace TimeWar.Logic
         {
             this.AttackStopwatch.Start();
             this.EffectStopwatch = new Stopwatch();
-            this.AttackTime = 400;
+            this.AttackTime = 200;
             this.EffectCounter = 0;
         }
 
@@ -64,7 +64,31 @@ namespace TimeWar.Logic
         /// <inheritdoc/>
         protected override void Attack()
         {
-            if (this.CommandManager.IsFinished && this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > this.AttackTime)
+            int attackDamage = 0;
+            double delay = this.AttackTime;
+            switch (this.Character.TypeOfBullet)
+            {
+                case BulletType.Basic:
+                    attackDamage = 5;
+                    delay *= 2;
+                    break;
+                case BulletType.Accelerating:
+                    attackDamage = 40;
+                    delay *= 4;
+                    break;
+                case BulletType.Bouncing:
+                    attackDamage = 15;
+                    delay *= 3;
+                    break;
+                case BulletType.CurvedBouncing:
+                    attackDamage = 30;
+                    delay *= 3.5;
+                    break;
+                default:
+                    break;
+            }
+
+            if (this.CommandManager.IsFinished && this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > delay)
             {
                 int inaccuracy = 0;
                 if (this.Character.TypeOfBullet != BulletType.Accelerating)
@@ -73,25 +97,6 @@ namespace TimeWar.Logic
                 }
 
                 Point attackPoint = new Point(this.Character.Position.X, this.Character.Position.Y);
-                int attackDamage = 0;
-                switch (this.Character.TypeOfBullet)
-                {
-                    case BulletType.Basic:
-                        attackDamage = 5;
-                        break;
-                    case BulletType.Accelerating:
-                        attackDamage = 20;
-                        break;
-                    case BulletType.Bouncing:
-                        attackDamage = 15;
-                        break;
-                    case BulletType.CurvedBouncing:
-                        attackDamage = 30;
-                        break;
-                    default:
-                        break;
-                }
-
                 Bullet b = new Bullet(attackPoint, 4, 4, "testenemy.png", new Point(this.Character.ClickLocation.X, this.Character.ClickLocation.Y - inaccuracy), attackDamage, this.Character.TypeOfBullet, true);
                 this.Model.CurrentWorld.AddBullet(b);
                 this.AttackStopwatch.Restart();
@@ -149,6 +154,13 @@ namespace TimeWar.Logic
                 {
                     this.Character.ShieldRegenTimer.Reset();
                 }
+            }
+
+            if (this.Character.CurrentHealth < 0)
+            {
+                this.Model.Hero.PlayerDeath();
+                this.CommandManager.ClearBuffer();
+                this.Model.CurrentWorld.LoadEnemies();
             }
         }
 
