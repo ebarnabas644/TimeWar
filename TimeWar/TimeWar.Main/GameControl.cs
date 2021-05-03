@@ -97,6 +97,8 @@ namespace TimeWar.Main
             this.mouseScrollPos = 0;
             this.time.Start();
             this.fps = 0;
+
+            // this.model.CurrentWorld.SaveEnemies();
             this.win = Window.GetWindow(this);
             if (this.win != null)
             {

@@ -35,6 +35,7 @@ namespace TimeWar.Logic.Classes.POIs
         /// <inheritdoc/>
         public override void POIEvent()
         {
+            // this.Model.CurrentWorld.SaveEnemies();
             this.Model.Hero.Checkpoint = new System.Drawing.Point(this.Model.CurrentWorld.ConvertTileToPixel(this.Poi.Position.X), this.Model.CurrentWorld.ConvertTileToPixel(this.Poi.Position.Y));
         }
     }
