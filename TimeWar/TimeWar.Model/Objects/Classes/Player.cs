@@ -40,5 +40,16 @@ namespace TimeWar.Model.Objects
         /// Gets or sets number of unlocked weapons.
         /// </summary>
         public int NumOfWeaponUnlocked { get; set; }
+
+        /// <summary>
+        /// Method is called when the player is dead.
+        /// </summary>
+        public void PlayerDeath()
+        {
+            this.Position = this.Checkpoint;
+            this.CurrentHealth = this.Health;
+            this.CurrentShield = this.Shield;
+            this.MovementVector = new Point(0, 0);
+        }
     }
 }

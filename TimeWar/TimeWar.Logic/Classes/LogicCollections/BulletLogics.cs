@@ -203,10 +203,6 @@ namespace TimeWar.Logic.Classes.LogicCollections
                         if (!this.model.Hero.IsInvincible)
                         {
                             this.model.Hero.CurrentHealth -= bullet.Damage;
-                            if (this.model.Hero.CurrentHealth <= 0)
-                            {
-                                this.PlayerDeath();
-                            }
                         }
                     }
 
@@ -216,16 +212,6 @@ namespace TimeWar.Logic.Classes.LogicCollections
             }
 
             return false;
-        }
-
-        private void PlayerDeath()
-        {
-            this.model.Hero.Position = this.model.Hero.Checkpoint;
-            this.model.Hero.CurrentHealth = this.model.Hero.Health;
-            this.model.Hero.CurrentShield = this.model.Hero.Shield;
-            this.model.Hero.MovementVector = new Point(0, 0);
-            this.commandManager.ClearBuffer();
-            this.model.CurrentWorld.LoadEnemies();
         }
 
         private void Despawn(Bullet bullet, bool despawn = false)
