@@ -26,7 +26,7 @@ namespace TimeWar.Data.Models
         /// Gets or sets player profile navigational property.
         /// </summary>
         [Key]
-        public virtual Profile Player { get; set; }
+        public virtual PlayerProfile Player { get; set; }
 
         /// <summary>
         /// Gets or sets run time.
