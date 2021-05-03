@@ -8,6 +8,7 @@ namespace TimeWar.Model.Objects
     using System.Collections.Generic;
     using System.Diagnostics;
     using System.Drawing;
+    using System.Linq;
     using TimeWar.Model.Objects.Classes;
 
     /// <summary>
@@ -20,8 +21,7 @@ namespace TimeWar.Model.Objects
         private List<Enemy> enemies;
         private List<PointOfInterest> pointOfInterests;
         private List<Bullet> bullets;
-
-        // private List<Enemy> checkPointEnemies;
+        private List<Enemy> checkPointEnemies;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameWorld"/> class.
@@ -47,8 +47,6 @@ namespace TimeWar.Model.Objects
             this.TileSize = tileSize;
             this.GameWidth = this.TileSize * width * this.Magnify;
             this.GameHeight = this.TileSize * height * this.Magnify;
-
-            // this.checkPointEnemies = new List<Enemy>();
         }
 
         /// <summary>
@@ -82,10 +80,10 @@ namespace TimeWar.Model.Objects
             get { return this.GameHeight / this.Magnify / this.TileSize; }
         }
 
-        // <summary>
-        // Gets or sets a value indicating whether enemies are loaded.
-        // </summary>
-        // public bool EnemiesLoaded { get; set; }
+        /// <summary>
+        /// Gets or sets a value indicating whether enemies are loaded.
+        /// </summary>
+        public bool EnemiesLoaded { get; set; }
 
         /// <summary>
         /// Gets or sets the game world width(pixel value).
@@ -377,23 +375,35 @@ namespace TimeWar.Model.Objects
             return null;
         }
 
-        ///// <summary>
-        ///// Save enmies.
-        ///// </summary>
-        // public void SaveEnemies()
-        // {
-        //    Debug.WriteLine("Enemies saved");
-        //    this.checkPointEnemies = this.enemies;
-        // }
+        /// <summary>
+        /// Save enmies.
+        /// </summary>
+        public void SaveEnemies()
+        {
+            Debug.WriteLine("Enemies saved");
+            this.checkPointEnemies = DeepCopy(this.enemies);
+        }
 
-        ///// <summary>
-        ///// Gets returns checkpoint saved enemies.
-        ///// </summary>
-        // public void LoadEnemies()
-        // {
-        //    Debug.WriteLine("Enemies loaded");
-        //    this.EnemiesLoaded = true;
-        //    this.enemies = this.checkPointEnemies;
-        // }
+        /// <summary>
+        /// Gets returns checkpoint saved enemies.
+        /// </summary>
+        public void LoadEnemies()
+        {
+            Debug.WriteLine("Enemies loaded");
+            this.EnemiesLoaded = true;
+            this.enemies = DeepCopy(this.checkPointEnemies);
+        }
+
+        private static List<Enemy> DeepCopy(List<Enemy> enemies)
+        {
+            List<Enemy> enemyList = new List<Enemy>();
+            foreach (Enemy enemy in enemies)
+            {
+                Enemy e = new Enemy(enemy.Position, enemy.CurrentHealth, enemy.Height, enemy.Width, enemy.Type, enemy.SpriteFile);
+                enemyList.Add(e);
+            }
+
+            return enemyList;
+        }
     }
 }

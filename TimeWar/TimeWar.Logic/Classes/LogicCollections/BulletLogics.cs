@@ -210,7 +210,7 @@ namespace TimeWar.Logic.Classes.LogicCollections
                                 this.model.Hero.CurrentShield = this.model.Hero.Shield;
                                 this.model.Hero.MovementVector = new Point(0, 0);
 
-                                // this.model.CurrentWorld.LoadEnemies();
+                                this.model.CurrentWorld.LoadEnemies();
                             }
                         }
                     }
