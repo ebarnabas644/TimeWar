@@ -494,6 +494,11 @@
             Gets the game world height in tile value.
             </summary>
         </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.EnemiesLoaded">
+            <summary>
+            Gets or sets a value indicating whether enemies are loaded.
+            </summary>
+        </member>
         <member name="P:TimeWar.Model.Objects.GameWorld.GameWidth">
             <summary>
             Gets or sets the game world width(pixel value).
@@ -644,6 +649,16 @@
             </summary>
             <param name="idx">Index.</param>
             <returns>Character entity.</returns>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.SaveEnemies">
+            <summary>
+            Save enmies.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.LoadEnemies">
+            <summary>
+            Gets returns checkpoint saved enemies.
+            </summary>
         </member>
         <member name="T:TimeWar.Model.Objects.Player">
             <summary>

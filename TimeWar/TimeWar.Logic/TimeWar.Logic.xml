@@ -208,6 +208,11 @@
             <param name="character">Charater.</param>
             <param name="commandManager">Command manger.</param>
         </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.AttackValue">
+            <summary>
+            Gets or sets the attack damage of the enemy.
+            </summary>
+        </member>
         <member name="P:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.LastKnownPlayerLocation">
             <summary>
             Gets or sets last known player location.
