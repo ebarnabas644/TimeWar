@@ -62,6 +62,11 @@ namespace TimeWar.Main
         public string MapName { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether true if game is paused.
+        /// </summary>
+        public bool IsPaused { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether page about to close.
         /// </summary>
         public bool Exit
@@ -200,6 +205,7 @@ namespace TimeWar.Main
                 case Key.Escape:
                     GameViewModel asd = this.DataContext as GameViewModel;
                     asd.MenuVisibility = !asd.MenuVisibility;
+                    this.IsPaused = !IsPaused;
                     break;
             }
 
@@ -239,18 +245,22 @@ namespace TimeWar.Main
         {
             if (!this.Exit)
             {
-                if (this.model.CurrentWorld.EnemiesLoaded)
+                if (!this.IsPaused)
                 {
-                    this.model.CurrentWorld.EnemiesLoaded = false;
-                    this.enemyLogic.GetEnemies();
+                    if (this.model.CurrentWorld.EnemiesLoaded)
+                    {
+                        this.model.CurrentWorld.EnemiesLoaded = false;
+                        this.enemyLogic.GetEnemies();
+                    }
+
+                    this.characterLogic.OneTick();
+                    this.enemyLogic.TickEnemies();
+                    this.pointOfInterestLogics.TickPois();
+                    this.bulletLogic.Addbullets((ICollection<Bullet>)this.model.CurrentWorld.GetBullets);
+                    this.bulletLogic.OneTick();
+                    this.InvalidateVisual();
                 }
 
-                this.characterLogic.OneTick();
-                this.enemyLogic.TickEnemies();
-                this.pointOfInterestLogics.TickPois();
-                this.bulletLogic.Addbullets((ICollection<Bullet>)this.model.CurrentWorld.GetBullets);
-                this.bulletLogic.OneTick();
-                this.InvalidateVisual();
                 if (this.time.Elapsed.TotalSeconds >= 1)
                 {
                     this.time.Stop();
