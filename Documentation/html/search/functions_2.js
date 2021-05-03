@@ -1,9 +1,0 @@
-var searchData=
-[
-  ['character_107',['Character',['../class_time_war_1_1_model_1_1_objects_1_1_character.html#abbbddd678d0330bb09ee34da1d2c971d',1,'TimeWar::Model::Objects::Character']]],
-  ['characterlogic_108',['CharacterLogic',['../class_time_war_1_1_logic_1_1_character_logic.html#adce64ac44c66354087cfca9c7c6ee9d7',1,'TimeWar::Logic::CharacterLogic']]],
-  ['clearbuffer_109',['ClearBuffer',['../class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#aa8d7de47bb5ae42a428ae0272f0b6927',1,'TimeWar.Logic.Classes.CommandManager.ClearBuffer()'],['../interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command_manager.html#ad1ae5ef13b07b1f0ac62dde34c9b445e',1,'TimeWar.Logic.Interfaces.ICommandManager.ClearBuffer()']]],
-  ['commandmanager_110',['CommandManager',['../class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#a33f9a1ff5eea3f2bc75fe3a21217c84b',1,'TimeWar::Logic::Classes::CommandManager']]],
-  ['createdelegate_111',['CreateDelegate',['../class_xaml_generated_namespace_1_1_generated_internal_type_helper.html#a8ec4c37e82d9f4e867e9655f4eac3a78',1,'XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type delegateType, object target, string handler)'],['../class_xaml_generated_namespace_1_1_generated_internal_type_helper.html#a8ec4c37e82d9f4e867e9655f4eac3a78',1,'XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type delegateType, object target, string handler)']]],
-  ['createinstance_112',['CreateInstance',['../class_xaml_generated_namespace_1_1_generated_internal_type_helper.html#aefb7a98fceb9c287cef4756942f441d1',1,'XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type type, System.Globalization.CultureInfo culture)'],['../class_xaml_generated_namespace_1_1_generated_internal_type_helper.html#aefb7a98fceb9c287cef4756942f441d1',1,'XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type type, System.Globalization.CultureInfo culture)']]]
-];
