@@ -29,9 +29,10 @@ namespace TimeWar.Logic.Classes.Characters
             this.Character.Health = 25;
             this.DefaultFollowDistance = RandomNumberGenerator.GetInt32(1, 4);
             this.DetectionRange = 10;
-            this.AttackTime = 1000;
+            this.AttackTime = 750;
             this.DetectionTime = 5000;
             this.TypeOfBullet = BulletType.Accelerating;
+            this.AttackValue = 50;
         }
     }
 }

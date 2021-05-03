@@ -37,6 +37,7 @@ namespace TimeWar.Logic.Classes.Characters
             this.DefaultFollowDistance = RandomNumberGenerator.GetInt32(20, 24);
             this.DetectionRange = 25;
             this.DetectionTime = 10000;
+            this.AttackValue = 15;
         }
     }
 }

@@ -29,7 +29,8 @@ namespace TimeWar.Logic.Classes.Characters
             this.TypeOfBullet = BulletType.CurvedBouncing;
             this.DefaultFollowDistance = RandomNumberGenerator.GetInt32(10, 15);
             this.DetectionRange = 20;
-            this.AttackTime = 4000;
+            this.AttackTime = 2000;
+            this.AttackValue = 30;
         }
     }
 }

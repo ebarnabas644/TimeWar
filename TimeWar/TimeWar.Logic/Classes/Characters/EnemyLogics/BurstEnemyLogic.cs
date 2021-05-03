@@ -32,12 +32,13 @@ namespace TimeWar.Logic.Classes.Characters
             this.Character.Health = 150;
             this.MaxMovementSpeed = 6;
             this.MaxJumpHeight = 15;
-            this.AttackTime = 3000;
+            this.AttackTime = 2500;
             this.TypeOfBullet = BulletType.BasicEnemyBullet;
             this.MaxMoveTime = 1000;
             this.DefaultFollowDistance = RandomNumberGenerator.GetInt32(20, 24);
             this.DetectionRange = 20;
             this.DetectionTime = 15000;
+            this.AttackValue = 15;
         }
 
         /// <summary>
@@ -47,7 +48,7 @@ namespace TimeWar.Logic.Classes.Characters
         {
             if (this.IsPlayerDetected && this.CommandManager.IsFinished && this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > this.AttackTime)
             {
-                for (int i = 0; i < RandomNumberGenerator.GetInt32(0, 7); i++)
+                for (int i = 0; i < RandomNumberGenerator.GetInt32(4, 10); i++)
                 {
                     int inaccuracy = RandomNumberGenerator.GetInt32(-75, 76);
                     Point attackPoint = new Point(this.Character.Position.X + this.Model.CurrentWorld.ConvertTileToPixel(1), this.Character.Position.Y + this.Model.CurrentWorld.ConvertTileToPixel(1));
