@@ -91,6 +91,7 @@ namespace TimeWar.Logic
                         case 498: gameWorld.AddPOI(new PointOfInterest(POIType.Invincibility, 1, 1, "testenemy", new Point(x, y))); break;
                         case 499: gameWorld.AddPOI(new PointOfInterest(POIType.RapidFire, 1, 1, "testenemy", new Point(x, y))); break;
                         case 500: gameWorld.AddPOI(new PointOfInterest(POIType.UnlockWeapon, 1, 1, "testenemy", new Point(x, y))); break;
+                        case 501: gameWorld.AddPOI(new PointOfInterest(POIType.EnviromentalDamage, 1, 1, "testenemy", new Point(x, y))); break;
                     }
                 }
             }
