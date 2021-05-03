@@ -160,7 +160,7 @@ namespace TimeWar.Main
 
         private void Win_MouseDown(object sender, System.Windows.Input.MouseEventArgs e)
         {
-            if (e.LeftButton == MouseButtonState.Pressed)
+            if (e.LeftButton == MouseButtonState.Pressed && !this.IsPaused)
             {
                 System.Windows.Point clickPosition = e.GetPosition(this);
                 System.Drawing.Point clickRelativePos = new System.Drawing.Point(this.model.Camera.GetRelativeCharacterPosX, this.model.Camera.GetRelativeCharacterPosY);
@@ -184,29 +184,41 @@ namespace TimeWar.Main
 
         private void Win_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            switch (e.Key)
+            if (!this.IsPaused)
             {
-                case Key.Space:
-                    this.model.Hero.RemoveKey("space");
-                    break;
+                switch (e.Key)
+                {
+                    case Key.Space:
+                        this.model.Hero.RemoveKey("space");
+                        break;
 
-                case Key.A:
-                    this.model.Hero.RemoveKey("a");
-                    break;
+                    case Key.A:
+                        this.model.Hero.RemoveKey("a");
+                        break;
 
-                case Key.S:
-                    this.model.Hero.RemoveKey("s");
+                    case Key.S:
+                        this.model.Hero.RemoveKey("s");
 
-                    break;
-                case Key.D:
-                    this.model.Hero.RemoveKey("d");
+                        break;
+                    case Key.D:
+                        this.model.Hero.RemoveKey("d");
 
-                    break;
-                case Key.Escape:
+                        break;
+                    case Key.Escape:
+                        GameViewModel asd = this.DataContext as GameViewModel;
+                        asd.MenuVisibility = !asd.MenuVisibility;
+                        this.IsPaused = !this.IsPaused;
+                        break;
+                }
+            }
+            else
+            {
+                if (e.Key == Key.Escape)
+                {
                     GameViewModel asd = this.DataContext as GameViewModel;
                     asd.MenuVisibility = !asd.MenuVisibility;
-                    this.IsPaused = !IsPaused;
-                    break;
+                    this.IsPaused = !this.IsPaused;
+                }
             }
 
             e.Handled = true;
