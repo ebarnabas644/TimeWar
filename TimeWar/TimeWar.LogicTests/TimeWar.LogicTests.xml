@@ -24,5 +24,20 @@
             Test rewind feature.
             </summary>
         </member>
+        <member name="M:TimeWar.LogicTests.Tests.ShootingTest">
+            <summary>
+            Test shootin feature.
+            </summary>
+        </member>
+        <member name="M:TimeWar.LogicTests.Tests.BulletDirectionTest">
+            <summary>
+            Test player damageing feature.
+            </summary>
+        </member>
+        <member name="M:TimeWar.LogicTests.Tests.EffectTest">
+            <summary>
+            Test rewind feature.
+            </summary>
+        </member>
     </members>
 </doc>
