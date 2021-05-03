@@ -5,15 +5,14 @@
 namespace TimeWar.Logic
 {
     using System;
-    using System.Collections.Generic;
     using System.Drawing;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using System.Xml.Linq;
     using TimeWar.Logic.Classes;
+    using TimeWar.Logic.Classes.Characters;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
+    using TimeWar.Model.Objects.Classes;
 
     /// <summary>
     /// Init class for game model.
@@ -45,6 +44,18 @@ namespace TimeWar.Logic
             return poidata;
         }
 
+        private static string[][] GetDecorations(XDocument mapData)
+        {
+            string[][] decodata = mapData.Element("map").Elements("layer").Where(x => x.Attribute("name").Value == "spritedeco").Select(x => x.Element("data").Value).FirstOrDefault().Trim().Split("\n").Select(x => x.Split(",")).Select(x => x.Where(x => x.Length != 0).ToArray()).ToArray();
+            return decodata;
+        }
+
+        private static string[][] GetEnemies(XDocument mapData)
+        {
+            string[][] decodata = mapData.Element("map").Elements("layer").Where(x => x.Attribute("name").Value == "enemy").Select(x => x.Element("data").Value).FirstOrDefault().Trim().Split("\n").Select(x => x.Split(",")).Select(x => x.Where(x => x.Length != 0).ToArray()).ToArray();
+            return decodata;
+        }
+
         private static int GetTileSize(XDocument mapData)
         {
             return Convert.ToInt32(mapData.Element("map").Attribute("tilewidth").Value, System.Globalization.CultureInfo.CurrentCulture);
@@ -72,9 +83,50 @@ namespace TimeWar.Logic
                 {
                     switch (Convert.ToInt32(poidata[y][x], System.Globalization.CultureInfo.CurrentCulture))
                     {
-                        case 472: gameWorld.AddPointOfInterest("start", new Point(x, y)); break;
-                        case 473: gameWorld.AddPointOfInterest("chechpoint", new Point(x, y)); break;
-                        case 474: gameWorld.AddPointOfInterest("finish", new Point(x, y)); break;
+                        case 472: gameWorld.StartPoint = new Point(x, y); break;
+                        case 473: gameWorld.AddPOI(new PointOfInterest(POIType.Checkpoint, 1, 1, "testenemy", new Point(x, y))); break;
+                        case 474: gameWorld.AddPOI(new PointOfInterest(POIType.Finish, 1, 1, "testenemy", new Point(x, y))); break;
+                        case 496: gameWorld.AddPOI(new PointOfInterest(POIType.HealthKit, 1, 1, "testenemy", new Point(x, y))); break;
+                        case 497: gameWorld.AddPOI(new PointOfInterest(POIType.HighJump, 1, 1, "testenemy", new Point(x, y))); break;
+                        case 498: gameWorld.AddPOI(new PointOfInterest(POIType.Invincibility, 1, 1, "testenemy", new Point(x, y))); break;
+                        case 499: gameWorld.AddPOI(new PointOfInterest(POIType.RapidFire, 1, 1, "testenemy", new Point(x, y))); break;
+                        case 500: gameWorld.AddPOI(new PointOfInterest(POIType.UnlockWeapon, 1, 1, "testenemy", new Point(x, y))); break;
+                    }
+                }
+            }
+        }
+
+        private static void FillDeco(GameWorld gameWorld, string[][] decodata)
+        {
+            for (int y = 0; y < gameWorld.GetTileHeight; y++)
+            {
+                for (int x = 0; x < gameWorld.GetTileWidth; x++)
+                {
+                    if (decodata[y][x] != "0")
+                    {
+                        gameWorld.AddDecoration(new Point(x, y), Convert.ToInt32(decodata[y][x], System.Globalization.CultureInfo.CurrentCulture) - 1);
+                    }
+                }
+            }
+        }
+
+        private void FillEnemy(GameWorld gameWorld, string[][] enemydata)
+        {
+            for (int y = 0; y < gameWorld.GetTileHeight; y++)
+            {
+                for (int x = 0; x < gameWorld.GetTileWidth; x++)
+                {
+                    switch (Convert.ToInt32(enemydata[y][x], System.Globalization.CultureInfo.CurrentCulture))
+                    {
+                        case 475: gameWorld.AddEnemy(new Enemy(new Point(x * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize, (y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize) - (EnemyInitLogic.BasicEnemyHeight * this.model.CurrentWorld.TileSize)), EnemyInitLogic.RapidFireEnemyHealth, EnemyInitLogic.BasicEnemyHeight, EnemyInitLogic.BasicEnemyWidth, EnemyType.RapidFire, EnemyInitLogic.RapidFireEnemySpritesheet)); break;
+
+                        case 476: gameWorld.AddEnemy(new Enemy(new Point(x * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize, (y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize) - (EnemyInitLogic.BasicEnemyHeight * this.model.CurrentWorld.TileSize)), EnemyInitLogic.HeavyEnemyHealth, EnemyInitLogic.BasicEnemyHeight, EnemyInitLogic.BasicEnemyWidth, EnemyType.Heavy, EnemyInitLogic.HeavyEnemySpritesheet)); break;
+
+                        case 477: gameWorld.AddEnemy(new Enemy(new Point(x * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize, (y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize) - (EnemyInitLogic.BasicEnemyHeight * this.model.CurrentWorld.TileSize)), EnemyInitLogic.BurstEnemyHealth, EnemyInitLogic.BasicEnemyHeight, EnemyInitLogic.BasicEnemyWidth, EnemyType.Burst, EnemyInitLogic.BurstEnemySpritesheet)); break;
+
+                        case 478: gameWorld.AddEnemy(new Enemy(new Point(x * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize, (y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize) - (EnemyInitLogic.BasicEnemyHeight * this.model.CurrentWorld.TileSize)), EnemyInitLogic.FastEnemyHealth, EnemyInitLogic.BasicEnemyHeight, EnemyInitLogic.BasicEnemyWidth, EnemyType.Fast, EnemyInitLogic.FastEnemySpritesheet)); break;
+
+                        case 479: gameWorld.AddEnemy(new Enemy(new Point(x * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize, (y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize) - (EnemyInitLogic.BasicEnemyHeight * this.model.CurrentWorld.TileSize)), EnemyInitLogic.BasicEnemyHealth, EnemyInitLogic.BasicEnemyHeight, EnemyInitLogic.BasicEnemyWidth, EnemyType.Basic, EnemyInitLogic.BasicEnemySpritesheet)); break;
                     }
                 }
             }
@@ -82,9 +134,9 @@ namespace TimeWar.Logic
 
         private Player GetPlayer()
         {
-            int startX = this.model.CurrentWorld.SearchPointOfInterest("start").X * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize;
-            int startY = this.model.CurrentWorld.SearchPointOfInterest("start").Y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize;
-            return new Player(new Point(startX, startY - (InitConfig.PlayerHeight * this.model.CurrentWorld.TileSize)), this.model.CurrentWorld.TileSize, InitConfig.PlayerHealth, InitConfig.PlayerHeight, InitConfig.PlayerWidth, InitConfig.PlayerSpritesheet);
+            int startX = this.model.CurrentWorld.StartPoint.X * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize;
+            int startY = this.model.CurrentWorld.StartPoint.Y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize;
+            return new Player(new Point(startX, startY - (InitConfig.PlayerHeight * this.model.CurrentWorld.TileSize)), InitConfig.PlayerHealth, InitConfig.PlayerHeight, InitConfig.PlayerWidth, InitConfig.PlayerSpritesheet);
         }
 
         private void BuildModel(string mapName)
@@ -92,6 +144,8 @@ namespace TimeWar.Logic
             XDocument mapData = XDocument.Load("Leveldata\\" + mapName + ".tmx");
             string[][] grounddata = GetGround(mapData);
             string[][] poidata = GetPoi(mapData);
+            string[][] decodata = GetDecorations(mapData);
+            string[][] enemydata = GetEnemies(mapData);
             int gameWorldHeight = grounddata.Length;
             int gameWorldWidth = grounddata[0].Length;
             int tileSize = GetTileSize(mapData);
@@ -99,6 +153,8 @@ namespace TimeWar.Logic
             this.model.CurrentWorld.WorldName = mapName;
             FillGround(this.model.CurrentWorld, grounddata);
             FillPoi(this.model.CurrentWorld, poidata);
+            FillDeco(this.model.CurrentWorld, decodata);
+            this.FillEnemy(this.model.CurrentWorld, enemydata);
             this.model.Hero = this.GetPlayer();
         }
     }

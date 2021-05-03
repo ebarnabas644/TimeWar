@@ -5,11 +5,6 @@
 namespace TimeWar.Main
 {
     using System;
-    using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Media;
     using TimeWar.Logic;
@@ -28,14 +23,41 @@ namespace TimeWar.Main
         private Logic.Classes.CommandManager commandManager;
         private CharacterLogic characterLogic;
         private Window win;
+        private bool exit;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MenuControl"/> class.
         /// </summary>
         public MenuControl()
         {
+            this.exit = false;
             this.Loaded += this.GameControl_Loaded;
+            this.DataContext = this;
         }
+
+        /// <summary>
+        /// Gets or sets current map.
+        /// </summary>
+        public string MapName { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether page about to close.
+        /// </summary>
+        public bool Exit
+        {
+            get { return this.exit; }
+            set { this.exit = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether scrolling enabled.
+        /// </summary>
+        public bool ScrollMode { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether title enabled.
+        /// </summary>
+        public bool TitleEnabled { get; set; }
 
         /// <summary>
         /// Render drawing groups.
@@ -52,9 +74,9 @@ namespace TimeWar.Main
         private void GameControl_Loaded(object sender, RoutedEventArgs e)
         {
             this.model = new GameModel();
-            this.initLogic = new InitLogic(this.model, "test");
+            this.initLogic = new InitLogic(this.model, this.MapName);
             this.model.Camera = new Viewport((int)this.ActualWidth, (int)this.ActualHeight, (int)this.model.CurrentWorld.GameWidth, (int)this.model.CurrentWorld.GameHeight, this.model.Hero);
-            this.renderer = new GameRenderer(this.model, true);
+            this.renderer = new GameRenderer(this.model, true, this.ScrollMode, this.TitleEnabled);
             this.commandManager = new Logic.Classes.CommandManager();
             this.characterLogic = new CharacterLogic(this.model, this.model.Hero, this.commandManager);
             this.win = Window.GetWindow(this);
@@ -76,12 +98,22 @@ namespace TimeWar.Main
         {
             this.model.Camera.WindowHeight = (int)this.ActualHeight;
             this.model.Camera.WindowWidth = (int)this.ActualWidth;
+            this.renderer.WindowChanged = true;
         }
 
         private void CompositionTarget_Rendering(object sender, EventArgs e)
         {
-            this.characterLogic.OneTick();
-            this.InvalidateVisual();
+            if (!this.exit)
+            {
+                this.characterLogic.OneTick();
+                this.InvalidateVisual();
+            }
+            else
+            {
+                this.win.SizeChanged -= this.Win_SizeChanged;
+                this.win.MouseMove -= this.Win_MouseMove;
+                CompositionTarget.Rendering -= this.CompositionTarget_Rendering;
+            }
         }
     }
 }

@@ -4,12 +4,6 @@
 
 namespace TimeWar.Model.Objects
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-
     /// <summary>
     /// Camera viewport class.
     /// </summary>
@@ -132,6 +126,26 @@ namespace TimeWar.Model.Objects
                     return this.WindowHeight / 2;
                 }
             }
+        }
+
+        /// <summary>
+        /// Get relative x position from the viewport.
+        /// </summary>
+        /// <param name="xPos">Object x pos.</param>
+        /// <returns>Relative x pos.</returns>
+        public int GetRelativeObjectPosX(int xPos)
+        {
+            return xPos + this.GetViewportX;
+        }
+
+        /// <summary>
+        /// Get relative y position from the viewport.
+        /// </summary>
+        /// <param name="yPos">Object y pos.</param>
+        /// <returns>Relative y pos.</returns>
+        public int GetRelativeObjectPosY(int yPos)
+        {
+            return yPos + this.GetViewportY;
         }
     }
 }

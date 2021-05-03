@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:vm="clr-namespace:TimeWar.Main.ViewModel"
         mc:Ignorable="d"
         RenderOptions.BitmapScalingMode="NearestNeighbor"
         DataContext="{Binding MainViewModel, Source={StaticResource Locator}}"
@@ -18,6 +19,6 @@
             x:Name="MainFrame"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
-            NavigationUIVisibility="Hidden" />
+            NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

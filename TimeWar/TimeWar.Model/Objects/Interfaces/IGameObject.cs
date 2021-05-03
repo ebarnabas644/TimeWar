@@ -4,12 +4,43 @@
 
 namespace TimeWar.Model.Objects.Interfaces
 {
-    using System;
-    using System.Collections.Generic;
     using System.Drawing;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
+
+    /// <summary>
+    /// Movement types.
+    /// </summary>
+    public enum Stances
+    {
+        /// <summary>
+        /// Base right stance.
+        /// </summary>
+        StandRight,
+
+        /// <summary>
+        /// Base left stance.
+        /// </summary>
+        StandLeft,
+
+        /// <summary>
+        /// Right stance.
+        /// </summary>
+        Right,
+
+        /// <summary>
+        /// Left stance.
+        /// </summary>
+        Left,
+
+        /// <summary>
+        /// Jump right stance.
+        /// </summary>
+        JumpRight,
+
+        /// <summary>
+        /// Jump left stance.
+        /// </summary>
+        JumpLeft,
+    }
 
     /// <summary>
     /// Game object interface.
@@ -32,13 +63,28 @@ namespace TimeWar.Model.Objects.Interfaces
         public string SpriteFile { get; set; }
 
         /// <summary>
+        /// Gets or sets object stance.
+        /// </summary>
+        public Stances Stance { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether stateless.
+        /// </summary>
+        public bool StanceLess { get; set; }
+
+        /// <summary>
+        /// Gets or sets movement vector.
+        /// </summary>
+        public Point MovementVector { get; set; }
+
+        /// <summary>
+        /// Gets or sets current sprite frame value.
+        /// </summary>
+        public int CurrentSprite { get; set; }
+
+        /// <summary>
         /// Gets or sets character position.
         /// </summary>
         public Point Position { get; set; }
-
-        /// <summary>
-        /// Gets or sets current sprite frame.
-        /// </summary>
-        public int CurrentSprite { get; set; }
     }
 }

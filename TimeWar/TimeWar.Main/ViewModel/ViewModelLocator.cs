@@ -4,14 +4,14 @@
 
 namespace TimeWar.Main.ViewModel
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using CommonServiceLocator;
-    using GalaSoft.MvvmLight.Ioc;
+    using GalaSoft.MvvmLight.Messaging;
+    using TimeWar.Main.BL;
+    using TimeWar.Main.BL.Classes;
+    using TimeWar.Main.BL.Interfaces;
+    using TimeWar.Main.Data;
     using TimeWar.Main.View;
+    using TimeWar.Main.ViewModel;
 
     /// <summary>
     /// View model locator class.
@@ -24,15 +24,21 @@ namespace TimeWar.Main.ViewModel
         public ViewModelLocator()
         {
             ServiceLocator.SetLocatorProvider(() => MyIoc.Instance);
+            MyIoc.Instance.Register<Factory, Factory>();
+            MyIoc.Instance.Register<IViewerLogicUI, ViewerLogicUI>();
+            MyIoc.Instance.Register<IManagerLogicUI, ManagerLogicUI>();
+            MyIoc.Instance.Register<IMessenger>(() => Messenger.Default);
             MyIoc.Instance.Register<MainViewModel>();
             MyIoc.Instance.Register<MenuViewModel>();
             MyIoc.Instance.Register<GameViewModel>();
             MyIoc.Instance.Register<ProfilesViewModel>();
+            MyIoc.Instance.Register<NewGameViewModel>();
             SetupNavigation();
             this.MainViewModel = ServiceLocator.Current.GetInstance<MainViewModel>();
             this.MenuViewModel = ServiceLocator.Current.GetInstance<MenuViewModel>();
             this.GameViewModel = ServiceLocator.Current.GetInstance<GameViewModel>();
             this.ProfilesViewModel = ServiceLocator.Current.GetInstance<ProfilesViewModel>();
+            this.NewGameViewModel = ServiceLocator.Current.GetInstance<NewGameViewModel>();
         }
 
         /// <summary>
@@ -54,6 +60,11 @@ namespace TimeWar.Main.ViewModel
         /// Gets or sets profiles view model.
         /// </summary>
         public ProfilesViewModel ProfilesViewModel { get; set; }
+
+        /// <summary>
+        /// Gets or sets new game view model.
+        /// </summary>
+        public NewGameViewModel NewGameViewModel { get; set; }
 
         private static void SetupNavigation()
         {

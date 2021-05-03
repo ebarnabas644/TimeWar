@@ -4,12 +4,7 @@
 
 namespace TimeWar.Model.Objects.Interfaces
 {
-    using System;
-    using System.Collections.Generic;
     using System.Drawing;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     /// <summary>
     /// Moveable objects interface.
@@ -20,10 +15,5 @@ namespace TimeWar.Model.Objects.Interfaces
         /// Gets or sets character position.
         /// </summary>
         public Point Position { get; set; }
-
-        /// <summary>
-        /// Gets or sets character movement speed.
-        /// </summary>
-        public int Speed { get; set; }
     }
 }

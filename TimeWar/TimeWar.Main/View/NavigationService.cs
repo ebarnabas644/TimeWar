@@ -7,13 +7,11 @@ namespace TimeWar.Main.View
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
-    using System.Linq;
     using System.Runtime.CompilerServices;
-    using System.Text;
-    using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Controls;
     using System.Windows.Media;
+    using TimeWar.Main.ViewModel;
 
     /// <summary>
     /// Navigation service class.
@@ -35,6 +33,7 @@ namespace TimeWar.Main.View
         /// Current page.
         /// </summary>
         private string currentPageKey;
+        private object parameter;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="NavigationService{T}"/> class.
@@ -75,6 +74,14 @@ namespace TimeWar.Main.View
             }
         }
 
+        /// <summary>
+        /// Gets page parameter.
+        /// </summary>
+        public object Parameter
+        {
+            get { return this.parameter; }
+        }
+
         /// <inheritdoc/>
         public void GoBack()
         {
@@ -111,6 +118,7 @@ namespace TimeWar.Main.View
                         frame.Source = this.pagesByKey[pageKey];
                     }
 
+                    this.parameter = parameter;
                     this.CurrentPageKey = pageKey;
                 }
             }

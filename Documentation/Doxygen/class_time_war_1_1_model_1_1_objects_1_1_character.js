@@ -1,0 +1,26 @@
+var class_time_war_1_1_model_1_1_objects_1_1_character =
+[
+    [ "Character", "class_time_war_1_1_model_1_1_objects_1_1_character.html#a6ea65c3c0b0091965e9b3354f3ba6cb4", null ],
+    [ "AddKey", "class_time_war_1_1_model_1_1_objects_1_1_character.html#a0f5540a4cdf0b46050fa0635a39ee802", null ],
+    [ "ContainKey", "class_time_war_1_1_model_1_1_objects_1_1_character.html#aeac946c8fd25d7c855f15a5f2f901606", null ],
+    [ "RemoveKey", "class_time_war_1_1_model_1_1_objects_1_1_character.html#a216c8e8773191c2d541e023ca62c0538", null ],
+    [ "CanAttack", "class_time_war_1_1_model_1_1_objects_1_1_character.html#a0d17ca0cd08d45641d83f806e14a5bf9", null ],
+    [ "ClickLocation", "class_time_war_1_1_model_1_1_objects_1_1_character.html#a3e2a48ca5b9317bc10989056fd088a01", null ],
+    [ "CurrentHealth", "class_time_war_1_1_model_1_1_objects_1_1_character.html#aaa7e26d7b52a7f289d2337d70bd3888c", null ],
+    [ "CurrentShield", "class_time_war_1_1_model_1_1_objects_1_1_character.html#ae7728274f27ce245e912c1f428af32dc", null ],
+    [ "CurrentSprite", "class_time_war_1_1_model_1_1_objects_1_1_character.html#a56ddde01e13858d9d750c9f7d75c50d6", null ],
+    [ "Health", "class_time_war_1_1_model_1_1_objects_1_1_character.html#aa2f7e5410c95280873a256fdebc85880", null ],
+    [ "Height", "class_time_war_1_1_model_1_1_objects_1_1_character.html#ae092f6b488b9ee1b9f103ee51aad0ffa", null ],
+    [ "IsInvincible", "class_time_war_1_1_model_1_1_objects_1_1_character.html#a6bd2b967693393b85a3a1535f831a0a7", null ],
+    [ "MovementVector", "class_time_war_1_1_model_1_1_objects_1_1_character.html#aba4e852bad244405e5652e893ee12155", null ],
+    [ "Position", "class_time_war_1_1_model_1_1_objects_1_1_character.html#a43547ff690c82e297c9537478159604c", null ],
+    [ "Shield", "class_time_war_1_1_model_1_1_objects_1_1_character.html#a9d7d98a6119cd296c12996352cd00b8b", null ],
+    [ "ShieldRegenTime", "class_time_war_1_1_model_1_1_objects_1_1_character.html#ac6b2c96ba6084e25019a5b3d2501c55f", null ],
+    [ "ShieldRegenTimer", "class_time_war_1_1_model_1_1_objects_1_1_character.html#a8dc766e0b53340767f10b9cef88ca242", null ],
+    [ "ShieldRegenValue", "class_time_war_1_1_model_1_1_objects_1_1_character.html#a16e9d34c6fb1f5c2bfc16111516b3cbd", null ],
+    [ "SpriteFile", "class_time_war_1_1_model_1_1_objects_1_1_character.html#a9fcaf214bce14ec20b9c851a065e0133", null ],
+    [ "Stance", "class_time_war_1_1_model_1_1_objects_1_1_character.html#a0219d293dbd4552f787053bb1f5550a2", null ],
+    [ "StanceLess", "class_time_war_1_1_model_1_1_objects_1_1_character.html#a58a3cdba1c0661de88a49913110d3e02", null ],
+    [ "TypeOfBullet", "class_time_war_1_1_model_1_1_objects_1_1_character.html#a08f063d86c1cefcc99bd2491d1062652", null ],
+    [ "Width", "class_time_war_1_1_model_1_1_objects_1_1_character.html#acb120090c0fde60ee382b81a6c12997c", null ]
+];

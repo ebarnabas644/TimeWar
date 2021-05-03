@@ -4,21 +4,19 @@
 
 namespace TimeWar.Main.ViewModel
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
+    using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.Command;
     using TimeWar.Main.View;
 
     /// <summary>
     /// Game view model class.
     /// </summary>
-    public class GameViewModel
+    public class GameViewModel : ViewModelBase
     {
         private INavigationService<NavigationPages> navigationService;
         private RelayCommand menuPageCommand;
+        private string mapName;
+        private bool menuVisibility;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameViewModel"/> class.
@@ -26,7 +24,34 @@ namespace TimeWar.Main.ViewModel
         /// <param name="navigationService">Navigation service.</param>
         public GameViewModel(INavigationService<NavigationPages> navigationService)
         {
+            this.MenuVisibility = false;
             this.navigationService = navigationService;
+        }
+
+        /// <summary>
+        /// Gets or sets map name.
+        /// </summary>
+        public string MapName
+        {
+            get { return this.mapName; }
+            set { this.mapName = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether visible.
+        /// </summary>
+        public bool MenuVisibility
+        {
+            get { return this.menuVisibility; }
+            set { this.Set(ref this.menuVisibility, value); }
+        }
+
+        /// <summary>
+        /// Gets navigation service context.
+        /// </summary>
+        public INavigationService<NavigationPages> NavigationContext
+        {
+            get { return this.navigationService; }
         }
 
         /// <summary>

@@ -29,61 +29,343 @@
             Gets or sets the camera.
             </summary>
         </member>
-        <member name="T:TimeWar.Model.Objects.Stances">
+        <member name="T:TimeWar.Model.Objects.Classes.BulletType">
             <summary>
-            Movement types.
+            Types of bullet.
             </summary>
         </member>
-        <member name="F:TimeWar.Model.Objects.Stances.StandRight">
+        <member name="F:TimeWar.Model.Objects.Classes.BulletType.Basic">
             <summary>
-            Base right stance.
+            Basic bullet type. Can pass through enemies.
             </summary>
         </member>
-        <member name="F:TimeWar.Model.Objects.Stances.StandLeft">
+        <member name="F:TimeWar.Model.Objects.Classes.BulletType.BasicEnemyBullet">
             <summary>
-            Base left stance.
+            Basic bullet type. Can pass through enemies.
             </summary>
         </member>
-        <member name="F:TimeWar.Model.Objects.Stances.Right">
+        <member name="F:TimeWar.Model.Objects.Classes.BulletType.Accelerating">
             <summary>
-            Right stance.
+            Bullet's speed is increasing.
             </summary>
         </member>
-        <member name="F:TimeWar.Model.Objects.Stances.Left">
+        <member name="F:TimeWar.Model.Objects.Classes.BulletType.Bouncing">
             <summary>
-            Left stance.
+            Bullet bounces upon inpact.
             </summary>
         </member>
-        <member name="F:TimeWar.Model.Objects.Stances.Up">
+        <member name="F:TimeWar.Model.Objects.Classes.BulletType.CurvedBouncing">
             <summary>
-            Up stance.
+            Bullet is bouncing on the ground.
             </summary>
         </member>
-        <member name="F:TimeWar.Model.Objects.Stances.Down">
+        <member name="T:TimeWar.Model.Objects.Classes.Bullet">
             <summary>
-            Down stance.
+            Basic bullet.
             </summary>
         </member>
-        <member name="F:TimeWar.Model.Objects.Stances.Jump">
+        <member name="M:TimeWar.Model.Objects.Classes.Bullet.#ctor(System.Drawing.Point,System.Int32,System.Int32,System.String,System.Drawing.Point,System.Int32,TimeWar.Model.Objects.Classes.BulletType,System.Boolean)">
             <summary>
-            Jump stance.
+            Initializes a new instance of the <see cref="T:TimeWar.Model.Objects.Classes.Bullet"/> class.
             </summary>
+            <param name="pos">Character position.</param>
+            <param name="damage">Base damage.</param>
+            <param name="destination">Destination of the bullet.</param>
+            <param name="type">Type of the bullet.</param>
+            <param name="playerBullet">Is shot by a player.</param>
+            <param name="height">Character height.</param>
+            <param name="width">Character width.</param>
+            <param name="spriteFile">Name of the sprite file.</param>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.Position">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.Height">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.Width">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.Damage">
+            <summary>
+            Gets or sets damage of bullet.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.SpriteFile">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.Type">
+            <summary>
+            Gets or sets the type of the bullet.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.Acceleration">
+            <summary>
+            Gets or sets bullet acceleration.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.Destination">
+            <summary>
+            Gets or sets bullet destination.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.MoveVector">
+            <summary>
+            Gets or sets bullet move vector.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.BulletStopwatch">
+            <summary>
+            Gets or sets bullet acceleration stopwatch.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.DespawnStopwatch">
+            <summary>
+            Gets or sets bullet acceleration stopwatch.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.MovementVectorF">
+            <summary>
+            Gets or sets Movement Vector.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.MovementVector">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.Stance">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.StanceLess">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.PlayerBullet">
+            <summary>
+            Gets or sets a value indicating whether is shot by a player.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Bullet.CurrentSprite">
+            <inheritdoc/>
+        </member>
+        <member name="T:TimeWar.Model.Objects.Classes.EnemyType">
+            <summary>
+            Types of enemies.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.EnemyType.Basic">
+            <summary>
+            Basic enemy type.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.EnemyType.Fast">
+            <summary>
+            Fast enemy type.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.EnemyType.Heavy">
+            <summary>
+            Heavy enemy type.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.EnemyType.RapidFire">
+            <summary>
+            Rapid Fire enemy.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.EnemyType.Burst">
+            <summary>
+            Burst shot enemy.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Model.Objects.Classes.Enemy">
+            <summary>
+            Enemy character class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Classes.Enemy.#ctor(System.Drawing.Point,System.Int32,System.Int32,System.Int32,TimeWar.Model.Objects.Classes.EnemyType,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Model.Objects.Classes.Enemy"/> class.
+            </summary>
+            <param name="pos">Position.</param>
+            <param name="health">Health value.</param>
+            <param name="height">Height.</param>
+            <param name="width">Width.</param>
+            <param name="enemyType">Type of enemy.</param>
+            <param name="spriteFile">Spritesheet file name.</param>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.Enemy.Type">
+            <summary>
+            Gets or sets the type of enemy.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Model.Objects.Classes.POIType">
+            <summary>
+            Types of POI.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.POIType.Checkpoint">
+            <summary>
+            Checkpoint.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.POIType.Finish">
+            <summary>
+            Finish point.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.POIType.HealthKit">
+            <summary>
+            Adds health point to character.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.POIType.HighJump">
+            <summary>
+            Character can jump higher than normal.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.POIType.UnlockWeapon">
+            <summary>
+            Unlocks accelerating bullet.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.POIType.Invincibility">
+            <summary>
+            The character's health doesn't deplete.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Classes.POIType.RapidFire">
+            <summary>
+            Player can spam bullets.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Model.Objects.Classes.PointOfInterest">
+            <summary>
+            Class for checkpoints, finish point, powerups.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Classes.PointOfInterest.#ctor(TimeWar.Model.Objects.Classes.POIType,System.Int32,System.Int32,System.String,System.Drawing.Point,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Model.Objects.Classes.PointOfInterest"/> class.
+            </summary>
+            <param name="type">Type of a poi.</param>
+            <param name="height">Height.</param>
+            <param name="width">Width.</param>
+            <param name="spritefile">Sprite file.</param>
+            <param name="position">Position.</param>
+            <param name="stanceless">Stanceless.</param>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.Type">
+            <summary>
+            Gets or sets the type of a POI.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.Height">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.Width">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.SpriteFile">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.Stance">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.StanceLess">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.MovementVector">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.CurrentSprite">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.PointOfInterest.Position">
+            <inheritdoc/>
+        </member>
+        <member name="T:TimeWar.Model.Objects.Classes.StaticObject">
+            <summary>
+            Static object class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Classes.StaticObject.#ctor(System.Int32,System.Int32,System.String,System.Drawing.Point,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Model.Objects.Classes.StaticObject"/> class.
+            </summary>
+            <param name="height">Object height.</param>
+            <param name="width">Object width.</param>
+            <param name="spritefile">Object sprite file.</param>
+            <param name="position">Object position.</param>
+            <param name="hud">Hud object.</param>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.Height">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.Width">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.SpriteFile">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.Position">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.Hud">
+            <summary>
+            Gets or sets a value indicating whether hud or not.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.Stance">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.StanceLess">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.MovementVector">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.CurrentSprite">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Classes.StaticObject.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Classes.StaticObject.GetHashCode">
+            <inheritdoc/>
         </member>
         <member name="T:TimeWar.Model.Objects.Character">
             <summary>
             Basic character information class.
             </summary>
         </member>
-        <member name="M:TimeWar.Model.Objects.Character.#ctor(System.Drawing.Point,System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
+        <member name="M:TimeWar.Model.Objects.Character.#ctor(System.Drawing.Point,System.Int32,System.Int32,System.Int32,System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Model.Objects.Character"/> class.
             </summary>
             <param name="pos">Character position.</param>
-            <param name="speed">Movement speed.</param>
             <param name="health">Base health.</param>
             <param name="height">Character height.</param>
             <param name="width">Character width.</param>
             <param name="spriteFile">Name of the sprite file.</param>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.IsInvincible">
+            <summary>
+            Gets or sets a value indicating whether the character is invincible or not.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.ClickLocation">
+            <summary>
+            Gets or sets mouse click location.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.CurrentHealth">
+            <summary>
+            Gets or sets current character health.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.CanAttack">
+            <summary>
+            Gets or sets a value indicating whether the player can attack or not.
+            </summary>
         </member>
         <member name="P:TimeWar.Model.Objects.Character.Height">
             <summary>
@@ -105,7 +387,7 @@
             Gets or sets current sprite frame.
             </summary>
         </member>
-        <member name="P:TimeWar.Model.Objects.Character.Direction">
+        <member name="P:TimeWar.Model.Objects.Character.Stance">
             <summary>
             Gets or sets moving direction.
             </summary>
@@ -113,13 +395,65 @@
         <member name="P:TimeWar.Model.Objects.Character.Position">
             <inheritdoc/>
         </member>
-        <member name="P:TimeWar.Model.Objects.Character.Speed">
-            <inheritdoc/>
-        </member>
         <member name="P:TimeWar.Model.Objects.Character.Health">
             <summary>
             Gets or sets the character health.
             </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.Shield">
+            <summary>
+            Gets or sets the character shield.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.CurrentShield">
+            <summary>
+            Gets or sets the character current shield.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.ShieldRegenValue">
+            <summary>
+            Gets or sets shield regen amount.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.StanceLess">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.MovementVector">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.TypeOfBullet">
+            <summary>
+            Gets or sets type of bullet.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.ShieldRegenTime">
+            <summary>
+            Gets or sets shield regen time.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Character.ShieldRegenTimer">
+            <summary>
+            Gets or sets shield regen timer stopwatch.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Character.AddKey(System.String)">
+            <summary>
+            Add new key to the pressed list.
+            </summary>
+            <param name="key">Pressed key.</param>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Character.RemoveKey(System.String)">
+            <summary>
+            Remove key from the preesed list.
+            </summary>
+            <param name="key">Released key.</param>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Character.ContainKey(System.String)">
+            <summary>
+            Check key in the list.
+            </summary>
+            <param name="key">Key.</param>
+            <returns>True if contains.</returns>
         </member>
         <member name="T:TimeWar.Model.Objects.GameWorld">
             <summary>
@@ -134,6 +468,11 @@
             <param name="width">Width in tile.</param>
             <param name="tileSize">Game tile size.</param>
             <param name="magnify">Zoom extent of the game world(default value = 3).</param>
+        </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.StartPoint">
+            <summary>
+            Gets or sets startpoint.
+            </summary>
         </member>
         <member name="P:TimeWar.Model.Objects.GameWorld.WorldName">
             <summary>
@@ -155,6 +494,11 @@
             Gets the game world height in tile value.
             </summary>
         </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.EnemiesLoaded">
+            <summary>
+            Gets or sets a value indicating whether enemies are loaded.
+            </summary>
+        </member>
         <member name="P:TimeWar.Model.Objects.GameWorld.GameWidth">
             <summary>
             Gets or sets the game world width(pixel value).
@@ -170,19 +514,57 @@
             Gets or sets the zoom extent of the game world.
             </summary>
         </member>
-        <member name="M:TimeWar.Model.Objects.GameWorld.AddPointOfInterest(System.String,System.Drawing.Point)">
+        <member name="P:TimeWar.Model.Objects.GameWorld.BulletCount">
             <summary>
-            Add new point of interest.
+            Gets number of bullets.
             </summary>
-            <param name="name">Name of the point.</param>
-            <param name="position">Position.</param>
         </member>
-        <member name="M:TimeWar.Model.Objects.GameWorld.SearchPointOfInterest(System.String)">
+        <member name="P:TimeWar.Model.Objects.GameWorld.EnemyCount">
             <summary>
-            Find existing point of interest by key.
+            Gets the number of the enemies.
             </summary>
-            <param name="name">Key of the point.</param>
-            <returns>Position of the point.</returns>
+        </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.GetBullets">
+            <summary>
+            Gets bullets.
+            </summary>
+            <returns>Return currently spawned bullets collection.</returns>
+        </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.GetEnemies">
+            <summary>
+            Gets enemies.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.GetPois">
+            <summary>
+            Gets a list of pois.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.GetBullet(System.Int32)">
+            <summary>
+            Get bullet from bullet collection.
+            </summary>
+            <param name="idx">Index.</param>
+            <returns>Bullet entity.</returns>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.AddPOI(TimeWar.Model.Objects.Classes.PointOfInterest)">
+            <summary>
+            Add new poi.
+            </summary>
+            <param name="poi">POI entity.</param>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.RemovePOI(TimeWar.Model.Objects.Classes.PointOfInterest)">
+            <summary>
+            Remove poi from the collection.
+            </summary>
+            <param name="poi">Point of interest.</param>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.GetPoi(System.Int32)">
+            <summary>
+            Get poi entity.
+            </summary>
+            <param name="idx">Index.</param>
+            <returns>Poi entity.</returns>
         </member>
         <member name="M:TimeWar.Model.Objects.GameWorld.AddGround(System.Drawing.Point)">
             <summary>
@@ -217,50 +599,91 @@
             <param name="pixelPos">Tile position.</param>
             <returns>Pixel position.</returns>
         </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.AddDecoration(System.Drawing.Point,System.Int32)">
+            <summary>
+            Add decoration object to the map.
+            </summary>
+            <param name="position">Position of the object(tile pos).</param>
+            <param name="id">Object id.</param>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.RemoveDecoration(System.Drawing.Point)">
+            <summary>
+            Remove decoration from the map.
+            </summary>
+            <param name="position">Position of the object(tile pos).</param>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.SearchDecoration(System.Drawing.Point)">
+            <summary>
+            Search for decoration object.
+            </summary>
+            <param name="position">Position of the object(tile pos).</param>
+            <returns>Object id.</returns>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.AddBullet(TimeWar.Model.Objects.Classes.Bullet)">
+            <summary>
+            Add new bullet.
+            </summary>
+            <param name="bullet">Bullet entity.</param>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.RemoveBullet(TimeWar.Model.Objects.Classes.Bullet)">
+            <summary>
+            Remove bullet.
+            </summary>
+            <param name="bullet">Bullet entity.</param>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.AddEnemy(TimeWar.Model.Objects.Classes.Enemy)">
+            <summary>
+            Add new enemy.
+            </summary>
+            <param name="enemy">Character entity.</param>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.RemoveEnemy(TimeWar.Model.Objects.Classes.Enemy)">
+            <summary>
+            Remove enemy from the collection.
+            </summary>
+            <param name="enemy">Character entity.</param>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.GetEnemy(System.Int32)">
+            <summary>
+            Get enemy entity.
+            </summary>
+            <param name="idx">Index.</param>
+            <returns>Character entity.</returns>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.SaveEnemies">
+            <summary>
+            Save enmies.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.LoadEnemies">
+            <summary>
+            Gets returns checkpoint saved enemies.
+            </summary>
+        </member>
         <member name="T:TimeWar.Model.Objects.Player">
             <summary>
             Player detail class.
             </summary>
         </member>
-        <member name="M:TimeWar.Model.Objects.Player.#ctor(System.Drawing.Point,System.Int32,System.Int32,System.Int32,System.Int32,System.String)">
+        <member name="M:TimeWar.Model.Objects.Player.#ctor(System.Drawing.Point,System.Int32,System.Int32,System.Int32,System.String)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Model.Objects.Player"/> class.
             </summary>
             <param name="pos">Position.</param>
-            <param name="speed">Speed value.</param>
             <param name="health">Health value.</param>
             <param name="height">Height.</param>
             <param name="width">Width.</param>
             <param name="spriteFile">Spritesheet file name.</param>
         </member>
-        <member name="T:TimeWar.Model.Objects.Classes.StaticObject">
+        <member name="P:TimeWar.Model.Objects.Player.Checkpoint">
             <summary>
-            Static object class.
+            Gets or sets checkpoint.
             </summary>
         </member>
-        <member name="M:TimeWar.Model.Objects.Classes.StaticObject.#ctor(System.Int32,System.Int32,System.String,System.Drawing.Point)">
+        <member name="P:TimeWar.Model.Objects.Player.NumOfWeaponUnlocked">
             <summary>
-            Initializes a new instance of the <see cref="T:TimeWar.Model.Objects.Classes.StaticObject"/> class.
+            Gets or sets number of unlocked weapons.
             </summary>
-            <param name="height">Object height.</param>
-            <param name="width">Object width.</param>
-            <param name="spritefile">Object sprite file.</param>
-            <param name="position">Object position.</param>
-        </member>
-        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.Height">
-            <inheritdoc/>
-        </member>
-        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.Width">
-            <inheritdoc/>
-        </member>
-        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.SpriteFile">
-            <inheritdoc/>
-        </member>
-        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.Position">
-            <inheritdoc/>
-        </member>
-        <member name="P:TimeWar.Model.Objects.Classes.StaticObject.CurrentSprite">
-            <inheritdoc/>
         </member>
         <member name="T:TimeWar.Model.Objects.Viewport">
             <summary>
@@ -312,6 +735,55 @@
             Gets the followed character Y position relative to the viewport.
             </summary>
         </member>
+        <member name="M:TimeWar.Model.Objects.Viewport.GetRelativeObjectPosX(System.Int32)">
+            <summary>
+            Get relative x position from the viewport.
+            </summary>
+            <param name="xPos">Object x pos.</param>
+            <returns>Relative x pos.</returns>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Viewport.GetRelativeObjectPosY(System.Int32)">
+            <summary>
+            Get relative y position from the viewport.
+            </summary>
+            <param name="yPos">Object y pos.</param>
+            <returns>Relative y pos.</returns>
+        </member>
+        <member name="T:TimeWar.Model.Objects.Interfaces.Stances">
+            <summary>
+            Movement types.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Interfaces.Stances.StandRight">
+            <summary>
+            Base right stance.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Interfaces.Stances.StandLeft">
+            <summary>
+            Base left stance.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Interfaces.Stances.Right">
+            <summary>
+            Right stance.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Interfaces.Stances.Left">
+            <summary>
+            Left stance.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Interfaces.Stances.JumpRight">
+            <summary>
+            Jump right stance.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Model.Objects.Interfaces.Stances.JumpLeft">
+            <summary>
+            Jump left stance.
+            </summary>
+        </member>
         <member name="T:TimeWar.Model.Objects.Interfaces.IGameObject">
             <summary>
             Game object interface.
@@ -332,14 +804,29 @@
             Gets or sets the character sprite file name.
             </summary>
         </member>
-        <member name="P:TimeWar.Model.Objects.Interfaces.IGameObject.Position">
+        <member name="P:TimeWar.Model.Objects.Interfaces.IGameObject.Stance">
             <summary>
-            Gets or sets character position.
+            Gets or sets object stance.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Interfaces.IGameObject.StanceLess">
+            <summary>
+            Gets or sets a value indicating whether stateless.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Interfaces.IGameObject.MovementVector">
+            <summary>
+            Gets or sets movement vector.
             </summary>
         </member>
         <member name="P:TimeWar.Model.Objects.Interfaces.IGameObject.CurrentSprite">
             <summary>
-            Gets or sets current sprite frame.
+            Gets or sets current sprite frame value.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Interfaces.IGameObject.Position">
+            <summary>
+            Gets or sets character position.
             </summary>
         </member>
         <member name="T:TimeWar.Model.Objects.Interfaces.IMoveable">
@@ -350,11 +837,6 @@
         <member name="P:TimeWar.Model.Objects.Interfaces.IMoveable.Position">
             <summary>
             Gets or sets character position.
-            </summary>
-        </member>
-        <member name="P:TimeWar.Model.Objects.Interfaces.IMoveable.Speed">
-            <summary>
-            Gets or sets character movement speed.
             </summary>
         </member>
     </members>

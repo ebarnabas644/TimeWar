@@ -1,0 +1,66 @@
+﻿<Page x:Class="TimeWar.Main.View.NewGamePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TimeWar.Main.View"
+      xmlns:main="clr-namespace:TimeWar.Main"
+      mc:Ignorable="d" 
+      DataContext="{Binding NewGameViewModel, Source={StaticResource Locator}}"
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="NewGamePage">
+    <Page.Resources>
+        <local:IntToDateConverter x:Key="IntToDateConverter"/>
+    </Page.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="15*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Maps" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="1" Style="{StaticResource LabelStyle}" Panel.ZIndex="2"/>
+        <Label Content="Scoreboard" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="3" Grid.Row="1" Style="{StaticResource LabelStyle}" Panel.ZIndex="2"/>
+        <ListBox Background="#4B808080" ItemsSource="{Binding Path=Maps}" SelectedItem="{Binding Path=SelectedMap}" Grid.Row="2" Grid.Column="1" Panel.ZIndex="2">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <DockPanel>
+                            <Image Source="{Binding Path}" Height="100" Width="200" DockPanel.Dock="Left"/>
+                            <TextBlock Text="{Binding Name}" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Right" Style="{StaticResource TextBlockStyle}"/>
+                        </DockPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox Background="#4B808080" ItemsSource="{Binding Path=SelectedMap.MapRecords}" Grid.Row="2" Grid.Column="3" Panel.ZIndex="2">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <DockPanel>
+                            <TextBlock Text="{Binding RunTime, Converter={StaticResource IntToDateConverter}}" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Right" Style="{StaticResource TextBlockStyle}"/>
+                        </DockPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button Click="Unsubscribe_Click" Command="{Binding MenuPageCommand}" Margin="5" Padding="10" Content="Back" Grid.Row="3" Panel.ZIndex="2" Grid.Column="1" HorizontalAlignment="Left" Style="{StaticResource MenuButton}"/>
+        <Button Click="Refresh_Click" Margin="5" Padding="10" Content="Refresh" Grid.Row="3" Panel.ZIndex="2" Grid.Column="1" HorizontalAlignment="Right" Style="{StaticResource MenuButton}"/>
+        <Button Click="Unsubscribe_Click" Command="{Binding GamePageCommand}" Margin="5" Content="Start" Grid.Row="3" Panel.ZIndex="2" Grid.Column="3" Style="{StaticResource MenuButton}"/>
+        <main:MenuControl x:Name="cont" Panel.ZIndex="1" Grid.RowSpan="5" Grid.ColumnSpan="11"/>
+    </Grid>
+</Page>

@@ -4,12 +4,6 @@
 
 namespace TimeWar.Logic.Classes
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-
     /// <summary>
     /// Init model logic static variables.
     /// </summary>
@@ -18,7 +12,7 @@ namespace TimeWar.Logic.Classes
         /// <summary>
         /// Name of the player spritesheet.
         /// </summary>
-        public const string PlayerSpritesheet = "testman";
+        public const string PlayerSpritesheet = "player";
 
         /// <summary>
         /// Player character height const.

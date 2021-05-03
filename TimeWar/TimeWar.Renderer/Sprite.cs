@@ -28,20 +28,22 @@ namespace TimeWar.Renderer
             int ximages = src.Width / width;
             int yimages = src.Height / height;
             int numberFrames = ximages * yimages;
+            int xcounter = 0;
             BitmapSource[][] sprites = new BitmapSource[yimages][];
             ImageBrush[][] brushes = new ImageBrush[yimages][];
             for (int i = 0; i < sprites.Length; i++)
             {
                 sprites[i] = new BitmapSource[ximages];
-                brushes[i] = new ImageBrush[ximages];
             }
 
             System.Drawing.Rectangle cropRect = new System.Drawing.Rectangle(0, 0, width, height);
             System.Drawing.Bitmap target;
             for (int row = 0; row < yimages; row++)
             {
+                xcounter = 0;
                 for (int col = 0; col < ximages; col++)
                 {
+                    xcounter++;
                     int currentY = row * height;
                     int currentX = col * width;
                     cropRect.X = currentX;
@@ -53,14 +55,41 @@ namespace TimeWar.Renderer
                     }
 
                     BitmapSource frame = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(target.GetHbitmap(), IntPtr.Zero, System.Windows.Int32Rect.Empty, BitmapSizeOptions.FromWidthAndHeight(target.Width, target.Height));
+                    int stride = frame.PixelWidth * 4;
+                    int size = frame.PixelHeight * stride;
+                    byte[] pixels = new byte[size];
+                    byte[] blank = new byte[size];
+                    frame.CopyPixels(pixels, stride, 0);
+                    int counter = 0;
+                    foreach (var item in pixels)
+                    {
+                        counter++;
+                        if (item != 0)
+                        {
+                            break;
+                        }
+                    }
+
+                    if (counter >= size - 1)
+                    {
+                        target.Dispose();
+                        brushes[row] = new ImageBrush[col];
+                        break;
+                    }
+
                     sprites[row][col] = frame;
                     target.Dispose();
                 }
+
+                if (xcounter == ximages)
+                {
+                    brushes[row] = new ImageBrush[ximages];
+                }
             }
 
-            for (int y = 0; y < yimages; y++)
+            for (int y = 0; y < brushes.Length; y++)
             {
-                for (int x = 0; x < ximages; x++)
+                for (int x = 0; x < brushes[y].Length; x++)
                 {
                     brushes[y][x] = new ImageBrush(sprites[y][x]);
                 }

@@ -22,6 +22,385 @@
             Application Entry Point.
             </summary>
         </member>
+        <member name="T:TimeWar.Main.BL.Classes.ManagerLogicUI">
+            <summary>
+            Manager logic ui class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.BL.Classes.ManagerLogicUI.#ctor(TimeWar.Main.BL.Factory,GalaSoft.MvvmLight.Messaging.IMessenger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.BL.Classes.ManagerLogicUI"/> class.
+            </summary>
+            <param name="factory">Factory instance.</param>
+            <param name="messenger">Messenger instance.</param>
+        </member>
+        <member name="M:TimeWar.Main.BL.Classes.ManagerLogicUI.CreateMap(TimeWar.Main.Data.MapRecordUI)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Main.BL.Classes.ManagerLogicUI.CreateProfile(System.Collections.Generic.IList{TimeWar.Main.Data.PlayerProfileUI},TimeWar.Main.Data.PlayerProfileUI)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Main.BL.Classes.ManagerLogicUI.CreateSave(TimeWar.Main.Data.SaveUI)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Main.BL.Classes.ManagerLogicUI.DeleteMap(System.Collections.Generic.IList{TimeWar.Main.Data.MapRecordUI},TimeWar.Main.Data.MapRecordUI)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Main.BL.Classes.ManagerLogicUI.DeleteProfile(System.Collections.Generic.IList{TimeWar.Main.Data.PlayerProfileUI},TimeWar.Main.Data.PlayerProfileUI)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Main.BL.Classes.ManagerLogicUI.DeleteSave(System.Collections.Generic.IList{TimeWar.Main.Data.SaveUI},TimeWar.Main.Data.SaveUI)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Main.BL.Classes.ManagerLogicUI.ModifyMap(TimeWar.Main.Data.MapRecordUI)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Main.BL.Classes.ManagerLogicUI.ModifyProfile(TimeWar.Main.Data.PlayerProfileUI)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Main.BL.Classes.ManagerLogicUI.ModifySave(TimeWar.Main.Data.SaveUI)">
+            <inheritdoc/>
+        </member>
+        <member name="T:TimeWar.Main.BL.Classes.ViewerLogicUI">
+            <summary>
+            Viewer logic ui class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.BL.Classes.ViewerLogicUI.#ctor(TimeWar.Main.BL.Factory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.BL.Classes.ViewerLogicUI"/> class.
+            </summary>
+            <param name="factory">Factory instance.</param>
+        </member>
+        <member name="M:TimeWar.Main.BL.Classes.ViewerLogicUI.GetSelectedProfile">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Main.BL.Classes.ViewerLogicUI.GetMaps">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Main.BL.Classes.ViewerLogicUI.GetProfiles">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Main.BL.Classes.ViewerLogicUI.GetSaves">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Main.BL.Classes.ViewerLogicUI.LoadMaps">
+            <inheritdoc/>
+        </member>
+        <member name="T:TimeWar.Main.BL.Factory">
+            <summary>
+            Factory class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.BL.Factory.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.BL.Factory"/> class.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.BL.Factory.ViewerLogic">
+            <summary>
+            Gets viewer logic instance.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.BL.Factory.ManagerLogic">
+            <summary>
+            Gets manager logic instance.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.BL.Factory.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:TimeWar.Main.BL.Interfaces.IManagerLogicUI">
+            <summary>
+            Manager logic ui interface.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.BL.Interfaces.IManagerLogicUI.CreateProfile(System.Collections.Generic.IList{TimeWar.Main.Data.PlayerProfileUI},TimeWar.Main.Data.PlayerProfileUI)">
+            <summary>
+            Add profile entity to database.
+            </summary>
+            <param name="profileUIs">Profile entities.</param>
+            <param name="newProfile">New profile.</param>
+        </member>
+        <member name="M:TimeWar.Main.BL.Interfaces.IManagerLogicUI.CreateMap(TimeWar.Main.Data.MapRecordUI)">
+            <summary>
+            Add map entity to database.
+            </summary>
+            <param name="newMap">Map entity.</param>
+        </member>
+        <member name="M:TimeWar.Main.BL.Interfaces.IManagerLogicUI.CreateSave(TimeWar.Main.Data.SaveUI)">
+            <summary>
+            Add save entity to database.
+            </summary>
+            <param name="newSave">Save entity.</param>
+        </member>
+        <member name="M:TimeWar.Main.BL.Interfaces.IManagerLogicUI.ModifyProfile(TimeWar.Main.Data.PlayerProfileUI)">
+            <summary>
+            Modify already existing profile entity.
+            </summary>
+            <param name="newProfile">Profile entity.</param>
+        </member>
+        <member name="M:TimeWar.Main.BL.Interfaces.IManagerLogicUI.ModifyMap(TimeWar.Main.Data.MapRecordUI)">
+            <summary>
+            Modify already existing map entity.
+            </summary>
+            <param name="newMap">Map entity.</param>
+        </member>
+        <member name="M:TimeWar.Main.BL.Interfaces.IManagerLogicUI.ModifySave(TimeWar.Main.Data.SaveUI)">
+            <summary>
+            Modify already existing save entity.
+            </summary>
+            <param name="newSave">Save entity.</param>
+        </member>
+        <member name="M:TimeWar.Main.BL.Interfaces.IManagerLogicUI.DeleteProfile(System.Collections.Generic.IList{TimeWar.Main.Data.PlayerProfileUI},TimeWar.Main.Data.PlayerProfileUI)">
+            <summary>
+            Delete already existing profile entity.
+            </summary>
+            <param name="profileUIs">Profile ui entites.</param>
+            <param name="profile">Profile entity.</param>
+        </member>
+        <member name="M:TimeWar.Main.BL.Interfaces.IManagerLogicUI.DeleteMap(System.Collections.Generic.IList{TimeWar.Main.Data.MapRecordUI},TimeWar.Main.Data.MapRecordUI)">
+            <summary>
+            Delete already existing map entity.
+            </summary>
+            <param name="mapUIs">Map ui entities.</param>
+            <param name="map">Map entity.</param>
+        </member>
+        <member name="M:TimeWar.Main.BL.Interfaces.IManagerLogicUI.DeleteSave(System.Collections.Generic.IList{TimeWar.Main.Data.SaveUI},TimeWar.Main.Data.SaveUI)">
+            <summary>
+            Delete already existing save entity.
+            </summary>
+            <param name="saveUIs">Save ui entities.</param>
+            <param name="save">Save entity.</param>
+        </member>
+        <member name="T:TimeWar.Main.BL.Interfaces.IViewerLogicUI">
+            <summary>
+            Viewer logic ui interface.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.BL.Interfaces.IViewerLogicUI.GetProfiles">
+            <summary>
+            Get all profile entity.
+            </summary>
+            <returns>Profile entities.</returns>
+        </member>
+        <member name="M:TimeWar.Main.BL.Interfaces.IViewerLogicUI.GetMaps">
+            <summary>
+            Get all map entity.
+            </summary>
+            <returns>Map entites.</returns>
+        </member>
+        <member name="M:TimeWar.Main.BL.Interfaces.IViewerLogicUI.GetSaves">
+            <summary>
+            Get all save entity.
+            </summary>
+            <returns>Save entites.</returns>
+        </member>
+        <member name="M:TimeWar.Main.BL.Interfaces.IViewerLogicUI.GetSelectedProfile">
+            <summary>
+            Gets the currently selected profile.
+            </summary>
+            <returns>Player profile ui entity.</returns>
+        </member>
+        <member name="M:TimeWar.Main.BL.Interfaces.IViewerLogicUI.LoadMaps">
+            <summary>
+            Init all map from game folder.
+            </summary>
+            <returns>List of map names.</returns>
+        </member>
+        <member name="T:TimeWar.Main.Data.MapFiles">
+            <summary>
+            Map data class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.Data.MapFiles.#ctor(System.String,System.String,System.Collections.Generic.IList{TimeWar.Main.Data.MapRecordUI})">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.Data.MapFiles"/> class.
+            </summary>
+            <param name="name">Name of the map.</param>
+            <param name="path">Path of the map.</param>
+            <param name="mapRecordUIs">Map record collection.</param>
+        </member>
+        <member name="P:TimeWar.Main.Data.MapFiles.Name">
+            <summary>
+            Gets or sets map name.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.Data.MapFiles.Path">
+            <summary>
+            Gets or sets map path.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.Data.MapFiles.MapRecords">
+            <summary>
+            Gets map records.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Main.Data.MapRecordUI">
+            <summary>
+            Map ui data class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.Data.MapRecordUI.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.Data.MapRecordUI"/> class.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.Data.MapRecordUI.MapRecordId">
+            <summary>
+            Gets or sets map id.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.Data.MapRecordUI.MapName">
+            <summary>
+            Gets or sets map name.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.Data.MapRecordUI.PlayerId">
+            <summary>
+            Gets or sets player profile navigational property.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.Data.MapRecordUI.RunTime">
+            <summary>
+            Gets or sets run time.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.Data.MapRecordUI.ConvertToMapEntity(TimeWar.Main.Data.MapRecordUI)">
+            <summary>
+            Convert mapui entity to database entity.
+            </summary>
+            <param name="mapui">Map ui entity.</param>
+            <returns>Map entity.</returns>
+        </member>
+        <member name="M:TimeWar.Main.Data.MapRecordUI.ConvertToMapUiEntity(TimeWar.Data.Models.MapRecord)">
+            <summary>
+            Convert database map entity to ui entity.
+            </summary>
+            <param name="map">Map entity.</param>
+            <returns>Mapui entity.</returns>
+        </member>
+        <member name="M:TimeWar.Main.Data.MapRecordUI.CopyFrom(TimeWar.Main.Data.MapRecordUI)">
+            <summary>
+            Copy data from another Map element.
+            </summary>
+            <param name="other">Data source.</param>
+        </member>
+        <member name="T:TimeWar.Main.Data.PlayerProfileUI">
+            <summary>
+            Profile ui data class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.Data.PlayerProfileUI.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.Data.PlayerProfileUI"/> class.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.Data.PlayerProfileUI.PlayerId">
+            <summary>
+            Gets or sets the player id.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.Data.PlayerProfileUI.PlayerName">
+            <summary>
+            Gets or sets the name of the player.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.Data.PlayerProfileUI.TotalKills">
+            <summary>
+            Gets or sets the total number of kills.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.Data.PlayerProfileUI.TotalDeaths">
+            <summary>
+            Gets or sets the total number of deaths.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.Data.PlayerProfileUI.CompletedRuns">
+            <summary>
+            Gets or sets the number of completed runs.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.Data.PlayerProfileUI.Selected">
+            <summary>
+            Gets or sets a value indicating whether selected.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.Data.PlayerProfileUI.SaveId">
+            <summary>
+            Gets or sets the save id.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.Data.PlayerProfileUI.ConvertToProfileEntity(TimeWar.Main.Data.PlayerProfileUI)">
+            <summary>
+            Convert profileui entity to database entity.
+            </summary>
+            <param name="profileui">Profile ui entity.</param>
+            <returns>Profile entity.</returns>
+        </member>
+        <member name="M:TimeWar.Main.Data.PlayerProfileUI.ConvertToProfileUiEntity(TimeWar.Data.Models.PlayerProfile)">
+            <summary>
+            Convert profile entity to ui entity.
+            </summary>
+            <param name="profile">Profile entity.</param>
+            <returns>Profile ui entity.</returns>
+        </member>
+        <member name="M:TimeWar.Main.Data.PlayerProfileUI.CopyFrom(TimeWar.Main.Data.PlayerProfileUI)">
+            <summary>
+            Copy data from another Profile element.
+            </summary>
+            <param name="other">Data source.</param>
+        </member>
+        <member name="T:TimeWar.Main.Data.SaveUI">
+            <summary>
+            Save ui data class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.Data.SaveUI.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.Data.SaveUI"/> class.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.Data.SaveUI.Id">
+            <summary>
+            Gets or sets save id.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.Data.SaveUI.Point">
+            <summary>
+            Gets or sets point.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.Data.SaveUI.Checkpoint">
+            <summary>
+            Gets or sets checkpoint.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.Data.SaveUI.PlayerId">
+            <summary>
+            Gets or sets playerid.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.Data.SaveUI.ConvertToSaveEntity(TimeWar.Main.Data.SaveUI)">
+            <summary>
+            Convert saveui entity to database entity.
+            </summary>
+            <param name="saveui">Save ui entity.</param>
+            <returns>Save entity.</returns>
+        </member>
+        <member name="M:TimeWar.Main.Data.SaveUI.ConvertToSaveUiEntity(TimeWar.Data.Models.Save)">
+            <summary>
+            Convert save entity to ui entity.
+            </summary>
+            <param name="save">Save entity.</param>
+            <returns>Save ui entity.</returns>
+        </member>
+        <member name="M:TimeWar.Main.Data.SaveUI.CopyFrom(TimeWar.Main.Data.SaveUI)">
+            <summary>
+            Copy data from another Save element.
+            </summary>
+            <param name="other">Data source.</param>
+        </member>
         <member name="T:TimeWar.Main.GameControl">
             <summary>
             Game controlling class.
@@ -30,6 +409,16 @@
         <member name="M:TimeWar.Main.GameControl.#ctor">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Main.GameControl"/> class.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.GameControl.MapName">
+            <summary>
+            Gets or sets current map.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.GameControl.Exit">
+            <summary>
+            Gets or sets a value indicating whether page about to close.
             </summary>
         </member>
         <member name="M:TimeWar.Main.GameControl.OnRender(System.Windows.Media.DrawingContext)">
@@ -66,6 +455,26 @@
             Initializes a new instance of the <see cref="T:TimeWar.Main.MenuControl"/> class.
             </summary>
         </member>
+        <member name="P:TimeWar.Main.MenuControl.MapName">
+            <summary>
+            Gets or sets current map.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.MenuControl.Exit">
+            <summary>
+            Gets or sets a value indicating whether page about to close.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.MenuControl.ScrollMode">
+            <summary>
+            Gets or sets a value indicating whether scrolling enabled.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.MenuControl.TitleEnabled">
+            <summary>
+            Gets or sets a value indicating whether title enabled.
+            </summary>
+        </member>
         <member name="M:TimeWar.Main.MenuControl.OnRender(System.Windows.Media.DrawingContext)">
             <summary>
             Render drawing groups.
@@ -82,6 +491,21 @@
             Initializes a new instance of the <see cref="T:TimeWar.Main.ViewModel.GameViewModel"/> class.
             </summary>
             <param name="navigationService">Navigation service.</param>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.GameViewModel.MapName">
+            <summary>
+            Gets or sets map name.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.GameViewModel.MenuVisibility">
+            <summary>
+            Gets or sets a value indicating whether visible.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.GameViewModel.NavigationContext">
+            <summary>
+            Gets navigation service context.
+            </summary>
         </member>
         <member name="P:TimeWar.Main.ViewModel.GameViewModel.MenuPageCommand">
             <summary>
@@ -109,13 +533,14 @@
             Menu view model class.
             </summary>
         </member>
-        <member name="M:TimeWar.Main.ViewModel.MenuViewModel.#ctor(TimeWar.Main.View.INavigationService{TimeWar.Main.View.NavigationPages})">
+        <member name="M:TimeWar.Main.ViewModel.MenuViewModel.#ctor(TimeWar.Main.View.INavigationService{TimeWar.Main.View.NavigationPages},TimeWar.Main.BL.Interfaces.IViewerLogicUI)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Main.ViewModel.MenuViewModel"/> class.
             </summary>
             <param name="navigationService">Navigation service.</param>
+            <param name="viewerLogicUI">Viewer logic.</param>
         </member>
-        <member name="P:TimeWar.Main.ViewModel.MenuViewModel.GamePageCommand">
+        <member name="P:TimeWar.Main.ViewModel.MenuViewModel.NewGamePageCommand">
             <summary>
             Gets the navigate to game page command.
             </summary>
@@ -130,14 +555,61 @@
             Gets the navigate to profile page command.
             </summary>
         </member>
-        <member name="T:TimeWar.Main.ViewModel.MyIoc">
+        <member name="P:TimeWar.Main.ViewModel.MenuViewModel.SelectedProfile">
             <summary>
-            SimpleIoc with IServiceLocator interface.
+            Gets the currently selected profile.
             </summary>
         </member>
-        <member name="P:TimeWar.Main.ViewModel.MyIoc.Instance">
+        <member name="P:TimeWar.Main.ViewModel.MenuViewModel.MenuText">
             <summary>
-            Gets the MyIoc instance.
+            Gets the main menu text.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.ViewModel.MenuViewModel.Init">
+            <summary>
+            Load menu text.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Main.ViewModel.NewGameViewModel">
+            <summary>
+            New game view model.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.ViewModel.NewGameViewModel.#ctor(TimeWar.Main.View.INavigationService{TimeWar.Main.View.NavigationPages},TimeWar.Main.BL.Interfaces.IViewerLogicUI)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.ViewModel.NewGameViewModel"/> class.
+            </summary>
+            <param name="navigationService">Navigation service.</param>
+            <param name="viewerLogic">Viewer logic.</param>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.NewGameViewModel.SelectedMap">
+            <summary>
+            Gets or sets currently selected map.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.NewGameViewModel.MenuPageCommand">
+            <summary>
+            Gets the navigate to menu page command.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.NewGameViewModel.GamePageCommand">
+            <summary>
+            Gets the navigate to game page command.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.NewGameViewModel.Maps">
+            <summary>
+            Gets maps collection.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.NewGameViewModel.Scoreboard">
+            <summary>
+            Gets scoreboard collection.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.ViewModel.NewGameViewModel.InitMaps">
+            <summary>
+            Init avaiable maps.
             </summary>
         </member>
         <member name="T:TimeWar.Main.ViewModel.ProfilesViewModel">
@@ -145,15 +617,52 @@
             Profile view model class.
             </summary>
         </member>
-        <member name="M:TimeWar.Main.ViewModel.ProfilesViewModel.#ctor(TimeWar.Main.View.INavigationService{TimeWar.Main.View.NavigationPages})">
+        <member name="M:TimeWar.Main.ViewModel.ProfilesViewModel.#ctor(TimeWar.Main.View.INavigationService{TimeWar.Main.View.NavigationPages},TimeWar.Main.BL.Interfaces.IViewerLogicUI,TimeWar.Main.BL.Interfaces.IManagerLogicUI)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Main.ViewModel.ProfilesViewModel"/> class.
             </summary>
             <param name="navigationService">Navigation service.</param>
+            <param name="viewerLogicUI">Viewer logic.</param>
+            <param name="managerLogicUI">Manager logic.</param>
+        </member>
+        <member name="M:TimeWar.Main.ViewModel.ProfilesViewModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.ViewModel.ProfilesViewModel"/> class.
+            </summary>
         </member>
         <member name="P:TimeWar.Main.ViewModel.ProfilesViewModel.MenuPageCommand">
             <summary>
             Gets the navigate to game page command.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.ProfilesViewModel.CreateProfileCommand">
+            <summary>
+            Gets the create profile command.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.ProfilesViewModel.ModifyProfileCommand">
+            <summary>
+            Gets the create profile command.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.ProfilesViewModel.DeleteProfileCommand">
+            <summary>
+            Gets the create profile command.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.ProfilesViewModel.SelectedPlayer">
+            <summary>
+            Gets or sets currently selected player.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.ProfilesViewModel.Editing">
+            <summary>
+            Gets or sets editing instance.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.ProfilesViewModel.PlayerProfileUIs">
+            <summary>
+            Gets the player profiles collection.
             </summary>
         </member>
         <member name="T:TimeWar.Main.ViewModel.ViewModelLocator">
@@ -186,12 +695,43 @@
             Gets or sets profiles view model.
             </summary>
         </member>
+        <member name="P:TimeWar.Main.ViewModel.ViewModelLocator.NewGameViewModel">
+            <summary>
+            Gets or sets new game view model.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Main.MyIoc">
+            <summary>
+            SimpleIoc with IServiceLocator interface.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.MyIoc.Instance">
+            <summary>
+            Gets the MyIoc instance.
+            </summary>
+        </member>
+        <member name="T:TimeWar.Main.View.BoolToVisibilityConverter">
+            <summary>
+            Bool to visibility converter.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.View.BoolToVisibilityConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Main.View.BoolToVisibilityConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <inheritdoc/>
+        </member>
         <member name="T:TimeWar.Main.View.GameWindow">
             <summary>
-            Interaction logic for GameWindow.xaml
+            Interaction logic for GameWindow.xaml.
             </summary>
             <summary>
             GameWindow
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.View.GameWindow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.View.GameWindow"/> class.
             </summary>
         </member>
         <member name="M:TimeWar.Main.View.GameWindow.InitializeComponent">
@@ -205,11 +745,27 @@
             </summary>
             <typeparam name="T">Page type.</typeparam>
         </member>
+        <member name="P:TimeWar.Main.View.INavigationService`1.Parameter">
+            <summary>
+            Gets optional parameter.
+            </summary>
+        </member>
         <member name="M:TimeWar.Main.View.INavigationService`1.NavigateTo(`0)">
             <summary>
             Navigate to the selected page.
             </summary>
             <param name="navigationPage">Name of the page.</param>
+        </member>
+        <member name="T:TimeWar.Main.View.IntToDateConverter">
+            <summary>
+            Int to date converter.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.View.IntToDateConverter.Convert(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Main.View.IntToDateConverter.ConvertBack(System.Object,System.Type,System.Object,System.Globalization.CultureInfo)">
+            <inheritdoc/>
         </member>
         <member name="T:TimeWar.Main.View.MenuPage">
             <summary>
@@ -249,6 +805,16 @@
             Profiles view.
             </summary>
         </member>
+        <member name="F:TimeWar.Main.View.NavigationPages.ProfileEditorPage">
+            <summary>
+            Profile editor view.
+            </summary>
+        </member>
+        <member name="F:TimeWar.Main.View.NavigationPages.NewGamePage">
+            <summary>
+            New game view.
+            </summary>
+        </member>
         <member name="T:TimeWar.Main.View.NavigationService`1">
             <summary>
             Navigation service class.
@@ -284,6 +850,11 @@
             Gets current page.
             </summary>
         </member>
+        <member name="P:TimeWar.Main.View.NavigationService`1.Parameter">
+            <summary>
+            Gets page parameter.
+            </summary>
+        </member>
         <member name="M:TimeWar.Main.View.NavigationService`1.GoBack">
             <inheritdoc/>
         </member>
@@ -316,17 +887,106 @@
             <param name="name">Name of the frame.</param>
             <returns>Framework element if found else null.</returns>
         </member>
+        <member name="T:TimeWar.Main.View.NewGamePage">
+            <summary>
+            Interaction logic for NewGamePage.xaml.
+            </summary>
+            <summary>
+            NewGamePage
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.View.NewGamePage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.View.NewGamePage"/> class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.View.NewGamePage.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:TimeWar.Main.View.ProfileAddControl">
+            <summary>
+            Interaction logic for ProfileEditorControl.xaml.
+            </summary>
+            <summary>
+            ProfileAddControl
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.View.ProfileAddControl.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.View.ProfileAddControl"/> class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.View.ProfileAddControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:TimeWar.Main.View.ProfileEditControl">
+            <summary>
+            Interaction logic for ProfileEditControl.xaml.
+            </summary>
+            <summary>
+            ProfileEditControl
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.View.ProfileEditControl.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.View.ProfileEditControl"/> class.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.View.ProfileEditControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
         <member name="T:TimeWar.Main.View.ProfilesPage">
             <summary>
-            Interaction logic for ProfilesPage.xaml
+            Interaction logic for ProfilesPage.xaml.
             </summary>
             <summary>
             ProfilesPage
             </summary>
         </member>
+        <member name="M:TimeWar.Main.View.ProfilesPage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.View.ProfilesPage"/> class.
+            </summary>
+        </member>
         <member name="M:TimeWar.Main.View.ProfilesPage.InitializeComponent">
             <summary>
             InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
             </summary>
         </member>
     </members>

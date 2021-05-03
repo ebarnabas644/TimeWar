@@ -4,32 +4,35 @@
 
 namespace TimeWar.Main.View
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.Windows;
     using System.Windows.Controls;
-    using System.Windows.Data;
-    using System.Windows.Documents;
-    using System.Windows.Input;
-    using System.Windows.Media;
-    using System.Windows.Media.Imaging;
-    using System.Windows.Navigation;
-    using System.Windows.Shapes;
+    using TimeWar.Main.ViewModel;
 
     /// <summary>
     /// Interaction logic for MenuPage.xaml.
     /// </summary>
     public partial class MenuPage : Page
     {
+        private MenuViewModel vm;
+        private MenuControl menuControl;
+
         /// <summary>
         /// Initializes a new instance of the <see cref="MenuPage"/> class.
         /// </summary>
         public MenuPage()
         {
             this.InitializeComponent();
+            this.vm = this.DataContext as MenuViewModel;
+            this.vm.Init();
+            this.ProfileLab.Content = this.vm.MenuText;
+            this.menuControl = this.FindName("cont") as MenuControl;
+            this.menuControl.MapName = "test";
+            this.menuControl.ScrollMode = true;
+            this.menuControl.TitleEnabled = true;
+        }
+
+        private void Unsubscribe_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            this.menuControl.Exit = true;
         }
     }
 }

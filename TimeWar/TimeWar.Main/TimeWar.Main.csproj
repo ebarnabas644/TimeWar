@@ -7,16 +7,60 @@
 	<EnableNETAnalyzers>true</EnableNETAnalyzers>
 	<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 	<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+	<Platforms>AnyCPU;x86</Platforms>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>TimeWar.Main.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+    <DocumentationFile>TimeWar.Main.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Remove="Fonts\Gamepixies-8MO6n.ttf" />
+    <None Remove="Leveldata\Benchmark %28700 enemies%29.png" />
+    <None Remove="Leveldata\Benchmark %28700 enemies%29.tmx" />
+    <None Remove="Leveldata\Benchmark.png" />
+    <None Remove="Leveldata\Benchmark.tmx" />
+    <None Remove="Leveldata\Checkpoint test.png" />
+    <None Remove="Leveldata\Checkpoint test.tmx" />
+    <None Remove="Leveldata\Effect test.png" />
+    <None Remove="Leveldata\Effect test.tmx" />
+    <None Remove="Leveldata\enemytest.png" />
+    <None Remove="Leveldata\enemytest.tmx" />
+    <None Remove="Leveldata\map1.png" />
+    <None Remove="Leveldata\map1.tmx" />
     <None Remove="Leveldata\test.png" />
     <None Remove="Leveldata\test.tmx" />
+    <None Remove="Leveldata\test2.png" />
+    <None Remove="Leveldata\test2.tmx" />
+    <None Remove="Sprites\1.png" />
+    <None Remove="Sprites\171.png" />
+    <None Remove="Sprites\2.png" />
+    <None Remove="Sprites\262.png" />
+    <None Remove="Sprites\286.png" />
+    <None Remove="Sprites\307.png" />
+    <None Remove="Sprites\41.png" />
+    <None Remove="Sprites\AcceleratingBullet.png" />
+    <None Remove="Sprites\backgroundlayer1.png" />
+    <None Remove="Sprites\backgroundlayer2.png" />
+    <None Remove="Sprites\backgroundlayer3.png" />
+    <None Remove="Sprites\backgroundlayer4.png" />
+    <None Remove="Sprites\basicbullet.png" />
+    <None Remove="Sprites\basicenemybullet.png" />
+    <None Remove="Sprites\bouncingbullet.png" />
+    <None Remove="Sprites\bursttestenemy.png" />
+    <None Remove="Sprites\curvedbouncingbullet.png" />
+    <None Remove="Sprites\fasttestenemy.png" />
+    <None Remove="Sprites\heavytestenemy.png" />
+    <None Remove="Sprites\hpbar.png" />
+    <None Remove="Sprites\hud.png" />
+    <None Remove="Sprites\player.png" />
+    <None Remove="Sprites\rapidtestenemy.png" />
+    <None Remove="Sprites\shieldbar.png" />
+    <None Remove="Sprites\testenemy.png" />
     <None Remove="Sprites\testman.png" />
     <None Remove="Sprites\testsprite.png" />
     <None Remove="Sprites\title.png" />
@@ -27,10 +71,115 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Content Include="Leveldata\Checkpoint test.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Leveldata\Checkpoint test.tmx">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\AcceleratingBullet.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\basicenemybullet.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Leveldata\Benchmark (700 enemies).png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Leveldata\Benchmark (700 enemies).tmx">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Leveldata\Effect test.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Leveldata\Effect test.tmx">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Leveldata\enemytest.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Leveldata\enemytest.tmx">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Leveldata\map1.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Leveldata\map1.tmx">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
 	  <Content Include="Leveldata\test.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Leveldata\test.tmx">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Leveldata\test2.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Leveldata\test2.tmx">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\171.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\2.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\262.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\307.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\41.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\backgroundlayer1.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\backgroundlayer2.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\backgroundlayer3.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\backgroundlayer4.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\bouncingbullet.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\bursttestenemy.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\curvedbouncingbullet.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\fasttestenemy.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\heavytestenemy.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\hpbar.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\hud.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\player.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\rapidtestenemy.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\shieldbar.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\testenemy.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Sprites\testman.png">
@@ -55,15 +204,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TimeWar.Logic\TimeWar.Logic.csproj" />
-    <ProjectReference Include="..\TimeWar.Model\TimeWar.Model.csproj" />
-    <ProjectReference Include="..\TimeWar.Renderer\TimeWar.Renderer.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="Fonts\Gamepixies-8MO6n.ttf">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
+    <Content Include="Sprites\basicbullet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\286.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprites\1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TimeWar.Data\TimeWar.Data.csproj" />
+    <ProjectReference Include="..\TimeWar.Logic\TimeWar.Logic.csproj" />
+    <ProjectReference Include="..\TimeWar.Model\TimeWar.Model.csproj" />
+    <ProjectReference Include="..\TimeWar.Renderer\TimeWar.Renderer.csproj" />
   </ItemGroup>
 
 </Project>

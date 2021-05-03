@@ -4,13 +4,10 @@
 
 namespace TimeWar.Main.ViewModel
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.Command;
+    using TimeWar.Main.BL.Interfaces;
+    using TimeWar.Main.Data;
     using TimeWar.Main.View;
 
     /// <summary>
@@ -19,38 +16,72 @@ namespace TimeWar.Main.ViewModel
     public class MenuViewModel : ViewModelBase
     {
         private INavigationService<NavigationPages> navigationService;
-        private RelayCommand gamePageCommand;
-        private RelayCommand profilesPageCommand;
-        private RelayCommand exitCommand;
+        private IViewerLogicUI viewerLogicUI;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MenuViewModel"/> class.
         /// </summary>
         /// <param name="navigationService">Navigation service.</param>
-        public MenuViewModel(INavigationService<NavigationPages> navigationService)
+        /// <param name="viewerLogicUI">Viewer logic.</param>
+        public MenuViewModel(INavigationService<NavigationPages> navigationService, IViewerLogicUI viewerLogicUI)
         {
             this.navigationService = navigationService;
+
+            if (this.IsInDesignMode)
+            {
+            }
+            else
+            {
+                this.NewGamePageCommand = new RelayCommand(() => this.navigationService.NavigateTo("NewGamePage"));
+                this.ProfilesPageCommand = new RelayCommand(() => this.navigationService.NavigateTo("ProfilesPage"));
+                this.ExitCommand = new RelayCommand(() => System.Windows.Application.Current.Shutdown());
+                this.viewerLogicUI = viewerLogicUI;
+            }
         }
 
         /// <summary>
         /// Gets the navigate to game page command.
         /// </summary>
-        public RelayCommand GamePageCommand => this.gamePageCommand
-                    ?? (this.gamePageCommand = new RelayCommand(
-                    () => this.navigationService.NavigateTo("GamePage")));
+        public RelayCommand NewGamePageCommand { get; private set; }
 
         /// <summary>
         /// Gets the navigate to profile page command.
         /// </summary>
-        public RelayCommand ProfilesPageCommand => this.profilesPageCommand
-                       ?? (this.profilesPageCommand = new RelayCommand(
-                           () => this.navigationService.NavigateTo("ProfilesPage")));
+        public RelayCommand ProfilesPageCommand { get; private set; }
 
         /// <summary>
         /// Gets the navigate to profile page command.
         /// </summary>
-        public RelayCommand ExitCommand => this.exitCommand
-                       ?? (this.exitCommand = new RelayCommand(
-                           () => System.Windows.Application.Current.Shutdown()));
+        public RelayCommand ExitCommand { get; private set; }
+
+        /// <summary>
+        /// Gets the currently selected profile.
+        /// </summary>
+        public PlayerProfileUI SelectedProfile { get; private set; }
+
+        /// <summary>
+        /// Gets the main menu text.
+        /// </summary>
+        public string MenuText { get; private set; }
+
+        /// <summary>
+        /// Load menu text.
+        /// </summary>
+        public void Init()
+        {
+            if (this.viewerLogicUI != null)
+            {
+                PlayerProfileUI q = this.viewerLogicUI.GetSelectedProfile();
+                if (q == null)
+                {
+                    this.MenuText = "Welcome back Guest!";
+                }
+                else
+                {
+                    this.SelectedProfile = q;
+                    this.MenuText = "Welcome back " + this.SelectedProfile.PlayerName + "!";
+                }
+            }
+        }
     }
 }
