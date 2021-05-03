@@ -336,7 +336,7 @@
         <member name="M:TimeWar.Logic.Classes.CommandManager.ClearBuffer">
             <inheritdoc/>
         </member>
-        <member name="M:TimeWar.Logic.Classes.CommandManager.Rewind">
+        <member name="M:TimeWar.Logic.Classes.CommandManager.Rewind(System.Int32)">
             <inheritdoc/>
         </member>
         <member name="T:TimeWar.Logic.Classes.EnemyInitLogic">
@@ -874,7 +874,7 @@
             Clear command buffer.
             </summary>
         </member>
-        <member name="M:TimeWar.Logic.Interfaces.ICommandManager.Rewind">
+        <member name="M:TimeWar.Logic.Interfaces.ICommandManager.Rewind(System.Int32)">
             <summary>
             Rewind all command.
             </summary>

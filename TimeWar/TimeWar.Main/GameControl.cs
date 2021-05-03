@@ -197,9 +197,6 @@ namespace TimeWar.Main
                     this.model.Hero.RemoveKey("d");
 
                     break;
-                case Key.E:
-                    this.commandManager.Rewind().Start();
-                    break;
                 case Key.Escape:
                     GameViewModel asd = this.DataContext as GameViewModel;
                     asd.MenuVisibility = !asd.MenuVisibility;
@@ -229,7 +226,7 @@ namespace TimeWar.Main
 
                         break;
                     case Key.E:
-                        this.commandManager.Rewind().Start();
+                        this.commandManager.Rewind(this.renderer.MovingObjectsCount).Start();
                         break;
                 }
 

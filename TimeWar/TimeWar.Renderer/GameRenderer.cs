@@ -36,6 +36,7 @@ namespace TimeWar.Renderer
         private List<IGameObject> layers;
         private double backgroundLayerBoundx;
         private double backgroundLayerBoundy;
+        private int movingcount;
 
         // private List<Character> characters;
         private int currentSprite;
@@ -84,11 +85,20 @@ namespace TimeWar.Renderer
         public bool WindowChanged { get; set; }
 
         /// <summary>
+        /// Gets number of moving objects.
+        /// </summary>
+        public int MovingObjectsCount
+        {
+            get { return this.movingcount; }
+        }
+
+        /// <summary>
         /// Build drawed game world.
         /// </summary>
         /// <returns>Drawing with all entities for render.</returns>
         public Drawing BuildDrawing()
         {
+            this.movingcount = 0;
             this.currentSprite = (int)this.spriteTimer.Elapsed.TotalMilliseconds / 100;
             DrawingGroup dg = new DrawingGroup();
             dg.Children.Add(this.GetBackgroundLayers());
@@ -304,6 +314,7 @@ namespace TimeWar.Renderer
 
         private Drawing GetPlayer()
         {
+            this.movingcount++;
             Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(this.model.Hero.Position.X), this.model.Camera.GetRelativeObjectPosY(this.model.Hero.Position.Y), this.model.Hero.Width * this.model.CurrentWorld.Magnify, this.model.Hero.Height * this.model.CurrentWorld.Magnify));
             this.playerCache = new GeometryDrawing(this.GetSpriteBrush(this.model.Hero), null, g);
             return this.playerCache;
@@ -387,6 +398,7 @@ namespace TimeWar.Renderer
             DrawingGroup dg = new DrawingGroup();
             foreach (Bullet item in this.model.CurrentWorld.GetBullets)
             {
+                this.movingcount++;
                 Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(item.Position.X), this.model.Camera.GetRelativeObjectPosY(item.Position.Y), item.Width * this.model.CurrentWorld.Magnify, item.Height * this.model.CurrentWorld.Magnify));
                 RotateTransform rotate = new RotateTransform();
                 rotate.CenterX = 0.5;
@@ -407,6 +419,7 @@ namespace TimeWar.Renderer
             DrawingGroup dg = new DrawingGroup();
             foreach (Enemy item in this.model.CurrentWorld.GetEnemies)
             {
+                this.movingcount++;
                 Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(item.Position.X), this.model.Camera.GetRelativeObjectPosY(item.Position.Y), item.Width * this.model.CurrentWorld.Magnify, item.Height * this.model.CurrentWorld.Magnify));
                 if (item.Health > item.CurrentHealth && item.CurrentHealth >= 0)
                 {

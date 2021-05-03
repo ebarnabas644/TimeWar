@@ -347,7 +347,6 @@ namespace TimeWar.Logic.Classes.Characters
 
             MoveCommand moveCommand = new MoveCommand(this.Character, this.Character.Position, this.Model);
             this.CommandManager.AddCommand(moveCommand);
-
             if (this.Character.MovementVector.X > 0)
             {
                 this.AddToVector(-1, 0);
