@@ -36,6 +36,7 @@ namespace TimeWar.Main.View
 
         private void Continue_Click(object sender, System.Windows.RoutedEventArgs e)
         {
+            this.gc.IsPaused = !this.gc.IsPaused;
             this.vm.MenuVisibility = false;
         }
     }

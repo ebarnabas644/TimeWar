@@ -42,6 +42,8 @@ namespace TimeWar.Main
         // private Factory factory;
         private Window win;
         private Stopwatch time = new Stopwatch();
+        private Stopwatch deltatime = new Stopwatch();
+        private List<int> fpslist = new List<int>();
         private int fps;
         private ushort mouseScrollPos;
         private bool exit;
@@ -102,6 +104,7 @@ namespace TimeWar.Main
             this.mouseScrollPos = 0;
             this.time.Start();
             this.fps = 0;
+            this.deltatime.Start();
 
             this.model.CurrentWorld.SaveEnemies();
             this.win = Window.GetWindow(this);
@@ -272,17 +275,6 @@ namespace TimeWar.Main
                     this.bulletLogic.OneTick();
                     this.InvalidateVisual();
                 }
-
-                if (this.time.Elapsed.TotalSeconds >= 1)
-                {
-                    this.time.Stop();
-                    this.time.Reset();
-                    this.win.Title = this.fps.ToString(System.Globalization.CultureInfo.CurrentCulture) + " FPS";
-                    this.fps = 0;
-                    this.time.Start();
-                }
-
-                this.fps++;
             }
             else
             {
@@ -294,6 +286,19 @@ namespace TimeWar.Main
                 this.win.MouseWheel -= this.Win_MouseScroll;
                 CompositionTarget.Rendering -= this.CompositionTarget_Rendering;
             }
+
+            int ms = (int)this.deltatime.ElapsedMilliseconds;
+            for (int i = this.fpslist.Count - 1; i >= 0; i--)
+            {
+                if (ms - this.fpslist[i] > 1000)
+                {
+                    this.fpslist.RemoveAt(i);
+                }
+            }
+
+            this.fpslist.Add(ms);
+            this.fps = this.fpslist.Count;
+            this.win.Title = this.fps.ToString(System.Globalization.CultureInfo.CurrentCulture) + " FPS";
         }
     }
 }
