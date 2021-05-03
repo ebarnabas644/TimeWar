@@ -145,7 +145,7 @@ namespace TimeWar.Logic.Classes.Characters.Actions
 
         private bool DetectGround()
         {
-            Point nextMove = new Point(this.model.CurrentWorld.ConvertPixelToTile(this.bullet.Position.X + (int)this.moveVector.X), this.model.CurrentWorld.ConvertPixelToTile(this.bullet.Position.Y + (int)this.moveVector.Y));
+            Point nextMove = new Point(this.model.CurrentWorld.ConvertPixelToTile(this.bullet.Position.X + (int)this.moveVector.X) + (this.bullet.Width / 2), this.model.CurrentWorld.ConvertPixelToTile(this.bullet.Position.Y + (int)this.moveVector.Y) + (this.bullet.Height / 2));
             return this.model.CurrentWorld.SearchGround(nextMove);
         }
 

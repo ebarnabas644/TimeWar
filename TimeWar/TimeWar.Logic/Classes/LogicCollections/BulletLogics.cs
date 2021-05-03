@@ -173,7 +173,7 @@ namespace TimeWar.Logic.Classes.LogicCollections
 
         private bool DetectEntity(Bullet bullet)
         {
-            Point bulletPos = new Point(bullet.Position.X, bullet.Position.Y);
+            Point bulletPos = new Point(bullet.Position.X + (bullet.Width / 2), bullet.Position.Y + (bullet.Width / 2));
 
             if (bullet.PlayerBullet)
             {
