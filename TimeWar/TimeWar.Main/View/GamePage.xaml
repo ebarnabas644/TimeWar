@@ -27,7 +27,14 @@
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
-            <Button Visibility="{Binding Path=MenuVisibility, Converter={StaticResource BoolToVisibilityConverter}}" Click="Unsubscribe_Click" Command="{Binding MenuPageCommand}" Margin="5" Content="Back" Grid.Row="4" Panel.ZIndex="2" Style="{StaticResource MenuButton}" Grid.Column="0"/>
+            <Border Grid.ColumnSpan="3" Grid.RowSpan="5" Visibility="{Binding Path=MenuVisibility, Converter={StaticResource BoolToVisibilityConverter}}" Background="#7F808080"></Border>
+            <Border Background="#82000000" Visibility="{Binding Path=MenuVisibility, Converter={StaticResource BoolToVisibilityConverter}}" Grid.Column="1" Grid.RowSpan="5">
+                <DockPanel LastChildFill="False" VerticalAlignment="Center">
+                    <Label FontSize="50" Content="Pause" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource LabelStyle}" DockPanel.Dock="Top" Margin="0,30,0,150" Foreground="White"/>
+                    <Button Click="Continue_Click" Content="Continue" DockPanel.Dock="Top" Panel.ZIndex="2" Style="{StaticResource MenuButton}" MaxWidth="1000" Margin="5"/>
+                    <Button Click="Unsubscribe_Click" Command="{Binding MenuPageCommand}" Margin="5" Content="Main menu" Grid.Row="2" Panel.ZIndex="2" Style="{StaticResource MenuButton}" MaxWidth="1000" Grid.Column="1" DockPanel.Dock="Top"/>
+                </DockPanel>
+            </Border>
         </Grid>
     </Grid>
 
