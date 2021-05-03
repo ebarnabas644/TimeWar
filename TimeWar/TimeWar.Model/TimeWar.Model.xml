@@ -237,6 +237,11 @@
             Player can spam bullets.
             </summary>
         </member>
+        <member name="F:TimeWar.Model.Objects.Classes.POIType.EnviromentalDamage">
+            <summary>
+            Enviromental damage.
+            </summary>
+        </member>
         <member name="T:TimeWar.Model.Objects.Classes.PointOfInterest">
             <summary>
             Class for checkpoints, finish point, powerups.
@@ -683,6 +688,11 @@
         <member name="P:TimeWar.Model.Objects.Player.NumOfWeaponUnlocked">
             <summary>
             Gets or sets number of unlocked weapons.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Player.PlayerDeath">
+            <summary>
+            Method is called when the player is dead.
             </summary>
         </member>
         <member name="T:TimeWar.Model.Objects.Viewport">

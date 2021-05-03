@@ -557,6 +557,23 @@
         <member name="M:TimeWar.Logic.Classes.POIs.CheckpointLogic.POIEvent">
             <inheritdoc/>
         </member>
+        <member name="T:TimeWar.Logic.Classes.POIs.EnviromentalDamageLogic">
+            <summary>
+            Enviromental damage.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.POIs.EnviromentalDamageLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Classes.PointOfInterest,System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.POIs.EnviromentalDamageLogic"/> class.
+            </summary>
+            <param name="model">Model.</param>
+            <param name="poi">POI.</param>
+            <param name="damage">damage of the poi.</param>
+            <param name="timed">Timed.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.POIs.EnviromentalDamageLogic.POIEvent">
+            <inheritdoc/>
+        </member>
         <member name="T:TimeWar.Logic.Classes.POIs.FinishLogic">
             <summary>
             Finish logic.
