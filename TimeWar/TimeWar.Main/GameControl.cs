@@ -98,7 +98,7 @@ namespace TimeWar.Main
             this.time.Start();
             this.fps = 0;
 
-            // this.model.CurrentWorld.SaveEnemies();
+            this.model.CurrentWorld.SaveEnemies();
             this.win = Window.GetWindow(this);
             if (this.win != null)
             {
@@ -242,6 +242,12 @@ namespace TimeWar.Main
         {
             if (!this.Exit)
             {
+                if (this.model.CurrentWorld.EnemiesLoaded)
+                {
+                    this.model.CurrentWorld.EnemiesLoaded = false;
+                    this.enemyLogic.GetEnemies();
+                }
+
                 this.characterLogic.OneTick();
                 this.enemyLogic.TickEnemies();
                 this.pointOfInterestLogics.TickPois();

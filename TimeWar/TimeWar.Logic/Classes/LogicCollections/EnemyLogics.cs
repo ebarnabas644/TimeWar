@@ -42,6 +42,7 @@ namespace TimeWar.Logic.Classes.LogicCollections
         /// </summary>
         public void GetEnemies()
         {
+            this.enemies = new List<BasicEnemyLogic>();
             foreach (Enemy enemy in this.model.CurrentWorld.GetEnemies)
             {
                 switch (enemy.Type)
