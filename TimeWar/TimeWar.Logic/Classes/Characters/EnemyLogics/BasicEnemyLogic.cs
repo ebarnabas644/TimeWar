@@ -261,12 +261,6 @@ namespace TimeWar.Logic.Classes.Characters
                 this.IsPlayerDetected = false;
                 this.playerDetectionStopwatch.Reset();
             }
-
-            // Uncomment for debug (Draw Detection cones)
-            // for (int i = 0; i < this.Model.CurrentWorld.GetBullets.Count; i++)
-            // {
-            //    this.Model.CurrentWorld.RemoveBullet(this.Model.CurrentWorld.GetBullet(i));
-            // }
         }
 
         private bool DetectionCone(bool right = true)
@@ -321,11 +315,6 @@ namespace TimeWar.Logic.Classes.Characters
                     downRange++;
                 }
 
-                // Uncomment for debug (Draw Detection cones)
-                // Bullet b = new Bullet(new Point(this.TileToPixel(downDetection.X), this.TileToPixel(downDetection.Y)), 2, 2, "testenemy.png", new Point(this.TileToPixel(downDetection.X), this.TileToPixel(downDetection.Y)));
-                // Bullet c = new Bullet(new Point(this.TileToPixel(upDetection.X), this.TileToPixel(upDetection.Y)), 2, 2, "testenemy.png", new Point(this.TileToPixel(upDetection.X), this.TileToPixel(upDetection.Y));
-                // this.Model.CurrentWorld.AddBullet(b);
-                // this.Model.CurrentWorld.AddBullet(c);
                 if (playerLocation == upDetection)
                 {
                     this.LastKnownPlayerLocation = upDetection;
