@@ -10,7 +10,7 @@ namespace TimeWar.Main
     using System.Drawing;
     using System.Linq;
     using System.Text;
-    using System.Timers;
+    using System.Threading;
     using System.Windows;
     using System.Windows.Input;
     using System.Windows.Media;
@@ -121,18 +121,14 @@ namespace TimeWar.Main
                 this.win.MouseMove += this.Win_MouseMove;
                 this.win.MouseDown += this.Win_MouseDown;
                 this.win.MouseWheel += this.Win_MouseScroll;
-                this.timer = new Timer();
-                this.timer.Interval = 16;
-                this.timer.AutoReset = true;
-                this.timer.Elapsed += this.Timer_Elapsed;
-                this.timer.Enabled = true;
+                this.timer = new Timer(this.Timer_Elapsed, null, 0, 16);
                 CompositionTarget.Rendering += (sender, args) => this.InvalidateVisual();
             }
 
             this.InvalidateVisual();
         }
 
-        private void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        private void Timer_Elapsed(object stateInfo)
         {
             this.Tick();
         }
@@ -164,8 +160,6 @@ namespace TimeWar.Main
                 this.win.MouseMove -= this.Win_MouseMove;
                 this.win.MouseDown -= this.Win_MouseDown;
                 this.win.MouseWheel -= this.Win_MouseScroll;
-                this.timer.Enabled = false;
-                this.timer.Elapsed -= this.Timer_Elapsed;
                 this.Dispose();
                 CompositionTarget.Rendering -= (sender, args) => this.InvalidateVisual();
             }
