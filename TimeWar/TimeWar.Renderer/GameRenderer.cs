@@ -405,7 +405,7 @@ namespace TimeWar.Renderer
                 rotate.CenterX = 0.5;
                 rotate.CenterY = 0.5;
                 rotate.Angle = Math.Atan2(item.MovementVectorF.Y, item.MovementVectorF.X) * 180 / Math.PI;
-                Brush brush = this.GetSpriteBrush(item);
+                Brush brush = this.GetSpriteBrush(item).Clone();
 
                 // Brush brush = Brushes.Red;
                 brush.RelativeTransform = rotate;
