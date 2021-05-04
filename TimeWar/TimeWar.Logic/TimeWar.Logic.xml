@@ -317,6 +317,9 @@
             <param name="character">Character.</param>
             <param name="commandManager">Command manager.</param>
         </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.RapidFireEnemyLogic.OneTick">
+            <inheritdoc/>
+        </member>
         <member name="T:TimeWar.Logic.Classes.CommandManager">
             <summary>
             Command manager class.
