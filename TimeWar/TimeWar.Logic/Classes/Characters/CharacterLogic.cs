@@ -156,7 +156,7 @@ namespace TimeWar.Logic
                 }
             }
 
-            if (this.Character.CurrentHealth < 0)
+            if (this.Character.CurrentHealth <= 0)
             {
                 this.Model.Hero.PlayerDeath();
                 this.CommandManager.ClearBuffer();
