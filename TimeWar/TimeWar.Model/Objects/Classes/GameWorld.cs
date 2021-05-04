@@ -124,7 +124,12 @@ namespace TimeWar.Model.Objects
         {
             get
             {
-                IReadOnlyList<Bullet> output = this.bullets;
+                IReadOnlyList<Bullet> output;
+                lock (this.bullets)
+                {
+                    output = this.bullets.ToList();
+                }
+
                 return output;
             }
         }
@@ -136,7 +141,12 @@ namespace TimeWar.Model.Objects
         {
             get
             {
-                IReadOnlyList<Enemy> output = this.enemies;
+                IReadOnlyList<Enemy> output;
+                lock (this.enemies)
+                {
+                    output = this.enemies.ToList();
+                }
+
                 return output;
             }
         }
@@ -148,7 +158,12 @@ namespace TimeWar.Model.Objects
         {
             get
             {
-                IReadOnlyList<PointOfInterest> output = this.pointOfInterests;
+                IReadOnlyList<PointOfInterest> output;
+                lock (this.pointOfInterests)
+                {
+                    output = this.pointOfInterests.ToList();
+                }
+
                 return output;
             }
         }

@@ -10,7 +10,7 @@ namespace TimeWar.Main
     using System.Drawing;
     using System.Linq;
     using System.Text;
-    using System.Threading.Tasks;
+    using System.Timers;
     using System.Windows;
     using System.Windows.Input;
     using System.Windows.Media;
@@ -28,7 +28,7 @@ namespace TimeWar.Main
     /// <summary>
     /// Game controlling class.
     /// </summary>
-    public class GameControl : FrameworkElement
+    internal class GameControl : FrameworkElement, IDisposable
     {
         private GameModel model;
         private InitLogic initLogic;
@@ -36,6 +36,7 @@ namespace TimeWar.Main
         private Logic.Classes.CommandManager commandManager;
         private CharacterLogic characterLogic;
         private BulletLogics bulletLogic;
+        private Timer timer;
         private EnemyLogics enemyLogic;
         private PointOfInterestLogics pointOfInterestLogics;
 
@@ -43,8 +44,6 @@ namespace TimeWar.Main
         private Window win;
         private Stopwatch time = new Stopwatch();
         private Stopwatch deltatime = new Stopwatch();
-        private List<int> fpslist = new List<int>();
-        private int fps;
         private ushort mouseScrollPos;
         private bool exit;
 
@@ -77,6 +76,12 @@ namespace TimeWar.Main
             set { this.exit = value; }
         }
 
+        /// <inheritdoc/>
+        public void Dispose()
+        {
+            this.timer.Dispose();
+        }
+
         /// <summary>
         /// Render drawing groups.
         /// </summary>
@@ -103,7 +108,7 @@ namespace TimeWar.Main
             this.pointOfInterestLogics = new PointOfInterestLogics(this.model, this.characterLogic, this.commandManager);
             this.mouseScrollPos = 0;
             this.time.Start();
-            this.fps = 0;
+
             this.deltatime.Start();
 
             this.model.CurrentWorld.SaveEnemies();
@@ -116,10 +121,54 @@ namespace TimeWar.Main
                 this.win.MouseMove += this.Win_MouseMove;
                 this.win.MouseDown += this.Win_MouseDown;
                 this.win.MouseWheel += this.Win_MouseScroll;
-                CompositionTarget.Rendering += this.CompositionTarget_Rendering;
+                this.timer = new Timer();
+                this.timer.Interval = 16;
+                this.timer.AutoReset = true;
+                this.timer.Elapsed += this.Timer_Elapsed;
+                this.timer.Enabled = true;
+                CompositionTarget.Rendering += (sender, args) => this.InvalidateVisual();
             }
 
             this.InvalidateVisual();
+        }
+
+        private void Timer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            this.Tick();
+        }
+
+        private void Tick()
+        {
+            if (!this.Exit)
+            {
+                if (!this.IsPaused)
+                {
+                    if (this.model.CurrentWorld.EnemiesLoaded)
+                    {
+                        this.model.CurrentWorld.EnemiesLoaded = false;
+                        this.enemyLogic.GetEnemies();
+                    }
+
+                    this.characterLogic.OneTick();
+                    this.enemyLogic.TickEnemies();
+                    this.pointOfInterestLogics.TickPois();
+                    this.bulletLogic.Addbullets((ICollection<Bullet>)this.model.CurrentWorld.GetBullets);
+                    this.bulletLogic.OneTick();
+                }
+            }
+            else
+            {
+                this.win.KeyDown -= this.Win_KeyDown;
+                this.win.KeyUp -= this.Win_KeyUp;
+                this.win.SizeChanged -= this.Win_SizeChanged;
+                this.win.MouseMove -= this.Win_MouseMove;
+                this.win.MouseDown -= this.Win_MouseDown;
+                this.win.MouseWheel -= this.Win_MouseScroll;
+                this.timer.Enabled = false;
+                this.timer.Elapsed -= this.Timer_Elapsed;
+                this.Dispose();
+                CompositionTarget.Rendering -= (sender, args) => this.InvalidateVisual();
+            }
         }
 
         private void Win_MouseScroll(object sender, MouseWheelEventArgs e)
@@ -252,53 +301,7 @@ namespace TimeWar.Main
                 }
 
                 e.Handled = true;
-                this.InvalidateVisual();
             }
-        }
-
-        private void CompositionTarget_Rendering(object sender, EventArgs e)
-        {
-            if (!this.Exit)
-            {
-                if (!this.IsPaused)
-                {
-                    if (this.model.CurrentWorld.EnemiesLoaded)
-                    {
-                        this.model.CurrentWorld.EnemiesLoaded = false;
-                        this.enemyLogic.GetEnemies();
-                    }
-
-                    this.characterLogic.OneTick();
-                    this.enemyLogic.TickEnemies();
-                    this.pointOfInterestLogics.TickPois();
-                    this.bulletLogic.Addbullets((ICollection<Bullet>)this.model.CurrentWorld.GetBullets);
-                    this.bulletLogic.OneTick();
-                    this.InvalidateVisual();
-                }
-            }
-            else
-            {
-                this.win.KeyDown -= this.Win_KeyDown;
-                this.win.KeyUp -= this.Win_KeyUp;
-                this.win.SizeChanged -= this.Win_SizeChanged;
-                this.win.MouseMove -= this.Win_MouseMove;
-                this.win.MouseDown -= this.Win_MouseDown;
-                this.win.MouseWheel -= this.Win_MouseScroll;
-                CompositionTarget.Rendering -= this.CompositionTarget_Rendering;
-            }
-
-            int ms = (int)this.deltatime.ElapsedMilliseconds;
-            for (int i = this.fpslist.Count - 1; i >= 0; i--)
-            {
-                if (ms - this.fpslist[i] > 1000)
-                {
-                    this.fpslist.RemoveAt(i);
-                }
-            }
-
-            this.fpslist.Add(ms);
-            this.fps = this.fpslist.Count;
-            this.win.Title = this.fps.ToString(System.Globalization.CultureInfo.CurrentCulture) + " FPS";
         }
     }
 }

@@ -426,6 +426,9 @@
             Gets or sets a value indicating whether page about to close.
             </summary>
         </member>
+        <member name="M:TimeWar.Main.GameControl.Dispose">
+            <inheritdoc/>
+        </member>
         <member name="M:TimeWar.Main.GameControl.OnRender(System.Windows.Media.DrawingContext)">
             <summary>
             Render drawing groups.
