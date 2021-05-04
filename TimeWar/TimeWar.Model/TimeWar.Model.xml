@@ -529,6 +529,16 @@
             Gets the number of the enemies.
             </summary>
         </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.SavedHealt">
+            <summary>
+            Gets or sets saved health value.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.SavedShield">
+            <summary>
+            Gets or sets saved shield value.
+            </summary>
+        </member>
         <member name="P:TimeWar.Model.Objects.GameWorld.GetBullets">
             <summary>
             Gets bullets.
@@ -636,6 +646,11 @@
             </summary>
             <param name="bullet">Bullet entity.</param>
         </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.RemoveBullets">
+            <summary>
+            Remove bullets.
+            </summary>
+        </member>
         <member name="M:TimeWar.Model.Objects.GameWorld.AddEnemy(TimeWar.Model.Objects.Classes.Enemy)">
             <summary>
             Add new enemy.
@@ -655,12 +670,12 @@
             <param name="idx">Index.</param>
             <returns>Character entity.</returns>
         </member>
-        <member name="M:TimeWar.Model.Objects.GameWorld.SaveEnemies">
+        <member name="M:TimeWar.Model.Objects.GameWorld.CheckpointSave">
             <summary>
             Save enmies.
             </summary>
         </member>
-        <member name="M:TimeWar.Model.Objects.GameWorld.LoadEnemies">
+        <member name="M:TimeWar.Model.Objects.GameWorld.CheckpointLoad">
             <summary>
             Gets returns checkpoint saved enemies.
             </summary>

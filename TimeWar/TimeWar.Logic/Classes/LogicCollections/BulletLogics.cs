@@ -194,16 +194,20 @@ namespace TimeWar.Logic.Classes.LogicCollections
 
                 if (playerRect.Contains(bulletPos))
                 {
-                    if (this.model.Hero.CurrentShield > 0)
-                    {
-                        this.model.Hero.CurrentShield -= bullet.Damage;
-                    }
-                    else
+                    int shieldValue = this.model.Hero.CurrentShield;
+                    shieldValue -= bullet.Damage;
+
+                    if (shieldValue < 0)
                     {
                         if (!this.model.Hero.IsInvincible)
                         {
-                            this.model.Hero.CurrentHealth -= bullet.Damage;
+                            this.model.Hero.CurrentShield = 0;
+                            this.model.Hero.CurrentHealth += shieldValue;
                         }
+                    }
+                    else
+                    {
+                        this.model.Hero.CurrentShield -= bullet.Damage;
                     }
 
                     this.model.Hero.ShieldRegenTimer.Reset();

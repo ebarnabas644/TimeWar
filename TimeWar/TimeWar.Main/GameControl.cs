@@ -111,7 +111,7 @@ namespace TimeWar.Main
 
             this.deltatime.Start();
 
-            this.model.CurrentWorld.SaveEnemies();
+            this.model.CurrentWorld.CheckpointSave();
             this.win = Window.GetWindow(this);
             if (this.win != null)
             {

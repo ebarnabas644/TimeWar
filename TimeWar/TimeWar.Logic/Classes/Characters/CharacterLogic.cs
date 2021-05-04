@@ -97,7 +97,7 @@ namespace TimeWar.Logic
                 }
 
                 Point attackPoint = new Point(this.Character.Position.X, this.Character.Position.Y);
-                Bullet b = new Bullet(attackPoint, 4, 4, "testenemy.png", new Point(this.Character.ClickLocation.X, this.Character.ClickLocation.Y - inaccuracy), attackDamage, this.Character.TypeOfBullet, true);
+                Bullet b = new Bullet(attackPoint, 8, 8, "testenemy.png", new Point(this.Character.ClickLocation.X, this.Character.ClickLocation.Y - inaccuracy), attackDamage, this.Character.TypeOfBullet, true);
                 this.Model.CurrentWorld.AddBullet(b);
                 this.AttackStopwatch.Restart();
                 this.Character.CanAttack = false;
@@ -160,7 +160,9 @@ namespace TimeWar.Logic
             {
                 this.Model.Hero.PlayerDeath();
                 this.CommandManager.ClearBuffer();
-                this.Model.CurrentWorld.LoadEnemies();
+                this.Model.CurrentWorld.CheckpointLoad();
+                this.Character.CurrentHealth = this.Model.CurrentWorld.SavedHealt;
+                this.Character.CurrentShield = this.Model.CurrentWorld.SavedShield;
             }
         }
 
