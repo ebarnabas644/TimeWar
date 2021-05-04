@@ -117,6 +117,16 @@ namespace TimeWar.Model.Objects
         }
 
         /// <summary>
+        /// Gets or sets saved health value.
+        /// </summary>
+        public int SavedHealt { get; set; }
+
+        /// <summary>
+        /// Gets or sets saved shield value.
+        /// </summary>
+        public int SavedShield { get; set; }
+
+        /// <summary>
         /// Gets bullets.
         /// </summary>
         /// <returns>Return currently spawned bullets collection.</returns>
@@ -358,6 +368,14 @@ namespace TimeWar.Model.Objects
         }
 
         /// <summary>
+        /// Remove bullets.
+        /// </summary>
+        public void RemoveBullets()
+        {
+            this.bullets = new List<Bullet>();
+        }
+
+        /// <summary>
         /// Add new enemy.
         /// </summary>
         /// <param name="enemy">Character entity.</param>
@@ -393,19 +411,20 @@ namespace TimeWar.Model.Objects
         /// <summary>
         /// Save enmies.
         /// </summary>
-        public void SaveEnemies()
+        public void CheckpointSave()
         {
-            Debug.WriteLine("Enemies saved");
+            Debug.WriteLine("Checkpoint saved");
             this.checkPointEnemies = DeepCopy(this.enemies);
         }
 
         /// <summary>
         /// Gets returns checkpoint saved enemies.
         /// </summary>
-        public void LoadEnemies()
+        public void CheckpointLoad()
         {
-            Debug.WriteLine("Enemies loaded");
+            Debug.WriteLine("Checkpoint loaded");
             this.EnemiesLoaded = true;
+            this.RemoveBullets();
             this.enemies = DeepCopy(this.checkPointEnemies);
         }
 
