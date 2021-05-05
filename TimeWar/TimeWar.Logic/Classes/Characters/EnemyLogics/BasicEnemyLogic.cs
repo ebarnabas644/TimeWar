@@ -194,14 +194,17 @@ namespace TimeWar.Logic.Classes.Characters
         /// <inheritdoc/>
         protected override void Attack()
         {
-            int inaccuracy = RandomNumberGenerator.GetInt32(-75, 76);
-            if (this.IsPlayerDetected && this.CommandManager.IsFinished && this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > this.AttackTime)
+            if (this.Model.CurrentWorld.GetBullets.Count < ushort.MaxValue)
             {
-                Point attackPoint = new Point(this.Character.Position.X + this.Model.CurrentWorld.ConvertTileToPixel(1), this.Character.Position.Y + this.Model.CurrentWorld.ConvertTileToPixel(1));
+                int inaccuracy = RandomNumberGenerator.GetInt32(-75, 76);
+                if (this.IsPlayerDetected && this.CommandManager.IsFinished && this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > this.AttackTime)
+                {
+                    Point attackPoint = new Point(this.Character.Position.X + this.Model.CurrentWorld.ConvertTileToPixel(1), this.Character.Position.Y + this.Model.CurrentWorld.ConvertTileToPixel(1));
 
-                Bullet b = new Bullet(attackPoint, 4, 4, "testenemy.png", new Point(this.TileToPixel(this.LastKnownPlayerLocation.X), this.TileToPixel(this.LastKnownPlayerLocation.Y + 2) - inaccuracy), this.AttackValue, this.TypeOfBullet);
-                this.Model.CurrentWorld.AddBullet(b);
-                this.AttackStopwatch.Restart();
+                    Bullet b = new Bullet(attackPoint, 4, 4, "testenemy.png", new Point(this.TileToPixel(this.LastKnownPlayerLocation.X), this.TileToPixel(this.LastKnownPlayerLocation.Y + 2) - inaccuracy), this.AttackValue, this.TypeOfBullet);
+                    this.Model.CurrentWorld.AddBullet(b);
+                    this.AttackStopwatch.Restart();
+                }
             }
         }
 
