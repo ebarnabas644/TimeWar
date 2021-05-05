@@ -7,6 +7,7 @@ namespace TimeWar.Renderer
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
+    using System.Linq;
     using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Media;
@@ -29,7 +30,7 @@ namespace TimeWar.Renderer
         private Drawing titleCache;
         private Drawing playerCache;
         private Dictionary<string, Brush> staticBrushes;
-        private Dictionary<IGameObject, ImageBrush[][]> spriteBrushes;
+        private Dictionary<string, ImageBrush[][]> spriteBrushes;
         private Dictionary<string, IGameObject> gameObjects;
         private HashSet<IGameObject> uniqueObjectCache;
         private HashSet<string> loadCache;
@@ -61,7 +62,7 @@ namespace TimeWar.Renderer
             this.menuMode = menuMode;
             this.scrollMode = scrollmode;
             this.title = title;
-            this.spriteBrushes = new Dictionary<IGameObject, ImageBrush[][]>();
+            this.spriteBrushes = new Dictionary<string, ImageBrush[][]>();
             this.gameObjects = new Dictionary<string, IGameObject>();
             this.staticBrushes = new Dictionary<string, Brush>();
             this.uniqueObjectCache = new HashSet<IGameObject>();
@@ -189,7 +190,7 @@ namespace TimeWar.Renderer
 
         private Brush GetSpriteBrush(IGameObject obj, bool tiled = false, double boundx = 0, double boundy = 0)
         {
-            if (!this.spriteBrushes.ContainsKey(obj))
+            if (!this.spriteBrushes.Any(x => x.Key == obj.SpriteFile))
             {
                 ImageBrush[][] imageBrushes = Sprite.CreateSprite(obj.Height, obj.Width, obj.SpriteFile);
                 if (tiled)
@@ -206,16 +207,16 @@ namespace TimeWar.Renderer
                     }
                 }
 
-                this.spriteBrushes.Add(obj, imageBrushes);
+                this.spriteBrushes.Add(obj.SpriteFile, imageBrushes);
             }
 
             if (!obj.StanceLess)
             {
                 StateMachine(obj);
-                return this.spriteBrushes[obj][(int)obj.Stance][this.currentSprite % this.spriteBrushes[obj][(int)obj.Stance].Length];
+                return this.spriteBrushes[obj.SpriteFile][(int)obj.Stance][this.currentSprite % this.spriteBrushes[obj.SpriteFile][(int)obj.Stance].Length];
             }
 
-            return this.spriteBrushes[obj][0][this.currentSprite % this.spriteBrushes[obj][0].Length];
+            return this.spriteBrushes[obj.SpriteFile][0][this.currentSprite % this.spriteBrushes[obj.SpriteFile][0].Length];
         }
 
         private Drawing GetBackground()
@@ -404,7 +405,7 @@ namespace TimeWar.Renderer
                 rotate.CenterX = 0.5;
                 rotate.CenterY = 0.5;
                 rotate.Angle = Math.Atan2(item.MovementVectorF.Y, item.MovementVectorF.X) * 180 / Math.PI;
-                Brush brush = this.GetSpriteBrush(item);
+                Brush brush = this.GetSpriteBrush(item).Clone();
 
                 // Brush brush = Brushes.Red;
                 brush.RelativeTransform = rotate;
