@@ -35,13 +35,16 @@ namespace TimeWar.Logic.Classes.POIs
         /// <inheritdoc/>
         public override void POIEvent()
         {
-            if (this.Model.Hero.CurrentShield - this.damage <= 0)
+            if (!this.Model.Hero.IsInvincible)
             {
-                this.Model.Hero.CurrentHealth -= this.damage;
-            }
-            else
-            {
-                this.Model.Hero.CurrentShield -= this.damage;
+                if (this.Model.Hero.CurrentShield - this.damage <= 0)
+                {
+                    this.Model.Hero.CurrentHealth -= this.damage;
+                }
+                else
+                {
+                    this.Model.Hero.CurrentShield -= this.damage;
+                }
             }
 
             this.IsPlayerContacted = false;
