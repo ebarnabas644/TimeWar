@@ -112,6 +112,8 @@ namespace TimeWar.Main
             this.deltatime.Start();
 
             this.model.CurrentWorld.CheckpointSave();
+            this.model.CurrentWorld.SavedHealt = this.model.Hero.CurrentHealth;
+            this.model.CurrentWorld.SavedShield = this.model.Hero.CurrentShield;
             this.win = Window.GetWindow(this);
             if (this.win != null)
             {

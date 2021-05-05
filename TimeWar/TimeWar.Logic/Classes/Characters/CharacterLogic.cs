@@ -158,11 +158,11 @@ namespace TimeWar.Logic
 
             if (this.Character.CurrentHealth <= 0)
             {
+                this.Character.CurrentHealth = this.Model.CurrentWorld.SavedHealt;
+                this.Character.CurrentShield = this.Model.CurrentWorld.SavedShield;
                 this.Model.Hero.PlayerDeath();
                 this.CommandManager.ClearBuffer();
                 this.Model.CurrentWorld.CheckpointLoad();
-                this.Character.CurrentHealth = this.Model.CurrentWorld.SavedHealt;
-                this.Character.CurrentShield = this.Model.CurrentWorld.SavedShield;
             }
         }
 

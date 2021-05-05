@@ -47,8 +47,6 @@ namespace TimeWar.Model.Objects
         public void PlayerDeath()
         {
             this.Position = this.Checkpoint;
-            this.CurrentHealth = this.Health;
-            this.CurrentShield = this.Shield;
             this.MovementVector = new Point(0, 0);
         }
     }
