@@ -175,7 +175,7 @@ namespace TimeWar.Main
             }
             else if (e.Delta < 0)
             {
-                this.mouseScrollPos++;
+                this.mouseScrollPos--;
             }
 
             switch (this.mouseScrollPos % this.model.Hero.NumOfWeaponUnlocked)
