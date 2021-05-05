@@ -167,7 +167,8 @@ namespace TimeWar.Logic.Classes.LogicCollections
 
         private bool DetectGround(Bullet bullet)
         {
-            Point nextMove = new Point(this.model.CurrentWorld.ConvertPixelToTile(bullet.Position.X + (int)bullet.MoveVector.X), this.model.CurrentWorld.ConvertPixelToTile(bullet.Position.Y + (int)bullet.MoveVector.Y));
+            Point nextMove = new Point(this.model.CurrentWorld.ConvertPixelToTile(bullet.Position.X + (bullet.Width / 2) + (int)bullet.MoveVector.X), this.model.CurrentWorld.ConvertPixelToTile(bullet.Position.Y + (bullet.Height / 2) + (int)bullet.MoveVector.Y));
+
             return this.model.CurrentWorld.SearchGround(nextMove);
         }
 
