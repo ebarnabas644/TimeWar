@@ -76,7 +76,7 @@ namespace TimeWar.Renderer
             this.layers = new List<IGameObject>();
             for (int i = 0; i < RendererConfig.NumberOfLayers; i++)
             {
-                this.layers.Add(new StaticObject(RendererConfig.LayersHeight, RendererConfig.LayersWidth, RendererConfig.LayersSpriteFile[i], new System.Drawing.Point(0, this.model.Camera.GetViewportY + RendererConfig.LayersVerticalOffset)));
+                this.layers.Add(new StaticObject(RendererConfig.LayersHeight, RendererConfig.LayersWidth, RendererConfig.LayersSpriteFile[i], new System.Drawing.Point(0, Math.Abs(this.model.Camera.GetViewportY) + RendererConfig.LayersVerticalOffset)));
             }
         }
 
@@ -243,7 +243,8 @@ namespace TimeWar.Renderer
             DrawingGroup dg = new DrawingGroup();
             for (int i = 0; i < RendererConfig.NumberOfLayers; i++)
             {
-                Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(this.layers[i].Position.X) - (this.model.Camera.GetViewportX * RendererConfig.LayersHorizontalSpeed[i]), this.model.Camera.GetRelativeObjectPosY(this.layers[i].Position.Y) - (this.model.Camera.GetViewportY * RendererConfig.LayersVerticalSpeed[i]), this.layers[i].Width * this.model.CurrentWorld.Magnify * 4, this.layers[i].Height * this.model.CurrentWorld.Magnify));
+                Rect bg = new Rect(this.model.Camera.GetRelativeObjectPosX(this.layers[i].Position.X) - (this.model.Camera.GetViewportX * RendererConfig.LayersHorizontalSpeed[i]), this.model.Camera.GetRelativeObjectPosY(this.layers[i].Position.Y) - (this.model.Camera.GetViewportY * RendererConfig.LayersVerticalSpeed[i]), this.layers[i].Width * this.model.CurrentWorld.Magnify * 10, this.layers[i].Height * this.model.CurrentWorld.Magnify);
+                Geometry g = new RectangleGeometry(bg);
                 if (this.backgroundLayerBoundx == 0 || this.backgroundLayerBoundy == 0)
                 {
                     this.backgroundLayerBoundx = g.Bounds.Size.Width;

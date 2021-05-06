@@ -33,6 +33,8 @@
     <None Remove="Leveldata\Effect test.tmx" />
     <None Remove="Leveldata\enemytest.png" />
     <None Remove="Leveldata\enemytest.tmx" />
+    <None Remove="Leveldata\MainMap.png" />
+    <None Remove="Leveldata\MainMap.tmx" />
     <None Remove="Leveldata\map1.png" />
     <None Remove="Leveldata\map1.tmx" />
     <None Remove="Leveldata\test.png" />
@@ -45,7 +47,10 @@
     <None Remove="Sprites\262.png" />
     <None Remove="Sprites\286.png" />
     <None Remove="Sprites\307.png" />
+    <None Remove="Sprites\315.png" />
     <None Remove="Sprites\41.png" />
+    <None Remove="Sprites\496.png" />
+    <None Remove="Sprites\499.png" />
     <None Remove="Sprites\AcceleratingBullet.png" />
     <None Remove="Sprites\backgroundlayer1.png" />
     <None Remove="Sprites\backgroundlayer2.png" />
@@ -84,6 +89,21 @@
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Leveldata\Checkpoint test.tmx">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Leveldata\MainMap.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Leveldata\MainMap.tmx">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\315.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\496.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\499.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Sprites\AcceleratingBullet.png">

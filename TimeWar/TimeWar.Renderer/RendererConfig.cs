@@ -18,7 +18,7 @@ namespace TimeWar.Renderer
         /// <summary>
         /// Gets layers height.
         /// </summary>
-        public static int LayersHeight { get; } = 350;
+        public static int LayersHeight { get; } = 600;
 
         /// <summary>
         /// Gets layers width.
@@ -63,6 +63,6 @@ namespace TimeWar.Renderer
         /// <summary>
         /// Gets Layers vertical offset.
         /// </summary>
-        public static int LayersVerticalOffset { get; } = 200;
+        public static int LayersVerticalOffset { get; } = -800;
     }
 }
