@@ -53,6 +53,11 @@
             <param name="character">Character.</param>
             <param name="commandManager">Command manger.</param>
         </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.DefaultJumpHeight">
+            <summary>
+            Gets or sets default jump height.
+            </summary>
+        </member>
         <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.Character">
             <summary>
             Gets the character.
@@ -620,21 +625,17 @@
             High jump logic.
             </summary>
         </member>
-        <member name="M:TimeWar.Logic.Classes.POIs.HighJumpLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Classes.PointOfInterest,TimeWar.Logic.CharacterLogic,System.Int32,System.Int32,System.Boolean)">
+        <member name="M:TimeWar.Logic.Classes.POIs.HighJumpLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Classes.PointOfInterest,TimeWar.Logic.CharacterLogic,System.Int32,System.Boolean)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.POIs.HighJumpLogic"/> class.
             </summary>
             <param name="model">Model.</param>
             <param name="poi">Poi.</param>
             <param name="character">Character.</param>
-            <param name="timeOfEffect">Time of effect.</param>
-            <param name="newMaxJumpHeight">New jump height.</param>
+            <param name="newJumpHeight">New jump height.</param>
             <param name="timed">Timed.</param>
         </member>
         <member name="M:TimeWar.Logic.Classes.POIs.HighJumpLogic.POIEvent">
-            <inheritdoc/>
-        </member>
-        <member name="M:TimeWar.Logic.Classes.POIs.HighJumpLogic.ResetStats">
             <inheritdoc/>
         </member>
         <member name="T:TimeWar.Logic.Classes.POIs.InvincibilityLogic">
