@@ -34,15 +34,21 @@ namespace TimeWar.Logic.Classes.Characters
             this.Model = model;
             this.Character = character;
             this.CommandManager = commandManager;
+            this.DefaultJumpHeight = 20;
             this.IsJumping = false;
             this.Acceleration = this.DefaultAcceleration;
             this.jumpingTimeOut.Start();
             this.DefaultAcceleration = 1;
             this.MaxMovementSpeed = 15;
-            this.MaxJumpHeight = 20;
+            this.MaxJumpHeight = this.DefaultJumpHeight;
             this.TypeOfBullet = BulletType.Basic;
             this.Character.MovementVector = new Point(0, 0);
         }
+
+        /// <summary>
+        /// Gets or sets default jump height.
+        /// </summary>
+        public int DefaultJumpHeight { get; set; }
 
         /// <summary>
         /// Gets the character.
@@ -326,7 +332,11 @@ namespace TimeWar.Logic.Classes.Characters
 
                     if (this.AccelerationStopwatch.ElapsedMilliseconds > 100)
                     {
-                        this.Acceleration++;
+                        if (Math.Abs(this.Acceleration) <= 2)
+                        {
+                            this.Acceleration++;
+                        }
+
                         this.AccelerationStopwatch.Restart();
                     }
                 }
@@ -370,11 +380,12 @@ namespace TimeWar.Logic.Classes.Characters
         /// <returns>Jumping value.</returns>
         protected virtual int Jump()
         {
-            if (!this.IsJumping && this.JumpingTimeOut.ElapsedMilliseconds > JumpTimer)
+            if (this.Character.CanJump || (!this.IsJumping && this.JumpingTimeOut.ElapsedMilliseconds > JumpTimer))
             {
                 this.JumpingTimeOut.Restart();
-                this.IsJumping = true;
                 this.AccelerationStopwatch.Start();
+                this.IsJumping = true;
+                this.Character.CanJump = false;
                 return this.MaxJumpHeight * -1;
             }
 

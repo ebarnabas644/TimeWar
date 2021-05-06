@@ -121,9 +121,13 @@ namespace TimeWar.Logic
 
             if (this.Character.ContainKey("space"))
             {
-                if (this.GroundCollision(new Point(0, this.Model.CurrentWorld.TileSize)))
+                if (this.Character.CanJump || this.GroundCollision(new Point(0, this.Model.CurrentWorld.TileSize)))
                 {
                     y += this.Jump();
+                    if (this.MaxJumpHeight != this.DefaultJumpHeight)
+                    {
+                        this.MaxJumpHeight = this.DefaultJumpHeight;
+                    }
                 }
 
                 if (y != 0 && Math.Abs(this.Character.MovementVector.X) >= 14)
