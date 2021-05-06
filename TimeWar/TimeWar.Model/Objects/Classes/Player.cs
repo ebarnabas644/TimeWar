@@ -5,6 +5,7 @@
 namespace TimeWar.Model.Objects
 {
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Drawing;
     using TimeWar.Model.Objects.Classes;
 
@@ -30,6 +31,16 @@ namespace TimeWar.Model.Objects
             this.NumOfWeaponUnlocked = 1;
             this.Checkpoint = this.Position;
         }
+
+        /// <summary>
+        /// Gets or sets player kills.
+        /// </summary>
+        public int Kills { get; set; }
+
+        /// <summary>
+        /// Gets or sets player deaths.
+        /// </summary>
+        public int Deaths { get; set; }
 
         /// <summary>
         /// Gets or sets checkpoint.

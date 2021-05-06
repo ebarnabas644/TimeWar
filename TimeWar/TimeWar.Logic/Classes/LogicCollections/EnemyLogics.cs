@@ -100,12 +100,13 @@ namespace TimeWar.Logic.Classes.LogicCollections
 
         private void Despawn(BasicEnemyLogic enemyLogic)
         {
-            if (enemyLogic.Character.CurrentHealth <= 0
-                ||
-                (enemyLogic.Character.Position.X >= this.model.CurrentWorld.GameWidth || enemyLogic.Character.Position.X <= 0)
-                ||
-                (enemyLogic.Character.Position.Y >= this.model.CurrentWorld.GameHeight || enemyLogic.Character.Position.Y <= 0))
+            if (enemyLogic.Character.CurrentHealth <= 0 || (enemyLogic.Character.Position.X >= this.model.CurrentWorld.GameWidth || enemyLogic.Character.Position.X <= 0) || (enemyLogic.Character.Position.Y >= this.model.CurrentWorld.GameHeight || enemyLogic.Character.Position.Y <= 0))
             {
+                if (enemyLogic.Character.CurrentHealth <= 0)
+                {
+                    this.model.Hero.Kills++;
+                }
+
                 this.model.CurrentWorld.RemoveEnemy((Enemy)enemyLogic.Character);
                 Debug.WriteLine("Enemy Despawned");
                 this.enemies.Remove(enemyLogic);

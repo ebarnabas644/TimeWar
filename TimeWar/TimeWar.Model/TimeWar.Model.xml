@@ -695,6 +695,16 @@
             <param name="width">Width.</param>
             <param name="spriteFile">Spritesheet file name.</param>
         </member>
+        <member name="P:TimeWar.Model.Objects.Player.Kills">
+            <summary>
+            Gets or sets player kills.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Player.Deaths">
+            <summary>
+            Gets or sets player deaths.
+            </summary>
+        </member>
         <member name="P:TimeWar.Model.Objects.Player.Checkpoint">
             <summary>
             Gets or sets checkpoint.
