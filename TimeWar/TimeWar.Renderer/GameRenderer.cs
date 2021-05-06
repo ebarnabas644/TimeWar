@@ -104,6 +104,7 @@ namespace TimeWar.Renderer
             DrawingGroup dg = new DrawingGroup();
             dg.Children.Add(this.GetBackgroundLayers());
             dg.Children.Add(this.GetBackground());
+            dg.Children.Add(this.GetPois());
             dg.Children.Add(this.GetDecorations());
             dg.Children.Add(this.GetBullets());
             dg.Children.Add(this.GetEnemies());
@@ -429,6 +430,18 @@ namespace TimeWar.Renderer
                     dg.Children.Add(new GeometryDrawing(Brushes.Red, null, hpbar));
                 }
 
+                dg.Children.Add(new GeometryDrawing(this.GetSpriteBrush(item), null, g));
+            }
+
+            return dg;
+        }
+
+        private Drawing GetPois()
+        {
+            DrawingGroup dg = new DrawingGroup();
+            foreach (PointOfInterest item in this.model.CurrentWorld.GetPois)
+            {
+                Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(item.Position.X * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize), this.model.Camera.GetRelativeObjectPosY(item.Position.Y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize), item.Width * this.model.CurrentWorld.Magnify, item.Height * this.model.CurrentWorld.Magnify));
                 dg.Children.Add(new GeometryDrawing(this.GetSpriteBrush(item), null, g));
             }
 

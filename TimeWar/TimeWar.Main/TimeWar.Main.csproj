@@ -49,7 +49,12 @@
     <None Remove="Sprites\307.png" />
     <None Remove="Sprites\315.png" />
     <None Remove="Sprites\41.png" />
+    <None Remove="Sprites\472.png" />
+    <None Remove="Sprites\473.png" />
+    <None Remove="Sprites\495.png" />
     <None Remove="Sprites\496.png" />
+    <None Remove="Sprites\497.png" />
+    <None Remove="Sprites\498.png" />
     <None Remove="Sprites\499.png" />
     <None Remove="Sprites\AcceleratingBullet.png" />
     <None Remove="Sprites\backgroundlayer1.png" />
@@ -61,6 +66,7 @@
     <None Remove="Sprites\bouncingbullet.png" />
     <None Remove="Sprites\bursttestenemy.png" />
     <None Remove="Sprites\curvedbouncingbullet.png" />
+    <None Remove="Sprites\empty.png" />
     <None Remove="Sprites\fasttestenemy.png" />
     <None Remove="Sprites\heavytestenemy.png" />
     <None Remove="Sprites\hpbar.png" />
@@ -100,7 +106,22 @@
 	  <Content Include="Sprites\315.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
+	  <Content Include="Sprites\472.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\473.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\495.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
 	  <Content Include="Sprites\496.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\497.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\498.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Sprites\499.png">
@@ -179,6 +200,9 @@
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Sprites\curvedbouncingbullet.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\empty.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Sprites\fasttestenemy.png">
