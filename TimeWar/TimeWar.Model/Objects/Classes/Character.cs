@@ -133,6 +133,11 @@ namespace TimeWar.Model.Objects
         public Stopwatch ShieldRegenTimer { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether player can jump.
+        /// </summary>
+        public bool CanJump { get; set; }
+
+        /// <summary>
         /// Add new key to the pressed list.
         /// </summary>
         /// <param name="key">Pressed key.</param>
