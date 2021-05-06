@@ -441,6 +441,11 @@
             Gets or sets shield regen timer stopwatch.
             </summary>
         </member>
+        <member name="P:TimeWar.Model.Objects.Character.CanJump">
+            <summary>
+            Gets or sets a value indicating whether player can jump.
+            </summary>
+        </member>
         <member name="M:TimeWar.Model.Objects.Character.AddKey(System.String)">
             <summary>
             Add new key to the pressed list.
