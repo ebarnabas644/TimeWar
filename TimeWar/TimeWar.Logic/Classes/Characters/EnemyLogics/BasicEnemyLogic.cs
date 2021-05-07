@@ -350,6 +350,7 @@ namespace TimeWar.Logic.Classes.Characters
                     return true;
                 }
             }
+
             return false;
         }
 
