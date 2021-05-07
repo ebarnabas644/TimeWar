@@ -38,6 +38,21 @@ namespace TimeWar.Logic.Classes.LogicCollections
         }
 
         /// <summary>
+        /// Saves enemies into a string.
+        /// </summary>
+        /// <returns>A list of all enemies.</returns>
+        public ICollection<string> SaveEnemies()
+        {
+            List<string> enemiesString = new List<string>();
+            foreach (var item in this.enemies)
+            {
+                enemiesString.Add(item.ToString());
+            }
+
+            return enemiesString;
+        }
+
+        /// <summary>
         /// Gets enemies.
         /// </summary>
         public void GetEnemies()
