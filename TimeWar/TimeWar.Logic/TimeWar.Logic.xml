@@ -478,6 +478,12 @@
             <param name="model">Game model.</param>
             <param name="commandManager">Command manager.</param>
         </member>
+        <member name="M:TimeWar.Logic.Classes.LogicCollections.EnemyLogics.SaveEnemies">
+            <summary>
+            Saves enemies into a string.
+            </summary>
+            <returns>A list of all enemies.</returns>
+        </member>
         <member name="M:TimeWar.Logic.Classes.LogicCollections.EnemyLogics.GetEnemies">
             <summary>
             Gets enemies.
