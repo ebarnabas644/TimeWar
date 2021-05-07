@@ -38,6 +38,7 @@ namespace TimeWar.Renderer
         private double backgroundLayerBoundx;
         private double backgroundLayerBoundy;
         private int movingcount;
+        private DrawingGroup spikeCache;
 
         // private List<Character> characters;
         private int currentSprite;
@@ -69,6 +70,7 @@ namespace TimeWar.Renderer
             this.loadCache = new HashSet<string>();
             this.spriteTimer.Start();
             this.WindowChanged = false;
+            this.spikeCache = new DrawingGroup();
             this.currentSprite = 0;
             this.firstRun = true;
             this.InitDecorations();
@@ -441,8 +443,11 @@ namespace TimeWar.Renderer
             DrawingGroup dg = new DrawingGroup();
             foreach (PointOfInterest item in this.model.CurrentWorld.GetPois)
             {
-                Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(item.Position.X * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize), this.model.Camera.GetRelativeObjectPosY(item.Position.Y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize), item.Width * this.model.CurrentWorld.Magnify, item.Height * this.model.CurrentWorld.Magnify));
-                dg.Children.Add(new GeometryDrawing(this.GetSpriteBrush(item), null, g));
+                if (item.Type != POIType.EnviromentalDamage)
+                {
+                    Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(item.Position.X * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize), this.model.Camera.GetRelativeObjectPosY(item.Position.Y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize), item.Width * this.model.CurrentWorld.Magnify, item.Height * this.model.CurrentWorld.Magnify));
+                    dg.Children.Add(new GeometryDrawing(this.GetSpriteBrush(item), null, g));
+                }
             }
 
             return dg;
