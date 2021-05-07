@@ -115,7 +115,7 @@ namespace TimeWar.LogicTests
             }
 
             int prevPosX = this.gameModel.Hero.Position.X;
-            this.commandManager.Rewind().Start();
+            this.commandManager.Rewind(this.gameModel.CurrentWorld.BulletCount + this.gameModel.CurrentWorld.EnemyCount + 1).Start();
             while (!this.commandManager.IsFinished)
             {
                 Thread.Sleep(1);

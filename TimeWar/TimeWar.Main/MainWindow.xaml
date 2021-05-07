@@ -8,6 +8,8 @@
         mc:Ignorable="d"
         RenderOptions.BitmapScalingMode="NearestNeighbor"
         DataContext="{Binding MainViewModel, Source={StaticResource Locator}}"
+        MinHeight="800"
+        MinWidth="900"
         Title="MainWindow" Height="900" Width="1400">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">

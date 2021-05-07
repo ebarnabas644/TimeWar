@@ -416,10 +416,18 @@
             Gets or sets current map.
             </summary>
         </member>
+        <member name="P:TimeWar.Main.GameControl.IsPaused">
+            <summary>
+            Gets or sets a value indicating whether true if game is paused.
+            </summary>
+        </member>
         <member name="P:TimeWar.Main.GameControl.Exit">
             <summary>
             Gets or sets a value indicating whether page about to close.
             </summary>
+        </member>
+        <member name="M:TimeWar.Main.GameControl.Dispose">
+            <inheritdoc/>
         </member>
         <member name="M:TimeWar.Main.GameControl.OnRender(System.Windows.Media.DrawingContext)">
             <summary>
@@ -495,6 +503,26 @@
         <member name="P:TimeWar.Main.ViewModel.GameViewModel.MapName">
             <summary>
             Gets or sets map name.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.GameViewModel.EndVisibility">
+            <summary>
+            Gets or sets a value indicating whether visible.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.GameViewModel.EndKills">
+            <summary>
+            Gets or sets number of kills.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.GameViewModel.EndDeaths">
+            <summary>
+            Gets or sets number of deaths.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.GameViewModel.EndTime">
+            <summary>
+            Gets or sets end time.
             </summary>
         </member>
         <member name="P:TimeWar.Main.ViewModel.GameViewModel.MenuVisibility">

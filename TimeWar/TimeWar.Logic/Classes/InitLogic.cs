@@ -84,13 +84,14 @@ namespace TimeWar.Logic
                     switch (Convert.ToInt32(poidata[y][x], System.Globalization.CultureInfo.CurrentCulture))
                     {
                         case 472: gameWorld.StartPoint = new Point(x, y); break;
-                        case 473: gameWorld.AddPOI(new PointOfInterest(POIType.Checkpoint, 1, 1, "testenemy", new Point(x, y))); break;
-                        case 474: gameWorld.AddPOI(new PointOfInterest(POIType.Finish, 1, 1, "testenemy", new Point(x, y))); break;
-                        case 496: gameWorld.AddPOI(new PointOfInterest(POIType.HealthKit, 1, 1, "testenemy", new Point(x, y))); break;
-                        case 497: gameWorld.AddPOI(new PointOfInterest(POIType.HighJump, 1, 1, "testenemy", new Point(x, y))); break;
-                        case 498: gameWorld.AddPOI(new PointOfInterest(POIType.Invincibility, 1, 1, "testenemy", new Point(x, y))); break;
-                        case 499: gameWorld.AddPOI(new PointOfInterest(POIType.RapidFire, 1, 1, "testenemy", new Point(x, y))); break;
-                        case 500: gameWorld.AddPOI(new PointOfInterest(POIType.UnlockWeapon, 1, 1, "testenemy", new Point(x, y))); break;
+                        case 473: gameWorld.AddPOI(new PointOfInterest(POIType.Checkpoint, 8, 8, "472", new Point(x, y))); break;
+                        case 474: gameWorld.AddPOI(new PointOfInterest(POIType.Finish, 8, 8, "473", new Point(x, y))); break;
+                        case 496: gameWorld.AddPOI(new PointOfInterest(POIType.HealthKit, 8, 8, "495", new Point(x, y))); break;
+                        case 497: gameWorld.AddPOI(new PointOfInterest(POIType.HighJump, 8, 8, "496", new Point(x, y))); break;
+                        case 498: gameWorld.AddPOI(new PointOfInterest(POIType.Invincibility, 8, 8, "497", new Point(x, y))); break;
+                        case 499: gameWorld.AddPOI(new PointOfInterest(POIType.RapidFire, 8, 8, "498", new Point(x, y))); break;
+                        case 500: gameWorld.AddPOI(new PointOfInterest(POIType.UnlockWeapon, 8, 8, "499", new Point(x, y))); break;
+                        case 501: gameWorld.AddPOI(new PointOfInterest(POIType.EnviromentalDamage, 8, 8, "empty", new Point(x, y))); break;
                     }
                 }
             }

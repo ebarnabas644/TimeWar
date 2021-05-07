@@ -30,7 +30,8 @@ namespace TimeWar.Logic.Interfaces
         /// <summary>
         /// Rewind all command.
         /// </summary>
+        /// <param name="number">Number of moving object.</param>
         /// <returns>Task with rewind logic.</returns>
-        Task Rewind();
+        Task Rewind(int number);
     }
 }

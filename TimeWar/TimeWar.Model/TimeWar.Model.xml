@@ -29,6 +29,16 @@
             Gets or sets the camera.
             </summary>
         </member>
+        <member name="P:TimeWar.Model.GameModel.MouseLocation">
+            <summary>
+            Gets or sets mouse location.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.GameModel.LevelFinished">
+            <summary>
+            Gets or sets a value indicating whether level finished.
+            </summary>
+        </member>
         <member name="T:TimeWar.Model.Objects.Classes.BulletType">
             <summary>
             Types of bullet.
@@ -237,6 +247,11 @@
             Player can spam bullets.
             </summary>
         </member>
+        <member name="F:TimeWar.Model.Objects.Classes.POIType.EnviromentalDamage">
+            <summary>
+            Enviromental damage.
+            </summary>
+        </member>
         <member name="T:TimeWar.Model.Objects.Classes.PointOfInterest">
             <summary>
             Class for checkpoints, finish point, powerups.
@@ -436,6 +451,11 @@
             Gets or sets shield regen timer stopwatch.
             </summary>
         </member>
+        <member name="P:TimeWar.Model.Objects.Character.CanJump">
+            <summary>
+            Gets or sets a value indicating whether player can jump.
+            </summary>
+        </member>
         <member name="M:TimeWar.Model.Objects.Character.AddKey(System.String)">
             <summary>
             Add new key to the pressed list.
@@ -522,6 +542,16 @@
         <member name="P:TimeWar.Model.Objects.GameWorld.EnemyCount">
             <summary>
             Gets the number of the enemies.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.SavedHealt">
+            <summary>
+            Gets or sets saved health value.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.GameWorld.SavedShield">
+            <summary>
+            Gets or sets saved shield value.
             </summary>
         </member>
         <member name="P:TimeWar.Model.Objects.GameWorld.GetBullets">
@@ -631,6 +661,11 @@
             </summary>
             <param name="bullet">Bullet entity.</param>
         </member>
+        <member name="M:TimeWar.Model.Objects.GameWorld.RemoveBullets">
+            <summary>
+            Remove bullets.
+            </summary>
+        </member>
         <member name="M:TimeWar.Model.Objects.GameWorld.AddEnemy(TimeWar.Model.Objects.Classes.Enemy)">
             <summary>
             Add new enemy.
@@ -650,12 +685,12 @@
             <param name="idx">Index.</param>
             <returns>Character entity.</returns>
         </member>
-        <member name="M:TimeWar.Model.Objects.GameWorld.SaveEnemies">
+        <member name="M:TimeWar.Model.Objects.GameWorld.CheckpointSave">
             <summary>
             Save enmies.
             </summary>
         </member>
-        <member name="M:TimeWar.Model.Objects.GameWorld.LoadEnemies">
+        <member name="M:TimeWar.Model.Objects.GameWorld.CheckpointLoad">
             <summary>
             Gets returns checkpoint saved enemies.
             </summary>
@@ -675,6 +710,16 @@
             <param name="width">Width.</param>
             <param name="spriteFile">Spritesheet file name.</param>
         </member>
+        <member name="P:TimeWar.Model.Objects.Player.Kills">
+            <summary>
+            Gets or sets player kills.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Model.Objects.Player.Deaths">
+            <summary>
+            Gets or sets player deaths.
+            </summary>
+        </member>
         <member name="P:TimeWar.Model.Objects.Player.Checkpoint">
             <summary>
             Gets or sets checkpoint.
@@ -683,6 +728,11 @@
         <member name="P:TimeWar.Model.Objects.Player.NumOfWeaponUnlocked">
             <summary>
             Gets or sets number of unlocked weapons.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Player.PlayerDeath">
+            <summary>
+            Method is called when the player is dead.
             </summary>
         </member>
         <member name="T:TimeWar.Model.Objects.Viewport">

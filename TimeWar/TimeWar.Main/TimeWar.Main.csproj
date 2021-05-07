@@ -20,16 +20,27 @@
 
   <ItemGroup>
     <None Remove="Fonts\Gamepixies-8MO6n.ttf" />
+    <None Remove="Leveldata\Benchmark %282000 enemies%29.png" />
+    <None Remove="Leveldata\Benchmark %282000 enemies%29.tmx" />
+    <None Remove="Leveldata\Benchmark %282000%29.tmx" />
     <None Remove="Leveldata\Benchmark %28700 enemies%29.png" />
     <None Remove="Leveldata\Benchmark %28700 enemies%29.tmx" />
     <None Remove="Leveldata\Benchmark.png" />
     <None Remove="Leveldata\Benchmark.tmx" />
     <None Remove="Leveldata\Checkpoint test.png" />
     <None Remove="Leveldata\Checkpoint test.tmx" />
+    <None Remove="Leveldata\Effect hitbox test health.png" />
+    <None Remove="Leveldata\Effect hitbox test health.tmx" />
+    <None Remove="Leveldata\Effect hitbox test másolata.png" />
+    <None Remove="Leveldata\Effect hitbox test másolata.tmx" />
+    <None Remove="Leveldata\Effect hitbox test.png" />
+    <None Remove="Leveldata\Effect hitbox test.tmx" />
     <None Remove="Leveldata\Effect test.png" />
     <None Remove="Leveldata\Effect test.tmx" />
     <None Remove="Leveldata\enemytest.png" />
     <None Remove="Leveldata\enemytest.tmx" />
+    <None Remove="Leveldata\MainMap.png" />
+    <None Remove="Leveldata\MainMap.tmx" />
     <None Remove="Leveldata\map1.png" />
     <None Remove="Leveldata\map1.tmx" />
     <None Remove="Leveldata\test.png" />
@@ -42,7 +53,15 @@
     <None Remove="Sprites\262.png" />
     <None Remove="Sprites\286.png" />
     <None Remove="Sprites\307.png" />
+    <None Remove="Sprites\315.png" />
     <None Remove="Sprites\41.png" />
+    <None Remove="Sprites\472.png" />
+    <None Remove="Sprites\473.png" />
+    <None Remove="Sprites\495.png" />
+    <None Remove="Sprites\496.png" />
+    <None Remove="Sprites\497.png" />
+    <None Remove="Sprites\498.png" />
+    <None Remove="Sprites\499.png" />
     <None Remove="Sprites\AcceleratingBullet.png" />
     <None Remove="Sprites\backgroundlayer1.png" />
     <None Remove="Sprites\backgroundlayer2.png" />
@@ -53,6 +72,7 @@
     <None Remove="Sprites\bouncingbullet.png" />
     <None Remove="Sprites\bursttestenemy.png" />
     <None Remove="Sprites\curvedbouncingbullet.png" />
+    <None Remove="Sprites\empty.png" />
     <None Remove="Sprites\fasttestenemy.png" />
     <None Remove="Sprites\heavytestenemy.png" />
     <None Remove="Sprites\hpbar.png" />
@@ -71,10 +91,46 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Content Include="Leveldata\Benchmark (2000 enemies).png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Leveldata\Benchmark (2000 enemies).tmx">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
 	  <Content Include="Leveldata\Checkpoint test.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Leveldata\Checkpoint test.tmx">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Leveldata\MainMap.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Leveldata\MainMap.tmx">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\315.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\472.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\473.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\495.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\496.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\497.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\498.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\499.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Sprites\AcceleratingBullet.png">
@@ -86,12 +142,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Content Include="Leveldata\Benchmark (700 enemies).png">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
-	  <Content Include="Leveldata\Benchmark (700 enemies).tmx">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
 	  <Content Include="Leveldata\Effect test.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
@@ -156,6 +206,9 @@
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Sprites\curvedbouncingbullet.png">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sprites\empty.png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Sprites\fasttestenemy.png">

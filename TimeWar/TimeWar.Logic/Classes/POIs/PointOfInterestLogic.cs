@@ -81,8 +81,13 @@ namespace TimeWar.Logic.Classes.POIs
 
         private void PlayerContacted()
         {
-            Rectangle player = new Rectangle(this.Model.CurrentWorld.ConvertPixelToTile(this.Model.Hero.Position.X), this.Model.CurrentWorld.ConvertPixelToTile(this.Model.Hero.Position.Y), this.Model.Hero.Width / this.Model.CurrentWorld.TileSize, this.Model.Hero.Height / this.Model.CurrentWorld.TileSize);
-            Rectangle poi = new Rectangle(this.Poi.Position, new Size(this.Poi.Width, this.Poi.Height));
+            Rectangle player = new Rectangle(
+                this.Model.CurrentWorld.ConvertPixelToTile(this.Model.Hero.Position.X + (this.Model.CurrentWorld.ConvertTileToPixel(1) / 2)),
+                this.Model.CurrentWorld.ConvertPixelToTile(this.Model.Hero.Position.Y + this.Model.CurrentWorld.ConvertTileToPixel(1)),
+                this.Model.Hero.Width / this.Model.CurrentWorld.TileSize,
+                this.Model.Hero.Height / this.Model.CurrentWorld.TileSize);
+
+            Rectangle poi = new Rectangle(this.Poi.Position, new Size(this.Poi.Width / this.Model.CurrentWorld.TileSize, this.Poi.Height / this.Model.CurrentWorld.TileSize));
 
             if (player.IntersectsWith(poi))
             {

@@ -23,6 +23,11 @@
             Gets or sets a value indicating whether the window changed.
             </summary>
         </member>
+        <member name="P:TimeWar.Renderer.GameRenderer.MovingObjectsCount">
+            <summary>
+            Gets number of moving objects.
+            </summary>
+        </member>
         <member name="M:TimeWar.Renderer.GameRenderer.BuildDrawing">
             <summary>
             Build drawed game world.

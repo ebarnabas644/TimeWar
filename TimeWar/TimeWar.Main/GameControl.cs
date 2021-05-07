@@ -10,7 +10,7 @@ namespace TimeWar.Main
     using System.Drawing;
     using System.Linq;
     using System.Text;
-    using System.Threading.Tasks;
+    using System.Threading;
     using System.Windows;
     using System.Windows.Input;
     using System.Windows.Media;
@@ -28,7 +28,7 @@ namespace TimeWar.Main
     /// <summary>
     /// Game controlling class.
     /// </summary>
-    public class GameControl : FrameworkElement
+    internal class GameControl : FrameworkElement, IDisposable
     {
         private GameModel model;
         private InitLogic initLogic;
@@ -36,13 +36,15 @@ namespace TimeWar.Main
         private Logic.Classes.CommandManager commandManager;
         private CharacterLogic characterLogic;
         private BulletLogics bulletLogic;
+        private Timer timer;
         private EnemyLogics enemyLogic;
         private PointOfInterestLogics pointOfInterestLogics;
+        private GameViewModel gm;
 
         // private Factory factory;
         private Window win;
         private Stopwatch time = new Stopwatch();
-        private int fps;
+        private Stopwatch deltatime = new Stopwatch();
         private ushort mouseScrollPos;
         private bool exit;
 
@@ -62,12 +64,23 @@ namespace TimeWar.Main
         public string MapName { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether true if game is paused.
+        /// </summary>
+        public bool IsPaused { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether page about to close.
         /// </summary>
         public bool Exit
         {
             get { return this.exit; }
             set { this.exit = value; }
+        }
+
+        /// <inheritdoc/>
+        public void Dispose()
+        {
+            this.timer.Dispose();
         }
 
         /// <summary>
@@ -86,6 +99,7 @@ namespace TimeWar.Main
         {
             // this.factory = new Factory();
             this.model = new GameModel();
+            this.gm = this.DataContext as GameViewModel;
             this.initLogic = new InitLogic(this.model, this.MapName);
             this.model.Camera = new Viewport((int)this.ActualWidth, (int)this.ActualHeight, (int)this.model.CurrentWorld.GameWidth, (int)this.model.CurrentWorld.GameHeight, this.model.Hero);
             this.renderer = new GameRenderer(this.model, false);
@@ -96,9 +110,12 @@ namespace TimeWar.Main
             this.pointOfInterestLogics = new PointOfInterestLogics(this.model, this.characterLogic, this.commandManager);
             this.mouseScrollPos = 0;
             this.time.Start();
-            this.fps = 0;
 
-            this.model.CurrentWorld.SaveEnemies();
+            this.deltatime.Start();
+
+            this.model.CurrentWorld.CheckpointSave();
+            this.model.CurrentWorld.SavedHealt = this.model.Hero.CurrentHealth;
+            this.model.CurrentWorld.SavedShield = this.model.Hero.CurrentShield;
             this.win = Window.GetWindow(this);
             if (this.win != null)
             {
@@ -108,10 +125,60 @@ namespace TimeWar.Main
                 this.win.MouseMove += this.Win_MouseMove;
                 this.win.MouseDown += this.Win_MouseDown;
                 this.win.MouseWheel += this.Win_MouseScroll;
-                CompositionTarget.Rendering += this.CompositionTarget_Rendering;
+                this.timer = new Timer(this.Timer_Elapsed, null, 0, 16);
+                CompositionTarget.Rendering += (sender, args) => this.InvalidateVisual();
             }
 
             this.InvalidateVisual();
+        }
+
+        private void Timer_Elapsed(object stateInfo)
+        {
+            this.Tick();
+        }
+
+        private void Tick()
+        {
+            if (!this.Exit)
+            {
+                if (!this.IsPaused)
+                {
+                    if (this.model.CurrentWorld.EnemiesLoaded)
+                    {
+                        this.model.CurrentWorld.EnemiesLoaded = false;
+                        this.enemyLogic.GetEnemies();
+                    }
+
+                    this.characterLogic.OneTick();
+                    this.enemyLogic.TickEnemies();
+                    this.pointOfInterestLogics.TickPois();
+                    this.bulletLogic.Addbullets((ICollection<Bullet>)this.model.CurrentWorld.GetBullets);
+                    this.bulletLogic.OneTick();
+                }
+
+                if (this.model.LevelFinished)
+                {
+                    this.IsPaused = true;
+                    this.time.Stop();
+                    this.deltatime.Stop();
+                    this.gm.EndKills = this.model.Hero.Kills;
+                    this.gm.EndDeaths = this.model.Hero.Deaths;
+                    this.gm.EndTime = this.time.Elapsed;
+                    this.gm.EndVisibility = true;
+                }
+            }
+            else
+            {
+                this.gm.EndVisibility = false;
+                this.win.KeyDown -= this.Win_KeyDown;
+                this.win.KeyUp -= this.Win_KeyUp;
+                this.win.SizeChanged -= this.Win_SizeChanged;
+                this.win.MouseMove -= this.Win_MouseMove;
+                this.win.MouseDown -= this.Win_MouseDown;
+                this.win.MouseWheel -= this.Win_MouseScroll;
+                this.Dispose();
+                CompositionTarget.Rendering -= (sender, args) => this.InvalidateVisual();
+            }
         }
 
         private void Win_MouseScroll(object sender, MouseWheelEventArgs e)
@@ -122,7 +189,7 @@ namespace TimeWar.Main
             }
             else if (e.Delta < 0)
             {
-                this.mouseScrollPos++;
+                this.mouseScrollPos--;
             }
 
             switch (this.mouseScrollPos % this.model.Hero.NumOfWeaponUnlocked)
@@ -151,11 +218,13 @@ namespace TimeWar.Main
 
         private void Win_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
         {
+            System.Windows.Point point = e.GetPosition(this.win);
+            this.model.MouseLocation = new System.Drawing.Point((int)point.X, (int)point.Y);
         }
 
         private void Win_MouseDown(object sender, System.Windows.Input.MouseEventArgs e)
         {
-            if (e.LeftButton == MouseButtonState.Pressed)
+            if (e.LeftButton == MouseButtonState.Pressed && !this.IsPaused)
             {
                 System.Windows.Point clickPosition = e.GetPosition(this);
                 System.Drawing.Point clickRelativePos = new System.Drawing.Point(this.model.Camera.GetRelativeCharacterPosX, this.model.Camera.GetRelativeCharacterPosY);
@@ -179,31 +248,39 @@ namespace TimeWar.Main
 
         private void Win_KeyUp(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            switch (e.Key)
+            if (!this.IsPaused)
             {
-                case Key.Space:
-                    this.model.Hero.RemoveKey("space");
-                    break;
+                switch (e.Key)
+                {
+                    case Key.Space:
+                        this.model.Hero.RemoveKey("space");
+                        break;
 
-                case Key.A:
-                    this.model.Hero.RemoveKey("a");
-                    break;
+                    case Key.A:
+                        this.model.Hero.RemoveKey("a");
+                        break;
 
-                case Key.S:
-                    this.model.Hero.RemoveKey("s");
+                    case Key.S:
+                        this.model.Hero.RemoveKey("s");
 
-                    break;
-                case Key.D:
-                    this.model.Hero.RemoveKey("d");
+                        break;
+                    case Key.D:
+                        this.model.Hero.RemoveKey("d");
 
-                    break;
-                case Key.E:
-                    this.commandManager.Rewind().Start();
-                    break;
-                case Key.Escape:
-                    GameViewModel asd = this.DataContext as GameViewModel;
-                    asd.MenuVisibility = !asd.MenuVisibility;
-                    break;
+                        break;
+                    case Key.Escape:
+                        this.gm.MenuVisibility = !this.gm.MenuVisibility;
+                        this.IsPaused = !this.IsPaused;
+                        break;
+                }
+            }
+            else
+            {
+                if (e.Key == Key.Escape)
+                {
+                    this.gm.MenuVisibility = !this.gm.MenuVisibility;
+                    this.IsPaused = !this.IsPaused;
+                }
             }
 
             e.Handled = true;
@@ -229,51 +306,11 @@ namespace TimeWar.Main
 
                         break;
                     case Key.E:
-                        this.commandManager.Rewind().Start();
+                        this.commandManager.Rewind(this.renderer.MovingObjectsCount).Start();
                         break;
                 }
 
                 e.Handled = true;
-                this.InvalidateVisual();
-            }
-        }
-
-        private void CompositionTarget_Rendering(object sender, EventArgs e)
-        {
-            if (!this.Exit)
-            {
-                if (this.model.CurrentWorld.EnemiesLoaded)
-                {
-                    this.model.CurrentWorld.EnemiesLoaded = false;
-                    this.enemyLogic.GetEnemies();
-                }
-
-                this.characterLogic.OneTick();
-                this.enemyLogic.TickEnemies();
-                this.pointOfInterestLogics.TickPois();
-                this.bulletLogic.Addbullets((ICollection<Bullet>)this.model.CurrentWorld.GetBullets);
-                this.bulletLogic.OneTick();
-                this.InvalidateVisual();
-                if (this.time.Elapsed.TotalSeconds >= 1)
-                {
-                    this.time.Stop();
-                    this.time.Reset();
-                    this.win.Title = this.fps.ToString(System.Globalization.CultureInfo.CurrentCulture) + " FPS";
-                    this.fps = 0;
-                    this.time.Start();
-                }
-
-                this.fps++;
-            }
-            else
-            {
-                this.win.KeyDown -= this.Win_KeyDown;
-                this.win.KeyUp -= this.Win_KeyUp;
-                this.win.SizeChanged -= this.Win_SizeChanged;
-                this.win.MouseMove -= this.Win_MouseMove;
-                this.win.MouseDown -= this.Win_MouseDown;
-                this.win.MouseWheel -= this.Win_MouseScroll;
-                CompositionTarget.Rendering -= this.CompositionTarget_Rendering;
             }
         }
     }

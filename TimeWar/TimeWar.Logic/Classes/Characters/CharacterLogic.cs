@@ -33,7 +33,7 @@ namespace TimeWar.Logic
         {
             this.AttackStopwatch.Start();
             this.EffectStopwatch = new Stopwatch();
-            this.AttackTime = 400;
+            this.AttackTime = 200;
             this.EffectCounter = 0;
         }
 
@@ -64,7 +64,31 @@ namespace TimeWar.Logic
         /// <inheritdoc/>
         protected override void Attack()
         {
-            if (this.CommandManager.IsFinished && this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > this.AttackTime)
+            int attackDamage = 0;
+            double delay = this.AttackTime;
+            switch (this.Character.TypeOfBullet)
+            {
+                case BulletType.Basic:
+                    attackDamage = 5;
+                    delay *= 2;
+                    break;
+                case BulletType.Accelerating:
+                    attackDamage = 40;
+                    delay *= 4;
+                    break;
+                case BulletType.Bouncing:
+                    attackDamage = 15;
+                    delay *= 3;
+                    break;
+                case BulletType.CurvedBouncing:
+                    attackDamage = 30;
+                    delay *= 3.5;
+                    break;
+                default:
+                    break;
+            }
+
+            if (this.CommandManager.IsFinished && this.Character.CanAttack && this.AttackStopwatch.ElapsedMilliseconds > delay)
             {
                 int inaccuracy = 0;
                 if (this.Character.TypeOfBullet != BulletType.Accelerating)
@@ -72,8 +96,8 @@ namespace TimeWar.Logic
                     inaccuracy = RandomNumberGenerator.GetInt32(-76, 76);
                 }
 
-                Point attackPoint = new Point(this.Character.Position.X + this.Model.CurrentWorld.ConvertTileToPixel(1), this.Character.Position.Y + this.Model.CurrentWorld.ConvertTileToPixel(1));
-                Bullet b = new Bullet(attackPoint, 4, 4, "testenemy.png", new Point(this.Character.ClickLocation.X, this.Character.ClickLocation.Y - inaccuracy), 10, this.Character.TypeOfBullet, true);
+                Point attackPoint = new Point(this.Character.Position.X, this.Character.Position.Y);
+                Bullet b = new Bullet(attackPoint, 8, 8, "testenemy.png", new Point(this.Character.ClickLocation.X, this.Character.ClickLocation.Y - inaccuracy), attackDamage, this.Character.TypeOfBullet, true);
                 this.Model.CurrentWorld.AddBullet(b);
                 this.AttackStopwatch.Restart();
                 this.Character.CanAttack = false;
@@ -97,9 +121,13 @@ namespace TimeWar.Logic
 
             if (this.Character.ContainKey("space"))
             {
-                if (this.GroundCollision(new Point(0, this.Model.CurrentWorld.TileSize)))
+                if (this.Character.CanJump || this.GroundCollision(new Point(0, this.Model.CurrentWorld.TileSize)))
                 {
                     y += this.Jump();
+                    if (this.MaxJumpHeight != this.DefaultJumpHeight)
+                    {
+                        this.MaxJumpHeight = this.DefaultJumpHeight;
+                    }
                 }
 
                 if (y != 0 && Math.Abs(this.Character.MovementVector.X) >= 14)
@@ -130,6 +158,16 @@ namespace TimeWar.Logic
                 {
                     this.Character.ShieldRegenTimer.Reset();
                 }
+            }
+
+            if (this.Character.CurrentHealth <= 0)
+            {
+                this.Character.CurrentHealth = this.Model.CurrentWorld.SavedHealt;
+                this.Character.CurrentShield = this.Model.CurrentWorld.SavedShield;
+                this.Model.Hero.Deaths++;
+                this.Model.Hero.PlayerDeath();
+                this.CommandManager.ClearBuffer();
+                this.Model.CurrentWorld.CheckpointLoad();
             }
         }
 

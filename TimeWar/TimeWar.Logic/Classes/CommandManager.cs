@@ -46,7 +46,7 @@ namespace TimeWar.Logic.Classes
         }
 
         /// <inheritdoc/>
-        public Task Rewind()
+        public Task Rewind(int number)
         {
             Task task = new Task(() => Debug.WriteLine("Rewind not finished yet"));
             if (this.IsFinished)
@@ -62,7 +62,15 @@ namespace TimeWar.Logic.Classes
                         if (this.rewindStopwatch.ElapsedMilliseconds < RewindTime)
                         {
                             command.Undo();
-                            Thread.Sleep(5);
+                        }
+                        else
+                        {
+                            break;
+                        }
+
+                        if (counter % number == 0)
+                        {
+                            Thread.Sleep(16);
                         }
 
                         counter++;

@@ -36,8 +36,23 @@ namespace TimeWar.Logic.Classes.Characters
             this.MaxMoveTime = 2500;
             this.DefaultFollowDistance = RandomNumberGenerator.GetInt32(20, 24);
             this.DetectionRange = 25;
-            this.DetectionTime = 10000;
+            this.DetectionTime = 2500;
             this.AttackValue = 15;
+        }
+
+        /// <inheritdoc/>
+        public override void OneTick()
+        {
+            if (this.IsPlayerDetected)
+            {
+                this.MaxMovementSpeed = 0;
+            }
+            else
+            {
+                this.MaxMovementSpeed = 5;
+            }
+
+            base.OneTick();
         }
     }
 }
