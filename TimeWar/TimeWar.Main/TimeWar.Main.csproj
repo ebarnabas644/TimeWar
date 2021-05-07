@@ -29,6 +29,12 @@
     <None Remove="Leveldata\Benchmark.tmx" />
     <None Remove="Leveldata\Checkpoint test.png" />
     <None Remove="Leveldata\Checkpoint test.tmx" />
+    <None Remove="Leveldata\Effect hitbox test health.png" />
+    <None Remove="Leveldata\Effect hitbox test health.tmx" />
+    <None Remove="Leveldata\Effect hitbox test másolata.png" />
+    <None Remove="Leveldata\Effect hitbox test másolata.tmx" />
+    <None Remove="Leveldata\Effect hitbox test.png" />
+    <None Remove="Leveldata\Effect hitbox test.tmx" />
     <None Remove="Leveldata\Effect test.png" />
     <None Remove="Leveldata\Effect test.tmx" />
     <None Remove="Leveldata\enemytest.png" />
