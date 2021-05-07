@@ -17,6 +17,7 @@ namespace TimeWar.Model
         /// </summary>
         public GameModel()
         {
+            this.LevelFinished = false;
         }
 
         /// <summary>
@@ -38,5 +39,10 @@ namespace TimeWar.Model
         /// Gets or sets mouse location.
         /// </summary>
         public Point MouseLocation { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether level finished.
+        /// </summary>
+        public bool LevelFinished { get; set; }
     }
 }
