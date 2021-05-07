@@ -29,6 +29,11 @@
             Gets or sets the camera.
             </summary>
         </member>
+        <member name="P:TimeWar.Model.GameModel.MouseLocation">
+            <summary>
+            Gets or sets mouse location.
+            </summary>
+        </member>
         <member name="T:TimeWar.Model.Objects.Classes.BulletType">
             <summary>
             Types of bullet.

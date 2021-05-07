@@ -204,6 +204,8 @@ namespace TimeWar.Main
 
         private void Win_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
         {
+            System.Windows.Point point = e.GetPosition(this.win);
+            this.model.MouseLocation = new System.Drawing.Point((int)point.X, (int)point.Y);
         }
 
         private void Win_MouseDown(object sender, System.Windows.Input.MouseEventArgs e)

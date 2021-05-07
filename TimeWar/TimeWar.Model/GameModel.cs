@@ -4,6 +4,7 @@
 
 namespace TimeWar.Model
 {
+    using System.Drawing;
     using TimeWar.Model.Objects;
 
     /// <summary>
@@ -32,5 +33,10 @@ namespace TimeWar.Model
         /// Gets or sets the camera.
         /// </summary>
         public Viewport Camera { get; set; }
+
+        /// <summary>
+        /// Gets or sets mouse location.
+        /// </summary>
+        public Point MouseLocation { get; set; }
     }
 }
