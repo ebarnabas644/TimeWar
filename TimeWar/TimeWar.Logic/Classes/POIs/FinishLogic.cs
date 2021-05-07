@@ -31,7 +31,7 @@ namespace TimeWar.Logic.Classes.POIs
         /// <inheritdoc/>
         public override void POIEvent()
         {
-            throw new NotImplementedException();
+            this.Model.LevelFinished = true;
         }
     }
 }

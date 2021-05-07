@@ -99,6 +99,23 @@ namespace TimeWar.Logic.Classes.Characters
         protected int DefaultFollowDistance { get; set; }
 
         /// <inheritdoc/>
+        public override string ToString()
+        {
+            string retString = string.Empty;
+            retString += "enemy;"; // enemy.
+            retString += (this.Character as Enemy).Type + ";"; // Enemy Type.
+            retString += this.Character.Position.X + ";"; // Character position X.
+            retString += this.Character.Position.Y + ";"; // Character position Y.
+            retString += this.Character.Health + ";"; // Character health.
+            retString += this.Character.TypeOfBullet + ";"; // Type of bullet.
+            retString += this.Character.Height + ";"; // Character height.
+            retString += this.Character.Width + ";"; // Character Width.
+            retString += this.IsPlayerDetected + ";"; // Player is detected.
+            retString += this.LastKnownPlayerLocation + ";"; // Player location.
+            return retString;
+        }
+
+        /// <inheritdoc/>
         public override void OneTick()
         {
             if (this.CommandManager.IsFinished)
@@ -333,7 +350,6 @@ namespace TimeWar.Logic.Classes.Characters
                     return true;
                 }
             }
-
             return false;
         }
 

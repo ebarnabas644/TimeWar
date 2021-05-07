@@ -154,6 +154,13 @@ namespace TimeWar.Main
                     this.pointOfInterestLogics.TickPois();
                     this.bulletLogic.Addbullets((ICollection<Bullet>)this.model.CurrentWorld.GetBullets);
                     this.bulletLogic.OneTick();
+
+                    if (this.model.LevelFinished)
+                    {
+                        this.IsPaused = true;
+                        this.time.Stop();
+                        this.deltatime.Stop();
+                    }
                 }
 
                 if (this.model.LevelFinished)
