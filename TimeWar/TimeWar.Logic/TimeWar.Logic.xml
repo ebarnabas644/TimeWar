@@ -253,6 +253,9 @@
             Gets or sets default follow distance.
             </summary>
         </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.ToString">
+            <inheritdoc/>
+        </member>
         <member name="M:TimeWar.Logic.Classes.Characters.BasicEnemyLogic.OneTick">
             <inheritdoc/>
         </member>
