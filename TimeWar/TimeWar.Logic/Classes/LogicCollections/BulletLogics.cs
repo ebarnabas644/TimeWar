@@ -44,6 +44,21 @@ namespace TimeWar.Logic.Classes.LogicCollections
         }
 
         /// <summary>
+        /// Saves bullets into a string.
+        /// </summary>
+        /// <returns>A list of all bullets.</returns>
+        public ICollection<string> SaveEnemies()
+        {
+            List<string> bulletStrings = new List<string>();
+            foreach (var item in this.bullets)
+            {
+                bulletStrings.Add(item.ToString());
+            }
+
+            return bulletStrings;
+        }
+
+        /// <summary>
         /// Replaces the bullets list.
         /// </summary>
         /// <param name="bullets">Bullet list.</param>

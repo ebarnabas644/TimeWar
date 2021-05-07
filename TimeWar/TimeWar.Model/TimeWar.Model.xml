@@ -156,6 +156,9 @@
         <member name="P:TimeWar.Model.Objects.Classes.Bullet.CurrentSprite">
             <inheritdoc/>
         </member>
+        <member name="M:TimeWar.Model.Objects.Classes.Bullet.ToString">
+            <inheritdoc/>
+        </member>
         <member name="T:TimeWar.Model.Objects.Classes.EnemyType">
             <summary>
             Types of enemies.
