@@ -505,6 +505,26 @@
             Gets or sets map name.
             </summary>
         </member>
+        <member name="P:TimeWar.Main.ViewModel.GameViewModel.EndVisibility">
+            <summary>
+            Gets or sets a value indicating whether visible.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.GameViewModel.EndKills">
+            <summary>
+            Gets or sets number of kills.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.GameViewModel.EndDeaths">
+            <summary>
+            Gets or sets number of deaths.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.GameViewModel.EndTime">
+            <summary>
+            Gets or sets end time.
+            </summary>
+        </member>
         <member name="P:TimeWar.Main.ViewModel.GameViewModel.MenuVisibility">
             <summary>
             Gets or sets a value indicating whether visible.

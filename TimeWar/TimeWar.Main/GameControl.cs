@@ -39,6 +39,7 @@ namespace TimeWar.Main
         private Timer timer;
         private EnemyLogics enemyLogic;
         private PointOfInterestLogics pointOfInterestLogics;
+        private GameViewModel gm;
 
         // private Factory factory;
         private Window win;
@@ -98,6 +99,7 @@ namespace TimeWar.Main
         {
             // this.factory = new Factory();
             this.model = new GameModel();
+            this.gm = this.DataContext as GameViewModel;
             this.initLogic = new InitLogic(this.model, this.MapName);
             this.model.Camera = new Viewport((int)this.ActualWidth, (int)this.ActualHeight, (int)this.model.CurrentWorld.GameWidth, (int)this.model.CurrentWorld.GameHeight, this.model.Hero);
             this.renderer = new GameRenderer(this.model, false);
@@ -152,6 +154,13 @@ namespace TimeWar.Main
                     this.pointOfInterestLogics.TickPois();
                     this.bulletLogic.Addbullets((ICollection<Bullet>)this.model.CurrentWorld.GetBullets);
                     this.bulletLogic.OneTick();
+                }
+
+                if (this.model.LevelFinished)
+                {
+                    this.gm.EndKills = this.model.Hero.Kills;
+                    this.gm.EndDeaths = this.model.Hero.Deaths;
+                    this.gm.EndVisibility = true;
                 }
             }
             else
@@ -255,8 +264,7 @@ namespace TimeWar.Main
 
                         break;
                     case Key.Escape:
-                        GameViewModel asd = this.DataContext as GameViewModel;
-                        asd.MenuVisibility = !asd.MenuVisibility;
+                        this.gm.MenuVisibility = !this.gm.MenuVisibility;
                         this.IsPaused = !this.IsPaused;
                         break;
                 }
@@ -265,8 +273,7 @@ namespace TimeWar.Main
             {
                 if (e.Key == Key.Escape)
                 {
-                    GameViewModel asd = this.DataContext as GameViewModel;
-                    asd.MenuVisibility = !asd.MenuVisibility;
+                    this.gm.MenuVisibility = !this.gm.MenuVisibility;
                     this.IsPaused = !this.IsPaused;
                 }
             }
