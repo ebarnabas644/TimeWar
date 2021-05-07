@@ -154,24 +154,22 @@ namespace TimeWar.Main
                     this.pointOfInterestLogics.TickPois();
                     this.bulletLogic.Addbullets((ICollection<Bullet>)this.model.CurrentWorld.GetBullets);
                     this.bulletLogic.OneTick();
-
-                    if (this.model.LevelFinished)
-                    {
-                        this.IsPaused = true;
-                        this.time.Stop();
-                        this.deltatime.Stop();
-                    }
                 }
 
                 if (this.model.LevelFinished)
                 {
+                    this.IsPaused = true;
+                    this.time.Stop();
+                    this.deltatime.Stop();
                     this.gm.EndKills = this.model.Hero.Kills;
                     this.gm.EndDeaths = this.model.Hero.Deaths;
+                    this.gm.EndTime = this.time.Elapsed;
                     this.gm.EndVisibility = true;
                 }
             }
             else
             {
+                this.gm.EndVisibility = false;
                 this.win.KeyDown -= this.Win_KeyDown;
                 this.win.KeyUp -= this.Win_KeyUp;
                 this.win.SizeChanged -= this.Win_SizeChanged;
