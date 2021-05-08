@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TimeWar.Logic.Classes.POIs.CheckpointLogic" Collapsed="true">
+    <Position X="22" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Classes\POIs\CheckpointLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.POIs.EnviromentalDamageLogic" Collapsed="true">
+    <Position X="24.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Classes\POIs\EnviromentalDamageLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.POIs.FinishLogic" Collapsed="true">
+    <Position X="28.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Classes\POIs\FinishLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.POIs.HealthKitLogic" Collapsed="true">
+    <Position X="31" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Classes\POIs\HealthKitLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.POIs.HighJumpLogic" Collapsed="true">
+    <Position X="15.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAQ=</HashCode>
+      <FileName>Classes\POIs\HighJumpLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.POIs.InvincibilityLogic" Collapsed="true">
+    <Position X="17.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Classes\POIs\InvincibilityLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.POIs.PointOfInterestLogic" Collapsed="true">
+    <Position X="23" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAEAACCAAAAAQgAAAAEAAQ=</HashCode>
+      <FileName>Classes\POIs\PointOfInterestLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.POIs.RapidFireLogic" Collapsed="true">
+    <Position X="19.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Classes\POIs\RapidFireLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.POIs.TimedPOILogic" Collapsed="true">
+    <Position X="18.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAEAAAAAAAgAAAAAAAAAAAAAAAAAAAACAQ=</HashCode>
+      <FileName>Classes\POIs\TimedPOILogic.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.POIs.UnlockWeaponLogic" Collapsed="true">
+    <Position X="26.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Classes\POIs\UnlockWeaponLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.LogicCollections.BulletLogics" Collapsed="true">
+    <Position X="25.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECACCAAAAIAAAAAJBAABEAAAAAgCAAAAAAAEAAQIAAA=</HashCode>
+      <FileName>Classes\LogicCollections\BulletLogics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.LogicCollections.EnemyLogics" Collapsed="true">
+    <Position X="27.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAABAAAAAAAAAAAAAAEAAAAAAAAABBAGAAAAAIAAA=</HashCode>
+      <FileName>Classes\LogicCollections\EnemyLogics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.LogicCollections.PointOfInterestLogics" Collapsed="true">
+    <Position X="29" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAIQAAQAAAAAAAAAAAAEAAAAAAAAABBACAAAAAIAAA=</HashCode>
+      <FileName>Classes\LogicCollections\PointOfInterestLogics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.Characters.Actions.BulletLogic" Collapsed="true">
+    <Position X="29" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECACGAAAAAAAAAAAFAAAAAAAAEACAAQKABAABIQIAAA=</HashCode>
+      <FileName>Classes\Bullets\BulletLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.Characters.Actions.MoveCommand" Collapsed="true">
+    <Position X="30.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAQAAAAAIAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Classes\Characters\Actions\MoveCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.Characters.BasicEnemyLogic" Collapsed="true">
+    <Position X="22.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAMAAMAAIgAUAAABQAgAAAACJASABIAABABAAAAAAQ=</HashCode>
+      <FileName>Classes\Characters\EnemyLogics\BasicEnemyLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.Characters.BurstEnemyLogic" Collapsed="true">
+    <Position X="21.5" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Characters\EnemyLogics\BurstEnemyLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.Characters.FastEnemyLogic" Collapsed="true">
+    <Position X="26" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Characters\EnemyLogics\FastEnemyLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.Characters.HeavyEnemyLogic" Collapsed="true">
+    <Position X="19.25" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Characters\EnemyLogics\HeavyEnemyLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.Characters.RapidFireEnemyLogic" Collapsed="true">
+    <Position X="23.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\Characters\EnemyLogics\RapidFireEnemyLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.Characters.ActorLogic" Collapsed="true">
+    <Position X="22.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgQAAIggoYAIAAABABADAAAgIACABCBAFgEwgBQCAA=</HashCode>
+      <FileName>Classes\Characters\ActorLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.CommandManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAACAAAAAAAAAhBEAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Classes\CommandManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.EnemyInitLogic" Collapsed="true">
+    <Position X="27.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACCgBAAEAEQAAAAAAAAEgEAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classes\EnemyInitLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.InitConfig" Collapsed="true">
+    <Position X="29" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAAAAAAABAAAQA=</HashCode>
+      <FileName>Classes\InitConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.ManagerLogic" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAABEAAACAAQAAAACAgAAAAAAAAAQAQACAAEAA=</HashCode>
+      <FileName>Classes\ManagerLogic.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TimeWar.Logic.Classes.ViewerLogic" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAABAAIAAACAAQAAAAIAAAAAAAQAAAYAAAgAAAAA=</HashCode>
+      <FileName>Classes\ViewerLogic.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TimeWar.Logic.CharacterLogic" Collapsed="true">
+    <Position X="28" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIgAAAAAQAAAAAAAAIAGAAQAAgAAAAABAAA=</HashCode>
+      <FileName>Classes\Characters\CharacterLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Logic.InitLogic" Collapsed="true">
+    <Position X="30.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIAAAFAAEEAAAAAEAgEEAIgAAAAAAAAAAAAAEAAJAAA=</HashCode>
+      <FileName>Classes\InitLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="TimeWar.Logic.Interfaces.ICommand" Collapsed="true">
+    <Position X="17.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ICommand.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TimeWar.Logic.Interfaces.ICommandManager" Collapsed="true">
+    <Position X="19.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAABAEAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ICommandManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TimeWar.Logic.Interfaces.IManagerLogic" Collapsed="true">
+    <Position X="21.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAABEAAAAAAAAAAACAgAAAAAAAAAAAQACAAEAA=</HashCode>
+      <FileName>Interfaces\IManagerLogic.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TimeWar.Logic.Interfaces.ITimedEvent" Collapsed="true">
+    <Position X="17.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ITimedEvent.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TimeWar.Logic.Interfaces.IViewerLogic" Collapsed="true">
+    <Position X="19.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAABAAIAAAAAAAAAAAIAAAAAAAQAAAIAAAgAAAAA=</HashCode>
+      <FileName>Interfaces\IViewerLogic.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
