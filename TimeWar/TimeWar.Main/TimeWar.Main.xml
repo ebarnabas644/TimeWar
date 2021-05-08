@@ -406,6 +406,12 @@
             Initializes a new instance of the <see cref="T:TimeWar.Main.GameControl"/> class.
             </summary>
         </member>
+        <member name="M:TimeWar.Main.GameControl.#ctor(TimeWar.Main.BL.Factory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.GameControl"/> class.
+            </summary>
+            <param name="factory">Factory.</param>
+        </member>
         <member name="P:TimeWar.Main.GameControl.BackgroundMusic">
             <summary>
             Gets background music media player.
@@ -462,6 +468,12 @@
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Main.MenuControl"/> class.
             </summary>
+        </member>
+        <member name="M:TimeWar.Main.MenuControl.#ctor(TimeWar.Main.BL.Factory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.MenuControl"/> class.
+            </summary>
+            <param name="factory">Factory.</param>
         </member>
         <member name="P:TimeWar.Main.MenuControl.MapName">
             <summary>

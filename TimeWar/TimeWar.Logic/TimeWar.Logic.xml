@@ -880,13 +880,14 @@
             Init class for game model.
             </summary>
         </member>
-        <member name="M:TimeWar.Logic.InitLogic.#ctor(TimeWar.Model.GameModel,System.String,TimeWar.Logic.Interfaces.IViewerLogic)">
+        <member name="M:TimeWar.Logic.InitLogic.#ctor(TimeWar.Model.GameModel,System.String,TimeWar.Logic.Interfaces.IViewerLogic,System.Boolean)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Logic.InitLogic"/> class.
             </summary>
             <param name="model">Game model instance.</param>
             <param name="mapName">Name of the game map.</param>
             <param name="viewerLogic">Viewer logic.</param>
+            <param name="isGameLoaded">Game loaded.</param>
         </member>
         <member name="P:TimeWar.Logic.InitLogic.GameContinued">
             <summary>
