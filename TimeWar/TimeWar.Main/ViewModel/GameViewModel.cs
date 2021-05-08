@@ -4,8 +4,10 @@
 
 namespace TimeWar.Main.ViewModel
 {
+    using System;
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.Command;
+    using TimeWar.Logic.Interfaces;
     using TimeWar.Main.View;
 
     /// <summary>
@@ -17,6 +19,10 @@ namespace TimeWar.Main.ViewModel
         private RelayCommand menuPageCommand;
         private string mapName;
         private bool menuVisibility;
+        private bool endVisibility;
+        private int endKills;
+        private int endDeaths;
+        private TimeSpan endTime;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameViewModel"/> class.
@@ -35,6 +41,42 @@ namespace TimeWar.Main.ViewModel
         {
             get { return this.mapName; }
             set { this.mapName = value; }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether visible.
+        /// </summary>
+        public bool EndVisibility
+        {
+            get { return this.endVisibility; }
+            set { this.Set(ref this.endVisibility, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets number of kills.
+        /// </summary>
+        public int EndKills
+        {
+            get { return this.endKills; }
+            set { this.Set(ref this.endKills, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets number of deaths.
+        /// </summary>
+        public int EndDeaths
+        {
+            get { return this.endDeaths; }
+            set { this.Set(ref this.endDeaths, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets end time.
+        /// </summary>
+        public TimeSpan EndTime
+        {
+            get { return this.endTime; }
+            set { this.Set(ref this.endTime, value); }
         }
 
         /// <summary>
@@ -59,6 +101,9 @@ namespace TimeWar.Main.ViewModel
         /// </summary>
         public RelayCommand MenuPageCommand => this.menuPageCommand
                     ?? (this.menuPageCommand = new RelayCommand(
-                    () => this.navigationService.NavigateTo("MenuPage")));
+                    () =>
+                    {
+                        this.navigationService.NavigateTo("MenuPage");
+                        }));
     }
 }

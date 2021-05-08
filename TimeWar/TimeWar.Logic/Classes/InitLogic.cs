@@ -5,11 +5,14 @@
 namespace TimeWar.Logic
 {
     using System;
+    using System.Collections.Generic;
     using System.Drawing;
     using System.Linq;
     using System.Xml.Linq;
+    using TimeWar.Data.Models;
     using TimeWar.Logic.Classes;
     using TimeWar.Logic.Classes.Characters;
+    using TimeWar.Logic.Interfaces;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
     using TimeWar.Model.Objects.Classes;
@@ -20,16 +23,61 @@ namespace TimeWar.Logic
     public class InitLogic
     {
         private GameModel model;
+        private IViewerLogic viewerLogic;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="InitLogic"/> class.
         /// </summary>
         /// <param name="model">Game model instance.</param>
         /// <param name="mapName">Name of the game map.</param>
-        public InitLogic(GameModel model, string mapName)
+        /// <param name="viewerLogic">Viewer logic.</param>
+        /// <param name="isGameLoaded">Game loaded.</param>
+        public InitLogic(GameModel model, string mapName, IViewerLogic viewerLogic, bool isGameLoaded)
         {
             this.model = model;
+            this.GameContinued = isGameLoaded;
+            this.viewerLogic = viewerLogic;
             this.BuildModel(mapName);
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the game is continued or not.
+        /// </summary>
+        public bool GameContinued { get; set; }
+
+        /// <summary>
+        /// Loads the game.
+        /// </summary>
+        /// <param name="gameModel">GameModel.</param>
+        public void LoadSave(GameModel gameModel)
+        {
+            if (gameModel != null)
+            {
+                PlayerProfile profile = this.viewerLogic.GetSelectedProfile();
+                Save save = this.viewerLogic.GetSave(profile.Save.Id);
+                string enemyStrings = save.Enemydata;
+                string playerString = save.Playerdata;
+
+                Player character = this.GetPlayer();
+                string[] characterData = playerString.Split(';');
+                character.Position = new Point(Convert.ToInt32(characterData[0], System.Globalization.CultureInfo.CurrentCulture), Convert.ToInt32(characterData[1], System.Globalization.CultureInfo.CurrentCulture));
+                character.CurrentHealth = Convert.ToInt32(characterData[2], System.Globalization.CultureInfo.CurrentCulture);
+                character.CurrentShield = Convert.ToInt32(characterData[3], System.Globalization.CultureInfo.CurrentCulture);
+                character.TypeOfBullet = (BulletType)Enum.Parse(typeof(EnemyType), characterData[4]);
+                character.NumOfWeaponUnlocked = Convert.ToInt32(characterData[5], System.Globalization.CultureInfo.CurrentCulture);
+                this.model.Hero = character;
+
+                string[] enemies = enemyStrings.Split('!');
+                foreach (string enemy in enemies)
+                {
+                    if (!string.IsNullOrEmpty(enemy))
+                    {
+                        string[] data = enemy.Split(';');
+                        Enemy e = new Enemy(new Point(Convert.ToInt32(data[1], System.Globalization.CultureInfo.CurrentCulture), Convert.ToInt32(data[2], System.Globalization.CultureInfo.CurrentCulture)), Convert.ToInt32(data[3], System.Globalization.CultureInfo.CurrentCulture), EnemyInitLogic.BasicEnemyHeight, EnemyInitLogic.BasicEnemyWidth, (EnemyType)Enum.Parse(typeof(EnemyType), data[0]), data[5]);
+                        gameModel.CurrentWorld.AddEnemy(e);
+                    }
+                }
+            }
         }
 
         private static string[][] GetGround(XDocument mapData)
@@ -84,13 +132,14 @@ namespace TimeWar.Logic
                     switch (Convert.ToInt32(poidata[y][x], System.Globalization.CultureInfo.CurrentCulture))
                     {
                         case 472: gameWorld.StartPoint = new Point(x, y); break;
-                        case 473: gameWorld.AddPOI(new PointOfInterest(POIType.Checkpoint, 1, 1, "testenemy", new Point(x, y))); break;
-                        case 474: gameWorld.AddPOI(new PointOfInterest(POIType.Finish, 1, 1, "testenemy", new Point(x, y))); break;
-                        case 496: gameWorld.AddPOI(new PointOfInterest(POIType.HealthKit, 1, 1, "testenemy", new Point(x, y))); break;
-                        case 497: gameWorld.AddPOI(new PointOfInterest(POIType.HighJump, 1, 1, "testenemy", new Point(x, y))); break;
-                        case 498: gameWorld.AddPOI(new PointOfInterest(POIType.Invincibility, 1, 1, "testenemy", new Point(x, y))); break;
-                        case 499: gameWorld.AddPOI(new PointOfInterest(POIType.RapidFire, 1, 1, "testenemy", new Point(x, y))); break;
-                        case 500: gameWorld.AddPOI(new PointOfInterest(POIType.UnlockWeapon, 1, 1, "testenemy", new Point(x, y))); break;
+                        case 473: gameWorld.AddPOI(new PointOfInterest(POIType.Checkpoint, 8, 8, "472", new Point(x, y))); break;
+                        case 474: gameWorld.AddPOI(new PointOfInterest(POIType.Finish, 8, 8, "473", new Point(x, y))); break;
+                        case 496: gameWorld.AddPOI(new PointOfInterest(POIType.HealthKit, 8, 8, "495", new Point(x, y))); break;
+                        case 497: gameWorld.AddPOI(new PointOfInterest(POIType.HighJump, 8, 8, "496", new Point(x, y))); break;
+                        case 498: gameWorld.AddPOI(new PointOfInterest(POIType.Invincibility, 8, 8, "497", new Point(x, y))); break;
+                        case 499: gameWorld.AddPOI(new PointOfInterest(POIType.RapidFire, 8, 8, "498", new Point(x, y))); break;
+                        case 500: gameWorld.AddPOI(new PointOfInterest(POIType.UnlockWeapon, 8, 8, "499", new Point(x, y))); break;
+                        case 501: gameWorld.AddPOI(new PointOfInterest(POIType.EnviromentalDamage, 8, 8, "empty", new Point(x, y))); break;
                     }
                 }
             }
@@ -145,7 +194,7 @@ namespace TimeWar.Logic
             string[][] grounddata = GetGround(mapData);
             string[][] poidata = GetPoi(mapData);
             string[][] decodata = GetDecorations(mapData);
-            string[][] enemydata = GetEnemies(mapData);
+
             int gameWorldHeight = grounddata.Length;
             int gameWorldWidth = grounddata[0].Length;
             int tileSize = GetTileSize(mapData);
@@ -154,8 +203,16 @@ namespace TimeWar.Logic
             FillGround(this.model.CurrentWorld, grounddata);
             FillPoi(this.model.CurrentWorld, poidata);
             FillDeco(this.model.CurrentWorld, decodata);
-            this.FillEnemy(this.model.CurrentWorld, enemydata);
-            this.model.Hero = this.GetPlayer();
+            if (!this.GameContinued)
+            {
+                string[][] enemydata = GetEnemies(mapData);
+                this.FillEnemy(this.model.CurrentWorld, enemydata);
+                this.model.Hero = this.GetPlayer();
+            }
+            else
+            {
+                this.LoadSave(this.model);
+            }
         }
     }
 }

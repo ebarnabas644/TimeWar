@@ -133,6 +133,24 @@ namespace TimeWar.Model.Objects
         public Stopwatch ShieldRegenTimer { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether player can jump.
+        /// </summary>
+        public bool CanJump { get; set; }
+
+        /// <inheritdoc/>
+        public override string ToString()
+        {
+            string retString = string.Empty;
+            retString += this.Position.X + ";"; // Character position X.
+            retString += this.Position.Y + ";"; // Character position Y.
+            retString += this.CurrentHealth + ";"; // Character health.
+            retString += this.CurrentShield + ";"; // Character shield.
+            retString += this.TypeOfBullet + ";"; // Type of bullet.
+            retString += (this as Player).NumOfWeaponUnlocked + ";"; // Character num of weaponst unlocked.
+            return retString;
+        }
+
+        /// <summary>
         /// Add new key to the pressed list.
         /// </summary>
         /// <param name="key">Pressed key.</param>

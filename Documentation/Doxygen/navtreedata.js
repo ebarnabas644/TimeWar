@@ -53,10 +53,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_actor_logic_8cs_source.html",
-"class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic.html#ae5aeafdfb4b92094e8cd602b092bb6ea",
-"class_time_war_1_1_main_1_1_view_1_1_menu_page.html#a79cdef1f3abdd0c00ce86e515b894af6",
-"class_time_war_1_1_repository_1_1_classes_1_1_map_repository.html#ac6177fa0ff4d930394438a8f55b3e89b",
-"namespace_time_war_1_1_logic_1_1_interfaces.html"
+"class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic.html#a322f2a577fe4f010904e1c9c3fdf94f4",
+"class_time_war_1_1_main_1_1_view_1_1_game_window.html#a82900ffe17d51af924e5bc86083761dc",
+"class_time_war_1_1_model_1_1_objects_1_1_viewport.html#a537bcd488e5c0eeb0c94a4697121a500",
+"interface_time_war_1_1_model_1_1_objects_1_1_interfaces_1_1_i_game_object.html#abc3d5eb558e7d8c44babee230f70f3c0"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -8,7 +8,9 @@
         mc:Ignorable="d"
         RenderOptions.BitmapScalingMode="NearestNeighbor"
         DataContext="{Binding MainViewModel, Source={StaticResource Locator}}"
-        Title="MainWindow" Height="900" Width="1400">
+        MinHeight="800"
+        MinWidth="900"
+        Title="TimeWar" Height="900" Width="1400">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadedCommand, Mode=OneWay}" />

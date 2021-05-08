@@ -261,6 +261,11 @@
             Gets or sets player profile navigational property.
             </summary>
         </member>
+        <member name="P:TimeWar.Main.Data.MapRecordUI.Player">
+            <summary>
+            Gets or sets player.
+            </summary>
+        </member>
         <member name="P:TimeWar.Main.Data.MapRecordUI.RunTime">
             <summary>
             Gets or sets run time.
@@ -326,7 +331,7 @@
             Gets or sets a value indicating whether selected.
             </summary>
         </member>
-        <member name="P:TimeWar.Main.Data.PlayerProfileUI.SaveId">
+        <member name="P:TimeWar.Main.Data.PlayerProfileUI.Save">
             <summary>
             Gets or sets the save id.
             </summary>
@@ -366,19 +371,14 @@
             Gets or sets save id.
             </summary>
         </member>
-        <member name="P:TimeWar.Main.Data.SaveUI.Point">
+        <member name="P:TimeWar.Main.Data.SaveUI.Playerdata">
             <summary>
             Gets or sets point.
             </summary>
         </member>
-        <member name="P:TimeWar.Main.Data.SaveUI.Checkpoint">
+        <member name="P:TimeWar.Main.Data.SaveUI.Enemydata">
             <summary>
             Gets or sets checkpoint.
-            </summary>
-        </member>
-        <member name="P:TimeWar.Main.Data.SaveUI.PlayerId">
-            <summary>
-            Gets or sets playerid.
             </summary>
         </member>
         <member name="M:TimeWar.Main.Data.SaveUI.ConvertToSaveEntity(TimeWar.Main.Data.SaveUI)">
@@ -411,14 +411,53 @@
             Initializes a new instance of the <see cref="T:TimeWar.Main.GameControl"/> class.
             </summary>
         </member>
+        <member name="M:TimeWar.Main.GameControl.#ctor(TimeWar.Main.BL.Factory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.GameControl"/> class.
+            </summary>
+            <param name="factory">Factory.</param>
+        </member>
+        <member name="P:TimeWar.Main.GameControl.BackgroundMusic">
+            <summary>
+            Gets background music media player.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.GameControl.SaveLoad">
+            <summary>
+            Gets or sets a value indicating whether loading save.
+            </summary>
+        </member>
         <member name="P:TimeWar.Main.GameControl.MapName">
             <summary>
             Gets or sets current map.
             </summary>
         </member>
+        <member name="P:TimeWar.Main.GameControl.LevelFinished">
+            <summary>
+            Gets or sets a value indicating whether level finished.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.GameControl.IsPaused">
+            <summary>
+            Gets or sets a value indicating whether true if game is paused.
+            </summary>
+        </member>
         <member name="P:TimeWar.Main.GameControl.Exit">
             <summary>
             Gets or sets a value indicating whether page about to close.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.GameControl.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Main.GameControl.SaveEndGame">
+            <summary>
+            Save endgame stats.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.GameControl.SaveGameProgress">
+            <summary>
+            Save game progress.
             </summary>
         </member>
         <member name="M:TimeWar.Main.GameControl.OnRender(System.Windows.Media.DrawingContext)">
@@ -454,6 +493,12 @@
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Main.MenuControl"/> class.
             </summary>
+        </member>
+        <member name="M:TimeWar.Main.MenuControl.#ctor(TimeWar.Main.BL.Factory)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Main.MenuControl"/> class.
+            </summary>
+            <param name="factory">Factory.</param>
         </member>
         <member name="P:TimeWar.Main.MenuControl.MapName">
             <summary>
@@ -495,6 +540,26 @@
         <member name="P:TimeWar.Main.ViewModel.GameViewModel.MapName">
             <summary>
             Gets or sets map name.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.GameViewModel.EndVisibility">
+            <summary>
+            Gets or sets a value indicating whether visible.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.GameViewModel.EndKills">
+            <summary>
+            Gets or sets number of kills.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.GameViewModel.EndDeaths">
+            <summary>
+            Gets or sets number of deaths.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.GameViewModel.EndTime">
+            <summary>
+            Gets or sets end time.
             </summary>
         </member>
         <member name="P:TimeWar.Main.ViewModel.GameViewModel.MenuVisibility">
@@ -540,6 +605,11 @@
             <param name="navigationService">Navigation service.</param>
             <param name="viewerLogicUI">Viewer logic.</param>
         </member>
+        <member name="P:TimeWar.Main.ViewModel.MenuViewModel.ContinueGameCommand">
+            <summary>
+            Gets the continue game command.
+            </summary>
+        </member>
         <member name="P:TimeWar.Main.ViewModel.MenuViewModel.NewGamePageCommand">
             <summary>
             Gets the navigate to game page command.
@@ -563,6 +633,11 @@
         <member name="P:TimeWar.Main.ViewModel.MenuViewModel.MenuText">
             <summary>
             Gets the main menu text.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.MenuViewModel.ContinueVisibility">
+            <summary>
+            Gets or sets a value indicating whether continue button visible.
             </summary>
         </member>
         <member name="M:TimeWar.Main.ViewModel.MenuViewModel.Init">
@@ -663,6 +738,11 @@
         <member name="P:TimeWar.Main.ViewModel.ProfilesViewModel.PlayerProfileUIs">
             <summary>
             Gets the player profiles collection.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.ViewModel.ProfilesViewModel.ReInit">
+            <summary>
+            Reload database.
             </summary>
         </member>
         <member name="T:TimeWar.Main.ViewModel.ViewModelLocator">

@@ -53,6 +53,11 @@
             <param name="character">Character.</param>
             <param name="commandManager">Command manger.</param>
         </member>
+        <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.DefaultJumpHeight">
+            <summary>
+            Gets or sets default jump height.
+            </summary>
+        </member>
         <member name="P:TimeWar.Logic.Classes.Characters.ActorLogic.Character">
             <summary>
             Gets the character.
@@ -317,15 +322,19 @@
             <param name="character">Character.</param>
             <param name="commandManager">Command manager.</param>
         </member>
+        <member name="M:TimeWar.Logic.Classes.Characters.RapidFireEnemyLogic.OneTick">
+            <inheritdoc/>
+        </member>
         <member name="T:TimeWar.Logic.Classes.CommandManager">
             <summary>
             Command manager class.
             </summary>
         </member>
-        <member name="M:TimeWar.Logic.Classes.CommandManager.#ctor">
+        <member name="M:TimeWar.Logic.Classes.CommandManager.#ctor(TimeWar.Model.GameModel)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.CommandManager"/> class.
             </summary>
+            <param name="model">Game model.</param>
         </member>
         <member name="P:TimeWar.Logic.Classes.CommandManager.IsFinished">
             <inheritdoc/>
@@ -336,7 +345,7 @@
         <member name="M:TimeWar.Logic.Classes.CommandManager.ClearBuffer">
             <inheritdoc/>
         </member>
-        <member name="M:TimeWar.Logic.Classes.CommandManager.Rewind">
+        <member name="M:TimeWar.Logic.Classes.CommandManager.Rewind(System.Int32)">
             <inheritdoc/>
         </member>
         <member name="T:TimeWar.Logic.Classes.EnemyInitLogic">
@@ -444,6 +453,12 @@
             <param name="bullet">Bullet.</param>
             <param name="commandManager">Command manager.</param>
         </member>
+        <member name="M:TimeWar.Logic.Classes.LogicCollections.BulletLogics.SaveBullets">
+            <summary>
+            Saves bullets into a string.
+            </summary>
+            <returns>A list of all bullets.</returns>
+        </member>
         <member name="M:TimeWar.Logic.Classes.LogicCollections.BulletLogics.Addbullets(System.Collections.Generic.ICollection{TimeWar.Model.Objects.Classes.Bullet})">
             <summary>
             Replaces the bullets list.
@@ -467,6 +482,12 @@
             <param name="model">Game model.</param>
             <param name="commandManager">Command manager.</param>
         </member>
+        <member name="M:TimeWar.Logic.Classes.LogicCollections.EnemyLogics.SaveEnemies">
+            <summary>
+            Saves enemies into a string.
+            </summary>
+            <returns>A list of all enemies.</returns>
+        </member>
         <member name="M:TimeWar.Logic.Classes.LogicCollections.EnemyLogics.GetEnemies">
             <summary>
             Gets enemies.
@@ -489,6 +510,11 @@
             <param name="model">Game model.</param>
             <param name="character">Character.</param>
             <param name="commandManager">Command manager.</param>
+        </member>
+        <member name="E:TimeWar.Logic.Classes.LogicCollections.PointOfInterestLogics.Powerup">
+            <summary>
+            Powerup event.
+            </summary>
         </member>
         <member name="M:TimeWar.Logic.Classes.LogicCollections.PointOfInterestLogics.TickPois">
             <summary>
@@ -557,6 +583,23 @@
         <member name="M:TimeWar.Logic.Classes.POIs.CheckpointLogic.POIEvent">
             <inheritdoc/>
         </member>
+        <member name="T:TimeWar.Logic.Classes.POIs.EnviromentalDamageLogic">
+            <summary>
+            Enviromental damage.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.POIs.EnviromentalDamageLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Classes.PointOfInterest,System.Int32,System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.POIs.EnviromentalDamageLogic"/> class.
+            </summary>
+            <param name="model">Model.</param>
+            <param name="poi">POI.</param>
+            <param name="damage">damage of the poi.</param>
+            <param name="timed">Timed.</param>
+        </member>
+        <member name="M:TimeWar.Logic.Classes.POIs.EnviromentalDamageLogic.POIEvent">
+            <inheritdoc/>
+        </member>
         <member name="T:TimeWar.Logic.Classes.POIs.FinishLogic">
             <summary>
             Finish logic.
@@ -600,21 +643,17 @@
             High jump logic.
             </summary>
         </member>
-        <member name="M:TimeWar.Logic.Classes.POIs.HighJumpLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Classes.PointOfInterest,TimeWar.Logic.CharacterLogic,System.Int32,System.Int32,System.Boolean)">
+        <member name="M:TimeWar.Logic.Classes.POIs.HighJumpLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Classes.PointOfInterest,TimeWar.Logic.CharacterLogic,System.Int32,System.Boolean)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.POIs.HighJumpLogic"/> class.
             </summary>
             <param name="model">Model.</param>
             <param name="poi">Poi.</param>
             <param name="character">Character.</param>
-            <param name="timeOfEffect">Time of effect.</param>
-            <param name="newMaxJumpHeight">New jump height.</param>
+            <param name="newJumpHeight">New jump height.</param>
             <param name="timed">Timed.</param>
         </member>
         <member name="M:TimeWar.Logic.Classes.POIs.HighJumpLogic.POIEvent">
-            <inheritdoc/>
-        </member>
-        <member name="M:TimeWar.Logic.Classes.POIs.HighJumpLogic.ResetStats">
             <inheritdoc/>
         </member>
         <member name="T:TimeWar.Logic.Classes.POIs.InvincibilityLogic">
@@ -794,6 +833,9 @@
         <member name="M:TimeWar.Logic.Classes.ViewerLogic.GetSaves">
             <inheritdoc/>
         </member>
+        <member name="M:TimeWar.Logic.Classes.ViewerLogic.GetSelectedProfile">
+            <inheritdoc/>
+        </member>
         <member name="T:TimeWar.Logic.CharacterLogic">
             <summary>
             Basic character logic class.
@@ -806,6 +848,11 @@
             <param name="model">Game model entity.</param>
             <param name="character">Moveable entity.</param>
             <param name="commandManager">Command manager entity.</param>
+        </member>
+        <member name="E:TimeWar.Logic.CharacterLogic.Fire">
+            <summary>
+            Fire event.
+            </summary>
         </member>
         <member name="P:TimeWar.Logic.CharacterLogic.AttackTime">
             <summary>
@@ -836,12 +883,25 @@
             Init class for game model.
             </summary>
         </member>
-        <member name="M:TimeWar.Logic.InitLogic.#ctor(TimeWar.Model.GameModel,System.String)">
+        <member name="M:TimeWar.Logic.InitLogic.#ctor(TimeWar.Model.GameModel,System.String,TimeWar.Logic.Interfaces.IViewerLogic,System.Boolean)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Logic.InitLogic"/> class.
             </summary>
             <param name="model">Game model instance.</param>
             <param name="mapName">Name of the game map.</param>
+            <param name="viewerLogic">Viewer logic.</param>
+            <param name="isGameLoaded">Game loaded.</param>
+        </member>
+        <member name="P:TimeWar.Logic.InitLogic.GameContinued">
+            <summary>
+            Gets or sets a value indicating whether the game is continued or not.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.InitLogic.LoadSave(TimeWar.Model.GameModel)">
+            <summary>
+            Loads the game.
+            </summary>
+            <param name="gameModel">GameModel.</param>
         </member>
         <member name="T:TimeWar.Logic.Interfaces.ICommand">
             <summary>
@@ -874,10 +934,11 @@
             Clear command buffer.
             </summary>
         </member>
-        <member name="M:TimeWar.Logic.Interfaces.ICommandManager.Rewind">
+        <member name="M:TimeWar.Logic.Interfaces.ICommandManager.Rewind(System.Int32)">
             <summary>
             Rewind all command.
             </summary>
+            <param name="number">Number of moving object.</param>
             <returns>Task with rewind logic.</returns>
         </member>
         <member name="T:TimeWar.Logic.Interfaces.IManagerLogic">
@@ -998,6 +1059,12 @@
             Get all save entity.
             </summary>
             <returns>Save entites.</returns>
+        </member>
+        <member name="M:TimeWar.Logic.Interfaces.IViewerLogic.GetSelectedProfile">
+            <summary>
+            Gets selected player profile.
+            </summary>
+            <returns>Selected player profile.</returns>
         </member>
     </members>
 </doc>

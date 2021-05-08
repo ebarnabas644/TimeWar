@@ -19,7 +19,7 @@ namespace TimeWar.Logic.Classes.LogicCollections
     /// </summary>
     public class PointOfInterestLogics
     {
-        private const int TickDistance = 8;
+        private const int TickDistance = 4;
         private GameModel model;
         private List<PointOfInterestLogic> pois;
         private CharacterLogic character;
@@ -39,6 +39,11 @@ namespace TimeWar.Logic.Classes.LogicCollections
             this.commandManager = commandManager;
             this.GetPOIs();
         }
+
+        /// <summary>
+        /// Powerup event.
+        /// </summary>
+        public event EventHandler Powerup;
 
         /// <summary>
         /// Tick Pois.
@@ -64,6 +69,7 @@ namespace TimeWar.Logic.Classes.LogicCollections
         /// </summary>
         public void GetPOIs()
         {
+            this.pois = new List<PointOfInterestLogic>();
             foreach (PointOfInterest poi in this.model.CurrentWorld.GetPois)
             {
                 switch (poi.Type)
@@ -96,6 +102,10 @@ namespace TimeWar.Logic.Classes.LogicCollections
                         RapidFireLogic rapid = new RapidFireLogic(this.model, poi, this.character);
                         this.pois.Add(rapid);
                         break;
+                    case POIType.EnviromentalDamage:
+                        EnviromentalDamageLogic enviromental = new EnviromentalDamageLogic(this.model, poi);
+                        this.pois.Add(enviromental);
+                        break;
                     default:
                         break;
                 }
@@ -104,10 +114,13 @@ namespace TimeWar.Logic.Classes.LogicCollections
 
         private void Despawn(PointOfInterestLogic poi)
         {
-            if (poi.IsPlayerContacted && poi is not ITimedEvent)
+            if (poi.IsPlayerContacted && poi is not ITimedEvent && !(poi is EnviromentalDamageLogic))
             {
                 this.model.CurrentWorld.RemovePOI(poi.Poi);
                 this.pois.Remove(poi);
+                EventHandler handler = this.Powerup;
+                EventArgs args = null;
+                handler?.Invoke(this, args);
             }
             else
             {

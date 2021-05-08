@@ -19,7 +19,7 @@ namespace TimeWar.Main.Data
         private int totalDeaths;
         private int completedRuns;
         private bool selected;
-        private int saveId;
+        private Save save;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="PlayerProfileUI"/> class.
@@ -85,10 +85,10 @@ namespace TimeWar.Main.Data
         /// <summary>
         /// Gets or sets the save id.
         /// </summary>
-        public int SaveId
+        public Save Save
         {
-            get { return this.saveId; }
-            set { this.Set(ref this.saveId, value); }
+            get { return this.save; }
+            set { this.Set(ref this.save, value); }
         }
 
         /// <summary>
@@ -105,7 +105,7 @@ namespace TimeWar.Main.Data
                 profile.PlayerId = profileui.PlayerId;
                 profile.Selected = profileui.Selected;
                 profile.PlayerName = profileui.PlayerName;
-                profile.SaveId = profileui.SaveId;
+                profile.Save = profileui.Save;
                 profile.TotalKills = profileui.TotalKills;
                 profile.TotalDeaths = profileui.TotalDeaths;
                 profile.CompletedRuns = profileui.CompletedRuns;
@@ -128,7 +128,7 @@ namespace TimeWar.Main.Data
                 profileui.PlayerId = profile.PlayerId;
                 profileui.Selected = profile.Selected;
                 profileui.PlayerName = profile.PlayerName;
-                profileui.SaveId = profile.SaveId;
+                profileui.Save = profile.Save;
                 profileui.TotalKills = profile.TotalKills;
                 profileui.TotalDeaths = profile.TotalDeaths;
                 profileui.CompletedRuns = profile.CompletedRuns;

@@ -18,7 +18,7 @@ namespace TimeWar.Renderer
         /// <summary>
         /// Gets layers height.
         /// </summary>
-        public static int LayersHeight { get; } = 350;
+        public static int LayersHeight { get; } = 1200;
 
         /// <summary>
         /// Gets layers width.
@@ -38,22 +38,22 @@ namespace TimeWar.Renderer
         /// <summary>
         /// Gets number of background layers.
         /// </summary>
-        public static int NumberOfLayers { get; } = 3;
+        public static int NumberOfLayers { get; } = 4;
 
         /// <summary>
         /// Gets Layers vertical speed.
         /// </summary>
-        public static IReadOnlyList<double> LayersVerticalSpeed { get; } = new List<double> { 0.02, 0.02, 0.02 };
+        public static IReadOnlyList<double> LayersVerticalSpeed { get; } = new List<double> { 0.1, 0.1, 0.1, 0.1 };
 
         /// <summary>
         /// Gets Layers horizontal speed.
         /// </summary>
-        public static IReadOnlyList<double> LayersHorizontalSpeed { get; } = new List<double> { 0.6, 0.4, 0.1 };
+        public static IReadOnlyList<double> LayersHorizontalSpeed { get; } = new List<double> { 0.6, 0.4, 0.1, 0.1 };
 
         /// <summary>
         /// Gets Layers sprite file names.
         /// </summary>
-        public static IReadOnlyList<string> LayersSpriteFile { get; } = new List<string> { "backgroundlayer1", "backgroundlayer2", "backgroundlayer3" };
+        public static IReadOnlyList<string> LayersSpriteFile { get; } = new List<string> { "backgroundlayer1", "backgroundlayer2", "backgroundlayer3", "backgroundlayer4" };
 
         /// <summary>
         /// Gets Layers horizontal offset.
@@ -63,6 +63,6 @@ namespace TimeWar.Renderer
         /// <summary>
         /// Gets Layers vertical offset.
         /// </summary>
-        public static int LayersVerticalOffset { get; } = 200;
+        public static int LayersVerticalOffset { get; } = -2000;
     }
 }

@@ -4,6 +4,7 @@
 
 namespace TimeWar.Main.Data
 {
+    using System;
     using System.Linq;
     using GalaSoft.MvvmLight;
     using TimeWar.Data.Models;
@@ -14,9 +15,10 @@ namespace TimeWar.Main.Data
     public class MapRecordUI : ObservableObject
     {
         private int mapId;
-        private int playerId;
-        private int runTime;
+        private int? playerId;
+        private TimeSpan runTime;
         private string mapName;
+        private PlayerProfile player;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MapRecordUI"/> class.
@@ -46,16 +48,25 @@ namespace TimeWar.Main.Data
         /// <summary>
         /// Gets or sets player profile navigational property.
         /// </summary>
-        public int PlayerId
+        public int? PlayerId
         {
             get { return this.playerId; }
             set { this.Set(ref this.playerId, value); }
         }
 
         /// <summary>
+        /// Gets or sets player.
+        /// </summary>
+        public PlayerProfile Player
+        {
+            get { return this.player; }
+            set { this.Set(ref this.player, value); }
+        }
+
+        /// <summary>
         /// Gets or sets run time.
         /// </summary>
-        public int RunTime
+        public TimeSpan RunTime
         {
             get { return this.runTime; }
             set { this.Set(ref this.runTime, value); }
@@ -75,6 +86,7 @@ namespace TimeWar.Main.Data
                 map.MapName = mapui.MapName;
                 map.PlayerId = mapui.PlayerId;
                 map.RunTime = mapui.RunTime;
+                map.Player = mapui.Player;
             }
 
             return map;
@@ -94,6 +106,7 @@ namespace TimeWar.Main.Data
                 mapui.MapName = map.MapName;
                 mapui.PlayerId = map.PlayerId;
                 mapui.RunTime = map.RunTime;
+                mapui.Player = map.Player;
             }
 
             return mapui;

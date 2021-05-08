@@ -135,7 +135,7 @@ $(document).ready(function(){initNavTree('_time_war_context_8cs_source.html','')
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                modelBuilder.Entity&lt;<a class="code" href="class_time_war_1_1_data_1_1_models_1_1_save.html">Save</a>&gt;(entity =&gt;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                {</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    entity.HasOne(x =&gt; x.Player)</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    .WithOne(x =&gt; x.AutoSave)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                    .WithOne(x =&gt; x.Save).HasForeignKey&lt;<a class="code" href="class_time_war_1_1_data_1_1_models_1_1_player_profile.html">PlayerProfile</a>&gt;(x =&gt; x.<a class="code" href="class_time_war_1_1_data_1_1_models_1_1_player_profile.html#a92a3052276b91762b6000f1dc0bc40bc">SaveId</a>)</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    .OnDelete(DeleteBehavior.ClientSetNull)</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                    .HasConstraintName(<span class="stringliteral">&quot;save_fk&quot;</span>);</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                });</div>
@@ -148,15 +148,17 @@ $(document).ready(function(){initNavTree('_time_war_context_8cs_source.html','')
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                    .HasForeignKey(x =&gt; x.PlayerId)</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                    .OnDelete(DeleteBehavior.Cascade);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    entity.HasOne(x =&gt; x.AutoSave)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    .WithOne(x =&gt; x.Player).OnDelete(DeleteBehavior.Cascade);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                });</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;}</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                    entity.HasOne(x =&gt; x.Save)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    .WithOne(x =&gt; x.Player)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    .HasForeignKey&lt;<a class="code" href="class_time_war_1_1_data_1_1_models_1_1_save.html">Save</a>&gt;(x =&gt; x.<a class="code" href="class_time_war_1_1_data_1_1_models_1_1_save.html#a41ef9f970e21f38f60a3b35bf262393e">PlayerId</a>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                });</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclass_time_war_1_1_data_1_1_models_1_1_player_profile_html_a92a3052276b91762b6000f1dc0bc40bc"><div class="ttname"><a href="class_time_war_1_1_data_1_1_models_1_1_player_profile.html#a92a3052276b91762b6000f1dc0bc40bc">TimeWar.Data.Models.PlayerProfile.SaveId</a></div><div class="ttdeci">int? SaveId</div><div class="ttdoc">Gets or sets the autosave id.</div><div class="ttdef"><b>Definition:</b> <a href="_player_profile_8cs_source.html#l00058">PlayerProfile.cs:58</a></div></div>
 <div class="ttc" id="aclass_time_war_1_1_data_1_1_models_1_1_player_profile_html"><div class="ttname"><a href="class_time_war_1_1_data_1_1_models_1_1_player_profile.html">TimeWar.Data.Models.PlayerProfile</a></div><div class="ttdoc">Player profile class.</div><div class="ttdef"><b>Definition:</b> <a href="_player_profile_8cs_source.html#l00014">PlayerProfile.cs:15</a></div></div>
 <div class="ttc" id="aclass_time_war_1_1_data_1_1_models_1_1_time_war_context_html_abac549f2316af5f6ea926b8b154cdd55"><div class="ttname"><a href="class_time_war_1_1_data_1_1_models_1_1_time_war_context.html#abac549f2316af5f6ea926b8b154cdd55">TimeWar.Data.Models.TimeWarContext.OnModelCreating</a></div><div class="ttdeci">override void OnModelCreating(ModelBuilder modelBuilder)</div><div class="ttdef"><b>Definition:</b> <a href="_time_war_context_8cs_source.html#l00050">TimeWarContext.cs:50</a></div></div>
 <div class="ttc" id="aclass_time_war_1_1_data_1_1_models_1_1_time_war_context_html"><div class="ttname"><a href="class_time_war_1_1_data_1_1_models_1_1_time_war_context.html">TimeWar.Data.Models.TimeWarContext</a></div><div class="ttdoc">TimeWar database context class.</div><div class="ttdef"><b>Definition:</b> <a href="_time_war_context_8cs_source.html#l00012">TimeWarContext.cs:13</a></div></div>
@@ -167,8 +169,9 @@ $(document).ready(function(){initNavTree('_time_war_context_8cs_source.html','')
 <div class="ttc" id="aclass_time_war_1_1_data_1_1_models_1_1_time_war_context_html_aa92cdd63834277496feaef59419c109a"><div class="ttname"><a href="class_time_war_1_1_data_1_1_models_1_1_time_war_context.html#aa92cdd63834277496feaef59419c109a">TimeWar.Data.Models.TimeWarContext.MapRecords</a></div><div class="ttdeci">virtual DbSet&lt; MapRecord &gt; MapRecords</div><div class="ttdoc">Gets or sets maps table.</div><div class="ttdef"><b>Definition:</b> <a href="_time_war_context_8cs_source.html#l00030">TimeWarContext.cs:30</a></div></div>
 <div class="ttc" id="aclass_time_war_1_1_data_1_1_models_1_1_time_war_context_html_a823a33454ac1bdd76a0b062c8e13116c"><div class="ttname"><a href="class_time_war_1_1_data_1_1_models_1_1_time_war_context.html#a823a33454ac1bdd76a0b062c8e13116c">TimeWar.Data.Models.TimeWarContext.Profiles</a></div><div class="ttdeci">virtual DbSet&lt; PlayerProfile &gt; Profiles</div><div class="ttdoc">Gets or sets profiles table.</div><div class="ttdef"><b>Definition:</b> <a href="_time_war_context_8cs_source.html#l00025">TimeWarContext.cs:25</a></div></div>
 <div class="ttc" id="aclass_time_war_1_1_data_1_1_models_1_1_save_html"><div class="ttname"><a href="class_time_war_1_1_data_1_1_models_1_1_save.html">TimeWar.Data.Models.Save</a></div><div class="ttdoc">Game save entity class.</div><div class="ttdef"><b>Definition:</b> <a href="_save_8cs_source.html#l00013">Save.cs:14</a></div></div>
+<div class="ttc" id="aclass_time_war_1_1_data_1_1_models_1_1_save_html_a41ef9f970e21f38f60a3b35bf262393e"><div class="ttname"><a href="class_time_war_1_1_data_1_1_models_1_1_save.html#a41ef9f970e21f38f60a3b35bf262393e">TimeWar.Data.Models.Save.PlayerId</a></div><div class="ttdeci">int? PlayerId</div><div class="ttdoc">Gets or sets the player id.</div><div class="ttdef"><b>Definition:</b> <a href="_save_8cs_source.html#l00039">Save.cs:39</a></div></div>
 <div class="ttc" id="aclass_microsoft_1_1_entity_framework_core_html"><div class="ttname"><a href="class_microsoft_1_1_entity_framework_core.html">EntityFrameworkCore</a></div></div>
-<div class="ttc" id="aclass_time_war_1_1_data_1_1_models_1_1_map_record_html"><div class="ttname"><a href="class_time_war_1_1_data_1_1_models_1_1_map_record.html">TimeWar.Data.Models.MapRecord</a></div><div class="ttdoc">Map record entity class.</div><div class="ttdef"><b>Definition:</b> <a href="_map_record_8cs_source.html#l00013">MapRecord.cs:14</a></div></div>
+<div class="ttc" id="aclass_time_war_1_1_data_1_1_models_1_1_map_record_html"><div class="ttname"><a href="class_time_war_1_1_data_1_1_models_1_1_map_record.html">TimeWar.Data.Models.MapRecord</a></div><div class="ttdoc">Map record entity class.</div><div class="ttdef"><b>Definition:</b> <a href="_map_record_8cs_source.html#l00014">MapRecord.cs:15</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

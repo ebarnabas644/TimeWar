@@ -44,6 +44,21 @@ namespace TimeWar.Logic.Classes.LogicCollections
         }
 
         /// <summary>
+        /// Saves bullets into a string.
+        /// </summary>
+        /// <returns>A list of all bullets.</returns>
+        public ICollection<string> SaveBullets()
+        {
+            List<string> bulletStrings = new List<string>();
+            foreach (var item in this.bullets)
+            {
+                bulletStrings.Add(item.ToString());
+            }
+
+            return bulletStrings;
+        }
+
+        /// <summary>
         /// Replaces the bullets list.
         /// </summary>
         /// <param name="bullets">Bullet list.</param>
@@ -167,13 +182,14 @@ namespace TimeWar.Logic.Classes.LogicCollections
 
         private bool DetectGround(Bullet bullet)
         {
-            Point nextMove = new Point(this.model.CurrentWorld.ConvertPixelToTile(bullet.Position.X + (int)bullet.MoveVector.X), this.model.CurrentWorld.ConvertPixelToTile(bullet.Position.Y + (int)bullet.MoveVector.Y));
+            Point nextMove = new Point(this.model.CurrentWorld.ConvertPixelToTile(bullet.Position.X + (bullet.Width / 2) + (int)bullet.MoveVector.X), this.model.CurrentWorld.ConvertPixelToTile(bullet.Position.Y + (bullet.Height / 2) + (int)bullet.MoveVector.Y));
+
             return this.model.CurrentWorld.SearchGround(nextMove);
         }
 
         private bool DetectEntity(Bullet bullet)
         {
-            Point bulletPos = new Point(bullet.Position.X, bullet.Position.Y);
+            Point bulletPos = new Point(bullet.Position.X + (bullet.Width / 2), bullet.Position.Y + (bullet.Width / 2));
 
             if (bullet.PlayerBullet)
             {
@@ -194,25 +210,20 @@ namespace TimeWar.Logic.Classes.LogicCollections
 
                 if (playerRect.Contains(bulletPos))
                 {
-                    if (this.model.Hero.CurrentShield > 0)
-                    {
-                        this.model.Hero.CurrentShield -= bullet.Damage;
-                    }
-                    else
+                    int shieldValue = this.model.Hero.CurrentShield;
+                    shieldValue -= bullet.Damage;
+
+                    if (shieldValue < 0)
                     {
                         if (!this.model.Hero.IsInvincible)
                         {
-                            this.model.Hero.CurrentHealth -= bullet.Damage;
-                            if (this.model.Hero.CurrentHealth <= 0)
-                            {
-                                this.model.Hero.Position = this.model.Hero.Checkpoint;
-                                this.model.Hero.CurrentHealth = this.model.Hero.Health;
-                                this.model.Hero.CurrentShield = this.model.Hero.Shield;
-                                this.model.Hero.MovementVector = new Point(0, 0);
-
-                                this.model.CurrentWorld.LoadEnemies();
-                            }
+                            this.model.Hero.CurrentShield = 0;
+                            this.model.Hero.CurrentHealth += shieldValue;
                         }
+                    }
+                    else
+                    {
+                        this.model.Hero.CurrentShield -= bullet.Damage;
                     }
 
                     this.model.Hero.ShieldRegenTimer.Reset();

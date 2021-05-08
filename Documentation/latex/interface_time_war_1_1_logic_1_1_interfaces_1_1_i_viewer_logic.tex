@@ -1,0 +1,181 @@
+\hypertarget{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic}{}\doxysection{Time\+War.\+Logic.\+Interfaces.\+I\+Viewer\+Logic Interface Reference}
+\label{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic}\index{TimeWar.Logic.Interfaces.IViewerLogic@{TimeWar.Logic.Interfaces.IViewerLogic}}
+
+
+Database viewer logic interface.  
+
+
+Inheritance diagram for Time\+War.\+Logic.\+Interfaces.\+I\+Viewer\+Logic\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_player_profile}{Player\+Profile}} \mbox{\hyperlink{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic_a8c0eb5d814e59a108f4e94be7233d11a}{Get\+Profile}} (int id)
+\begin{DoxyCompactList}\small\item\em Get profile entity based on id. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_map_record}{Map\+Record}} \mbox{\hyperlink{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic_a7db1ed17d1fc1a9097312cd1d12fb8be}{Get\+Map}} (int id)
+\begin{DoxyCompactList}\small\item\em Get map entity based on id. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_save}{Save}} \mbox{\hyperlink{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic_a26812ea9c48d8a27c53e5670395c4bdf}{Get\+Save}} (int id)
+\begin{DoxyCompactList}\small\item\em Get save entity based on id. \end{DoxyCompactList}\item 
+I\+List$<$ \mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_player_profile}{Player\+Profile}} $>$ \mbox{\hyperlink{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic_ae664b5e50d59121b73a8a3cf36b18789}{Get\+Profiles}} ()
+\begin{DoxyCompactList}\small\item\em Get all profile entity. \end{DoxyCompactList}\item 
+I\+List$<$ \mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_map_record}{Map\+Record}} $>$ \mbox{\hyperlink{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic_a0f302818984afa2bb9951f4d8dd78a5a}{Get\+Maps}} ()
+\begin{DoxyCompactList}\small\item\em Get all map entity. \end{DoxyCompactList}\item 
+I\+List$<$ \mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_save}{Save}} $>$ \mbox{\hyperlink{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic_a9e156232bcc9c83852f7fdc1e95c4fca}{Get\+Saves}} ()
+\begin{DoxyCompactList}\small\item\em Get all save entity. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_player_profile}{Player\+Profile}} \mbox{\hyperlink{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic_ada7196e95eb7966852adadad30de6f83}{Get\+Selected\+Profile}} ()
+\begin{DoxyCompactList}\small\item\em Gets selected player profile. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Database viewer logic interface. 
+
+
+
+Definition at line 13 of file I\+Viewer\+Logic.\+cs.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic_a7db1ed17d1fc1a9097312cd1d12fb8be}\label{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic_a7db1ed17d1fc1a9097312cd1d12fb8be}} 
+\index{TimeWar.Logic.Interfaces.IViewerLogic@{TimeWar.Logic.Interfaces.IViewerLogic}!GetMap@{GetMap}}
+\index{GetMap@{GetMap}!TimeWar.Logic.Interfaces.IViewerLogic@{TimeWar.Logic.Interfaces.IViewerLogic}}
+\doxysubsubsection{\texorpdfstring{GetMap()}{GetMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_map_record}{Map\+Record}} Time\+War.\+Logic.\+Interfaces.\+I\+Viewer\+Logic.\+Get\+Map (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Get map entity based on id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Entity id.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Map entity.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_viewer_logic_aeb32f093bded69cc3782dc273477b041}{Time\+War.\+Logic.\+Classes.\+Viewer\+Logic}}.
+
+\mbox{\Hypertarget{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic_a0f302818984afa2bb9951f4d8dd78a5a}\label{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic_a0f302818984afa2bb9951f4d8dd78a5a}} 
+\index{TimeWar.Logic.Interfaces.IViewerLogic@{TimeWar.Logic.Interfaces.IViewerLogic}!GetMaps@{GetMaps}}
+\index{GetMaps@{GetMaps}!TimeWar.Logic.Interfaces.IViewerLogic@{TimeWar.Logic.Interfaces.IViewerLogic}}
+\doxysubsubsection{\texorpdfstring{GetMaps()}{GetMaps()}}
+{\footnotesize\ttfamily I\+List$<$\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_map_record}{Map\+Record}}$>$ Time\+War.\+Logic.\+Interfaces.\+I\+Viewer\+Logic.\+Get\+Maps (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get all map entity. 
+
+\begin{DoxyReturn}{Returns}
+Map entites.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_viewer_logic_af6093d48685d13b75e3f89f4b31ed7ec}{Time\+War.\+Logic.\+Classes.\+Viewer\+Logic}}.
+
+\mbox{\Hypertarget{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic_a8c0eb5d814e59a108f4e94be7233d11a}\label{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic_a8c0eb5d814e59a108f4e94be7233d11a}} 
+\index{TimeWar.Logic.Interfaces.IViewerLogic@{TimeWar.Logic.Interfaces.IViewerLogic}!GetProfile@{GetProfile}}
+\index{GetProfile@{GetProfile}!TimeWar.Logic.Interfaces.IViewerLogic@{TimeWar.Logic.Interfaces.IViewerLogic}}
+\doxysubsubsection{\texorpdfstring{GetProfile()}{GetProfile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_player_profile}{Player\+Profile}} Time\+War.\+Logic.\+Interfaces.\+I\+Viewer\+Logic.\+Get\+Profile (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Get profile entity based on id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Entity id.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Profile entity.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_viewer_logic_ac3f72a09eb25a9f555afcbea8b6fa8df}{Time\+War.\+Logic.\+Classes.\+Viewer\+Logic}}.
+
+\mbox{\Hypertarget{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic_ae664b5e50d59121b73a8a3cf36b18789}\label{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic_ae664b5e50d59121b73a8a3cf36b18789}} 
+\index{TimeWar.Logic.Interfaces.IViewerLogic@{TimeWar.Logic.Interfaces.IViewerLogic}!GetProfiles@{GetProfiles}}
+\index{GetProfiles@{GetProfiles}!TimeWar.Logic.Interfaces.IViewerLogic@{TimeWar.Logic.Interfaces.IViewerLogic}}
+\doxysubsubsection{\texorpdfstring{GetProfiles()}{GetProfiles()}}
+{\footnotesize\ttfamily I\+List$<$\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_player_profile}{Player\+Profile}}$>$ Time\+War.\+Logic.\+Interfaces.\+I\+Viewer\+Logic.\+Get\+Profiles (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get all profile entity. 
+
+\begin{DoxyReturn}{Returns}
+Profile entities.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_viewer_logic_aaba37db0253fcb94f88778c1616bbd6a}{Time\+War.\+Logic.\+Classes.\+Viewer\+Logic}}.
+
+\mbox{\Hypertarget{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic_a26812ea9c48d8a27c53e5670395c4bdf}\label{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic_a26812ea9c48d8a27c53e5670395c4bdf}} 
+\index{TimeWar.Logic.Interfaces.IViewerLogic@{TimeWar.Logic.Interfaces.IViewerLogic}!GetSave@{GetSave}}
+\index{GetSave@{GetSave}!TimeWar.Logic.Interfaces.IViewerLogic@{TimeWar.Logic.Interfaces.IViewerLogic}}
+\doxysubsubsection{\texorpdfstring{GetSave()}{GetSave()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_save}{Save}} Time\+War.\+Logic.\+Interfaces.\+I\+Viewer\+Logic.\+Get\+Save (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Get save entity based on id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Entity id.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Save entity.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_viewer_logic_afe564509a1b1d3badacd87112827dee6}{Time\+War.\+Logic.\+Classes.\+Viewer\+Logic}}.
+
+\mbox{\Hypertarget{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic_a9e156232bcc9c83852f7fdc1e95c4fca}\label{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic_a9e156232bcc9c83852f7fdc1e95c4fca}} 
+\index{TimeWar.Logic.Interfaces.IViewerLogic@{TimeWar.Logic.Interfaces.IViewerLogic}!GetSaves@{GetSaves}}
+\index{GetSaves@{GetSaves}!TimeWar.Logic.Interfaces.IViewerLogic@{TimeWar.Logic.Interfaces.IViewerLogic}}
+\doxysubsubsection{\texorpdfstring{GetSaves()}{GetSaves()}}
+{\footnotesize\ttfamily I\+List$<$\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_save}{Save}}$>$ Time\+War.\+Logic.\+Interfaces.\+I\+Viewer\+Logic.\+Get\+Saves (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get all save entity. 
+
+\begin{DoxyReturn}{Returns}
+Save entites.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_viewer_logic_a2bbc4439440bae3a35e0f78821f95700}{Time\+War.\+Logic.\+Classes.\+Viewer\+Logic}}.
+
+\mbox{\Hypertarget{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic_ada7196e95eb7966852adadad30de6f83}\label{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_viewer_logic_ada7196e95eb7966852adadad30de6f83}} 
+\index{TimeWar.Logic.Interfaces.IViewerLogic@{TimeWar.Logic.Interfaces.IViewerLogic}!GetSelectedProfile@{GetSelectedProfile}}
+\index{GetSelectedProfile@{GetSelectedProfile}!TimeWar.Logic.Interfaces.IViewerLogic@{TimeWar.Logic.Interfaces.IViewerLogic}}
+\doxysubsubsection{\texorpdfstring{GetSelectedProfile()}{GetSelectedProfile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_player_profile}{Player\+Profile}} Time\+War.\+Logic.\+Interfaces.\+I\+Viewer\+Logic.\+Get\+Selected\+Profile (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets selected player profile. 
+
+\begin{DoxyReturn}{Returns}
+Selected player profile.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_viewer_logic_ae71e0a413db0a8556401950c5e87f8c6}{Time\+War.\+Logic.\+Classes.\+Viewer\+Logic}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+feleves/\+Time\+War/\+Time\+War.\+Logic/\+Interfaces/I\+Viewer\+Logic.\+cs\end{DoxyCompactItemize}

@@ -19,9 +19,10 @@ namespace TimeWar.Model.Objects
         private bool[][] ground;
         private int[][] decorations;
         private List<Enemy> enemies;
+        private List<Enemy> checkpointEnemies;
         private List<PointOfInterest> pointOfInterests;
+        private List<PointOfInterest> checkpointPois;
         private List<Bullet> bullets;
-        private List<Enemy> checkPointEnemies;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameWorld"/> class.
@@ -117,6 +118,16 @@ namespace TimeWar.Model.Objects
         }
 
         /// <summary>
+        /// Gets or sets saved health value.
+        /// </summary>
+        public int SavedHealt { get; set; }
+
+        /// <summary>
+        /// Gets or sets saved shield value.
+        /// </summary>
+        public int SavedShield { get; set; }
+
+        /// <summary>
         /// Gets bullets.
         /// </summary>
         /// <returns>Return currently spawned bullets collection.</returns>
@@ -124,7 +135,12 @@ namespace TimeWar.Model.Objects
         {
             get
             {
-                IReadOnlyList<Bullet> output = this.bullets;
+                IReadOnlyList<Bullet> output;
+                lock (this.bullets)
+                {
+                    output = this.bullets.ToList();
+                }
+
                 return output;
             }
         }
@@ -136,7 +152,12 @@ namespace TimeWar.Model.Objects
         {
             get
             {
-                IReadOnlyList<Enemy> output = this.enemies;
+                IReadOnlyList<Enemy> output;
+                lock (this.enemies)
+                {
+                    output = this.enemies.ToList();
+                }
+
                 return output;
             }
         }
@@ -148,7 +169,12 @@ namespace TimeWar.Model.Objects
         {
             get
             {
-                IReadOnlyList<PointOfInterest> output = this.pointOfInterests;
+                IReadOnlyList<PointOfInterest> output;
+                lock (this.pointOfInterests)
+                {
+                    output = this.pointOfInterests.ToList();
+                }
+
                 return output;
             }
         }
@@ -343,6 +369,14 @@ namespace TimeWar.Model.Objects
         }
 
         /// <summary>
+        /// Remove bullets.
+        /// </summary>
+        public void RemoveBullets()
+        {
+            this.bullets = new List<Bullet>();
+        }
+
+        /// <summary>
         /// Add new enemy.
         /// </summary>
         /// <param name="enemy">Character entity.</param>
@@ -378,23 +412,26 @@ namespace TimeWar.Model.Objects
         /// <summary>
         /// Save enmies.
         /// </summary>
-        public void SaveEnemies()
+        public void CheckpointSave()
         {
-            Debug.WriteLine("Enemies saved");
-            this.checkPointEnemies = DeepCopy(this.enemies);
+            Debug.WriteLine("Checkpoint saved");
+            this.checkpointEnemies = DeepCopyEnemies(this.enemies);
+            this.checkpointPois = DeepCopyPois(this.pointOfInterests);
         }
 
         /// <summary>
         /// Gets returns checkpoint saved enemies.
         /// </summary>
-        public void LoadEnemies()
+        public void CheckpointLoad()
         {
-            Debug.WriteLine("Enemies loaded");
+            Debug.WriteLine("Checkpoint loaded");
             this.EnemiesLoaded = true;
-            this.enemies = DeepCopy(this.checkPointEnemies);
+            this.RemoveBullets();
+            this.enemies = DeepCopyEnemies(this.checkpointEnemies);
+            this.pointOfInterests = DeepCopyPois(this.checkpointPois);
         }
 
-        private static List<Enemy> DeepCopy(List<Enemy> enemies)
+        private static List<Enemy> DeepCopyEnemies(List<Enemy> enemies)
         {
             List<Enemy> enemyList = new List<Enemy>();
             foreach (Enemy enemy in enemies)
@@ -404,6 +441,18 @@ namespace TimeWar.Model.Objects
             }
 
             return enemyList;
+        }
+
+        private static List<PointOfInterest> DeepCopyPois(List<PointOfInterest> pois)
+        {
+            List<PointOfInterest> poiList = new List<PointOfInterest>();
+            foreach (PointOfInterest poi in pois)
+            {
+                PointOfInterest p = new PointOfInterest(poi.Type, poi.Height, poi.Width, poi.SpriteFile, poi.Position);
+                poiList.Add(p);
+            }
+
+            return poiList;
         }
     }
 }

@@ -7,6 +7,7 @@ namespace TimeWar.Renderer
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
+    using System.Linq;
     using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Media;
@@ -29,13 +30,18 @@ namespace TimeWar.Renderer
         private Drawing titleCache;
         private Drawing playerCache;
         private Dictionary<string, Brush> staticBrushes;
-        private Dictionary<IGameObject, ImageBrush[][]> spriteBrushes;
+        private Dictionary<string, ImageBrush[][]> spriteBrushes;
         private Dictionary<string, IGameObject> gameObjects;
         private HashSet<IGameObject> uniqueObjectCache;
         private HashSet<string> loadCache;
         private List<IGameObject> layers;
         private double backgroundLayerBoundx;
         private double backgroundLayerBoundy;
+        private int movingcount;
+        private int framecounter;
+        private DrawingGroup spikeCache;
+        private Uri uri = new Uri(@"Sounds/step7.wav", UriKind.Relative);
+        private MediaPlayer player;
 
         // private List<Character> characters;
         private int currentSprite;
@@ -60,13 +66,17 @@ namespace TimeWar.Renderer
             this.menuMode = menuMode;
             this.scrollMode = scrollmode;
             this.title = title;
-            this.spriteBrushes = new Dictionary<IGameObject, ImageBrush[][]>();
+            this.spriteBrushes = new Dictionary<string, ImageBrush[][]>();
             this.gameObjects = new Dictionary<string, IGameObject>();
             this.staticBrushes = new Dictionary<string, Brush>();
             this.uniqueObjectCache = new HashSet<IGameObject>();
             this.loadCache = new HashSet<string>();
             this.spriteTimer.Start();
+            this.framecounter = 0;
+            this.player = new MediaPlayer();
+            this.player.Open(this.uri);
             this.WindowChanged = false;
+            this.spikeCache = new DrawingGroup();
             this.currentSprite = 0;
             this.firstRun = true;
             this.InitDecorations();
@@ -74,7 +84,7 @@ namespace TimeWar.Renderer
             this.layers = new List<IGameObject>();
             for (int i = 0; i < RendererConfig.NumberOfLayers; i++)
             {
-                this.layers.Add(new StaticObject(RendererConfig.LayersHeight, RendererConfig.LayersWidth, RendererConfig.LayersSpriteFile[i], new System.Drawing.Point(0, this.model.Camera.GetViewportY + RendererConfig.LayersVerticalOffset)));
+                this.layers.Add(new StaticObject(RendererConfig.LayersHeight, RendererConfig.LayersWidth, RendererConfig.LayersSpriteFile[i], new System.Drawing.Point(0, Math.Abs(this.model.Camera.GetViewportY) + RendererConfig.LayersVerticalOffset)));
             }
         }
 
@@ -84,15 +94,26 @@ namespace TimeWar.Renderer
         public bool WindowChanged { get; set; }
 
         /// <summary>
+        /// Gets number of moving objects.
+        /// </summary>
+        public int MovingObjectsCount
+        {
+            get { return this.movingcount; }
+        }
+
+        /// <summary>
         /// Build drawed game world.
         /// </summary>
         /// <returns>Drawing with all entities for render.</returns>
         public Drawing BuildDrawing()
         {
+            this.framecounter++;
+            this.movingcount = 0;
             this.currentSprite = (int)this.spriteTimer.Elapsed.TotalMilliseconds / 100;
             DrawingGroup dg = new DrawingGroup();
             dg.Children.Add(this.GetBackgroundLayers());
             dg.Children.Add(this.GetBackground());
+            dg.Children.Add(this.GetPois());
             dg.Children.Add(this.GetDecorations());
             dg.Children.Add(this.GetBullets());
             dg.Children.Add(this.GetEnemies());
@@ -112,7 +133,7 @@ namespace TimeWar.Renderer
             return dg;
         }
 
-        private static void StateMachine(IGameObject obj)
+        private void StateMachine(IGameObject obj)
         {
             if (obj.MovementVector.X > 0 && obj.MovementVector.Y > 0)
             {
@@ -125,10 +146,20 @@ namespace TimeWar.Renderer
             else if (obj.MovementVector.X > 0)
             {
                 obj.Stance = Stances.Right;
+                if (this.currentSprite % 4 == 0 && this.framecounter % 6 == 0)
+                {
+                    this.player.Stop();
+                    this.player.Play();
+                }
             }
             else if (obj.MovementVector.X < 0)
             {
                 obj.Stance = Stances.Left;
+                if (this.currentSprite % 4 == 0 && this.framecounter % 6 == 0)
+                {
+                    this.player.Stop();
+                    this.player.Play();
+                }
             }
             else if (obj.MovementVector.Y > 0 && obj.MovementVector.Y < 0)
             {
@@ -179,7 +210,7 @@ namespace TimeWar.Renderer
 
         private Brush GetSpriteBrush(IGameObject obj, bool tiled = false, double boundx = 0, double boundy = 0)
         {
-            if (!this.spriteBrushes.ContainsKey(obj))
+            if (!this.spriteBrushes.Any(x => x.Key == obj.SpriteFile))
             {
                 ImageBrush[][] imageBrushes = Sprite.CreateSprite(obj.Height, obj.Width, obj.SpriteFile);
                 if (tiled)
@@ -196,16 +227,16 @@ namespace TimeWar.Renderer
                     }
                 }
 
-                this.spriteBrushes.Add(obj, imageBrushes);
+                this.spriteBrushes.Add(obj.SpriteFile, imageBrushes);
             }
 
             if (!obj.StanceLess)
             {
-                StateMachine(obj);
-                return this.spriteBrushes[obj][(int)obj.Stance][this.currentSprite % this.spriteBrushes[obj][(int)obj.Stance].Length];
+                this.StateMachine(obj);
+                return this.spriteBrushes[obj.SpriteFile][(int)obj.Stance][this.currentSprite % this.spriteBrushes[obj.SpriteFile][(int)obj.Stance].Length];
             }
 
-            return this.spriteBrushes[obj][0][this.currentSprite % this.spriteBrushes[obj][0].Length];
+            return this.spriteBrushes[obj.SpriteFile][0][this.currentSprite % this.spriteBrushes[obj.SpriteFile][0].Length];
         }
 
         private Drawing GetBackground()
@@ -230,9 +261,10 @@ namespace TimeWar.Renderer
         private Drawing GetBackgroundLayers()
         {
             DrawingGroup dg = new DrawingGroup();
-            for (int i = 0; i < RendererConfig.NumberOfLayers; i++)
+            for (int i = 0; i < RendererConfig.NumberOfLayers - 1; i++)
             {
-                Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(this.layers[i].Position.X) - (this.model.Camera.GetViewportX * RendererConfig.LayersHorizontalSpeed[i]), this.model.Camera.GetRelativeObjectPosY(this.layers[i].Position.Y) - (this.model.Camera.GetViewportY * RendererConfig.LayersVerticalSpeed[i]), this.layers[i].Width * this.model.CurrentWorld.Magnify * 4, this.layers[i].Height * this.model.CurrentWorld.Magnify));
+                Rect bg = new Rect(this.model.Camera.GetRelativeObjectPosX(this.layers[i].Position.X) - (this.model.Camera.GetViewportX * RendererConfig.LayersHorizontalSpeed[i]), this.model.Camera.GetRelativeObjectPosY(this.layers[i].Position.Y) - (this.model.Camera.GetViewportY * RendererConfig.LayersVerticalSpeed[i]), this.layers[i].Width * this.model.CurrentWorld.Magnify * 10, this.layers[i].Height * this.model.CurrentWorld.Magnify);
+                Geometry g = new RectangleGeometry(bg);
                 if (this.backgroundLayerBoundx == 0 || this.backgroundLayerBoundy == 0)
                 {
                     this.backgroundLayerBoundx = g.Bounds.Size.Width;
@@ -240,6 +272,20 @@ namespace TimeWar.Renderer
                 }
 
                 GeometryDrawing layerdraw = new GeometryDrawing(this.GetSpriteBrush(this.layers[i], true, this.backgroundLayerBoundx, this.backgroundLayerBoundy), null, g);
+                dg.Children.Add(layerdraw);
+            }
+
+            if (this.model.InRewind)
+            {
+                Rect bg = new Rect(this.model.Camera.GetRelativeObjectPosX(this.layers[this.layers.Count - 1].Position.X) - (this.model.Camera.GetViewportX * RendererConfig.LayersHorizontalSpeed[this.layers.Count - 1]), this.model.Camera.GetRelativeObjectPosY(this.layers[this.layers.Count - 1].Position.Y) - (this.model.Camera.GetViewportY * RendererConfig.LayersVerticalSpeed[this.layers.Count - 1]), this.layers[this.layers.Count - 1].Width * this.model.CurrentWorld.Magnify * 20, this.layers[this.layers.Count - 1].Height * this.model.CurrentWorld.Magnify);
+                Geometry g = new RectangleGeometry(bg);
+                if (this.backgroundLayerBoundx == 0 || this.backgroundLayerBoundy == 0)
+                {
+                    this.backgroundLayerBoundx = g.Bounds.Size.Width;
+                    this.backgroundLayerBoundy = g.Bounds.Size.Height;
+                }
+
+                GeometryDrawing layerdraw = new GeometryDrawing(this.GetSpriteBrush(this.layers[this.layers.Count - 1], true, this.backgroundLayerBoundx, this.backgroundLayerBoundy), null, g);
                 dg.Children.Add(layerdraw);
             }
 
@@ -304,6 +350,7 @@ namespace TimeWar.Renderer
 
         private Drawing GetPlayer()
         {
+            this.movingcount++;
             Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(this.model.Hero.Position.X), this.model.Camera.GetRelativeObjectPosY(this.model.Hero.Position.Y), this.model.Hero.Width * this.model.CurrentWorld.Magnify, this.model.Hero.Height * this.model.CurrentWorld.Magnify));
             this.playerCache = new GeometryDrawing(this.GetSpriteBrush(this.model.Hero), null, g);
             return this.playerCache;
@@ -387,12 +434,13 @@ namespace TimeWar.Renderer
             DrawingGroup dg = new DrawingGroup();
             foreach (Bullet item in this.model.CurrentWorld.GetBullets)
             {
+                this.movingcount++;
                 Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(item.Position.X), this.model.Camera.GetRelativeObjectPosY(item.Position.Y), item.Width * this.model.CurrentWorld.Magnify, item.Height * this.model.CurrentWorld.Magnify));
                 RotateTransform rotate = new RotateTransform();
                 rotate.CenterX = 0.5;
                 rotate.CenterY = 0.5;
                 rotate.Angle = Math.Atan2(item.MovementVectorF.Y, item.MovementVectorF.X) * 180 / Math.PI;
-                Brush brush = this.GetSpriteBrush(item);
+                Brush brush = this.GetSpriteBrush(item).Clone();
 
                 // Brush brush = Brushes.Red;
                 brush.RelativeTransform = rotate;
@@ -407,6 +455,7 @@ namespace TimeWar.Renderer
             DrawingGroup dg = new DrawingGroup();
             foreach (Enemy item in this.model.CurrentWorld.GetEnemies)
             {
+                this.movingcount++;
                 Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(item.Position.X), this.model.Camera.GetRelativeObjectPosY(item.Position.Y), item.Width * this.model.CurrentWorld.Magnify, item.Height * this.model.CurrentWorld.Magnify));
                 if (item.Health > item.CurrentHealth && item.CurrentHealth >= 0)
                 {
@@ -415,6 +464,21 @@ namespace TimeWar.Renderer
                 }
 
                 dg.Children.Add(new GeometryDrawing(this.GetSpriteBrush(item), null, g));
+            }
+
+            return dg;
+        }
+
+        private Drawing GetPois()
+        {
+            DrawingGroup dg = new DrawingGroup();
+            foreach (PointOfInterest item in this.model.CurrentWorld.GetPois)
+            {
+                if (item.Type != POIType.EnviromentalDamage)
+                {
+                    Geometry g = new RectangleGeometry(new Rect(this.model.Camera.GetRelativeObjectPosX(item.Position.X * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize), this.model.Camera.GetRelativeObjectPosY(item.Position.Y * this.model.CurrentWorld.Magnify * this.model.CurrentWorld.TileSize), item.Width * this.model.CurrentWorld.Magnify, item.Height * this.model.CurrentWorld.Magnify));
+                    dg.Children.Add(new GeometryDrawing(this.GetSpriteBrush(item), null, g));
+                }
             }
 
             return dg;

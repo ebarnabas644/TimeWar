@@ -58,6 +58,7 @@ namespace TimeWar.Logic.Classes.POIs
         {
             this.TimedPoi = true;
             this.Timer = (int)this.Character.EffectStopwatch.ElapsedMilliseconds + this.timeOfEffect;
+            this.Model.CurrentWorld.RemovePOI(this.Poi);
             this.Character.EffectCounter++;
         }
 

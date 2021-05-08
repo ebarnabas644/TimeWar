@@ -51,6 +51,11 @@ namespace TimeWar.Model.Objects.Classes
         /// Player can spam bullets.
         /// </summary>
         RapidFire,
+
+        /// <summary>
+        /// Enviromental damage.
+        /// </summary>
+        EnviromentalDamage,
     }
 
     /// <summary>

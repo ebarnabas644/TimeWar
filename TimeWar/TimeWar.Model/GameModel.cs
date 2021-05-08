@@ -4,6 +4,7 @@
 
 namespace TimeWar.Model
 {
+    using System.Drawing;
     using TimeWar.Model.Objects;
 
     /// <summary>
@@ -16,6 +17,8 @@ namespace TimeWar.Model
         /// </summary>
         public GameModel()
         {
+            this.LevelFinished = false;
+            this.InRewind = false;
         }
 
         /// <summary>
@@ -32,5 +35,20 @@ namespace TimeWar.Model
         /// Gets or sets the camera.
         /// </summary>
         public Viewport Camera { get; set; }
+
+        /// <summary>
+        /// Gets or sets mouse location.
+        /// </summary>
+        public Point MouseLocation { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether level finished.
+        /// </summary>
+        public bool LevelFinished { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether in rewind.
+        /// </summary>
+        public bool InRewind { get; set; }
     }
 }

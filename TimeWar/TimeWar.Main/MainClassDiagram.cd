@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TimeWar.Main.MyIoc" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\MyIoc.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TimeWar.Main.App" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Main.GameControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACwBAABEACEgQEAAAEAAgDJAIBAIRAAAIAjgYCQIwAA=</HashCode>
+      <FileName>GameControl.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TimeWar.Main.MainWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TimeWar.Main.MenuControl" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAFAAAAgQABAAABAACIAABAAAAAAIACAYCAIgAA=</HashCode>
+      <FileName>MenuControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Main.BL.Classes.ManagerLogicUI" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAABEAgAAAAAAAAACAgAAAAAAABAAAQACAAEAA=</HashCode>
+      <FileName>BL\Classes\ManagerLogicUI.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TimeWar.Main.BL.Classes.ViewerLogicUI" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAIAgAACAAAAAAAAAAAAAAAAAAIAAAgAAAAA=</HashCode>
+      <FileName>BL\Classes\ViewerLogicUI.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TimeWar.Main.BL.Factory" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAEAAAABAAAAAQAAgAgIAAAEAAAAAQ=</HashCode>
+      <FileName>BL\Factory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TimeWar.Main.Data.MapFiles" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAIAAAAAQAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Data\MapFiles.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Main.Data.MapRecordUI" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAoACAAAACAAAAAAAAgAABAAAAAQAAAIAACAABA=</HashCode>
+      <FileName>Data\MapRecordUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Main.Data.PlayerProfileUI" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgEQAAIACAAAACAEAIEAEACAABAAAEAAAAAIAgAAEAI=</HashCode>
+      <FileName>Data\PlayerProfileUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Main.Data.SaveUI" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABKAAAAAAAAACAAAAQAAgAEAAAAAAAAAAAAAAAAQgA=</HashCode>
+      <FileName>Data\SaveUI.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Main.View.BoolToVisibilityConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\BoolToVisibilityConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TimeWar.Main.View.GameWindow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAiAAAAAAAAAAgAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>View\GamePage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TimeWar.Main.View.IntToDateConverter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\IntToDateConverter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TimeWar.Main.View.MenuPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAiAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\MenuPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TimeWar.Main.View.NavigationService&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAJAAAIAAAACAAAAEgAAQgAFAEAABAAAAAAA=</HashCode>
+      <FileName>View\NavigationService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TimeWar.Main.View.NewGamePage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAiAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\NewGamePage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TimeWar.Main.View.ProfileAddControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAgAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\ProfileAddControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TimeWar.Main.View.ProfileEditControl" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAgAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\ProfileEditControl.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TimeWar.Main.View.ProfilesPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAiAAAgAAAAAAAAAAAAAAAAAACAAAAACAA=</HashCode>
+      <FileName>View\ProfilesPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="TimeWar.Main.ViewModel.GameViewModel" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAgQAMAIEADAAABAgAAAYAAAASAAAAEA=</HashCode>
+      <FileName>ViewModel\GameViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Main.ViewModel.MainViewModel" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModel\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Main.ViewModel.MenuViewModel" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAIAAAIABAAAAAAIAAAAIAAAACCAAAAAA=</HashCode>
+      <FileName>ViewModel\MenuViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Main.ViewModel.NewGameViewModel" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIEAAAAEAAAABAAEIAAAAIAAAACAAAAAAAAAQACAAAA=</HashCode>
+      <FileName>ViewModel\NewGameViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Main.ViewModel.ProfilesViewModel" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAgAQIAIABAAIIAAAAAACAAAAAAAAABAQCAAAAA=</HashCode>
+      <FileName>ViewModel\ProfilesViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Main.ViewModel.ViewModelLocator" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAEAAAAAAAQAAAACAABAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>ViewModel\ViewModelLocator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="TimeWar.Main.BL.Interfaces.IManagerLogicUI" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAABEAAAAAAAAAAACAgAAAAAAAAAAAQACAAEAA=</HashCode>
+      <FileName>BL\Interfaces\IManagerLogicUI.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TimeWar.Main.BL.Interfaces.IViewerLogicUI" Collapsed="true">
+    <Position X="4" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAIAAAACAAAAAAAAAAAAAAAAAAIAAAgAAAAA=</HashCode>
+      <FileName>BL\Interfaces\IViewerLogicUI.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TimeWar.Main.View.INavigationService&lt;T&gt;" Collapsed="true">
+    <Position X="2.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>View\INavigationService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="TimeWar.Main.View.NavigationPages" Collapsed="true">
+    <Position X="0.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAEAAAAAAAAABCACA=</HashCode>
+      <FileName>View\NavigationPages.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

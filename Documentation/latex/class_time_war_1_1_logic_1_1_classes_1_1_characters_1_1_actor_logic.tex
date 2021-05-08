@@ -1,0 +1,559 @@
+\hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic}{}\doxysection{Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic Class Reference}
+\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic}\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+
+
+Base class for characters and enemies.  
+
+
+Inheritance diagram for Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.210375cm]{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a9b54448302d70926ece480590f79f572}{One\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em One Tick. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ae2a64725c2d26dc19c6278079d255d0e}{Actor\+Logic}} (\mbox{\hyperlink{class_time_war_1_1_model_1_1_game_model}{Game\+Model}} model, \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_character}{Character}} character, \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_command_manager}{Command\+Manager}} command\+Manager)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic}{Actor\+Logic}} class. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ac3e207f62d1f6c515b125729b0582b1e}{Pixel\+To\+Tile}} (int num)
+\begin{DoxyCompactList}\small\item\em Converts pixel to tile values. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a069c29c130877f890f9f39c2c7f35ad3}{Tile\+To\+Pixel}} (int num)
+\begin{DoxyCompactList}\small\item\em Converts tile to pixel values. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a8ce6326b1c197eca3943ae72f3950e81}{Ground\+Collision}} (Point new\+Point)
+\begin{DoxyCompactList}\small\item\em Ground collsiion. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ae5aeafdfb4b92094e8cd602b092bb6ea}{Top\+Collision}} (Point new\+Point)
+\begin{DoxyCompactList}\small\item\em Top collsiion. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_afe7fa546def3e945d90b4ffe4860c906}{Add\+To\+Vector}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Increases or decreases the movement vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ad627ebed1f69101facfbc164e3bb3902}{Set\+VectorX}} (int x)
+\begin{DoxyCompactList}\small\item\em Sets x value of the vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a9e42e26194b1a6544da537cbbfd6c4c2}{Set\+VectorY}} (int y)
+\begin{DoxyCompactList}\small\item\em Sets y value of the vector. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a8753a393dc4964b381b0df1b45279c9b}{Wall\+Collision}} (Point new\+Point, bool right\+Wall=true)
+\begin{DoxyCompactList}\small\item\em Wall collsiion. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a796c9bc2b2b4808eeb11411a5e2b86c1}{Movement}} ()
+\begin{DoxyCompactList}\small\item\em Default Movement funtion. \end{DoxyCompactList}\item 
+abstract Point \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ac9e25db35a1ad0b37b0454244f553d09}{Move}} ()
+\begin{DoxyCompactList}\small\item\em Default move funtion. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_aeecfa84a7622db5adc4565fe7e63a777}{Jump}} ()
+\begin{DoxyCompactList}\small\item\em Jumping. \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ac332b2d3ec8ea8fd506d86fec084d2cd}{Attack}} ()
+\begin{DoxyCompactList}\small\item\em Default attack method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a68dcb0e5b6d626f57ea50a197620c86a}{Default\+Jump\+Height}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets default jump height. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_character}{Character}} \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ab83b875a9e8aee31bf004204ede65d32}{Character}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the character. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a48ab8717ee0dced2eade500f5e2405ac}{Max\+Jump\+Height}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the force that is applied when an actor is jumping. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_time_war_1_1_model_1_1_objects_1_1_classes_a565415ebd33e3eeab771dd7afcd5f5a7}{Bullet\+Type}} \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ae2763634bab16a351ee3ad29480d75cf}{Type\+Of\+Bullet}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets bullet type. \end{DoxyCompactList}\item 
+Stopwatch \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a6fb22f8b76f17ae413d9aecf0d1e4c70}{Jumping\+Time\+Out}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets if a character can jump again. \end{DoxyCompactList}\item 
+Stopwatch \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a22656ae8670f116d65c6550bd845efe2}{Acceleration\+Stopwatch}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the time of falling for a character. \end{DoxyCompactList}\item 
+Stopwatch \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_afca46809dbe026af4baeaf2ed9cf6970}{Attack\+Stopwatch}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the attack stopwatch. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a2c3e2e2036c1e8c2adaf8e280b3d6db9}{Acceleration}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets gravity acceleration. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a3ee404d3732c25e5c0a5bbc210652bfc}{Is\+Jumping}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets a value indicating whether the actor is jumping. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a460d46b714974f65f6a53253dde9a15a}{Max\+Movement\+Speed}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the force that is applied every tick when an actor is moving. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ab6fd38fa45cc417ec9ca269d833f22e0}{Default\+Acceleration}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the force that is applied every tick when a player is moving. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_time_war_1_1_model_1_1_game_model}{Game\+Model}} \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a0c99d0ce1bd19997dd259af6795d886c}{Model}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the game model. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_command_manager}{Command\+Manager}} \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ac063430c7b0cc96bcd30cde3b3349476}{Command\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the command manager. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for characters and enemies. 
+
+
+
+Definition at line 18 of file Actor\+Logic.\+cs.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ae2a64725c2d26dc19c6278079d255d0e}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ae2a64725c2d26dc19c6278079d255d0e}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!ActorLogic@{ActorLogic}}
+\index{ActorLogic@{ActorLogic}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{ActorLogic()}{ActorLogic()}}
+{\footnotesize\ttfamily Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Actor\+Logic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_time_war_1_1_model_1_1_game_model}{Game\+Model}}}]{model,  }\item[{\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_character}{Character}}}]{character,  }\item[{\mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_command_manager}{Command\+Manager}}}]{command\+Manager }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Initializes a new instance of the \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic}{Actor\+Logic}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Game model.\\
+\hline
+{\em character} & Character.\\
+\hline
+{\em command\+Manager} & Command manger.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 32 of file Actor\+Logic.\+cs.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_afe7fa546def3e945d90b4ffe4860c906}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_afe7fa546def3e945d90b4ffe4860c906}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!AddToVector@{AddToVector}}
+\index{AddToVector@{AddToVector}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{AddToVector()}{AddToVector()}}
+{\footnotesize\ttfamily void Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Add\+To\+Vector (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Increases or decreases the movement vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X direction.\\
+\hline
+{\em y} & Y direction.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 225 of file Actor\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ac332b2d3ec8ea8fd506d86fec084d2cd}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ac332b2d3ec8ea8fd506d86fec084d2cd}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!Attack@{Attack}}
+\index{Attack@{Attack}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{Attack()}{Attack()}}
+{\footnotesize\ttfamily abstract void Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Attack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Default attack method. 
+
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_burst_enemy_logic_a299019870aab1485491e73f0a7b899a1}{Time\+War.\+Logic.\+Classes.\+Characters.\+Burst\+Enemy\+Logic}}, \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_ab126028be466363116e9c7a09291d010}{Time\+War.\+Logic.\+Classes.\+Characters.\+Basic\+Enemy\+Logic}}, and \mbox{\hyperlink{class_time_war_1_1_logic_1_1_character_logic_a95f7a871b279757bfd57226c6bced590}{Time\+War.\+Logic.\+Character\+Logic}}.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a8ce6326b1c197eca3943ae72f3950e81}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a8ce6326b1c197eca3943ae72f3950e81}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!GroundCollision@{GroundCollision}}
+\index{GroundCollision@{GroundCollision}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{GroundCollision()}{GroundCollision()}}
+{\footnotesize\ttfamily bool Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Ground\+Collision (\begin{DoxyParamCaption}\item[{Point}]{new\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Ground collsiion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Point} & New movement point.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the movemnt would collide.
+\end{DoxyReturn}
+
+
+Definition at line 158 of file Actor\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_aeecfa84a7622db5adc4565fe7e63a777}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_aeecfa84a7622db5adc4565fe7e63a777}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!Jump@{Jump}}
+\index{Jump@{Jump}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{Jump()}{Jump()}}
+{\footnotesize\ttfamily virtual int Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Jump (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Jumping. 
+
+\begin{DoxyReturn}{Returns}
+Jumping value.
+\end{DoxyReturn}
+
+
+Definition at line 381 of file Actor\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ac9e25db35a1ad0b37b0454244f553d09}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ac9e25db35a1ad0b37b0454244f553d09}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!Move@{Move}}
+\index{Move@{Move}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily abstract Point Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+
+
+Default move funtion. 
+
+\begin{DoxyReturn}{Returns}
+New movement point.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_ad2da561044a65fdb3e71e97370ef3f7d}{Time\+War.\+Logic.\+Classes.\+Characters.\+Basic\+Enemy\+Logic}}, and \mbox{\hyperlink{class_time_war_1_1_logic_1_1_character_logic_a1736766d08ca5855ca1e95705b5f08a2}{Time\+War.\+Logic.\+Character\+Logic}}.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a796c9bc2b2b4808eeb11411a5e2b86c1}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a796c9bc2b2b4808eeb11411a5e2b86c1}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!Movement@{Movement}}
+\index{Movement@{Movement}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{Movement()}{Movement()}}
+{\footnotesize\ttfamily virtual void Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Movement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Default Movement funtion. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_ab8457a28279d964c998fd2207c63d0e7}{Time\+War.\+Logic.\+Classes.\+Characters.\+Basic\+Enemy\+Logic}}.
+
+
+
+Definition at line 301 of file Actor\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a9b54448302d70926ece480590f79f572}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a9b54448302d70926ece480590f79f572}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!OneTick@{OneTick}}
+\index{OneTick@{OneTick}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{OneTick()}{OneTick()}}
+{\footnotesize\ttfamily virtual void Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+One\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+One Tick. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_rapid_fire_enemy_logic_a293c158d4736613850fa7c703b6749a2}{Time\+War.\+Logic.\+Classes.\+Characters.\+Rapid\+Fire\+Enemy\+Logic}}, \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_ae9c51ecfd8819df75a72a1ef187aa4f2}{Time\+War.\+Logic.\+Classes.\+Characters.\+Basic\+Enemy\+Logic}}, and \mbox{\hyperlink{class_time_war_1_1_logic_1_1_character_logic_a505947fd4e432258102e6895f141665b}{Time\+War.\+Logic.\+Character\+Logic}}.
+
+
+
+Definition at line 128 of file Actor\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ac3e207f62d1f6c515b125729b0582b1e}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ac3e207f62d1f6c515b125729b0582b1e}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!PixelToTile@{PixelToTile}}
+\index{PixelToTile@{PixelToTile}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{PixelToTile()}{PixelToTile()}}
+{\footnotesize\ttfamily int Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Pixel\+To\+Tile (\begin{DoxyParamCaption}\item[{int}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Converts pixel to tile values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & Pixel value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Tile value.
+\end{DoxyReturn}
+
+
+Definition at line 138 of file Actor\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ad627ebed1f69101facfbc164e3bb3902}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ad627ebed1f69101facfbc164e3bb3902}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!SetVectorX@{SetVectorX}}
+\index{SetVectorX@{SetVectorX}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{SetVectorX()}{SetVectorX()}}
+{\footnotesize\ttfamily void Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Set\+VectorX (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Sets x value of the vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X value.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 234 of file Actor\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a9e42e26194b1a6544da537cbbfd6c4c2}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a9e42e26194b1a6544da537cbbfd6c4c2}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!SetVectorY@{SetVectorY}}
+\index{SetVectorY@{SetVectorY}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{SetVectorY()}{SetVectorY()}}
+{\footnotesize\ttfamily void Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Set\+VectorY (\begin{DoxyParamCaption}\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Sets y value of the vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & Y value.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 243 of file Actor\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a069c29c130877f890f9f39c2c7f35ad3}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a069c29c130877f890f9f39c2c7f35ad3}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!TileToPixel@{TileToPixel}}
+\index{TileToPixel@{TileToPixel}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{TileToPixel()}{TileToPixel()}}
+{\footnotesize\ttfamily int Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Tile\+To\+Pixel (\begin{DoxyParamCaption}\item[{int}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Converts tile to pixel values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & Tile value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pixel value.
+\end{DoxyReturn}
+
+
+Definition at line 148 of file Actor\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ae5aeafdfb4b92094e8cd602b092bb6ea}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ae5aeafdfb4b92094e8cd602b092bb6ea}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!TopCollision@{TopCollision}}
+\index{TopCollision@{TopCollision}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{TopCollision()}{TopCollision()}}
+{\footnotesize\ttfamily bool Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Top\+Collision (\begin{DoxyParamCaption}\item[{Point}]{new\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Top collsiion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Point} & New movement point.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the movemnt would collide.
+\end{DoxyReturn}
+
+
+Definition at line 193 of file Actor\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a8753a393dc4964b381b0df1b45279c9b}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a8753a393dc4964b381b0df1b45279c9b}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!WallCollision@{WallCollision}}
+\index{WallCollision@{WallCollision}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{WallCollision()}{WallCollision()}}
+{\footnotesize\ttfamily bool Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Wall\+Collision (\begin{DoxyParamCaption}\item[{Point}]{new\+Point,  }\item[{bool}]{right\+Wall = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Wall collsiion. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Point} & New movement point.\\
+\hline
+{\em right\+Wall} & True if you want to check right wall collision, false if you would like to check left wall.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the movemnt would collide.
+\end{DoxyReturn}
+
+
+Definition at line 254 of file Actor\+Logic.\+cs.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a2c3e2e2036c1e8c2adaf8e280b3d6db9}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a2c3e2e2036c1e8c2adaf8e280b3d6db9}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!Acceleration@{Acceleration}}
+\index{Acceleration@{Acceleration}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{Acceleration}{Acceleration}}
+{\footnotesize\ttfamily int Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Acceleration\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Gets or sets gravity acceleration. 
+
+
+
+Definition at line 98 of file Actor\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a22656ae8670f116d65c6550bd845efe2}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a22656ae8670f116d65c6550bd845efe2}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!AccelerationStopwatch@{AccelerationStopwatch}}
+\index{AccelerationStopwatch@{AccelerationStopwatch}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{AccelerationStopwatch}{AccelerationStopwatch}}
+{\footnotesize\ttfamily Stopwatch Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Acceleration\+Stopwatch\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Gets or sets the time of falling for a character. 
+
+
+
+Definition at line 80 of file Actor\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_afca46809dbe026af4baeaf2ed9cf6970}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_afca46809dbe026af4baeaf2ed9cf6970}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!AttackStopwatch@{AttackStopwatch}}
+\index{AttackStopwatch@{AttackStopwatch}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{AttackStopwatch}{AttackStopwatch}}
+{\footnotesize\ttfamily Stopwatch Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Attack\+Stopwatch\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Gets or sets the attack stopwatch. 
+
+
+
+Definition at line 89 of file Actor\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ab83b875a9e8aee31bf004204ede65d32}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ab83b875a9e8aee31bf004204ede65d32}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!Character@{Character}}
+\index{Character@{Character}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{Character}{Character}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_character}{Character}} Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Character\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the character. 
+
+
+
+Definition at line 56 of file Actor\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ac063430c7b0cc96bcd30cde3b3349476}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ac063430c7b0cc96bcd30cde3b3349476}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!CommandManager@{CommandManager}}
+\index{CommandManager@{CommandManager}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{CommandManager}{CommandManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_command_manager}{Command\+Manager}} Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Command\+Manager\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Gets or sets the command manager. 
+
+
+
+Definition at line 123 of file Actor\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ab6fd38fa45cc417ec9ca269d833f22e0}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ab6fd38fa45cc417ec9ca269d833f22e0}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!DefaultAcceleration@{DefaultAcceleration}}
+\index{DefaultAcceleration@{DefaultAcceleration}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{DefaultAcceleration}{DefaultAcceleration}}
+{\footnotesize\ttfamily int Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Default\+Acceleration\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Gets or sets the force that is applied every tick when a player is moving. 
+
+
+
+Definition at line 113 of file Actor\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a68dcb0e5b6d626f57ea50a197620c86a}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a68dcb0e5b6d626f57ea50a197620c86a}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!DefaultJumpHeight@{DefaultJumpHeight}}
+\index{DefaultJumpHeight@{DefaultJumpHeight}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{DefaultJumpHeight}{DefaultJumpHeight}}
+{\footnotesize\ttfamily int Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Default\+Jump\+Height\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets default jump height. 
+
+
+
+Definition at line 51 of file Actor\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a3ee404d3732c25e5c0a5bbc210652bfc}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a3ee404d3732c25e5c0a5bbc210652bfc}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!IsJumping@{IsJumping}}
+\index{IsJumping@{IsJumping}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{IsJumping}{IsJumping}}
+{\footnotesize\ttfamily bool Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Is\+Jumping\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Gets or sets a value indicating whether the actor is jumping. 
+
+
+
+Definition at line 103 of file Actor\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a6fb22f8b76f17ae413d9aecf0d1e4c70}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a6fb22f8b76f17ae413d9aecf0d1e4c70}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!JumpingTimeOut@{JumpingTimeOut}}
+\index{JumpingTimeOut@{JumpingTimeOut}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{JumpingTimeOut}{JumpingTimeOut}}
+{\footnotesize\ttfamily Stopwatch Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Jumping\+Time\+Out\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Gets or sets if a character can jump again. 
+
+
+
+Definition at line 71 of file Actor\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a48ab8717ee0dced2eade500f5e2405ac}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a48ab8717ee0dced2eade500f5e2405ac}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!MaxJumpHeight@{MaxJumpHeight}}
+\index{MaxJumpHeight@{MaxJumpHeight}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{MaxJumpHeight}{MaxJumpHeight}}
+{\footnotesize\ttfamily int Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Max\+Jump\+Height\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the force that is applied when an actor is jumping. 
+
+
+
+Definition at line 61 of file Actor\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a460d46b714974f65f6a53253dde9a15a}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a460d46b714974f65f6a53253dde9a15a}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!MaxMovementSpeed@{MaxMovementSpeed}}
+\index{MaxMovementSpeed@{MaxMovementSpeed}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{MaxMovementSpeed}{MaxMovementSpeed}}
+{\footnotesize\ttfamily int Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Max\+Movement\+Speed\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Gets or sets the force that is applied every tick when an actor is moving. 
+
+
+
+Definition at line 108 of file Actor\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a0c99d0ce1bd19997dd259af6795d886c}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_a0c99d0ce1bd19997dd259af6795d886c}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!Model@{Model}}
+\index{Model@{Model}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{Model}{Model}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_time_war_1_1_model_1_1_game_model}{Game\+Model}} Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Model\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Gets or sets the game model. 
+
+
+
+Definition at line 118 of file Actor\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ae2763634bab16a351ee3ad29480d75cf}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic_ae2763634bab16a351ee3ad29480d75cf}} 
+\index{TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}!TypeOfBullet@{TypeOfBullet}}
+\index{TypeOfBullet@{TypeOfBullet}!TimeWar.Logic.Classes.Characters.ActorLogic@{TimeWar.Logic.Classes.Characters.ActorLogic}}
+\doxysubsubsection{\texorpdfstring{TypeOfBullet}{TypeOfBullet}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_time_war_1_1_model_1_1_objects_1_1_classes_a565415ebd33e3eeab771dd7afcd5f5a7}{Bullet\+Type}} Time\+War.\+Logic.\+Classes.\+Characters.\+Actor\+Logic.\+Type\+Of\+Bullet\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Gets or sets bullet type. 
+
+
+
+Definition at line 66 of file Actor\+Logic.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+feleves/\+Time\+War/\+Time\+War.\+Logic/\+Classes/\+Characters/Actor\+Logic.\+cs\end{DoxyCompactItemize}

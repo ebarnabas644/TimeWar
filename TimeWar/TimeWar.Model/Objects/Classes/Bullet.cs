@@ -217,6 +217,28 @@ namespace TimeWar.Model.Objects.Classes
         /// <inheritdoc/>
         public int CurrentSprite { get; set; }
 
+        /// <inheritdoc/>
+        public override string ToString()
+        {
+            string retString = string.Empty;
+            retString += "bullet;"; // Bullet.
+            retString += this.Type + ";"; // bullet Type.
+            retString += this.Position.X + ";"; // Bullet position X.
+            retString += this.Position.Y + ";"; // Bullet position Y.
+            retString += this.Height + ";"; // Bullet hight,.
+            retString += this.Width + ";"; // Bullet width.
+            retString += this.Damage + ";"; // Bullet damage.
+            retString += this.MovementVector.X + ";"; // Movementvector X.
+            retString += this.MovementVector.Y + ";"; // Movementvector Y.
+            retString += this.MovementVectorF.X + ";"; // MovementvectorF X.
+            retString += this.MovementVectorF.Y + ";"; // MovementvectorF Y.
+            retString += this.Destination.X + ";"; // Bullet destination X.
+            retString += this.Destination.Y + ";"; // Bullet destination Y.
+            retString += this.Acceleration + ";"; // Bullet acceleration.
+            retString += this.PlayerBullet + ";"; // Player bullet or not.
+            return retString;
+        }
+
         private static PointF Normalize(PointF vector)
         {
             float distance = (float)Math.Sqrt((vector.X * vector.X) + (vector.Y * vector.Y));

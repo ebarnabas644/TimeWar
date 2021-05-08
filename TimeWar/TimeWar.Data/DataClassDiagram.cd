@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="TimeWar.Data.Models.Map" Collapsed="true">
+    <Position X="4" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAgAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Models\Map.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Data.Models.MapRecord" Collapsed="true">
+    <Position X="5.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAgAABAAAAAAAAAIAQCAAAA=</HashCode>
+      <FileName>Models\MapRecord.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Data.Models.PlayerProfile" Collapsed="true">
+    <Position X="7.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgEAAAAAAAAAAAAAAAAAEACAAAAAAAAAAAAIAAAAEAI=</HashCode>
+      <FileName>Models\PlayerProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Data.Models.Save" Collapsed="true">
+    <Position X="4" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAIAQAAQAA=</HashCode>
+      <FileName>Models\Save.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TimeWar.Data.Models.TimeWarContext" Collapsed="true">
+    <Position X="5.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAgAAIAAABAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\TimeWarContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
