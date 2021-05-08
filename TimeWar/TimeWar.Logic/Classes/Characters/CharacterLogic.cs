@@ -23,11 +23,6 @@ namespace TimeWar.Logic
     public class CharacterLogic : ActorLogic
     {
         /// <summary>
-        /// Fire event.
-        /// </summary>
-        public event EventHandler Fire;
-
-        /// <summary>
         /// Initializes a new instance of the <see cref="CharacterLogic"/> class.
         /// </summary>
         /// <param name="model">Game model entity.</param>
@@ -44,6 +39,11 @@ namespace TimeWar.Logic
         }
 
         /// <summary>
+        /// Fire event.
+        /// </summary>
+        public event EventHandler Fire;
+
+        /// <summary>
         /// Gets or sets time between attacks.
         /// </summary>
         public int AttackTime { get; set; }
@@ -57,20 +57,6 @@ namespace TimeWar.Logic
         /// Gets or sets the number of effects.
         /// </summary>
         public int EffectCounter { get; set; }
-
-        /// <inheritdoc/>
-        public override string ToString()
-        {
-            string retString = string.Empty;
-            retString += "player;"; // Player.
-            retString += this.Character.Position.X + ";"; // Character position X.
-            retString += this.Character.Position.Y + ";"; // Character position Y.
-            retString += this.Character.CurrentHealth + ";"; // Character health.
-            retString += this.Character.TypeOfBullet + ";"; // Type of bullet.
-            retString += this.Character.Height + ";"; // Character height.
-            retString += this.Character.Width + ";"; // Character Width.
-            return retString;
-        }
 
         /// <inheritdoc/>
         public override void OneTick()

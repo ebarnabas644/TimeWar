@@ -40,8 +40,8 @@ namespace TimeWar.Renderer
         private int movingcount;
         private int framecounter;
         private DrawingGroup spikeCache;
-        Uri uri = new Uri(@"Sounds/step7.wav", UriKind.Relative);
-        MediaPlayer player;
+        private Uri uri = new Uri(@"Sounds/step7.wav", UriKind.Relative);
+        private MediaPlayer player;
 
         // private List<Character> characters;
         private int currentSprite;
@@ -73,8 +73,8 @@ namespace TimeWar.Renderer
             this.loadCache = new HashSet<string>();
             this.spriteTimer.Start();
             this.framecounter = 0;
-            player = new MediaPlayer();
-            player.Open(uri);
+            this.player = new MediaPlayer();
+            this.player.Open(this.uri);
             this.WindowChanged = false;
             this.spikeCache = new DrawingGroup();
             this.currentSprite = 0;
@@ -148,8 +148,8 @@ namespace TimeWar.Renderer
                 obj.Stance = Stances.Right;
                 if (this.currentSprite % 4 == 0 && this.framecounter % 6 == 0)
                 {
-                    player.Stop();
-                    player.Play();
+                    this.player.Stop();
+                    this.player.Play();
                 }
             }
             else if (obj.MovementVector.X < 0)
@@ -157,8 +157,8 @@ namespace TimeWar.Renderer
                 obj.Stance = Stances.Left;
                 if (this.currentSprite % 4 == 0 && this.framecounter % 6 == 0)
                 {
-                    player.Stop();
-                    player.Play();
+                    this.player.Stop();
+                    this.player.Play();
                 }
             }
             else if (obj.MovementVector.Y > 0 && obj.MovementVector.Y < 0)
@@ -232,7 +232,7 @@ namespace TimeWar.Renderer
 
             if (!obj.StanceLess)
             {
-                StateMachine(obj);
+                this.StateMachine(obj);
                 return this.spriteBrushes[obj.SpriteFile][(int)obj.Stance][this.currentSprite % this.spriteBrushes[obj.SpriteFile][(int)obj.Stance].Length];
             }
 
