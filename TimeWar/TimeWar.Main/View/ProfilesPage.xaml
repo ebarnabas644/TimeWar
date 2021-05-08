@@ -47,16 +47,16 @@
             <DockPanel LastChildFill="False">
                 <Label Content="{Binding SelectedPlayer.PlayerName}" DockPanel.Dock="Top" HorizontalAlignment="Center" Style="{StaticResource LabelStyle}" FontSize="40"/>
                 <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
-                    <Label Content="Number of completed runs: " HorizontalAlignment="Left" Style="{StaticResource LabelStyle}"/>
-                    <Label Content="{Binding SelectedPlayer.CompletedRuns}" Style="{StaticResource LabelStyle}"/>
+                    <Label Content="Number of completed runs: " HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" Foreground="White"/>
+                    <Label Content="{Binding SelectedPlayer.CompletedRuns}" Style="{StaticResource LabelStyle}" Foreground="White"/>
                 </StackPanel>
                 <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
-                    <Label Content="Number of kills: " HorizontalAlignment="Left" Style="{StaticResource LabelStyle}"/>
-                    <Label Content="{Binding SelectedPlayer.TotalKills}" Style="{StaticResource LabelStyle}"/>
+                    <Label Content="Number of kills: " HorizontalAlignment="Left" Style="{StaticResource LabelStyle}" Foreground="White"/>
+                    <Label Content="{Binding SelectedPlayer.TotalKills}" Style="{StaticResource LabelStyle}" Foreground="White"/>
                 </StackPanel>
                 <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
-                    <Label Content="Number of deaths: " Style="{StaticResource LabelStyle}"/>
-                    <Label Content="{Binding SelectedPlayer.TotalDeaths}" Style="{StaticResource LabelStyle}"/>
+                    <Label Content="Number of deaths: " Style="{StaticResource LabelStyle}" Foreground="White"/>
+                    <Label Content="{Binding SelectedPlayer.TotalDeaths}" Style="{StaticResource LabelStyle}" Foreground="White"/>
                 </StackPanel>
             </DockPanel>
         </Border>

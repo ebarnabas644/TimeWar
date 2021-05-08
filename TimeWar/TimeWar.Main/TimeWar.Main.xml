@@ -326,7 +326,7 @@
             Gets or sets a value indicating whether selected.
             </summary>
         </member>
-        <member name="P:TimeWar.Main.Data.PlayerProfileUI.SaveId">
+        <member name="P:TimeWar.Main.Data.PlayerProfileUI.Save">
             <summary>
             Gets or sets the save id.
             </summary>
@@ -427,6 +427,11 @@
             Gets or sets current map.
             </summary>
         </member>
+        <member name="P:TimeWar.Main.GameControl.LevelFinished">
+            <summary>
+            Gets or sets a value indicating whether level finished.
+            </summary>
+        </member>
         <member name="P:TimeWar.Main.GameControl.IsPaused">
             <summary>
             Gets or sets a value indicating whether true if game is paused.
@@ -439,6 +444,16 @@
         </member>
         <member name="M:TimeWar.Main.GameControl.Dispose">
             <inheritdoc/>
+        </member>
+        <member name="M:TimeWar.Main.GameControl.SaveEndGame">
+            <summary>
+            Save endgame stats.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Main.GameControl.SaveGameProgress">
+            <summary>
+            Save game progress.
+            </summary>
         </member>
         <member name="M:TimeWar.Main.GameControl.OnRender(System.Windows.Media.DrawingContext)">
             <summary>
@@ -585,6 +600,11 @@
             <param name="navigationService">Navigation service.</param>
             <param name="viewerLogicUI">Viewer logic.</param>
         </member>
+        <member name="P:TimeWar.Main.ViewModel.MenuViewModel.ContinueGameCommand">
+            <summary>
+            Gets the continue game command.
+            </summary>
+        </member>
         <member name="P:TimeWar.Main.ViewModel.MenuViewModel.NewGamePageCommand">
             <summary>
             Gets the navigate to game page command.
@@ -608,6 +628,11 @@
         <member name="P:TimeWar.Main.ViewModel.MenuViewModel.MenuText">
             <summary>
             Gets the main menu text.
+            </summary>
+        </member>
+        <member name="P:TimeWar.Main.ViewModel.MenuViewModel.ContinueVisibility">
+            <summary>
+            Gets or sets a value indicating whether continue button visible.
             </summary>
         </member>
         <member name="M:TimeWar.Main.ViewModel.MenuViewModel.Init">
@@ -1002,6 +1027,36 @@
         <member name="M:TimeWar.Main.View.ProfilesPage.InitializeComponent">
             <summary>
             InitializeComponent
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
             </summary>
         </member>
     </members>

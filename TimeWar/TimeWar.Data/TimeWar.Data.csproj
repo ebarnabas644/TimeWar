@@ -27,10 +27,10 @@
 
 	<ItemGroup>
 	  <Content Include="TimeWarDatabase.mdf">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="TimeWarDatabase_log.ldf">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	</ItemGroup>
 	

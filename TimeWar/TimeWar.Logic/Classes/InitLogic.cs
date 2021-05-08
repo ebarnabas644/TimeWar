@@ -35,9 +35,9 @@ namespace TimeWar.Logic
         public InitLogic(GameModel model, string mapName, IViewerLogic viewerLogic, bool isGameLoaded)
         {
             this.model = model;
-            this.BuildModel(mapName);
-            this.viewerLogic = viewerLogic;
             this.GameContinued = isGameLoaded;
+            this.viewerLogic = viewerLogic;
+            this.BuildModel(mapName);
         }
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace TimeWar.Logic
             if (gameModel != null)
             {
                 PlayerProfile profile = this.viewerLogic.GetSelectedProfile();
-                Save save = this.viewerLogic.GetSave(profile.SaveId);
+                Save save = this.viewerLogic.GetSave(profile.Save.Id);
                 string enemyStrings = save.Enemydata;
                 string playerString = save.Playerdata;
 
@@ -70,9 +70,12 @@ namespace TimeWar.Logic
                 string[] enemies = enemyStrings.Split('!');
                 foreach (string enemy in enemies)
                 {
-                    string[] data = enemy.Split(';');
-                    Enemy e = new Enemy(new Point(Convert.ToInt32(data[1], System.Globalization.CultureInfo.CurrentCulture), Convert.ToInt32(data[2], System.Globalization.CultureInfo.CurrentCulture)), Convert.ToInt32(data[3], System.Globalization.CultureInfo.CurrentCulture), EnemyInitLogic.BasicEnemyHeight, EnemyInitLogic.BasicEnemyWidth, (EnemyType)Enum.Parse(typeof(EnemyType), data[0]), data[5]);
-                    gameModel.CurrentWorld.AddEnemy(e);
+                    if (!string.IsNullOrEmpty(enemy))
+                    {
+                        string[] data = enemy.Split(';');
+                        Enemy e = new Enemy(new Point(Convert.ToInt32(data[1], System.Globalization.CultureInfo.CurrentCulture), Convert.ToInt32(data[2], System.Globalization.CultureInfo.CurrentCulture)), Convert.ToInt32(data[3], System.Globalization.CultureInfo.CurrentCulture), EnemyInitLogic.BasicEnemyHeight, EnemyInitLogic.BasicEnemyWidth, (EnemyType)Enum.Parse(typeof(EnemyType), data[0]), data[5]);
+                        gameModel.CurrentWorld.AddEnemy(e);
+                    }
                 }
             }
         }

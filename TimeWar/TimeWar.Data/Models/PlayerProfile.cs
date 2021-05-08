@@ -55,7 +55,7 @@ namespace TimeWar.Data.Models
         /// Gets or sets the autosave id.
         /// </summary>
         [ForeignKey("Save")]
-        public int SaveId { get; set; }
+        public int? SaveId { get; set; }
 
         /// <summary>
         /// Gets or sets the player auto save navigational property.

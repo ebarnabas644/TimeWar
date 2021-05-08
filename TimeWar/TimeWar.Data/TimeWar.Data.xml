@@ -119,6 +119,11 @@
             Gets or sets save id.
             </summary>
         </member>
+        <member name="P:TimeWar.Data.Models.Save.MapName">
+            <summary>
+            Gets or sets map name.
+            </summary>
+        </member>
         <member name="P:TimeWar.Data.Models.Save.Playerdata">
             <summary>
             Gets or sets point.

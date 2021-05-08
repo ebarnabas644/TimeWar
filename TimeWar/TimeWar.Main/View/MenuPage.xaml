@@ -12,6 +12,9 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MenuPage">
 
+    <Page.Resources>
+        <local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30*" />
@@ -30,7 +33,7 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <Label Content="" x:Name="ProfileLab" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Bottom" Style="{StaticResource LabelStyle}" Panel.ZIndex="2" Foreground="White"/>
-        <Button Content="Continue" Padding="10" Grid.Row="1" Grid.Column="1" Style="{StaticResource MenuButton}" Panel.ZIndex="2"/>
+        <Button Content="Continue" Click="Unsubscribe_Click" Command="{Binding ContinueGameCommand}" Visibility="{Binding Path=ContinueVisibility, Converter={StaticResource BoolToVisibilityConverter}}" Padding="10" Grid.Row="1" Grid.Column="1" Style="{StaticResource MenuButton}" Panel.ZIndex="2"/>
         <Button Click="Unsubscribe_Click" Command="{Binding NewGamePageCommand}" Content="New Game" Padding="10" Grid.Row="3" Grid.Column="1" Style="{StaticResource MenuButton}" Panel.ZIndex="2"/>
         <Button Click="Unsubscribe_Click" Command="{Binding ProfilesPageCommand}" Content="Profiles" Padding="10" Grid.Row="5" Grid.Column="1" Style="{StaticResource MenuButton}" Panel.ZIndex="2"/>
         <Button Click="Unsubscribe_Click" Command="{Binding ExitCommand}" Content="Exit" Padding="10" Grid.Row="7" Grid.Column="1" Style="{StaticResource MenuButton}" Panel.ZIndex="2"/>

@@ -18,6 +18,11 @@ namespace TimeWar.Data.Models
         public int Id { get; set; }
 
         /// <summary>
+        /// Gets or sets map name.
+        /// </summary>
+        public string MapName { get; set; }
+
+        /// <summary>
         /// Gets or sets point.
         /// </summary>
         public string Playerdata { get; set; }
@@ -31,7 +36,7 @@ namespace TimeWar.Data.Models
         /// Gets or sets the player id.
         /// </summary>
         [ForeignKey("Player")]
-        public int PlayerId { get; set; }
+        public int? PlayerId { get; set; }
 
         /// <summary>
         /// Gets or sets player navigational property.
