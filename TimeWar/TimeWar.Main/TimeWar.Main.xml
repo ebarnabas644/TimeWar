@@ -417,6 +417,11 @@
             Gets background music media player.
             </summary>
         </member>
+        <member name="P:TimeWar.Main.GameControl.SaveLoad">
+            <summary>
+            Gets or sets a value indicating whether loading save.
+            </summary>
+        </member>
         <member name="P:TimeWar.Main.GameControl.MapName">
             <summary>
             Gets or sets current map.
