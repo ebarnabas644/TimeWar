@@ -510,6 +510,11 @@
             <param name="character">Character.</param>
             <param name="commandManager">Command manager.</param>
         </member>
+        <member name="E:TimeWar.Logic.Classes.LogicCollections.PointOfInterestLogics.Powerup">
+            <summary>
+            Powerup event.
+            </summary>
+        </member>
         <member name="M:TimeWar.Logic.Classes.LogicCollections.PointOfInterestLogics.TickPois">
             <summary>
             Tick Pois.

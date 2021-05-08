@@ -46,6 +46,7 @@ namespace TimeWar.Main
         private Factory factory;
         private MediaPlayer backgroundMusic;
         private MediaPlayer waveSound;
+        private MediaPlayer powerupSound;
         private Window win;
         private Stopwatch time = new Stopwatch();
         private Stopwatch deltatime = new Stopwatch();
@@ -136,10 +137,14 @@ namespace TimeWar.Main
                 PlayerProfile modifiedPlayer = new PlayerProfile();
                 modifiedPlayer.PlayerId = profile.PlayerId;
                 modifiedPlayer.Selected = true;
-                modifiedPlayer.Save = null;
                 modifiedPlayer.CompletedRuns = ++profile.CompletedRuns;
                 modifiedPlayer.TotalDeaths = profile.TotalDeaths + this.gm.EndDeaths;
                 modifiedPlayer.TotalKills = profile.TotalKills + this.gm.EndKills;
+                if (profile.Save != null)
+                {
+                    this.factory.ManagerLogic.DeleteSave(profile.Save);
+                }
+
                 this.factory.ManagerLogic.ModifyProfile(modifiedPlayer);
             }
         }
@@ -186,6 +191,7 @@ namespace TimeWar.Main
         {
             this.waveSound = new MediaPlayer();
             this.backgroundMusic = new MediaPlayer();
+            this.powerupSound = new MediaPlayer();
             this.InitAudio();
             this.model = new GameModel();
             this.gm = this.DataContext as GameViewModel;
@@ -204,6 +210,7 @@ namespace TimeWar.Main
             this.bulletLogic = new BulletLogics(this.model, (ICollection<Bullet>)this.model.CurrentWorld.GetBullets, this.commandManager);
             this.enemyLogic = new EnemyLogics(this.model, this.commandManager);
             this.pointOfInterestLogics = new PointOfInterestLogics(this.model, this.characterLogic, this.commandManager);
+            this.pointOfInterestLogics.Powerup += this.PointOfInterestLogics_Powerup;
             this.mouseScrollPos = 0;
             this.time.Start();
             this.deltatime.Start();
@@ -226,6 +233,16 @@ namespace TimeWar.Main
             this.InvalidateVisual();
         }
 
+        private void PointOfInterestLogics_Powerup(object sender, EventArgs e)
+        {
+            this.powerupSound.Dispatcher.Invoke(() =>
+            {
+                this.powerupSound.Stop();
+                this.powerupSound.Position = TimeSpan.Zero;
+                this.powerupSound.Play();
+            });
+        }
+
         private void InitSave()
         {
             var player = this.factory.ViewerLogic.GetSelectedProfile();
@@ -239,6 +256,8 @@ namespace TimeWar.Main
         {
             Uri uri = new Uri(@"Sounds/TimeWar.mp3", UriKind.Relative);
             Uri waveUri = new Uri(@"Sounds/wave.mp3", UriKind.Relative);
+            Uri powerupUri = new Uri(@"Sounds/powerup.mp3", UriKind.Relative);
+            this.powerupSound.Open(powerupUri);
             this.waveSound.Open(waveUri);
             this.backgroundMusic.Open(uri);
             this.backgroundMusic.MediaEnded += this.BackgroundMusic_MediaEnded;

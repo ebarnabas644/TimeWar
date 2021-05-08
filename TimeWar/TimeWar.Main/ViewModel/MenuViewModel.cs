@@ -91,6 +91,7 @@ namespace TimeWar.Main.ViewModel
                 if (q == null)
                 {
                     this.MenuText = "Welcome back Guest!";
+                    this.ContinueVisibility = false;
                 }
                 else
                 {

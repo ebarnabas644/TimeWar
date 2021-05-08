@@ -41,6 +41,11 @@ namespace TimeWar.Logic.Classes.LogicCollections
         }
 
         /// <summary>
+        /// Powerup event.
+        /// </summary>
+        public event EventHandler Powerup;
+
+        /// <summary>
         /// Tick Pois.
         /// </summary>
         public void TickPois()
@@ -113,6 +118,9 @@ namespace TimeWar.Logic.Classes.LogicCollections
             {
                 this.model.CurrentWorld.RemovePOI(poi.Poi);
                 this.pois.Remove(poi);
+                EventHandler handler = this.Powerup;
+                EventArgs args = null;
+                handler?.Invoke(this, args);
             }
             else
             {
