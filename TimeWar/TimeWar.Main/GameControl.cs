@@ -51,8 +51,6 @@ namespace TimeWar.Main
         private Stopwatch deltatime = new Stopwatch();
         private ushort mouseScrollPos;
         private bool exit;
-        private bool alreadyran;
-        private object writelock = new object();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameControl"/> class.
@@ -93,6 +91,11 @@ namespace TimeWar.Main
         public string MapName { get; set; }
 
         /// <summary>
+        /// Gets or sets a value indicating whether level finished.
+        /// </summary>
+        public bool LevelFinished { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether true if game is paused.
         /// </summary>
         public bool IsPaused { get; set; }
@@ -110,6 +113,56 @@ namespace TimeWar.Main
         public void Dispose()
         {
             this.timer.Dispose();
+        }
+
+        /// <summary>
+        /// Save endgame stats.
+        /// </summary>
+        public void SaveEndGame()
+        {
+            var profile = this.factory.ViewerLogic.GetSelectedProfile();
+            if (profile != null)
+            {
+                var q = this.factory.ViewerLogic.GetMaps().Where(x => x.MapName == this.MapName && x.PlayerId == profile.PlayerId).SingleOrDefault();
+                if (q != null)
+                {
+                    this.factory.ManagerLogic.ModifyMap(new MapRecord { MapName = this.MapName, RunTime = this.gm.EndTime, MapRecordId = q.MapRecordId, PlayerId = q.PlayerId });
+                    profile.CompletedRuns++;
+                    profile.TotalDeaths += this.gm.EndDeaths;
+                    profile.TotalKills += this.gm.EndKills;
+                    this.factory.ManagerLogic.ModifyProfile(profile);
+                }
+                else
+                {
+                    this.factory.ManagerLogic.CreateMap(new MapRecord { MapName = this.MapName, RunTime = this.gm.EndTime, PlayerId = profile.PlayerId });
+                }
+            }
+        }
+
+        /// <summary>
+        /// Save game progress.
+        /// </summary>
+        public void SaveGameProgress()
+        {
+            var player = this.factory.ViewerLogic.GetSelectedProfile();
+            if (player != null)
+            {
+                Save save = new Save();
+                save.PlayerId = player.PlayerId;
+                save.Playerdata = this.characterLogic.Character.ToString();
+                save.Enemydata = this.enemyLogic.SaveEnemies();
+                save.MapName = this.MapName;
+                var saves = this.factory.ViewerLogic.GetSaves();
+                if (!this.factory.ViewerLogic.GetSaves().Any(x => x.PlayerId == player.PlayerId))
+                {
+                    this.factory.ManagerLogic.CreateSave(save);
+                }
+                else
+                {
+                    save.Id = this.factory.ViewerLogic.GetSaves().Where(x => x.PlayerId == player.PlayerId).SingleOrDefault().Id;
+                    this.factory.ManagerLogic.ModifySave(save);
+                }
+            }
         }
 
         /// <summary>
@@ -136,7 +189,7 @@ namespace TimeWar.Main
                 this.InitSave();
             }
 
-            this.alreadyran = false;
+            this.LevelFinished = false;
             this.initLogic = new InitLogic(this.model, this.MapName, this.factory.ViewerLogic, this.SaveLoad);
             this.model.Camera = new Viewport((int)this.ActualWidth, (int)this.ActualHeight, (int)this.model.CurrentWorld.GameWidth, (int)this.model.CurrentWorld.GameHeight, this.model.Hero);
             this.renderer = new GameRenderer(this.model, false);
@@ -231,57 +284,29 @@ namespace TimeWar.Main
 
                 if (this.model.LevelFinished)
                 {
-                    this.IsPaused = true;
-                    this.time.Stop();
-                    this.deltatime.Stop();
-                    this.gm.EndKills = this.model.Hero.Kills;
-                    this.gm.EndDeaths = this.model.Hero.Deaths;
-                    this.gm.EndTime = this.time.Elapsed;
-                    this.gm.EndVisibility = true;
-                    if (this.factory.ViewerLogic.GetMaps().Any(x => x.MapName == this.MapName && x.PlayerId == this.factory.ViewerLogic.GetSelectedProfile().PlayerId))
+                    lock (this.factory)
                     {
-                        var q = this.factory.ViewerLogic.GetMaps().Where(x => x.MapName == this.MapName && x.PlayerId == this.factory.ViewerLogic.GetSelectedProfile().PlayerId).SingleOrDefault();
+                        this.gm.EndKills = this.model.Hero.Kills;
+                        this.gm.EndDeaths = this.model.Hero.Deaths;
+                        this.gm.EndTime = this.time.Elapsed;
+                        this.gm.EndVisibility = true;
+                        this.LevelFinished = true;
+                        this.IsPaused = true;
+                        this.time.Stop();
+                        this.deltatime.Stop();
                     }
                 }
             }
             else
             {
-                lock (this.factory)
-                {
-                    lock (this.writelock)
-                    {
-                        this.gm.EndVisibility = false;
-                        this.win.KeyDown -= this.Win_KeyDown;
-                        this.win.KeyUp -= this.Win_KeyUp;
-                        this.win.SizeChanged -= this.Win_SizeChanged;
-                        this.win.MouseMove -= this.Win_MouseMove;
-                        this.win.MouseDown -= this.Win_MouseDown;
-                        this.win.MouseWheel -= this.Win_MouseScroll;
-                        if (!this.alreadyran)
-                        {
-                            this.alreadyran = true;
-                            var player = this.factory.ViewerLogic.GetSelectedProfile();
-                            Save save = new Save();
-                            save.PlayerId = player.PlayerId;
-                            save.Playerdata = this.characterLogic.Character.ToString();
-                            save.Enemydata = this.enemyLogic.SaveEnemies();
-                            save.MapName = this.MapName;
-                            var saves = this.factory.ViewerLogic.GetSaves();
-                            if (!this.factory.ViewerLogic.GetSaves().Any(x => x.PlayerId == player.PlayerId))
-                            {
-                                this.factory.ManagerLogic.CreateSave(save);
-                            }
-                            else
-                            {
-                                save.Id = this.factory.ViewerLogic.GetSaves().Where(x => x.PlayerId == player.PlayerId).SingleOrDefault().Id;
-                                this.factory.ManagerLogic.ModifySave(save);
-                            }
-
-                            this.timer.Dispose();
-                        }
-                    }
-                }
-
+                this.gm.EndVisibility = false;
+                this.win.KeyDown -= this.Win_KeyDown;
+                this.win.KeyUp -= this.Win_KeyUp;
+                this.win.SizeChanged -= this.Win_SizeChanged;
+                this.win.MouseMove -= this.Win_MouseMove;
+                this.win.MouseDown -= this.Win_MouseDown;
+                this.win.MouseWheel -= this.Win_MouseScroll;
+                this.timer.Dispose();
                 this.Dispose();
                 CompositionTarget.Rendering -= (sender, args) => this.InvalidateVisual();
             }

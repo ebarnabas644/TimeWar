@@ -8,6 +8,7 @@
 	<AnalysisMode>AllEnabledByDefault</AnalysisMode>
 	<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
 	<Platforms>AnyCPU;x86</Platforms>
+	<ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
