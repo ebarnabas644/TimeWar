@@ -4,6 +4,7 @@
 
 namespace TimeWar.Data.Models
 {
+    using System;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
@@ -35,6 +36,6 @@ namespace TimeWar.Data.Models
         /// <summary>
         /// Gets or sets run time.
         /// </summary>
-        public int RunTime { get; set; }
+        public TimeSpan RunTime { get; set; }
     }
 }
