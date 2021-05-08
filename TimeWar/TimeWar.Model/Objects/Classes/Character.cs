@@ -137,6 +137,19 @@ namespace TimeWar.Model.Objects
         /// </summary>
         public bool CanJump { get; set; }
 
+        /// <inheritdoc/>
+        public override string ToString()
+        {
+            string retString = string.Empty;
+            retString += this.Position.X + ";"; // Character position X.
+            retString += this.Position.Y + ";"; // Character position Y.
+            retString += this.CurrentHealth + ";"; // Character health.
+            retString += this.CurrentShield + ";"; // Character shield.
+            retString += this.TypeOfBullet + ";"; // Type of bullet.
+            retString += (this as Player).NumOfWeaponUnlocked + ";"; // Character num of weaponst unlocked.
+            return retString;
+        }
+
         /// <summary>
         /// Add new key to the pressed list.
         /// </summary>
