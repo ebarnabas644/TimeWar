@@ -50,6 +50,7 @@
     <None Remove="Leveldata\test.tmx" />
     <None Remove="Leveldata\test2.png" />
     <None Remove="Leveldata\test2.tmx" />
+    <None Remove="Sounds\powerup.mp3" />
     <None Remove="Sounds\step7.wav" />
     <None Remove="Sounds\TimeWar.mp3" />
     <None Remove="Sounds\wave.mp3" />
@@ -113,6 +114,9 @@
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Leveldata\MainMap.tmx">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sounds\powerup.mp3">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Sounds\step7.wav">

@@ -40,7 +40,7 @@ namespace TimeWar.LogicTests
         [SetUp]
         public void Setup()
         {
-            this.commandManager = new CommandManager();
+            this.commandManager = new CommandManager(this.gameModel);
             this.player = new Player(new Point(50, 50), 1, 8, 2, "test");
             this.gameWorld = new GameWorld(100, 100, 8);
             this.gameModel = new GameModel();

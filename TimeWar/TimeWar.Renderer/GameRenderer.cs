@@ -261,7 +261,7 @@ namespace TimeWar.Renderer
         private Drawing GetBackgroundLayers()
         {
             DrawingGroup dg = new DrawingGroup();
-            for (int i = 0; i < RendererConfig.NumberOfLayers; i++)
+            for (int i = 0; i < RendererConfig.NumberOfLayers - 1; i++)
             {
                 Rect bg = new Rect(this.model.Camera.GetRelativeObjectPosX(this.layers[i].Position.X) - (this.model.Camera.GetViewportX * RendererConfig.LayersHorizontalSpeed[i]), this.model.Camera.GetRelativeObjectPosY(this.layers[i].Position.Y) - (this.model.Camera.GetViewportY * RendererConfig.LayersVerticalSpeed[i]), this.layers[i].Width * this.model.CurrentWorld.Magnify * 10, this.layers[i].Height * this.model.CurrentWorld.Magnify);
                 Geometry g = new RectangleGeometry(bg);
@@ -272,6 +272,20 @@ namespace TimeWar.Renderer
                 }
 
                 GeometryDrawing layerdraw = new GeometryDrawing(this.GetSpriteBrush(this.layers[i], true, this.backgroundLayerBoundx, this.backgroundLayerBoundy), null, g);
+                dg.Children.Add(layerdraw);
+            }
+
+            if (this.model.InRewind)
+            {
+                Rect bg = new Rect(this.model.Camera.GetRelativeObjectPosX(this.layers[this.layers.Count - 1].Position.X) - (this.model.Camera.GetViewportX * RendererConfig.LayersHorizontalSpeed[this.layers.Count - 1]), this.model.Camera.GetRelativeObjectPosY(this.layers[this.layers.Count - 1].Position.Y) - (this.model.Camera.GetViewportY * RendererConfig.LayersVerticalSpeed[this.layers.Count - 1]), this.layers[this.layers.Count - 1].Width * this.model.CurrentWorld.Magnify * 20, this.layers[this.layers.Count - 1].Height * this.model.CurrentWorld.Magnify);
+                Geometry g = new RectangleGeometry(bg);
+                if (this.backgroundLayerBoundx == 0 || this.backgroundLayerBoundy == 0)
+                {
+                    this.backgroundLayerBoundx = g.Bounds.Size.Width;
+                    this.backgroundLayerBoundy = g.Bounds.Size.Height;
+                }
+
+                GeometryDrawing layerdraw = new GeometryDrawing(this.GetSpriteBrush(this.layers[this.layers.Count - 1], true, this.backgroundLayerBoundx, this.backgroundLayerBoundy), null, g);
                 dg.Children.Add(layerdraw);
             }
 
