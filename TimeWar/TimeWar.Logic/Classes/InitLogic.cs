@@ -31,11 +31,13 @@ namespace TimeWar.Logic
         /// <param name="model">Game model instance.</param>
         /// <param name="mapName">Name of the game map.</param>
         /// <param name="viewerLogic">Viewer logic.</param>
-        public InitLogic(GameModel model, string mapName, IViewerLogic viewerLogic)
+        /// <param name="isGameLoaded">Game loaded.</param>
+        public InitLogic(GameModel model, string mapName, IViewerLogic viewerLogic, bool isGameLoaded)
         {
             this.model = model;
             this.BuildModel(mapName);
             this.viewerLogic = viewerLogic;
+            this.GameContinued = isGameLoaded;
         }
 
         /// <summary>
