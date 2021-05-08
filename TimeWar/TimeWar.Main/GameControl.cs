@@ -260,6 +260,9 @@ namespace TimeWar.Main
             this.powerupSound.Open(powerupUri);
             this.waveSound.Open(waveUri);
             this.backgroundMusic.Open(uri);
+            this.backgroundMusic.Volume = 0.2;
+            this.waveSound.Volume = 0.2;
+            this.powerupSound.Volume = 0.3;
             this.backgroundMusic.MediaEnded += this.BackgroundMusic_MediaEnded;
             this.backgroundMusic.Play();
         }
