@@ -46,7 +46,7 @@ namespace TimeWar.Logic.Classes.LogicCollections
             List<string> enemiesString = new List<string>();
             foreach (var item in this.enemies)
             {
-                enemiesString.Add(item.ToString());
+                enemiesString.Add((item.Character as Enemy).ToString());
             }
 
             return enemiesString;
