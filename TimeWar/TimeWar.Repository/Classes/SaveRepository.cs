@@ -41,8 +41,9 @@ namespace TimeWar.Repository.Classes
                     throw new InvalidOperationException("Entity not found");
                 }
 
-                save.Point = entity.Point;
-                save.Checkpoint = entity.Checkpoint;
+                save.Playerdata = entity.Playerdata;
+                save.Enemydata = entity.Enemydata;
+                save.Poidata = entity.Poidata;
                 this.Ctx.SaveChanges();
             }
         }

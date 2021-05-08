@@ -14,9 +14,9 @@ namespace TimeWar.Main.Data
     public class SaveUI : ObservableObject
     {
         private int id;
-        private int point;
-        private int checkpoint;
-        private int playerId;
+        private string playerdata;
+        private string enemydata;
+        private string poidata;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SaveUI"/> class.
@@ -37,28 +37,28 @@ namespace TimeWar.Main.Data
         /// <summary>
         /// Gets or sets point.
         /// </summary>
-        public int Point
+        public string Playerdata
         {
-            get { return this.point; }
-            set { this.Set(ref this.point, value); }
+            get { return this.playerdata; }
+            set { this.Set(ref this.playerdata, value); }
         }
 
         /// <summary>
         /// Gets or sets checkpoint.
         /// </summary>
-        public int Checkpoint
+        public string Enemydata
         {
-            get { return this.checkpoint; }
-            set { this.Set(ref this.checkpoint, value); }
+            get { return this.enemydata; }
+            set { this.Set(ref this.enemydata, value); }
         }
 
         /// <summary>
         /// Gets or sets playerid.
         /// </summary>
-        public int PlayerId
+        public string Poidata
         {
-            get { return this.playerId; }
-            set { this.Set(ref this.playerId, value); }
+            get { return this.poidata; }
+            set { this.Set(ref this.poidata, value); }
         }
 
         /// <summary>
@@ -72,9 +72,9 @@ namespace TimeWar.Main.Data
             if (saveui != null)
             {
                 save.Id = saveui.Id;
-                save.PlayerId = saveui.PlayerId;
-                save.Point = saveui.Point;
-                save.Checkpoint = saveui.Checkpoint;
+                save.Enemydata = saveui.Enemydata;
+                save.Playerdata = saveui.Playerdata;
+                save.Poidata = saveui.Poidata;
             }
 
             return save;
@@ -91,9 +91,9 @@ namespace TimeWar.Main.Data
             if (save != null)
             {
                 saveui.Id = save.Id;
-                saveui.PlayerId = save.PlayerId;
-                saveui.Point = save.Point;
-                saveui.Checkpoint = save.Checkpoint;
+                saveui.Enemydata = save.Enemydata;
+                saveui.Playerdata = save.Playerdata;
+                saveui.Poidata = save.Poidata;
             }
 
             return saveui;

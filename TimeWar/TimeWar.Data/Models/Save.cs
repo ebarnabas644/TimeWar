@@ -20,12 +20,17 @@ namespace TimeWar.Data.Models
         /// <summary>
         /// Gets or sets point.
         /// </summary>
-        public int Point { get; set; }
+        public string Playerdata { get; set; }
 
         /// <summary>
         /// Gets or sets checkpoint.
         /// </summary>
-        public int Checkpoint { get; set; }
+        public string Enemydata { get; set; }
+
+        /// <summary>
+        /// Gets or sets checkpoint.
+        /// </summary>
+        public string Poidata { get; set; }
 
         /// <summary>
         /// Gets or sets the player id.
