@@ -170,10 +170,11 @@ namespace TimeWar.LogicTests
         public void EffectTest()
         {
             this.player.Position = new Point(50, 50);
-            this.gameModel.Hero.Width = 8;
+            this.gameModel.Hero.Width = 64;
+            this.gameModel.Hero.Height = 64;
             this.player.Health = 100;
             this.player.CurrentHealth = 1;
-            PointOfInterest poi = new PointOfInterest(POIType.HealthKit, 4, 4, " ", new Point(this.gameModel.CurrentWorld.ConvertPixelToTile(50), this.gameModel.CurrentWorld.ConvertPixelToTile(50)));
+            PointOfInterest poi = new PointOfInterest(POIType.HealthKit, 8, 8, " ", new Point(this.gameModel.CurrentWorld.ConvertPixelToTile(64), this.gameModel.CurrentWorld.ConvertPixelToTile(64)));
             HealthKitLogic healthKitLogic = new HealthKitLogic(this.gameModel, poi, 25);
             this.gameModel.CurrentWorld.AddPOI(poi);
             this.pois = new PointOfInterestLogics(this.gameModel, this.characterLogic, this.commandManager);
