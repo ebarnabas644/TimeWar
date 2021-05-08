@@ -64,6 +64,7 @@ namespace TimeWar.Logic.Classes.LogicCollections
         /// </summary>
         public void GetPOIs()
         {
+            this.pois = new List<PointOfInterestLogic>();
             foreach (PointOfInterest poi in this.model.CurrentWorld.GetPois)
             {
                 switch (poi.Type)

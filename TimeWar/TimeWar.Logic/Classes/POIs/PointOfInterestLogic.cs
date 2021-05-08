@@ -59,11 +59,6 @@ namespace TimeWar.Logic.Classes.POIs
         /// </summary>
         public bool IsPlayerContacted { get; set; }
 
-        public override string ToString()
-        {
-            return base.ToString();
-        }
-
         /// <summary>
         /// One tick.
         /// </summary>
