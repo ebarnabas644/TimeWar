@@ -67,5 +67,19 @@ namespace TimeWar.Model.Objects.Classes
         /// Gets or sets the type of enemy.
         /// </summary>
         public EnemyType Type { get; set; }
+
+        /// <inheritdoc/>
+        public override string ToString()
+        {
+            string retString = string.Empty;
+            retString += this.Type + ";"; // Enemy Type.
+            retString += this.Position.X + ";"; // Character position X.
+            retString += this.Position.Y + ";"; // Character position Y.
+            retString += this.CurrentHealth + ";"; // Character health.
+            retString += this.TypeOfBullet + ";"; // Type of bullet.
+            retString += this.SpriteFile + ";"; // Sprite file.
+            retString += "!"; // Closing character.
+            return retString;
+        }
     }
 }

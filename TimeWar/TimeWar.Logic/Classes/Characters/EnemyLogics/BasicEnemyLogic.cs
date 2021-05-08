@@ -99,20 +99,6 @@ namespace TimeWar.Logic.Classes.Characters
         protected int DefaultFollowDistance { get; set; }
 
         /// <inheritdoc/>
-        public override string ToString()
-        {
-            string retString = string.Empty;
-            retString += (this.Character as Enemy).Type + ";"; // Enemy Type.
-            retString += this.Character.Position.X + ";"; // Character position X.
-            retString += this.Character.Position.Y + ";"; // Character position Y.
-            retString += this.Character.CurrentHealth + ";"; // Character health.
-            retString += this.Character.TypeOfBullet + ";"; // Type of bullet.
-            retString += this.Character.SpriteFile + ";"; // Sprite file.
-            retString += "!"; // Closing character.
-            return retString;
-        }
-
-        /// <inheritdoc/>
         public override void OneTick()
         {
             if (this.CommandManager.IsFinished)
