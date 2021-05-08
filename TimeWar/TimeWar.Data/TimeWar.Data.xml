@@ -119,12 +119,12 @@
             Gets or sets save id.
             </summary>
         </member>
-        <member name="P:TimeWar.Data.Models.Save.Point">
+        <member name="P:TimeWar.Data.Models.Save.Playerdata">
             <summary>
             Gets or sets point.
             </summary>
         </member>
-        <member name="P:TimeWar.Data.Models.Save.Checkpoint">
+        <member name="P:TimeWar.Data.Models.Save.Enemydata">
             <summary>
             Gets or sets checkpoint.
             </summary>

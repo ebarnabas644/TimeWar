@@ -366,19 +366,14 @@
             Gets or sets save id.
             </summary>
         </member>
-        <member name="P:TimeWar.Main.Data.SaveUI.Point">
+        <member name="P:TimeWar.Main.Data.SaveUI.Playerdata">
             <summary>
             Gets or sets point.
             </summary>
         </member>
-        <member name="P:TimeWar.Main.Data.SaveUI.Checkpoint">
+        <member name="P:TimeWar.Main.Data.SaveUI.Enemydata">
             <summary>
             Gets or sets checkpoint.
-            </summary>
-        </member>
-        <member name="P:TimeWar.Main.Data.SaveUI.PlayerId">
-            <summary>
-            Gets or sets playerid.
             </summary>
         </member>
         <member name="M:TimeWar.Main.Data.SaveUI.ConvertToSaveEntity(TimeWar.Main.Data.SaveUI)">
@@ -990,36 +985,6 @@
         <member name="M:TimeWar.Main.View.ProfilesPage.InitializeComponent">
             <summary>
             InitializeComponent
-            </summary>
-        </member>
-        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
-            <summary>
-            GeneratedInternalTypeHelper
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
-            <summary>
-            CreateInstance
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
-            <summary>
-            GetPropertyValue
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
-            <summary>
-            SetPropertyValue
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
-            <summary>
-            CreateDelegate
-            </summary>
-        </member>
-        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
-            <summary>
-            AddEventHandler
             </summary>
         </member>
     </members>

@@ -455,7 +455,7 @@
             <param name="bullet">Bullet.</param>
             <param name="commandManager">Command manager.</param>
         </member>
-        <member name="M:TimeWar.Logic.Classes.LogicCollections.BulletLogics.SaveEnemies">
+        <member name="M:TimeWar.Logic.Classes.LogicCollections.BulletLogics.SaveBullets">
             <summary>
             Saves bullets into a string.
             </summary>
@@ -830,14 +830,12 @@
         <member name="M:TimeWar.Logic.Classes.ViewerLogic.GetSaves">
             <inheritdoc/>
         </member>
+        <member name="M:TimeWar.Logic.Classes.ViewerLogic.GetSelectedProfile">
+            <inheritdoc/>
+        </member>
         <member name="T:TimeWar.Logic.CharacterLogic">
             <summary>
             Basic character logic class.
-            </summary>
-        </member>
-        <member name="E:TimeWar.Logic.CharacterLogic.Fire">
-            <summary>
-            Fire event.
             </summary>
         </member>
         <member name="M:TimeWar.Logic.CharacterLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Character,TimeWar.Logic.Classes.CommandManager)">
@@ -847,6 +845,11 @@
             <param name="model">Game model entity.</param>
             <param name="character">Moveable entity.</param>
             <param name="commandManager">Command manager entity.</param>
+        </member>
+        <member name="E:TimeWar.Logic.CharacterLogic.Fire">
+            <summary>
+            Fire event.
+            </summary>
         </member>
         <member name="P:TimeWar.Logic.CharacterLogic.AttackTime">
             <summary>
@@ -877,12 +880,24 @@
             Init class for game model.
             </summary>
         </member>
-        <member name="M:TimeWar.Logic.InitLogic.#ctor(TimeWar.Model.GameModel,System.String)">
+        <member name="M:TimeWar.Logic.InitLogic.#ctor(TimeWar.Model.GameModel,System.String,TimeWar.Logic.Interfaces.IViewerLogic)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Logic.InitLogic"/> class.
             </summary>
             <param name="model">Game model instance.</param>
             <param name="mapName">Name of the game map.</param>
+            <param name="viewerLogic">Viewer logic.</param>
+        </member>
+        <member name="P:TimeWar.Logic.InitLogic.GameContinued">
+            <summary>
+            Gets or sets a value indicating whether the game is continued or not.
+            </summary>
+        </member>
+        <member name="M:TimeWar.Logic.InitLogic.LoadSave(TimeWar.Model.GameModel)">
+            <summary>
+            Loads the game.
+            </summary>
+            <param name="gameModel">GameModel.</param>
         </member>
         <member name="T:TimeWar.Logic.Interfaces.ICommand">
             <summary>
@@ -1040,6 +1055,12 @@
             Get all save entity.
             </summary>
             <returns>Save entites.</returns>
+        </member>
+        <member name="M:TimeWar.Logic.Interfaces.IViewerLogic.GetSelectedProfile">
+            <summary>
+            Gets selected player profile.
+            </summary>
+            <returns>Selected player profile.</returns>
         </member>
     </members>
 </doc>

@@ -738,6 +738,9 @@
             Method is called when the player is dead.
             </summary>
         </member>
+        <member name="M:TimeWar.Model.Objects.Player.ToString">
+            <inheritdoc/>
+        </member>
         <member name="T:TimeWar.Model.Objects.Viewport">
             <summary>
             Camera viewport class.
