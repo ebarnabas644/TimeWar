@@ -42,8 +42,6 @@ namespace TimeWar.Main
         private GameViewModel gm;
         private MediaPlayer backgroundMusic;
         private MediaPlayer waveSound;
-
-        // private Factory factory;
         private Window win;
         private Stopwatch time = new Stopwatch();
         private Stopwatch deltatime = new Stopwatch();
@@ -107,13 +105,12 @@ namespace TimeWar.Main
 
         private void GameControl_Loaded(object sender, RoutedEventArgs e)
         {
-            // this.factory = new Factory();
             this.waveSound = new MediaPlayer();
             this.backgroundMusic = new MediaPlayer();
             this.InitAudio();
             this.model = new GameModel();
             this.gm = this.DataContext as GameViewModel;
-            this.initLogic = new InitLogic(this.model, this.MapName);
+            this.initLogic = new InitLogic(this.model, this.MapName,);
             this.model.Camera = new Viewport((int)this.ActualWidth, (int)this.ActualHeight, (int)this.model.CurrentWorld.GameWidth, (int)this.model.CurrentWorld.GameHeight, this.model.Hero);
             this.renderer = new GameRenderer(this.model, false);
             this.commandManager = new Logic.Classes.CommandManager();
@@ -186,7 +183,12 @@ namespace TimeWar.Main
                     if (this.model.CurrentWorld.EnemiesLoaded)
                     {
                         this.model.CurrentWorld.EnemiesLoaded = false;
+                        Stopwatch st = new Stopwatch();
+                        this.characterLogic.AttackTime = 200;
+                        this.characterLogic.MaxJumpHeight = this.characterLogic.DefaultJumpHeight;
+                        this.characterLogic.Character.IsInvincible = false;
                         this.enemyLogic.GetEnemies();
+                        this.pointOfInterestLogics.GetPOIs();
                     }
 
                     this.characterLogic.OneTick();
