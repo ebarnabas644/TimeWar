@@ -53,6 +53,20 @@ namespace TimeWar.Logic
         public int EffectCounter { get; set; }
 
         /// <inheritdoc/>
+        public override string ToString()
+        {
+            string retString = string.Empty;
+            retString += "player;"; // Player.
+            retString += this.Character.Position.X + ";"; // Character position X.
+            retString += this.Character.Position.Y + ";"; // Character position Y.
+            retString += this.Character.CurrentHealth + ";"; // Character health.
+            retString += this.Character.TypeOfBullet + ";"; // Type of bullet.
+            retString += this.Character.Height + ";"; // Character height.
+            retString += this.Character.Width + ";"; // Character Width.
+            return retString;
+        }
+
+        /// <inheritdoc/>
         public override void OneTick()
         {
             base.OneTick();

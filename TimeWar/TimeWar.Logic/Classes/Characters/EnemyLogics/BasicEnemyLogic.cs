@@ -106,7 +106,7 @@ namespace TimeWar.Logic.Classes.Characters
             retString += (this.Character as Enemy).Type + ";"; // Enemy Type.
             retString += this.Character.Position.X + ";"; // Character position X.
             retString += this.Character.Position.Y + ";"; // Character position Y.
-            retString += this.Character.Health + ";"; // Character health.
+            retString += this.Character.CurrentHealth + ";"; // Character health.
             retString += this.Character.TypeOfBullet + ";"; // Type of bullet.
             retString += this.Character.Height + ";"; // Character height.
             retString += this.Character.Width + ";"; // Character Width.
