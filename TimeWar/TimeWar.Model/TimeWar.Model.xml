@@ -205,13 +205,13 @@
             <param name="enemyType">Type of enemy.</param>
             <param name="spriteFile">Spritesheet file name.</param>
         </member>
-        <member name="M:TimeWar.Model.Objects.Classes.Enemy.ToString">
-            <inheritdoc/>
-        </member>
         <member name="P:TimeWar.Model.Objects.Classes.Enemy.Type">
             <summary>
             Gets or sets the type of enemy.
             </summary>
+        </member>
+        <member name="M:TimeWar.Model.Objects.Classes.Enemy.ToString">
+            <inheritdoc/>
         </member>
         <member name="T:TimeWar.Model.Objects.Classes.POIType">
             <summary>
