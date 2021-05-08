@@ -127,15 +127,16 @@ namespace TimeWar.Main
                 if (q != null)
                 {
                     this.factory.ManagerLogic.ModifyMap(new MapRecord { MapName = this.MapName, RunTime = this.gm.EndTime, MapRecordId = q.MapRecordId, PlayerId = q.PlayerId });
-                    profile.CompletedRuns++;
-                    profile.TotalDeaths += this.gm.EndDeaths;
-                    profile.TotalKills += this.gm.EndKills;
-                    this.factory.ManagerLogic.ModifyProfile(profile);
                 }
                 else
                 {
                     this.factory.ManagerLogic.CreateMap(new MapRecord { MapName = this.MapName, RunTime = this.gm.EndTime, PlayerId = profile.PlayerId });
                 }
+
+                profile.CompletedRuns++;
+                profile.TotalDeaths += this.gm.EndDeaths;
+                profile.TotalKills += this.gm.EndKills;
+                this.factory.ManagerLogic.ModifyProfile(profile);
             }
         }
 

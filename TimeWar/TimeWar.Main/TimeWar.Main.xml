@@ -261,6 +261,11 @@
             Gets or sets player profile navigational property.
             </summary>
         </member>
+        <member name="P:TimeWar.Main.Data.MapRecordUI.Player">
+            <summary>
+            Gets or sets player.
+            </summary>
+        </member>
         <member name="P:TimeWar.Main.Data.MapRecordUI.RunTime">
             <summary>
             Gets or sets run time.

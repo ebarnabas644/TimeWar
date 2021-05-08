@@ -18,6 +18,7 @@ namespace TimeWar.Main.Data
         private int? playerId;
         private TimeSpan runTime;
         private string mapName;
+        private PlayerProfile player;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="MapRecordUI"/> class.
@@ -54,6 +55,15 @@ namespace TimeWar.Main.Data
         }
 
         /// <summary>
+        /// Gets or sets player.
+        /// </summary>
+        public PlayerProfile Player
+        {
+            get { return this.player; }
+            set { this.Set(ref this.player, value); }
+        }
+
+        /// <summary>
         /// Gets or sets run time.
         /// </summary>
         public TimeSpan RunTime
@@ -76,6 +86,7 @@ namespace TimeWar.Main.Data
                 map.MapName = mapui.MapName;
                 map.PlayerId = mapui.PlayerId;
                 map.RunTime = mapui.RunTime;
+                map.Player = mapui.Player;
             }
 
             return map;
@@ -95,6 +106,7 @@ namespace TimeWar.Main.Data
                 mapui.MapName = map.MapName;
                 mapui.PlayerId = map.PlayerId;
                 mapui.RunTime = map.RunTime;
+                mapui.Player = map.Player;
             }
 
             return mapui;
