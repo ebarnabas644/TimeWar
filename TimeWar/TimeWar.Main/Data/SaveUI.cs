@@ -16,7 +16,6 @@ namespace TimeWar.Main.Data
         private int id;
         private string playerdata;
         private string enemydata;
-        private string poidata;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="SaveUI"/> class.
@@ -53,15 +52,6 @@ namespace TimeWar.Main.Data
         }
 
         /// <summary>
-        /// Gets or sets playerid.
-        /// </summary>
-        public string Poidata
-        {
-            get { return this.poidata; }
-            set { this.Set(ref this.poidata, value); }
-        }
-
-        /// <summary>
         /// Convert saveui entity to database entity.
         /// </summary>
         /// <param name="saveui">Save ui entity.</param>
@@ -74,7 +64,6 @@ namespace TimeWar.Main.Data
                 save.Id = saveui.Id;
                 save.Enemydata = saveui.Enemydata;
                 save.Playerdata = saveui.Playerdata;
-                save.Poidata = saveui.Poidata;
             }
 
             return save;
@@ -93,7 +82,6 @@ namespace TimeWar.Main.Data
                 saveui.Id = save.Id;
                 saveui.Enemydata = save.Enemydata;
                 saveui.Playerdata = save.Playerdata;
-                saveui.Poidata = save.Poidata;
             }
 
             return saveui;

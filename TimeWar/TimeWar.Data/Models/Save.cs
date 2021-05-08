@@ -28,11 +28,6 @@ namespace TimeWar.Data.Models
         public string Enemydata { get; set; }
 
         /// <summary>
-        /// Gets or sets checkpoint.
-        /// </summary>
-        public string Poidata { get; set; }
-
-        /// <summary>
         /// Gets or sets the player id.
         /// </summary>
         [ForeignKey("Player")]

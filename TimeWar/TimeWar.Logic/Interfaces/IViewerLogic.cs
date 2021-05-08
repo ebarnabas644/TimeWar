@@ -50,5 +50,11 @@ namespace TimeWar.Logic.Interfaces
         /// </summary>
         /// <returns>Save entites.</returns>
         IList<Save> GetSaves();
+
+        /// <summary>
+        /// Gets selected player profile.
+        /// </summary>
+        /// <returns>Selected player profile.</returns>
+        PlayerProfile GetSelectedProfile();
     }
 }

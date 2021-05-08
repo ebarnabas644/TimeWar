@@ -43,7 +43,6 @@ namespace TimeWar.Repository.Classes
 
                 save.Playerdata = entity.Playerdata;
                 save.Enemydata = entity.Enemydata;
-                save.Poidata = entity.Poidata;
                 this.Ctx.SaveChanges();
             }
         }
