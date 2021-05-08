@@ -36,7 +36,7 @@ namespace TimeWar.Data.Models
         /// Gets or sets the player id.
         /// </summary>
         [ForeignKey("Player")]
-        public int PlayerId { get; set; }
+        public int? PlayerId { get; set; }
 
         /// <summary>
         /// Gets or sets player navigational property.

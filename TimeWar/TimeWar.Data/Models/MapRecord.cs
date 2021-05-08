@@ -26,7 +26,7 @@ namespace TimeWar.Data.Models
         /// <summary>
         /// Gets or sets player id.
         /// </summary>
-        public int PlayerId { get; set; }
+        public int? PlayerId { get; set; }
 
         /// <summary>
         /// Gets or sets player profile navigational property.

@@ -15,7 +15,7 @@ namespace TimeWar.Main.Data
     public class MapRecordUI : ObservableObject
     {
         private int mapId;
-        private int playerId;
+        private int? playerId;
         private TimeSpan runTime;
         private string mapName;
 
@@ -47,7 +47,7 @@ namespace TimeWar.Main.Data
         /// <summary>
         /// Gets or sets player profile navigational property.
         /// </summary>
-        public int PlayerId
+        public int? PlayerId
         {
             get { return this.playerId; }
             set { this.Set(ref this.playerId, value); }

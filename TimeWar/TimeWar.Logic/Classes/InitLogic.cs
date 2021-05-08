@@ -70,7 +70,7 @@ namespace TimeWar.Logic
                 string[] enemies = enemyStrings.Split('!');
                 foreach (string enemy in enemies)
                 {
-                    if (enemy != "")
+                    if (!string.IsNullOrEmpty(enemy))
                     {
                         string[] data = enemy.Split(';');
                         Enemy e = new Enemy(new Point(Convert.ToInt32(data[1], System.Globalization.CultureInfo.CurrentCulture), Convert.ToInt32(data[2], System.Globalization.CultureInfo.CurrentCulture)), Convert.ToInt32(data[3], System.Globalization.CultureInfo.CurrentCulture), EnemyInitLogic.BasicEnemyHeight, EnemyInitLogic.BasicEnemyWidth, (EnemyType)Enum.Parse(typeof(EnemyType), data[0]), data[5]);
