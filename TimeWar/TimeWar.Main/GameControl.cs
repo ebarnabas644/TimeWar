@@ -204,7 +204,7 @@ namespace TimeWar.Main
             this.initLogic = new InitLogic(this.model, this.MapName, this.factory.ViewerLogic, this.SaveLoad);
             this.model.Camera = new Viewport((int)this.ActualWidth, (int)this.ActualHeight, (int)this.model.CurrentWorld.GameWidth, (int)this.model.CurrentWorld.GameHeight, this.model.Hero);
             this.renderer = new GameRenderer(this.model, false);
-            this.commandManager = new Logic.Classes.CommandManager();
+            this.commandManager = new Logic.Classes.CommandManager(this.model);
             this.characterLogic = new CharacterLogic(this.model, this.model.Hero, this.commandManager);
             this.characterLogic.Fire += this.CharacterLogic_Fire;
             this.bulletLogic = new BulletLogics(this.model, (ICollection<Bullet>)this.model.CurrentWorld.GetBullets, this.commandManager);

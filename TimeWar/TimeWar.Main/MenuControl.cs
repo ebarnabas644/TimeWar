@@ -90,7 +90,7 @@ namespace TimeWar.Main
             this.initLogic = new InitLogic(this.model, this.MapName, this.factory.ViewerLogic, false);
             this.model.Camera = new Viewport((int)this.ActualWidth, (int)this.ActualHeight, (int)this.model.CurrentWorld.GameWidth, (int)this.model.CurrentWorld.GameHeight, this.model.Hero);
             this.renderer = new GameRenderer(this.model, true, this.ScrollMode, this.TitleEnabled);
-            this.commandManager = new Logic.Classes.CommandManager();
+            this.commandManager = new Logic.Classes.CommandManager(this.model);
             this.characterLogic = new CharacterLogic(this.model, this.model.Hero, this.commandManager);
             this.win = Window.GetWindow(this);
             if (this.win != null)

@@ -39,6 +39,11 @@
             Gets or sets a value indicating whether level finished.
             </summary>
         </member>
+        <member name="P:TimeWar.Model.GameModel.InRewind">
+            <summary>
+            Gets or sets a value indicating whether in rewind.
+            </summary>
+        </member>
         <member name="T:TimeWar.Model.Objects.Classes.BulletType">
             <summary>
             Types of bullet.

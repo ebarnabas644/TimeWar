@@ -330,10 +330,11 @@
             Command manager class.
             </summary>
         </member>
-        <member name="M:TimeWar.Logic.Classes.CommandManager.#ctor">
+        <member name="M:TimeWar.Logic.Classes.CommandManager.#ctor(TimeWar.Model.GameModel)">
             <summary>
             Initializes a new instance of the <see cref="T:TimeWar.Logic.Classes.CommandManager"/> class.
             </summary>
+            <param name="model">Game model.</param>
         </member>
         <member name="P:TimeWar.Logic.Classes.CommandManager.IsFinished">
             <inheritdoc/>
