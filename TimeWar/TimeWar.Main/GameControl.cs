@@ -14,10 +14,12 @@ namespace TimeWar.Main
     using System.Windows;
     using System.Windows.Input;
     using System.Windows.Media;
+    using CommonServiceLocator;
     using TimeWar.Logic;
     using TimeWar.Logic.Classes.Characters;
     using TimeWar.Logic.Classes.Characters.Actions;
     using TimeWar.Logic.Classes.LogicCollections;
+    using TimeWar.Logic.Interfaces;
     using TimeWar.Main.BL;
     using TimeWar.Main.ViewModel;
     using TimeWar.Model;
@@ -40,6 +42,7 @@ namespace TimeWar.Main
         private EnemyLogics enemyLogic;
         private PointOfInterestLogics pointOfInterestLogics;
         private GameViewModel gm;
+        private Factory factory;
         private MediaPlayer backgroundMusic;
         private MediaPlayer waveSound;
 
@@ -54,10 +57,20 @@ namespace TimeWar.Main
         /// Initializes a new instance of the <see cref="GameControl"/> class.
         /// </summary>
         public GameControl()
+            : this(ServiceLocator.Current.GetInstance<Factory>())
         {
             this.exit = false;
             this.Loaded += this.GameControl_Loaded;
             this.mouseScrollPos = 1;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GameControl"/> class.
+        /// </summary>
+        /// <param name="factory">Factory.</param>
+        public GameControl(Factory factory)
+        {
+            this.factory = factory;
         }
 
         /// <summary>
@@ -124,9 +137,7 @@ namespace TimeWar.Main
             this.pointOfInterestLogics = new PointOfInterestLogics(this.model, this.characterLogic, this.commandManager);
             this.mouseScrollPos = 0;
             this.time.Start();
-
             this.deltatime.Start();
-
             this.model.CurrentWorld.CheckpointSave();
             this.model.CurrentWorld.SavedHealt = this.model.Hero.CurrentHealth;
             this.model.CurrentWorld.SavedShield = this.model.Hero.CurrentShield;
@@ -205,6 +216,10 @@ namespace TimeWar.Main
                     this.gm.EndDeaths = this.model.Hero.Deaths;
                     this.gm.EndTime = this.time.Elapsed;
                     this.gm.EndVisibility = true;
+                    if (this.factory.ViewerLogic.GetMaps().Any(x => x.MapName == this.MapName && x.PlayerId == this.factory.ViewerLogic.GetSelectedProfile().PlayerId))
+                    {
+                        var q = this.factory.ViewerLogic.GetMaps().Where(x => x.MapName == this.MapName && x.PlayerId == this.factory.ViewerLogic.GetSelectedProfile().PlayerId).SingleOrDefault();
+                    }
                 }
             }
             else
