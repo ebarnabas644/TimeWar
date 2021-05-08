@@ -18,6 +18,11 @@ namespace TimeWar.Data.Models
         public int Id { get; set; }
 
         /// <summary>
+        /// Gets or sets map name.
+        /// </summary>
+        public string MapName { get; set; }
+
+        /// <summary>
         /// Gets or sets point.
         /// </summary>
         public string Playerdata { get; set; }

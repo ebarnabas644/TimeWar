@@ -52,6 +52,7 @@ namespace TimeWar.Main
         private ushort mouseScrollPos;
         private bool exit;
         private bool alreadyran;
+        private object writelock = new object();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameControl"/> class.
@@ -170,7 +171,7 @@ namespace TimeWar.Main
         private void InitSave()
         {
             var player = this.factory.ViewerLogic.GetSelectedProfile();
-            this.MapName = this.factory.ViewerLogic.GetMaps().Where(x => x.Player == player).FirstOrDefault().MapName;
+            this.MapName = this.factory.ViewerLogic.GetSaves().Where(x => x.Player == player).FirstOrDefault().MapName;
         }
 
         private void InitAudio()
@@ -247,33 +248,37 @@ namespace TimeWar.Main
             {
                 lock (this.factory)
                 {
-                    this.gm.EndVisibility = false;
-                    this.win.KeyDown -= this.Win_KeyDown;
-                    this.win.KeyUp -= this.Win_KeyUp;
-                    this.win.SizeChanged -= this.Win_SizeChanged;
-                    this.win.MouseMove -= this.Win_MouseMove;
-                    this.win.MouseDown -= this.Win_MouseDown;
-                    this.win.MouseWheel -= this.Win_MouseScroll;
-                    if (!this.alreadyran)
+                    lock (this.writelock)
                     {
-                        this.alreadyran = true;
-                        var player = this.factory.ViewerLogic.GetSelectedProfile();
-                        Save save = new Save();
-                        save.PlayerId = player.PlayerId;
-                        save.Playerdata = this.characterLogic.ToString();
-                        save.Enemydata = this.enemyLogic.ToString();
-                        var saves = this.factory.ViewerLogic.GetSaves();
-                        if (!this.factory.ViewerLogic.GetSaves().Any(x => x.PlayerId == player.PlayerId))
+                        this.gm.EndVisibility = false;
+                        this.win.KeyDown -= this.Win_KeyDown;
+                        this.win.KeyUp -= this.Win_KeyUp;
+                        this.win.SizeChanged -= this.Win_SizeChanged;
+                        this.win.MouseMove -= this.Win_MouseMove;
+                        this.win.MouseDown -= this.Win_MouseDown;
+                        this.win.MouseWheel -= this.Win_MouseScroll;
+                        if (!this.alreadyran)
                         {
-                            this.factory.ManagerLogic.CreateSave(save);
-                        }
-                        else
-                        {
-                            save.Id = this.factory.ViewerLogic.GetSaves().Where(x => x.PlayerId == player.PlayerId).SingleOrDefault().Id;
-                            this.factory.ManagerLogic.ModifySave(save);
-                        }
+                            this.alreadyran = true;
+                            var player = this.factory.ViewerLogic.GetSelectedProfile();
+                            Save save = new Save();
+                            save.PlayerId = player.PlayerId;
+                            save.Playerdata = this.characterLogic.Character.ToString();
+                            save.Enemydata = this.enemyLogic.SaveEnemies();
+                            save.MapName = this.MapName;
+                            var saves = this.factory.ViewerLogic.GetSaves();
+                            if (!this.factory.ViewerLogic.GetSaves().Any(x => x.PlayerId == player.PlayerId))
+                            {
+                                this.factory.ManagerLogic.CreateSave(save);
+                            }
+                            else
+                            {
+                                save.Id = this.factory.ViewerLogic.GetSaves().Where(x => x.PlayerId == player.PlayerId).SingleOrDefault().Id;
+                                this.factory.ManagerLogic.ModifySave(save);
+                            }
 
-                        this.timer.Dispose();
+                            this.timer.Dispose();
+                        }
                     }
                 }
 
