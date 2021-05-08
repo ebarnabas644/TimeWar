@@ -24,6 +24,8 @@
     <None Remove="Leveldata\Benchmark %282000 enemies%29.png" />
     <None Remove="Leveldata\Benchmark %282000 enemies%29.tmx" />
     <None Remove="Leveldata\Benchmark %282000%29.tmx" />
+    <None Remove="Leveldata\Benchmark %28600 enemies%29.png" />
+    <None Remove="Leveldata\Benchmark %28600 enemies%29.tmx" />
     <None Remove="Leveldata\Benchmark %28700 enemies%29.png" />
     <None Remove="Leveldata\Benchmark %28700 enemies%29.tmx" />
     <None Remove="Leveldata\Benchmark.png" />
@@ -95,10 +97,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Content Include="Leveldata\Benchmark (2000 enemies).png">
+	  <Content Include="Leveldata\Benchmark (600 enemies).png">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
-	  <Content Include="Leveldata\Benchmark (2000 enemies).tmx">
+	  <Content Include="Leveldata\Benchmark (600 enemies).tmx">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Leveldata\Checkpoint test.png">
