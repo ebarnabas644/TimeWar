@@ -5,11 +5,14 @@
 namespace TimeWar.Logic
 {
     using System;
+    using System.Collections.Generic;
     using System.Drawing;
     using System.Linq;
     using System.Xml.Linq;
+    using TimeWar.Data.Models;
     using TimeWar.Logic.Classes;
     using TimeWar.Logic.Classes.Characters;
+    using TimeWar.Logic.Interfaces;
     using TimeWar.Model;
     using TimeWar.Model.Objects;
     using TimeWar.Model.Objects.Classes;
@@ -20,16 +23,56 @@ namespace TimeWar.Logic
     public class InitLogic
     {
         private GameModel model;
+        private IViewerLogic viewerLogic;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="InitLogic"/> class.
         /// </summary>
         /// <param name="model">Game model instance.</param>
         /// <param name="mapName">Name of the game map.</param>
-        public InitLogic(GameModel model, string mapName)
+        /// <param name="viewerLogic">Viewer logic.</param>
+        public InitLogic(GameModel model, string mapName, IViewerLogic viewerLogic)
         {
             this.model = model;
             this.BuildModel(mapName);
+            this.viewerLogic = viewerLogic;
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the game is continued or not.
+        /// </summary>
+        public bool GameContinued { get; set; }
+
+        /// <summary>
+        /// Loads the game.
+        /// </summary>
+        /// <param name="gameModel">GameModel.</param>
+        public void LoadSave(GameModel gameModel)
+        {
+            if (gameModel != null)
+            {
+                PlayerProfile profile = this.viewerLogic.GetSelectedProfile();
+                Save save = this.viewerLogic.GetSave(profile.SaveId);
+                string enemyStrings = save.Enemydata;
+                string playerString = save.Playerdata;
+
+                Player character = this.GetPlayer();
+                string[] characterData = playerString.Split(';');
+                character.Position = new Point(Convert.ToInt32(characterData[0], System.Globalization.CultureInfo.CurrentCulture), Convert.ToInt32(characterData[1], System.Globalization.CultureInfo.CurrentCulture));
+                character.CurrentHealth = Convert.ToInt32(characterData[2], System.Globalization.CultureInfo.CurrentCulture);
+                character.CurrentShield = Convert.ToInt32(characterData[3], System.Globalization.CultureInfo.CurrentCulture);
+                character.TypeOfBullet = (BulletType)Enum.Parse(typeof(EnemyType), characterData[4]);
+                character.NumOfWeaponUnlocked = Convert.ToInt32(characterData[5], System.Globalization.CultureInfo.CurrentCulture);
+                this.model.Hero = character;
+
+                string[] enemies = enemyStrings.Split('!');
+                foreach (string enemy in enemies)
+                {
+                    string[] data = enemy.Split(';');
+                    Enemy e = new Enemy(new Point(Convert.ToInt32(data[1], System.Globalization.CultureInfo.CurrentCulture), Convert.ToInt32(data[2], System.Globalization.CultureInfo.CurrentCulture)), Convert.ToInt32(data[3], System.Globalization.CultureInfo.CurrentCulture), EnemyInitLogic.BasicEnemyHeight, EnemyInitLogic.BasicEnemyWidth, (EnemyType)Enum.Parse(typeof(EnemyType), data[0]), data[5]);
+                    gameModel.CurrentWorld.AddEnemy(e);
+                }
+            }
         }
 
         private static string[][] GetGround(XDocument mapData)
@@ -146,17 +189,26 @@ namespace TimeWar.Logic
             string[][] grounddata = GetGround(mapData);
             string[][] poidata = GetPoi(mapData);
             string[][] decodata = GetDecorations(mapData);
-            string[][] enemydata = GetEnemies(mapData);
+
             int gameWorldHeight = grounddata.Length;
             int gameWorldWidth = grounddata[0].Length;
             int tileSize = GetTileSize(mapData);
             this.model.CurrentWorld = new GameWorld(gameWorldHeight, gameWorldWidth, tileSize);
             this.model.CurrentWorld.WorldName = mapName;
+            if (!this.GameContinued)
+            {
+                string[][] enemydata = GetEnemies(mapData);
+                this.FillEnemy(this.model.CurrentWorld, enemydata);
+                this.model.Hero = this.GetPlayer();
+            }
+            else
+            {
+                this.LoadSave(this.model);
+            }
+
             FillGround(this.model.CurrentWorld, grounddata);
             FillPoi(this.model.CurrentWorld, poidata);
             FillDeco(this.model.CurrentWorld, decodata);
-            this.FillEnemy(this.model.CurrentWorld, enemydata);
-            this.model.Hero = this.GetPlayer();
         }
     }
 }

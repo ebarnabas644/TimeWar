@@ -110,7 +110,7 @@ namespace TimeWar.Main
             this.InitAudio();
             this.model = new GameModel();
             this.gm = this.DataContext as GameViewModel;
-            this.initLogic = new InitLogic(this.model, this.MapName,);
+            this.initLogic = new InitLogic(this.model, this.MapName);
             this.model.Camera = new Viewport((int)this.ActualWidth, (int)this.ActualHeight, (int)this.model.CurrentWorld.GameWidth, (int)this.model.CurrentWorld.GameHeight, this.model.Hero);
             this.renderer = new GameRenderer(this.model, false);
             this.commandManager = new Logic.Classes.CommandManager();

@@ -102,16 +102,13 @@ namespace TimeWar.Logic.Classes.Characters
         public override string ToString()
         {
             string retString = string.Empty;
-            retString += "enemy;"; // enemy.
             retString += (this.Character as Enemy).Type + ";"; // Enemy Type.
             retString += this.Character.Position.X + ";"; // Character position X.
             retString += this.Character.Position.Y + ";"; // Character position Y.
             retString += this.Character.CurrentHealth + ";"; // Character health.
             retString += this.Character.TypeOfBullet + ";"; // Type of bullet.
-            retString += this.Character.Height + ";"; // Character height.
-            retString += this.Character.Width + ";"; // Character Width.
-            retString += this.IsPlayerDetected + ";"; // Player is detected.
-            retString += this.LastKnownPlayerLocation + ";"; // Player location.
+            retString += this.Character.SpriteFile + ";"; // Sprite file.
+            retString += "!"; // Closing character.
             return retString;
         }
 

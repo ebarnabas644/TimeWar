@@ -60,5 +60,18 @@ namespace TimeWar.Model.Objects
             this.Position = this.Checkpoint;
             this.MovementVector = new Point(0, 0);
         }
+
+        /// <inheritdoc/>
+        public override string ToString()
+        {
+            string retString = string.Empty;
+            retString += this.Position.X + ";"; // Character position X.
+            retString += this.Position.Y + ";"; // Character position Y.
+            retString += this.CurrentHealth + ";"; // Character health.
+            retString += this.CurrentShield + ";"; // Character shield.
+            retString += this.TypeOfBullet + ";"; // Type of bullet.
+            retString += this.NumOfWeaponUnlocked + ";"; // Character num of weaponst unlocked.
+            return retString;
+        }
     }
 }
