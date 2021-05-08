@@ -197,6 +197,9 @@ namespace TimeWar.Logic
             int tileSize = GetTileSize(mapData);
             this.model.CurrentWorld = new GameWorld(gameWorldHeight, gameWorldWidth, tileSize);
             this.model.CurrentWorld.WorldName = mapName;
+            FillGround(this.model.CurrentWorld, grounddata);
+            FillPoi(this.model.CurrentWorld, poidata);
+            FillDeco(this.model.CurrentWorld, decodata);
             if (!this.GameContinued)
             {
                 string[][] enemydata = GetEnemies(mapData);
@@ -207,10 +210,6 @@ namespace TimeWar.Logic
             {
                 this.LoadSave(this.model);
             }
-
-            FillGround(this.model.CurrentWorld, grounddata);
-            FillPoi(this.model.CurrentWorld, poidata);
-            FillDeco(this.model.CurrentWorld, decodata);
         }
     }
 }

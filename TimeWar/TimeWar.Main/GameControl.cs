@@ -15,6 +15,7 @@ namespace TimeWar.Main
     using System.Windows.Input;
     using System.Windows.Media;
     using CommonServiceLocator;
+    using TimeWar.Data.Models;
     using TimeWar.Logic;
     using TimeWar.Logic.Classes.Characters;
     using TimeWar.Logic.Classes.Characters.Actions;
@@ -50,6 +51,7 @@ namespace TimeWar.Main
         private Stopwatch deltatime = new Stopwatch();
         private ushort mouseScrollPos;
         private bool exit;
+        private bool alreadyran;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameControl"/> class.
@@ -78,6 +80,11 @@ namespace TimeWar.Main
         {
             get { return this.backgroundMusic; }
         }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether loading save.
+        /// </summary>
+        public bool SaveLoad { get; set; }
 
         /// <summary>
         /// Gets or sets current map.
@@ -123,7 +130,13 @@ namespace TimeWar.Main
             this.InitAudio();
             this.model = new GameModel();
             this.gm = this.DataContext as GameViewModel;
-            this.initLogic = new InitLogic(this.model, this.MapName, this.factory.ViewerLogic, false);
+            if (this.SaveLoad)
+            {
+                this.InitSave();
+            }
+
+            this.alreadyran = false;
+            this.initLogic = new InitLogic(this.model, this.MapName, this.factory.ViewerLogic, this.SaveLoad);
             this.model.Camera = new Viewport((int)this.ActualWidth, (int)this.ActualHeight, (int)this.model.CurrentWorld.GameWidth, (int)this.model.CurrentWorld.GameHeight, this.model.Hero);
             this.renderer = new GameRenderer(this.model, false);
             this.commandManager = new Logic.Classes.CommandManager();
@@ -152,6 +165,12 @@ namespace TimeWar.Main
             }
 
             this.InvalidateVisual();
+        }
+
+        private void InitSave()
+        {
+            var player = this.factory.ViewerLogic.GetSelectedProfile();
+            this.MapName = this.factory.ViewerLogic.GetMaps().Where(x => x.Player == player).FirstOrDefault().MapName;
         }
 
         private void InitAudio()
@@ -233,6 +252,30 @@ namespace TimeWar.Main
                 this.win.MouseMove -= this.Win_MouseMove;
                 this.win.MouseDown -= this.Win_MouseDown;
                 this.win.MouseWheel -= this.Win_MouseScroll;
+                lock (this.factory)
+                {
+                    if (!this.alreadyran)
+                    {
+                        this.alreadyran = true;
+                        var player = this.factory.ViewerLogic.GetSelectedProfile();
+                        Save save = new Save();
+                        save.PlayerId = player.PlayerId;
+                        save.Playerdata = this.characterLogic.ToString();
+                        save.Enemydata = this.enemyLogic.ToString();
+                        var saves = this.factory.ViewerLogic.GetSaves();
+                        if (!this.factory.ViewerLogic.GetSaves().Any(x => x.PlayerId == player.PlayerId))
+                        {
+                            this.factory.ManagerLogic.CreateSave(save);
+                        }
+                        else
+                        {
+                            this.factory.ManagerLogic.ModifySave(save);
+                        }
+
+                        this.timer.Dispose();
+                    }
+                }
+
                 this.Dispose();
                 CompositionTarget.Rendering -= (sender, args) => this.InvalidateVisual();
             }
