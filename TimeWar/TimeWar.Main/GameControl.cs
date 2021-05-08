@@ -245,15 +245,15 @@ namespace TimeWar.Main
             }
             else
             {
-                this.gm.EndVisibility = false;
-                this.win.KeyDown -= this.Win_KeyDown;
-                this.win.KeyUp -= this.Win_KeyUp;
-                this.win.SizeChanged -= this.Win_SizeChanged;
-                this.win.MouseMove -= this.Win_MouseMove;
-                this.win.MouseDown -= this.Win_MouseDown;
-                this.win.MouseWheel -= this.Win_MouseScroll;
                 lock (this.factory)
                 {
+                    this.gm.EndVisibility = false;
+                    this.win.KeyDown -= this.Win_KeyDown;
+                    this.win.KeyUp -= this.Win_KeyUp;
+                    this.win.SizeChanged -= this.Win_SizeChanged;
+                    this.win.MouseMove -= this.Win_MouseMove;
+                    this.win.MouseDown -= this.Win_MouseDown;
+                    this.win.MouseWheel -= this.Win_MouseScroll;
                     if (!this.alreadyran)
                     {
                         this.alreadyran = true;
@@ -269,6 +269,7 @@ namespace TimeWar.Main
                         }
                         else
                         {
+                            save.Id = this.factory.ViewerLogic.GetSaves().Where(x => x.PlayerId == player.PlayerId).SingleOrDefault().Id;
                             this.factory.ManagerLogic.ModifySave(save);
                         }
 

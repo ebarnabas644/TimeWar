@@ -99,7 +99,7 @@
             Gets or sets the autosave id.
             </summary>
         </member>
-        <member name="P:TimeWar.Data.Models.PlayerProfile.AutoSave">
+        <member name="P:TimeWar.Data.Models.PlayerProfile.Save">
             <summary>
             Gets or sets the player auto save navigational property.
             </summary>

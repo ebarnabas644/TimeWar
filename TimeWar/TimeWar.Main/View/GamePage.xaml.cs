@@ -25,7 +25,15 @@ namespace TimeWar.Main.View
             this.vm = this.DataContext as GameViewModel;
             this.gc = this.FindName("cont") as GameControl;
             this.menu = this.FindName("pauseMenu") as Control;
-            this.gc.MapName = (string)this.vm.NavigationContext.Parameter;
+            string param = (string)this.vm.NavigationContext.Parameter;
+            if (param == "saveloading")
+            {
+                this.gc.SaveLoad = true;
+            }
+            else
+            {
+                this.gc.MapName = param;
+            }
         }
 
         private void Unsubscribe_Click(object sender, System.Windows.RoutedEventArgs e)

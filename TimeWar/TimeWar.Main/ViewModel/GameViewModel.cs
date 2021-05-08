@@ -7,6 +7,7 @@ namespace TimeWar.Main.ViewModel
     using System;
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.Command;
+    using TimeWar.Logic.Interfaces;
     using TimeWar.Main.View;
 
     /// <summary>
@@ -100,6 +101,9 @@ namespace TimeWar.Main.ViewModel
         /// </summary>
         public RelayCommand MenuPageCommand => this.menuPageCommand
                     ?? (this.menuPageCommand = new RelayCommand(
-                    () => this.navigationService.NavigateTo("MenuPage")));
+                    () =>
+                    {
+                        this.navigationService.NavigateTo("MenuPage");
+                        }));
     }
 }

@@ -52,7 +52,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <DockPanel>
-                            <TextBlock Text="{Binding RunTime, Converter={StaticResource IntToDateConverter}}" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Right" Style="{StaticResource TextBlockStyle}"/>
+                            <TextBlock Text="{Binding RunTime}" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Right" Style="{StaticResource TextBlockStyle}"/>
                         </DockPanel>
                     </Grid>
                 </DataTemplate>
