@@ -69,5 +69,14 @@ namespace TimeWar.Logic.Classes
         {
             return this.SaveRepo.GetAll().ToList();
         }
+
+        /// <summary>
+        /// Gets selected player profile.
+        /// </summary>
+        /// <returns>Selected player profile.</returns>
+        public PlayerProfile GetSelectedProfile()
+        {
+            return this.GetProfiles().Where(x => x.Selected == true).FirstOrDefault();
+        }
     }
 }
