@@ -1,0 +1,1661 @@
+\begin{theindex}
+
+  \item {Accelerating}
+    \subitem {TimeWar.Model.Objects.Classes}, \hyperpage{17}
+  \item {Acceleration}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{27}
+    \subitem {TimeWar.Model.Objects.Classes.Bullet}, \hyperpage{38}
+  \item {AccelerationStopwatch}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{27}
+  \item {ActorLogic}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{22}
+  \item {AddBullet}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{82}
+  \item {Addbullets}
+    \subitem {TimeWar.Logic.Classes.LogicCollections.BulletLogics}, 
+		\hyperpage{42}
+  \item {AddCommand}
+    \subitem {TimeWar.Logic.Interfaces.ICommandManager}, 
+		\hyperpage{101}
+  \item {AddDecoration}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{82}
+  \item {AddEnemy}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{82}
+  \item {AddEventHandler}
+    \subitem {XamlGeneratedNamespace.GeneratedInternalTypeHelper}, 
+		\hyperpage{93}
+  \item {AddGround}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{83}
+  \item {AddKey}
+    \subitem {TimeWar.Model.Objects.Character}, \hyperpage{46}
+  \item {AddPOI}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{83}
+  \item {AddToVector}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{23}
+  \item {Attack}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{23}
+    \subitem {TimeWar.Logic.Classes.Characters.BurstEnemyLogic}, 
+		\hyperpage{44}
+  \item {AttackStopwatch}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{28}
+  \item {AttackTime}
+    \subitem {TimeWar.Logic.CharacterLogic}, \hyperpage{52}
+    \subitem {TimeWar.Logic.Classes.Characters.BasicEnemyLogic}, 
+		\hyperpage{34}
+  \item {AttackValue}
+    \subitem {TimeWar.Logic.Classes.Characters.BasicEnemyLogic}, 
+		\hyperpage{34}
+
+  \indexspace
+
+  \item {BackgroundHorizontalTileNumber}
+    \subitem {TimeWar.Renderer.RendererConfig}, \hyperpage{197}
+  \item {BackgroundMusic}
+    \subitem {TimeWar.Main.GameControl}, \hyperpage{69}
+  \item {BackgroundVerticalTileNumber}
+    \subitem {TimeWar.Renderer.RendererConfig}, \hyperpage{197}
+  \item {Basic}
+    \subitem {TimeWar.Model.Objects.Classes}, \hyperpage{17, 18}
+  \item {BasicEnemyBullet}
+    \subitem {TimeWar.Model.Objects.Classes}, \hyperpage{17}
+  \item {BasicEnemyHealth}
+    \subitem {TimeWar.Logic.Classes.EnemyInitLogic}, \hyperpage{58}
+  \item {BasicEnemyHeight}
+    \subitem {TimeWar.Logic.Classes.EnemyInitLogic}, \hyperpage{58}
+  \item {BasicEnemyLogic}
+    \subitem {TimeWar.Logic.Classes.Characters.BasicEnemyLogic}, 
+		\hyperpage{34}
+  \item {BasicEnemySpritesheet}
+    \subitem {TimeWar.Logic.Classes.EnemyInitLogic}, \hyperpage{58}
+  \item {BasicEnemyWidth}
+    \subitem {TimeWar.Logic.Classes.EnemyInitLogic}, \hyperpage{58}
+  \item {Bouncing}
+    \subitem {TimeWar.Model.Objects.Classes}, \hyperpage{17}
+  \item {BuildDrawing}
+    \subitem {TimeWar.Renderer.GameRenderer}, \hyperpage{74}
+  \item {Bullet}
+    \subitem {TimeWar.Model.Objects.Classes.Bullet}, \hyperpage{37}
+  \item {BulletCount}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{89}
+  \item {BulletDirectionTest}
+    \subitem {TimeWar.LogicTests.Tests}, \hyperpage{207}
+  \item {BulletLogic}
+    \subitem {TimeWar.Logic.Classes.Characters.Actions.BulletLogic}, 
+		\hyperpage{40}
+  \item {BulletLogics}
+    \subitem {TimeWar.Logic.Classes.LogicCollections.BulletLogics}, 
+		\hyperpage{42}
+  \item {BulletStopwatch}
+    \subitem {TimeWar.Model.Objects.Classes.Bullet}, \hyperpage{38}
+  \item {BulletType}
+    \subitem {TimeWar.Model.Objects.Classes}, \hyperpage{17}
+  \item {Burst}
+    \subitem {TimeWar.Model.Objects.Classes}, \hyperpage{18}
+  \item {BurstEnemyHealth}
+    \subitem {TimeWar.Logic.Classes.EnemyInitLogic}, \hyperpage{59}
+  \item {BurstEnemyLogic}
+    \subitem {TimeWar.Logic.Classes.Characters.BurstEnemyLogic}, 
+		\hyperpage{44}
+  \item {BurstEnemySpritesheet}
+    \subitem {TimeWar.Logic.Classes.EnemyInitLogic}, \hyperpage{59}
+
+  \indexspace
+
+  \item {Camera}
+    \subitem {TimeWar.Model.GameModel}, \hyperpage{71}
+  \item {CanAttack}
+    \subitem {TimeWar.Model.Objects.Character}, \hyperpage{47}
+  \item {CanJump}
+    \subitem {TimeWar.Model.Objects.Character}, \hyperpage{47}
+  \item {Character}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{28}
+    \subitem {TimeWar.Logic.Classes.POIs.TimedPOILogic}, 
+		\hyperpage{210}
+    \subitem {TimeWar.Model.Objects.Character}, \hyperpage{46}
+  \item {CharacterLogic}
+    \subitem {TimeWar.Logic.CharacterLogic}, \hyperpage{52}
+  \item {Checkpoint}
+    \subitem {TimeWar.Model.Objects.Classes}, \hyperpage{18}
+    \subitem {TimeWar.Model.Objects.Player}, \hyperpage{169}
+  \item {CheckpointLoad}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{83}
+  \item {CheckpointLogic}
+    \subitem {TimeWar.Logic.Classes.POIs.CheckpointLogic}, 
+		\hyperpage{54}
+  \item {CheckpointSave}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{83}
+  \item {CheckTimer}
+    \subitem {TimeWar.Logic.Interfaces.ITimedEvent}, \hyperpage{126}
+  \item {ClearBuffer}
+    \subitem {TimeWar.Logic.Interfaces.ICommandManager}, 
+		\hyperpage{101}
+  \item {ClickLocation}
+    \subitem {TimeWar.Model.Objects.Character}, \hyperpage{48}
+  \item {CommandManager}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{28}
+    \subitem {TimeWar.Logic.Classes.CommandManager}, \hyperpage{55}
+  \item {CompletedRuns}
+    \subitem {TimeWar.Data.Models.PlayerProfile}, \hyperpage{170}
+    \subitem {TimeWar.Main.Data.PlayerProfileUI}, \hyperpage{175}
+  \item {ConfigurePage}
+    \subitem {TimeWar.Main.View.NavigationService$<$ T $>$}, 
+		\hyperpage{161}
+  \item {ConfigurePages}
+    \subitem {TimeWar.Main.View.NavigationService$<$ T $>$}, 
+		\hyperpage{161}
+  \item {ContainKey}
+    \subitem {TimeWar.Model.Objects.Character}, \hyperpage{47}
+  \item {ContinueGameCommand}
+    \subitem {TimeWar.Main.ViewModel.MenuViewModel}, \hyperpage{156}
+  \item {ContinueVisibility}
+    \subitem {TimeWar.Main.ViewModel.MenuViewModel}, \hyperpage{156}
+  \item {ConvertPixelToTile}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{84}
+  \item {ConvertTileToPixel}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{84}
+  \item {ConvertToMapEntity}
+    \subitem {TimeWar.Main.Data.MapRecordUI}, \hyperpage{146}
+  \item {ConvertToMapUiEntity}
+    \subitem {TimeWar.Main.Data.MapRecordUI}, \hyperpage{147}
+  \item {ConvertToProfileEntity}
+    \subitem {TimeWar.Main.Data.PlayerProfileUI}, \hyperpage{174}
+  \item {ConvertToProfileUiEntity}
+    \subitem {TimeWar.Main.Data.PlayerProfileUI}, \hyperpage{174}
+  \item {ConvertToSaveEntity}
+    \subitem {TimeWar.Main.Data.SaveUI}, \hyperpage{202}
+  \item {ConvertToSaveUiEntity}
+    \subitem {TimeWar.Main.Data.SaveUI}, \hyperpage{203}
+  \item {CopyFrom}
+    \subitem {TimeWar.Main.Data.MapRecordUI}, \hyperpage{147}
+    \subitem {TimeWar.Main.Data.PlayerProfileUI}, \hyperpage{174}
+    \subitem {TimeWar.Main.Data.SaveUI}, \hyperpage{203}
+  \item {Create}
+    \subitem {TimeWar.Repository.Interfaces.IMainRepository$<$ T $>$}, 
+		\hyperpage{106}
+  \item {CreateDelegate}
+    \subitem {XamlGeneratedNamespace.GeneratedInternalTypeHelper}, 
+		\hyperpage{94}
+  \item {CreateInstance}
+    \subitem {XamlGeneratedNamespace.GeneratedInternalTypeHelper}, 
+		\hyperpage{94}
+  \item {CreateMap}
+    \subitem {TimeWar.Logic.Interfaces.IManagerLogic}, \hyperpage{108}
+    \subitem {TimeWar.Main.BL.Interfaces.IManagerLogicUI}, 
+		\hyperpage{111}
+  \item {CreateProfile}
+    \subitem {TimeWar.Logic.Interfaces.IManagerLogic}, \hyperpage{108}
+    \subitem {TimeWar.Main.BL.Interfaces.IManagerLogicUI}, 
+		\hyperpage{112}
+  \item {CreateProfileCommand}
+    \subitem {TimeWar.Main.ViewModel.ProfilesViewModel}, 
+		\hyperpage{192}
+  \item {CreateSave}
+    \subitem {TimeWar.Logic.Interfaces.IManagerLogic}, \hyperpage{108}
+    \subitem {TimeWar.Main.BL.Interfaces.IManagerLogicUI}, 
+		\hyperpage{112}
+  \item {CreateSprite}
+    \subitem {TimeWar.Renderer.Sprite}, \hyperpage{204}
+  \item {Ctx}
+    \subitem {TimeWar.Repository.Classes.MainRepository$<$ T $>$}, 
+		\hyperpage{133}
+  \item {CurrentHealth}
+    \subitem {TimeWar.Model.Objects.Character}, \hyperpage{48}
+  \item {CurrentPageKey}
+    \subitem {TimeWar.Main.View.NavigationService$<$ T $>$}, 
+		\hyperpage{162}
+  \item {CurrentShield}
+    \subitem {TimeWar.Model.Objects.Character}, \hyperpage{48}
+  \item {CurrentSprite}
+    \subitem {TimeWar.Model.Objects.Character}, \hyperpage{48}
+    \subitem {TimeWar.Model.Objects.Interfaces.IGameObject}, 
+		\hyperpage{103}
+  \item {CurrentWorld}
+    \subitem {TimeWar.Model.GameModel}, \hyperpage{72}
+  \item {CurvedBouncing}
+    \subitem {TimeWar.Model.Objects.Classes}, \hyperpage{17}
+
+  \indexspace
+
+  \item {Damage}
+    \subitem {TimeWar.Model.Objects.Classes.Bullet}, \hyperpage{38}
+  \item {Deaths}
+    \subitem {TimeWar.Model.Objects.Player}, \hyperpage{169}
+  \item {DefaultAcceleration}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{28}
+  \item {DefaultAttackTime}
+    \subitem {TimeWar.Logic.Classes.POIs.RapidFireLogic}, 
+		\hyperpage{196}
+  \item {DefaultFollowDistance}
+    \subitem {TimeWar.Logic.Classes.Characters.BasicEnemyLogic}, 
+		\hyperpage{34}
+  \item {DefaultJumpHeight}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{28}
+  \item {Delete}
+    \subitem {TimeWar.Repository.Interfaces.IMainRepository$<$ T $>$}, 
+		\hyperpage{106}
+  \item {DeleteMap}
+    \subitem {TimeWar.Logic.Interfaces.IManagerLogic}, \hyperpage{109}
+    \subitem {TimeWar.Main.BL.Interfaces.IManagerLogicUI}, 
+		\hyperpage{112}
+  \item {DeleteProfile}
+    \subitem {TimeWar.Logic.Interfaces.IManagerLogic}, \hyperpage{109}
+    \subitem {TimeWar.Main.BL.Interfaces.IManagerLogicUI}, 
+		\hyperpage{113}
+  \item {DeleteProfileCommand}
+    \subitem {TimeWar.Main.ViewModel.ProfilesViewModel}, 
+		\hyperpage{192}
+  \item {DeleteSave}
+    \subitem {TimeWar.Logic.Interfaces.IManagerLogic}, \hyperpage{109}
+    \subitem {TimeWar.Main.BL.Interfaces.IManagerLogicUI}, 
+		\hyperpage{113}
+  \item {DespawnStopwatch}
+    \subitem {TimeWar.Model.Objects.Classes.Bullet}, \hyperpage{39}
+  \item {Destination}
+    \subitem {TimeWar.Model.Objects.Classes.Bullet}, \hyperpage{39}
+  \item {DetectionRange}
+    \subitem {TimeWar.Logic.Classes.Characters.BasicEnemyLogic}, 
+		\hyperpage{35}
+  \item {DetectionTime}
+    \subitem {TimeWar.Logic.Classes.Characters.BasicEnemyLogic}, 
+		\hyperpage{35}
+
+  \indexspace
+
+  \item {Editing}
+    \subitem {TimeWar.Main.ViewModel.ProfilesViewModel}, 
+		\hyperpage{192}
+  \item {EffectCounter}
+    \subitem {TimeWar.Logic.CharacterLogic}, \hyperpage{52}
+  \item {EffectStopwatch}
+    \subitem {TimeWar.Logic.CharacterLogic}, \hyperpage{53}
+  \item {EffectTest}
+    \subitem {TimeWar.LogicTests.Tests}, \hyperpage{207}
+  \item {EndDeaths}
+    \subitem {TimeWar.Main.ViewModel.GameViewModel}, \hyperpage{76}
+  \item {EndKills}
+    \subitem {TimeWar.Main.ViewModel.GameViewModel}, \hyperpage{76}
+  \item {EndTime}
+    \subitem {TimeWar.Main.ViewModel.GameViewModel}, \hyperpage{76}
+  \item {EndVisibility}
+    \subitem {TimeWar.Main.ViewModel.GameViewModel}, \hyperpage{77}
+  \item {EnemiesLoaded}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{89}
+  \item {Enemy}
+    \subitem {TimeWar.Model.Objects.Classes.Enemy}, \hyperpage{56}
+  \item {EnemyCount}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{89}
+  \item {Enemydata}
+    \subitem {TimeWar.Data.Models.Save}, \hyperpage{199}
+    \subitem {TimeWar.Main.Data.SaveUI}, \hyperpage{203}
+  \item {EnemyLogics}
+    \subitem {TimeWar.Logic.Classes.LogicCollections.EnemyLogics}, 
+		\hyperpage{61}
+  \item {EnemyType}
+    \subitem {TimeWar.Model.Objects.Classes}, \hyperpage{18}
+  \item {EnviromentalDamage}
+    \subitem {TimeWar.Model.Objects.Classes}, \hyperpage{18}
+  \item {EnviromentalDamageLogic}
+    \subitem {TimeWar.Logic.Classes.POIs.EnviromentalDamageLogic}, 
+		\hyperpage{63}
+  \item {Exit}
+    \subitem {TimeWar.Main.GameControl}, \hyperpage{69}
+    \subitem {TimeWar.Main.MenuControl}, \hyperpage{151}
+  \item {ExitCommand}
+    \subitem {TimeWar.Main.ViewModel.MenuViewModel}, \hyperpage{156}
+
+  \indexspace
+
+  \item {Factory}
+    \subitem {TimeWar.Main.BL.Factory}, \hyperpage{64}
+  \item {Fast}
+    \subitem {TimeWar.Model.Objects.Classes}, \hyperpage{18}
+  \item {FastEnemyHealth}
+    \subitem {TimeWar.Logic.Classes.EnemyInitLogic}, \hyperpage{59}
+  \item {FastEnemyLogic}
+    \subitem {TimeWar.Logic.Classes.Characters.FastEnemyLogic}, 
+		\hyperpage{65}
+  \item {FastEnemySpritesheet}
+    \subitem {TimeWar.Logic.Classes.EnemyInitLogic}, \hyperpage{59}
+  \item {Finish}
+    \subitem {TimeWar.Model.Objects.Classes}, \hyperpage{18}
+  \item {FinishLogic}
+    \subitem {TimeWar.Logic.Classes.POIs.FinishLogic}, \hyperpage{66}
+  \item {Fire}
+    \subitem {TimeWar.Logic.CharacterLogic}, \hyperpage{53}
+  \item {Followed}
+    \subitem {TimeWar.Model.Objects.Viewport}, \hyperpage{220}
+
+  \indexspace
+
+  \item {GameContinued}
+    \subitem {TimeWar.Logic.InitLogic}, \hyperpage{122}
+  \item {GameControl}
+    \subitem {TimeWar.Main.GameControl}, \hyperpage{68}
+  \item {GameHeight}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{90}
+  \item {GameModel}
+    \subitem {TimeWar.Model.GameModel}, \hyperpage{71}
+  \item {GamePage}
+    \subitem {TimeWar.Main.View}, \hyperpage{16}
+  \item {GamePageCommand}
+    \subitem {TimeWar.Main.ViewModel.NewGameViewModel}, \hyperpage{166}
+  \item {GameRenderer}
+    \subitem {TimeWar.Renderer.GameRenderer}, \hyperpage{73}
+  \item {GameViewModel}
+    \subitem {TimeWar.Main.ViewModel.GameViewModel}, \hyperpage{75}
+    \subitem {TimeWar.Main.ViewModel.ViewModelLocator}, \hyperpage{216}
+  \item {GameWidth}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{90}
+  \item {GameWindow}
+    \subitem {TimeWar.Main.View.GameWindow}, \hyperpage{78}
+  \item {GameWorld}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{81}
+  \item {GetAll}
+    \subitem {TimeWar.Repository.Interfaces.IMainRepository$<$ T $>$}, 
+		\hyperpage{106}
+  \item {GetBullet}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{84}
+  \item {GetBullets}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{90}
+  \item {GetEnemies}
+    \subitem {TimeWar.Logic.Classes.LogicCollections.EnemyLogics}, 
+		\hyperpage{61}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{90}
+  \item {GetEnemy}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{85}
+  \item {GetMap}
+    \subitem {TimeWar.Logic.Interfaces.IViewerLogic}, \hyperpage{128}
+  \item {GetMaps}
+    \subitem {TimeWar.Logic.Interfaces.IViewerLogic}, \hyperpage{128}
+    \subitem {TimeWar.Main.BL.Interfaces.IViewerLogicUI}, 
+		\hyperpage{131}
+  \item {GetOne}
+    \subitem {TimeWar.Repository.Interfaces.IMainRepository$<$ T $>$}, 
+		\hyperpage{106}
+  \item {GetPoi}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{85}
+  \item {GetPOIs}
+    \subitem {TimeWar.Logic.Classes.LogicCollections.PointOfInterestLogics}, 
+		\hyperpage{182}
+  \item {GetPois}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{90}
+  \item {GetProfile}
+    \subitem {TimeWar.Logic.Interfaces.IViewerLogic}, \hyperpage{128}
+  \item {GetProfiles}
+    \subitem {TimeWar.Logic.Interfaces.IViewerLogic}, \hyperpage{129}
+    \subitem {TimeWar.Main.BL.Interfaces.IViewerLogicUI}, 
+		\hyperpage{131}
+  \item {GetPropertyValue}
+    \subitem {XamlGeneratedNamespace.GeneratedInternalTypeHelper}, 
+		\hyperpage{95}
+  \item {GetRelativeCharacterPosX}
+    \subitem {TimeWar.Model.Objects.Viewport}, \hyperpage{220}
+  \item {GetRelativeCharacterPosY}
+    \subitem {TimeWar.Model.Objects.Viewport}, \hyperpage{220}
+  \item {GetRelativeObjectPosX}
+    \subitem {TimeWar.Model.Objects.Viewport}, \hyperpage{219}
+  \item {GetRelativeObjectPosY}
+    \subitem {TimeWar.Model.Objects.Viewport}, \hyperpage{219}
+  \item {GetSave}
+    \subitem {TimeWar.Logic.Interfaces.IViewerLogic}, \hyperpage{129}
+  \item {GetSaves}
+    \subitem {TimeWar.Logic.Interfaces.IViewerLogic}, \hyperpage{129}
+    \subitem {TimeWar.Main.BL.Interfaces.IViewerLogicUI}, 
+		\hyperpage{131}
+  \item {GetSelectedProfile}
+    \subitem {TimeWar.Logic.Interfaces.IViewerLogic}, \hyperpage{130}
+    \subitem {TimeWar.Main.BL.Interfaces.IViewerLogicUI}, 
+		\hyperpage{131}
+  \item {GetTileHeight}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{91}
+  \item {GetTileWidth}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{91}
+  \item {GetViewportX}
+    \subitem {TimeWar.Model.Objects.Viewport}, \hyperpage{220}
+  \item {GetViewportY}
+    \subitem {TimeWar.Model.Objects.Viewport}, \hyperpage{220}
+  \item {GroundCollision}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{23}
+
+  \indexspace
+
+  \item {Health}
+    \subitem {TimeWar.Model.Objects.Character}, \hyperpage{48}
+  \item {HealthKit}
+    \subitem {TimeWar.Model.Objects.Classes}, \hyperpage{18}
+  \item {HealthKitLogic}
+    \subitem {TimeWar.Logic.Classes.POIs.HealthKitLogic}, 
+		\hyperpage{97}
+  \item {Heavy}
+    \subitem {TimeWar.Model.Objects.Classes}, \hyperpage{18}
+  \item {HeavyEnemyHealth}
+    \subitem {TimeWar.Logic.Classes.EnemyInitLogic}, \hyperpage{59}
+  \item {HeavyEnemyLogic}
+    \subitem {TimeWar.Logic.Classes.Characters.HeavyEnemyLogic}, 
+		\hyperpage{98}
+  \item {HeavyEnemySpritesheet}
+    \subitem {TimeWar.Logic.Classes.EnemyInitLogic}, \hyperpage{60}
+  \item {Height}
+    \subitem {TimeWar.Model.Objects.Character}, \hyperpage{49}
+    \subitem {TimeWar.Model.Objects.Interfaces.IGameObject}, 
+		\hyperpage{103}
+  \item {Hero}
+    \subitem {TimeWar.Model.GameModel}, \hyperpage{72}
+  \item {HighJump}
+    \subitem {TimeWar.Model.Objects.Classes}, \hyperpage{18}
+  \item {HighJumpLogic}
+    \subitem {TimeWar.Logic.Classes.POIs.HighJumpLogic}, \hyperpage{99}
+  \item {Hud}
+    \subitem {TimeWar.Model.Objects.Classes.StaticObject}, 
+		\hyperpage{206}
+
+  \indexspace
+
+  \item {Id}
+    \subitem {TimeWar.Data.Models.Save}, \hyperpage{199}
+    \subitem {TimeWar.Main.Data.SaveUI}, \hyperpage{204}
+  \item {Init}
+    \subitem {TimeWar.Main.ViewModel.MenuViewModel}, \hyperpage{156}
+  \item {InitializeComponent}
+    \subitem {TimeWar.Main.App}, \hyperpage{31}
+    \subitem {TimeWar.Main.MainWindow}, \hyperpage{136, 137}
+    \subitem {TimeWar.Main.View.GameWindow}, \hyperpage{79}
+    \subitem {TimeWar.Main.View.MenuPage}, \hyperpage{154}
+    \subitem {TimeWar.Main.View.NewGamePage}, \hyperpage{163, 164}
+    \subitem {TimeWar.Main.View.ProfileAddControl}, \hyperpage{184}
+    \subitem {TimeWar.Main.View.ProfileEditControl}, \hyperpage{186}
+    \subitem {TimeWar.Main.View.ProfilesPage}, \hyperpage{189}
+  \item {InitLogic}
+    \subitem {TimeWar.Logic.InitLogic}, \hyperpage{121}
+  \item {InitMaps}
+    \subitem {TimeWar.Main.ViewModel.NewGameViewModel}, \hyperpage{166}
+  \item {InRewind}
+    \subitem {TimeWar.Model.GameModel}, \hyperpage{72}
+  \item {Instance}
+    \subitem {TimeWar.Main.MyIoc}, \hyperpage{159}
+  \item {Invincibility}
+    \subitem {TimeWar.Model.Objects.Classes}, \hyperpage{18}
+  \item {InvincibilityLogic}
+    \subitem {TimeWar.Logic.Classes.POIs.InvincibilityLogic}, 
+		\hyperpage{123}
+  \item {IsFinished}
+    \subitem {TimeWar.Logic.Interfaces.ICommandManager}, 
+		\hyperpage{102}
+  \item {IsInvincible}
+    \subitem {TimeWar.Model.Objects.Character}, \hyperpage{49}
+  \item {IsJumping}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{29}
+  \item {IsPaused}
+    \subitem {TimeWar.Main.GameControl}, \hyperpage{70}
+  \item {IsPlayerContacted}
+    \subitem {TimeWar.Logic.Classes.POIs.PointOfInterestLogic}, 
+		\hyperpage{180}
+  \item {IsPlayerDetected}
+    \subitem {TimeWar.Logic.Classes.Characters.BasicEnemyLogic}, 
+		\hyperpage{35}
+
+  \indexspace
+
+  \item {Jump}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{24}
+  \item {JumpingTimeOut}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{29}
+  \item {JumpLeft}
+    \subitem {TimeWar.Model.Objects.Interfaces}, \hyperpage{19}
+  \item {JumpRight}
+    \subitem {TimeWar.Model.Objects.Interfaces}, \hyperpage{19}
+
+  \indexspace
+
+  \item {Kills}
+    \subitem {TimeWar.Model.Objects.Player}, \hyperpage{169}
+
+  \indexspace
+
+  \item {LastKnownPlayerLocation}
+    \subitem {TimeWar.Logic.Classes.Characters.BasicEnemyLogic}, 
+		\hyperpage{35}
+  \item {LayersHeight}
+    \subitem {TimeWar.Renderer.RendererConfig}, \hyperpage{197}
+  \item {LayersHorizontalOffset}
+    \subitem {TimeWar.Renderer.RendererConfig}, \hyperpage{197}
+  \item {LayersHorizontalSpeed}
+    \subitem {TimeWar.Renderer.RendererConfig}, \hyperpage{197}
+  \item {LayersSpriteFile}
+    \subitem {TimeWar.Renderer.RendererConfig}, \hyperpage{197}
+  \item {LayersVerticalOffset}
+    \subitem {TimeWar.Renderer.RendererConfig}, \hyperpage{198}
+  \item {LayersVerticalSpeed}
+    \subitem {TimeWar.Renderer.RendererConfig}, \hyperpage{198}
+  \item {LayersWidth}
+    \subitem {TimeWar.Renderer.RendererConfig}, \hyperpage{198}
+  \item {Left}
+    \subitem {TimeWar.Model.Objects.Interfaces}, \hyperpage{19}
+  \item {LevelFinished}
+    \subitem {TimeWar.Main.GameControl}, \hyperpage{70}
+    \subitem {TimeWar.Model.GameModel}, \hyperpage{72}
+  \item {LoadedCommand}
+    \subitem {TimeWar.Main.ViewModel.MainViewModel}, \hyperpage{135}
+  \item {LoadMaps}
+    \subitem {TimeWar.Main.BL.Interfaces.IViewerLogicUI}, 
+		\hyperpage{132}
+  \item {LoadSave}
+    \subitem {TimeWar.Logic.InitLogic}, \hyperpage{121}
+
+  \indexspace
+
+  \item {Magnify}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{91}
+  \item {Main}
+    \subitem {TimeWar.Main.App}, \hyperpage{32}
+  \item {MainRepository}
+    \subitem {TimeWar.Repository.Classes.MainRepository$<$ T $>$}, 
+		\hyperpage{133}
+  \item {MainViewModel}
+    \subitem {TimeWar.Main.ViewModel.MainViewModel}, \hyperpage{134}
+    \subitem {TimeWar.Main.ViewModel.ViewModelLocator}, \hyperpage{216}
+  \item {MainWindow}
+    \subitem {TimeWar.Main.MainWindow}, \hyperpage{136}
+  \item {ManagerLogic}
+    \subitem {TimeWar.Logic.Classes.ManagerLogic}, \hyperpage{138}
+    \subitem {TimeWar.Main.BL.Factory}, \hyperpage{64}
+  \item {ManagerLogicUI}
+    \subitem {TimeWar.Main.BL.Classes.ManagerLogicUI}, \hyperpage{139}
+  \item {MapFiles}
+    \subitem {TimeWar.Main.Data.MapFiles}, \hyperpage{141}
+  \item {MapId}
+    \subitem {TimeWar.Data.Models.Map}, \hyperpage{140}
+  \item {MapName}
+    \subitem {TimeWar.Data.Models.MapRecord}, \hyperpage{143}
+    \subitem {TimeWar.Data.Models.Save}, \hyperpage{199}
+    \subitem {TimeWar.Main.Data.MapRecordUI}, \hyperpage{147}
+    \subitem {TimeWar.Main.GameControl}, \hyperpage{70}
+    \subitem {TimeWar.Main.MenuControl}, \hyperpage{152}
+    \subitem {TimeWar.Main.ViewModel.GameViewModel}, \hyperpage{77}
+  \item {MapRecordId}
+    \subitem {TimeWar.Data.Models.MapRecord}, \hyperpage{143}
+    \subitem {TimeWar.Main.Data.MapRecordUI}, \hyperpage{148}
+  \item {MapRecordRepository}
+    \subitem {TimeWar.Repository.Classes.MapRecordRepository}, 
+		\hyperpage{145}
+  \item {MapRecords}
+    \subitem {TimeWar.Data.Models.TimeWarContext}, \hyperpage{211}
+    \subitem {TimeWar.Main.Data.MapFiles}, \hyperpage{142}
+  \item {MapRecordUI}
+    \subitem {TimeWar.Main.Data.MapRecordUI}, \hyperpage{146}
+  \item {MapRepository}
+    \subitem {TimeWar.Repository.Classes.MapRepository}, 
+		\hyperpage{149}
+  \item {Maps}
+    \subitem {TimeWar.Main.ViewModel.NewGameViewModel}, \hyperpage{166}
+  \item {MaxJumpHeight}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{29}
+  \item {MaxMovementSpeed}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{29}
+  \item {MaxMoveTime}
+    \subitem {TimeWar.Logic.Classes.Characters.BasicEnemyLogic}, 
+		\hyperpage{35}
+  \item {MenuControl}
+    \subitem {TimeWar.Main.MenuControl}, \hyperpage{150, 151}
+  \item {MenuPage}
+    \subitem {TimeWar.Main.View}, \hyperpage{16}
+    \subitem {TimeWar.Main.View.MenuPage}, \hyperpage{153}
+  \item {MenuPageCommand}
+    \subitem {TimeWar.Main.ViewModel.GameViewModel}, \hyperpage{76}
+    \subitem {TimeWar.Main.ViewModel.NewGameViewModel}, \hyperpage{166}
+    \subitem {TimeWar.Main.ViewModel.ProfilesViewModel}, 
+		\hyperpage{192}
+  \item {MenuText}
+    \subitem {TimeWar.Main.ViewModel.MenuViewModel}, \hyperpage{157}
+  \item {MenuViewModel}
+    \subitem {TimeWar.Main.ViewModel.MenuViewModel}, \hyperpage{155}
+    \subitem {TimeWar.Main.ViewModel.ViewModelLocator}, \hyperpage{217}
+  \item {MenuVisibility}
+    \subitem {TimeWar.Main.ViewModel.GameViewModel}, \hyperpage{77}
+  \item {Model}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{29}
+    \subitem {TimeWar.Logic.Classes.POIs.PointOfInterestLogic}, 
+		\hyperpage{180}
+  \item {ModifyMap}
+    \subitem {TimeWar.Logic.Interfaces.IManagerLogic}, \hyperpage{110}
+    \subitem {TimeWar.Main.BL.Interfaces.IManagerLogicUI}, 
+		\hyperpage{113}
+  \item {ModifyProfile}
+    \subitem {TimeWar.Logic.Interfaces.IManagerLogic}, \hyperpage{110}
+    \subitem {TimeWar.Main.BL.Interfaces.IManagerLogicUI}, 
+		\hyperpage{114}
+  \item {ModifyProfileCommand}
+    \subitem {TimeWar.Main.ViewModel.ProfilesViewModel}, 
+		\hyperpage{192}
+  \item {ModifySave}
+    \subitem {TimeWar.Logic.Interfaces.IManagerLogic}, \hyperpage{110}
+    \subitem {TimeWar.Main.BL.Interfaces.IManagerLogicUI}, 
+		\hyperpage{114}
+  \item {MouseLocation}
+    \subitem {TimeWar.Model.GameModel}, \hyperpage{72}
+  \item {Move}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{24}
+  \item {MoveCommand}
+    \subitem {TimeWar.Logic.Classes.Characters.Actions.MoveCommand}, 
+		\hyperpage{158}
+  \item {Movement}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{24}
+  \item {MovementVector}
+    \subitem {TimeWar.Model.Objects.Interfaces.IGameObject}, 
+		\hyperpage{103}
+  \item {MovementVectorF}
+    \subitem {TimeWar.Model.Objects.Classes.Bullet}, \hyperpage{39}
+  \item {MoveVector}
+    \subitem {TimeWar.Model.Objects.Classes.Bullet}, \hyperpage{39}
+  \item {MovingObjectsCount}
+    \subitem {TimeWar.Renderer.GameRenderer}, \hyperpage{74}
+
+  \indexspace
+
+  \item {Name}
+    \subitem {TimeWar.Main.Data.MapFiles}, \hyperpage{142}
+  \item {NavigateTo}
+    \subitem {TimeWar.Main.View.INavigationService$<$ T $>$}, 
+		\hyperpage{118}
+  \item {NavigationContext}
+    \subitem {TimeWar.Main.ViewModel.GameViewModel}, \hyperpage{77}
+  \item {NavigationPages}
+    \subitem {TimeWar.Main.View}, \hyperpage{15}
+  \item {NavigationService}
+    \subitem {TimeWar.Main.View.NavigationService$<$ T $>$}, 
+		\hyperpage{161}
+  \item {NewGamePage}
+    \subitem {TimeWar.Main.View}, \hyperpage{16}
+    \subitem {TimeWar.Main.View.NewGamePage}, \hyperpage{163}
+  \item {NewGamePageCommand}
+    \subitem {TimeWar.Main.ViewModel.MenuViewModel}, \hyperpage{157}
+  \item {NewGameViewModel}
+    \subitem {TimeWar.Main.ViewModel.NewGameViewModel}, \hyperpage{165}
+    \subitem {TimeWar.Main.ViewModel.ViewModelLocator}, \hyperpage{217}
+  \item {NumberOfLayers}
+    \subitem {TimeWar.Renderer.RendererConfig}, \hyperpage{198}
+  \item {NumOfRestoredHealth}
+    \subitem {TimeWar.Logic.Classes.POIs.HealthKitLogic}, 
+		\hyperpage{97}
+  \item {NumOfUnlocks}
+    \subitem {TimeWar.Logic.Classes.POIs.UnlockWeaponLogic}, 
+		\hyperpage{213}
+  \item {NumOfWeaponUnlocked}
+    \subitem {TimeWar.Model.Objects.Player}, \hyperpage{169}
+
+  \indexspace
+
+  \item {OneTick}
+    \subitem {TimeWar.Logic.Classes.Characters.Actions.BulletLogic}, 
+		\hyperpage{41}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{25}
+    \subitem {TimeWar.Logic.Classes.LogicCollections.BulletLogics}, 
+		\hyperpage{42}
+    \subitem {TimeWar.Logic.Classes.POIs.PointOfInterestLogic}, 
+		\hyperpage{179}
+  \item {OnRender}
+    \subitem {TimeWar.Main.GameControl}, \hyperpage{69}
+    \subitem {TimeWar.Main.MenuControl}, \hyperpage{151}
+
+  \indexspace
+
+  \item {Parameter}
+    \subitem {TimeWar.Main.View.INavigationService$<$ T $>$}, 
+		\hyperpage{118}
+    \subitem {TimeWar.Main.View.NavigationService$<$ T $>$}, 
+		\hyperpage{162}
+  \item {Path}
+    \subitem {TimeWar.Main.Data.MapFiles}, \hyperpage{142}
+  \item {PixelToTile}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{25}
+  \item {Player}
+    \subitem {TimeWar.Data.Models.Map}, \hyperpage{140}
+    \subitem {TimeWar.Data.Models.MapRecord}, \hyperpage{143}
+    \subitem {TimeWar.Data.Models.Save}, \hyperpage{200}
+    \subitem {TimeWar.Main.Data.MapRecordUI}, \hyperpage{148}
+    \subitem {TimeWar.Model.Objects.Player}, \hyperpage{168}
+  \item {PlayerBullet}
+    \subitem {TimeWar.Model.Objects.Classes.Bullet}, \hyperpage{39}
+  \item {Playerdata}
+    \subitem {TimeWar.Data.Models.Save}, \hyperpage{200}
+    \subitem {TimeWar.Main.Data.SaveUI}, \hyperpage{204}
+  \item {PlayerDeath}
+    \subitem {TimeWar.Model.Objects.Player}, \hyperpage{168}
+  \item {PlayerHealth}
+    \subitem {TimeWar.Logic.Classes.InitConfig}, \hyperpage{119}
+  \item {PlayerHeight}
+    \subitem {TimeWar.Logic.Classes.InitConfig}, \hyperpage{119}
+  \item {PlayerId}
+    \subitem {TimeWar.Data.Models.MapRecord}, \hyperpage{143}
+    \subitem {TimeWar.Data.Models.PlayerProfile}, \hyperpage{171}
+    \subitem {TimeWar.Data.Models.Save}, \hyperpage{200}
+    \subitem {TimeWar.Main.Data.MapRecordUI}, \hyperpage{148}
+    \subitem {TimeWar.Main.Data.PlayerProfileUI}, \hyperpage{175}
+  \item {PlayerMovementTest}
+    \subitem {TimeWar.LogicTests.Tests}, \hyperpage{207}
+  \item {PlayerName}
+    \subitem {TimeWar.Data.Models.PlayerProfile}, \hyperpage{171}
+    \subitem {TimeWar.Main.Data.PlayerProfileUI}, \hyperpage{175}
+  \item {PlayerProfile}
+    \subitem {TimeWar.Data.Models.PlayerProfile}, \hyperpage{170}
+  \item {PlayerProfileUI}
+    \subitem {TimeWar.Main.Data.PlayerProfileUI}, \hyperpage{173}
+  \item {PlayerProfileUIs}
+    \subitem {TimeWar.Main.ViewModel.ProfilesViewModel}, 
+		\hyperpage{192}
+  \item {PlayerSpritesheet}
+    \subitem {TimeWar.Logic.Classes.InitConfig}, \hyperpage{120}
+  \item {PlayerWidth}
+    \subitem {TimeWar.Logic.Classes.InitConfig}, \hyperpage{120}
+  \item {Poi}
+    \subitem {TimeWar.Logic.Classes.POIs.PointOfInterestLogic}, 
+		\hyperpage{180}
+  \item {POIEvent}
+    \subitem {TimeWar.Logic.Classes.POIs.PointOfInterestLogic}, 
+		\hyperpage{179}
+  \item {PointOfInterest}
+    \subitem {TimeWar.Model.Objects.Classes.PointOfInterest}, 
+		\hyperpage{177}
+  \item {PointOfInterestLogic}
+    \subitem {TimeWar.Logic.Classes.POIs.PointOfInterestLogic}, 
+		\hyperpage{179}
+  \item {PointOfInterestLogics}
+    \subitem {TimeWar.Logic.Classes.LogicCollections.PointOfInterestLogics}, 
+		\hyperpage{181}
+  \item {POIType}
+    \subitem {TimeWar.Model.Objects.Classes}, \hyperpage{18}
+  \item {Position}
+    \subitem {TimeWar.Model.Objects.Interfaces.IGameObject}, 
+		\hyperpage{104}
+    \subitem {TimeWar.Model.Objects.Interfaces.IMoveable}, 
+		\hyperpage{117}
+  \item {Powerup}
+    \subitem {TimeWar.Logic.Classes.LogicCollections.PointOfInterestLogics}, 
+		\hyperpage{182}
+  \item {ProfileAddControl}
+    \subitem {TimeWar.Main.View.ProfileAddControl}, \hyperpage{183}
+  \item {ProfileEditControl}
+    \subitem {TimeWar.Main.View.ProfileEditControl}, \hyperpage{185}
+  \item {ProfileEditorPage}
+    \subitem {TimeWar.Main.View}, \hyperpage{16}
+  \item {ProfileRepository}
+    \subitem {TimeWar.Repository.Classes.ProfileRepository}, 
+		\hyperpage{187}
+  \item {Profiles}
+    \subitem {TimeWar.Data.Models.TimeWarContext}, \hyperpage{211}
+  \item {ProfilesPage}
+    \subitem {TimeWar.Main.View}, \hyperpage{16}
+    \subitem {TimeWar.Main.View.ProfilesPage}, \hyperpage{189}
+  \item {ProfilesPageCommand}
+    \subitem {TimeWar.Main.ViewModel.MenuViewModel}, \hyperpage{157}
+  \item {ProfilesViewModel}
+    \subitem {TimeWar.Main.ViewModel.ProfilesViewModel}, 
+		\hyperpage{191}
+    \subitem {TimeWar.Main.ViewModel.ViewModelLocator}, \hyperpage{217}
+
+  \indexspace
+
+  \item {RapidFire}
+    \subitem {TimeWar.Model.Objects.Classes}, \hyperpage{18}
+  \item {RapidFireEnemyHealth}
+    \subitem {TimeWar.Logic.Classes.EnemyInitLogic}, \hyperpage{60}
+  \item {RapidFireEnemyLogic}
+    \subitem {TimeWar.Logic.Classes.Characters.RapidFireEnemyLogic}, 
+		\hyperpage{194}
+  \item {RapidFireEnemySpritesheet}
+    \subitem {TimeWar.Logic.Classes.EnemyInitLogic}, \hyperpage{60}
+  \item {RapidFireLogic}
+    \subitem {TimeWar.Logic.Classes.POIs.RapidFireLogic}, 
+		\hyperpage{195}
+  \item {Records}
+    \subitem {TimeWar.Data.Models.PlayerProfile}, \hyperpage{171}
+  \item {ReInit}
+    \subitem {TimeWar.Main.ViewModel.ProfilesViewModel}, 
+		\hyperpage{191}
+  \item {RemoveBullet}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{86}
+  \item {RemoveBullets}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{86}
+  \item {RemoveDecoration}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{86}
+  \item {RemoveEnemy}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{86}
+  \item {RemoveGround}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{87}
+  \item {RemoveKey}
+    \subitem {TimeWar.Model.Objects.Character}, \hyperpage{47}
+  \item {RemovePOI}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{87}
+  \item {ResetStats}
+    \subitem {TimeWar.Logic.Interfaces.ITimedEvent}, \hyperpage{127}
+  \item {Rewind}
+    \subitem {TimeWar.Logic.Interfaces.ICommandManager}, 
+		\hyperpage{101}
+  \item {Right}
+    \subitem {TimeWar.Model.Objects.Interfaces}, \hyperpage{19}
+  \item {RunTime}
+    \subitem {TimeWar.Data.Models.Map}, \hyperpage{140}
+    \subitem {TimeWar.Data.Models.MapRecord}, \hyperpage{144}
+    \subitem {TimeWar.Main.Data.MapRecordUI}, \hyperpage{148}
+
+  \indexspace
+
+  \item {Save}
+    \subitem {TimeWar.Data.Models.PlayerProfile}, \hyperpage{171}
+    \subitem {TimeWar.Main.Data.PlayerProfileUI}, \hyperpage{175}
+  \item {SaveBullets}
+    \subitem {TimeWar.Logic.Classes.LogicCollections.BulletLogics}, 
+		\hyperpage{42}
+  \item {SavedHealt}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{91}
+  \item {SavedShield}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{91}
+  \item {SaveEndGame}
+    \subitem {TimeWar.Main.GameControl}, \hyperpage{69}
+  \item {SaveEnemies}
+    \subitem {TimeWar.Logic.Classes.LogicCollections.EnemyLogics}, 
+		\hyperpage{61}
+  \item {SaveGameProgress}
+    \subitem {TimeWar.Main.GameControl}, \hyperpage{69}
+  \item {SaveId}
+    \subitem {TimeWar.Data.Models.PlayerProfile}, \hyperpage{171}
+  \item {SaveLoad}
+    \subitem {TimeWar.Main.GameControl}, \hyperpage{70}
+  \item {SaveRepository}
+    \subitem {TimeWar.Repository.Classes.SaveRepository}, 
+		\hyperpage{201}
+  \item {Saves}
+    \subitem {TimeWar.Data.Models.TimeWarContext}, \hyperpage{211}
+  \item {SaveUI}
+    \subitem {TimeWar.Main.Data.SaveUI}, \hyperpage{202}
+  \item {Scoreboard}
+    \subitem {TimeWar.Main.ViewModel.NewGameViewModel}, \hyperpage{166}
+  \item {ScrollMode}
+    \subitem {TimeWar.Main.MenuControl}, \hyperpage{152}
+  \item {SearchDecoration}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{87}
+  \item {SearchGround}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{89}
+  \item {Selected}
+    \subitem {TimeWar.Data.Models.PlayerProfile}, \hyperpage{172}
+    \subitem {TimeWar.Main.Data.PlayerProfileUI}, \hyperpage{175}
+  \item {SelectedMap}
+    \subitem {TimeWar.Main.ViewModel.NewGameViewModel}, \hyperpage{167}
+  \item {SelectedPlayer}
+    \subitem {TimeWar.Main.ViewModel.ProfilesViewModel}, 
+		\hyperpage{193}
+  \item {SelectedProfile}
+    \subitem {TimeWar.Main.ViewModel.MenuViewModel}, \hyperpage{157}
+  \item {SetPropertyValue}
+    \subitem {XamlGeneratedNamespace.GeneratedInternalTypeHelper}, 
+		\hyperpage{95}
+  \item {Setup}
+    \subitem {TimeWar.LogicTests.Tests}, \hyperpage{208}
+  \item {SetVectorX}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{25}
+  \item {SetVectorY}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{26}
+  \item {Shield}
+    \subitem {TimeWar.Model.Objects.Character}, \hyperpage{49}
+  \item {ShieldRegenTime}
+    \subitem {TimeWar.Model.Objects.Character}, \hyperpage{49}
+  \item {ShieldRegenTimer}
+    \subitem {TimeWar.Model.Objects.Character}, \hyperpage{49}
+  \item {ShieldRegenValue}
+    \subitem {TimeWar.Model.Objects.Character}, \hyperpage{50}
+  \item {ShootingTest}
+    \subitem {TimeWar.LogicTests.Tests}, \hyperpage{208}
+  \item {SpriteFile}
+    \subitem {TimeWar.Model.Objects.Character}, \hyperpage{50}
+    \subitem {TimeWar.Model.Objects.Interfaces.IGameObject}, 
+		\hyperpage{104}
+  \item {Stance}
+    \subitem {TimeWar.Model.Objects.Character}, \hyperpage{50}
+    \subitem {TimeWar.Model.Objects.Interfaces.IGameObject}, 
+		\hyperpage{104}
+  \item {StanceLess}
+    \subitem {TimeWar.Model.Objects.Interfaces.IGameObject}, 
+		\hyperpage{104}
+  \item {Stances}
+    \subitem {TimeWar.Model.Objects.Interfaces}, \hyperpage{19}
+  \item {StandLeft}
+    \subitem {TimeWar.Model.Objects.Interfaces}, \hyperpage{19}
+  \item {StandRight}
+    \subitem {TimeWar.Model.Objects.Interfaces}, \hyperpage{19}
+  \item {StartPoint}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{92}
+  \item {StaticObject}
+    \subitem {TimeWar.Model.Objects.Classes.StaticObject}, 
+		\hyperpage{206}
+
+  \indexspace
+
+  \item {TestRewind}
+    \subitem {TimeWar.LogicTests.Tests}, \hyperpage{208}
+  \item {TickEnemies}
+    \subitem {TimeWar.Logic.Classes.LogicCollections.EnemyLogics}, 
+		\hyperpage{62}
+  \item {TickPois}
+    \subitem {TimeWar.Logic.Classes.LogicCollections.PointOfInterestLogics}, 
+		\hyperpage{182}
+  \item {TileSize}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{92}
+  \item {TileToPixel}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{26}
+  \item {TimedPoi}
+    \subitem {TimeWar.Logic.Classes.POIs.PointOfInterestLogic}, 
+		\hyperpage{180}
+  \item {TimedPOILogic}
+    \subitem {TimeWar.Logic.Classes.POIs.TimedPOILogic}, 
+		\hyperpage{209}
+  \item {Timer}
+    \subitem {TimeWar.Logic.Classes.POIs.PointOfInterestLogic}, 
+		\hyperpage{180}
+  \item {TimeWar}, \hyperpage{11}
+  \item {TimeWar.Data}, \hyperpage{11}
+  \item {TimeWar.Data.Models}, \hyperpage{11}
+  \item {TimeWar.Data.Models.Map}, \hyperpage{140}
+    \subitem {MapId}, \hyperpage{140}
+    \subitem {Player}, \hyperpage{140}
+    \subitem {RunTime}, \hyperpage{140}
+  \item {TimeWar.Data.Models.MapRecord}, \hyperpage{142}
+    \subitem {MapName}, \hyperpage{143}
+    \subitem {MapRecordId}, \hyperpage{143}
+    \subitem {Player}, \hyperpage{143}
+    \subitem {PlayerId}, \hyperpage{143}
+    \subitem {RunTime}, \hyperpage{144}
+  \item {TimeWar.Data.Models.PlayerProfile}, \hyperpage{169}
+    \subitem {CompletedRuns}, \hyperpage{170}
+    \subitem {PlayerId}, \hyperpage{171}
+    \subitem {PlayerName}, \hyperpage{171}
+    \subitem {PlayerProfile}, \hyperpage{170}
+    \subitem {Records}, \hyperpage{171}
+    \subitem {Save}, \hyperpage{171}
+    \subitem {SaveId}, \hyperpage{171}
+    \subitem {Selected}, \hyperpage{172}
+    \subitem {TotalDeaths}, \hyperpage{172}
+    \subitem {TotalKills}, \hyperpage{172}
+  \item {TimeWar.Data.Models.Save}, \hyperpage{199}
+    \subitem {Enemydata}, \hyperpage{199}
+    \subitem {Id}, \hyperpage{199}
+    \subitem {MapName}, \hyperpage{199}
+    \subitem {Player}, \hyperpage{200}
+    \subitem {Playerdata}, \hyperpage{200}
+    \subitem {PlayerId}, \hyperpage{200}
+  \item {TimeWar.Data.Models.TimeWarContext}, \hyperpage{210}
+    \subitem {MapRecords}, \hyperpage{211}
+    \subitem {Profiles}, \hyperpage{211}
+    \subitem {Saves}, \hyperpage{211}
+    \subitem {TimeWarContext}, \hyperpage{211}
+  \item {TimeWar.Logic}, \hyperpage{11}
+  \item {TimeWar.Logic.CharacterLogic}, \hyperpage{51}
+    \subitem {AttackTime}, \hyperpage{52}
+    \subitem {CharacterLogic}, \hyperpage{52}
+    \subitem {EffectCounter}, \hyperpage{52}
+    \subitem {EffectStopwatch}, \hyperpage{53}
+    \subitem {Fire}, \hyperpage{53}
+  \item {TimeWar.Logic.Classes}, \hyperpage{12}
+  \item {TimeWar.Logic.Classes.Characters}, \hyperpage{12}
+  \item {TimeWar.Logic.Classes.Characters.Actions}, \hyperpage{12}
+  \item {TimeWar.Logic.Classes.Characters.Actions.BulletLogic}, 
+		\hyperpage{40}
+    \subitem {BulletLogic}, \hyperpage{40}
+    \subitem {OneTick}, \hyperpage{41}
+  \item {TimeWar.Logic.Classes.Characters.Actions.MoveCommand}, 
+		\hyperpage{158}
+    \subitem {MoveCommand}, \hyperpage{158}
+  \item {TimeWar.Logic.Classes.Characters.ActorLogic}, \hyperpage{21}
+    \subitem {Acceleration}, \hyperpage{27}
+    \subitem {AccelerationStopwatch}, \hyperpage{27}
+    \subitem {ActorLogic}, \hyperpage{22}
+    \subitem {AddToVector}, \hyperpage{23}
+    \subitem {Attack}, \hyperpage{23}
+    \subitem {AttackStopwatch}, \hyperpage{28}
+    \subitem {Character}, \hyperpage{28}
+    \subitem {CommandManager}, \hyperpage{28}
+    \subitem {DefaultAcceleration}, \hyperpage{28}
+    \subitem {DefaultJumpHeight}, \hyperpage{28}
+    \subitem {GroundCollision}, \hyperpage{23}
+    \subitem {IsJumping}, \hyperpage{29}
+    \subitem {Jump}, \hyperpage{24}
+    \subitem {JumpingTimeOut}, \hyperpage{29}
+    \subitem {MaxJumpHeight}, \hyperpage{29}
+    \subitem {MaxMovementSpeed}, \hyperpage{29}
+    \subitem {Model}, \hyperpage{29}
+    \subitem {Move}, \hyperpage{24}
+    \subitem {Movement}, \hyperpage{24}
+    \subitem {OneTick}, \hyperpage{25}
+    \subitem {PixelToTile}, \hyperpage{25}
+    \subitem {SetVectorX}, \hyperpage{25}
+    \subitem {SetVectorY}, \hyperpage{26}
+    \subitem {TileToPixel}, \hyperpage{26}
+    \subitem {TopCollision}, \hyperpage{26}
+    \subitem {TypeOfBullet}, \hyperpage{30}
+    \subitem {WallCollision}, \hyperpage{27}
+  \item {TimeWar.Logic.Classes.Characters.BasicEnemyLogic}, 
+		\hyperpage{33}
+    \subitem {AttackTime}, \hyperpage{34}
+    \subitem {AttackValue}, \hyperpage{34}
+    \subitem {BasicEnemyLogic}, \hyperpage{34}
+    \subitem {DefaultFollowDistance}, \hyperpage{34}
+    \subitem {DetectionRange}, \hyperpage{35}
+    \subitem {DetectionTime}, \hyperpage{35}
+    \subitem {IsPlayerDetected}, \hyperpage{35}
+    \subitem {LastKnownPlayerLocation}, \hyperpage{35}
+    \subitem {MaxMoveTime}, \hyperpage{35}
+  \item {TimeWar.Logic.Classes.Characters.BurstEnemyLogic}, 
+		\hyperpage{43}
+    \subitem {Attack}, \hyperpage{44}
+    \subitem {BurstEnemyLogic}, \hyperpage{44}
+  \item {TimeWar.Logic.Classes.Characters.FastEnemyLogic}, 
+		\hyperpage{65}
+    \subitem {FastEnemyLogic}, \hyperpage{65}
+  \item {TimeWar.Logic.Classes.Characters.HeavyEnemyLogic}, 
+		\hyperpage{97}
+    \subitem {HeavyEnemyLogic}, \hyperpage{98}
+  \item {TimeWar.Logic.Classes.Characters.RapidFireEnemyLogic}, 
+		\hyperpage{193}
+    \subitem {RapidFireEnemyLogic}, \hyperpage{194}
+  \item {TimeWar.Logic.Classes.CommandManager}, \hyperpage{54}
+    \subitem {CommandManager}, \hyperpage{55}
+  \item {TimeWar.Logic.Classes.EnemyInitLogic}, \hyperpage{57}
+    \subitem {BasicEnemyHealth}, \hyperpage{58}
+    \subitem {BasicEnemyHeight}, \hyperpage{58}
+    \subitem {BasicEnemySpritesheet}, \hyperpage{58}
+    \subitem {BasicEnemyWidth}, \hyperpage{58}
+    \subitem {BurstEnemyHealth}, \hyperpage{59}
+    \subitem {BurstEnemySpritesheet}, \hyperpage{59}
+    \subitem {FastEnemyHealth}, \hyperpage{59}
+    \subitem {FastEnemySpritesheet}, \hyperpage{59}
+    \subitem {HeavyEnemyHealth}, \hyperpage{59}
+    \subitem {HeavyEnemySpritesheet}, \hyperpage{60}
+    \subitem {RapidFireEnemyHealth}, \hyperpage{60}
+    \subitem {RapidFireEnemySpritesheet}, \hyperpage{60}
+  \item {TimeWar.Logic.Classes.InitConfig}, \hyperpage{119}
+    \subitem {PlayerHealth}, \hyperpage{119}
+    \subitem {PlayerHeight}, \hyperpage{119}
+    \subitem {PlayerSpritesheet}, \hyperpage{120}
+    \subitem {PlayerWidth}, \hyperpage{120}
+  \item {TimeWar.Logic.Classes.LogicCollections}, \hyperpage{13}
+  \item {TimeWar.Logic.Classes.LogicCollections.BulletLogics}, 
+		\hyperpage{41}
+    \subitem {Addbullets}, \hyperpage{42}
+    \subitem {BulletLogics}, \hyperpage{42}
+    \subitem {OneTick}, \hyperpage{42}
+    \subitem {SaveBullets}, \hyperpage{42}
+  \item {TimeWar.Logic.Classes.LogicCollections.EnemyLogics}, 
+		\hyperpage{60}
+    \subitem {EnemyLogics}, \hyperpage{61}
+    \subitem {GetEnemies}, \hyperpage{61}
+    \subitem {SaveEnemies}, \hyperpage{61}
+    \subitem {TickEnemies}, \hyperpage{62}
+  \item {TimeWar.Logic.Classes.LogicCollections.PointOfInterestLogics}, 
+		\hyperpage{181}
+    \subitem {GetPOIs}, \hyperpage{182}
+    \subitem {PointOfInterestLogics}, \hyperpage{181}
+    \subitem {Powerup}, \hyperpage{182}
+    \subitem {TickPois}, \hyperpage{182}
+  \item {TimeWar.Logic.Classes.ManagerLogic}, \hyperpage{137}
+    \subitem {ManagerLogic}, \hyperpage{138}
+  \item {TimeWar.Logic.Classes.POIs}, \hyperpage{13}
+  \item {TimeWar.Logic.Classes.POIs.CheckpointLogic}, \hyperpage{53}
+    \subitem {CheckpointLogic}, \hyperpage{54}
+  \item {TimeWar.Logic.Classes.POIs.EnviromentalDamageLogic}, 
+		\hyperpage{62}
+    \subitem {EnviromentalDamageLogic}, \hyperpage{63}
+  \item {TimeWar.Logic.Classes.POIs.FinishLogic}, \hyperpage{66}
+    \subitem {FinishLogic}, \hyperpage{66}
+  \item {TimeWar.Logic.Classes.POIs.HealthKitLogic}, \hyperpage{96}
+    \subitem {HealthKitLogic}, \hyperpage{97}
+    \subitem {NumOfRestoredHealth}, \hyperpage{97}
+  \item {TimeWar.Logic.Classes.POIs.HighJumpLogic}, \hyperpage{98}
+    \subitem {HighJumpLogic}, \hyperpage{99}
+  \item {TimeWar.Logic.Classes.POIs.InvincibilityLogic}, 
+		\hyperpage{123}
+    \subitem {InvincibilityLogic}, \hyperpage{123}
+  \item {TimeWar.Logic.Classes.POIs.PointOfInterestLogic}, 
+		\hyperpage{178}
+    \subitem {IsPlayerContacted}, \hyperpage{180}
+    \subitem {Model}, \hyperpage{180}
+    \subitem {OneTick}, \hyperpage{179}
+    \subitem {Poi}, \hyperpage{180}
+    \subitem {POIEvent}, \hyperpage{179}
+    \subitem {PointOfInterestLogic}, \hyperpage{179}
+    \subitem {TimedPoi}, \hyperpage{180}
+    \subitem {Timer}, \hyperpage{180}
+  \item {TimeWar.Logic.Classes.POIs.RapidFireLogic}, \hyperpage{194}
+    \subitem {DefaultAttackTime}, \hyperpage{196}
+    \subitem {RapidFireLogic}, \hyperpage{195}
+  \item {TimeWar.Logic.Classes.POIs.TimedPOILogic}, \hyperpage{208}
+    \subitem {Character}, \hyperpage{210}
+    \subitem {TimedPOILogic}, \hyperpage{209}
+  \item {TimeWar.Logic.Classes.POIs.UnlockWeaponLogic}, \hyperpage{212}
+    \subitem {NumOfUnlocks}, \hyperpage{213}
+    \subitem {UnlockWeaponLogic}, \hyperpage{212}
+  \item {TimeWar.Logic.Classes.ViewerLogic}, \hyperpage{213}
+    \subitem {ViewerLogic}, \hyperpage{214}
+  \item {TimeWar.Logic.InitLogic}, \hyperpage{120}
+    \subitem {GameContinued}, \hyperpage{122}
+    \subitem {InitLogic}, \hyperpage{121}
+    \subitem {LoadSave}, \hyperpage{121}
+  \item {TimeWar.Logic.Interfaces}, \hyperpage{13}
+  \item {TimeWar.Logic.Interfaces.ICommand}, \hyperpage{100}
+    \subitem {Undo}, \hyperpage{100}
+  \item {TimeWar.Logic.Interfaces.ICommandManager}, \hyperpage{100}
+    \subitem {AddCommand}, \hyperpage{101}
+    \subitem {ClearBuffer}, \hyperpage{101}
+    \subitem {IsFinished}, \hyperpage{102}
+    \subitem {Rewind}, \hyperpage{101}
+  \item {TimeWar.Logic.Interfaces.IManagerLogic}, \hyperpage{107}
+    \subitem {CreateMap}, \hyperpage{108}
+    \subitem {CreateProfile}, \hyperpage{108}
+    \subitem {CreateSave}, \hyperpage{108}
+    \subitem {DeleteMap}, \hyperpage{109}
+    \subitem {DeleteProfile}, \hyperpage{109}
+    \subitem {DeleteSave}, \hyperpage{109}
+    \subitem {ModifyMap}, \hyperpage{110}
+    \subitem {ModifyProfile}, \hyperpage{110}
+    \subitem {ModifySave}, \hyperpage{110}
+  \item {TimeWar.Logic.Interfaces.ITimedEvent}, \hyperpage{126}
+    \subitem {CheckTimer}, \hyperpage{126}
+    \subitem {ResetStats}, \hyperpage{127}
+  \item {TimeWar.Logic.Interfaces.IViewerLogic}, \hyperpage{127}
+    \subitem {GetMap}, \hyperpage{128}
+    \subitem {GetMaps}, \hyperpage{128}
+    \subitem {GetProfile}, \hyperpage{128}
+    \subitem {GetProfiles}, \hyperpage{129}
+    \subitem {GetSave}, \hyperpage{129}
+    \subitem {GetSaves}, \hyperpage{129}
+    \subitem {GetSelectedProfile}, \hyperpage{130}
+  \item {TimeWar.LogicTests}, \hyperpage{14}
+  \item {TimeWar.LogicTests.Tests}, \hyperpage{207}
+    \subitem {BulletDirectionTest}, \hyperpage{207}
+    \subitem {EffectTest}, \hyperpage{207}
+    \subitem {PlayerMovementTest}, \hyperpage{207}
+    \subitem {Setup}, \hyperpage{208}
+    \subitem {ShootingTest}, \hyperpage{208}
+    \subitem {TestRewind}, \hyperpage{208}
+  \item {TimeWar.Main}, \hyperpage{14}
+  \item {TimeWar.Main.App}, \hyperpage{30}
+    \subitem {InitializeComponent}, \hyperpage{31}
+    \subitem {Main}, \hyperpage{32}
+  \item {TimeWar.Main.BL}, \hyperpage{14}
+  \item {TimeWar.Main.BL.Classes}, \hyperpage{14}
+  \item {TimeWar.Main.BL.Classes.ManagerLogicUI}, \hyperpage{138}
+    \subitem {ManagerLogicUI}, \hyperpage{139}
+  \item {TimeWar.Main.BL.Classes.ViewerLogicUI}, \hyperpage{214}
+    \subitem {ViewerLogicUI}, \hyperpage{215}
+  \item {TimeWar.Main.BL.Factory}, \hyperpage{63}
+    \subitem {Factory}, \hyperpage{64}
+    \subitem {ManagerLogic}, \hyperpage{64}
+    \subitem {ViewerLogic}, \hyperpage{64}
+  \item {TimeWar.Main.BL.Interfaces}, \hyperpage{14}
+  \item {TimeWar.Main.BL.Interfaces.IManagerLogicUI}, \hyperpage{111}
+    \subitem {CreateMap}, \hyperpage{111}
+    \subitem {CreateProfile}, \hyperpage{112}
+    \subitem {CreateSave}, \hyperpage{112}
+    \subitem {DeleteMap}, \hyperpage{112}
+    \subitem {DeleteProfile}, \hyperpage{113}
+    \subitem {DeleteSave}, \hyperpage{113}
+    \subitem {ModifyMap}, \hyperpage{113}
+    \subitem {ModifyProfile}, \hyperpage{114}
+    \subitem {ModifySave}, \hyperpage{114}
+  \item {TimeWar.Main.BL.Interfaces.IViewerLogicUI}, \hyperpage{130}
+    \subitem {GetMaps}, \hyperpage{131}
+    \subitem {GetProfiles}, \hyperpage{131}
+    \subitem {GetSaves}, \hyperpage{131}
+    \subitem {GetSelectedProfile}, \hyperpage{131}
+    \subitem {LoadMaps}, \hyperpage{132}
+  \item {TimeWar.Main.Data}, \hyperpage{15}
+  \item {TimeWar.Main.Data.MapFiles}, \hyperpage{141}
+    \subitem {MapFiles}, \hyperpage{141}
+    \subitem {MapRecords}, \hyperpage{142}
+    \subitem {Name}, \hyperpage{142}
+    \subitem {Path}, \hyperpage{142}
+  \item {TimeWar.Main.Data.MapRecordUI}, \hyperpage{145}
+    \subitem {ConvertToMapEntity}, \hyperpage{146}
+    \subitem {ConvertToMapUiEntity}, \hyperpage{147}
+    \subitem {CopyFrom}, \hyperpage{147}
+    \subitem {MapName}, \hyperpage{147}
+    \subitem {MapRecordId}, \hyperpage{148}
+    \subitem {MapRecordUI}, \hyperpage{146}
+    \subitem {Player}, \hyperpage{148}
+    \subitem {PlayerId}, \hyperpage{148}
+    \subitem {RunTime}, \hyperpage{148}
+  \item {TimeWar.Main.Data.PlayerProfileUI}, \hyperpage{172}
+    \subitem {CompletedRuns}, \hyperpage{175}
+    \subitem {ConvertToProfileEntity}, \hyperpage{174}
+    \subitem {ConvertToProfileUiEntity}, \hyperpage{174}
+    \subitem {CopyFrom}, \hyperpage{174}
+    \subitem {PlayerId}, \hyperpage{175}
+    \subitem {PlayerName}, \hyperpage{175}
+    \subitem {PlayerProfileUI}, \hyperpage{173}
+    \subitem {Save}, \hyperpage{175}
+    \subitem {Selected}, \hyperpage{175}
+    \subitem {TotalDeaths}, \hyperpage{176}
+    \subitem {TotalKills}, \hyperpage{176}
+  \item {TimeWar.Main.Data.SaveUI}, \hyperpage{201}
+    \subitem {ConvertToSaveEntity}, \hyperpage{202}
+    \subitem {ConvertToSaveUiEntity}, \hyperpage{203}
+    \subitem {CopyFrom}, \hyperpage{203}
+    \subitem {Enemydata}, \hyperpage{203}
+    \subitem {Id}, \hyperpage{204}
+    \subitem {Playerdata}, \hyperpage{204}
+    \subitem {SaveUI}, \hyperpage{202}
+  \item {TimeWar.Main.GameControl}, \hyperpage{67}
+    \subitem {BackgroundMusic}, \hyperpage{69}
+    \subitem {Exit}, \hyperpage{69}
+    \subitem {GameControl}, \hyperpage{68}
+    \subitem {IsPaused}, \hyperpage{70}
+    \subitem {LevelFinished}, \hyperpage{70}
+    \subitem {MapName}, \hyperpage{70}
+    \subitem {OnRender}, \hyperpage{69}
+    \subitem {SaveEndGame}, \hyperpage{69}
+    \subitem {SaveGameProgress}, \hyperpage{69}
+    \subitem {SaveLoad}, \hyperpage{70}
+  \item {TimeWar.Main.MainWindow}, \hyperpage{135}
+    \subitem {InitializeComponent}, \hyperpage{136, 137}
+    \subitem {MainWindow}, \hyperpage{136}
+  \item {TimeWar.Main.MenuControl}, \hyperpage{150}
+    \subitem {Exit}, \hyperpage{151}
+    \subitem {MapName}, \hyperpage{152}
+    \subitem {MenuControl}, \hyperpage{150, 151}
+    \subitem {OnRender}, \hyperpage{151}
+    \subitem {ScrollMode}, \hyperpage{152}
+    \subitem {TitleEnabled}, \hyperpage{152}
+  \item {TimeWar.Main.MyIoc}, \hyperpage{159}
+    \subitem {Instance}, \hyperpage{159}
+  \item {TimeWar.Main.View}, \hyperpage{15}
+    \subitem {GamePage}, \hyperpage{16}
+    \subitem {MenuPage}, \hyperpage{16}
+    \subitem {NavigationPages}, \hyperpage{15}
+    \subitem {NewGamePage}, \hyperpage{16}
+    \subitem {ProfileEditorPage}, \hyperpage{16}
+    \subitem {ProfilesPage}, \hyperpage{16}
+  \item {TimeWar.Main.View.BoolToVisibilityConverter}, \hyperpage{36}
+  \item {TimeWar.Main.View.GameWindow}, \hyperpage{78}
+    \subitem {GameWindow}, \hyperpage{78}
+    \subitem {InitializeComponent}, \hyperpage{79}
+  \item {TimeWar.Main.View.INavigationService$<$ T $>$}, 
+		\hyperpage{117}
+    \subitem {NavigateTo}, \hyperpage{118}
+    \subitem {Parameter}, \hyperpage{118}
+  \item {TimeWar.Main.View.IntToDateConverter}, \hyperpage{122}
+  \item {TimeWar.Main.View.MenuPage}, \hyperpage{152}
+    \subitem {InitializeComponent}, \hyperpage{154}
+    \subitem {MenuPage}, \hyperpage{153}
+  \item {TimeWar.Main.View.NavigationService$<$ T $>$}, \hyperpage{160}
+    \subitem {ConfigurePage}, \hyperpage{161}
+    \subitem {ConfigurePages}, \hyperpage{161}
+    \subitem {CurrentPageKey}, \hyperpage{162}
+    \subitem {NavigationService}, \hyperpage{161}
+    \subitem {Parameter}, \hyperpage{162}
+  \item {TimeWar.Main.View.NewGamePage}, \hyperpage{162}
+    \subitem {InitializeComponent}, \hyperpage{163, 164}
+    \subitem {NewGamePage}, \hyperpage{163}
+  \item {TimeWar.Main.View.ProfileAddControl}, \hyperpage{183}
+    \subitem {InitializeComponent}, \hyperpage{184}
+    \subitem {ProfileAddControl}, \hyperpage{183}
+  \item {TimeWar.Main.View.ProfileEditControl}, \hyperpage{185}
+    \subitem {InitializeComponent}, \hyperpage{186}
+    \subitem {ProfileEditControl}, \hyperpage{185}
+  \item {TimeWar.Main.View.ProfilesPage}, \hyperpage{188}
+    \subitem {InitializeComponent}, \hyperpage{189}
+    \subitem {ProfilesPage}, \hyperpage{189}
+  \item {TimeWar.Main.ViewModel}, \hyperpage{16}
+  \item {TimeWar.Main.ViewModel.GameViewModel}, \hyperpage{75}
+    \subitem {EndDeaths}, \hyperpage{76}
+    \subitem {EndKills}, \hyperpage{76}
+    \subitem {EndTime}, \hyperpage{76}
+    \subitem {EndVisibility}, \hyperpage{77}
+    \subitem {GameViewModel}, \hyperpage{75}
+    \subitem {MapName}, \hyperpage{77}
+    \subitem {MenuPageCommand}, \hyperpage{76}
+    \subitem {MenuVisibility}, \hyperpage{77}
+    \subitem {NavigationContext}, \hyperpage{77}
+  \item {TimeWar.Main.ViewModel.MainViewModel}, \hyperpage{134}
+    \subitem {LoadedCommand}, \hyperpage{135}
+    \subitem {MainViewModel}, \hyperpage{134}
+  \item {TimeWar.Main.ViewModel.MenuViewModel}, \hyperpage{155}
+    \subitem {ContinueGameCommand}, \hyperpage{156}
+    \subitem {ContinueVisibility}, \hyperpage{156}
+    \subitem {ExitCommand}, \hyperpage{156}
+    \subitem {Init}, \hyperpage{156}
+    \subitem {MenuText}, \hyperpage{157}
+    \subitem {MenuViewModel}, \hyperpage{155}
+    \subitem {NewGamePageCommand}, \hyperpage{157}
+    \subitem {ProfilesPageCommand}, \hyperpage{157}
+    \subitem {SelectedProfile}, \hyperpage{157}
+  \item {TimeWar.Main.ViewModel.NewGameViewModel}, \hyperpage{164}
+    \subitem {GamePageCommand}, \hyperpage{166}
+    \subitem {InitMaps}, \hyperpage{166}
+    \subitem {Maps}, \hyperpage{166}
+    \subitem {MenuPageCommand}, \hyperpage{166}
+    \subitem {NewGameViewModel}, \hyperpage{165}
+    \subitem {Scoreboard}, \hyperpage{166}
+    \subitem {SelectedMap}, \hyperpage{167}
+  \item {TimeWar.Main.ViewModel.ProfilesViewModel}, \hyperpage{190}
+    \subitem {CreateProfileCommand}, \hyperpage{192}
+    \subitem {DeleteProfileCommand}, \hyperpage{192}
+    \subitem {Editing}, \hyperpage{192}
+    \subitem {MenuPageCommand}, \hyperpage{192}
+    \subitem {ModifyProfileCommand}, \hyperpage{192}
+    \subitem {PlayerProfileUIs}, \hyperpage{192}
+    \subitem {ProfilesViewModel}, \hyperpage{191}
+    \subitem {ReInit}, \hyperpage{191}
+    \subitem {SelectedPlayer}, \hyperpage{193}
+  \item {TimeWar.Main.ViewModel.ViewModelLocator}, \hyperpage{215}
+    \subitem {GameViewModel}, \hyperpage{216}
+    \subitem {MainViewModel}, \hyperpage{216}
+    \subitem {MenuViewModel}, \hyperpage{217}
+    \subitem {NewGameViewModel}, \hyperpage{217}
+    \subitem {ProfilesViewModel}, \hyperpage{217}
+    \subitem {ViewModelLocator}, \hyperpage{216}
+  \item {TimeWar.Model}, \hyperpage{16}
+  \item {TimeWar.Model.GameModel}, \hyperpage{71}
+    \subitem {Camera}, \hyperpage{71}
+    \subitem {CurrentWorld}, \hyperpage{72}
+    \subitem {GameModel}, \hyperpage{71}
+    \subitem {Hero}, \hyperpage{72}
+    \subitem {InRewind}, \hyperpage{72}
+    \subitem {LevelFinished}, \hyperpage{72}
+    \subitem {MouseLocation}, \hyperpage{72}
+  \item {TimeWar.Model.Objects}, \hyperpage{16}
+  \item {TimeWar.Model.Objects.Character}, \hyperpage{44}
+    \subitem {AddKey}, \hyperpage{46}
+    \subitem {CanAttack}, \hyperpage{47}
+    \subitem {CanJump}, \hyperpage{47}
+    \subitem {Character}, \hyperpage{46}
+    \subitem {ClickLocation}, \hyperpage{48}
+    \subitem {ContainKey}, \hyperpage{47}
+    \subitem {CurrentHealth}, \hyperpage{48}
+    \subitem {CurrentShield}, \hyperpage{48}
+    \subitem {CurrentSprite}, \hyperpage{48}
+    \subitem {Health}, \hyperpage{48}
+    \subitem {Height}, \hyperpage{49}
+    \subitem {IsInvincible}, \hyperpage{49}
+    \subitem {RemoveKey}, \hyperpage{47}
+    \subitem {Shield}, \hyperpage{49}
+    \subitem {ShieldRegenTime}, \hyperpage{49}
+    \subitem {ShieldRegenTimer}, \hyperpage{49}
+    \subitem {ShieldRegenValue}, \hyperpage{50}
+    \subitem {SpriteFile}, \hyperpage{50}
+    \subitem {Stance}, \hyperpage{50}
+    \subitem {TypeOfBullet}, \hyperpage{50}
+    \subitem {Width}, \hyperpage{50}
+  \item {TimeWar.Model.Objects.Classes}, \hyperpage{17}
+    \subitem {Accelerating}, \hyperpage{17}
+    \subitem {Basic}, \hyperpage{17, 18}
+    \subitem {BasicEnemyBullet}, \hyperpage{17}
+    \subitem {Bouncing}, \hyperpage{17}
+    \subitem {BulletType}, \hyperpage{17}
+    \subitem {Burst}, \hyperpage{18}
+    \subitem {Checkpoint}, \hyperpage{18}
+    \subitem {CurvedBouncing}, \hyperpage{17}
+    \subitem {EnemyType}, \hyperpage{18}
+    \subitem {EnviromentalDamage}, \hyperpage{18}
+    \subitem {Fast}, \hyperpage{18}
+    \subitem {Finish}, \hyperpage{18}
+    \subitem {HealthKit}, \hyperpage{18}
+    \subitem {Heavy}, \hyperpage{18}
+    \subitem {HighJump}, \hyperpage{18}
+    \subitem {Invincibility}, \hyperpage{18}
+    \subitem {POIType}, \hyperpage{18}
+    \subitem {RapidFire}, \hyperpage{18}
+    \subitem {UnlockWeapon}, \hyperpage{18}
+  \item {TimeWar.Model.Objects.Classes.Bullet}, \hyperpage{36}
+    \subitem {Acceleration}, \hyperpage{38}
+    \subitem {Bullet}, \hyperpage{37}
+    \subitem {BulletStopwatch}, \hyperpage{38}
+    \subitem {Damage}, \hyperpage{38}
+    \subitem {DespawnStopwatch}, \hyperpage{39}
+    \subitem {Destination}, \hyperpage{39}
+    \subitem {MovementVectorF}, \hyperpage{39}
+    \subitem {MoveVector}, \hyperpage{39}
+    \subitem {PlayerBullet}, \hyperpage{39}
+    \subitem {Type}, \hyperpage{40}
+  \item {TimeWar.Model.Objects.Classes.Enemy}, \hyperpage{56}
+    \subitem {Enemy}, \hyperpage{56}
+    \subitem {Type}, \hyperpage{57}
+  \item {TimeWar.Model.Objects.Classes.PointOfInterest}, 
+		\hyperpage{176}
+    \subitem {PointOfInterest}, \hyperpage{177}
+    \subitem {Type}, \hyperpage{177}
+  \item {TimeWar.Model.Objects.Classes.StaticObject}, \hyperpage{205}
+    \subitem {Hud}, \hyperpage{206}
+    \subitem {StaticObject}, \hyperpage{206}
+  \item {TimeWar.Model.Objects.GameWorld}, \hyperpage{80}
+    \subitem {AddBullet}, \hyperpage{82}
+    \subitem {AddDecoration}, \hyperpage{82}
+    \subitem {AddEnemy}, \hyperpage{82}
+    \subitem {AddGround}, \hyperpage{83}
+    \subitem {AddPOI}, \hyperpage{83}
+    \subitem {BulletCount}, \hyperpage{89}
+    \subitem {CheckpointLoad}, \hyperpage{83}
+    \subitem {CheckpointSave}, \hyperpage{83}
+    \subitem {ConvertPixelToTile}, \hyperpage{84}
+    \subitem {ConvertTileToPixel}, \hyperpage{84}
+    \subitem {EnemiesLoaded}, \hyperpage{89}
+    \subitem {EnemyCount}, \hyperpage{89}
+    \subitem {GameHeight}, \hyperpage{90}
+    \subitem {GameWidth}, \hyperpage{90}
+    \subitem {GameWorld}, \hyperpage{81}
+    \subitem {GetBullet}, \hyperpage{84}
+    \subitem {GetBullets}, \hyperpage{90}
+    \subitem {GetEnemies}, \hyperpage{90}
+    \subitem {GetEnemy}, \hyperpage{85}
+    \subitem {GetPoi}, \hyperpage{85}
+    \subitem {GetPois}, \hyperpage{90}
+    \subitem {GetTileHeight}, \hyperpage{91}
+    \subitem {GetTileWidth}, \hyperpage{91}
+    \subitem {Magnify}, \hyperpage{91}
+    \subitem {RemoveBullet}, \hyperpage{86}
+    \subitem {RemoveBullets}, \hyperpage{86}
+    \subitem {RemoveDecoration}, \hyperpage{86}
+    \subitem {RemoveEnemy}, \hyperpage{86}
+    \subitem {RemoveGround}, \hyperpage{87}
+    \subitem {RemovePOI}, \hyperpage{87}
+    \subitem {SavedHealt}, \hyperpage{91}
+    \subitem {SavedShield}, \hyperpage{91}
+    \subitem {SearchDecoration}, \hyperpage{87}
+    \subitem {SearchGround}, \hyperpage{89}
+    \subitem {StartPoint}, \hyperpage{92}
+    \subitem {TileSize}, \hyperpage{92}
+    \subitem {WorldName}, \hyperpage{92}
+  \item {TimeWar.Model.Objects.Interfaces}, \hyperpage{18}
+    \subitem {JumpLeft}, \hyperpage{19}
+    \subitem {JumpRight}, \hyperpage{19}
+    \subitem {Left}, \hyperpage{19}
+    \subitem {Right}, \hyperpage{19}
+    \subitem {Stances}, \hyperpage{19}
+    \subitem {StandLeft}, \hyperpage{19}
+    \subitem {StandRight}, \hyperpage{19}
+  \item {TimeWar.Model.Objects.Interfaces.IGameObject}, \hyperpage{102}
+    \subitem {CurrentSprite}, \hyperpage{103}
+    \subitem {Height}, \hyperpage{103}
+    \subitem {MovementVector}, \hyperpage{103}
+    \subitem {Position}, \hyperpage{104}
+    \subitem {SpriteFile}, \hyperpage{104}
+    \subitem {Stance}, \hyperpage{104}
+    \subitem {StanceLess}, \hyperpage{104}
+    \subitem {Width}, \hyperpage{104}
+  \item {TimeWar.Model.Objects.Interfaces.IMoveable}, \hyperpage{116}
+    \subitem {Position}, \hyperpage{117}
+  \item {TimeWar.Model.Objects.Player}, \hyperpage{167}
+    \subitem {Checkpoint}, \hyperpage{169}
+    \subitem {Deaths}, \hyperpage{169}
+    \subitem {Kills}, \hyperpage{169}
+    \subitem {NumOfWeaponUnlocked}, \hyperpage{169}
+    \subitem {Player}, \hyperpage{168}
+    \subitem {PlayerDeath}, \hyperpage{168}
+  \item {TimeWar.Model.Objects.Viewport}, \hyperpage{217}
+    \subitem {Followed}, \hyperpage{220}
+    \subitem {GetRelativeCharacterPosX}, \hyperpage{220}
+    \subitem {GetRelativeCharacterPosY}, \hyperpage{220}
+    \subitem {GetRelativeObjectPosX}, \hyperpage{219}
+    \subitem {GetRelativeObjectPosY}, \hyperpage{219}
+    \subitem {GetViewportX}, \hyperpage{220}
+    \subitem {GetViewportY}, \hyperpage{220}
+    \subitem {Viewport}, \hyperpage{218}
+    \subitem {WindowHeight}, \hyperpage{221}
+    \subitem {WindowWidth}, \hyperpage{221}
+  \item {TimeWar.Renderer}, \hyperpage{19}
+  \item {TimeWar.Renderer.GameRenderer}, \hyperpage{73}
+    \subitem {BuildDrawing}, \hyperpage{74}
+    \subitem {GameRenderer}, \hyperpage{73}
+    \subitem {MovingObjectsCount}, \hyperpage{74}
+    \subitem {WindowChanged}, \hyperpage{74}
+  \item {TimeWar.Renderer.RendererConfig}, \hyperpage{196}
+    \subitem {BackgroundHorizontalTileNumber}, \hyperpage{197}
+    \subitem {BackgroundVerticalTileNumber}, \hyperpage{197}
+    \subitem {LayersHeight}, \hyperpage{197}
+    \subitem {LayersHorizontalOffset}, \hyperpage{197}
+    \subitem {LayersHorizontalSpeed}, \hyperpage{197}
+    \subitem {LayersSpriteFile}, \hyperpage{197}
+    \subitem {LayersVerticalOffset}, \hyperpage{198}
+    \subitem {LayersVerticalSpeed}, \hyperpage{198}
+    \subitem {LayersWidth}, \hyperpage{198}
+    \subitem {NumberOfLayers}, \hyperpage{198}
+  \item {TimeWar.Renderer.Sprite}, \hyperpage{204}
+    \subitem {CreateSprite}, \hyperpage{204}
+  \item {TimeWar.Repository}, \hyperpage{19}
+  \item {TimeWar.Repository.Classes}, \hyperpage{19}
+  \item {TimeWar.Repository.Classes.MainRepository$<$ T $>$}, 
+		\hyperpage{132}
+    \subitem {Ctx}, \hyperpage{133}
+    \subitem {MainRepository}, \hyperpage{133}
+  \item {TimeWar.Repository.Classes.MapRecordRepository}, 
+		\hyperpage{144}
+    \subitem {MapRecordRepository}, \hyperpage{145}
+  \item {TimeWar.Repository.Classes.MapRepository}, \hyperpage{149}
+    \subitem {MapRepository}, \hyperpage{149}
+  \item {TimeWar.Repository.Classes.ProfileRepository}, \hyperpage{187}
+    \subitem {ProfileRepository}, \hyperpage{187}
+  \item {TimeWar.Repository.Classes.SaveRepository}, \hyperpage{200}
+    \subitem {SaveRepository}, \hyperpage{201}
+  \item {TimeWar.Repository.Interfaces}, \hyperpage{20}
+  \item {TimeWar.Repository.Interfaces.IMainRepository$<$ T $>$}, 
+		\hyperpage{105}
+    \subitem {Create}, \hyperpage{106}
+    \subitem {Delete}, \hyperpage{106}
+    \subitem {GetAll}, \hyperpage{106}
+    \subitem {GetOne}, \hyperpage{106}
+  \item {TimeWar.Repository.Interfaces.IMapRecordRepository}, 
+		\hyperpage{114}
+    \subitem {Update}, \hyperpage{115}
+  \item {TimeWar.Repository.Interfaces.IMapRepository}, \hyperpage{115}
+    \subitem {Update}, \hyperpage{116}
+  \item {TimeWar.Repository.Interfaces.IProfileRepository}, 
+		\hyperpage{124}
+    \subitem {Update}, \hyperpage{124}
+  \item {TimeWar.Repository.Interfaces.ISaveRepository}, 
+		\hyperpage{125}
+    \subitem {Update}, \hyperpage{125}
+  \item {TimeWarContext}
+    \subitem {TimeWar.Data.Models.TimeWarContext}, \hyperpage{211}
+  \item {TitleEnabled}
+    \subitem {TimeWar.Main.MenuControl}, \hyperpage{152}
+  \item {TopCollision}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{26}
+  \item {TotalDeaths}
+    \subitem {TimeWar.Data.Models.PlayerProfile}, \hyperpage{172}
+    \subitem {TimeWar.Main.Data.PlayerProfileUI}, \hyperpage{176}
+  \item {TotalKills}
+    \subitem {TimeWar.Data.Models.PlayerProfile}, \hyperpage{172}
+    \subitem {TimeWar.Main.Data.PlayerProfileUI}, \hyperpage{176}
+  \item {Type}
+    \subitem {TimeWar.Model.Objects.Classes.Bullet}, \hyperpage{40}
+    \subitem {TimeWar.Model.Objects.Classes.Enemy}, \hyperpage{57}
+    \subitem {TimeWar.Model.Objects.Classes.PointOfInterest}, 
+		\hyperpage{177}
+  \item {TypeOfBullet}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{30}
+    \subitem {TimeWar.Model.Objects.Character}, \hyperpage{50}
+
+  \indexspace
+
+  \item {Undo}
+    \subitem {TimeWar.Logic.Interfaces.ICommand}, \hyperpage{100}
+  \item {UnlockWeapon}
+    \subitem {TimeWar.Model.Objects.Classes}, \hyperpage{18}
+  \item {UnlockWeaponLogic}
+    \subitem {TimeWar.Logic.Classes.POIs.UnlockWeaponLogic}, 
+		\hyperpage{212}
+  \item {Update}
+    \subitem {TimeWar.Repository.Interfaces.IMapRecordRepository}, 
+		\hyperpage{115}
+    \subitem {TimeWar.Repository.Interfaces.IMapRepository}, 
+		\hyperpage{116}
+    \subitem {TimeWar.Repository.Interfaces.IProfileRepository}, 
+		\hyperpage{124}
+    \subitem {TimeWar.Repository.Interfaces.ISaveRepository}, 
+		\hyperpage{125}
+
+  \indexspace
+
+  \item {ViewerLogic}
+    \subitem {TimeWar.Logic.Classes.ViewerLogic}, \hyperpage{214}
+    \subitem {TimeWar.Main.BL.Factory}, \hyperpage{64}
+  \item {ViewerLogicUI}
+    \subitem {TimeWar.Main.BL.Classes.ViewerLogicUI}, \hyperpage{215}
+  \item {ViewModelLocator}
+    \subitem {TimeWar.Main.ViewModel.ViewModelLocator}, \hyperpage{216}
+  \item {Viewport}
+    \subitem {TimeWar.Model.Objects.Viewport}, \hyperpage{218}
+
+  \indexspace
+
+  \item {WallCollision}
+    \subitem {TimeWar.Logic.Classes.Characters.ActorLogic}, 
+		\hyperpage{27}
+  \item {Width}
+    \subitem {TimeWar.Model.Objects.Character}, \hyperpage{50}
+    \subitem {TimeWar.Model.Objects.Interfaces.IGameObject}, 
+		\hyperpage{104}
+  \item {WindowChanged}
+    \subitem {TimeWar.Renderer.GameRenderer}, \hyperpage{74}
+  \item {WindowHeight}
+    \subitem {TimeWar.Model.Objects.Viewport}, \hyperpage{221}
+  \item {WindowWidth}
+    \subitem {TimeWar.Model.Objects.Viewport}, \hyperpage{221}
+  \item {WorldName}
+    \subitem {TimeWar.Model.Objects.GameWorld}, \hyperpage{92}
+
+  \indexspace
+
+  \item {XamlGeneratedNamespace}, \hyperpage{20}
+  \item {XamlGeneratedNamespace.GeneratedInternalTypeHelper}, 
+		\hyperpage{92}
+    \subitem {AddEventHandler}, \hyperpage{93}
+    \subitem {CreateDelegate}, \hyperpage{94}
+    \subitem {CreateInstance}, \hyperpage{94}
+    \subitem {GetPropertyValue}, \hyperpage{95}
+    \subitem {SetPropertyValue}, \hyperpage{95}
+
+\end{theindex}

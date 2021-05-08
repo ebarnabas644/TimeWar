@@ -1,0 +1,207 @@
+\hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic}{}\doxysection{Time\+War.\+Logic.\+Classes.\+Characters.\+Basic\+Enemy\+Logic Class Reference}
+\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic}\index{TimeWar.Logic.Classes.Characters.BasicEnemyLogic@{TimeWar.Logic.Classes.Characters.BasicEnemyLogic}}
+
+
+Enemy logic.  
+
+
+Inheritance diagram for Time\+War.\+Logic.\+Classes.\+Characters.\+Basic\+Enemy\+Logic\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.210375cm]{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a78fdb17333d32220352394f02cb902b4}{Basic\+Enemy\+Logic}} (\mbox{\hyperlink{class_time_war_1_1_model_1_1_game_model}{Game\+Model}} model, \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_character}{Character}} character, \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_command_manager}{Command\+Manager}} command\+Manager)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic}{Basic\+Enemy\+Logic}} class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_ae9c51ecfd8819df75a72a1ef187aa4f2}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_ae9c51ecfd8819df75a72a1ef187aa4f2}} 
+override void \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_ae9c51ecfd8819df75a72a1ef187aa4f2}{One\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em One Tick. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_ad2da561044a65fdb3e71e97370ef3f7d}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_ad2da561044a65fdb3e71e97370ef3f7d}} 
+override Point \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_ad2da561044a65fdb3e71e97370ef3f7d}{Move}} ()
+\begin{DoxyCompactList}\small\item\em Default move funtion. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_ab126028be466363116e9c7a09291d010}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_ab126028be466363116e9c7a09291d010}} 
+override void \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_ab126028be466363116e9c7a09291d010}{Attack}} ()
+\begin{DoxyCompactList}\small\item\em Default attack method. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_ab8457a28279d964c998fd2207c63d0e7}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_ab8457a28279d964c998fd2207c63d0e7}} 
+override void \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_ab8457a28279d964c998fd2207c63d0e7}{Movement}} ()
+\begin{DoxyCompactList}\small\item\em Default Movement funtion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a322f2a577fe4f010904e1c9c3fdf94f4}{Attack\+Value}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the attack damage of the enemy. \end{DoxyCompactList}\item 
+Point \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a73bfb355139c11bf020f33ef90ec18be}{Last\+Known\+Player\+Location}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets last known player location. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a3a7ecad9fa20eb5d85bac3e5a6589bf2}{Is\+Player\+Detected}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets a value indicating whether player detected. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a8a482e394090df0d2ac877803a252b5a}{Attack\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets attack time. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a4686a6db677407ecbc4971e40473ad05}{Max\+Move\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets max move time. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a0c7c2a3f920ddf4b852863f1f4615f42}{Detection\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets max move time. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_af072ebd3b0f569b04cce6e335311d3f8}{Detection\+Range}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets detection range. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a97fc41de608ab19b4cd93d9f8e754fd1}{Default\+Follow\+Distance}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets default follow distance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Enemy logic. 
+
+
+
+Definition at line 21 of file Basic\+Enemy\+Logic.\+cs.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a78fdb17333d32220352394f02cb902b4}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a78fdb17333d32220352394f02cb902b4}} 
+\index{TimeWar.Logic.Classes.Characters.BasicEnemyLogic@{TimeWar.Logic.Classes.Characters.BasicEnemyLogic}!BasicEnemyLogic@{BasicEnemyLogic}}
+\index{BasicEnemyLogic@{BasicEnemyLogic}!TimeWar.Logic.Classes.Characters.BasicEnemyLogic@{TimeWar.Logic.Classes.Characters.BasicEnemyLogic}}
+\doxysubsubsection{\texorpdfstring{BasicEnemyLogic()}{BasicEnemyLogic()}}
+{\footnotesize\ttfamily Time\+War.\+Logic.\+Classes.\+Characters.\+Basic\+Enemy\+Logic.\+Basic\+Enemy\+Logic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_time_war_1_1_model_1_1_game_model}{Game\+Model}}}]{model,  }\item[{\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_character}{Character}}}]{character,  }\item[{\mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_command_manager}{Command\+Manager}}}]{command\+Manager }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic}{Basic\+Enemy\+Logic}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Game model.\\
+\hline
+{\em character} & Charater.\\
+\hline
+{\em command\+Manager} & Command manger.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 38 of file Basic\+Enemy\+Logic.\+cs.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a8a482e394090df0d2ac877803a252b5a}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a8a482e394090df0d2ac877803a252b5a}} 
+\index{TimeWar.Logic.Classes.Characters.BasicEnemyLogic@{TimeWar.Logic.Classes.Characters.BasicEnemyLogic}!AttackTime@{AttackTime}}
+\index{AttackTime@{AttackTime}!TimeWar.Logic.Classes.Characters.BasicEnemyLogic@{TimeWar.Logic.Classes.Characters.BasicEnemyLogic}}
+\doxysubsubsection{\texorpdfstring{AttackTime}{AttackTime}}
+{\footnotesize\ttfamily int Time\+War.\+Logic.\+Classes.\+Characters.\+Basic\+Enemy\+Logic.\+Attack\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Gets or sets attack time. 
+
+
+
+Definition at line 79 of file Basic\+Enemy\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a322f2a577fe4f010904e1c9c3fdf94f4}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a322f2a577fe4f010904e1c9c3fdf94f4}} 
+\index{TimeWar.Logic.Classes.Characters.BasicEnemyLogic@{TimeWar.Logic.Classes.Characters.BasicEnemyLogic}!AttackValue@{AttackValue}}
+\index{AttackValue@{AttackValue}!TimeWar.Logic.Classes.Characters.BasicEnemyLogic@{TimeWar.Logic.Classes.Characters.BasicEnemyLogic}}
+\doxysubsubsection{\texorpdfstring{AttackValue}{AttackValue}}
+{\footnotesize\ttfamily int Time\+War.\+Logic.\+Classes.\+Characters.\+Basic\+Enemy\+Logic.\+Attack\+Value\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the attack damage of the enemy. 
+
+
+
+Definition at line 64 of file Basic\+Enemy\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a97fc41de608ab19b4cd93d9f8e754fd1}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a97fc41de608ab19b4cd93d9f8e754fd1}} 
+\index{TimeWar.Logic.Classes.Characters.BasicEnemyLogic@{TimeWar.Logic.Classes.Characters.BasicEnemyLogic}!DefaultFollowDistance@{DefaultFollowDistance}}
+\index{DefaultFollowDistance@{DefaultFollowDistance}!TimeWar.Logic.Classes.Characters.BasicEnemyLogic@{TimeWar.Logic.Classes.Characters.BasicEnemyLogic}}
+\doxysubsubsection{\texorpdfstring{DefaultFollowDistance}{DefaultFollowDistance}}
+{\footnotesize\ttfamily int Time\+War.\+Logic.\+Classes.\+Characters.\+Basic\+Enemy\+Logic.\+Default\+Follow\+Distance\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Gets or sets default follow distance. 
+
+
+
+Definition at line 99 of file Basic\+Enemy\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_af072ebd3b0f569b04cce6e335311d3f8}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_af072ebd3b0f569b04cce6e335311d3f8}} 
+\index{TimeWar.Logic.Classes.Characters.BasicEnemyLogic@{TimeWar.Logic.Classes.Characters.BasicEnemyLogic}!DetectionRange@{DetectionRange}}
+\index{DetectionRange@{DetectionRange}!TimeWar.Logic.Classes.Characters.BasicEnemyLogic@{TimeWar.Logic.Classes.Characters.BasicEnemyLogic}}
+\doxysubsubsection{\texorpdfstring{DetectionRange}{DetectionRange}}
+{\footnotesize\ttfamily int Time\+War.\+Logic.\+Classes.\+Characters.\+Basic\+Enemy\+Logic.\+Detection\+Range\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Gets or sets detection range. 
+
+
+
+Definition at line 94 of file Basic\+Enemy\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a0c7c2a3f920ddf4b852863f1f4615f42}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a0c7c2a3f920ddf4b852863f1f4615f42}} 
+\index{TimeWar.Logic.Classes.Characters.BasicEnemyLogic@{TimeWar.Logic.Classes.Characters.BasicEnemyLogic}!DetectionTime@{DetectionTime}}
+\index{DetectionTime@{DetectionTime}!TimeWar.Logic.Classes.Characters.BasicEnemyLogic@{TimeWar.Logic.Classes.Characters.BasicEnemyLogic}}
+\doxysubsubsection{\texorpdfstring{DetectionTime}{DetectionTime}}
+{\footnotesize\ttfamily int Time\+War.\+Logic.\+Classes.\+Characters.\+Basic\+Enemy\+Logic.\+Detection\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Gets or sets max move time. 
+
+
+
+Definition at line 89 of file Basic\+Enemy\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a3a7ecad9fa20eb5d85bac3e5a6589bf2}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a3a7ecad9fa20eb5d85bac3e5a6589bf2}} 
+\index{TimeWar.Logic.Classes.Characters.BasicEnemyLogic@{TimeWar.Logic.Classes.Characters.BasicEnemyLogic}!IsPlayerDetected@{IsPlayerDetected}}
+\index{IsPlayerDetected@{IsPlayerDetected}!TimeWar.Logic.Classes.Characters.BasicEnemyLogic@{TimeWar.Logic.Classes.Characters.BasicEnemyLogic}}
+\doxysubsubsection{\texorpdfstring{IsPlayerDetected}{IsPlayerDetected}}
+{\footnotesize\ttfamily bool Time\+War.\+Logic.\+Classes.\+Characters.\+Basic\+Enemy\+Logic.\+Is\+Player\+Detected\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets a value indicating whether player detected. 
+
+
+
+Definition at line 74 of file Basic\+Enemy\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a73bfb355139c11bf020f33ef90ec18be}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a73bfb355139c11bf020f33ef90ec18be}} 
+\index{TimeWar.Logic.Classes.Characters.BasicEnemyLogic@{TimeWar.Logic.Classes.Characters.BasicEnemyLogic}!LastKnownPlayerLocation@{LastKnownPlayerLocation}}
+\index{LastKnownPlayerLocation@{LastKnownPlayerLocation}!TimeWar.Logic.Classes.Characters.BasicEnemyLogic@{TimeWar.Logic.Classes.Characters.BasicEnemyLogic}}
+\doxysubsubsection{\texorpdfstring{LastKnownPlayerLocation}{LastKnownPlayerLocation}}
+{\footnotesize\ttfamily Point Time\+War.\+Logic.\+Classes.\+Characters.\+Basic\+Enemy\+Logic.\+Last\+Known\+Player\+Location\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets last known player location. 
+
+
+
+Definition at line 69 of file Basic\+Enemy\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a4686a6db677407ecbc4971e40473ad05}\label{class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_basic_enemy_logic_a4686a6db677407ecbc4971e40473ad05}} 
+\index{TimeWar.Logic.Classes.Characters.BasicEnemyLogic@{TimeWar.Logic.Classes.Characters.BasicEnemyLogic}!MaxMoveTime@{MaxMoveTime}}
+\index{MaxMoveTime@{MaxMoveTime}!TimeWar.Logic.Classes.Characters.BasicEnemyLogic@{TimeWar.Logic.Classes.Characters.BasicEnemyLogic}}
+\doxysubsubsection{\texorpdfstring{MaxMoveTime}{MaxMoveTime}}
+{\footnotesize\ttfamily int Time\+War.\+Logic.\+Classes.\+Characters.\+Basic\+Enemy\+Logic.\+Max\+Move\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}, {\ttfamily [protected]}}
+
+
+
+Gets or sets max move time. 
+
+
+
+Definition at line 84 of file Basic\+Enemy\+Logic.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+feleves/\+Time\+War/\+Time\+War.\+Logic/\+Classes/\+Characters/\+Enemy\+Logics/Basic\+Enemy\+Logic.\+cs\end{DoxyCompactItemize}

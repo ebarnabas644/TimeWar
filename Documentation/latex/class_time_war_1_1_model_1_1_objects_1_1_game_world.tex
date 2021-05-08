@@ -1,0 +1,750 @@
+\hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world}{}\doxysection{Time\+War.\+Model.\+Objects.\+Game\+World Class Reference}
+\label{class_time_war_1_1_model_1_1_objects_1_1_game_world}\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+
+
+Game world details, settings.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_a62949428b905b77af738f065bda2637e}{Game\+World}} (int height, int width, int tile\+Size, int magnify=4)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world}{Game\+World}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_bullet}{Bullet}} \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_a0bd3413744ff9cbaf709b6d81d2cab83}{Get\+Bullet}} (int idx)
+\begin{DoxyCompactList}\small\item\em Get bullet from bullet collection. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_a6bc4b9b2dcd8db8f4b2bafe8df8d85af}{Add\+P\+OI}} (\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_point_of_interest}{Point\+Of\+Interest}} poi)
+\begin{DoxyCompactList}\small\item\em Add new poi. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_a28a26edf7d215e01a1fcf4077e4f615f}{Remove\+P\+OI}} (\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_point_of_interest}{Point\+Of\+Interest}} poi)
+\begin{DoxyCompactList}\small\item\em Remove poi from the collection. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_point_of_interest}{Point\+Of\+Interest}} \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_a88d307ef98a88d1bf3c6e952325130bb}{Get\+Poi}} (int idx)
+\begin{DoxyCompactList}\small\item\em Get poi entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_a2f0dbe606e2e4558913830e197c9d189}{Add\+Ground}} (Point position)
+\begin{DoxyCompactList}\small\item\em Add new ground tile. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_a6232a614e04a883bf7c4a091a7b0def6}{Remove\+Ground}} (Point position)
+\begin{DoxyCompactList}\small\item\em Remove ground tile. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_a80894d876071d6fdbecfc288dc7efacd}{Search\+Ground}} (Point position)
+\begin{DoxyCompactList}\small\item\em Search for ground tiles. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_a03510305eb11029dfa3a09a0c5be426a}{Convert\+Tile\+To\+Pixel}} (int tile\+Pos)
+\begin{DoxyCompactList}\small\item\em Convert tile value to pixel value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_a1a98a06067c9bcb819f3158647392c76}{Convert\+Pixel\+To\+Tile}} (int pixel\+Pos)
+\begin{DoxyCompactList}\small\item\em Convert pixel value to tile value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_ab1375f634f4a9b76c21e69c76aec722b}{Add\+Decoration}} (Point position, int id)
+\begin{DoxyCompactList}\small\item\em Add decoration object to the map. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_a194206f594eac23fbd014b576fc5bcb0}{Remove\+Decoration}} (Point position)
+\begin{DoxyCompactList}\small\item\em Remove decoration from the map. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_a351045fde8616d15102edd4d7647ec33}{Search\+Decoration}} (Point position)
+\begin{DoxyCompactList}\small\item\em Search for decoration object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_aca9abf45c2cfb0c6dd9d9b9368285179}{Add\+Bullet}} (\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_bullet}{Bullet}} bullet)
+\begin{DoxyCompactList}\small\item\em Add new bullet. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_a71383693bc23d5cfff143f3ec9ebd194}{Remove\+Bullet}} (\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_bullet}{Bullet}} bullet)
+\begin{DoxyCompactList}\small\item\em Remove bullet. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_a9a4938475e7b9f88e872098715a94924}{Remove\+Bullets}} ()
+\begin{DoxyCompactList}\small\item\em Remove bullets. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_a510c0672ce1f36078dc7ec75cd454d35}{Add\+Enemy}} (\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_enemy}{Enemy}} enemy)
+\begin{DoxyCompactList}\small\item\em Add new enemy. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_a062ef8087742d60847bdfb8f293ddf92}{Remove\+Enemy}} (\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_enemy}{Enemy}} enemy)
+\begin{DoxyCompactList}\small\item\em Remove enemy from the collection. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_enemy}{Enemy}} \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_a0205155ab2e660bf69975bf6c13b6215}{Get\+Enemy}} (int idx)
+\begin{DoxyCompactList}\small\item\em Get enemy entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_aa3f20d4499f3cd6375476fd963269a41}{Checkpoint\+Save}} ()
+\begin{DoxyCompactList}\small\item\em Save enmies. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_ab067e4197870c1c93be5360a8aac3112}{Checkpoint\+Load}} ()
+\begin{DoxyCompactList}\small\item\em Gets returns checkpoint saved enemies. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Point \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_a11b49c34bc76c882ef0e889e419d4494}{Start\+Point}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets startpoint. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_aee2559eb04f53e4da1e11f81271e75a6}{World\+Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the name of the game world. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_ae741c858ea789ce853c06da4e12b5844}{Tile\+Size}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the game world tile size(pixel value). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_aece67c218f15537aca2670a2889763e2}{Get\+Tile\+Width}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the game world width in tile value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_aed5778de96b62bd027ad6bc99536fba6}{Get\+Tile\+Height}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the game world height in tile value. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_a1164ed568f00a546de0690c129130f4d}{Enemies\+Loaded}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets a value indicating whether enemies are loaded. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_a2cc490c13e81dab0a5f401694efb9d17}{Game\+Width}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the game world width(pixel value). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_ad570f68023655b0592ddec850ded6776}{Game\+Height}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the game world height(pixel value). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_a34566ef09fe72d3e764838170e7431ae}{Magnify}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the zoom extent of the game world. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_a314191acd92ec4b2efaa4811239e24b7}{Bullet\+Count}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets number of bullets. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_abd8a930417ea9d7137923abee9585ceb}{Enemy\+Count}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the number of the enemies. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_ac9698ffe964c5a856b2556a9cf486786}{Saved\+Healt}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets saved health value. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_ae2b8ea9aa37f354a679f83be977eb135}{Saved\+Shield}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets saved shield value. \end{DoxyCompactList}\item 
+I\+Read\+Only\+List$<$ \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_bullet}{Bullet}} $>$ \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_ae4816457e2bef91bf585eb0b8a44ad78}{Get\+Bullets}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets bullets. \end{DoxyCompactList}\item 
+I\+Read\+Only\+List$<$ \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_enemy}{Enemy}} $>$ \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_afda0aabf01e5d8a22e6b08f0d0aab664}{Get\+Enemies}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets enemies. \end{DoxyCompactList}\item 
+I\+Enumerable$<$ \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_point_of_interest}{Point\+Of\+Interest}} $>$ \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world_a8151ffba95376243f891ec8788f32831}{Get\+Pois}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets a list of pois. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Game world details, settings. 
+
+
+
+Definition at line 17 of file Game\+World.\+cs.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_a62949428b905b77af738f065bda2637e}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_a62949428b905b77af738f065bda2637e}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!GameWorld@{GameWorld}}
+\index{GameWorld@{GameWorld}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{GameWorld()}{GameWorld()}}
+{\footnotesize\ttfamily Time\+War.\+Model.\+Objects.\+Game\+World.\+Game\+World (\begin{DoxyParamCaption}\item[{int}]{height,  }\item[{int}]{width,  }\item[{int}]{tile\+Size,  }\item[{int}]{magnify = {\ttfamily 4} }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_game_world}{Game\+World}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height} & Height in tile.\\
+\hline
+{\em width} & Width in tile.\\
+\hline
+{\em tile\+Size} & Game tile size.\\
+\hline
+{\em magnify} & Zoom extent of the game world(default value = 3).\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 34 of file Game\+World.\+cs.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_aca9abf45c2cfb0c6dd9d9b9368285179}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_aca9abf45c2cfb0c6dd9d9b9368285179}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!AddBullet@{AddBullet}}
+\index{AddBullet@{AddBullet}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{AddBullet()}{AddBullet()}}
+{\footnotesize\ttfamily void Time\+War.\+Model.\+Objects.\+Game\+World.\+Add\+Bullet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_bullet}{Bullet}}}]{bullet }\end{DoxyParamCaption})}
+
+
+
+Add new bullet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bullet} & Bullet entity.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 357 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_ab1375f634f4a9b76c21e69c76aec722b}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_ab1375f634f4a9b76c21e69c76aec722b}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!AddDecoration@{AddDecoration}}
+\index{AddDecoration@{AddDecoration}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{AddDecoration()}{AddDecoration()}}
+{\footnotesize\ttfamily void Time\+War.\+Model.\+Objects.\+Game\+World.\+Add\+Decoration (\begin{DoxyParamCaption}\item[{Point}]{position,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Add decoration object to the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position of the object(tile pos).\\
+\hline
+{\em id} & Object id.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 306 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_a510c0672ce1f36078dc7ec75cd454d35}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_a510c0672ce1f36078dc7ec75cd454d35}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!AddEnemy@{AddEnemy}}
+\index{AddEnemy@{AddEnemy}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{AddEnemy()}{AddEnemy()}}
+{\footnotesize\ttfamily void Time\+War.\+Model.\+Objects.\+Game\+World.\+Add\+Enemy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_enemy}{Enemy}}}]{enemy }\end{DoxyParamCaption})}
+
+
+
+Add new enemy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enemy} & \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_character}{Character}} entity.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 383 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_a2f0dbe606e2e4558913830e197c9d189}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_a2f0dbe606e2e4558913830e197c9d189}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!AddGround@{AddGround}}
+\index{AddGround@{AddGround}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{AddGround()}{AddGround()}}
+{\footnotesize\ttfamily void Time\+War.\+Model.\+Objects.\+Game\+World.\+Add\+Ground (\begin{DoxyParamCaption}\item[{Point}]{position }\end{DoxyParamCaption})}
+
+
+
+Add new ground tile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position of the ground(tile pos).\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 234 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_a6bc4b9b2dcd8db8f4b2bafe8df8d85af}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_a6bc4b9b2dcd8db8f4b2bafe8df8d85af}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!AddPOI@{AddPOI}}
+\index{AddPOI@{AddPOI}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{AddPOI()}{AddPOI()}}
+{\footnotesize\ttfamily void Time\+War.\+Model.\+Objects.\+Game\+World.\+Add\+P\+OI (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_point_of_interest}{Point\+Of\+Interest}}}]{poi }\end{DoxyParamCaption})}
+
+
+
+Add new poi. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em poi} & P\+OI entity.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 201 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_ab067e4197870c1c93be5360a8aac3112}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_ab067e4197870c1c93be5360a8aac3112}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!CheckpointLoad@{CheckpointLoad}}
+\index{CheckpointLoad@{CheckpointLoad}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{CheckpointLoad()}{CheckpointLoad()}}
+{\footnotesize\ttfamily void Time\+War.\+Model.\+Objects.\+Game\+World.\+Checkpoint\+Load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets returns checkpoint saved enemies. 
+
+
+
+Definition at line 425 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_aa3f20d4499f3cd6375476fd963269a41}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_aa3f20d4499f3cd6375476fd963269a41}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!CheckpointSave@{CheckpointSave}}
+\index{CheckpointSave@{CheckpointSave}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{CheckpointSave()}{CheckpointSave()}}
+{\footnotesize\ttfamily void Time\+War.\+Model.\+Objects.\+Game\+World.\+Checkpoint\+Save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Save enmies. 
+
+
+
+Definition at line 415 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_a1a98a06067c9bcb819f3158647392c76}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_a1a98a06067c9bcb819f3158647392c76}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!ConvertPixelToTile@{ConvertPixelToTile}}
+\index{ConvertPixelToTile@{ConvertPixelToTile}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{ConvertPixelToTile()}{ConvertPixelToTile()}}
+{\footnotesize\ttfamily int Time\+War.\+Model.\+Objects.\+Game\+World.\+Convert\+Pixel\+To\+Tile (\begin{DoxyParamCaption}\item[{int}]{pixel\+Pos }\end{DoxyParamCaption})}
+
+
+
+Convert pixel value to tile value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pixel\+Pos} & Tile position.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pixel position.
+\end{DoxyReturn}
+
+
+Definition at line 296 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_a03510305eb11029dfa3a09a0c5be426a}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_a03510305eb11029dfa3a09a0c5be426a}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!ConvertTileToPixel@{ConvertTileToPixel}}
+\index{ConvertTileToPixel@{ConvertTileToPixel}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{ConvertTileToPixel()}{ConvertTileToPixel()}}
+{\footnotesize\ttfamily int Time\+War.\+Model.\+Objects.\+Game\+World.\+Convert\+Tile\+To\+Pixel (\begin{DoxyParamCaption}\item[{int}]{tile\+Pos }\end{DoxyParamCaption})}
+
+
+
+Convert tile value to pixel value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tile\+Pos} & Tile position.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pixel position.
+\end{DoxyReturn}
+
+
+Definition at line 286 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_a0bd3413744ff9cbaf709b6d81d2cab83}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_a0bd3413744ff9cbaf709b6d81d2cab83}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!GetBullet@{GetBullet}}
+\index{GetBullet@{GetBullet}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{GetBullet()}{GetBullet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_bullet}{Bullet}} Time\+War.\+Model.\+Objects.\+Game\+World.\+Get\+Bullet (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption})}
+
+
+
+Get bullet from bullet collection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & Index.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Bullet entity.
+\end{DoxyReturn}
+
+
+Definition at line 187 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_a0205155ab2e660bf69975bf6c13b6215}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_a0205155ab2e660bf69975bf6c13b6215}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!GetEnemy@{GetEnemy}}
+\index{GetEnemy@{GetEnemy}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{GetEnemy()}{GetEnemy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_enemy}{Enemy}} Time\+War.\+Model.\+Objects.\+Game\+World.\+Get\+Enemy (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption})}
+
+
+
+Get enemy entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & Index.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_character}{Character}} entity.
+\end{DoxyReturn}
+
+
+Definition at line 402 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_a88d307ef98a88d1bf3c6e952325130bb}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_a88d307ef98a88d1bf3c6e952325130bb}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!GetPoi@{GetPoi}}
+\index{GetPoi@{GetPoi}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{GetPoi()}{GetPoi()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_point_of_interest}{Point\+Of\+Interest}} Time\+War.\+Model.\+Objects.\+Game\+World.\+Get\+Poi (\begin{DoxyParamCaption}\item[{int}]{idx }\end{DoxyParamCaption})}
+
+
+
+Get poi entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em idx} & Index.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Poi entity.
+\end{DoxyReturn}
+
+
+Definition at line 220 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_a71383693bc23d5cfff143f3ec9ebd194}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_a71383693bc23d5cfff143f3ec9ebd194}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!RemoveBullet@{RemoveBullet}}
+\index{RemoveBullet@{RemoveBullet}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{RemoveBullet()}{RemoveBullet()}}
+{\footnotesize\ttfamily void Time\+War.\+Model.\+Objects.\+Game\+World.\+Remove\+Bullet (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_bullet}{Bullet}}}]{bullet }\end{DoxyParamCaption})}
+
+
+
+Remove bullet. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bullet} & Bullet entity.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 366 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_a9a4938475e7b9f88e872098715a94924}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_a9a4938475e7b9f88e872098715a94924}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!RemoveBullets@{RemoveBullets}}
+\index{RemoveBullets@{RemoveBullets}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{RemoveBullets()}{RemoveBullets()}}
+{\footnotesize\ttfamily void Time\+War.\+Model.\+Objects.\+Game\+World.\+Remove\+Bullets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Remove bullets. 
+
+
+
+Definition at line 374 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_a194206f594eac23fbd014b576fc5bcb0}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_a194206f594eac23fbd014b576fc5bcb0}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!RemoveDecoration@{RemoveDecoration}}
+\index{RemoveDecoration@{RemoveDecoration}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{RemoveDecoration()}{RemoveDecoration()}}
+{\footnotesize\ttfamily void Time\+War.\+Model.\+Objects.\+Game\+World.\+Remove\+Decoration (\begin{DoxyParamCaption}\item[{Point}]{position }\end{DoxyParamCaption})}
+
+
+
+Remove decoration from the map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position of the object(tile pos).\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 322 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_a062ef8087742d60847bdfb8f293ddf92}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_a062ef8087742d60847bdfb8f293ddf92}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!RemoveEnemy@{RemoveEnemy}}
+\index{RemoveEnemy@{RemoveEnemy}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{RemoveEnemy()}{RemoveEnemy()}}
+{\footnotesize\ttfamily void Time\+War.\+Model.\+Objects.\+Game\+World.\+Remove\+Enemy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_enemy}{Enemy}}}]{enemy }\end{DoxyParamCaption})}
+
+
+
+Remove enemy from the collection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enemy} & \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_character}{Character}} entity.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 392 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_a6232a614e04a883bf7c4a091a7b0def6}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_a6232a614e04a883bf7c4a091a7b0def6}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!RemoveGround@{RemoveGround}}
+\index{RemoveGround@{RemoveGround}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{RemoveGround()}{RemoveGround()}}
+{\footnotesize\ttfamily void Time\+War.\+Model.\+Objects.\+Game\+World.\+Remove\+Ground (\begin{DoxyParamCaption}\item[{Point}]{position }\end{DoxyParamCaption})}
+
+
+
+Remove ground tile. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position of the ground(tile pos).\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 250 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_a28a26edf7d215e01a1fcf4077e4f615f}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_a28a26edf7d215e01a1fcf4077e4f615f}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!RemovePOI@{RemovePOI}}
+\index{RemovePOI@{RemovePOI}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{RemovePOI()}{RemovePOI()}}
+{\footnotesize\ttfamily void Time\+War.\+Model.\+Objects.\+Game\+World.\+Remove\+P\+OI (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_point_of_interest}{Point\+Of\+Interest}}}]{poi }\end{DoxyParamCaption})}
+
+
+
+Remove poi from the collection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em poi} & Point of interest.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 210 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_a351045fde8616d15102edd4d7647ec33}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_a351045fde8616d15102edd4d7647ec33}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!SearchDecoration@{SearchDecoration}}
+\index{SearchDecoration@{SearchDecoration}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{SearchDecoration()}{SearchDecoration()}}
+{\footnotesize\ttfamily int Time\+War.\+Model.\+Objects.\+Game\+World.\+Search\+Decoration (\begin{DoxyParamCaption}\item[{Point}]{position }\end{DoxyParamCaption})}
+
+
+
+Search for decoration object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position of the object(tile pos).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Object id.
+\end{DoxyReturn}
+
+
+Definition at line 339 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_a80894d876071d6fdbecfc288dc7efacd}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_a80894d876071d6fdbecfc288dc7efacd}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!SearchGround@{SearchGround}}
+\index{SearchGround@{SearchGround}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{SearchGround()}{SearchGround()}}
+{\footnotesize\ttfamily bool Time\+War.\+Model.\+Objects.\+Game\+World.\+Search\+Ground (\begin{DoxyParamCaption}\item[{Point}]{position }\end{DoxyParamCaption})}
+
+
+
+Search for ground tiles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & Position.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Bool based on the ground value.
+\end{DoxyReturn}
+
+
+Definition at line 267 of file Game\+World.\+cs.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_a314191acd92ec4b2efaa4811239e24b7}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_a314191acd92ec4b2efaa4811239e24b7}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!BulletCount@{BulletCount}}
+\index{BulletCount@{BulletCount}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{BulletCount}{BulletCount}}
+{\footnotesize\ttfamily int Time\+War.\+Model.\+Objects.\+Game\+World.\+Bullet\+Count\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets number of bullets. 
+
+
+
+Definition at line 107 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_a1164ed568f00a546de0690c129130f4d}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_a1164ed568f00a546de0690c129130f4d}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!EnemiesLoaded@{EnemiesLoaded}}
+\index{EnemiesLoaded@{EnemiesLoaded}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{EnemiesLoaded}{EnemiesLoaded}}
+{\footnotesize\ttfamily bool Time\+War.\+Model.\+Objects.\+Game\+World.\+Enemies\+Loaded\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets a value indicating whether enemies are loaded. 
+
+
+
+Definition at line 87 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_abd8a930417ea9d7137923abee9585ceb}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_abd8a930417ea9d7137923abee9585ceb}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!EnemyCount@{EnemyCount}}
+\index{EnemyCount@{EnemyCount}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{EnemyCount}{EnemyCount}}
+{\footnotesize\ttfamily int Time\+War.\+Model.\+Objects.\+Game\+World.\+Enemy\+Count\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the number of the enemies. 
+
+
+
+Definition at line 115 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_ad570f68023655b0592ddec850ded6776}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_ad570f68023655b0592ddec850ded6776}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!GameHeight@{GameHeight}}
+\index{GameHeight@{GameHeight}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{GameHeight}{GameHeight}}
+{\footnotesize\ttfamily double Time\+War.\+Model.\+Objects.\+Game\+World.\+Game\+Height\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the game world height(pixel value). 
+
+
+
+Definition at line 97 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_a2cc490c13e81dab0a5f401694efb9d17}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_a2cc490c13e81dab0a5f401694efb9d17}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!GameWidth@{GameWidth}}
+\index{GameWidth@{GameWidth}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{GameWidth}{GameWidth}}
+{\footnotesize\ttfamily double Time\+War.\+Model.\+Objects.\+Game\+World.\+Game\+Width\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the game world width(pixel value). 
+
+
+
+Definition at line 92 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_ae4816457e2bef91bf585eb0b8a44ad78}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_ae4816457e2bef91bf585eb0b8a44ad78}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!GetBullets@{GetBullets}}
+\index{GetBullets@{GetBullets}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{GetBullets}{GetBullets}}
+{\footnotesize\ttfamily I\+Read\+Only\+List$<$\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_bullet}{Bullet}}$>$ Time\+War.\+Model.\+Objects.\+Game\+World.\+Get\+Bullets\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets bullets. 
+
+\begin{DoxyReturn}{Returns}
+Return currently spawned bullets collection.
+\end{DoxyReturn}
+
+
+Definition at line 134 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_afda0aabf01e5d8a22e6b08f0d0aab664}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_afda0aabf01e5d8a22e6b08f0d0aab664}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!GetEnemies@{GetEnemies}}
+\index{GetEnemies@{GetEnemies}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{GetEnemies}{GetEnemies}}
+{\footnotesize\ttfamily I\+Read\+Only\+List$<$\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_enemy}{Enemy}}$>$ Time\+War.\+Model.\+Objects.\+Game\+World.\+Get\+Enemies\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets enemies. 
+
+
+
+Definition at line 151 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_a8151ffba95376243f891ec8788f32831}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_a8151ffba95376243f891ec8788f32831}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!GetPois@{GetPois}}
+\index{GetPois@{GetPois}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{GetPois}{GetPois}}
+{\footnotesize\ttfamily I\+Enumerable$<$\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_point_of_interest}{Point\+Of\+Interest}}$>$ Time\+War.\+Model.\+Objects.\+Game\+World.\+Get\+Pois\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets a list of pois. 
+
+
+
+Definition at line 168 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_aed5778de96b62bd027ad6bc99536fba6}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_aed5778de96b62bd027ad6bc99536fba6}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!GetTileHeight@{GetTileHeight}}
+\index{GetTileHeight@{GetTileHeight}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{GetTileHeight}{GetTileHeight}}
+{\footnotesize\ttfamily double Time\+War.\+Model.\+Objects.\+Game\+World.\+Get\+Tile\+Height\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the game world height in tile value. 
+
+
+
+Definition at line 79 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_aece67c218f15537aca2670a2889763e2}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_aece67c218f15537aca2670a2889763e2}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!GetTileWidth@{GetTileWidth}}
+\index{GetTileWidth@{GetTileWidth}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{GetTileWidth}{GetTileWidth}}
+{\footnotesize\ttfamily double Time\+War.\+Model.\+Objects.\+Game\+World.\+Get\+Tile\+Width\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the game world width in tile value. 
+
+
+
+Definition at line 71 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_a34566ef09fe72d3e764838170e7431ae}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_a34566ef09fe72d3e764838170e7431ae}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!Magnify@{Magnify}}
+\index{Magnify@{Magnify}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{Magnify}{Magnify}}
+{\footnotesize\ttfamily int Time\+War.\+Model.\+Objects.\+Game\+World.\+Magnify\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the zoom extent of the game world. 
+
+
+
+Definition at line 102 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_ac9698ffe964c5a856b2556a9cf486786}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_ac9698ffe964c5a856b2556a9cf486786}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!SavedHealt@{SavedHealt}}
+\index{SavedHealt@{SavedHealt}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{SavedHealt}{SavedHealt}}
+{\footnotesize\ttfamily int Time\+War.\+Model.\+Objects.\+Game\+World.\+Saved\+Healt\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets saved health value. 
+
+
+
+Definition at line 123 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_ae2b8ea9aa37f354a679f83be977eb135}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_ae2b8ea9aa37f354a679f83be977eb135}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!SavedShield@{SavedShield}}
+\index{SavedShield@{SavedShield}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{SavedShield}{SavedShield}}
+{\footnotesize\ttfamily int Time\+War.\+Model.\+Objects.\+Game\+World.\+Saved\+Shield\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets saved shield value. 
+
+
+
+Definition at line 128 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_a11b49c34bc76c882ef0e889e419d4494}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_a11b49c34bc76c882ef0e889e419d4494}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!StartPoint@{StartPoint}}
+\index{StartPoint@{StartPoint}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{StartPoint}{StartPoint}}
+{\footnotesize\ttfamily Point Time\+War.\+Model.\+Objects.\+Game\+World.\+Start\+Point\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets startpoint. 
+
+
+
+Definition at line 56 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_ae741c858ea789ce853c06da4e12b5844}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_ae741c858ea789ce853c06da4e12b5844}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!TileSize@{TileSize}}
+\index{TileSize@{TileSize}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{TileSize}{TileSize}}
+{\footnotesize\ttfamily int Time\+War.\+Model.\+Objects.\+Game\+World.\+Tile\+Size\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the game world tile size(pixel value). 
+
+
+
+Definition at line 66 of file Game\+World.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_model_1_1_objects_1_1_game_world_aee2559eb04f53e4da1e11f81271e75a6}\label{class_time_war_1_1_model_1_1_objects_1_1_game_world_aee2559eb04f53e4da1e11f81271e75a6}} 
+\index{TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}!WorldName@{WorldName}}
+\index{WorldName@{WorldName}!TimeWar.Model.Objects.GameWorld@{TimeWar.Model.Objects.GameWorld}}
+\doxysubsubsection{\texorpdfstring{WorldName}{WorldName}}
+{\footnotesize\ttfamily string Time\+War.\+Model.\+Objects.\+Game\+World.\+World\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the name of the game world. 
+
+
+
+Definition at line 61 of file Game\+World.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+feleves/\+Time\+War/\+Time\+War.\+Model/\+Objects/\+Classes/Game\+World.\+cs\end{DoxyCompactItemize}

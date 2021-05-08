@@ -1,0 +1,863 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Namespace Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Packages}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Hierarchical Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class Hierarchy}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Class Index}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class List}{7}{section.3.1}%
+\contentsline {chapter}{\numberline {4}Namespace Documentation}{11}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War Namespace Reference}{11}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data Namespace Reference}{11}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Models Namespace Reference}{11}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Namespace Reference}{11}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes Namespace Reference}{12}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Characters Namespace Reference}{12}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Characters.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Actions Namespace Reference}{12}{section.4.7}%
+\contentsline {section}{\numberline {4.8}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collections Namespace Reference}{13}{section.4.8}%
+\contentsline {section}{\numberline {4.9}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}O\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Is Namespace Reference}{13}{section.4.9}%
+\contentsline {section}{\numberline {4.10}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces Namespace Reference}{13}{section.4.10}%
+\contentsline {section}{\numberline {4.11}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tests Namespace Reference}{14}{section.4.11}%
+\contentsline {section}{\numberline {4.12}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main Namespace Reference}{14}{section.4.12}%
+\contentsline {section}{\numberline {4.13}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}BL Namespace Reference}{14}{section.4.13}%
+\contentsline {section}{\numberline {4.14}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}B\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}L.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes Namespace Reference}{14}{section.4.14}%
+\contentsline {section}{\numberline {4.15}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}B\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}L.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces Namespace Reference}{14}{section.4.15}%
+\contentsline {section}{\numberline {4.16}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data Namespace Reference}{15}{section.4.16}%
+\contentsline {section}{\numberline {4.17}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View Namespace Reference}{15}{section.4.17}%
+\contentsline {subsection}{\numberline {4.17.1}Enumeration Type Documentation}{15}{subsection.4.17.1}%
+\contentsline {subsubsection}{\numberline {4.17.1.1}NavigationPages}{15}{subsubsection.4.17.1.1}%
+\contentsline {section}{\numberline {4.18}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model Namespace Reference}{16}{section.4.18}%
+\contentsline {section}{\numberline {4.19}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model Namespace Reference}{16}{section.4.19}%
+\contentsline {section}{\numberline {4.20}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Objects Namespace Reference}{16}{section.4.20}%
+\contentsline {section}{\numberline {4.21}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Objects.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes Namespace Reference}{17}{section.4.21}%
+\contentsline {subsection}{\numberline {4.21.1}Enumeration Type Documentation}{17}{subsection.4.21.1}%
+\contentsline {subsubsection}{\numberline {4.21.1.1}BulletType}{17}{subsubsection.4.21.1.1}%
+\contentsline {subsubsection}{\numberline {4.21.1.2}EnemyType}{18}{subsubsection.4.21.1.2}%
+\contentsline {subsubsection}{\numberline {4.21.1.3}POIType}{18}{subsubsection.4.21.1.3}%
+\contentsline {section}{\numberline {4.22}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Objects.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces Namespace Reference}{18}{section.4.22}%
+\contentsline {subsection}{\numberline {4.22.1}Enumeration Type Documentation}{19}{subsection.4.22.1}%
+\contentsline {subsubsection}{\numberline {4.22.1.1}Stances}{19}{subsubsection.4.22.1.1}%
+\contentsline {section}{\numberline {4.23}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Renderer Namespace Reference}{19}{section.4.23}%
+\contentsline {section}{\numberline {4.24}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repository Namespace Reference}{19}{section.4.24}%
+\contentsline {section}{\numberline {4.25}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repository.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes Namespace Reference}{19}{section.4.25}%
+\contentsline {section}{\numberline {4.26}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repository.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces Namespace Reference}{20}{section.4.26}%
+\contentsline {section}{\numberline {4.27}Xaml\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Generated\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Namespace Namespace Reference}{20}{section.4.27}%
+\contentsline {chapter}{\numberline {5}Class Documentation}{21}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Characters.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Actor\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Class Reference}{21}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{22}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Constructor \& Destructor Documentation}{22}{subsection.5.1.2}%
+\contentsline {subsubsection}{\numberline {5.1.2.1}ActorLogic()}{23}{subsubsection.5.1.2.1}%
+\contentsline {subsection}{\numberline {5.1.3}Member Function Documentation}{23}{subsection.5.1.3}%
+\contentsline {subsubsection}{\numberline {5.1.3.1}AddToVector()}{23}{subsubsection.5.1.3.1}%
+\contentsline {subsubsection}{\numberline {5.1.3.2}Attack()}{23}{subsubsection.5.1.3.2}%
+\contentsline {subsubsection}{\numberline {5.1.3.3}GroundCollision()}{24}{subsubsection.5.1.3.3}%
+\contentsline {subsubsection}{\numberline {5.1.3.4}Jump()}{24}{subsubsection.5.1.3.4}%
+\contentsline {subsubsection}{\numberline {5.1.3.5}Move()}{24}{subsubsection.5.1.3.5}%
+\contentsline {subsubsection}{\numberline {5.1.3.6}Movement()}{25}{subsubsection.5.1.3.6}%
+\contentsline {subsubsection}{\numberline {5.1.3.7}OneTick()}{25}{subsubsection.5.1.3.7}%
+\contentsline {subsubsection}{\numberline {5.1.3.8}PixelToTile()}{25}{subsubsection.5.1.3.8}%
+\contentsline {subsubsection}{\numberline {5.1.3.9}SetVectorX()}{25}{subsubsection.5.1.3.9}%
+\contentsline {subsubsection}{\numberline {5.1.3.10}SetVectorY()}{26}{subsubsection.5.1.3.10}%
+\contentsline {subsubsection}{\numberline {5.1.3.11}TileToPixel()}{26}{subsubsection.5.1.3.11}%
+\contentsline {subsubsection}{\numberline {5.1.3.12}TopCollision()}{26}{subsubsection.5.1.3.12}%
+\contentsline {subsubsection}{\numberline {5.1.3.13}WallCollision()}{27}{subsubsection.5.1.3.13}%
+\contentsline {subsection}{\numberline {5.1.4}Property Documentation}{27}{subsection.5.1.4}%
+\contentsline {subsubsection}{\numberline {5.1.4.1}Acceleration}{27}{subsubsection.5.1.4.1}%
+\contentsline {subsubsection}{\numberline {5.1.4.2}AccelerationStopwatch}{28}{subsubsection.5.1.4.2}%
+\contentsline {subsubsection}{\numberline {5.1.4.3}AttackStopwatch}{28}{subsubsection.5.1.4.3}%
+\contentsline {subsubsection}{\numberline {5.1.4.4}Character}{28}{subsubsection.5.1.4.4}%
+\contentsline {subsubsection}{\numberline {5.1.4.5}CommandManager}{28}{subsubsection.5.1.4.5}%
+\contentsline {subsubsection}{\numberline {5.1.4.6}DefaultAcceleration}{28}{subsubsection.5.1.4.6}%
+\contentsline {subsubsection}{\numberline {5.1.4.7}DefaultJumpHeight}{29}{subsubsection.5.1.4.7}%
+\contentsline {subsubsection}{\numberline {5.1.4.8}IsJumping}{29}{subsubsection.5.1.4.8}%
+\contentsline {subsubsection}{\numberline {5.1.4.9}JumpingTimeOut}{29}{subsubsection.5.1.4.9}%
+\contentsline {subsubsection}{\numberline {5.1.4.10}MaxJumpHeight}{29}{subsubsection.5.1.4.10}%
+\contentsline {subsubsection}{\numberline {5.1.4.11}MaxMovementSpeed}{29}{subsubsection.5.1.4.11}%
+\contentsline {subsubsection}{\numberline {5.1.4.12}Model}{30}{subsubsection.5.1.4.12}%
+\contentsline {subsubsection}{\numberline {5.1.4.13}TypeOfBullet}{30}{subsubsection.5.1.4.13}%
+\contentsline {section}{\numberline {5.2}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}App Class Reference}{30}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{31}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Member Function Documentation}{31}{subsection.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.1}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{31}{subsubsection.5.2.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2.2}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{31}{subsubsection.5.2.2.2}%
+\contentsline {subsubsection}{\numberline {5.2.2.3}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{31}{subsubsection.5.2.2.3}%
+\contentsline {subsubsection}{\numberline {5.2.2.4}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{32}{subsubsection.5.2.2.4}%
+\contentsline {subsubsection}{\numberline {5.2.2.5}Main()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{32}{subsubsection.5.2.2.5}%
+\contentsline {subsubsection}{\numberline {5.2.2.6}Main()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{32}{subsubsection.5.2.2.6}%
+\contentsline {subsubsection}{\numberline {5.2.2.7}Main()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{32}{subsubsection.5.2.2.7}%
+\contentsline {subsubsection}{\numberline {5.2.2.8}Main()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{32}{subsubsection.5.2.2.8}%
+\contentsline {section}{\numberline {5.3}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Characters.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Basic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enemy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Class Reference}{33}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{34}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Constructor \& Destructor Documentation}{34}{subsection.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}BasicEnemyLogic()}{34}{subsubsection.5.3.2.1}%
+\contentsline {subsection}{\numberline {5.3.3}Property Documentation}{34}{subsection.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.3.1}AttackTime}{34}{subsubsection.5.3.3.1}%
+\contentsline {subsubsection}{\numberline {5.3.3.2}AttackValue}{34}{subsubsection.5.3.3.2}%
+\contentsline {subsubsection}{\numberline {5.3.3.3}DefaultFollowDistance}{35}{subsubsection.5.3.3.3}%
+\contentsline {subsubsection}{\numberline {5.3.3.4}DetectionRange}{35}{subsubsection.5.3.3.4}%
+\contentsline {subsubsection}{\numberline {5.3.3.5}DetectionTime}{35}{subsubsection.5.3.3.5}%
+\contentsline {subsubsection}{\numberline {5.3.3.6}IsPlayerDetected}{35}{subsubsection.5.3.3.6}%
+\contentsline {subsubsection}{\numberline {5.3.3.7}LastKnownPlayerLocation}{35}{subsubsection.5.3.3.7}%
+\contentsline {subsubsection}{\numberline {5.3.3.8}MaxMoveTime}{36}{subsubsection.5.3.3.8}%
+\contentsline {section}{\numberline {5.4}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bool\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}To\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Visibility\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Converter Class Reference}{36}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{36}{subsection.5.4.1}%
+\contentsline {section}{\numberline {5.5}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Objects.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bullet Class Reference}{36}{section.5.5}%
+\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{37}{subsection.5.5.1}%
+\contentsline {subsection}{\numberline {5.5.2}Constructor \& Destructor Documentation}{37}{subsection.5.5.2}%
+\contentsline {subsubsection}{\numberline {5.5.2.1}Bullet()}{38}{subsubsection.5.5.2.1}%
+\contentsline {subsection}{\numberline {5.5.3}Property Documentation}{38}{subsection.5.5.3}%
+\contentsline {subsubsection}{\numberline {5.5.3.1}Acceleration}{38}{subsubsection.5.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.5.3.2}BulletStopwatch}{38}{subsubsection.5.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.5.3.3}Damage}{39}{subsubsection.5.5.3.3}%
+\contentsline {subsubsection}{\numberline {5.5.3.4}DespawnStopwatch}{39}{subsubsection.5.5.3.4}%
+\contentsline {subsubsection}{\numberline {5.5.3.5}Destination}{39}{subsubsection.5.5.3.5}%
+\contentsline {subsubsection}{\numberline {5.5.3.6}MovementVectorF}{39}{subsubsection.5.5.3.6}%
+\contentsline {subsubsection}{\numberline {5.5.3.7}MoveVector}{39}{subsubsection.5.5.3.7}%
+\contentsline {subsubsection}{\numberline {5.5.3.8}PlayerBullet}{40}{subsubsection.5.5.3.8}%
+\contentsline {subsubsection}{\numberline {5.5.3.9}Type}{40}{subsubsection.5.5.3.9}%
+\contentsline {section}{\numberline {5.6}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Characters.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Actions.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bullet\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Class Reference}{40}{section.5.6}%
+\contentsline {subsection}{\numberline {5.6.1}Detailed Description}{40}{subsection.5.6.1}%
+\contentsline {subsection}{\numberline {5.6.2}Constructor \& Destructor Documentation}{40}{subsection.5.6.2}%
+\contentsline {subsubsection}{\numberline {5.6.2.1}BulletLogic()}{40}{subsubsection.5.6.2.1}%
+\contentsline {subsection}{\numberline {5.6.3}Member Function Documentation}{41}{subsection.5.6.3}%
+\contentsline {subsubsection}{\numberline {5.6.3.1}OneTick()}{41}{subsubsection.5.6.3.1}%
+\contentsline {section}{\numberline {5.7}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collections.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Bullet\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logics Class Reference}{41}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Detailed Description}{41}{subsection.5.7.1}%
+\contentsline {subsection}{\numberline {5.7.2}Constructor \& Destructor Documentation}{42}{subsection.5.7.2}%
+\contentsline {subsubsection}{\numberline {5.7.2.1}BulletLogics()}{42}{subsubsection.5.7.2.1}%
+\contentsline {subsection}{\numberline {5.7.3}Member Function Documentation}{42}{subsection.5.7.3}%
+\contentsline {subsubsection}{\numberline {5.7.3.1}Addbullets()}{42}{subsubsection.5.7.3.1}%
+\contentsline {subsubsection}{\numberline {5.7.3.2}OneTick()}{42}{subsubsection.5.7.3.2}%
+\contentsline {subsubsection}{\numberline {5.7.3.3}SaveBullets()}{43}{subsubsection.5.7.3.3}%
+\contentsline {section}{\numberline {5.8}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Characters.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Burst\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enemy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Class Reference}{43}{section.5.8}%
+\contentsline {subsection}{\numberline {5.8.1}Detailed Description}{43}{subsection.5.8.1}%
+\contentsline {subsection}{\numberline {5.8.2}Constructor \& Destructor Documentation}{44}{subsection.5.8.2}%
+\contentsline {subsubsection}{\numberline {5.8.2.1}BurstEnemyLogic()}{44}{subsubsection.5.8.2.1}%
+\contentsline {subsection}{\numberline {5.8.3}Member Function Documentation}{44}{subsection.5.8.3}%
+\contentsline {subsubsection}{\numberline {5.8.3.1}Attack()}{44}{subsubsection.5.8.3.1}%
+\contentsline {section}{\numberline {5.9}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Objects.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Character Class Reference}{44}{section.5.9}%
+\contentsline {subsection}{\numberline {5.9.1}Detailed Description}{46}{subsection.5.9.1}%
+\contentsline {subsection}{\numberline {5.9.2}Constructor \& Destructor Documentation}{46}{subsection.5.9.2}%
+\contentsline {subsubsection}{\numberline {5.9.2.1}Character()}{46}{subsubsection.5.9.2.1}%
+\contentsline {subsection}{\numberline {5.9.3}Member Function Documentation}{46}{subsection.5.9.3}%
+\contentsline {subsubsection}{\numberline {5.9.3.1}AddKey()}{46}{subsubsection.5.9.3.1}%
+\contentsline {subsubsection}{\numberline {5.9.3.2}ContainKey()}{47}{subsubsection.5.9.3.2}%
+\contentsline {subsubsection}{\numberline {5.9.3.3}RemoveKey()}{47}{subsubsection.5.9.3.3}%
+\contentsline {subsection}{\numberline {5.9.4}Property Documentation}{47}{subsection.5.9.4}%
+\contentsline {subsubsection}{\numberline {5.9.4.1}CanAttack}{47}{subsubsection.5.9.4.1}%
+\contentsline {subsubsection}{\numberline {5.9.4.2}CanJump}{48}{subsubsection.5.9.4.2}%
+\contentsline {subsubsection}{\numberline {5.9.4.3}ClickLocation}{48}{subsubsection.5.9.4.3}%
+\contentsline {subsubsection}{\numberline {5.9.4.4}CurrentHealth}{48}{subsubsection.5.9.4.4}%
+\contentsline {subsubsection}{\numberline {5.9.4.5}CurrentShield}{48}{subsubsection.5.9.4.5}%
+\contentsline {subsubsection}{\numberline {5.9.4.6}CurrentSprite}{48}{subsubsection.5.9.4.6}%
+\contentsline {subsubsection}{\numberline {5.9.4.7}Health}{49}{subsubsection.5.9.4.7}%
+\contentsline {subsubsection}{\numberline {5.9.4.8}Height}{49}{subsubsection.5.9.4.8}%
+\contentsline {subsubsection}{\numberline {5.9.4.9}IsInvincible}{49}{subsubsection.5.9.4.9}%
+\contentsline {subsubsection}{\numberline {5.9.4.10}Shield}{49}{subsubsection.5.9.4.10}%
+\contentsline {subsubsection}{\numberline {5.9.4.11}ShieldRegenTime}{49}{subsubsection.5.9.4.11}%
+\contentsline {subsubsection}{\numberline {5.9.4.12}ShieldRegenTimer}{50}{subsubsection.5.9.4.12}%
+\contentsline {subsubsection}{\numberline {5.9.4.13}ShieldRegenValue}{50}{subsubsection.5.9.4.13}%
+\contentsline {subsubsection}{\numberline {5.9.4.14}SpriteFile}{50}{subsubsection.5.9.4.14}%
+\contentsline {subsubsection}{\numberline {5.9.4.15}Stance}{50}{subsubsection.5.9.4.15}%
+\contentsline {subsubsection}{\numberline {5.9.4.16}TypeOfBullet}{50}{subsubsection.5.9.4.16}%
+\contentsline {subsubsection}{\numberline {5.9.4.17}Width}{51}{subsubsection.5.9.4.17}%
+\contentsline {section}{\numberline {5.10}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Character\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Class Reference}{51}{section.5.10}%
+\contentsline {subsection}{\numberline {5.10.1}Detailed Description}{52}{subsection.5.10.1}%
+\contentsline {subsection}{\numberline {5.10.2}Constructor \& Destructor Documentation}{52}{subsection.5.10.2}%
+\contentsline {subsubsection}{\numberline {5.10.2.1}CharacterLogic()}{52}{subsubsection.5.10.2.1}%
+\contentsline {subsection}{\numberline {5.10.3}Property Documentation}{52}{subsection.5.10.3}%
+\contentsline {subsubsection}{\numberline {5.10.3.1}AttackTime}{52}{subsubsection.5.10.3.1}%
+\contentsline {subsubsection}{\numberline {5.10.3.2}EffectCounter}{53}{subsubsection.5.10.3.2}%
+\contentsline {subsubsection}{\numberline {5.10.3.3}EffectStopwatch}{53}{subsubsection.5.10.3.3}%
+\contentsline {subsection}{\numberline {5.10.4}Event Documentation}{53}{subsection.5.10.4}%
+\contentsline {subsubsection}{\numberline {5.10.4.1}Fire}{53}{subsubsection.5.10.4.1}%
+\contentsline {section}{\numberline {5.11}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}O\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Is.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Checkpoint\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Class Reference}{53}{section.5.11}%
+\contentsline {subsection}{\numberline {5.11.1}Detailed Description}{54}{subsection.5.11.1}%
+\contentsline {subsection}{\numberline {5.11.2}Constructor \& Destructor Documentation}{54}{subsection.5.11.2}%
+\contentsline {subsubsection}{\numberline {5.11.2.1}CheckpointLogic()}{54}{subsubsection.5.11.2.1}%
+\contentsline {section}{\numberline {5.12}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Command\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Class Reference}{54}{section.5.12}%
+\contentsline {subsection}{\numberline {5.12.1}Detailed Description}{55}{subsection.5.12.1}%
+\contentsline {subsection}{\numberline {5.12.2}Constructor \& Destructor Documentation}{55}{subsection.5.12.2}%
+\contentsline {subsubsection}{\numberline {5.12.2.1}CommandManager()}{55}{subsubsection.5.12.2.1}%
+\contentsline {section}{\numberline {5.13}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Objects.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enemy Class Reference}{56}{section.5.13}%
+\contentsline {subsection}{\numberline {5.13.1}Detailed Description}{56}{subsection.5.13.1}%
+\contentsline {subsection}{\numberline {5.13.2}Constructor \& Destructor Documentation}{56}{subsection.5.13.2}%
+\contentsline {subsubsection}{\numberline {5.13.2.1}Enemy()}{56}{subsubsection.5.13.2.1}%
+\contentsline {subsection}{\numberline {5.13.3}Property Documentation}{57}{subsection.5.13.3}%
+\contentsline {subsubsection}{\numberline {5.13.3.1}Type}{57}{subsubsection.5.13.3.1}%
+\contentsline {section}{\numberline {5.14}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enemy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Init\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Class Reference}{57}{section.5.14}%
+\contentsline {subsection}{\numberline {5.14.1}Detailed Description}{58}{subsection.5.14.1}%
+\contentsline {subsection}{\numberline {5.14.2}Member Data Documentation}{58}{subsection.5.14.2}%
+\contentsline {subsubsection}{\numberline {5.14.2.1}BasicEnemyHealth}{58}{subsubsection.5.14.2.1}%
+\contentsline {subsubsection}{\numberline {5.14.2.2}BasicEnemyHeight}{58}{subsubsection.5.14.2.2}%
+\contentsline {subsubsection}{\numberline {5.14.2.3}BasicEnemySpritesheet}{58}{subsubsection.5.14.2.3}%
+\contentsline {subsubsection}{\numberline {5.14.2.4}BasicEnemyWidth}{59}{subsubsection.5.14.2.4}%
+\contentsline {subsubsection}{\numberline {5.14.2.5}BurstEnemyHealth}{59}{subsubsection.5.14.2.5}%
+\contentsline {subsubsection}{\numberline {5.14.2.6}BurstEnemySpritesheet}{59}{subsubsection.5.14.2.6}%
+\contentsline {subsubsection}{\numberline {5.14.2.7}FastEnemyHealth}{59}{subsubsection.5.14.2.7}%
+\contentsline {subsubsection}{\numberline {5.14.2.8}FastEnemySpritesheet}{59}{subsubsection.5.14.2.8}%
+\contentsline {subsubsection}{\numberline {5.14.2.9}HeavyEnemyHealth}{60}{subsubsection.5.14.2.9}%
+\contentsline {subsubsection}{\numberline {5.14.2.10}HeavyEnemySpritesheet}{60}{subsubsection.5.14.2.10}%
+\contentsline {subsubsection}{\numberline {5.14.2.11}RapidFireEnemyHealth}{60}{subsubsection.5.14.2.11}%
+\contentsline {subsubsection}{\numberline {5.14.2.12}RapidFireEnemySpritesheet}{60}{subsubsection.5.14.2.12}%
+\contentsline {section}{\numberline {5.15}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collections.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enemy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logics Class Reference}{60}{section.5.15}%
+\contentsline {subsection}{\numberline {5.15.1}Detailed Description}{61}{subsection.5.15.1}%
+\contentsline {subsection}{\numberline {5.15.2}Constructor \& Destructor Documentation}{61}{subsection.5.15.2}%
+\contentsline {subsubsection}{\numberline {5.15.2.1}EnemyLogics()}{61}{subsubsection.5.15.2.1}%
+\contentsline {subsection}{\numberline {5.15.3}Member Function Documentation}{61}{subsection.5.15.3}%
+\contentsline {subsubsection}{\numberline {5.15.3.1}GetEnemies()}{61}{subsubsection.5.15.3.1}%
+\contentsline {subsubsection}{\numberline {5.15.3.2}SaveEnemies()}{62}{subsubsection.5.15.3.2}%
+\contentsline {subsubsection}{\numberline {5.15.3.3}TickEnemies()}{62}{subsubsection.5.15.3.3}%
+\contentsline {section}{\numberline {5.16}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}O\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Is.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enviromental\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Damage\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Class Reference}{62}{section.5.16}%
+\contentsline {subsection}{\numberline {5.16.1}Detailed Description}{63}{subsection.5.16.1}%
+\contentsline {subsection}{\numberline {5.16.2}Constructor \& Destructor Documentation}{63}{subsection.5.16.2}%
+\contentsline {subsubsection}{\numberline {5.16.2.1}EnviromentalDamageLogic()}{63}{subsubsection.5.16.2.1}%
+\contentsline {section}{\numberline {5.17}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}B\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}L.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Factory Class Reference}{63}{section.5.17}%
+\contentsline {subsection}{\numberline {5.17.1}Detailed Description}{64}{subsection.5.17.1}%
+\contentsline {subsection}{\numberline {5.17.2}Constructor \& Destructor Documentation}{64}{subsection.5.17.2}%
+\contentsline {subsubsection}{\numberline {5.17.2.1}Factory()}{64}{subsubsection.5.17.2.1}%
+\contentsline {subsection}{\numberline {5.17.3}Property Documentation}{64}{subsection.5.17.3}%
+\contentsline {subsubsection}{\numberline {5.17.3.1}ManagerLogic}{64}{subsubsection.5.17.3.1}%
+\contentsline {subsubsection}{\numberline {5.17.3.2}ViewerLogic}{65}{subsubsection.5.17.3.2}%
+\contentsline {section}{\numberline {5.18}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Characters.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fast\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enemy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Class Reference}{65}{section.5.18}%
+\contentsline {subsection}{\numberline {5.18.1}Detailed Description}{65}{subsection.5.18.1}%
+\contentsline {subsection}{\numberline {5.18.2}Constructor \& Destructor Documentation}{65}{subsection.5.18.2}%
+\contentsline {subsubsection}{\numberline {5.18.2.1}FastEnemyLogic()}{65}{subsubsection.5.18.2.1}%
+\contentsline {section}{\numberline {5.19}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}O\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Is.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Finish\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Class Reference}{66}{section.5.19}%
+\contentsline {subsection}{\numberline {5.19.1}Detailed Description}{66}{subsection.5.19.1}%
+\contentsline {subsection}{\numberline {5.19.2}Constructor \& Destructor Documentation}{66}{subsection.5.19.2}%
+\contentsline {subsubsection}{\numberline {5.19.2.1}FinishLogic()}{66}{subsubsection.5.19.2.1}%
+\contentsline {section}{\numberline {5.20}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control Class Reference}{67}{section.5.20}%
+\contentsline {subsection}{\numberline {5.20.1}Detailed Description}{68}{subsection.5.20.1}%
+\contentsline {subsection}{\numberline {5.20.2}Constructor \& Destructor Documentation}{68}{subsection.5.20.2}%
+\contentsline {subsubsection}{\numberline {5.20.2.1}GameControl()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{68}{subsubsection.5.20.2.1}%
+\contentsline {subsubsection}{\numberline {5.20.2.2}GameControl()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{68}{subsubsection.5.20.2.2}%
+\contentsline {subsection}{\numberline {5.20.3}Member Function Documentation}{69}{subsection.5.20.3}%
+\contentsline {subsubsection}{\numberline {5.20.3.1}OnRender()}{69}{subsubsection.5.20.3.1}%
+\contentsline {subsubsection}{\numberline {5.20.3.2}SaveEndGame()}{69}{subsubsection.5.20.3.2}%
+\contentsline {subsubsection}{\numberline {5.20.3.3}SaveGameProgress()}{69}{subsubsection.5.20.3.3}%
+\contentsline {subsection}{\numberline {5.20.4}Property Documentation}{69}{subsection.5.20.4}%
+\contentsline {subsubsection}{\numberline {5.20.4.1}BackgroundMusic}{69}{subsubsection.5.20.4.1}%
+\contentsline {subsubsection}{\numberline {5.20.4.2}Exit}{70}{subsubsection.5.20.4.2}%
+\contentsline {subsubsection}{\numberline {5.20.4.3}IsPaused}{70}{subsubsection.5.20.4.3}%
+\contentsline {subsubsection}{\numberline {5.20.4.4}LevelFinished}{70}{subsubsection.5.20.4.4}%
+\contentsline {subsubsection}{\numberline {5.20.4.5}MapName}{70}{subsubsection.5.20.4.5}%
+\contentsline {subsubsection}{\numberline {5.20.4.6}SaveLoad}{70}{subsubsection.5.20.4.6}%
+\contentsline {section}{\numberline {5.21}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model Class Reference}{71}{section.5.21}%
+\contentsline {subsection}{\numberline {5.21.1}Detailed Description}{71}{subsection.5.21.1}%
+\contentsline {subsection}{\numberline {5.21.2}Constructor \& Destructor Documentation}{71}{subsection.5.21.2}%
+\contentsline {subsubsection}{\numberline {5.21.2.1}GameModel()}{71}{subsubsection.5.21.2.1}%
+\contentsline {subsection}{\numberline {5.21.3}Property Documentation}{71}{subsection.5.21.3}%
+\contentsline {subsubsection}{\numberline {5.21.3.1}Camera}{72}{subsubsection.5.21.3.1}%
+\contentsline {subsubsection}{\numberline {5.21.3.2}CurrentWorld}{72}{subsubsection.5.21.3.2}%
+\contentsline {subsubsection}{\numberline {5.21.3.3}Hero}{72}{subsubsection.5.21.3.3}%
+\contentsline {subsubsection}{\numberline {5.21.3.4}InRewind}{72}{subsubsection.5.21.3.4}%
+\contentsline {subsubsection}{\numberline {5.21.3.5}LevelFinished}{72}{subsubsection.5.21.3.5}%
+\contentsline {subsubsection}{\numberline {5.21.3.6}MouseLocation}{73}{subsubsection.5.21.3.6}%
+\contentsline {section}{\numberline {5.22}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Renderer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Renderer Class Reference}{73}{section.5.22}%
+\contentsline {subsection}{\numberline {5.22.1}Detailed Description}{73}{subsection.5.22.1}%
+\contentsline {subsection}{\numberline {5.22.2}Constructor \& Destructor Documentation}{73}{subsection.5.22.2}%
+\contentsline {subsubsection}{\numberline {5.22.2.1}GameRenderer()}{73}{subsubsection.5.22.2.1}%
+\contentsline {subsection}{\numberline {5.22.3}Member Function Documentation}{74}{subsection.5.22.3}%
+\contentsline {subsubsection}{\numberline {5.22.3.1}BuildDrawing()}{74}{subsubsection.5.22.3.1}%
+\contentsline {subsection}{\numberline {5.22.4}Property Documentation}{74}{subsection.5.22.4}%
+\contentsline {subsubsection}{\numberline {5.22.4.1}MovingObjectsCount}{74}{subsubsection.5.22.4.1}%
+\contentsline {subsubsection}{\numberline {5.22.4.2}WindowChanged}{74}{subsubsection.5.22.4.2}%
+\contentsline {section}{\numberline {5.23}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model Class Reference}{75}{section.5.23}%
+\contentsline {subsection}{\numberline {5.23.1}Detailed Description}{75}{subsection.5.23.1}%
+\contentsline {subsection}{\numberline {5.23.2}Constructor \& Destructor Documentation}{75}{subsection.5.23.2}%
+\contentsline {subsubsection}{\numberline {5.23.2.1}GameViewModel()}{75}{subsubsection.5.23.2.1}%
+\contentsline {subsection}{\numberline {5.23.3}Member Data Documentation}{76}{subsection.5.23.3}%
+\contentsline {subsubsection}{\numberline {5.23.3.1}MenuPageCommand}{76}{subsubsection.5.23.3.1}%
+\contentsline {subsection}{\numberline {5.23.4}Property Documentation}{76}{subsection.5.23.4}%
+\contentsline {subsubsection}{\numberline {5.23.4.1}EndDeaths}{76}{subsubsection.5.23.4.1}%
+\contentsline {subsubsection}{\numberline {5.23.4.2}EndKills}{76}{subsubsection.5.23.4.2}%
+\contentsline {subsubsection}{\numberline {5.23.4.3}EndTime}{77}{subsubsection.5.23.4.3}%
+\contentsline {subsubsection}{\numberline {5.23.4.4}EndVisibility}{77}{subsubsection.5.23.4.4}%
+\contentsline {subsubsection}{\numberline {5.23.4.5}MapName}{77}{subsubsection.5.23.4.5}%
+\contentsline {subsubsection}{\numberline {5.23.4.6}MenuVisibility}{77}{subsubsection.5.23.4.6}%
+\contentsline {subsubsection}{\numberline {5.23.4.7}NavigationContext}{77}{subsubsection.5.23.4.7}%
+\contentsline {section}{\numberline {5.24}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Window Class Reference}{78}{section.5.24}%
+\contentsline {subsection}{\numberline {5.24.1}Detailed Description}{78}{subsection.5.24.1}%
+\contentsline {subsection}{\numberline {5.24.2}Constructor \& Destructor Documentation}{78}{subsection.5.24.2}%
+\contentsline {subsubsection}{\numberline {5.24.2.1}GameWindow()}{79}{subsubsection.5.24.2.1}%
+\contentsline {subsection}{\numberline {5.24.3}Member Function Documentation}{79}{subsection.5.24.3}%
+\contentsline {subsubsection}{\numberline {5.24.3.1}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{79}{subsubsection.5.24.3.1}%
+\contentsline {subsubsection}{\numberline {5.24.3.2}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{79}{subsubsection.5.24.3.2}%
+\contentsline {subsubsection}{\numberline {5.24.3.3}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{79}{subsubsection.5.24.3.3}%
+\contentsline {subsubsection}{\numberline {5.24.3.4}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{79}{subsubsection.5.24.3.4}%
+\contentsline {section}{\numberline {5.25}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Objects.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}World Class Reference}{80}{section.5.25}%
+\contentsline {subsection}{\numberline {5.25.1}Detailed Description}{81}{subsection.5.25.1}%
+\contentsline {subsection}{\numberline {5.25.2}Constructor \& Destructor Documentation}{81}{subsection.5.25.2}%
+\contentsline {subsubsection}{\numberline {5.25.2.1}GameWorld()}{81}{subsubsection.5.25.2.1}%
+\contentsline {subsection}{\numberline {5.25.3}Member Function Documentation}{82}{subsection.5.25.3}%
+\contentsline {subsubsection}{\numberline {5.25.3.1}AddBullet()}{82}{subsubsection.5.25.3.1}%
+\contentsline {subsubsection}{\numberline {5.25.3.2}AddDecoration()}{82}{subsubsection.5.25.3.2}%
+\contentsline {subsubsection}{\numberline {5.25.3.3}AddEnemy()}{82}{subsubsection.5.25.3.3}%
+\contentsline {subsubsection}{\numberline {5.25.3.4}AddGround()}{83}{subsubsection.5.25.3.4}%
+\contentsline {subsubsection}{\numberline {5.25.3.5}AddPOI()}{83}{subsubsection.5.25.3.5}%
+\contentsline {subsubsection}{\numberline {5.25.3.6}CheckpointLoad()}{83}{subsubsection.5.25.3.6}%
+\contentsline {subsubsection}{\numberline {5.25.3.7}CheckpointSave()}{84}{subsubsection.5.25.3.7}%
+\contentsline {subsubsection}{\numberline {5.25.3.8}ConvertPixelToTile()}{84}{subsubsection.5.25.3.8}%
+\contentsline {subsubsection}{\numberline {5.25.3.9}ConvertTileToPixel()}{84}{subsubsection.5.25.3.9}%
+\contentsline {subsubsection}{\numberline {5.25.3.10}GetBullet()}{85}{subsubsection.5.25.3.10}%
+\contentsline {subsubsection}{\numberline {5.25.3.11}GetEnemy()}{85}{subsubsection.5.25.3.11}%
+\contentsline {subsubsection}{\numberline {5.25.3.12}GetPoi()}{85}{subsubsection.5.25.3.12}%
+\contentsline {subsubsection}{\numberline {5.25.3.13}RemoveBullet()}{86}{subsubsection.5.25.3.13}%
+\contentsline {subsubsection}{\numberline {5.25.3.14}RemoveBullets()}{86}{subsubsection.5.25.3.14}%
+\contentsline {subsubsection}{\numberline {5.25.3.15}RemoveDecoration()}{86}{subsubsection.5.25.3.15}%
+\contentsline {subsubsection}{\numberline {5.25.3.16}RemoveEnemy()}{87}{subsubsection.5.25.3.16}%
+\contentsline {subsubsection}{\numberline {5.25.3.17}RemoveGround()}{87}{subsubsection.5.25.3.17}%
+\contentsline {subsubsection}{\numberline {5.25.3.18}RemovePOI()}{87}{subsubsection.5.25.3.18}%
+\contentsline {subsubsection}{\numberline {5.25.3.19}SearchDecoration()}{87}{subsubsection.5.25.3.19}%
+\contentsline {subsubsection}{\numberline {5.25.3.20}SearchGround()}{89}{subsubsection.5.25.3.20}%
+\contentsline {subsection}{\numberline {5.25.4}Property Documentation}{89}{subsection.5.25.4}%
+\contentsline {subsubsection}{\numberline {5.25.4.1}BulletCount}{89}{subsubsection.5.25.4.1}%
+\contentsline {subsubsection}{\numberline {5.25.4.2}EnemiesLoaded}{89}{subsubsection.5.25.4.2}%
+\contentsline {subsubsection}{\numberline {5.25.4.3}EnemyCount}{90}{subsubsection.5.25.4.3}%
+\contentsline {subsubsection}{\numberline {5.25.4.4}GameHeight}{90}{subsubsection.5.25.4.4}%
+\contentsline {subsubsection}{\numberline {5.25.4.5}GameWidth}{90}{subsubsection.5.25.4.5}%
+\contentsline {subsubsection}{\numberline {5.25.4.6}GetBullets}{90}{subsubsection.5.25.4.6}%
+\contentsline {subsubsection}{\numberline {5.25.4.7}GetEnemies}{90}{subsubsection.5.25.4.7}%
+\contentsline {subsubsection}{\numberline {5.25.4.8}GetPois}{91}{subsubsection.5.25.4.8}%
+\contentsline {subsubsection}{\numberline {5.25.4.9}GetTileHeight}{91}{subsubsection.5.25.4.9}%
+\contentsline {subsubsection}{\numberline {5.25.4.10}GetTileWidth}{91}{subsubsection.5.25.4.10}%
+\contentsline {subsubsection}{\numberline {5.25.4.11}Magnify}{91}{subsubsection.5.25.4.11}%
+\contentsline {subsubsection}{\numberline {5.25.4.12}SavedHealt}{91}{subsubsection.5.25.4.12}%
+\contentsline {subsubsection}{\numberline {5.25.4.13}SavedShield}{92}{subsubsection.5.25.4.13}%
+\contentsline {subsubsection}{\numberline {5.25.4.14}StartPoint}{92}{subsubsection.5.25.4.14}%
+\contentsline {subsubsection}{\numberline {5.25.4.15}TileSize}{92}{subsubsection.5.25.4.15}%
+\contentsline {subsubsection}{\numberline {5.25.4.16}WorldName}{92}{subsubsection.5.25.4.16}%
+\contentsline {section}{\numberline {5.26}Xaml\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Generated\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Namespace.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Generated\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Internal\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Type\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Helper Class Reference}{92}{section.5.26}%
+\contentsline {subsection}{\numberline {5.26.1}Detailed Description}{93}{subsection.5.26.1}%
+\contentsline {subsection}{\numberline {5.26.2}Member Function Documentation}{93}{subsection.5.26.2}%
+\contentsline {subsubsection}{\numberline {5.26.2.1}AddEventHandler()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{93}{subsubsection.5.26.2.1}%
+\contentsline {subsubsection}{\numberline {5.26.2.2}AddEventHandler()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{94}{subsubsection.5.26.2.2}%
+\contentsline {subsubsection}{\numberline {5.26.2.3}CreateDelegate()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{94}{subsubsection.5.26.2.3}%
+\contentsline {subsubsection}{\numberline {5.26.2.4}CreateDelegate()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{94}{subsubsection.5.26.2.4}%
+\contentsline {subsubsection}{\numberline {5.26.2.5}CreateInstance()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{94}{subsubsection.5.26.2.5}%
+\contentsline {subsubsection}{\numberline {5.26.2.6}CreateInstance()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{95}{subsubsection.5.26.2.6}%
+\contentsline {subsubsection}{\numberline {5.26.2.7}GetPropertyValue()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{95}{subsubsection.5.26.2.7}%
+\contentsline {subsubsection}{\numberline {5.26.2.8}GetPropertyValue()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{95}{subsubsection.5.26.2.8}%
+\contentsline {subsubsection}{\numberline {5.26.2.9}SetPropertyValue()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{95}{subsubsection.5.26.2.9}%
+\contentsline {subsubsection}{\numberline {5.26.2.10}SetPropertyValue()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{96}{subsubsection.5.26.2.10}%
+\contentsline {section}{\numberline {5.27}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}O\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Is.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Health\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Kit\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Class Reference}{96}{section.5.27}%
+\contentsline {subsection}{\numberline {5.27.1}Detailed Description}{96}{subsection.5.27.1}%
+\contentsline {subsection}{\numberline {5.27.2}Constructor \& Destructor Documentation}{97}{subsection.5.27.2}%
+\contentsline {subsubsection}{\numberline {5.27.2.1}HealthKitLogic()}{97}{subsubsection.5.27.2.1}%
+\contentsline {subsection}{\numberline {5.27.3}Property Documentation}{97}{subsection.5.27.3}%
+\contentsline {subsubsection}{\numberline {5.27.3.1}NumOfRestoredHealth}{97}{subsubsection.5.27.3.1}%
+\contentsline {section}{\numberline {5.28}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Characters.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Heavy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enemy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Class Reference}{97}{section.5.28}%
+\contentsline {subsection}{\numberline {5.28.1}Detailed Description}{98}{subsection.5.28.1}%
+\contentsline {subsection}{\numberline {5.28.2}Constructor \& Destructor Documentation}{98}{subsection.5.28.2}%
+\contentsline {subsubsection}{\numberline {5.28.2.1}HeavyEnemyLogic()}{98}{subsubsection.5.28.2.1}%
+\contentsline {section}{\numberline {5.29}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}O\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Is.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}High\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Jump\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Class Reference}{98}{section.5.29}%
+\contentsline {subsection}{\numberline {5.29.1}Detailed Description}{99}{subsection.5.29.1}%
+\contentsline {subsection}{\numberline {5.29.2}Constructor \& Destructor Documentation}{99}{subsection.5.29.2}%
+\contentsline {subsubsection}{\numberline {5.29.2.1}HighJumpLogic()}{99}{subsubsection.5.29.2.1}%
+\contentsline {section}{\numberline {5.30}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Command Interface Reference}{100}{section.5.30}%
+\contentsline {subsection}{\numberline {5.30.1}Detailed Description}{100}{subsection.5.30.1}%
+\contentsline {subsection}{\numberline {5.30.2}Member Function Documentation}{100}{subsection.5.30.2}%
+\contentsline {subsubsection}{\numberline {5.30.2.1}Undo()}{100}{subsubsection.5.30.2.1}%
+\contentsline {section}{\numberline {5.31}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Command\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager Interface Reference}{100}{section.5.31}%
+\contentsline {subsection}{\numberline {5.31.1}Detailed Description}{101}{subsection.5.31.1}%
+\contentsline {subsection}{\numberline {5.31.2}Member Function Documentation}{101}{subsection.5.31.2}%
+\contentsline {subsubsection}{\numberline {5.31.2.1}AddCommand()}{101}{subsubsection.5.31.2.1}%
+\contentsline {subsubsection}{\numberline {5.31.2.2}ClearBuffer()}{101}{subsubsection.5.31.2.2}%
+\contentsline {subsubsection}{\numberline {5.31.2.3}Rewind()}{102}{subsubsection.5.31.2.3}%
+\contentsline {subsection}{\numberline {5.31.3}Property Documentation}{102}{subsection.5.31.3}%
+\contentsline {subsubsection}{\numberline {5.31.3.1}IsFinished}{102}{subsubsection.5.31.3.1}%
+\contentsline {section}{\numberline {5.32}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Objects.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Object Interface Reference}{102}{section.5.32}%
+\contentsline {subsection}{\numberline {5.32.1}Detailed Description}{103}{subsection.5.32.1}%
+\contentsline {subsection}{\numberline {5.32.2}Property Documentation}{103}{subsection.5.32.2}%
+\contentsline {subsubsection}{\numberline {5.32.2.1}CurrentSprite}{103}{subsubsection.5.32.2.1}%
+\contentsline {subsubsection}{\numberline {5.32.2.2}Height}{103}{subsubsection.5.32.2.2}%
+\contentsline {subsubsection}{\numberline {5.32.2.3}MovementVector}{104}{subsubsection.5.32.2.3}%
+\contentsline {subsubsection}{\numberline {5.32.2.4}Position}{104}{subsubsection.5.32.2.4}%
+\contentsline {subsubsection}{\numberline {5.32.2.5}SpriteFile}{104}{subsubsection.5.32.2.5}%
+\contentsline {subsubsection}{\numberline {5.32.2.6}Stance}{104}{subsubsection.5.32.2.6}%
+\contentsline {subsubsection}{\numberline {5.32.2.7}StanceLess}{104}{subsubsection.5.32.2.7}%
+\contentsline {subsubsection}{\numberline {5.32.2.8}Width}{105}{subsubsection.5.32.2.8}%
+\contentsline {section}{\numberline {5.33}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repository.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repository$<$ T $>$ Interface Template Reference}{105}{section.5.33}%
+\contentsline {subsection}{\numberline {5.33.1}Detailed Description}{105}{subsection.5.33.1}%
+\contentsline {subsection}{\numberline {5.33.2}Member Function Documentation}{106}{subsection.5.33.2}%
+\contentsline {subsubsection}{\numberline {5.33.2.1}Create()}{106}{subsubsection.5.33.2.1}%
+\contentsline {subsubsection}{\numberline {5.33.2.2}Delete()}{106}{subsubsection.5.33.2.2}%
+\contentsline {subsubsection}{\numberline {5.33.2.3}GetAll()}{106}{subsubsection.5.33.2.3}%
+\contentsline {subsubsection}{\numberline {5.33.2.4}GetOne()}{107}{subsubsection.5.33.2.4}%
+\contentsline {section}{\numberline {5.34}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Interface Reference}{107}{section.5.34}%
+\contentsline {subsection}{\numberline {5.34.1}Detailed Description}{108}{subsection.5.34.1}%
+\contentsline {subsection}{\numberline {5.34.2}Member Function Documentation}{108}{subsection.5.34.2}%
+\contentsline {subsubsection}{\numberline {5.34.2.1}CreateMap()}{108}{subsubsection.5.34.2.1}%
+\contentsline {subsubsection}{\numberline {5.34.2.2}CreateProfile()}{108}{subsubsection.5.34.2.2}%
+\contentsline {subsubsection}{\numberline {5.34.2.3}CreateSave()}{108}{subsubsection.5.34.2.3}%
+\contentsline {subsubsection}{\numberline {5.34.2.4}DeleteMap()}{109}{subsubsection.5.34.2.4}%
+\contentsline {subsubsection}{\numberline {5.34.2.5}DeleteProfile()}{109}{subsubsection.5.34.2.5}%
+\contentsline {subsubsection}{\numberline {5.34.2.6}DeleteSave()}{109}{subsubsection.5.34.2.6}%
+\contentsline {subsubsection}{\numberline {5.34.2.7}ModifyMap()}{110}{subsubsection.5.34.2.7}%
+\contentsline {subsubsection}{\numberline {5.34.2.8}ModifyProfile()}{110}{subsubsection.5.34.2.8}%
+\contentsline {subsubsection}{\numberline {5.34.2.9}ModifySave()}{110}{subsubsection.5.34.2.9}%
+\contentsline {section}{\numberline {5.35}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}B\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}L.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Interface Reference}{111}{section.5.35}%
+\contentsline {subsection}{\numberline {5.35.1}Detailed Description}{111}{subsection.5.35.1}%
+\contentsline {subsection}{\numberline {5.35.2}Member Function Documentation}{111}{subsection.5.35.2}%
+\contentsline {subsubsection}{\numberline {5.35.2.1}CreateMap()}{111}{subsubsection.5.35.2.1}%
+\contentsline {subsubsection}{\numberline {5.35.2.2}CreateProfile()}{112}{subsubsection.5.35.2.2}%
+\contentsline {subsubsection}{\numberline {5.35.2.3}CreateSave()}{112}{subsubsection.5.35.2.3}%
+\contentsline {subsubsection}{\numberline {5.35.2.4}DeleteMap()}{112}{subsubsection.5.35.2.4}%
+\contentsline {subsubsection}{\numberline {5.35.2.5}DeleteProfile()}{113}{subsubsection.5.35.2.5}%
+\contentsline {subsubsection}{\numberline {5.35.2.6}DeleteSave()}{113}{subsubsection.5.35.2.6}%
+\contentsline {subsubsection}{\numberline {5.35.2.7}ModifyMap()}{113}{subsubsection.5.35.2.7}%
+\contentsline {subsubsection}{\numberline {5.35.2.8}ModifyProfile()}{114}{subsubsection.5.35.2.8}%
+\contentsline {subsubsection}{\numberline {5.35.2.9}ModifySave()}{114}{subsubsection.5.35.2.9}%
+\contentsline {section}{\numberline {5.36}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repository.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Record\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repository Interface Reference}{114}{section.5.36}%
+\contentsline {subsection}{\numberline {5.36.1}Detailed Description}{115}{subsection.5.36.1}%
+\contentsline {subsection}{\numberline {5.36.2}Member Function Documentation}{115}{subsection.5.36.2}%
+\contentsline {subsubsection}{\numberline {5.36.2.1}Update()}{115}{subsubsection.5.36.2.1}%
+\contentsline {section}{\numberline {5.37}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repository.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repository Interface Reference}{115}{section.5.37}%
+\contentsline {subsection}{\numberline {5.37.1}Detailed Description}{116}{subsection.5.37.1}%
+\contentsline {subsection}{\numberline {5.37.2}Member Function Documentation}{116}{subsection.5.37.2}%
+\contentsline {subsubsection}{\numberline {5.37.2.1}Update()}{116}{subsubsection.5.37.2.1}%
+\contentsline {section}{\numberline {5.38}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Objects.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Moveable Interface Reference}{116}{section.5.38}%
+\contentsline {subsection}{\numberline {5.38.1}Detailed Description}{117}{subsection.5.38.1}%
+\contentsline {subsection}{\numberline {5.38.2}Property Documentation}{117}{subsection.5.38.2}%
+\contentsline {subsubsection}{\numberline {5.38.2.1}Position}{117}{subsubsection.5.38.2.1}%
+\contentsline {section}{\numberline {5.39}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Navigation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Service$<$ T $>$ Interface Template Reference}{117}{section.5.39}%
+\contentsline {subsection}{\numberline {5.39.1}Detailed Description}{118}{subsection.5.39.1}%
+\contentsline {subsection}{\numberline {5.39.2}Member Function Documentation}{118}{subsection.5.39.2}%
+\contentsline {subsubsection}{\numberline {5.39.2.1}NavigateTo()}{118}{subsubsection.5.39.2.1}%
+\contentsline {subsection}{\numberline {5.39.3}Property Documentation}{118}{subsection.5.39.3}%
+\contentsline {subsubsection}{\numberline {5.39.3.1}Parameter}{118}{subsubsection.5.39.3.1}%
+\contentsline {section}{\numberline {5.40}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Init\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Config Class Reference}{119}{section.5.40}%
+\contentsline {subsection}{\numberline {5.40.1}Detailed Description}{119}{subsection.5.40.1}%
+\contentsline {subsection}{\numberline {5.40.2}Member Data Documentation}{119}{subsection.5.40.2}%
+\contentsline {subsubsection}{\numberline {5.40.2.1}PlayerHealth}{119}{subsubsection.5.40.2.1}%
+\contentsline {subsubsection}{\numberline {5.40.2.2}PlayerHeight}{120}{subsubsection.5.40.2.2}%
+\contentsline {subsubsection}{\numberline {5.40.2.3}PlayerSpritesheet}{120}{subsubsection.5.40.2.3}%
+\contentsline {subsubsection}{\numberline {5.40.2.4}PlayerWidth}{120}{subsubsection.5.40.2.4}%
+\contentsline {section}{\numberline {5.41}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Init\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Class Reference}{120}{section.5.41}%
+\contentsline {subsection}{\numberline {5.41.1}Detailed Description}{121}{subsection.5.41.1}%
+\contentsline {subsection}{\numberline {5.41.2}Constructor \& Destructor Documentation}{121}{subsection.5.41.2}%
+\contentsline {subsubsection}{\numberline {5.41.2.1}InitLogic()}{121}{subsubsection.5.41.2.1}%
+\contentsline {subsection}{\numberline {5.41.3}Member Function Documentation}{121}{subsection.5.41.3}%
+\contentsline {subsubsection}{\numberline {5.41.3.1}LoadSave()}{121}{subsubsection.5.41.3.1}%
+\contentsline {subsection}{\numberline {5.41.4}Property Documentation}{122}{subsection.5.41.4}%
+\contentsline {subsubsection}{\numberline {5.41.4.1}GameContinued}{122}{subsubsection.5.41.4.1}%
+\contentsline {section}{\numberline {5.42}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Int\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}To\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Date\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Converter Class Reference}{122}{section.5.42}%
+\contentsline {subsection}{\numberline {5.42.1}Detailed Description}{122}{subsection.5.42.1}%
+\contentsline {section}{\numberline {5.43}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}O\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Is.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Invincibility\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Class Reference}{123}{section.5.43}%
+\contentsline {subsection}{\numberline {5.43.1}Detailed Description}{123}{subsection.5.43.1}%
+\contentsline {subsection}{\numberline {5.43.2}Constructor \& Destructor Documentation}{123}{subsection.5.43.2}%
+\contentsline {subsubsection}{\numberline {5.43.2.1}InvincibilityLogic()}{123}{subsubsection.5.43.2.1}%
+\contentsline {section}{\numberline {5.44}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repository.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Profile\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repository Interface Reference}{124}{section.5.44}%
+\contentsline {subsection}{\numberline {5.44.1}Detailed Description}{124}{subsection.5.44.1}%
+\contentsline {subsection}{\numberline {5.44.2}Member Function Documentation}{124}{subsection.5.44.2}%
+\contentsline {subsubsection}{\numberline {5.44.2.1}Update()}{124}{subsubsection.5.44.2.1}%
+\contentsline {section}{\numberline {5.45}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repository.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Save\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repository Interface Reference}{125}{section.5.45}%
+\contentsline {subsection}{\numberline {5.45.1}Detailed Description}{125}{subsection.5.45.1}%
+\contentsline {subsection}{\numberline {5.45.2}Member Function Documentation}{125}{subsection.5.45.2}%
+\contentsline {subsubsection}{\numberline {5.45.2.1}Update()}{125}{subsubsection.5.45.2.1}%
+\contentsline {section}{\numberline {5.46}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Timed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Event Interface Reference}{126}{section.5.46}%
+\contentsline {subsection}{\numberline {5.46.1}Detailed Description}{126}{subsection.5.46.1}%
+\contentsline {subsection}{\numberline {5.46.2}Member Function Documentation}{126}{subsection.5.46.2}%
+\contentsline {subsubsection}{\numberline {5.46.2.1}CheckTimer()}{127}{subsubsection.5.46.2.1}%
+\contentsline {subsubsection}{\numberline {5.46.2.2}ResetStats()}{127}{subsubsection.5.46.2.2}%
+\contentsline {section}{\numberline {5.47}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Viewer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Interface Reference}{127}{section.5.47}%
+\contentsline {subsection}{\numberline {5.47.1}Detailed Description}{128}{subsection.5.47.1}%
+\contentsline {subsection}{\numberline {5.47.2}Member Function Documentation}{128}{subsection.5.47.2}%
+\contentsline {subsubsection}{\numberline {5.47.2.1}GetMap()}{128}{subsubsection.5.47.2.1}%
+\contentsline {subsubsection}{\numberline {5.47.2.2}GetMaps()}{128}{subsubsection.5.47.2.2}%
+\contentsline {subsubsection}{\numberline {5.47.2.3}GetProfile()}{128}{subsubsection.5.47.2.3}%
+\contentsline {subsubsection}{\numberline {5.47.2.4}GetProfiles()}{129}{subsubsection.5.47.2.4}%
+\contentsline {subsubsection}{\numberline {5.47.2.5}GetSave()}{129}{subsubsection.5.47.2.5}%
+\contentsline {subsubsection}{\numberline {5.47.2.6}GetSaves()}{129}{subsubsection.5.47.2.6}%
+\contentsline {subsubsection}{\numberline {5.47.2.7}GetSelectedProfile()}{130}{subsubsection.5.47.2.7}%
+\contentsline {section}{\numberline {5.48}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}B\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}L.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interfaces.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Viewer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Interface Reference}{130}{section.5.48}%
+\contentsline {subsection}{\numberline {5.48.1}Detailed Description}{131}{subsection.5.48.1}%
+\contentsline {subsection}{\numberline {5.48.2}Member Function Documentation}{131}{subsection.5.48.2}%
+\contentsline {subsubsection}{\numberline {5.48.2.1}GetMaps()}{131}{subsubsection.5.48.2.1}%
+\contentsline {subsubsection}{\numberline {5.48.2.2}GetProfiles()}{131}{subsubsection.5.48.2.2}%
+\contentsline {subsubsection}{\numberline {5.48.2.3}GetSaves()}{131}{subsubsection.5.48.2.3}%
+\contentsline {subsubsection}{\numberline {5.48.2.4}GetSelectedProfile()}{132}{subsubsection.5.48.2.4}%
+\contentsline {subsubsection}{\numberline {5.48.2.5}LoadMaps()}{132}{subsubsection.5.48.2.5}%
+\contentsline {section}{\numberline {5.49}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repository.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repository$<$ T $>$ Class Template Reference}{132}{section.5.49}%
+\contentsline {subsection}{\numberline {5.49.1}Detailed Description}{133}{subsection.5.49.1}%
+\contentsline {subsection}{\numberline {5.49.2}Constructor \& Destructor Documentation}{133}{subsection.5.49.2}%
+\contentsline {subsubsection}{\numberline {5.49.2.1}MainRepository()}{133}{subsubsection.5.49.2.1}%
+\contentsline {subsection}{\numberline {5.49.3}Property Documentation}{133}{subsection.5.49.3}%
+\contentsline {subsubsection}{\numberline {5.49.3.1}Ctx}{134}{subsubsection.5.49.3.1}%
+\contentsline {section}{\numberline {5.50}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model Class Reference}{134}{section.5.50}%
+\contentsline {subsection}{\numberline {5.50.1}Detailed Description}{134}{subsection.5.50.1}%
+\contentsline {subsection}{\numberline {5.50.2}Constructor \& Destructor Documentation}{134}{subsection.5.50.2}%
+\contentsline {subsubsection}{\numberline {5.50.2.1}MainViewModel()}{134}{subsubsection.5.50.2.1}%
+\contentsline {subsection}{\numberline {5.50.3}Property Documentation}{135}{subsection.5.50.3}%
+\contentsline {subsubsection}{\numberline {5.50.3.1}LoadedCommand}{135}{subsubsection.5.50.3.1}%
+\contentsline {section}{\numberline {5.51}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Window Class Reference}{135}{section.5.51}%
+\contentsline {subsection}{\numberline {5.51.1}Detailed Description}{136}{subsection.5.51.1}%
+\contentsline {subsection}{\numberline {5.51.2}Constructor \& Destructor Documentation}{136}{subsection.5.51.2}%
+\contentsline {subsubsection}{\numberline {5.51.2.1}MainWindow()}{136}{subsubsection.5.51.2.1}%
+\contentsline {subsection}{\numberline {5.51.3}Member Function Documentation}{136}{subsection.5.51.3}%
+\contentsline {subsubsection}{\numberline {5.51.3.1}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{136}{subsubsection.5.51.3.1}%
+\contentsline {subsubsection}{\numberline {5.51.3.2}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{136}{subsubsection.5.51.3.2}%
+\contentsline {subsubsection}{\numberline {5.51.3.3}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{137}{subsubsection.5.51.3.3}%
+\contentsline {subsubsection}{\numberline {5.51.3.4}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{137}{subsubsection.5.51.3.4}%
+\contentsline {section}{\numberline {5.52}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Class Reference}{137}{section.5.52}%
+\contentsline {subsection}{\numberline {5.52.1}Detailed Description}{138}{subsection.5.52.1}%
+\contentsline {subsection}{\numberline {5.52.2}Constructor \& Destructor Documentation}{138}{subsection.5.52.2}%
+\contentsline {subsubsection}{\numberline {5.52.2.1}ManagerLogic()}{138}{subsubsection.5.52.2.1}%
+\contentsline {section}{\numberline {5.53}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}B\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}L.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Manager\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Class Reference}{138}{section.5.53}%
+\contentsline {subsection}{\numberline {5.53.1}Detailed Description}{139}{subsection.5.53.1}%
+\contentsline {subsection}{\numberline {5.53.2}Constructor \& Destructor Documentation}{139}{subsection.5.53.2}%
+\contentsline {subsubsection}{\numberline {5.53.2.1}ManagerLogicUI()}{139}{subsubsection.5.53.2.1}%
+\contentsline {section}{\numberline {5.54}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Models.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map Class Reference}{140}{section.5.54}%
+\contentsline {subsection}{\numberline {5.54.1}Detailed Description}{140}{subsection.5.54.1}%
+\contentsline {subsection}{\numberline {5.54.2}Property Documentation}{140}{subsection.5.54.2}%
+\contentsline {subsubsection}{\numberline {5.54.2.1}MapId}{140}{subsubsection.5.54.2.1}%
+\contentsline {subsubsection}{\numberline {5.54.2.2}Player}{140}{subsubsection.5.54.2.2}%
+\contentsline {subsubsection}{\numberline {5.54.2.3}RunTime}{141}{subsubsection.5.54.2.3}%
+\contentsline {section}{\numberline {5.55}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Files Class Reference}{141}{section.5.55}%
+\contentsline {subsection}{\numberline {5.55.1}Detailed Description}{141}{subsection.5.55.1}%
+\contentsline {subsection}{\numberline {5.55.2}Constructor \& Destructor Documentation}{141}{subsection.5.55.2}%
+\contentsline {subsubsection}{\numberline {5.55.2.1}MapFiles()}{141}{subsubsection.5.55.2.1}%
+\contentsline {subsection}{\numberline {5.55.3}Property Documentation}{142}{subsection.5.55.3}%
+\contentsline {subsubsection}{\numberline {5.55.3.1}MapRecords}{142}{subsubsection.5.55.3.1}%
+\contentsline {subsubsection}{\numberline {5.55.3.2}Name}{142}{subsubsection.5.55.3.2}%
+\contentsline {subsubsection}{\numberline {5.55.3.3}Path}{142}{subsubsection.5.55.3.3}%
+\contentsline {section}{\numberline {5.56}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Models.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Record Class Reference}{142}{section.5.56}%
+\contentsline {subsection}{\numberline {5.56.1}Detailed Description}{143}{subsection.5.56.1}%
+\contentsline {subsection}{\numberline {5.56.2}Property Documentation}{143}{subsection.5.56.2}%
+\contentsline {subsubsection}{\numberline {5.56.2.1}MapName}{143}{subsubsection.5.56.2.1}%
+\contentsline {subsubsection}{\numberline {5.56.2.2}MapRecordId}{143}{subsubsection.5.56.2.2}%
+\contentsline {subsubsection}{\numberline {5.56.2.3}Player}{143}{subsubsection.5.56.2.3}%
+\contentsline {subsubsection}{\numberline {5.56.2.4}PlayerId}{144}{subsubsection.5.56.2.4}%
+\contentsline {subsubsection}{\numberline {5.56.2.5}RunTime}{144}{subsubsection.5.56.2.5}%
+\contentsline {section}{\numberline {5.57}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repository.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Record\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repository Class Reference}{144}{section.5.57}%
+\contentsline {subsection}{\numberline {5.57.1}Detailed Description}{144}{subsection.5.57.1}%
+\contentsline {subsection}{\numberline {5.57.2}Constructor \& Destructor Documentation}{145}{subsection.5.57.2}%
+\contentsline {subsubsection}{\numberline {5.57.2.1}MapRecordRepository()}{145}{subsubsection.5.57.2.1}%
+\contentsline {section}{\numberline {5.58}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Record\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Class Reference}{145}{section.5.58}%
+\contentsline {subsection}{\numberline {5.58.1}Detailed Description}{146}{subsection.5.58.1}%
+\contentsline {subsection}{\numberline {5.58.2}Constructor \& Destructor Documentation}{146}{subsection.5.58.2}%
+\contentsline {subsubsection}{\numberline {5.58.2.1}MapRecordUI()}{146}{subsubsection.5.58.2.1}%
+\contentsline {subsection}{\numberline {5.58.3}Member Function Documentation}{146}{subsection.5.58.3}%
+\contentsline {subsubsection}{\numberline {5.58.3.1}ConvertToMapEntity()}{146}{subsubsection.5.58.3.1}%
+\contentsline {subsubsection}{\numberline {5.58.3.2}ConvertToMapUiEntity()}{147}{subsubsection.5.58.3.2}%
+\contentsline {subsubsection}{\numberline {5.58.3.3}CopyFrom()}{147}{subsubsection.5.58.3.3}%
+\contentsline {subsection}{\numberline {5.58.4}Property Documentation}{147}{subsection.5.58.4}%
+\contentsline {subsubsection}{\numberline {5.58.4.1}MapName}{147}{subsubsection.5.58.4.1}%
+\contentsline {subsubsection}{\numberline {5.58.4.2}MapRecordId}{148}{subsubsection.5.58.4.2}%
+\contentsline {subsubsection}{\numberline {5.58.4.3}Player}{148}{subsubsection.5.58.4.3}%
+\contentsline {subsubsection}{\numberline {5.58.4.4}PlayerId}{148}{subsubsection.5.58.4.4}%
+\contentsline {subsubsection}{\numberline {5.58.4.5}RunTime}{148}{subsubsection.5.58.4.5}%
+\contentsline {section}{\numberline {5.59}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repository.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Map\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repository Class Reference}{149}{section.5.59}%
+\contentsline {subsection}{\numberline {5.59.1}Detailed Description}{149}{subsection.5.59.1}%
+\contentsline {subsection}{\numberline {5.59.2}Constructor \& Destructor Documentation}{149}{subsection.5.59.2}%
+\contentsline {subsubsection}{\numberline {5.59.2.1}MapRepository()}{149}{subsubsection.5.59.2.1}%
+\contentsline {section}{\numberline {5.60}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control Class Reference}{150}{section.5.60}%
+\contentsline {subsection}{\numberline {5.60.1}Detailed Description}{150}{subsection.5.60.1}%
+\contentsline {subsection}{\numberline {5.60.2}Constructor \& Destructor Documentation}{150}{subsection.5.60.2}%
+\contentsline {subsubsection}{\numberline {5.60.2.1}MenuControl()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{151}{subsubsection.5.60.2.1}%
+\contentsline {subsubsection}{\numberline {5.60.2.2}MenuControl()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{151}{subsubsection.5.60.2.2}%
+\contentsline {subsection}{\numberline {5.60.3}Member Function Documentation}{151}{subsection.5.60.3}%
+\contentsline {subsubsection}{\numberline {5.60.3.1}OnRender()}{151}{subsubsection.5.60.3.1}%
+\contentsline {subsection}{\numberline {5.60.4}Property Documentation}{151}{subsection.5.60.4}%
+\contentsline {subsubsection}{\numberline {5.60.4.1}Exit}{152}{subsubsection.5.60.4.1}%
+\contentsline {subsubsection}{\numberline {5.60.4.2}MapName}{152}{subsubsection.5.60.4.2}%
+\contentsline {subsubsection}{\numberline {5.60.4.3}ScrollMode}{152}{subsubsection.5.60.4.3}%
+\contentsline {subsubsection}{\numberline {5.60.4.4}TitleEnabled}{152}{subsubsection.5.60.4.4}%
+\contentsline {section}{\numberline {5.61}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Page Class Reference}{152}{section.5.61}%
+\contentsline {subsection}{\numberline {5.61.1}Detailed Description}{153}{subsection.5.61.1}%
+\contentsline {subsection}{\numberline {5.61.2}Constructor \& Destructor Documentation}{153}{subsection.5.61.2}%
+\contentsline {subsubsection}{\numberline {5.61.2.1}MenuPage()}{153}{subsubsection.5.61.2.1}%
+\contentsline {subsection}{\numberline {5.61.3}Member Function Documentation}{154}{subsection.5.61.3}%
+\contentsline {subsubsection}{\numberline {5.61.3.1}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{154}{subsubsection.5.61.3.1}%
+\contentsline {subsubsection}{\numberline {5.61.3.2}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{154}{subsubsection.5.61.3.2}%
+\contentsline {subsubsection}{\numberline {5.61.3.3}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{154}{subsubsection.5.61.3.3}%
+\contentsline {subsubsection}{\numberline {5.61.3.4}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{154}{subsubsection.5.61.3.4}%
+\contentsline {section}{\numberline {5.62}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Menu\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model Class Reference}{155}{section.5.62}%
+\contentsline {subsection}{\numberline {5.62.1}Detailed Description}{155}{subsection.5.62.1}%
+\contentsline {subsection}{\numberline {5.62.2}Constructor \& Destructor Documentation}{155}{subsection.5.62.2}%
+\contentsline {subsubsection}{\numberline {5.62.2.1}MenuViewModel()}{155}{subsubsection.5.62.2.1}%
+\contentsline {subsection}{\numberline {5.62.3}Member Function Documentation}{156}{subsection.5.62.3}%
+\contentsline {subsubsection}{\numberline {5.62.3.1}Init()}{156}{subsubsection.5.62.3.1}%
+\contentsline {subsection}{\numberline {5.62.4}Property Documentation}{156}{subsection.5.62.4}%
+\contentsline {subsubsection}{\numberline {5.62.4.1}ContinueGameCommand}{156}{subsubsection.5.62.4.1}%
+\contentsline {subsubsection}{\numberline {5.62.4.2}ContinueVisibility}{156}{subsubsection.5.62.4.2}%
+\contentsline {subsubsection}{\numberline {5.62.4.3}ExitCommand}{157}{subsubsection.5.62.4.3}%
+\contentsline {subsubsection}{\numberline {5.62.4.4}MenuText}{157}{subsubsection.5.62.4.4}%
+\contentsline {subsubsection}{\numberline {5.62.4.5}NewGamePageCommand}{157}{subsubsection.5.62.4.5}%
+\contentsline {subsubsection}{\numberline {5.62.4.6}ProfilesPageCommand}{157}{subsubsection.5.62.4.6}%
+\contentsline {subsubsection}{\numberline {5.62.4.7}SelectedProfile}{157}{subsubsection.5.62.4.7}%
+\contentsline {section}{\numberline {5.63}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Characters.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Actions.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Move\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Command Class Reference}{158}{section.5.63}%
+\contentsline {subsection}{\numberline {5.63.1}Detailed Description}{158}{subsection.5.63.1}%
+\contentsline {subsection}{\numberline {5.63.2}Constructor \& Destructor Documentation}{158}{subsection.5.63.2}%
+\contentsline {subsubsection}{\numberline {5.63.2.1}MoveCommand()}{158}{subsubsection.5.63.2.1}%
+\contentsline {section}{\numberline {5.64}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}My\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Ioc Class Reference}{159}{section.5.64}%
+\contentsline {subsection}{\numberline {5.64.1}Detailed Description}{159}{subsection.5.64.1}%
+\contentsline {subsection}{\numberline {5.64.2}Property Documentation}{159}{subsection.5.64.2}%
+\contentsline {subsubsection}{\numberline {5.64.2.1}Instance}{159}{subsubsection.5.64.2.1}%
+\contentsline {section}{\numberline {5.65}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Navigation\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Service$<$ T $>$ Class Template Reference}{160}{section.5.65}%
+\contentsline {subsection}{\numberline {5.65.1}Detailed Description}{160}{subsection.5.65.1}%
+\contentsline {subsection}{\numberline {5.65.2}Constructor \& Destructor Documentation}{161}{subsection.5.65.2}%
+\contentsline {subsubsection}{\numberline {5.65.2.1}NavigationService()}{161}{subsubsection.5.65.2.1}%
+\contentsline {subsection}{\numberline {5.65.3}Member Function Documentation}{161}{subsection.5.65.3}%
+\contentsline {subsubsection}{\numberline {5.65.3.1}ConfigurePage()}{161}{subsubsection.5.65.3.1}%
+\contentsline {subsubsection}{\numberline {5.65.3.2}ConfigurePages()}{161}{subsubsection.5.65.3.2}%
+\contentsline {subsection}{\numberline {5.65.4}Property Documentation}{162}{subsection.5.65.4}%
+\contentsline {subsubsection}{\numberline {5.65.4.1}CurrentPageKey}{162}{subsubsection.5.65.4.1}%
+\contentsline {subsubsection}{\numberline {5.65.4.2}Parameter}{162}{subsubsection.5.65.4.2}%
+\contentsline {section}{\numberline {5.66}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}New\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Page Class Reference}{162}{section.5.66}%
+\contentsline {subsection}{\numberline {5.66.1}Detailed Description}{163}{subsection.5.66.1}%
+\contentsline {subsection}{\numberline {5.66.2}Constructor \& Destructor Documentation}{163}{subsection.5.66.2}%
+\contentsline {subsubsection}{\numberline {5.66.2.1}NewGamePage()}{163}{subsubsection.5.66.2.1}%
+\contentsline {subsection}{\numberline {5.66.3}Member Function Documentation}{163}{subsection.5.66.3}%
+\contentsline {subsubsection}{\numberline {5.66.3.1}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{163}{subsubsection.5.66.3.1}%
+\contentsline {subsubsection}{\numberline {5.66.3.2}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{164}{subsubsection.5.66.3.2}%
+\contentsline {subsubsection}{\numberline {5.66.3.3}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{164}{subsubsection.5.66.3.3}%
+\contentsline {subsubsection}{\numberline {5.66.3.4}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{164}{subsubsection.5.66.3.4}%
+\contentsline {section}{\numberline {5.67}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}New\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Game\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model Class Reference}{164}{section.5.67}%
+\contentsline {subsection}{\numberline {5.67.1}Detailed Description}{165}{subsection.5.67.1}%
+\contentsline {subsection}{\numberline {5.67.2}Constructor \& Destructor Documentation}{165}{subsection.5.67.2}%
+\contentsline {subsubsection}{\numberline {5.67.2.1}NewGameViewModel()}{165}{subsubsection.5.67.2.1}%
+\contentsline {subsection}{\numberline {5.67.3}Member Function Documentation}{166}{subsection.5.67.3}%
+\contentsline {subsubsection}{\numberline {5.67.3.1}InitMaps()}{166}{subsubsection.5.67.3.1}%
+\contentsline {subsection}{\numberline {5.67.4}Property Documentation}{166}{subsection.5.67.4}%
+\contentsline {subsubsection}{\numberline {5.67.4.1}GamePageCommand}{166}{subsubsection.5.67.4.1}%
+\contentsline {subsubsection}{\numberline {5.67.4.2}Maps}{166}{subsubsection.5.67.4.2}%
+\contentsline {subsubsection}{\numberline {5.67.4.3}MenuPageCommand}{166}{subsubsection.5.67.4.3}%
+\contentsline {subsubsection}{\numberline {5.67.4.4}Scoreboard}{167}{subsubsection.5.67.4.4}%
+\contentsline {subsubsection}{\numberline {5.67.4.5}SelectedMap}{167}{subsubsection.5.67.4.5}%
+\contentsline {section}{\numberline {5.68}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Objects.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Player Class Reference}{167}{section.5.68}%
+\contentsline {subsection}{\numberline {5.68.1}Detailed Description}{168}{subsection.5.68.1}%
+\contentsline {subsection}{\numberline {5.68.2}Constructor \& Destructor Documentation}{168}{subsection.5.68.2}%
+\contentsline {subsubsection}{\numberline {5.68.2.1}Player()}{168}{subsubsection.5.68.2.1}%
+\contentsline {subsection}{\numberline {5.68.3}Member Function Documentation}{168}{subsection.5.68.3}%
+\contentsline {subsubsection}{\numberline {5.68.3.1}PlayerDeath()}{168}{subsubsection.5.68.3.1}%
+\contentsline {subsection}{\numberline {5.68.4}Property Documentation}{169}{subsection.5.68.4}%
+\contentsline {subsubsection}{\numberline {5.68.4.1}Checkpoint}{169}{subsubsection.5.68.4.1}%
+\contentsline {subsubsection}{\numberline {5.68.4.2}Deaths}{169}{subsubsection.5.68.4.2}%
+\contentsline {subsubsection}{\numberline {5.68.4.3}Kills}{169}{subsubsection.5.68.4.3}%
+\contentsline {subsubsection}{\numberline {5.68.4.4}NumOfWeaponUnlocked}{169}{subsubsection.5.68.4.4}%
+\contentsline {section}{\numberline {5.69}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Models.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Player\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Profile Class Reference}{169}{section.5.69}%
+\contentsline {subsection}{\numberline {5.69.1}Detailed Description}{170}{subsection.5.69.1}%
+\contentsline {subsection}{\numberline {5.69.2}Constructor \& Destructor Documentation}{170}{subsection.5.69.2}%
+\contentsline {subsubsection}{\numberline {5.69.2.1}PlayerProfile()}{170}{subsubsection.5.69.2.1}%
+\contentsline {subsection}{\numberline {5.69.3}Property Documentation}{170}{subsection.5.69.3}%
+\contentsline {subsubsection}{\numberline {5.69.3.1}CompletedRuns}{171}{subsubsection.5.69.3.1}%
+\contentsline {subsubsection}{\numberline {5.69.3.2}PlayerId}{171}{subsubsection.5.69.3.2}%
+\contentsline {subsubsection}{\numberline {5.69.3.3}PlayerName}{171}{subsubsection.5.69.3.3}%
+\contentsline {subsubsection}{\numberline {5.69.3.4}Records}{171}{subsubsection.5.69.3.4}%
+\contentsline {subsubsection}{\numberline {5.69.3.5}Save}{171}{subsubsection.5.69.3.5}%
+\contentsline {subsubsection}{\numberline {5.69.3.6}SaveId}{172}{subsubsection.5.69.3.6}%
+\contentsline {subsubsection}{\numberline {5.69.3.7}Selected}{172}{subsubsection.5.69.3.7}%
+\contentsline {subsubsection}{\numberline {5.69.3.8}TotalDeaths}{172}{subsubsection.5.69.3.8}%
+\contentsline {subsubsection}{\numberline {5.69.3.9}TotalKills}{172}{subsubsection.5.69.3.9}%
+\contentsline {section}{\numberline {5.70}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Player\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Profile\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Class Reference}{172}{section.5.70}%
+\contentsline {subsection}{\numberline {5.70.1}Detailed Description}{173}{subsection.5.70.1}%
+\contentsline {subsection}{\numberline {5.70.2}Constructor \& Destructor Documentation}{173}{subsection.5.70.2}%
+\contentsline {subsubsection}{\numberline {5.70.2.1}PlayerProfileUI()}{173}{subsubsection.5.70.2.1}%
+\contentsline {subsection}{\numberline {5.70.3}Member Function Documentation}{174}{subsection.5.70.3}%
+\contentsline {subsubsection}{\numberline {5.70.3.1}ConvertToProfileEntity()}{174}{subsubsection.5.70.3.1}%
+\contentsline {subsubsection}{\numberline {5.70.3.2}ConvertToProfileUiEntity()}{174}{subsubsection.5.70.3.2}%
+\contentsline {subsubsection}{\numberline {5.70.3.3}CopyFrom()}{174}{subsubsection.5.70.3.3}%
+\contentsline {subsection}{\numberline {5.70.4}Property Documentation}{175}{subsection.5.70.4}%
+\contentsline {subsubsection}{\numberline {5.70.4.1}CompletedRuns}{175}{subsubsection.5.70.4.1}%
+\contentsline {subsubsection}{\numberline {5.70.4.2}PlayerId}{175}{subsubsection.5.70.4.2}%
+\contentsline {subsubsection}{\numberline {5.70.4.3}PlayerName}{175}{subsubsection.5.70.4.3}%
+\contentsline {subsubsection}{\numberline {5.70.4.4}Save}{175}{subsubsection.5.70.4.4}%
+\contentsline {subsubsection}{\numberline {5.70.4.5}Selected}{176}{subsubsection.5.70.4.5}%
+\contentsline {subsubsection}{\numberline {5.70.4.6}TotalDeaths}{176}{subsubsection.5.70.4.6}%
+\contentsline {subsubsection}{\numberline {5.70.4.7}TotalKills}{176}{subsubsection.5.70.4.7}%
+\contentsline {section}{\numberline {5.71}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Objects.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Point\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Of\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interest Class Reference}{176}{section.5.71}%
+\contentsline {subsection}{\numberline {5.71.1}Detailed Description}{177}{subsection.5.71.1}%
+\contentsline {subsection}{\numberline {5.71.2}Constructor \& Destructor Documentation}{177}{subsection.5.71.2}%
+\contentsline {subsubsection}{\numberline {5.71.2.1}PointOfInterest()}{177}{subsubsection.5.71.2.1}%
+\contentsline {subsection}{\numberline {5.71.3}Property Documentation}{177}{subsection.5.71.3}%
+\contentsline {subsubsection}{\numberline {5.71.3.1}Type}{178}{subsubsection.5.71.3.1}%
+\contentsline {section}{\numberline {5.72}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}O\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Is.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Point\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Of\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interest\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Class Reference}{178}{section.5.72}%
+\contentsline {subsection}{\numberline {5.72.1}Detailed Description}{179}{subsection.5.72.1}%
+\contentsline {subsection}{\numberline {5.72.2}Constructor \& Destructor Documentation}{179}{subsection.5.72.2}%
+\contentsline {subsubsection}{\numberline {5.72.2.1}PointOfInterestLogic()}{179}{subsubsection.5.72.2.1}%
+\contentsline {subsection}{\numberline {5.72.3}Member Function Documentation}{179}{subsection.5.72.3}%
+\contentsline {subsubsection}{\numberline {5.72.3.1}OneTick()}{179}{subsubsection.5.72.3.1}%
+\contentsline {subsubsection}{\numberline {5.72.3.2}POIEvent()}{179}{subsubsection.5.72.3.2}%
+\contentsline {subsection}{\numberline {5.72.4}Property Documentation}{180}{subsection.5.72.4}%
+\contentsline {subsubsection}{\numberline {5.72.4.1}IsPlayerContacted}{180}{subsubsection.5.72.4.1}%
+\contentsline {subsubsection}{\numberline {5.72.4.2}Model}{180}{subsubsection.5.72.4.2}%
+\contentsline {subsubsection}{\numberline {5.72.4.3}Poi}{180}{subsubsection.5.72.4.3}%
+\contentsline {subsubsection}{\numberline {5.72.4.4}TimedPoi}{180}{subsubsection.5.72.4.4}%
+\contentsline {subsubsection}{\numberline {5.72.4.5}Timer}{181}{subsubsection.5.72.4.5}%
+\contentsline {section}{\numberline {5.73}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Collections.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Point\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Of\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Interest\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logics Class Reference}{181}{section.5.73}%
+\contentsline {subsection}{\numberline {5.73.1}Detailed Description}{181}{subsection.5.73.1}%
+\contentsline {subsection}{\numberline {5.73.2}Constructor \& Destructor Documentation}{181}{subsection.5.73.2}%
+\contentsline {subsubsection}{\numberline {5.73.2.1}PointOfInterestLogics()}{181}{subsubsection.5.73.2.1}%
+\contentsline {subsection}{\numberline {5.73.3}Member Function Documentation}{182}{subsection.5.73.3}%
+\contentsline {subsubsection}{\numberline {5.73.3.1}GetPOIs()}{182}{subsubsection.5.73.3.1}%
+\contentsline {subsubsection}{\numberline {5.73.3.2}TickPois()}{182}{subsubsection.5.73.3.2}%
+\contentsline {subsection}{\numberline {5.73.4}Event Documentation}{182}{subsection.5.73.4}%
+\contentsline {subsubsection}{\numberline {5.73.4.1}Powerup}{182}{subsubsection.5.73.4.1}%
+\contentsline {section}{\numberline {5.74}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Profile\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Add\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control Class Reference}{183}{section.5.74}%
+\contentsline {subsection}{\numberline {5.74.1}Detailed Description}{183}{subsection.5.74.1}%
+\contentsline {subsection}{\numberline {5.74.2}Constructor \& Destructor Documentation}{183}{subsection.5.74.2}%
+\contentsline {subsubsection}{\numberline {5.74.2.1}ProfileAddControl()}{183}{subsubsection.5.74.2.1}%
+\contentsline {subsection}{\numberline {5.74.3}Member Function Documentation}{184}{subsection.5.74.3}%
+\contentsline {subsubsection}{\numberline {5.74.3.1}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{184}{subsubsection.5.74.3.1}%
+\contentsline {subsubsection}{\numberline {5.74.3.2}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{184}{subsubsection.5.74.3.2}%
+\contentsline {subsubsection}{\numberline {5.74.3.3}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{184}{subsubsection.5.74.3.3}%
+\contentsline {subsubsection}{\numberline {5.74.3.4}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{184}{subsubsection.5.74.3.4}%
+\contentsline {section}{\numberline {5.75}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Profile\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Edit\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Control Class Reference}{185}{section.5.75}%
+\contentsline {subsection}{\numberline {5.75.1}Detailed Description}{185}{subsection.5.75.1}%
+\contentsline {subsection}{\numberline {5.75.2}Constructor \& Destructor Documentation}{185}{subsection.5.75.2}%
+\contentsline {subsubsection}{\numberline {5.75.2.1}ProfileEditControl()}{185}{subsubsection.5.75.2.1}%
+\contentsline {subsection}{\numberline {5.75.3}Member Function Documentation}{186}{subsection.5.75.3}%
+\contentsline {subsubsection}{\numberline {5.75.3.1}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{186}{subsubsection.5.75.3.1}%
+\contentsline {subsubsection}{\numberline {5.75.3.2}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{186}{subsubsection.5.75.3.2}%
+\contentsline {subsubsection}{\numberline {5.75.3.3}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{186}{subsubsection.5.75.3.3}%
+\contentsline {subsubsection}{\numberline {5.75.3.4}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{186}{subsubsection.5.75.3.4}%
+\contentsline {section}{\numberline {5.76}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repository.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Profile\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repository Class Reference}{187}{section.5.76}%
+\contentsline {subsection}{\numberline {5.76.1}Detailed Description}{187}{subsection.5.76.1}%
+\contentsline {subsection}{\numberline {5.76.2}Constructor \& Destructor Documentation}{187}{subsection.5.76.2}%
+\contentsline {subsubsection}{\numberline {5.76.2.1}ProfileRepository()}{187}{subsubsection.5.76.2.1}%
+\contentsline {section}{\numberline {5.77}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Profiles\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Page Class Reference}{188}{section.5.77}%
+\contentsline {subsection}{\numberline {5.77.1}Detailed Description}{188}{subsection.5.77.1}%
+\contentsline {subsection}{\numberline {5.77.2}Constructor \& Destructor Documentation}{189}{subsection.5.77.2}%
+\contentsline {subsubsection}{\numberline {5.77.2.1}ProfilesPage()}{189}{subsubsection.5.77.2.1}%
+\contentsline {subsection}{\numberline {5.77.3}Member Function Documentation}{189}{subsection.5.77.3}%
+\contentsline {subsubsection}{\numberline {5.77.3.1}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{189}{subsubsection.5.77.3.1}%
+\contentsline {subsubsection}{\numberline {5.77.3.2}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{189}{subsubsection.5.77.3.2}%
+\contentsline {subsubsection}{\numberline {5.77.3.3}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{189}{subsubsection.5.77.3.3}%
+\contentsline {subsubsection}{\numberline {5.77.3.4}InitializeComponent()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{190}{subsubsection.5.77.3.4}%
+\contentsline {section}{\numberline {5.78}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Profiles\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model Class Reference}{190}{section.5.78}%
+\contentsline {subsection}{\numberline {5.78.1}Detailed Description}{191}{subsection.5.78.1}%
+\contentsline {subsection}{\numberline {5.78.2}Constructor \& Destructor Documentation}{191}{subsection.5.78.2}%
+\contentsline {subsubsection}{\numberline {5.78.2.1}ProfilesViewModel()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{191}{subsubsection.5.78.2.1}%
+\contentsline {subsubsection}{\numberline {5.78.2.2}ProfilesViewModel()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{191}{subsubsection.5.78.2.2}%
+\contentsline {subsection}{\numberline {5.78.3}Member Function Documentation}{191}{subsection.5.78.3}%
+\contentsline {subsubsection}{\numberline {5.78.3.1}ReInit()}{191}{subsubsection.5.78.3.1}%
+\contentsline {subsection}{\numberline {5.78.4}Property Documentation}{192}{subsection.5.78.4}%
+\contentsline {subsubsection}{\numberline {5.78.4.1}CreateProfileCommand}{192}{subsubsection.5.78.4.1}%
+\contentsline {subsubsection}{\numberline {5.78.4.2}DeleteProfileCommand}{192}{subsubsection.5.78.4.2}%
+\contentsline {subsubsection}{\numberline {5.78.4.3}Editing}{192}{subsubsection.5.78.4.3}%
+\contentsline {subsubsection}{\numberline {5.78.4.4}MenuPageCommand}{192}{subsubsection.5.78.4.4}%
+\contentsline {subsubsection}{\numberline {5.78.4.5}ModifyProfileCommand}{192}{subsubsection.5.78.4.5}%
+\contentsline {subsubsection}{\numberline {5.78.4.6}PlayerProfileUIs}{193}{subsubsection.5.78.4.6}%
+\contentsline {subsubsection}{\numberline {5.78.4.7}SelectedPlayer}{193}{subsubsection.5.78.4.7}%
+\contentsline {section}{\numberline {5.79}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Characters.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Rapid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fire\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Enemy\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Class Reference}{193}{section.5.79}%
+\contentsline {subsection}{\numberline {5.79.1}Detailed Description}{194}{subsection.5.79.1}%
+\contentsline {subsection}{\numberline {5.79.2}Constructor \& Destructor Documentation}{194}{subsection.5.79.2}%
+\contentsline {subsubsection}{\numberline {5.79.2.1}RapidFireEnemyLogic()}{194}{subsubsection.5.79.2.1}%
+\contentsline {section}{\numberline {5.80}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}O\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Is.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Rapid\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Fire\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Class Reference}{194}{section.5.80}%
+\contentsline {subsection}{\numberline {5.80.1}Detailed Description}{195}{subsection.5.80.1}%
+\contentsline {subsection}{\numberline {5.80.2}Constructor \& Destructor Documentation}{195}{subsection.5.80.2}%
+\contentsline {subsubsection}{\numberline {5.80.2.1}RapidFireLogic()}{195}{subsubsection.5.80.2.1}%
+\contentsline {subsection}{\numberline {5.80.3}Property Documentation}{196}{subsection.5.80.3}%
+\contentsline {subsubsection}{\numberline {5.80.3.1}DefaultAttackTime}{196}{subsubsection.5.80.3.1}%
+\contentsline {section}{\numberline {5.81}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Renderer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Renderer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Config Class Reference}{196}{section.5.81}%
+\contentsline {subsection}{\numberline {5.81.1}Detailed Description}{196}{subsection.5.81.1}%
+\contentsline {subsection}{\numberline {5.81.2}Property Documentation}{197}{subsection.5.81.2}%
+\contentsline {subsubsection}{\numberline {5.81.2.1}BackgroundHorizontalTileNumber}{197}{subsubsection.5.81.2.1}%
+\contentsline {subsubsection}{\numberline {5.81.2.2}BackgroundVerticalTileNumber}{197}{subsubsection.5.81.2.2}%
+\contentsline {subsubsection}{\numberline {5.81.2.3}LayersHeight}{197}{subsubsection.5.81.2.3}%
+\contentsline {subsubsection}{\numberline {5.81.2.4}LayersHorizontalOffset}{197}{subsubsection.5.81.2.4}%
+\contentsline {subsubsection}{\numberline {5.81.2.5}LayersHorizontalSpeed}{197}{subsubsection.5.81.2.5}%
+\contentsline {subsubsection}{\numberline {5.81.2.6}LayersSpriteFile}{198}{subsubsection.5.81.2.6}%
+\contentsline {subsubsection}{\numberline {5.81.2.7}LayersVerticalOffset}{198}{subsubsection.5.81.2.7}%
+\contentsline {subsubsection}{\numberline {5.81.2.8}LayersVerticalSpeed}{198}{subsubsection.5.81.2.8}%
+\contentsline {subsubsection}{\numberline {5.81.2.9}LayersWidth}{198}{subsubsection.5.81.2.9}%
+\contentsline {subsubsection}{\numberline {5.81.2.10}NumberOfLayers}{198}{subsubsection.5.81.2.10}%
+\contentsline {section}{\numberline {5.82}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Models.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Save Class Reference}{199}{section.5.82}%
+\contentsline {subsection}{\numberline {5.82.1}Detailed Description}{199}{subsection.5.82.1}%
+\contentsline {subsection}{\numberline {5.82.2}Property Documentation}{199}{subsection.5.82.2}%
+\contentsline {subsubsection}{\numberline {5.82.2.1}Enemydata}{199}{subsubsection.5.82.2.1}%
+\contentsline {subsubsection}{\numberline {5.82.2.2}Id}{199}{subsubsection.5.82.2.2}%
+\contentsline {subsubsection}{\numberline {5.82.2.3}MapName}{200}{subsubsection.5.82.2.3}%
+\contentsline {subsubsection}{\numberline {5.82.2.4}Player}{200}{subsubsection.5.82.2.4}%
+\contentsline {subsubsection}{\numberline {5.82.2.5}Playerdata}{200}{subsubsection.5.82.2.5}%
+\contentsline {subsubsection}{\numberline {5.82.2.6}PlayerId}{200}{subsubsection.5.82.2.6}%
+\contentsline {section}{\numberline {5.83}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repository.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Save\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Repository Class Reference}{200}{section.5.83}%
+\contentsline {subsection}{\numberline {5.83.1}Detailed Description}{201}{subsection.5.83.1}%
+\contentsline {subsection}{\numberline {5.83.2}Constructor \& Destructor Documentation}{201}{subsection.5.83.2}%
+\contentsline {subsubsection}{\numberline {5.83.2.1}SaveRepository()}{201}{subsubsection.5.83.2.1}%
+\contentsline {section}{\numberline {5.84}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Save\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Class Reference}{201}{section.5.84}%
+\contentsline {subsection}{\numberline {5.84.1}Detailed Description}{202}{subsection.5.84.1}%
+\contentsline {subsection}{\numberline {5.84.2}Constructor \& Destructor Documentation}{202}{subsection.5.84.2}%
+\contentsline {subsubsection}{\numberline {5.84.2.1}SaveUI()}{202}{subsubsection.5.84.2.1}%
+\contentsline {subsection}{\numberline {5.84.3}Member Function Documentation}{202}{subsection.5.84.3}%
+\contentsline {subsubsection}{\numberline {5.84.3.1}ConvertToSaveEntity()}{202}{subsubsection.5.84.3.1}%
+\contentsline {subsubsection}{\numberline {5.84.3.2}ConvertToSaveUiEntity()}{203}{subsubsection.5.84.3.2}%
+\contentsline {subsubsection}{\numberline {5.84.3.3}CopyFrom()}{203}{subsubsection.5.84.3.3}%
+\contentsline {subsection}{\numberline {5.84.4}Property Documentation}{203}{subsection.5.84.4}%
+\contentsline {subsubsection}{\numberline {5.84.4.1}Enemydata}{204}{subsubsection.5.84.4.1}%
+\contentsline {subsubsection}{\numberline {5.84.4.2}Id}{204}{subsubsection.5.84.4.2}%
+\contentsline {subsubsection}{\numberline {5.84.4.3}Playerdata}{204}{subsubsection.5.84.4.3}%
+\contentsline {section}{\numberline {5.85}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Renderer.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Sprite Class Reference}{204}{section.5.85}%
+\contentsline {subsection}{\numberline {5.85.1}Detailed Description}{204}{subsection.5.85.1}%
+\contentsline {subsection}{\numberline {5.85.2}Member Function Documentation}{204}{subsection.5.85.2}%
+\contentsline {subsubsection}{\numberline {5.85.2.1}CreateSprite()}{204}{subsubsection.5.85.2.1}%
+\contentsline {section}{\numberline {5.86}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Objects.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Static\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Object Class Reference}{205}{section.5.86}%
+\contentsline {subsection}{\numberline {5.86.1}Detailed Description}{206}{subsection.5.86.1}%
+\contentsline {subsection}{\numberline {5.86.2}Constructor \& Destructor Documentation}{206}{subsection.5.86.2}%
+\contentsline {subsubsection}{\numberline {5.86.2.1}StaticObject()}{206}{subsubsection.5.86.2.1}%
+\contentsline {subsection}{\numberline {5.86.3}Property Documentation}{206}{subsection.5.86.3}%
+\contentsline {subsubsection}{\numberline {5.86.3.1}Hud}{206}{subsubsection.5.86.3.1}%
+\contentsline {section}{\numberline {5.87}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tests.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Tests Class Reference}{207}{section.5.87}%
+\contentsline {subsection}{\numberline {5.87.1}Detailed Description}{207}{subsection.5.87.1}%
+\contentsline {subsection}{\numberline {5.87.2}Member Function Documentation}{207}{subsection.5.87.2}%
+\contentsline {subsubsection}{\numberline {5.87.2.1}BulletDirectionTest()}{207}{subsubsection.5.87.2.1}%
+\contentsline {subsubsection}{\numberline {5.87.2.2}EffectTest()}{207}{subsubsection.5.87.2.2}%
+\contentsline {subsubsection}{\numberline {5.87.2.3}PlayerMovementTest()}{208}{subsubsection.5.87.2.3}%
+\contentsline {subsubsection}{\numberline {5.87.2.4}Setup()}{208}{subsubsection.5.87.2.4}%
+\contentsline {subsubsection}{\numberline {5.87.2.5}ShootingTest()}{208}{subsubsection.5.87.2.5}%
+\contentsline {subsubsection}{\numberline {5.87.2.6}TestRewind()}{208}{subsubsection.5.87.2.6}%
+\contentsline {section}{\numberline {5.88}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}O\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Is.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Timed\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}O\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}I\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Class Reference}{208}{section.5.88}%
+\contentsline {subsection}{\numberline {5.88.1}Detailed Description}{209}{subsection.5.88.1}%
+\contentsline {subsection}{\numberline {5.88.2}Constructor \& Destructor Documentation}{209}{subsection.5.88.2}%
+\contentsline {subsubsection}{\numberline {5.88.2.1}TimedPOILogic()}{209}{subsubsection.5.88.2.1}%
+\contentsline {subsection}{\numberline {5.88.3}Property Documentation}{210}{subsection.5.88.3}%
+\contentsline {subsubsection}{\numberline {5.88.3.1}Character}{210}{subsubsection.5.88.3.1}%
+\contentsline {section}{\numberline {5.89}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Data.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Models.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Context Class Reference}{210}{section.5.89}%
+\contentsline {subsection}{\numberline {5.89.1}Detailed Description}{211}{subsection.5.89.1}%
+\contentsline {subsection}{\numberline {5.89.2}Constructor \& Destructor Documentation}{211}{subsection.5.89.2}%
+\contentsline {subsubsection}{\numberline {5.89.2.1}TimeWarContext()}{211}{subsubsection.5.89.2.1}%
+\contentsline {subsection}{\numberline {5.89.3}Property Documentation}{211}{subsection.5.89.3}%
+\contentsline {subsubsection}{\numberline {5.89.3.1}MapRecords}{211}{subsubsection.5.89.3.1}%
+\contentsline {subsubsection}{\numberline {5.89.3.2}Profiles}{211}{subsubsection.5.89.3.2}%
+\contentsline {subsubsection}{\numberline {5.89.3.3}Saves}{212}{subsubsection.5.89.3.3}%
+\contentsline {section}{\numberline {5.90}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}P\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}O\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Is.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Unlock\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Weapon\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Class Reference}{212}{section.5.90}%
+\contentsline {subsection}{\numberline {5.90.1}Detailed Description}{212}{subsection.5.90.1}%
+\contentsline {subsection}{\numberline {5.90.2}Constructor \& Destructor Documentation}{212}{subsection.5.90.2}%
+\contentsline {subsubsection}{\numberline {5.90.2.1}UnlockWeaponLogic()}{212}{subsubsection.5.90.2.1}%
+\contentsline {subsection}{\numberline {5.90.3}Property Documentation}{213}{subsection.5.90.3}%
+\contentsline {subsubsection}{\numberline {5.90.3.1}NumOfUnlocks}{213}{subsubsection.5.90.3.1}%
+\contentsline {section}{\numberline {5.91}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Viewer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic Class Reference}{213}{section.5.91}%
+\contentsline {subsection}{\numberline {5.91.1}Detailed Description}{214}{subsection.5.91.1}%
+\contentsline {subsection}{\numberline {5.91.2}Constructor \& Destructor Documentation}{214}{subsection.5.91.2}%
+\contentsline {subsubsection}{\numberline {5.91.2.1}ViewerLogic()}{214}{subsubsection.5.91.2.1}%
+\contentsline {section}{\numberline {5.92}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}B\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}L.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Classes.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Viewer\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Logic\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}UI Class Reference}{214}{section.5.92}%
+\contentsline {subsection}{\numberline {5.92.1}Detailed Description}{215}{subsection.5.92.1}%
+\contentsline {subsection}{\numberline {5.92.2}Constructor \& Destructor Documentation}{215}{subsection.5.92.2}%
+\contentsline {subsubsection}{\numberline {5.92.2.1}ViewerLogicUI()}{215}{subsubsection.5.92.2.1}%
+\contentsline {section}{\numberline {5.93}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Main.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}View\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Locator Class Reference}{215}{section.5.93}%
+\contentsline {subsection}{\numberline {5.93.1}Detailed Description}{216}{subsection.5.93.1}%
+\contentsline {subsection}{\numberline {5.93.2}Constructor \& Destructor Documentation}{216}{subsection.5.93.2}%
+\contentsline {subsubsection}{\numberline {5.93.2.1}ViewModelLocator()}{216}{subsubsection.5.93.2.1}%
+\contentsline {subsection}{\numberline {5.93.3}Property Documentation}{216}{subsection.5.93.3}%
+\contentsline {subsubsection}{\numberline {5.93.3.1}GameViewModel}{216}{subsubsection.5.93.3.1}%
+\contentsline {subsubsection}{\numberline {5.93.3.2}MainViewModel}{217}{subsubsection.5.93.3.2}%
+\contentsline {subsubsection}{\numberline {5.93.3.3}MenuViewModel}{217}{subsubsection.5.93.3.3}%
+\contentsline {subsubsection}{\numberline {5.93.3.4}NewGameViewModel}{217}{subsubsection.5.93.3.4}%
+\contentsline {subsubsection}{\numberline {5.93.3.5}ProfilesViewModel}{217}{subsubsection.5.93.3.5}%
+\contentsline {section}{\numberline {5.94}Time\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}War.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Model.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Objects.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}Viewport Class Reference}{217}{section.5.94}%
+\contentsline {subsection}{\numberline {5.94.1}Detailed Description}{218}{subsection.5.94.1}%
+\contentsline {subsection}{\numberline {5.94.2}Constructor \& Destructor Documentation}{218}{subsection.5.94.2}%
+\contentsline {subsubsection}{\numberline {5.94.2.1}Viewport()}{218}{subsubsection.5.94.2.1}%
+\contentsline {subsection}{\numberline {5.94.3}Member Function Documentation}{219}{subsection.5.94.3}%
+\contentsline {subsubsection}{\numberline {5.94.3.1}GetRelativeObjectPosX()}{219}{subsubsection.5.94.3.1}%
+\contentsline {subsubsection}{\numberline {5.94.3.2}GetRelativeObjectPosY()}{219}{subsubsection.5.94.3.2}%
+\contentsline {subsection}{\numberline {5.94.4}Property Documentation}{220}{subsection.5.94.4}%
+\contentsline {subsubsection}{\numberline {5.94.4.1}Followed}{220}{subsubsection.5.94.4.1}%
+\contentsline {subsubsection}{\numberline {5.94.4.2}GetRelativeCharacterPosX}{220}{subsubsection.5.94.4.2}%
+\contentsline {subsubsection}{\numberline {5.94.4.3}GetRelativeCharacterPosY}{220}{subsubsection.5.94.4.3}%
+\contentsline {subsubsection}{\numberline {5.94.4.4}GetViewportX}{220}{subsubsection.5.94.4.4}%
+\contentsline {subsubsection}{\numberline {5.94.4.5}GetViewportY}{221}{subsubsection.5.94.4.5}%
+\contentsline {subsubsection}{\numberline {5.94.4.6}WindowHeight}{221}{subsubsection.5.94.4.6}%
+\contentsline {subsubsection}{\numberline {5.94.4.7}WindowWidth}{221}{subsubsection.5.94.4.7}%
+\contentsline {chapter}{Index}{223}{section*.283}%

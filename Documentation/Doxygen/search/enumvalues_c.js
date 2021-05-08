@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['rapidfire_738',['RapidFire',['../namespace_time_war_1_1_model_1_1_objects_1_1_classes.html#a5a412954fbd71a70080f58d4b59e3c01a78a784d5e71367286fa01b91030abbb4',1,'TimeWar.Model.Objects.Classes.RapidFire()'],['../namespace_time_war_1_1_model_1_1_objects_1_1_classes.html#ab404ec3afe73d2b76830c4d936dc4bf9a78a784d5e71367286fa01b91030abbb4',1,'TimeWar.Model.Objects.Classes.RapidFire()']]],
-  ['right_739',['Right',['../namespace_time_war_1_1_model_1_1_objects_1_1_interfaces.html#a5c684b7bf688a6ef48096a46a12aac08a92b09c7c48c520c3c55e497875da437c',1,'TimeWar::Model::Objects::Interfaces']]]
+  ['profileeditorpage_789',['ProfileEditorPage',['../namespace_time_war_1_1_main_1_1_view.html#a60fa00ce9e07fae2884f37599bbad5a5aa5c078b7855c7714d77064d08577b621',1,'TimeWar::Main::View']]],
+  ['profilespage_790',['ProfilesPage',['../namespace_time_war_1_1_main_1_1_view.html#a60fa00ce9e07fae2884f37599bbad5a5a219245dcf21f3d104b1f230011985976',1,'TimeWar::Main::View']]]
 ];

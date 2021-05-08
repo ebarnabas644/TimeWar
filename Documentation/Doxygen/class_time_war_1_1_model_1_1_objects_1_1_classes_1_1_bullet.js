@@ -1,6 +1,7 @@
 var class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_bullet =
 [
     [ "Bullet", "class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_bullet.html#a148b2983e58647302e4e093827116a9d", null ],
+    [ "ToString", "class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_bullet.html#ae1d1411201c7737a8d64f10c289fc0c4", null ],
     [ "Acceleration", "class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_bullet.html#a92176a428f03ed0cfc7d0e7836430221", null ],
     [ "BulletStopwatch", "class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_bullet.html#ae931dfb4fc991246d4af1f3491e1a84e", null ],
     [ "CurrentSprite", "class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_bullet.html#a95ad6a50041bdd05a43de6856dd328dc", null ],

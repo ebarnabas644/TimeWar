@@ -1,0 +1,182 @@
+\hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic}{}\doxysection{Time\+War.\+Logic.\+Classes.\+P\+O\+Is.\+Point\+Of\+Interest\+Logic Class Reference}
+\label{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic}\index{TimeWar.Logic.Classes.POIs.PointOfInterestLogic@{TimeWar.Logic.Classes.POIs.PointOfInterestLogic}}
+
+
+Base class for \mbox{\hyperlink{namespace_time_war_1_1_logic_1_1_classes_1_1_p_o_is}{P\+O\+Is}}.  
+
+
+Inheritance diagram for Time\+War.\+Logic.\+Classes.\+P\+O\+Is.\+Point\+Of\+Interest\+Logic\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.712166cm]{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_a738fab524ada5686e99096d8b3411410}{One\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em One tick. \end{DoxyCompactList}\item 
+abstract void \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_af8c82a86a6a5288beea21e139f334d0e}{P\+O\+I\+Event}} ()
+\begin{DoxyCompactList}\small\item\em Action that happens when a player contacts a P\+OI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_a4bcec46d9f44f65fc8b893898e7a01b5}{Point\+Of\+Interest\+Logic}} (\mbox{\hyperlink{class_time_war_1_1_model_1_1_game_model}{Game\+Model}} model, \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_point_of_interest}{Point\+Of\+Interest}} poi, bool timed=false)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic}{Point\+Of\+Interest\+Logic}} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_time_war_1_1_model_1_1_game_model}{Game\+Model}} \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_af334c2c9ec12fe023978db1ddb2469d3}{Model}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets game \mbox{\hyperlink{namespace_time_war_1_1_model}{Model}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_acb9431403e2c0955890599d7e2c9301f}{Timed\+Poi}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets a value indicating whether a poi is timed or not. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_a2f1d073f3f143ad77bcaac9fc2f78eb1}{Timer}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the max time of a poi. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_point_of_interest}{Point\+Of\+Interest}} \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_a612a89c5c2842fe946d6086873a3ae96}{Poi}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets point of interest. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_a20ff52624dfba5743c905212bb3c87e9}{Is\+Player\+Contacted}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets a value indicating whether player is contacted or not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for \mbox{\hyperlink{namespace_time_war_1_1_logic_1_1_classes_1_1_p_o_is}{P\+O\+Is}}. 
+
+
+
+Definition at line 20 of file Point\+Of\+Interest\+Logic.\+cs.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_a4bcec46d9f44f65fc8b893898e7a01b5}\label{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_a4bcec46d9f44f65fc8b893898e7a01b5}} 
+\index{TimeWar.Logic.Classes.POIs.PointOfInterestLogic@{TimeWar.Logic.Classes.POIs.PointOfInterestLogic}!PointOfInterestLogic@{PointOfInterestLogic}}
+\index{PointOfInterestLogic@{PointOfInterestLogic}!TimeWar.Logic.Classes.POIs.PointOfInterestLogic@{TimeWar.Logic.Classes.POIs.PointOfInterestLogic}}
+\doxysubsubsection{\texorpdfstring{PointOfInterestLogic()}{PointOfInterestLogic()}}
+{\footnotesize\ttfamily Time\+War.\+Logic.\+Classes.\+P\+O\+Is.\+Point\+Of\+Interest\+Logic.\+Point\+Of\+Interest\+Logic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_time_war_1_1_model_1_1_game_model}{Game\+Model}}}]{model,  }\item[{\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_point_of_interest}{Point\+Of\+Interest}}}]{poi,  }\item[{bool}]{timed = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Initializes a new instance of the \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic}{Point\+Of\+Interest\+Logic}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Game model.\\
+\hline
+{\em poi} & Poi.\\
+\hline
+{\em timed} & If a poi is timed or not.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 28 of file Point\+Of\+Interest\+Logic.\+cs.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_a738fab524ada5686e99096d8b3411410}\label{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_a738fab524ada5686e99096d8b3411410}} 
+\index{TimeWar.Logic.Classes.POIs.PointOfInterestLogic@{TimeWar.Logic.Classes.POIs.PointOfInterestLogic}!OneTick@{OneTick}}
+\index{OneTick@{OneTick}!TimeWar.Logic.Classes.POIs.PointOfInterestLogic@{TimeWar.Logic.Classes.POIs.PointOfInterestLogic}}
+\doxysubsubsection{\texorpdfstring{OneTick()}{OneTick()}}
+{\footnotesize\ttfamily void Time\+War.\+Logic.\+Classes.\+P\+O\+Is.\+Point\+Of\+Interest\+Logic.\+One\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+One tick. 
+
+
+
+Definition at line 65 of file Point\+Of\+Interest\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_af8c82a86a6a5288beea21e139f334d0e}\label{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_af8c82a86a6a5288beea21e139f334d0e}} 
+\index{TimeWar.Logic.Classes.POIs.PointOfInterestLogic@{TimeWar.Logic.Classes.POIs.PointOfInterestLogic}!POIEvent@{POIEvent}}
+\index{POIEvent@{POIEvent}!TimeWar.Logic.Classes.POIs.PointOfInterestLogic@{TimeWar.Logic.Classes.POIs.PointOfInterestLogic}}
+\doxysubsubsection{\texorpdfstring{POIEvent()}{POIEvent()}}
+{\footnotesize\ttfamily abstract void Time\+War.\+Logic.\+Classes.\+P\+O\+Is.\+Point\+Of\+Interest\+Logic.\+P\+O\+I\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Action that happens when a player contacts a P\+OI. 
+
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_unlock_weapon_logic_a1ef96546d274cd1d865fa4e6c37b56e2}{Time\+War.\+Logic.\+Classes.\+P\+O\+Is.\+Unlock\+Weapon\+Logic}}, \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_timed_p_o_i_logic_af4dfc1694446be294589e52cae4f0bf7}{Time\+War.\+Logic.\+Classes.\+P\+O\+Is.\+Timed\+P\+O\+I\+Logic}}, \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_rapid_fire_logic_ab3bd562120e800ab1950903475dceaaa}{Time\+War.\+Logic.\+Classes.\+P\+O\+Is.\+Rapid\+Fire\+Logic}}, \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_invincibility_logic_aa5ec7fb196f313d5574c8e60cc06ce46}{Time\+War.\+Logic.\+Classes.\+P\+O\+Is.\+Invincibility\+Logic}}, \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_high_jump_logic_ad9a9389e2268dfe2902dbdd2ff206e5c}{Time\+War.\+Logic.\+Classes.\+P\+O\+Is.\+High\+Jump\+Logic}}, \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_health_kit_logic_adfe3374905165ecd752b22d0ec8a2bbe}{Time\+War.\+Logic.\+Classes.\+P\+O\+Is.\+Health\+Kit\+Logic}}, \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_finish_logic_a7a7bea650aa4d190828d7fe4aaa994af}{Time\+War.\+Logic.\+Classes.\+P\+O\+Is.\+Finish\+Logic}}, \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_enviromental_damage_logic_a8e94bbc3a0634501110284f43af05588}{Time\+War.\+Logic.\+Classes.\+P\+O\+Is.\+Enviromental\+Damage\+Logic}}, and \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_checkpoint_logic_ae7dea90e6b9c65b8501d30e08f7a66f7}{Time\+War.\+Logic.\+Classes.\+P\+O\+Is.\+Checkpoint\+Logic}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_a20ff52624dfba5743c905212bb3c87e9}\label{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_a20ff52624dfba5743c905212bb3c87e9}} 
+\index{TimeWar.Logic.Classes.POIs.PointOfInterestLogic@{TimeWar.Logic.Classes.POIs.PointOfInterestLogic}!IsPlayerContacted@{IsPlayerContacted}}
+\index{IsPlayerContacted@{IsPlayerContacted}!TimeWar.Logic.Classes.POIs.PointOfInterestLogic@{TimeWar.Logic.Classes.POIs.PointOfInterestLogic}}
+\doxysubsubsection{\texorpdfstring{IsPlayerContacted}{IsPlayerContacted}}
+{\footnotesize\ttfamily bool Time\+War.\+Logic.\+Classes.\+P\+O\+Is.\+Point\+Of\+Interest\+Logic.\+Is\+Player\+Contacted\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets a value indicating whether player is contacted or not. 
+
+
+
+Definition at line 60 of file Point\+Of\+Interest\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_af334c2c9ec12fe023978db1ddb2469d3}\label{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_af334c2c9ec12fe023978db1ddb2469d3}} 
+\index{TimeWar.Logic.Classes.POIs.PointOfInterestLogic@{TimeWar.Logic.Classes.POIs.PointOfInterestLogic}!Model@{Model}}
+\index{Model@{Model}!TimeWar.Logic.Classes.POIs.PointOfInterestLogic@{TimeWar.Logic.Classes.POIs.PointOfInterestLogic}}
+\doxysubsubsection{\texorpdfstring{Model}{Model}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_time_war_1_1_model_1_1_game_model}{Game\+Model}} Time\+War.\+Logic.\+Classes.\+P\+O\+Is.\+Point\+Of\+Interest\+Logic.\+Model\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets game \mbox{\hyperlink{namespace_time_war_1_1_model}{Model}}. 
+
+
+
+Definition at line 40 of file Point\+Of\+Interest\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_a612a89c5c2842fe946d6086873a3ae96}\label{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_a612a89c5c2842fe946d6086873a3ae96}} 
+\index{TimeWar.Logic.Classes.POIs.PointOfInterestLogic@{TimeWar.Logic.Classes.POIs.PointOfInterestLogic}!Poi@{Poi}}
+\index{Poi@{Poi}!TimeWar.Logic.Classes.POIs.PointOfInterestLogic@{TimeWar.Logic.Classes.POIs.PointOfInterestLogic}}
+\doxysubsubsection{\texorpdfstring{Poi}{Poi}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_classes_1_1_point_of_interest}{Point\+Of\+Interest}} Time\+War.\+Logic.\+Classes.\+P\+O\+Is.\+Point\+Of\+Interest\+Logic.\+Poi\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets point of interest. 
+
+
+
+Definition at line 55 of file Point\+Of\+Interest\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_acb9431403e2c0955890599d7e2c9301f}\label{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_acb9431403e2c0955890599d7e2c9301f}} 
+\index{TimeWar.Logic.Classes.POIs.PointOfInterestLogic@{TimeWar.Logic.Classes.POIs.PointOfInterestLogic}!TimedPoi@{TimedPoi}}
+\index{TimedPoi@{TimedPoi}!TimeWar.Logic.Classes.POIs.PointOfInterestLogic@{TimeWar.Logic.Classes.POIs.PointOfInterestLogic}}
+\doxysubsubsection{\texorpdfstring{TimedPoi}{TimedPoi}}
+{\footnotesize\ttfamily bool Time\+War.\+Logic.\+Classes.\+P\+O\+Is.\+Point\+Of\+Interest\+Logic.\+Timed\+Poi\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets a value indicating whether a poi is timed or not. 
+
+
+
+Definition at line 45 of file Point\+Of\+Interest\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_a2f1d073f3f143ad77bcaac9fc2f78eb1}\label{class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic_a2f1d073f3f143ad77bcaac9fc2f78eb1}} 
+\index{TimeWar.Logic.Classes.POIs.PointOfInterestLogic@{TimeWar.Logic.Classes.POIs.PointOfInterestLogic}!Timer@{Timer}}
+\index{Timer@{Timer}!TimeWar.Logic.Classes.POIs.PointOfInterestLogic@{TimeWar.Logic.Classes.POIs.PointOfInterestLogic}}
+\doxysubsubsection{\texorpdfstring{Timer}{Timer}}
+{\footnotesize\ttfamily int Time\+War.\+Logic.\+Classes.\+P\+O\+Is.\+Point\+Of\+Interest\+Logic.\+Timer\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the max time of a poi. 
+
+
+
+Definition at line 50 of file Point\+Of\+Interest\+Logic.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+feleves/\+Time\+War/\+Time\+War.\+Logic/\+Classes/\+P\+O\+Is/Point\+Of\+Interest\+Logic.\+cs\end{DoxyCompactItemize}

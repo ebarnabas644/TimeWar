@@ -7,6 +7,7 @@ var class_time_war_1_1_logic_1_1_classes_1_1_viewer_logic =
     [ "GetProfiles", "class_time_war_1_1_logic_1_1_classes_1_1_viewer_logic.html#aaba37db0253fcb94f88778c1616bbd6a", null ],
     [ "GetSave", "class_time_war_1_1_logic_1_1_classes_1_1_viewer_logic.html#afe564509a1b1d3badacd87112827dee6", null ],
     [ "GetSaves", "class_time_war_1_1_logic_1_1_classes_1_1_viewer_logic.html#a2bbc4439440bae3a35e0f78821f95700", null ],
+    [ "GetSelectedProfile", "class_time_war_1_1_logic_1_1_classes_1_1_viewer_logic.html#ae71e0a413db0a8556401950c5e87f8c6", null ],
     [ "MapRepo", "class_time_war_1_1_logic_1_1_classes_1_1_viewer_logic.html#a4255a1f55609d724d517a045c9bcf2d8", null ],
     [ "ProfileRepo", "class_time_war_1_1_logic_1_1_classes_1_1_viewer_logic.html#af7a28a34f79ad7c962ece071c836eca9", null ],
     [ "SaveRepo", "class_time_war_1_1_logic_1_1_classes_1_1_viewer_logic.html#aecf7507d6fb06fad976dfdc16328bf70", null ]

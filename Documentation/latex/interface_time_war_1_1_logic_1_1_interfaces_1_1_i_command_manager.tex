@@ -1,0 +1,116 @@
+\hypertarget{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command_manager}{}\doxysection{Time\+War.\+Logic.\+Interfaces.\+I\+Command\+Manager Interface Reference}
+\label{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command_manager}\index{TimeWar.Logic.Interfaces.ICommandManager@{TimeWar.Logic.Interfaces.ICommandManager}}
+
+
+Command manager interface.  
+
+
+Inheritance diagram for Time\+War.\+Logic.\+Interfaces.\+I\+Command\+Manager\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command_manager}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command_manager_af8ad92fe554fa2f6ba9f6014ecace21f}{Add\+Command}} (\mbox{\hyperlink{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command}{I\+Command}} command)
+\begin{DoxyCompactList}\small\item\em Add new command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command_manager_ad1ae5ef13b07b1f0ac62dde34c9b445e}{Clear\+Buffer}} ()
+\begin{DoxyCompactList}\small\item\em Clear command buffer. \end{DoxyCompactList}\item 
+Task \mbox{\hyperlink{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command_manager_aad873d2daa7b6feeaf768ea7474335f6}{Rewind}} (int number)
+\begin{DoxyCompactList}\small\item\em Rewind all command. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command_manager_a40660ed065f13565bc1e4d79c608052e}{Is\+Finished}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets a value indicating whether the rewind is finished. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Command manager interface. 
+
+
+
+Definition at line 12 of file I\+Command\+Manager.\+cs.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command_manager_af8ad92fe554fa2f6ba9f6014ecace21f}\label{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command_manager_af8ad92fe554fa2f6ba9f6014ecace21f}} 
+\index{TimeWar.Logic.Interfaces.ICommandManager@{TimeWar.Logic.Interfaces.ICommandManager}!AddCommand@{AddCommand}}
+\index{AddCommand@{AddCommand}!TimeWar.Logic.Interfaces.ICommandManager@{TimeWar.Logic.Interfaces.ICommandManager}}
+\doxysubsubsection{\texorpdfstring{AddCommand()}{AddCommand()}}
+{\footnotesize\ttfamily void Time\+War.\+Logic.\+Interfaces.\+I\+Command\+Manager.\+Add\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command}{I\+Command}}}]{command }\end{DoxyParamCaption})}
+
+
+
+Add new command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & Command.\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_command_manager_a611ac4dd185b6530e13d026f0466ddf7}{Time\+War.\+Logic.\+Classes.\+Command\+Manager}}.
+
+\mbox{\Hypertarget{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command_manager_ad1ae5ef13b07b1f0ac62dde34c9b445e}\label{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command_manager_ad1ae5ef13b07b1f0ac62dde34c9b445e}} 
+\index{TimeWar.Logic.Interfaces.ICommandManager@{TimeWar.Logic.Interfaces.ICommandManager}!ClearBuffer@{ClearBuffer}}
+\index{ClearBuffer@{ClearBuffer}!TimeWar.Logic.Interfaces.ICommandManager@{TimeWar.Logic.Interfaces.ICommandManager}}
+\doxysubsubsection{\texorpdfstring{ClearBuffer()}{ClearBuffer()}}
+{\footnotesize\ttfamily void Time\+War.\+Logic.\+Interfaces.\+I\+Command\+Manager.\+Clear\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clear command buffer. 
+
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_command_manager_aa8d7de47bb5ae42a428ae0272f0b6927}{Time\+War.\+Logic.\+Classes.\+Command\+Manager}}.
+
+\mbox{\Hypertarget{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command_manager_aad873d2daa7b6feeaf768ea7474335f6}\label{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command_manager_aad873d2daa7b6feeaf768ea7474335f6}} 
+\index{TimeWar.Logic.Interfaces.ICommandManager@{TimeWar.Logic.Interfaces.ICommandManager}!Rewind@{Rewind}}
+\index{Rewind@{Rewind}!TimeWar.Logic.Interfaces.ICommandManager@{TimeWar.Logic.Interfaces.ICommandManager}}
+\doxysubsubsection{\texorpdfstring{Rewind()}{Rewind()}}
+{\footnotesize\ttfamily Task Time\+War.\+Logic.\+Interfaces.\+I\+Command\+Manager.\+Rewind (\begin{DoxyParamCaption}\item[{int}]{number }\end{DoxyParamCaption})}
+
+
+
+Rewind all command. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & Number of moving object.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Task with rewind logic.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_command_manager_acbef1c7d8a335bcc6619b32947b43831}{Time\+War.\+Logic.\+Classes.\+Command\+Manager}}.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command_manager_a40660ed065f13565bc1e4d79c608052e}\label{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command_manager_a40660ed065f13565bc1e4d79c608052e}} 
+\index{TimeWar.Logic.Interfaces.ICommandManager@{TimeWar.Logic.Interfaces.ICommandManager}!IsFinished@{IsFinished}}
+\index{IsFinished@{IsFinished}!TimeWar.Logic.Interfaces.ICommandManager@{TimeWar.Logic.Interfaces.ICommandManager}}
+\doxysubsubsection{\texorpdfstring{IsFinished}{IsFinished}}
+{\footnotesize\ttfamily bool Time\+War.\+Logic.\+Interfaces.\+I\+Command\+Manager.\+Is\+Finished\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets a value indicating whether the rewind is finished. 
+
+
+
+Definition at line 17 of file I\+Command\+Manager.\+cs.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+feleves/\+Time\+War/\+Time\+War.\+Logic/\+Interfaces/I\+Command\+Manager.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,222 @@
+\hypertarget{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic}{}\doxysection{Time\+War.\+Logic.\+Interfaces.\+I\+Manager\+Logic Interface Reference}
+\label{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic}\index{TimeWar.Logic.Interfaces.IManagerLogic@{TimeWar.Logic.Interfaces.IManagerLogic}}
+
+
+Database manager logic interface.  
+
+
+Inheritance diagram for Time\+War.\+Logic.\+Interfaces.\+I\+Manager\+Logic\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_a5b2d052c46cded4ae3a9f769bf414e50}{Create\+Profile}} (\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_player_profile}{Player\+Profile}} new\+Profile)
+\begin{DoxyCompactList}\small\item\em Add profile entity to database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_a4ada6302b7e799d631654e66dc663327}{Create\+Map}} (\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_map_record}{Map\+Record}} new\+Map)
+\begin{DoxyCompactList}\small\item\em Add map entity to database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_a67ea46ef5999013c78c013557f64de30}{Create\+Save}} (\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_save}{Save}} new\+Save)
+\begin{DoxyCompactList}\small\item\em Add save entity to database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_a6031e9914c19fb8447d7efe7626ebdf5}{Modify\+Profile}} (\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_player_profile}{Player\+Profile}} new\+Profile)
+\begin{DoxyCompactList}\small\item\em Modify already existing profile entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_a586ae86a929d97a43d1d82d9807cad2a}{Modify\+Map}} (\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_map_record}{Map\+Record}} new\+Map)
+\begin{DoxyCompactList}\small\item\em Modify already existing map entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_a0f046367d1dbd57a4b8da62143ae6ef2}{Modify\+Save}} (\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_save}{Save}} new\+Save)
+\begin{DoxyCompactList}\small\item\em Modify already existing save entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_ac1f1dd8d45712b9c406e28d26fe467ff}{Delete\+Profile}} (\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_player_profile}{Player\+Profile}} profile)
+\begin{DoxyCompactList}\small\item\em Delete already existing profile entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_a4c7cb94b7a584bfa5c8adf6b6af18a7f}{Delete\+Map}} (\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_map_record}{Map\+Record}} map)
+\begin{DoxyCompactList}\small\item\em Delete already existing map entity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_aa8d0f0029014c5770f9157a7b372c216}{Delete\+Save}} (\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_save}{Save}} save)
+\begin{DoxyCompactList}\small\item\em Delete already existing save entity. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Database manager logic interface. 
+
+
+
+Definition at line 12 of file I\+Manager\+Logic.\+cs.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_a4ada6302b7e799d631654e66dc663327}\label{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_a4ada6302b7e799d631654e66dc663327}} 
+\index{TimeWar.Logic.Interfaces.IManagerLogic@{TimeWar.Logic.Interfaces.IManagerLogic}!CreateMap@{CreateMap}}
+\index{CreateMap@{CreateMap}!TimeWar.Logic.Interfaces.IManagerLogic@{TimeWar.Logic.Interfaces.IManagerLogic}}
+\doxysubsubsection{\texorpdfstring{CreateMap()}{CreateMap()}}
+{\footnotesize\ttfamily void Time\+War.\+Logic.\+Interfaces.\+I\+Manager\+Logic.\+Create\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_map_record}{Map\+Record}}}]{new\+Map }\end{DoxyParamCaption})}
+
+
+
+Add map entity to database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Map} & Map entity.\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_manager_logic_a01a40ffaaadb69391f65375230723994}{Time\+War.\+Logic.\+Classes.\+Manager\+Logic}}.
+
+\mbox{\Hypertarget{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_a5b2d052c46cded4ae3a9f769bf414e50}\label{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_a5b2d052c46cded4ae3a9f769bf414e50}} 
+\index{TimeWar.Logic.Interfaces.IManagerLogic@{TimeWar.Logic.Interfaces.IManagerLogic}!CreateProfile@{CreateProfile}}
+\index{CreateProfile@{CreateProfile}!TimeWar.Logic.Interfaces.IManagerLogic@{TimeWar.Logic.Interfaces.IManagerLogic}}
+\doxysubsubsection{\texorpdfstring{CreateProfile()}{CreateProfile()}}
+{\footnotesize\ttfamily void Time\+War.\+Logic.\+Interfaces.\+I\+Manager\+Logic.\+Create\+Profile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_player_profile}{Player\+Profile}}}]{new\+Profile }\end{DoxyParamCaption})}
+
+
+
+Add profile entity to database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Profile} & Profile entity.\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_manager_logic_a448cdb874cc4259a14897cb93b53345e}{Time\+War.\+Logic.\+Classes.\+Manager\+Logic}}.
+
+\mbox{\Hypertarget{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_a67ea46ef5999013c78c013557f64de30}\label{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_a67ea46ef5999013c78c013557f64de30}} 
+\index{TimeWar.Logic.Interfaces.IManagerLogic@{TimeWar.Logic.Interfaces.IManagerLogic}!CreateSave@{CreateSave}}
+\index{CreateSave@{CreateSave}!TimeWar.Logic.Interfaces.IManagerLogic@{TimeWar.Logic.Interfaces.IManagerLogic}}
+\doxysubsubsection{\texorpdfstring{CreateSave()}{CreateSave()}}
+{\footnotesize\ttfamily void Time\+War.\+Logic.\+Interfaces.\+I\+Manager\+Logic.\+Create\+Save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_save}{Save}}}]{new\+Save }\end{DoxyParamCaption})}
+
+
+
+Add save entity to database. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Save} & Save entity.\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_manager_logic_a72427295a72877081b62283a9d6556ea}{Time\+War.\+Logic.\+Classes.\+Manager\+Logic}}.
+
+\mbox{\Hypertarget{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_a4c7cb94b7a584bfa5c8adf6b6af18a7f}\label{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_a4c7cb94b7a584bfa5c8adf6b6af18a7f}} 
+\index{TimeWar.Logic.Interfaces.IManagerLogic@{TimeWar.Logic.Interfaces.IManagerLogic}!DeleteMap@{DeleteMap}}
+\index{DeleteMap@{DeleteMap}!TimeWar.Logic.Interfaces.IManagerLogic@{TimeWar.Logic.Interfaces.IManagerLogic}}
+\doxysubsubsection{\texorpdfstring{DeleteMap()}{DeleteMap()}}
+{\footnotesize\ttfamily void Time\+War.\+Logic.\+Interfaces.\+I\+Manager\+Logic.\+Delete\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_map_record}{Map\+Record}}}]{map }\end{DoxyParamCaption})}
+
+
+
+Delete already existing map entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em map} & Map entity.\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_manager_logic_ab9e3129d444aa639cc96c3e9e0f957fb}{Time\+War.\+Logic.\+Classes.\+Manager\+Logic}}.
+
+\mbox{\Hypertarget{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_ac1f1dd8d45712b9c406e28d26fe467ff}\label{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_ac1f1dd8d45712b9c406e28d26fe467ff}} 
+\index{TimeWar.Logic.Interfaces.IManagerLogic@{TimeWar.Logic.Interfaces.IManagerLogic}!DeleteProfile@{DeleteProfile}}
+\index{DeleteProfile@{DeleteProfile}!TimeWar.Logic.Interfaces.IManagerLogic@{TimeWar.Logic.Interfaces.IManagerLogic}}
+\doxysubsubsection{\texorpdfstring{DeleteProfile()}{DeleteProfile()}}
+{\footnotesize\ttfamily void Time\+War.\+Logic.\+Interfaces.\+I\+Manager\+Logic.\+Delete\+Profile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_player_profile}{Player\+Profile}}}]{profile }\end{DoxyParamCaption})}
+
+
+
+Delete already existing profile entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em profile} & Profile entity.\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_manager_logic_a1c9e4715deecf16d7f849e1b26a7eef2}{Time\+War.\+Logic.\+Classes.\+Manager\+Logic}}.
+
+\mbox{\Hypertarget{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_aa8d0f0029014c5770f9157a7b372c216}\label{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_aa8d0f0029014c5770f9157a7b372c216}} 
+\index{TimeWar.Logic.Interfaces.IManagerLogic@{TimeWar.Logic.Interfaces.IManagerLogic}!DeleteSave@{DeleteSave}}
+\index{DeleteSave@{DeleteSave}!TimeWar.Logic.Interfaces.IManagerLogic@{TimeWar.Logic.Interfaces.IManagerLogic}}
+\doxysubsubsection{\texorpdfstring{DeleteSave()}{DeleteSave()}}
+{\footnotesize\ttfamily void Time\+War.\+Logic.\+Interfaces.\+I\+Manager\+Logic.\+Delete\+Save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_save}{Save}}}]{save }\end{DoxyParamCaption})}
+
+
+
+Delete already existing save entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em save} & Save entity.\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_manager_logic_a05845aecb17efd08bdff58b43a7a966d}{Time\+War.\+Logic.\+Classes.\+Manager\+Logic}}.
+
+\mbox{\Hypertarget{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_a586ae86a929d97a43d1d82d9807cad2a}\label{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_a586ae86a929d97a43d1d82d9807cad2a}} 
+\index{TimeWar.Logic.Interfaces.IManagerLogic@{TimeWar.Logic.Interfaces.IManagerLogic}!ModifyMap@{ModifyMap}}
+\index{ModifyMap@{ModifyMap}!TimeWar.Logic.Interfaces.IManagerLogic@{TimeWar.Logic.Interfaces.IManagerLogic}}
+\doxysubsubsection{\texorpdfstring{ModifyMap()}{ModifyMap()}}
+{\footnotesize\ttfamily void Time\+War.\+Logic.\+Interfaces.\+I\+Manager\+Logic.\+Modify\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_map_record}{Map\+Record}}}]{new\+Map }\end{DoxyParamCaption})}
+
+
+
+Modify already existing map entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Map} & Map entity.\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_manager_logic_a3dd624bfd289963ef5deb3bf17e8abc9}{Time\+War.\+Logic.\+Classes.\+Manager\+Logic}}.
+
+\mbox{\Hypertarget{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_a6031e9914c19fb8447d7efe7626ebdf5}\label{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_a6031e9914c19fb8447d7efe7626ebdf5}} 
+\index{TimeWar.Logic.Interfaces.IManagerLogic@{TimeWar.Logic.Interfaces.IManagerLogic}!ModifyProfile@{ModifyProfile}}
+\index{ModifyProfile@{ModifyProfile}!TimeWar.Logic.Interfaces.IManagerLogic@{TimeWar.Logic.Interfaces.IManagerLogic}}
+\doxysubsubsection{\texorpdfstring{ModifyProfile()}{ModifyProfile()}}
+{\footnotesize\ttfamily void Time\+War.\+Logic.\+Interfaces.\+I\+Manager\+Logic.\+Modify\+Profile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_player_profile}{Player\+Profile}}}]{new\+Profile }\end{DoxyParamCaption})}
+
+
+
+Modify already existing profile entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Profile} & Profile entity.\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_manager_logic_a59682e6bbffd9bcb403e0bff8ea5db62}{Time\+War.\+Logic.\+Classes.\+Manager\+Logic}}.
+
+\mbox{\Hypertarget{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_a0f046367d1dbd57a4b8da62143ae6ef2}\label{interface_time_war_1_1_logic_1_1_interfaces_1_1_i_manager_logic_a0f046367d1dbd57a4b8da62143ae6ef2}} 
+\index{TimeWar.Logic.Interfaces.IManagerLogic@{TimeWar.Logic.Interfaces.IManagerLogic}!ModifySave@{ModifySave}}
+\index{ModifySave@{ModifySave}!TimeWar.Logic.Interfaces.IManagerLogic@{TimeWar.Logic.Interfaces.IManagerLogic}}
+\doxysubsubsection{\texorpdfstring{ModifySave()}{ModifySave()}}
+{\footnotesize\ttfamily void Time\+War.\+Logic.\+Interfaces.\+I\+Manager\+Logic.\+Modify\+Save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_time_war_1_1_data_1_1_models_1_1_save}{Save}}}]{new\+Save }\end{DoxyParamCaption})}
+
+
+
+Modify already existing save entity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Save} & Save entity.\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_manager_logic_a76559def0f80766221dbc9036cedfd68}{Time\+War.\+Logic.\+Classes.\+Manager\+Logic}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+feleves/\+Time\+War/\+Time\+War.\+Logic/\+Interfaces/I\+Manager\+Logic.\+cs\end{DoxyCompactItemize}

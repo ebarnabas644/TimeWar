@@ -1,6 +1,7 @@
 var namespace_time_war_1_1_logic_1_1_classes_1_1_p_o_is =
 [
     [ "CheckpointLogic", "class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_checkpoint_logic.html", "class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_checkpoint_logic" ],
+    [ "EnviromentalDamageLogic", "class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_enviromental_damage_logic.html", "class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_enviromental_damage_logic" ],
     [ "FinishLogic", "class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_finish_logic.html", "class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_finish_logic" ],
     [ "HealthKitLogic", "class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_health_kit_logic.html", "class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_health_kit_logic" ],
     [ "HighJumpLogic", "class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_high_jump_logic.html", "class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_high_jump_logic" ],

@@ -20,6 +20,7 @@ var class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic =
     [ "Character", "class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic.html#ab83b875a9e8aee31bf004204ede65d32", null ],
     [ "CommandManager", "class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic.html#ac063430c7b0cc96bcd30cde3b3349476", null ],
     [ "DefaultAcceleration", "class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic.html#ab6fd38fa45cc417ec9ca269d833f22e0", null ],
+    [ "DefaultJumpHeight", "class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic.html#a68dcb0e5b6d626f57ea50a197620c86a", null ],
     [ "IsJumping", "class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic.html#a3ee404d3732c25e5c0a5bbc210652bfc", null ],
     [ "JumpingTimeOut", "class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic.html#a6fb22f8b76f17ae413d9aecf0d1e4c70", null ],
     [ "MaxJumpHeight", "class_time_war_1_1_logic_1_1_classes_1_1_characters_1_1_actor_logic.html#a48ab8717ee0dced2eade500f5e2405ac", null ],

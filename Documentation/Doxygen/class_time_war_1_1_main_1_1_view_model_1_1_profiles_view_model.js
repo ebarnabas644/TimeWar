@@ -2,6 +2,7 @@ var class_time_war_1_1_main_1_1_view_model_1_1_profiles_view_model =
 [
     [ "ProfilesViewModel", "class_time_war_1_1_main_1_1_view_model_1_1_profiles_view_model.html#a3e99e0931df26660d7fb67c60b52b83b", null ],
     [ "ProfilesViewModel", "class_time_war_1_1_main_1_1_view_model_1_1_profiles_view_model.html#a2e1e1b1e782e450fafaaea5b997a2c4f", null ],
+    [ "ReInit", "class_time_war_1_1_main_1_1_view_model_1_1_profiles_view_model.html#a0d1d86f11686f2d5ec7fbb29fb6fee24", null ],
     [ "CreateProfileCommand", "class_time_war_1_1_main_1_1_view_model_1_1_profiles_view_model.html#a67d1bb588b08b7083bfacea3205d6cd4", null ],
     [ "DeleteProfileCommand", "class_time_war_1_1_main_1_1_view_model_1_1_profiles_view_model.html#a100477db859eda6ab1936402287c96d4", null ],
     [ "Editing", "class_time_war_1_1_main_1_1_view_model_1_1_profiles_view_model.html#a632c3bfdaab6e944b9d5d1a3396784ce", null ],

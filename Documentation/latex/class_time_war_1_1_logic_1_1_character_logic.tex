@@ -1,0 +1,146 @@
+\hypertarget{class_time_war_1_1_logic_1_1_character_logic}{}\doxysection{Time\+War.\+Logic.\+Character\+Logic Class Reference}
+\label{class_time_war_1_1_logic_1_1_character_logic}\index{TimeWar.Logic.CharacterLogic@{TimeWar.Logic.CharacterLogic}}
+
+
+Basic character logic class.  
+
+
+Inheritance diagram for Time\+War.\+Logic.\+Character\+Logic\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_time_war_1_1_logic_1_1_character_logic}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_time_war_1_1_logic_1_1_character_logic_adce64ac44c66354087cfca9c7c6ee9d7}{Character\+Logic}} (\mbox{\hyperlink{class_time_war_1_1_model_1_1_game_model}{Game\+Model}} model, \mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_character}{Character}} character, \mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_command_manager}{Command\+Manager}} command\+Manager)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \mbox{\hyperlink{class_time_war_1_1_logic_1_1_character_logic}{Character\+Logic}} class. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_character_logic_a505947fd4e432258102e6895f141665b}\label{class_time_war_1_1_logic_1_1_character_logic_a505947fd4e432258102e6895f141665b}} 
+override void \mbox{\hyperlink{class_time_war_1_1_logic_1_1_character_logic_a505947fd4e432258102e6895f141665b}{One\+Tick}} ()
+\begin{DoxyCompactList}\small\item\em One Tick. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_character_logic_a95f7a871b279757bfd57226c6bced590}\label{class_time_war_1_1_logic_1_1_character_logic_a95f7a871b279757bfd57226c6bced590}} 
+override void \mbox{\hyperlink{class_time_war_1_1_logic_1_1_character_logic_a95f7a871b279757bfd57226c6bced590}{Attack}} ()
+\begin{DoxyCompactList}\small\item\em Default attack method. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_character_logic_a1736766d08ca5855ca1e95705b5f08a2}\label{class_time_war_1_1_logic_1_1_character_logic_a1736766d08ca5855ca1e95705b5f08a2}} 
+override Point \mbox{\hyperlink{class_time_war_1_1_logic_1_1_character_logic_a1736766d08ca5855ca1e95705b5f08a2}{Move}} ()
+\begin{DoxyCompactList}\small\item\em Default move funtion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_time_war_1_1_logic_1_1_character_logic_a7b83cb518009e1b60bd9aff3c2236af9}{Attack\+Time}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets time between attacks. \end{DoxyCompactList}\item 
+Stopwatch \mbox{\hyperlink{class_time_war_1_1_logic_1_1_character_logic_a6eb1da9fccc16ada2b2fcf7be0ebf8cd}{Effect\+Stopwatch}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets effect stopwatch. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_time_war_1_1_logic_1_1_character_logic_a389989a94c158b06c2e157d3d6a52f7a}{Effect\+Counter}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the number of effects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+Event\+Handler \mbox{\hyperlink{class_time_war_1_1_logic_1_1_character_logic_a00f22a544663b0692e0951e23f7965ec}{Fire}} Sounds/wave.\+mp3\char`\"{}
+\begin{DoxyCompactList}\small\item\em Fire event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Basic character logic class. 
+
+
+
+Definition at line 23 of file Character\+Logic.\+cs.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_character_logic_adce64ac44c66354087cfca9c7c6ee9d7}\label{class_time_war_1_1_logic_1_1_character_logic_adce64ac44c66354087cfca9c7c6ee9d7}} 
+\index{TimeWar.Logic.CharacterLogic@{TimeWar.Logic.CharacterLogic}!CharacterLogic@{CharacterLogic}}
+\index{CharacterLogic@{CharacterLogic}!TimeWar.Logic.CharacterLogic@{TimeWar.Logic.CharacterLogic}}
+\doxysubsubsection{\texorpdfstring{CharacterLogic()}{CharacterLogic()}}
+{\footnotesize\ttfamily Time\+War.\+Logic.\+Character\+Logic.\+Character\+Logic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_time_war_1_1_model_1_1_game_model}{Game\+Model}}}]{model,  }\item[{\mbox{\hyperlink{class_time_war_1_1_model_1_1_objects_1_1_character}{Character}}}]{character,  }\item[{\mbox{\hyperlink{class_time_war_1_1_logic_1_1_classes_1_1_command_manager}{Command\+Manager}}}]{command\+Manager }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \mbox{\hyperlink{class_time_war_1_1_logic_1_1_character_logic}{Character\+Logic}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model} & Game model entity.\\
+\hline
+{\em character} & Moveable entity.\\
+\hline
+{\em command\+Manager} & Command manager entity.\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 31 of file Character\+Logic.\+cs.
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_character_logic_a7b83cb518009e1b60bd9aff3c2236af9}\label{class_time_war_1_1_logic_1_1_character_logic_a7b83cb518009e1b60bd9aff3c2236af9}} 
+\index{TimeWar.Logic.CharacterLogic@{TimeWar.Logic.CharacterLogic}!AttackTime@{AttackTime}}
+\index{AttackTime@{AttackTime}!TimeWar.Logic.CharacterLogic@{TimeWar.Logic.CharacterLogic}}
+\doxysubsubsection{\texorpdfstring{AttackTime}{AttackTime}}
+{\footnotesize\ttfamily int Time\+War.\+Logic.\+Character\+Logic.\+Attack\+Time\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets time between attacks. 
+
+
+
+Definition at line 49 of file Character\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_character_logic_a389989a94c158b06c2e157d3d6a52f7a}\label{class_time_war_1_1_logic_1_1_character_logic_a389989a94c158b06c2e157d3d6a52f7a}} 
+\index{TimeWar.Logic.CharacterLogic@{TimeWar.Logic.CharacterLogic}!EffectCounter@{EffectCounter}}
+\index{EffectCounter@{EffectCounter}!TimeWar.Logic.CharacterLogic@{TimeWar.Logic.CharacterLogic}}
+\doxysubsubsection{\texorpdfstring{EffectCounter}{EffectCounter}}
+{\footnotesize\ttfamily int Time\+War.\+Logic.\+Character\+Logic.\+Effect\+Counter\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the number of effects. 
+
+
+
+Definition at line 59 of file Character\+Logic.\+cs.
+
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_character_logic_a6eb1da9fccc16ada2b2fcf7be0ebf8cd}\label{class_time_war_1_1_logic_1_1_character_logic_a6eb1da9fccc16ada2b2fcf7be0ebf8cd}} 
+\index{TimeWar.Logic.CharacterLogic@{TimeWar.Logic.CharacterLogic}!EffectStopwatch@{EffectStopwatch}}
+\index{EffectStopwatch@{EffectStopwatch}!TimeWar.Logic.CharacterLogic@{TimeWar.Logic.CharacterLogic}}
+\doxysubsubsection{\texorpdfstring{EffectStopwatch}{EffectStopwatch}}
+{\footnotesize\ttfamily Stopwatch Time\+War.\+Logic.\+Character\+Logic.\+Effect\+Stopwatch\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets effect stopwatch. 
+
+
+
+Definition at line 54 of file Character\+Logic.\+cs.
+
+
+
+\doxysubsection{Event Documentation}
+\mbox{\Hypertarget{class_time_war_1_1_logic_1_1_character_logic_a00f22a544663b0692e0951e23f7965ec}\label{class_time_war_1_1_logic_1_1_character_logic_a00f22a544663b0692e0951e23f7965ec}} 
+\index{TimeWar.Logic.CharacterLogic@{TimeWar.Logic.CharacterLogic}!Fire@{Fire}}
+\index{Fire@{Fire}!TimeWar.Logic.CharacterLogic@{TimeWar.Logic.CharacterLogic}}
+\doxysubsubsection{\texorpdfstring{Fire}{Fire}}
+{\footnotesize\ttfamily Event\+Handler Time\+War.\+Logic.\+Character\+Logic.\+Fire Sounds/wave.\+mp3\char`\"{}}
+
+
+
+Fire event. 
+
+
+
+Definition at line 44 of file Character\+Logic.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+feleves/\+Time\+War/\+Time\+War.\+Logic/\+Classes/\+Characters/Character\+Logic.\+cs\end{DoxyCompactItemize}
