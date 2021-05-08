@@ -22,6 +22,7 @@ namespace TimeWar.Main.View
         {
             this.InitializeComponent();
             this.vm = this.DataContext as ProfilesViewModel;
+            this.vm.ReInit();
             this.menuControl = this.FindName("cont") as MenuControl;
             Grid a = this.FindName("MainGrid") as Grid;
             this.menuControl.MapName = "test2";

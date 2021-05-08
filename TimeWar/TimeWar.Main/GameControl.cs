@@ -133,10 +133,14 @@ namespace TimeWar.Main
                     this.factory.ManagerLogic.CreateMap(new MapRecord { MapName = this.MapName, RunTime = this.gm.EndTime, PlayerId = profile.PlayerId });
                 }
 
-                profile.CompletedRuns++;
-                profile.TotalDeaths += this.gm.EndDeaths;
-                profile.TotalKills += this.gm.EndKills;
-                this.factory.ManagerLogic.ModifyProfile(profile);
+                PlayerProfile modifiedPlayer = new PlayerProfile();
+                modifiedPlayer.PlayerId = profile.PlayerId;
+                modifiedPlayer.Selected = true;
+                modifiedPlayer.Save = null;
+                modifiedPlayer.CompletedRuns = ++profile.CompletedRuns;
+                modifiedPlayer.TotalDeaths = profile.TotalDeaths + this.gm.EndDeaths;
+                modifiedPlayer.TotalKills = profile.TotalKills + this.gm.EndKills;
+                this.factory.ManagerLogic.ModifyProfile(modifiedPlayer);
             }
         }
 
@@ -225,7 +229,10 @@ namespace TimeWar.Main
         private void InitSave()
         {
             var player = this.factory.ViewerLogic.GetSelectedProfile();
-            this.MapName = this.factory.ViewerLogic.GetSaves().Where(x => x.Player == player).FirstOrDefault().MapName;
+            if (player != null)
+            {
+                this.MapName = this.factory.ViewerLogic.GetSaves().Where(x => x.Player == player).FirstOrDefault().MapName;
+            }
         }
 
         private void InitAudio()
