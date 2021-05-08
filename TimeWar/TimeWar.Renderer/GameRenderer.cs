@@ -38,7 +38,10 @@ namespace TimeWar.Renderer
         private double backgroundLayerBoundx;
         private double backgroundLayerBoundy;
         private int movingcount;
+        private int framecounter;
         private DrawingGroup spikeCache;
+        Uri uri = new Uri(@"Sounds/step7.wav", UriKind.Relative);
+        MediaPlayer player;
 
         // private List<Character> characters;
         private int currentSprite;
@@ -69,6 +72,9 @@ namespace TimeWar.Renderer
             this.uniqueObjectCache = new HashSet<IGameObject>();
             this.loadCache = new HashSet<string>();
             this.spriteTimer.Start();
+            this.framecounter = 0;
+            player = new MediaPlayer();
+            player.Open(uri);
             this.WindowChanged = false;
             this.spikeCache = new DrawingGroup();
             this.currentSprite = 0;
@@ -101,6 +107,7 @@ namespace TimeWar.Renderer
         /// <returns>Drawing with all entities for render.</returns>
         public Drawing BuildDrawing()
         {
+            this.framecounter++;
             this.movingcount = 0;
             this.currentSprite = (int)this.spriteTimer.Elapsed.TotalMilliseconds / 100;
             DrawingGroup dg = new DrawingGroup();
@@ -126,7 +133,7 @@ namespace TimeWar.Renderer
             return dg;
         }
 
-        private static void StateMachine(IGameObject obj)
+        private void StateMachine(IGameObject obj)
         {
             if (obj.MovementVector.X > 0 && obj.MovementVector.Y > 0)
             {
@@ -139,10 +146,20 @@ namespace TimeWar.Renderer
             else if (obj.MovementVector.X > 0)
             {
                 obj.Stance = Stances.Right;
+                if (this.currentSprite % 4 == 0 && this.framecounter % 6 == 0)
+                {
+                    player.Stop();
+                    player.Play();
+                }
             }
             else if (obj.MovementVector.X < 0)
             {
                 obj.Stance = Stances.Left;
+                if (this.currentSprite % 4 == 0 && this.framecounter % 6 == 0)
+                {
+                    player.Stop();
+                    player.Play();
+                }
             }
             else if (obj.MovementVector.Y > 0 && obj.MovementVector.Y < 0)
             {

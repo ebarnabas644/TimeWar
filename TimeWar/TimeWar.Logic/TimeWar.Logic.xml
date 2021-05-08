@@ -455,6 +455,12 @@
             <param name="bullet">Bullet.</param>
             <param name="commandManager">Command manager.</param>
         </member>
+        <member name="M:TimeWar.Logic.Classes.LogicCollections.BulletLogics.SaveEnemies">
+            <summary>
+            Saves bullets into a string.
+            </summary>
+            <returns>A list of all bullets.</returns>
+        </member>
         <member name="M:TimeWar.Logic.Classes.LogicCollections.BulletLogics.Addbullets(System.Collections.Generic.ICollection{TimeWar.Model.Objects.Classes.Bullet})">
             <summary>
             Replaces the bullets list.
@@ -827,6 +833,11 @@
         <member name="T:TimeWar.Logic.CharacterLogic">
             <summary>
             Basic character logic class.
+            </summary>
+        </member>
+        <member name="E:TimeWar.Logic.CharacterLogic.Fire">
+            <summary>
+            Fire event.
             </summary>
         </member>
         <member name="M:TimeWar.Logic.CharacterLogic.#ctor(TimeWar.Model.GameModel,TimeWar.Model.Objects.Character,TimeWar.Logic.Classes.CommandManager)">

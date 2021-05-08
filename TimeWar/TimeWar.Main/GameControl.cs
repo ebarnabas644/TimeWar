@@ -40,6 +40,8 @@ namespace TimeWar.Main
         private EnemyLogics enemyLogic;
         private PointOfInterestLogics pointOfInterestLogics;
         private GameViewModel gm;
+        private MediaPlayer backgroundMusic;
+        private MediaPlayer waveSound;
 
         // private Factory factory;
         private Window win;
@@ -56,6 +58,14 @@ namespace TimeWar.Main
             this.exit = false;
             this.Loaded += this.GameControl_Loaded;
             this.mouseScrollPos = 1;
+        }
+
+        /// <summary>
+        /// Gets background music media player.
+        /// </summary>
+        public MediaPlayer BackgroundMusic
+        {
+            get { return this.backgroundMusic; }
         }
 
         /// <summary>
@@ -98,6 +108,9 @@ namespace TimeWar.Main
         private void GameControl_Loaded(object sender, RoutedEventArgs e)
         {
             // this.factory = new Factory();
+            this.waveSound = new MediaPlayer();
+            this.backgroundMusic = new MediaPlayer();
+            this.InitAudio();
             this.model = new GameModel();
             this.gm = this.DataContext as GameViewModel;
             this.initLogic = new InitLogic(this.model, this.MapName);
@@ -105,6 +118,7 @@ namespace TimeWar.Main
             this.renderer = new GameRenderer(this.model, false);
             this.commandManager = new Logic.Classes.CommandManager();
             this.characterLogic = new CharacterLogic(this.model, this.model.Hero, this.commandManager);
+            this.characterLogic.Fire += this.CharacterLogic_Fire;
             this.bulletLogic = new BulletLogics(this.model, (ICollection<Bullet>)this.model.CurrentWorld.GetBullets, this.commandManager);
             this.enemyLogic = new EnemyLogics(this.model, this.commandManager);
             this.pointOfInterestLogics = new PointOfInterestLogics(this.model, this.characterLogic, this.commandManager);
@@ -130,6 +144,32 @@ namespace TimeWar.Main
             }
 
             this.InvalidateVisual();
+        }
+
+        private void InitAudio()
+        {
+            Uri uri = new Uri(@"Sounds/TimeWar.mp3", UriKind.Relative);
+            Uri waveUri = new Uri(@"Sounds/wave.mp3", UriKind.Relative);
+            this.waveSound.Open(waveUri);
+            this.backgroundMusic.Open(uri);
+            this.backgroundMusic.MediaEnded += this.BackgroundMusic_MediaEnded;
+            this.backgroundMusic.Play();
+        }
+
+        private void CharacterLogic_Fire(object sender, EventArgs e)
+        {
+            this.waveSound.Dispatcher.Invoke(() =>
+            {
+                this.waveSound.Stop();
+                this.waveSound.Position = TimeSpan.Zero;
+                this.waveSound.Play();
+            });
+        }
+
+        private void BackgroundMusic_MediaEnded(object sender, EventArgs e)
+        {
+            this.backgroundMusic.Position = TimeSpan.Zero;
+            this.backgroundMusic.Play();
         }
 
         private void Timer_Elapsed(object stateInfo)
