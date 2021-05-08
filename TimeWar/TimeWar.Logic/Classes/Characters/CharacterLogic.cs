@@ -23,6 +23,11 @@ namespace TimeWar.Logic
     public class CharacterLogic : ActorLogic
     {
         /// <summary>
+        /// Fire event.
+        /// </summary>
+        public event EventHandler Fire;
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="CharacterLogic"/> class.
         /// </summary>
         /// <param name="model">Game model entity.</param>
@@ -32,6 +37,7 @@ namespace TimeWar.Logic
             : base(model, character, commandManager)
         {
             this.AttackStopwatch.Start();
+            Uri waveUri = new Uri(@"Sounds/wave.mp3", UriKind.Relative);
             this.EffectStopwatch = new Stopwatch();
             this.AttackTime = 200;
             this.EffectCounter = 0;
@@ -98,6 +104,9 @@ namespace TimeWar.Logic
 
                 Point attackPoint = new Point(this.Character.Position.X, this.Character.Position.Y);
                 Bullet b = new Bullet(attackPoint, 8, 8, "testenemy.png", new Point(this.Character.ClickLocation.X, this.Character.ClickLocation.Y - inaccuracy), attackDamage, this.Character.TypeOfBullet, true);
+                EventHandler handler = this.Fire;
+                EventArgs args = null;
+                handler?.Invoke(this, args);
                 this.Model.CurrentWorld.AddBullet(b);
                 this.AttackStopwatch.Restart();
                 this.Character.CanAttack = false;

@@ -47,6 +47,9 @@
     <None Remove="Leveldata\test.tmx" />
     <None Remove="Leveldata\test2.png" />
     <None Remove="Leveldata\test2.tmx" />
+    <None Remove="Sounds\step7.wav" />
+    <None Remove="Sounds\TimeWar.mp3" />
+    <None Remove="Sounds\wave.mp3" />
     <None Remove="Sprites\1.png" />
     <None Remove="Sprites\171.png" />
     <None Remove="Sprites\2.png" />
@@ -107,6 +110,15 @@
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Leveldata\MainMap.tmx">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sounds\step7.wav">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sounds\TimeWar.mp3">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="Sounds\wave.mp3">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="Sprites\315.png">

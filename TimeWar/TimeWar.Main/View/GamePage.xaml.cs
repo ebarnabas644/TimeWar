@@ -31,6 +31,7 @@ namespace TimeWar.Main.View
         private void Unsubscribe_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             this.vm.MenuVisibility = false;
+            this.gc.BackgroundMusic.Close();
             this.gc.Exit = true;
         }
 
