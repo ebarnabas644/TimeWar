@@ -4,6 +4,7 @@
 
 namespace TimeWar.Main.Data
 {
+    using System;
     using System.Linq;
     using GalaSoft.MvvmLight;
     using TimeWar.Data.Models;
@@ -15,7 +16,7 @@ namespace TimeWar.Main.Data
     {
         private int mapId;
         private int playerId;
-        private int runTime;
+        private TimeSpan runTime;
         private string mapName;
 
         /// <summary>
@@ -55,7 +56,7 @@ namespace TimeWar.Main.Data
         /// <summary>
         /// Gets or sets run time.
         /// </summary>
-        public int RunTime
+        public TimeSpan RunTime
         {
             get { return this.runTime; }
             set { this.Set(ref this.runTime, value); }

@@ -6,6 +6,8 @@ namespace TimeWar.Main.ViewModel
 {
     using CommonServiceLocator;
     using GalaSoft.MvvmLight.Messaging;
+    using TimeWar.Logic.Classes;
+    using TimeWar.Logic.Interfaces;
     using TimeWar.Main.BL;
     using TimeWar.Main.BL.Classes;
     using TimeWar.Main.BL.Interfaces;
@@ -27,6 +29,8 @@ namespace TimeWar.Main.ViewModel
             MyIoc.Instance.Register<Factory, Factory>();
             MyIoc.Instance.Register<IViewerLogicUI, ViewerLogicUI>();
             MyIoc.Instance.Register<IManagerLogicUI, ManagerLogicUI>();
+            MyIoc.Instance.Register<IViewerLogic, ViewerLogic>();
+            MyIoc.Instance.Register<IManagerLogic, ManagerLogic>();
             MyIoc.Instance.Register<IMessenger>(() => Messenger.Default);
             MyIoc.Instance.Register<MainViewModel>();
             MyIoc.Instance.Register<MenuViewModel>();
