@@ -18,6 +18,7 @@ namespace TimeWar.Model
         public GameModel()
         {
             this.LevelFinished = false;
+            this.InRewind = false;
         }
 
         /// <summary>
@@ -44,5 +45,10 @@ namespace TimeWar.Model
         /// Gets or sets a value indicating whether level finished.
         /// </summary>
         public bool LevelFinished { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether in rewind.
+        /// </summary>
+        public bool InRewind { get; set; }
     }
 }

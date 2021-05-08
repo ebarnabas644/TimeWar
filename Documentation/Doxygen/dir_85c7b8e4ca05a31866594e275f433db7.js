@@ -1,6 +1,7 @@
 var dir_85c7b8e4ca05a31866594e275f433db7 =
 [
     [ "CheckpointLogic.cs", "_checkpoint_logic_8cs_source.html", null ],
+    [ "EnviromentalDamageLogic.cs", "_enviromental_damage_logic_8cs_source.html", null ],
     [ "FinishLogic.cs", "_finish_logic_8cs_source.html", null ],
     [ "HealthKitLogic.cs", "_health_kit_logic_8cs_source.html", null ],
     [ "HighJumpLogic.cs", "_high_jump_logic_8cs_source.html", null ],

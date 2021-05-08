@@ -41,7 +41,8 @@ var hierarchy =
       [ "TimeWar.Main.View.ProfilesPage", "class_time_war_1_1_main_1_1_view_1_1_profiles_page.html", null ]
     ] ],
     [ "IDisposable", null, [
-      [ "TimeWar.Main.BL.Factory", "class_time_war_1_1_main_1_1_b_l_1_1_factory.html", null ]
+      [ "TimeWar.Main.BL.Factory", "class_time_war_1_1_main_1_1_b_l_1_1_factory.html", null ],
+      [ "TimeWar.Main.GameControl", "class_time_war_1_1_main_1_1_game_control.html", null ]
     ] ],
     [ "TimeWar.Model.Objects.Interfaces.IGameObject", "interface_time_war_1_1_model_1_1_objects_1_1_interfaces_1_1_i_game_object.html", [
       [ "TimeWar.Model.Objects.Character", "class_time_war_1_1_model_1_1_objects_1_1_character.html", [
@@ -104,7 +105,6 @@ var hierarchy =
     ] ],
     [ "TimeWar.Logic.Interfaces.ITimedEvent", "interface_time_war_1_1_logic_1_1_interfaces_1_1_i_timed_event.html", [
       [ "TimeWar.Logic.Classes.POIs.TimedPOILogic", "class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_timed_p_o_i_logic.html", [
-        [ "TimeWar.Logic.Classes.POIs.HighJumpLogic", "class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_high_jump_logic.html", null ],
         [ "TimeWar.Logic.Classes.POIs.InvincibilityLogic", "class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_invincibility_logic.html", null ],
         [ "TimeWar.Logic.Classes.POIs.RapidFireLogic", "class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_rapid_fire_logic.html", null ]
       ] ]
@@ -148,13 +148,14 @@ var hierarchy =
     [ "TimeWar.Data.Models.PlayerProfile", "class_time_war_1_1_data_1_1_models_1_1_player_profile.html", null ],
     [ "TimeWar.Logic.Classes.POIs.PointOfInterestLogic", "class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_point_of_interest_logic.html", [
       [ "TimeWar.Logic.Classes.POIs.CheckpointLogic", "class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_checkpoint_logic.html", null ],
+      [ "TimeWar.Logic.Classes.POIs.EnviromentalDamageLogic", "class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_enviromental_damage_logic.html", null ],
       [ "TimeWar.Logic.Classes.POIs.FinishLogic", "class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_finish_logic.html", null ],
       [ "TimeWar.Logic.Classes.POIs.HealthKitLogic", "class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_health_kit_logic.html", null ],
+      [ "TimeWar.Logic.Classes.POIs.HighJumpLogic", "class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_high_jump_logic.html", null ],
       [ "TimeWar.Logic.Classes.POIs.TimedPOILogic", "class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_timed_p_o_i_logic.html", null ],
       [ "TimeWar.Logic.Classes.POIs.UnlockWeaponLogic", "class_time_war_1_1_logic_1_1_classes_1_1_p_o_is_1_1_unlock_weapon_logic.html", null ]
     ] ],
     [ "TimeWar.Logic.Classes.LogicCollections.PointOfInterestLogics", "class_time_war_1_1_logic_1_1_classes_1_1_logic_collections_1_1_point_of_interest_logics.html", null ],
-    [ "TimeWar.Data.Models.Profile", "class_time_war_1_1_data_1_1_models_1_1_profile.html", null ],
     [ "TimeWar.Renderer.RendererConfig", "class_time_war_1_1_renderer_1_1_renderer_config.html", null ],
     [ "TimeWar.Data.Models.Save", "class_time_war_1_1_data_1_1_models_1_1_save.html", null ],
     [ "SimpleIoc", null, [

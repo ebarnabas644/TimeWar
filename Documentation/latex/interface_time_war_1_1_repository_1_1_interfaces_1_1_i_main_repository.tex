@@ -1,0 +1,127 @@
+\hypertarget{interface_time_war_1_1_repository_1_1_interfaces_1_1_i_main_repository}{}\doxysection{Time\+War.\+Repository.\+Interfaces.\+I\+Main\+Repository$<$ T $>$ Interface Template Reference}
+\label{interface_time_war_1_1_repository_1_1_interfaces_1_1_i_main_repository}\index{TimeWar.Repository.Interfaces.IMainRepository$<$ T $>$@{TimeWar.Repository.Interfaces.IMainRepository$<$ T $>$}}
+
+
+Generic repository interface for common operations.  
+
+
+Inheritance diagram for Time\+War.\+Repository.\+Interfaces.\+I\+Main\+Repository$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_time_war_1_1_repository_1_1_interfaces_1_1_i_main_repository}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+T \mbox{\hyperlink{interface_time_war_1_1_repository_1_1_interfaces_1_1_i_main_repository_aabc96adb15f671bec37b8e9265f6ee78}{Get\+One}} (int id)
+\begin{DoxyCompactList}\small\item\em Get one entity via id. \end{DoxyCompactList}\item 
+I\+Queryable$<$ T $>$ \mbox{\hyperlink{interface_time_war_1_1_repository_1_1_interfaces_1_1_i_main_repository_a49267372c69d900644eb7c8ee687abcd}{Get\+All}} ()
+\begin{DoxyCompactList}\small\item\em Get all element from table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_time_war_1_1_repository_1_1_interfaces_1_1_i_main_repository_a86de8491b974ba520eed5fdd1b5de716}{Create}} (T entity)
+\begin{DoxyCompactList}\small\item\em Add entity to the table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_time_war_1_1_repository_1_1_interfaces_1_1_i_main_repository_a22c8596f55f29938818b9d32a1de803f}{Delete}} (T entity)
+\begin{DoxyCompactList}\small\item\em Delete entity from the table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Generic repository interface for common operations. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Entity class.\\
+\hline
+\end{DoxyTemplParams}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em class}]\end{description}
+\end{Desc}
+
+
+Definition at line 13 of file I\+Main\+Repository.\+cs.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_time_war_1_1_repository_1_1_interfaces_1_1_i_main_repository_a86de8491b974ba520eed5fdd1b5de716}\label{interface_time_war_1_1_repository_1_1_interfaces_1_1_i_main_repository_a86de8491b974ba520eed5fdd1b5de716}} 
+\index{TimeWar.Repository.Interfaces.IMainRepository$<$ T $>$@{TimeWar.Repository.Interfaces.IMainRepository$<$ T $>$}!Create@{Create}}
+\index{Create@{Create}!TimeWar.Repository.Interfaces.IMainRepository$<$ T $>$@{TimeWar.Repository.Interfaces.IMainRepository$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{interface_time_war_1_1_repository_1_1_interfaces_1_1_i_main_repository}{Time\+War.\+Repository.\+Interfaces.\+I\+Main\+Repository}}$<$ T $>$.Create (\begin{DoxyParamCaption}\item[{T}]{entity }\end{DoxyParamCaption})}
+
+
+
+Add entity to the table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & Entity object.\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_repository_1_1_classes_1_1_main_repository_abd95148358f78797c21e0f1f4e7eeff7}{Time\+War.\+Repository.\+Classes.\+Main\+Repository$<$ T $>$}}.
+
+\mbox{\Hypertarget{interface_time_war_1_1_repository_1_1_interfaces_1_1_i_main_repository_a22c8596f55f29938818b9d32a1de803f}\label{interface_time_war_1_1_repository_1_1_interfaces_1_1_i_main_repository_a22c8596f55f29938818b9d32a1de803f}} 
+\index{TimeWar.Repository.Interfaces.IMainRepository$<$ T $>$@{TimeWar.Repository.Interfaces.IMainRepository$<$ T $>$}!Delete@{Delete}}
+\index{Delete@{Delete}!TimeWar.Repository.Interfaces.IMainRepository$<$ T $>$@{TimeWar.Repository.Interfaces.IMainRepository$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{interface_time_war_1_1_repository_1_1_interfaces_1_1_i_main_repository}{Time\+War.\+Repository.\+Interfaces.\+I\+Main\+Repository}}$<$ T $>$.Delete (\begin{DoxyParamCaption}\item[{T}]{entity }\end{DoxyParamCaption})}
+
+
+
+Delete entity from the table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity} & Entity object.\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_repository_1_1_classes_1_1_main_repository_a5caf6d443f8e235d078118ab080fd947}{Time\+War.\+Repository.\+Classes.\+Main\+Repository$<$ T $>$}}.
+
+\mbox{\Hypertarget{interface_time_war_1_1_repository_1_1_interfaces_1_1_i_main_repository_a49267372c69d900644eb7c8ee687abcd}\label{interface_time_war_1_1_repository_1_1_interfaces_1_1_i_main_repository_a49267372c69d900644eb7c8ee687abcd}} 
+\index{TimeWar.Repository.Interfaces.IMainRepository$<$ T $>$@{TimeWar.Repository.Interfaces.IMainRepository$<$ T $>$}!GetAll@{GetAll}}
+\index{GetAll@{GetAll}!TimeWar.Repository.Interfaces.IMainRepository$<$ T $>$@{TimeWar.Repository.Interfaces.IMainRepository$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetAll()}{GetAll()}}
+{\footnotesize\ttfamily I\+Queryable$<$T$>$ \mbox{\hyperlink{interface_time_war_1_1_repository_1_1_interfaces_1_1_i_main_repository}{Time\+War.\+Repository.\+Interfaces.\+I\+Main\+Repository}}$<$ T $>$.Get\+All (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get all element from table. 
+
+\begin{DoxyReturn}{Returns}
+Entites.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_repository_1_1_classes_1_1_main_repository_a46ac4d0372c5c0612907cba5349ffb61}{Time\+War.\+Repository.\+Classes.\+Main\+Repository$<$ T $>$}}.
+
+\mbox{\Hypertarget{interface_time_war_1_1_repository_1_1_interfaces_1_1_i_main_repository_aabc96adb15f671bec37b8e9265f6ee78}\label{interface_time_war_1_1_repository_1_1_interfaces_1_1_i_main_repository_aabc96adb15f671bec37b8e9265f6ee78}} 
+\index{TimeWar.Repository.Interfaces.IMainRepository$<$ T $>$@{TimeWar.Repository.Interfaces.IMainRepository$<$ T $>$}!GetOne@{GetOne}}
+\index{GetOne@{GetOne}!TimeWar.Repository.Interfaces.IMainRepository$<$ T $>$@{TimeWar.Repository.Interfaces.IMainRepository$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{GetOne()}{GetOne()}}
+{\footnotesize\ttfamily T \mbox{\hyperlink{interface_time_war_1_1_repository_1_1_interfaces_1_1_i_main_repository}{Time\+War.\+Repository.\+Interfaces.\+I\+Main\+Repository}}$<$ T $>$.Get\+One (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Get one entity via id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Id of the entity.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Return the entity object based on id.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_time_war_1_1_repository_1_1_classes_1_1_main_repository_ab4be77ac0788f3a82fc71b762f2dfd3d}{Time\+War.\+Repository.\+Classes.\+Main\+Repository$<$ T $>$}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+feleves/\+Time\+War/\+Time\+War.\+Repository/\+Interfaces/I\+Main\+Repository.\+cs\end{DoxyCompactItemize}

@@ -103,45 +103,47 @@ $(document).ready(function(){initNavTree('_profiles_page_8xaml_8cs_source.html',
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        {</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            this.<a class="code" href="class_time_war_1_1_main_1_1_view_1_1_profiles_page.html#a088d46632ff3bcbf4103b89319ad87cd">InitializeComponent</a>();</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            this.vm = this.DataContext as <a class="code" href="class_time_war_1_1_main_1_1_view_model_1_1_profiles_view_model.html">ProfilesViewModel</a>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            this.menuControl = this.FindName(<span class="stringliteral">&quot;cont&quot;</span>) as <a class="code" href="class_time_war_1_1_main_1_1_menu_control.html">MenuControl</a>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            Grid a = this.FindName(<span class="stringliteral">&quot;MainGrid&quot;</span>) as Grid;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            this.menuControl.<a class="code" href="class_time_war_1_1_main_1_1_menu_control.html#a89145c05952687811088b1dbba72ef81">MapName</a> = <span class="stringliteral">&quot;test2&quot;</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            this.menuControl.ScrollMode = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            this.menuControl.TitleEnabled = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> Add_Click(<span class="keywordtype">object</span> sender, System.Windows.RoutedEventArgs e)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            this.vm.Editing = <span class="keyword">new</span> Data.PlayerProfileUI();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            this.AddDialog.Visibility = System.Windows.Visibility.Visible;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> Modify_Click(<span class="keywordtype">object</span> sender, System.Windows.RoutedEventArgs e)</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">if</span> (this.vm.SelectedPlayer != <span class="keyword">null</span>)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                this.vm.Editing = this.vm.SelectedPlayer;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                this.EditDialog.Visibility = System.Windows.Visibility.Visible;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> Unsubscribe_Click(<span class="keywordtype">object</span> sender, System.Windows.RoutedEventArgs e)</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            this.menuControl.Exit = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            this.vm.<a class="code" href="class_time_war_1_1_main_1_1_view_model_1_1_profiles_view_model.html#a0d1d86f11686f2d5ec7fbb29fb6fee24">ReInit</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            this.menuControl = this.FindName(<span class="stringliteral">&quot;cont&quot;</span>) as <a class="code" href="class_time_war_1_1_main_1_1_menu_control.html">MenuControl</a>;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            Grid a = this.FindName(<span class="stringliteral">&quot;MainGrid&quot;</span>) as Grid;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            this.menuControl.<a class="code" href="class_time_war_1_1_main_1_1_menu_control.html#a89145c05952687811088b1dbba72ef81">MapName</a> = <span class="stringliteral">&quot;test2&quot;</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            this.menuControl.ScrollMode = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            this.menuControl.TitleEnabled = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> Add_Click(<span class="keywordtype">object</span> sender, System.Windows.RoutedEventArgs e)</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            this.vm.Editing = <span class="keyword">new</span> Data.PlayerProfileUI();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            this.AddDialog.Visibility = System.Windows.Visibility.Visible;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> Modify_Click(<span class="keywordtype">object</span> sender, System.Windows.RoutedEventArgs e)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">if</span> (this.vm.SelectedPlayer != <span class="keyword">null</span>)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                this.vm.Editing = this.vm.SelectedPlayer;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                this.EditDialog.Visibility = System.Windows.Visibility.Visible;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">private</span> <span class="keywordtype">void</span> Unsubscribe_Click(<span class="keywordtype">object</span> sender, System.Windows.RoutedEventArgs e)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            this.menuControl.Exit = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="anamespace_time_war_1_1_main_1_1_view_model_html"><div class="ttname"><a href="namespace_time_war_1_1_main_1_1_view_model.html">TimeWar.Main.ViewModel</a></div><div class="ttdef"><b>Definition:</b> <a href="_game_view_model_8cs_source.html#l00005">GameViewModel.cs:6</a></div></div>
 <div class="ttc" id="aclass_time_war_1_1_main_1_1_view_model_1_1_profiles_view_model_html"><div class="ttname"><a href="class_time_war_1_1_main_1_1_view_model_1_1_profiles_view_model.html">TimeWar.Main.ViewModel.ProfilesViewModel</a></div><div class="ttdoc">Profile view model class.</div><div class="ttdef"><b>Definition:</b> <a href="_profiles_view_model_8cs_source.html#l00020">ProfilesViewModel.cs:21</a></div></div>
 <div class="ttc" id="aclass_time_war_1_1_main_1_1_view_1_1_profiles_page_html_a9355135190031ece6146345c58429d48"><div class="ttname"><a href="class_time_war_1_1_main_1_1_view_1_1_profiles_page.html#a9355135190031ece6146345c58429d48">TimeWar.Main.View.ProfilesPage.ProfilesPage</a></div><div class="ttdeci">ProfilesPage()</div><div class="ttdoc">Initializes a new instance of the ProfilesPage class.</div><div class="ttdef"><b>Definition:</b> <a href="_profiles_page_8xaml_8cs_source.html#l00021">ProfilesPage.xaml.cs:21</a></div></div>
 <div class="ttc" id="anamespace_time_war_1_1_main_html"><div class="ttname"><a href="namespace_time_war_1_1_main.html">TimeWar.Main</a></div><div class="ttdef"><b>Definition:</b> <a href="_app_8xaml_8cs_source.html#l00005">App.xaml.cs:6</a></div></div>
-<div class="ttc" id="aclass_time_war_1_1_main_1_1_menu_control_html"><div class="ttname"><a href="class_time_war_1_1_main_1_1_menu_control.html">TimeWar.Main.MenuControl</a></div><div class="ttdoc">Main menu control class.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_control_8cs_source.html#l00018">MenuControl.cs:19</a></div></div>
+<div class="ttc" id="aclass_time_war_1_1_main_1_1_view_model_1_1_profiles_view_model_html_a0d1d86f11686f2d5ec7fbb29fb6fee24"><div class="ttname"><a href="class_time_war_1_1_main_1_1_view_model_1_1_profiles_view_model.html#a0d1d86f11686f2d5ec7fbb29fb6fee24">TimeWar.Main.ViewModel.ProfilesViewModel.ReInit</a></div><div class="ttdeci">void ReInit()</div><div class="ttdoc">Reload database.</div><div class="ttdef"><b>Definition:</b> <a href="_profiles_view_model_8cs_source.html#l00152">ProfilesViewModel.cs:152</a></div></div>
+<div class="ttc" id="aclass_time_war_1_1_main_1_1_menu_control_html"><div class="ttname"><a href="class_time_war_1_1_main_1_1_menu_control.html">TimeWar.Main.MenuControl</a></div><div class="ttdoc">Main menu control class.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_control_8cs_source.html#l00020">MenuControl.cs:21</a></div></div>
 <div class="ttc" id="anamespace_system_1_1_windows_html"><div class="ttname"><a href="namespace_system_1_1_windows.html">Windows</a></div></div>
 <div class="ttc" id="anamespace_time_war_html"><div class="ttname"><a href="namespace_time_war.html">TimeWar</a></div><div class="ttdef"><b>Definition:</b> <a href="_map_8cs_source.html#l00005">Map.cs:6</a></div></div>
 <div class="ttc" id="anamespace_time_war_1_1_main_1_1_view_html"><div class="ttname"><a href="namespace_time_war_1_1_main_1_1_view.html">TimeWar.Main.View</a></div><div class="ttdef"><b>Definition:</b> <a href="_debug_2net5_80-windows_2_view_2_game_page_8g_8cs_source.html#l00037">GamePage.g.cs:37</a></div></div>
-<div class="ttc" id="aclass_time_war_1_1_main_1_1_menu_control_html_a89145c05952687811088b1dbba72ef81"><div class="ttname"><a href="class_time_war_1_1_main_1_1_menu_control.html#a89145c05952687811088b1dbba72ef81">TimeWar.Main.MenuControl.MapName</a></div><div class="ttdeci">string MapName</div><div class="ttdoc">Gets or sets current map.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_control_8cs_source.html#l00041">MenuControl.cs:41</a></div></div>
+<div class="ttc" id="aclass_time_war_1_1_main_1_1_menu_control_html_a89145c05952687811088b1dbba72ef81"><div class="ttname"><a href="class_time_war_1_1_main_1_1_menu_control.html#a89145c05952687811088b1dbba72ef81">TimeWar.Main.MenuControl.MapName</a></div><div class="ttdeci">string MapName</div><div class="ttdoc">Gets or sets current map.</div><div class="ttdef"><b>Definition:</b> <a href="_menu_control_8cs_source.html#l00054">MenuControl.cs:54</a></div></div>
 <div class="ttc" id="aclass_time_war_1_1_main_1_1_view_1_1_profiles_page_html_a088d46632ff3bcbf4103b89319ad87cd"><div class="ttname"><a href="class_time_war_1_1_main_1_1_view_1_1_profiles_page.html#a088d46632ff3bcbf4103b89319ad87cd">TimeWar.Main.View.ProfilesPage.InitializeComponent</a></div><div class="ttdeci">void InitializeComponent()</div><div class="ttdoc">InitializeComponent</div><div class="ttdef"><b>Definition:</b> <a href="_debug_2net5_80-windows_2_view_2_profiles_page_8g_8cs_source.html#l00085">ProfilesPage.g.cs:85</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

@@ -14,10 +14,13 @@ namespace TimeWar.Main
     using System.Windows;
     using System.Windows.Input;
     using System.Windows.Media;
+    using CommonServiceLocator;
+    using TimeWar.Data.Models;
     using TimeWar.Logic;
     using TimeWar.Logic.Classes.Characters;
     using TimeWar.Logic.Classes.Characters.Actions;
     using TimeWar.Logic.Classes.LogicCollections;
+    using TimeWar.Logic.Interfaces;
     using TimeWar.Main.BL;
     using TimeWar.Main.ViewModel;
     using TimeWar.Model;
@@ -40,8 +43,10 @@ namespace TimeWar.Main
         private EnemyLogics enemyLogic;
         private PointOfInterestLogics pointOfInterestLogics;
         private GameViewModel gm;
-
-        // private Factory factory;
+        private Factory factory;
+        private MediaPlayer backgroundMusic;
+        private MediaPlayer waveSound;
+        private MediaPlayer powerupSound;
         private Window win;
         private Stopwatch time = new Stopwatch();
         private Stopwatch deltatime = new Stopwatch();
@@ -52,6 +57,7 @@ namespace TimeWar.Main
         /// Initializes a new instance of the <see cref="GameControl"/> class.
         /// </summary>
         public GameControl()
+            : this(ServiceLocator.Current.GetInstance<Factory>())
         {
             this.exit = false;
             this.Loaded += this.GameControl_Loaded;
@@ -59,9 +65,36 @@ namespace TimeWar.Main
         }
 
         /// <summary>
+        /// Initializes a new instance of the <see cref="GameControl"/> class.
+        /// </summary>
+        /// <param name="factory">Factory.</param>
+        public GameControl(Factory factory)
+        {
+            this.factory = factory;
+        }
+
+        /// <summary>
+        /// Gets background music media player.
+        /// </summary>
+        public MediaPlayer BackgroundMusic
+        {
+            get { return this.backgroundMusic; }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether loading save.
+        /// </summary>
+        public bool SaveLoad { get; set; }
+
+        /// <summary>
         /// Gets or sets current map.
         /// </summary>
         public string MapName { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether level finished.
+        /// </summary>
+        public bool LevelFinished { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether true if game is paused.
@@ -84,6 +117,65 @@ namespace TimeWar.Main
         }
 
         /// <summary>
+        /// Save endgame stats.
+        /// </summary>
+        public void SaveEndGame()
+        {
+            var profile = this.factory.ViewerLogic.GetSelectedProfile();
+            if (profile != null)
+            {
+                var q = this.factory.ViewerLogic.GetMaps().Where(x => x.MapName == this.MapName && x.PlayerId == profile.PlayerId).SingleOrDefault();
+                if (q != null)
+                {
+                    this.factory.ManagerLogic.ModifyMap(new MapRecord { MapName = this.MapName, RunTime = this.gm.EndTime, MapRecordId = q.MapRecordId, PlayerId = q.PlayerId });
+                }
+                else
+                {
+                    this.factory.ManagerLogic.CreateMap(new MapRecord { MapName = this.MapName, RunTime = this.gm.EndTime, PlayerId = profile.PlayerId });
+                }
+
+                PlayerProfile modifiedPlayer = new PlayerProfile();
+                modifiedPlayer.PlayerId = profile.PlayerId;
+                modifiedPlayer.Selected = true;
+                modifiedPlayer.CompletedRuns = ++profile.CompletedRuns;
+                modifiedPlayer.TotalDeaths = profile.TotalDeaths + this.gm.EndDeaths;
+                modifiedPlayer.TotalKills = profile.TotalKills + this.gm.EndKills;
+                if (profile.Save != null)
+                {
+                    this.factory.ManagerLogic.DeleteSave(profile.Save);
+                }
+
+                this.factory.ManagerLogic.ModifyProfile(modifiedPlayer);
+            }
+        }
+
+        /// <summary>
+        /// Save game progress.
+        /// </summary>
+        public void SaveGameProgress()
+        {
+            var player = this.factory.ViewerLogic.GetSelectedProfile();
+            if (player != null)
+            {
+                Save save = new Save();
+                save.PlayerId = player.PlayerId;
+                save.Playerdata = this.characterLogic.Character.ToString();
+                save.Enemydata = this.enemyLogic.SaveEnemies();
+                save.MapName = this.MapName;
+                var saves = this.factory.ViewerLogic.GetSaves();
+                if (!this.factory.ViewerLogic.GetSaves().Any(x => x.PlayerId == player.PlayerId))
+                {
+                    this.factory.ManagerLogic.CreateSave(save);
+                }
+                else
+                {
+                    save.Id = this.factory.ViewerLogic.GetSaves().Where(x => x.PlayerId == player.PlayerId).SingleOrDefault().Id;
+                    this.factory.ManagerLogic.ModifySave(save);
+                }
+            }
+        }
+
+        /// <summary>
         /// Render drawing groups.
         /// </summary>
         /// <param name="drawingContext">Canvas.</param>
@@ -97,22 +189,31 @@ namespace TimeWar.Main
 
         private void GameControl_Loaded(object sender, RoutedEventArgs e)
         {
-            // this.factory = new Factory();
+            this.waveSound = new MediaPlayer();
+            this.backgroundMusic = new MediaPlayer();
+            this.powerupSound = new MediaPlayer();
+            this.InitAudio();
             this.model = new GameModel();
             this.gm = this.DataContext as GameViewModel;
-            this.initLogic = new InitLogic(this.model, this.MapName);
+            if (this.SaveLoad)
+            {
+                this.InitSave();
+            }
+
+            this.LevelFinished = false;
+            this.initLogic = new InitLogic(this.model, this.MapName, this.factory.ViewerLogic, this.SaveLoad);
             this.model.Camera = new Viewport((int)this.ActualWidth, (int)this.ActualHeight, (int)this.model.CurrentWorld.GameWidth, (int)this.model.CurrentWorld.GameHeight, this.model.Hero);
             this.renderer = new GameRenderer(this.model, false);
-            this.commandManager = new Logic.Classes.CommandManager();
+            this.commandManager = new Logic.Classes.CommandManager(this.model);
             this.characterLogic = new CharacterLogic(this.model, this.model.Hero, this.commandManager);
+            this.characterLogic.Fire += this.CharacterLogic_Fire;
             this.bulletLogic = new BulletLogics(this.model, (ICollection<Bullet>)this.model.CurrentWorld.GetBullets, this.commandManager);
             this.enemyLogic = new EnemyLogics(this.model, this.commandManager);
             this.pointOfInterestLogics = new PointOfInterestLogics(this.model, this.characterLogic, this.commandManager);
+            this.pointOfInterestLogics.Powerup += this.PointOfInterestLogics_Powerup;
             this.mouseScrollPos = 0;
             this.time.Start();
-
             this.deltatime.Start();
-
             this.model.CurrentWorld.CheckpointSave();
             this.model.CurrentWorld.SavedHealt = this.model.Hero.CurrentHealth;
             this.model.CurrentWorld.SavedShield = this.model.Hero.CurrentShield;
@@ -132,6 +233,56 @@ namespace TimeWar.Main
             this.InvalidateVisual();
         }
 
+        private void PointOfInterestLogics_Powerup(object sender, EventArgs e)
+        {
+            this.powerupSound.Dispatcher.Invoke(() =>
+            {
+                this.powerupSound.Stop();
+                this.powerupSound.Position = TimeSpan.Zero;
+                this.powerupSound.Play();
+            });
+        }
+
+        private void InitSave()
+        {
+            var player = this.factory.ViewerLogic.GetSelectedProfile();
+            if (player != null)
+            {
+                this.MapName = this.factory.ViewerLogic.GetSaves().Where(x => x.Player == player).FirstOrDefault().MapName;
+            }
+        }
+
+        private void InitAudio()
+        {
+            Uri uri = new Uri(@"Sounds/TimeWar.mp3", UriKind.Relative);
+            Uri waveUri = new Uri(@"Sounds/wave.mp3", UriKind.Relative);
+            Uri powerupUri = new Uri(@"Sounds/powerup.mp3", UriKind.Relative);
+            this.powerupSound.Open(powerupUri);
+            this.waveSound.Open(waveUri);
+            this.backgroundMusic.Open(uri);
+            this.backgroundMusic.Volume = 0.2;
+            this.waveSound.Volume = 0.2;
+            this.powerupSound.Volume = 0.3;
+            this.backgroundMusic.MediaEnded += this.BackgroundMusic_MediaEnded;
+            this.backgroundMusic.Play();
+        }
+
+        private void CharacterLogic_Fire(object sender, EventArgs e)
+        {
+            this.waveSound.Dispatcher.Invoke(() =>
+            {
+                this.waveSound.Stop();
+                this.waveSound.Position = TimeSpan.Zero;
+                this.waveSound.Play();
+            });
+        }
+
+        private void BackgroundMusic_MediaEnded(object sender, EventArgs e)
+        {
+            this.backgroundMusic.Position = TimeSpan.Zero;
+            this.backgroundMusic.Play();
+        }
+
         private void Timer_Elapsed(object stateInfo)
         {
             this.Tick();
@@ -146,7 +297,12 @@ namespace TimeWar.Main
                     if (this.model.CurrentWorld.EnemiesLoaded)
                     {
                         this.model.CurrentWorld.EnemiesLoaded = false;
+                        Stopwatch st = new Stopwatch();
+                        this.characterLogic.AttackTime = 200;
+                        this.characterLogic.MaxJumpHeight = this.characterLogic.DefaultJumpHeight;
+                        this.characterLogic.Character.IsInvincible = false;
                         this.enemyLogic.GetEnemies();
+                        this.pointOfInterestLogics.GetPOIs();
                     }
 
                     this.characterLogic.OneTick();
@@ -158,13 +314,17 @@ namespace TimeWar.Main
 
                 if (this.model.LevelFinished)
                 {
-                    this.IsPaused = true;
-                    this.time.Stop();
-                    this.deltatime.Stop();
-                    this.gm.EndKills = this.model.Hero.Kills;
-                    this.gm.EndDeaths = this.model.Hero.Deaths;
-                    this.gm.EndTime = this.time.Elapsed;
-                    this.gm.EndVisibility = true;
+                    lock (this.factory)
+                    {
+                        this.gm.EndKills = this.model.Hero.Kills;
+                        this.gm.EndDeaths = this.model.Hero.Deaths;
+                        this.gm.EndTime = this.time.Elapsed;
+                        this.gm.EndVisibility = true;
+                        this.LevelFinished = true;
+                        this.IsPaused = true;
+                        this.time.Stop();
+                        this.deltatime.Stop();
+                    }
                 }
             }
             else
@@ -176,6 +336,7 @@ namespace TimeWar.Main
                 this.win.MouseMove -= this.Win_MouseMove;
                 this.win.MouseDown -= this.Win_MouseDown;
                 this.win.MouseWheel -= this.Win_MouseScroll;
+                this.timer.Dispose();
                 this.Dispose();
                 CompositionTarget.Rendering -= (sender, args) => this.InvalidateVisual();
             }

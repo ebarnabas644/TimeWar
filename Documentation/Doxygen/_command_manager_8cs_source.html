@@ -97,79 +97,95 @@ $(document).ready(function(){initNavTree('_command_manager_8cs_source.html','');
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">using</span> System.Threading;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keyword">using</span> System.Threading.Tasks;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespace_time_war.html">TimeWar</a>.<a class="code" href="namespace_time_war_1_1_logic.html">Logic</a>.<a class="code" href="namespace_time_war_1_1_logic_1_1_interfaces.html">Interfaces</a>;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html">   17</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html">CommandManager</a> : <a class="code" href="interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command_manager.html">ICommandManager</a></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">private</span> <span class="keyword">const</span> <span class="keywordtype">int</span> RewindTime = 1500;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">private</span> List&lt;ICommand&gt; commandBuffer;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">private</span> Stopwatch rewindStopwatch;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#a33f9a1ff5eea3f2bc75fe3a21217c84b">   26</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#a33f9a1ff5eea3f2bc75fe3a21217c84b">CommandManager</a>()</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            this.commandBuffer = <span class="keyword">new</span> List&lt;ICommand&gt;();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            this.<a class="code" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#af9f8e118f371d7321f1af876f94a1f9f">IsFinished</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            this.rewindStopwatch = <span class="keyword">new</span> Stopwatch();</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#af9f8e118f371d7321f1af876f94a1f9f">   34</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#af9f8e118f371d7321f1af876f94a1f9f">IsFinished</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#a611ac4dd185b6530e13d026f0466ddf7">   37</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#a611ac4dd185b6530e13d026f0466ddf7">AddCommand</a>(<a class="code" href="interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command.html">ICommand</a> command)</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            this.commandBuffer.Add(command);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#aa8d7de47bb5ae42a428ae0272f0b6927">   43</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#aa8d7de47bb5ae42a428ae0272f0b6927">ClearBuffer</a>()</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            this.commandBuffer.Clear();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#a4b55c089fa17f5f5122f2a20f557296b">   49</a></span>&#160;        <span class="keyword">public</span> Task <a class="code" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#a4b55c089fa17f5f5122f2a20f557296b">Rewind</a>()</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            Task task = <span class="keyword">new</span> Task(() =&gt; Debug.WriteLine(<span class="stringliteral">&quot;Rewind not finished yet&quot;</span>));</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">if</span> (this.<a class="code" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#af9f8e118f371d7321f1af876f94a1f9f">IsFinished</a>)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                this.<a class="code" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#af9f8e118f371d7321f1af876f94a1f9f">IsFinished</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keywordtype">int</span> counter = 0;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                task = <span class="keyword">new</span> Task(</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                    () =&gt;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                    this.rewindStopwatch.Start();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                    <span class="keywordflow">foreach</span> (<a class="code" href="interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command.html">ICommand</a> command <span class="keywordflow">in</span> Enumerable.Reverse(<span class="keyword">this</span>.commandBuffer))</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                    {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                        if (this.rewindStopwatch.ElapsedMilliseconds &lt; RewindTime)</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                        {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                            command.Undo();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                            Thread.Sleep(5);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                        }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        counter++;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                    this.rewindStopwatch.Reset();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    this.<a class="code" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#af9f8e118f371d7321f1af876f94a1f9f">IsFinished</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                    this.<a class="code" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#aa8d7de47bb5ae42a428ae0272f0b6927">ClearBuffer</a>();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                }, TaskCreationOptions.LongRunning);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <span class="keywordflow">return</span> task;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">using</span> <a class="code" href="namespace_time_war.html">TimeWar</a>.<a class="code" href="namespace_time_war_1_1_model.html">Model</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html">   18</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html">CommandManager</a> : <a class="code" href="interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command_manager.html">ICommandManager</a></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">private</span> <span class="keyword">const</span> <span class="keywordtype">int</span> RewindTime = 750;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">private</span> List&lt;ICommand&gt; commandBuffer;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">private</span> Stopwatch rewindStopwatch;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">private</span> <a class="code" href="class_time_war_1_1_model_1_1_game_model.html">GameModel</a> model;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#abd526d4654aaa22060f3a8bf00cc9cff">   29</a></span>&#160;        <span class="keyword">public</span> <a class="code" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#abd526d4654aaa22060f3a8bf00cc9cff">CommandManager</a>(<a class="code" href="class_time_war_1_1_model_1_1_game_model.html">GameModel</a> model)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            this.model = model;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            this.commandBuffer = <span class="keyword">new</span> List&lt;ICommand&gt;();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            this.<a class="code" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#af9f8e118f371d7321f1af876f94a1f9f">IsFinished</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            this.rewindStopwatch = <span class="keyword">new</span> Stopwatch();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#af9f8e118f371d7321f1af876f94a1f9f">   38</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#af9f8e118f371d7321f1af876f94a1f9f">IsFinished</a> { <span class="keyword">get</span>; <span class="keyword">set</span>; }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#a611ac4dd185b6530e13d026f0466ddf7">   41</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#a611ac4dd185b6530e13d026f0466ddf7">AddCommand</a>(<a class="code" href="interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command.html">ICommand</a> command)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            this.commandBuffer.Add(command);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#aa8d7de47bb5ae42a428ae0272f0b6927">   47</a></span>&#160;        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#aa8d7de47bb5ae42a428ae0272f0b6927">ClearBuffer</a>()</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            this.commandBuffer.Clear();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#acbef1c7d8a335bcc6619b32947b43831">   53</a></span>&#160;        <span class="keyword">public</span> Task <a class="code" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#acbef1c7d8a335bcc6619b32947b43831">Rewind</a>(<span class="keywordtype">int</span> number)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            Task task = <span class="keyword">new</span> Task(() =&gt; Debug.WriteLine(<span class="stringliteral">&quot;Rewind not finished yet&quot;</span>));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">if</span> (this.<a class="code" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#af9f8e118f371d7321f1af876f94a1f9f">IsFinished</a>)</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                this.<a class="code" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#af9f8e118f371d7321f1af876f94a1f9f">IsFinished</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                this.model.<a class="code" href="class_time_war_1_1_model_1_1_game_model.html#a2ce52b787825837d290a1dcef05a8658">InRewind</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordtype">int</span> counter = 0;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                task = <span class="keyword">new</span> Task(</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                    () =&gt;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    this.rewindStopwatch.Start();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    <span class="keywordflow">foreach</span> (<a class="code" href="interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command.html">ICommand</a> command <span class="keywordflow">in</span> Enumerable.Reverse(<span class="keyword">this</span>.commandBuffer))</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                    {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                        if (this.rewindStopwatch.ElapsedMilliseconds &lt; RewindTime)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                        {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                            command.Undo();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                        }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                        {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                            break;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                        }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                        if (counter % number == 0)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                        {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                            Thread.Sleep(32);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                        }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                        counter++;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                    this.rewindStopwatch.Reset();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    this.<a class="code" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#af9f8e118f371d7321f1af876f94a1f9f">IsFinished</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                    this.model.<a class="code" href="class_time_war_1_1_model_1_1_game_model.html#a2ce52b787825837d290a1dcef05a8658">InRewind</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                    this.<a class="code" href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#aa8d7de47bb5ae42a428ae0272f0b6927">ClearBuffer</a>();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                }, TaskCreationOptions.LongRunning);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordflow">return</span> task;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="anamespace_system_1_1_collections_1_1_generic_html"><div class="ttname"><a href="namespace_system_1_1_collections_1_1_generic.html">Generic</a></div></div>
+<div class="ttc" id="aclass_time_war_1_1_model_1_1_game_model_html_a2ce52b787825837d290a1dcef05a8658"><div class="ttname"><a href="class_time_war_1_1_model_1_1_game_model.html#a2ce52b787825837d290a1dcef05a8658">TimeWar.Model.GameModel.InRewind</a></div><div class="ttdeci">bool InRewind</div><div class="ttdoc">Gets or sets a value indicating whether in rewind.</div><div class="ttdef"><b>Definition:</b> <a href="_game_model_8cs_source.html#l00052">GameModel.cs:52</a></div></div>
 <div class="ttc" id="anamespace_time_war_1_1_logic_1_1_classes_html"><div class="ttname"><a href="namespace_time_war_1_1_logic_1_1_classes.html">TimeWar.Logic.Classes</a></div><div class="ttdef"><b>Definition:</b> <a href="_bullet_logic_8cs_source.html#l00005">BulletLogic.cs:6</a></div></div>
-<div class="ttc" id="aclass_time_war_1_1_logic_1_1_classes_1_1_command_manager_html_a611ac4dd185b6530e13d026f0466ddf7"><div class="ttname"><a href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#a611ac4dd185b6530e13d026f0466ddf7">TimeWar.Logic.Classes.CommandManager.AddCommand</a></div><div class="ttdeci">void AddCommand(ICommand command)</div><div class="ttdoc">Add new command.</div><div class="ttdef"><b>Definition:</b> <a href="_command_manager_8cs_source.html#l00037">CommandManager.cs:37</a></div></div>
-<div class="ttc" id="aclass_time_war_1_1_logic_1_1_classes_1_1_command_manager_html_aa8d7de47bb5ae42a428ae0272f0b6927"><div class="ttname"><a href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#aa8d7de47bb5ae42a428ae0272f0b6927">TimeWar.Logic.Classes.CommandManager.ClearBuffer</a></div><div class="ttdeci">void ClearBuffer()</div><div class="ttdoc">Clear command buffer.</div><div class="ttdef"><b>Definition:</b> <a href="_command_manager_8cs_source.html#l00043">CommandManager.cs:43</a></div></div>
+<div class="ttc" id="aclass_time_war_1_1_logic_1_1_classes_1_1_command_manager_html_a611ac4dd185b6530e13d026f0466ddf7"><div class="ttname"><a href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#a611ac4dd185b6530e13d026f0466ddf7">TimeWar.Logic.Classes.CommandManager.AddCommand</a></div><div class="ttdeci">void AddCommand(ICommand command)</div><div class="ttdoc">Add new command.</div><div class="ttdef"><b>Definition:</b> <a href="_command_manager_8cs_source.html#l00041">CommandManager.cs:41</a></div></div>
+<div class="ttc" id="aclass_time_war_1_1_logic_1_1_classes_1_1_command_manager_html_aa8d7de47bb5ae42a428ae0272f0b6927"><div class="ttname"><a href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#aa8d7de47bb5ae42a428ae0272f0b6927">TimeWar.Logic.Classes.CommandManager.ClearBuffer</a></div><div class="ttdeci">void ClearBuffer()</div><div class="ttdoc">Clear command buffer.</div><div class="ttdef"><b>Definition:</b> <a href="_command_manager_8cs_source.html#l00047">CommandManager.cs:47</a></div></div>
 <div class="ttc" id="ainterface_time_war_1_1_logic_1_1_interfaces_1_1_i_command_manager_html"><div class="ttname"><a href="interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command_manager.html">TimeWar.Logic.Interfaces.ICommandManager</a></div><div class="ttdoc">Command manager interface.</div><div class="ttdef"><b>Definition:</b> <a href="_i_command_manager_8cs_source.html#l00012">ICommandManager.cs:13</a></div></div>
-<div class="ttc" id="aclass_time_war_1_1_logic_1_1_classes_1_1_command_manager_html_a33f9a1ff5eea3f2bc75fe3a21217c84b"><div class="ttname"><a href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#a33f9a1ff5eea3f2bc75fe3a21217c84b">TimeWar.Logic.Classes.CommandManager.CommandManager</a></div><div class="ttdeci">CommandManager()</div><div class="ttdoc">Initializes a new instance of the CommandManager class.</div><div class="ttdef"><b>Definition:</b> <a href="_command_manager_8cs_source.html#l00026">CommandManager.cs:26</a></div></div>
 <div class="ttc" id="anamespace_time_war_1_1_logic_1_1_interfaces_html"><div class="ttname"><a href="namespace_time_war_1_1_logic_1_1_interfaces.html">TimeWar.Logic.Interfaces</a></div><div class="ttdef"><b>Definition:</b> <a href="_i_command_8cs_source.html#l00005">ICommand.cs:6</a></div></div>
 <div class="ttc" id="ainterface_time_war_1_1_logic_1_1_interfaces_1_1_i_command_html"><div class="ttname"><a href="interface_time_war_1_1_logic_1_1_interfaces_1_1_i_command.html">TimeWar.Logic.Interfaces.ICommand</a></div><div class="ttdoc">Command interface for actions.</div><div class="ttdef"><b>Definition:</b> <a href="_i_command_8cs_source.html#l00010">ICommand.cs:11</a></div></div>
+<div class="ttc" id="anamespace_time_war_1_1_model_html"><div class="ttname"><a href="namespace_time_war_1_1_model.html">TimeWar.Model</a></div><div class="ttdef"><b>Definition:</b> <a href="_game_model_8cs_source.html#l00005">GameModel.cs:6</a></div></div>
+<div class="ttc" id="aclass_time_war_1_1_model_1_1_game_model_html"><div class="ttname"><a href="class_time_war_1_1_model_1_1_game_model.html">TimeWar.Model.GameModel</a></div><div class="ttdoc">Main game model class.</div><div class="ttdef"><b>Definition:</b> <a href="_game_model_8cs_source.html#l00013">GameModel.cs:14</a></div></div>
 <div class="ttc" id="anamespace_time_war_html"><div class="ttname"><a href="namespace_time_war.html">TimeWar</a></div><div class="ttdef"><b>Definition:</b> <a href="_map_8cs_source.html#l00005">Map.cs:6</a></div></div>
 <div class="ttc" id="anamespace_time_war_1_1_logic_html"><div class="ttname"><a href="namespace_time_war_1_1_logic.html">TimeWar.Logic</a></div><div class="ttdef"><b>Definition:</b> <a href="_bullet_logic_8cs_source.html#l00005">BulletLogic.cs:6</a></div></div>
-<div class="ttc" id="aclass_time_war_1_1_logic_1_1_classes_1_1_command_manager_html"><div class="ttname"><a href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html">TimeWar.Logic.Classes.CommandManager</a></div><div class="ttdoc">Command manager class.</div><div class="ttdef"><b>Definition:</b> <a href="_command_manager_8cs_source.html#l00017">CommandManager.cs:18</a></div></div>
-<div class="ttc" id="aclass_time_war_1_1_logic_1_1_classes_1_1_command_manager_html_a4b55c089fa17f5f5122f2a20f557296b"><div class="ttname"><a href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#a4b55c089fa17f5f5122f2a20f557296b">TimeWar.Logic.Classes.CommandManager.Rewind</a></div><div class="ttdeci">Task Rewind()</div><div class="ttdoc">Rewind all command.</div><div class="ttdef"><b>Definition:</b> <a href="_command_manager_8cs_source.html#l00049">CommandManager.cs:49</a></div></div>
-<div class="ttc" id="aclass_time_war_1_1_logic_1_1_classes_1_1_command_manager_html_af9f8e118f371d7321f1af876f94a1f9f"><div class="ttname"><a href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#af9f8e118f371d7321f1af876f94a1f9f">TimeWar.Logic.Classes.CommandManager.IsFinished</a></div><div class="ttdeci">bool IsFinished</div><div class="ttdef"><b>Definition:</b> <a href="_command_manager_8cs_source.html#l00034">CommandManager.cs:34</a></div></div>
+<div class="ttc" id="aclass_time_war_1_1_logic_1_1_classes_1_1_command_manager_html"><div class="ttname"><a href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html">TimeWar.Logic.Classes.CommandManager</a></div><div class="ttdoc">Command manager class.</div><div class="ttdef"><b>Definition:</b> <a href="_command_manager_8cs_source.html#l00018">CommandManager.cs:19</a></div></div>
+<div class="ttc" id="aclass_time_war_1_1_logic_1_1_classes_1_1_command_manager_html_acbef1c7d8a335bcc6619b32947b43831"><div class="ttname"><a href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#acbef1c7d8a335bcc6619b32947b43831">TimeWar.Logic.Classes.CommandManager.Rewind</a></div><div class="ttdeci">Task Rewind(int number)</div><div class="ttdoc">Rewind all command.</div><div class="ttdef"><b>Definition:</b> <a href="_command_manager_8cs_source.html#l00053">CommandManager.cs:53</a></div></div>
+<div class="ttc" id="aclass_time_war_1_1_logic_1_1_classes_1_1_command_manager_html_af9f8e118f371d7321f1af876f94a1f9f"><div class="ttname"><a href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#af9f8e118f371d7321f1af876f94a1f9f">TimeWar.Logic.Classes.CommandManager.IsFinished</a></div><div class="ttdeci">bool IsFinished</div><div class="ttdef"><b>Definition:</b> <a href="_command_manager_8cs_source.html#l00038">CommandManager.cs:38</a></div></div>
+<div class="ttc" id="aclass_time_war_1_1_logic_1_1_classes_1_1_command_manager_html_abd526d4654aaa22060f3a8bf00cc9cff"><div class="ttname"><a href="class_time_war_1_1_logic_1_1_classes_1_1_command_manager.html#abd526d4654aaa22060f3a8bf00cc9cff">TimeWar.Logic.Classes.CommandManager.CommandManager</a></div><div class="ttdeci">CommandManager(GameModel model)</div><div class="ttdoc">Initializes a new instance of the CommandManager class.</div><div class="ttdef"><b>Definition:</b> <a href="_command_manager_8cs_source.html#l00029">CommandManager.cs:29</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

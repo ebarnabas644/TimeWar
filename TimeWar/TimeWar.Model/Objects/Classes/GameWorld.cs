@@ -19,9 +19,10 @@ namespace TimeWar.Model.Objects
         private bool[][] ground;
         private int[][] decorations;
         private List<Enemy> enemies;
+        private List<Enemy> checkpointEnemies;
         private List<PointOfInterest> pointOfInterests;
+        private List<PointOfInterest> checkpointPois;
         private List<Bullet> bullets;
-        private List<Enemy> checkPointEnemies;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="GameWorld"/> class.
@@ -414,7 +415,8 @@ namespace TimeWar.Model.Objects
         public void CheckpointSave()
         {
             Debug.WriteLine("Checkpoint saved");
-            this.checkPointEnemies = DeepCopy(this.enemies);
+            this.checkpointEnemies = DeepCopyEnemies(this.enemies);
+            this.checkpointPois = DeepCopyPois(this.pointOfInterests);
         }
 
         /// <summary>
@@ -425,10 +427,11 @@ namespace TimeWar.Model.Objects
             Debug.WriteLine("Checkpoint loaded");
             this.EnemiesLoaded = true;
             this.RemoveBullets();
-            this.enemies = DeepCopy(this.checkPointEnemies);
+            this.enemies = DeepCopyEnemies(this.checkpointEnemies);
+            this.pointOfInterests = DeepCopyPois(this.checkpointPois);
         }
 
-        private static List<Enemy> DeepCopy(List<Enemy> enemies)
+        private static List<Enemy> DeepCopyEnemies(List<Enemy> enemies)
         {
             List<Enemy> enemyList = new List<Enemy>();
             foreach (Enemy enemy in enemies)
@@ -438,6 +441,18 @@ namespace TimeWar.Model.Objects
             }
 
             return enemyList;
+        }
+
+        private static List<PointOfInterest> DeepCopyPois(List<PointOfInterest> pois)
+        {
+            List<PointOfInterest> poiList = new List<PointOfInterest>();
+            foreach (PointOfInterest poi in pois)
+            {
+                PointOfInterest p = new PointOfInterest(poi.Type, poi.Height, poi.Width, poi.SpriteFile, poi.Position);
+                poiList.Add(p);
+            }
+
+            return poiList;
         }
     }
 }

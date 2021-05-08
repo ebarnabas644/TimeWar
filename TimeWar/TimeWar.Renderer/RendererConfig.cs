@@ -38,22 +38,22 @@ namespace TimeWar.Renderer
         /// <summary>
         /// Gets number of background layers.
         /// </summary>
-        public static int NumberOfLayers { get; } = 3;
+        public static int NumberOfLayers { get; } = 4;
 
         /// <summary>
         /// Gets Layers vertical speed.
         /// </summary>
-        public static IReadOnlyList<double> LayersVerticalSpeed { get; } = new List<double> { 0.1, 0.1, 0.1 };
+        public static IReadOnlyList<double> LayersVerticalSpeed { get; } = new List<double> { 0.1, 0.1, 0.1, 0.1 };
 
         /// <summary>
         /// Gets Layers horizontal speed.
         /// </summary>
-        public static IReadOnlyList<double> LayersHorizontalSpeed { get; } = new List<double> { 0.6, 0.4, 0.1 };
+        public static IReadOnlyList<double> LayersHorizontalSpeed { get; } = new List<double> { 0.6, 0.4, 0.1, 0.1 };
 
         /// <summary>
         /// Gets Layers sprite file names.
         /// </summary>
-        public static IReadOnlyList<string> LayersSpriteFile { get; } = new List<string> { "backgroundlayer1", "backgroundlayer2", "backgroundlayer3" };
+        public static IReadOnlyList<string> LayersSpriteFile { get; } = new List<string> { "backgroundlayer1", "backgroundlayer2", "backgroundlayer3", "backgroundlayer4" };
 
         /// <summary>
         /// Gets Layers horizontal offset.

@@ -45,6 +45,7 @@ namespace TimeWar.Main.ViewModel
             else
             {
                 this.viewerLogicUI.GetProfiles().ToList().ForEach(x => this.playerProfileUIs.Add(x));
+                this.selectedPlayer = this.viewerLogicUI.GetSelectedProfile();
                 this.MenuPageCommand = new RelayCommand(() =>
                 {
                     if (this.SelectedPlayer != null)
@@ -143,6 +144,16 @@ namespace TimeWar.Main.ViewModel
             {
                 this.playerProfileUIs = value;
             }
+        }
+
+        /// <summary>
+        /// Reload database.
+        /// </summary>
+        public void ReInit()
+        {
+            this.playerProfileUIs.Clear();
+            this.selectedPlayer = this.viewerLogicUI.GetSelectedProfile();
+            this.viewerLogicUI.GetProfiles().ToList().ForEach(x => this.playerProfileUIs.Add(x));
         }
     }
 }

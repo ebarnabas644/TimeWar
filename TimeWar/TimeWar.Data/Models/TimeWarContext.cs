@@ -65,7 +65,7 @@ namespace TimeWar.Data.Models
                 modelBuilder.Entity<Save>(entity =>
                 {
                     entity.HasOne(x => x.Player)
-                    .WithOne(x => x.AutoSave)
+                    .WithOne(x => x.Save).HasForeignKey<PlayerProfile>(x => x.SaveId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("save_fk");
                 });
@@ -78,8 +78,9 @@ namespace TimeWar.Data.Models
                     .HasForeignKey(x => x.PlayerId)
                     .OnDelete(DeleteBehavior.Cascade);
 
-                    entity.HasOne(x => x.AutoSave)
-                    .WithOne(x => x.Player).OnDelete(DeleteBehavior.Cascade);
+                    entity.HasOne(x => x.Save)
+                    .WithOne(x => x.Player)
+                    .HasForeignKey<Save>(x => x.PlayerId);
                 });
             }
         }

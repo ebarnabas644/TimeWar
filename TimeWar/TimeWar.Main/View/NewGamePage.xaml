@@ -27,8 +27,8 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Label Content="Maps" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="1" Style="{StaticResource LabelStyle}" Panel.ZIndex="2"/>
-        <Label Content="Scoreboard" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="3" Grid.Row="1" Style="{StaticResource LabelStyle}" Panel.ZIndex="2"/>
+        <Label Foreground="White" Content="Maps" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="1" Style="{StaticResource LabelStyle}" Panel.ZIndex="2"/>
+        <Label Foreground="White" Content="Scoreboard" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="3" Grid.Row="1" Style="{StaticResource LabelStyle}" Panel.ZIndex="2"/>
         <ListBox Background="#4B808080" ItemsSource="{Binding Path=Maps}" SelectedItem="{Binding Path=SelectedMap}" Grid.Row="2" Grid.Column="1" Panel.ZIndex="2">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -38,7 +38,7 @@
                         </Grid.ColumnDefinitions>
                         <DockPanel>
                             <Image Source="{Binding Path}" Height="100" Width="200" DockPanel.Dock="Left"/>
-                            <TextBlock Text="{Binding Name}" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Right" Style="{StaticResource TextBlockStyle}"/>
+                            <TextBlock Foreground="White" Text="{Binding Name}" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Right" Style="{StaticResource TextBlockStyle}"/>
                         </DockPanel>
                     </Grid>
                 </DataTemplate>
@@ -52,7 +52,8 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         <DockPanel>
-                            <TextBlock Text="{Binding RunTime, Converter={StaticResource IntToDateConverter}}" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Right" Style="{StaticResource TextBlockStyle}"/>
+                            <TextBlock Foreground="White" Text="{Binding Player.PlayerName}" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Left" Style="{StaticResource TextBlockStyle}"/>
+                            <TextBlock Foreground="White" Text="{Binding RunTime}" Padding="10" HorizontalAlignment="Center" VerticalAlignment="Center" DockPanel.Dock="Right" Style="{StaticResource TextBlockStyle}"/>
                         </DockPanel>
                     </Grid>
                 </DataTemplate>

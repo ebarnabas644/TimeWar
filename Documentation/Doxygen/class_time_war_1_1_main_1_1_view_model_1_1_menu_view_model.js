@@ -2,6 +2,8 @@ var class_time_war_1_1_main_1_1_view_model_1_1_menu_view_model =
 [
     [ "MenuViewModel", "class_time_war_1_1_main_1_1_view_model_1_1_menu_view_model.html#a150469f3f0d6ffd367c0bbbf68aabad9", null ],
     [ "Init", "class_time_war_1_1_main_1_1_view_model_1_1_menu_view_model.html#aaf89471568e211720ad7c552a290f8b2", null ],
+    [ "ContinueGameCommand", "class_time_war_1_1_main_1_1_view_model_1_1_menu_view_model.html#a1609805303fae846861b5c51f5dcfa76", null ],
+    [ "ContinueVisibility", "class_time_war_1_1_main_1_1_view_model_1_1_menu_view_model.html#a32516fcc6d3bcbe08b25c56f9009c83e", null ],
     [ "ExitCommand", "class_time_war_1_1_main_1_1_view_model_1_1_menu_view_model.html#a451519321068db243e6fc7d111e1f58c", null ],
     [ "MenuText", "class_time_war_1_1_main_1_1_view_model_1_1_menu_view_model.html#a0db1473df37bc323d5c9ea3b0cd3f440", null ],
     [ "NewGamePageCommand", "class_time_war_1_1_main_1_1_view_model_1_1_menu_view_model.html#a4ea6afcb15b56f20a619f5592d40fbfc", null ],

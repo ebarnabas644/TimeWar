@@ -40,8 +40,8 @@ namespace TimeWar.LogicTests
         [SetUp]
         public void Setup()
         {
-            this.commandManager = new CommandManager();
-            this.player = new Player(new Point(50, 50), 1, 8, 2, "cucc");
+            this.commandManager = new CommandManager(this.gameModel);
+            this.player = new Player(new Point(50, 50), 1, 8, 2, "test");
             this.gameWorld = new GameWorld(100, 100, 8);
             this.gameModel = new GameModel();
             this.gameModel.CurrentWorld = this.gameWorld;
@@ -49,7 +49,7 @@ namespace TimeWar.LogicTests
             this.characterLogic = new CharacterLogic(this.gameModel, this.gameModel.Hero, this.commandManager);
             BasicEnemyLogic basicEnemyLogic;
             this.enemyLogics = new EnemyLogics(this.gameModel, this.commandManager);
-            Enemy enemy = new Enemy(new Point(55, 55), 1, 8, 2, EnemyType.Basic, "cucc");
+            Enemy enemy = new Enemy(new Point(55, 55), 1, 8, 2, EnemyType.Basic, "test");
             basicEnemyLogic = new BasicEnemyLogic(this.gameModel, enemy, this.commandManager);
             this.gameModel.CurrentWorld.AddEnemy(enemy);
             this.enemyLogics.GetEnemies();
@@ -170,10 +170,11 @@ namespace TimeWar.LogicTests
         public void EffectTest()
         {
             this.player.Position = new Point(50, 50);
-            this.gameModel.Hero.Width = 8;
+            this.gameModel.Hero.Width = 64;
+            this.gameModel.Hero.Height = 64;
             this.player.Health = 100;
             this.player.CurrentHealth = 1;
-            PointOfInterest poi = new PointOfInterest(POIType.HealthKit, 4, 4, " ", new Point(this.gameModel.CurrentWorld.ConvertPixelToTile(50), this.gameModel.CurrentWorld.ConvertPixelToTile(50)));
+            PointOfInterest poi = new PointOfInterest(POIType.HealthKit, 8, 8, " ", new Point(this.gameModel.CurrentWorld.ConvertPixelToTile(64), this.gameModel.CurrentWorld.ConvertPixelToTile(64)));
             HealthKitLogic healthKitLogic = new HealthKitLogic(this.gameModel, poi, 25);
             this.gameModel.CurrentWorld.AddPOI(poi);
             this.pois = new PointOfInterestLogics(this.gameModel, this.characterLogic, this.commandManager);

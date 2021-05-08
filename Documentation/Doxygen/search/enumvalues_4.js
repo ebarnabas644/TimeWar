@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['gamepage_726',['GamePage',['../namespace_time_war_1_1_main_1_1_view.html#a60fa00ce9e07fae2884f37599bbad5a5ab157fcf5170e5624ac369ab9944522c6',1,'TimeWar::Main::View']]]
+  ['fast_777',['Fast',['../namespace_time_war_1_1_model_1_1_objects_1_1_classes.html#a5a412954fbd71a70080f58d4b59e3c01ae16b5b7f26f54214445cbe38d72c2828',1,'TimeWar::Model::Objects::Classes']]],
+  ['finish_778',['Finish',['../namespace_time_war_1_1_model_1_1_objects_1_1_classes.html#ab404ec3afe73d2b76830c4d936dc4bf9aa20ddccbb6f808ec42cd66323e6c6061',1,'TimeWar::Model::Objects::Classes']]]
 ];

@@ -38,7 +38,10 @@ namespace TimeWar.Renderer
         private double backgroundLayerBoundx;
         private double backgroundLayerBoundy;
         private int movingcount;
+        private int framecounter;
         private DrawingGroup spikeCache;
+        private Uri uri = new Uri(@"Sounds/step7.wav", UriKind.Relative);
+        private MediaPlayer player;
 
         // private List<Character> characters;
         private int currentSprite;
@@ -69,6 +72,9 @@ namespace TimeWar.Renderer
             this.uniqueObjectCache = new HashSet<IGameObject>();
             this.loadCache = new HashSet<string>();
             this.spriteTimer.Start();
+            this.framecounter = 0;
+            this.player = new MediaPlayer();
+            this.player.Open(this.uri);
             this.WindowChanged = false;
             this.spikeCache = new DrawingGroup();
             this.currentSprite = 0;
@@ -101,6 +107,7 @@ namespace TimeWar.Renderer
         /// <returns>Drawing with all entities for render.</returns>
         public Drawing BuildDrawing()
         {
+            this.framecounter++;
             this.movingcount = 0;
             this.currentSprite = (int)this.spriteTimer.Elapsed.TotalMilliseconds / 100;
             DrawingGroup dg = new DrawingGroup();
@@ -126,7 +133,7 @@ namespace TimeWar.Renderer
             return dg;
         }
 
-        private static void StateMachine(IGameObject obj)
+        private void StateMachine(IGameObject obj)
         {
             if (obj.MovementVector.X > 0 && obj.MovementVector.Y > 0)
             {
@@ -139,10 +146,20 @@ namespace TimeWar.Renderer
             else if (obj.MovementVector.X > 0)
             {
                 obj.Stance = Stances.Right;
+                if (this.currentSprite % 4 == 0 && this.framecounter % 6 == 0)
+                {
+                    this.player.Stop();
+                    this.player.Play();
+                }
             }
             else if (obj.MovementVector.X < 0)
             {
                 obj.Stance = Stances.Left;
+                if (this.currentSprite % 4 == 0 && this.framecounter % 6 == 0)
+                {
+                    this.player.Stop();
+                    this.player.Play();
+                }
             }
             else if (obj.MovementVector.Y > 0 && obj.MovementVector.Y < 0)
             {
@@ -215,7 +232,7 @@ namespace TimeWar.Renderer
 
             if (!obj.StanceLess)
             {
-                StateMachine(obj);
+                this.StateMachine(obj);
                 return this.spriteBrushes[obj.SpriteFile][(int)obj.Stance][this.currentSprite % this.spriteBrushes[obj.SpriteFile][(int)obj.Stance].Length];
             }
 
@@ -244,7 +261,7 @@ namespace TimeWar.Renderer
         private Drawing GetBackgroundLayers()
         {
             DrawingGroup dg = new DrawingGroup();
-            for (int i = 0; i < RendererConfig.NumberOfLayers; i++)
+            for (int i = 0; i < RendererConfig.NumberOfLayers - 1; i++)
             {
                 Rect bg = new Rect(this.model.Camera.GetRelativeObjectPosX(this.layers[i].Position.X) - (this.model.Camera.GetViewportX * RendererConfig.LayersHorizontalSpeed[i]), this.model.Camera.GetRelativeObjectPosY(this.layers[i].Position.Y) - (this.model.Camera.GetViewportY * RendererConfig.LayersVerticalSpeed[i]), this.layers[i].Width * this.model.CurrentWorld.Magnify * 10, this.layers[i].Height * this.model.CurrentWorld.Magnify);
                 Geometry g = new RectangleGeometry(bg);
@@ -255,6 +272,20 @@ namespace TimeWar.Renderer
                 }
 
                 GeometryDrawing layerdraw = new GeometryDrawing(this.GetSpriteBrush(this.layers[i], true, this.backgroundLayerBoundx, this.backgroundLayerBoundy), null, g);
+                dg.Children.Add(layerdraw);
+            }
+
+            if (this.model.InRewind)
+            {
+                Rect bg = new Rect(this.model.Camera.GetRelativeObjectPosX(this.layers[this.layers.Count - 1].Position.X) - (this.model.Camera.GetViewportX * RendererConfig.LayersHorizontalSpeed[this.layers.Count - 1]), this.model.Camera.GetRelativeObjectPosY(this.layers[this.layers.Count - 1].Position.Y) - (this.model.Camera.GetViewportY * RendererConfig.LayersVerticalSpeed[this.layers.Count - 1]), this.layers[this.layers.Count - 1].Width * this.model.CurrentWorld.Magnify * 20, this.layers[this.layers.Count - 1].Height * this.model.CurrentWorld.Magnify);
+                Geometry g = new RectangleGeometry(bg);
+                if (this.backgroundLayerBoundx == 0 || this.backgroundLayerBoundy == 0)
+                {
+                    this.backgroundLayerBoundx = g.Bounds.Size.Width;
+                    this.backgroundLayerBoundy = g.Bounds.Size.Height;
+                }
+
+                GeometryDrawing layerdraw = new GeometryDrawing(this.GetSpriteBrush(this.layers[this.layers.Count - 1], true, this.backgroundLayerBoundx, this.backgroundLayerBoundy), null, g);
                 dg.Children.Add(layerdraw);
             }
 

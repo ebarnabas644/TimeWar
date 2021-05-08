@@ -10,21 +10,25 @@ namespace TimeWar.Logic.Classes
     using System.Threading;
     using System.Threading.Tasks;
     using TimeWar.Logic.Interfaces;
+    using TimeWar.Model;
 
     /// <summary>
     /// Command manager class.
     /// </summary>
     public class CommandManager : ICommandManager
     {
-        private const int RewindTime = 1500;
+        private const int RewindTime = 750;
         private List<ICommand> commandBuffer;
         private Stopwatch rewindStopwatch;
+        private GameModel model;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="CommandManager"/> class.
         /// </summary>
-        public CommandManager()
+        /// <param name="model">Game model.</param>
+        public CommandManager(GameModel model)
         {
+            this.model = model;
             this.commandBuffer = new List<ICommand>();
             this.IsFinished = true;
             this.rewindStopwatch = new Stopwatch();
@@ -52,6 +56,7 @@ namespace TimeWar.Logic.Classes
             if (this.IsFinished)
             {
                 this.IsFinished = false;
+                this.model.InRewind = true;
                 int counter = 0;
                 task = new Task(
                     () =>
@@ -70,7 +75,7 @@ namespace TimeWar.Logic.Classes
 
                         if (counter % number == 0)
                         {
-                            Thread.Sleep(16);
+                            Thread.Sleep(32);
                         }
 
                         counter++;
@@ -78,6 +83,7 @@ namespace TimeWar.Logic.Classes
 
                     this.rewindStopwatch.Reset();
                     this.IsFinished = true;
+                    this.model.InRewind = false;
                     this.ClearBuffer();
                 }, TaskCreationOptions.LongRunning);
             }
