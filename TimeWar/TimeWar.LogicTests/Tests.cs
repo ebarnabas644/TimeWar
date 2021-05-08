@@ -41,7 +41,7 @@ namespace TimeWar.LogicTests
         public void Setup()
         {
             this.commandManager = new CommandManager(this.gameModel);
-            this.player = new Player(new Point(50, 50), 1, 8, 2, "cucc");
+            this.player = new Player(new Point(50, 50), 1, 8, 2, "test");
             this.gameWorld = new GameWorld(100, 100, 8);
             this.gameModel = new GameModel();
             this.gameModel.CurrentWorld = this.gameWorld;
@@ -49,7 +49,7 @@ namespace TimeWar.LogicTests
             this.characterLogic = new CharacterLogic(this.gameModel, this.gameModel.Hero, this.commandManager);
             BasicEnemyLogic basicEnemyLogic;
             this.enemyLogics = new EnemyLogics(this.gameModel, this.commandManager);
-            Enemy enemy = new Enemy(new Point(55, 55), 1, 8, 2, EnemyType.Basic, "cucc");
+            Enemy enemy = new Enemy(new Point(55, 55), 1, 8, 2, EnemyType.Basic, "test");
             basicEnemyLogic = new BasicEnemyLogic(this.gameModel, enemy, this.commandManager);
             this.gameModel.CurrentWorld.AddEnemy(enemy);
             this.enemyLogics.GetEnemies();
